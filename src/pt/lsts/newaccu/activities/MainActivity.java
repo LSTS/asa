@@ -1,10 +1,14 @@
 package pt.lsts.newaccu.activities;
 
 import pt.lsts.newaccu.R;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.R.id;
 import pt.lsts.newaccu.R.layout;
 import pt.lsts.newaccu.R.menu;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,4 +39,48 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	@Override
+	public void onPause() {
+	    super.onPause();  // Always call the superclass method first
+	    pauseNewAccu();
+	}
+	
+	@Override
+	public void onResume() {
+	    super.onResume();  // Always call the superclass method first
+	    resumeNewAccu();
+	}
+	
+	@Override
+	public void onBackPressed() {
+		new AlertDialog.Builder(this)
+        .setTitle("Exit")
+        .setMessage("Are you sure you want to exit?")
+        .setNegativeButton(android.R.string.no, null)
+        .setNegativeButton(android.R.string.yes, new OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            	back();
+            }
+        }).create().show();
+		
+	}
+	
+	public void back(){
+		super.onBackPressed();
+		onPause();
+	}
+	
+	public void pauseNewAccu(){
+		if (newAccu.getInstance()!=null)
+			if (newAccu.getInstance().started)
+		    	newAccu.getInstance().pause();
+	}
+	
+	public void resumeNewAccu(){
+		if (newAccu.getInstance()!=null)
+			if (!newAccu.getInstance().started)
+		    	newAccu.getInstance().start();
+	}
+	
 }
