@@ -1,5 +1,9 @@
-package pt.lsts.newaccu;
+package pt.lsts.newaccu.activities;
 
+import pt.lsts.newaccu.R;
+import pt.lsts.newaccu.R.id;
+import pt.lsts.newaccu.R.layout;
+import pt.lsts.newaccu.R.menu;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
