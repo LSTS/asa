@@ -175,7 +175,7 @@ public class Announcer
 			ip = ipfull.split("\\.");
 		}
 		
-		String sysName = "accu-"+ip[2]+ip[3]; 
+		String sysName = "newAccu-"+ip[2]+ip[3]; 
 		String sysType = "CCU"; 
 //		double lat = currentLocation.getLatitude();
 //		double lon = currentLocation.getLongitude();
