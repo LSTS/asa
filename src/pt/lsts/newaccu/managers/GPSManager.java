@@ -2,7 +2,7 @@ package pt.lsts.newaccu.managers;
 
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.listenners.LocationChangeListener;
 import android.content.Context;
 import android.location.Location;
@@ -102,7 +102,7 @@ public class GPSManager {
 			// Register for GPS and NETWORK updates
 			manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, listener);
 			// UNCOMMENT TO GET NETWORK UPDATES
-			if(Accu.getInstance().getPrefs().getBoolean("networkFix", false))
+			if(newAccu.getInstance().getPrefs().getBoolean("networkFix", false))
 				manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 2000, 0, listener);
 			running = true;
 		}

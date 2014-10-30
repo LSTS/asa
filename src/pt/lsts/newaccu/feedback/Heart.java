@@ -2,7 +2,7 @@ package pt.lsts.newaccu.feedback;
 
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.listenners.SystemListChangeListener;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.newaccu.sys.Sys;
@@ -16,8 +16,8 @@ public class Heart implements SystemListChangeListener
 	public static final String TAG = "Heart";
 	AccuTimer timer;
 	ArrayList<Sys> vehicleList = new ArrayList<Sys>();
-	SystemList sysList = Accu.getInstance().getSystemList();
-	IMCManager imm = Accu.getInstance().getIMCManager();
+	SystemList sysList = newAccu.getInstance().getSystemList();
+	IMCManager imm = newAccu.getInstance().getIMCManager();
 	
 	Runnable runnable = new Runnable() {
 

@@ -5,7 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.imc.IMCMessage;
 
 public class IMCUtils {
@@ -57,9 +57,9 @@ public class IMCUtils {
 	public static boolean isMsgFromActive(IMCMessage msg)
 	{
 		// If active system doesnt exist or isnt a message from active system
-		if(Accu.getInstance().getActiveSys()==null)
+		if(newAccu.getInstance().getActiveSys()==null)
 			return false;
-		if(Accu.getInstance().getActiveSys().getId() != (Integer)msg.getHeaderValue("src"))
+		if(newAccu.getInstance().getActiveSys().getId() != (Integer)msg.getHeaderValue("src"))
 			return false;
 		return true;
 	}

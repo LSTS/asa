@@ -2,7 +2,7 @@ package pt.lsts.newaccu.positioning;
 
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.communications.IMCSubscriber;
 import pt.lsts.newaccu.listenners.BeaconListChangeListener;
 import pt.lsts.newaccu.managers.IMCManager;
@@ -19,7 +19,7 @@ public class LblBeaconList implements IMCSubscriber
 	IMCManager imm;
 	public LblBeaconList()
 	{
-		imm = Accu.getInstance().getIMCManager();
+		imm = newAccu.getInstance().getIMCManager();
 		imm.addSubscriber(this, SUBSCRIBED_MSGS);
 	}
 	@Override

@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.communications.IMCSubscriber;
 import pt.lsts.newaccu.sys.Sys;
 import pt.lsts.newaccu.util.MUtil;
@@ -218,11 +218,11 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage>
 	// Message helper functions
 	public void sendToActiveSys(String name, Object ... values)
 	{
-		sendToSys(Accu.getInstance().getActiveSys(), name, values);
+		sendToSys(newAccu.getInstance().getActiveSys(), name, values);
 	}
 	public void sendToActiveSys(IMCMessage msg)
 	{
-		sendToSys(Accu.getInstance().getActiveSys(), msg);
+		sendToSys(newAccu.getInstance().getActiveSys(), msg);
 	}
 	public void sendToSys(Sys sys, String name, Object ... values)
 	{

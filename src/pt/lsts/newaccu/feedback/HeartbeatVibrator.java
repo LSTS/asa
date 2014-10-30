@@ -1,6 +1,6 @@
 package pt.lsts.newaccu.feedback;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.communications.IMCSubscriber;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.imc.IMCMessage;
@@ -46,12 +46,12 @@ public class HeartbeatVibrator implements IMCSubscriber
 	public void onReceive(IMCMessage msg) 
 	{
 		// If active system doesnt exist or isnt a message from active system
-		if(Accu.getInstance().getActiveSys()==null)
+		if(newAccu.getInstance().getActiveSys()==null)
 			return;
-		if(Accu.getInstance().getActiveSys().getId() != (Integer)msg.getHeaderValue("src"))
+		if(newAccu.getInstance().getActiveSys().getId() != (Integer)msg.getHeaderValue("src"))
 			return;
 		
-		if(Accu.getInstance().getPrefs().getBoolean("vibrate", true))
+		if(newAccu.getInstance().getPrefs().getBoolean("vibrate", true))
 			mVibrator.vibrate(mDuration);
 	}
 }

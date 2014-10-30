@@ -2,7 +2,7 @@ package pt.lsts.newaccu.sys;
 
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.communications.IMCSubscriber;
 import pt.lsts.newaccu.listenners.SystemListChangeListener;
 import pt.lsts.newaccu.managers.IMCManager;
@@ -127,7 +127,7 @@ public class SystemList implements IMCSubscriber{
 					changeList(sysList);
 					// Send an Heartbeat to resume communications in case of system prior crash
 					try {
-						Accu.getInstance().getIMCManager().send(s.getAddress(), s.getPort(), IMCDefinition.getInstance().create("Heartbeat"));
+						newAccu.getInstance().getIMCManager().send(s.getAddress(), s.getPort(), IMCDefinition.getInstance().create("Heartbeat"));
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}		
@@ -164,8 +164,8 @@ public class SystemList implements IMCSubscriber{
 			try {
 				IMCMessage m = IMCDefinition.getInstance().create("Heartbeat");
 				m.getHeader().setValue("src",0x4100);
-				Accu.getInstance().getIMCManager().send(s.getAddress(),s.getPort(), m);
-				Accu.getInstance().getIMCManager().getComm().sendMessage(s.getAddress(),s.getPort(), m);
+				newAccu.getInstance().getIMCManager().send(s.getAddress(),s.getPort(), m);
+				newAccu.getInstance().getIMCManager().getComm().sendMessage(s.getAddress(),s.getPort(), m);
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}		

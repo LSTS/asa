@@ -1,6 +1,6 @@
 package pt.lsts.newaccu.communications;
 
-import pt.lsts.newaccu.Accu;
+import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.communications.IMCSubscriber;
 import pt.lsts.newaccu.util.AccuTimer;
 import pt.lsts.imc.IMCMessage;
@@ -59,13 +59,13 @@ public class CallOut implements IMCSubscriber{
 	    }
 	});
 	timer.start();
-	Accu.getInstance().getIMCManager().addSubscriber(this, "EstimatedState");
+	newAccu.getInstance().getIMCManager().addSubscriber(this, "EstimatedState");
 	started = true;
     }
 
     public void stop()
     {
-	Accu.getInstance().getIMCManager().removeSubscriberToAll(this);
+	newAccu.getInstance().getIMCManager().removeSubscriberToAll(this);
 	timer.stop();
 	tts.shutdown();
 	started = false;
