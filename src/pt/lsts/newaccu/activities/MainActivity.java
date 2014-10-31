@@ -1,5 +1,8 @@
 package pt.lsts.newaccu.activities;
 
+import java.util.Vector;
+
+import pt.lsts.newaccu.PfdActivity;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.R.id;
@@ -17,21 +20,40 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
+	
+	Button buttonManualStabilized;
+	Button buttonPFD;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Button button=(Button)findViewById(R.id.buttonManualStabilized);
-        button.setOnClickListener(new View.OnClickListener() {
+		buttonManualStabilized =(Button)findViewById(R.id.buttonManualStabilized);
+		setButtonManualStabilized();
+		buttonPFD =(Button)findViewById(R.id.buttonPfd);
+		setButtonPfd();
+
+	}
+	
+	public void setButtonManualStabilized(){
+		buttonManualStabilized.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
 	            Intent i = new Intent(getApplicationContext(),ManualStabilizedActivity.class);
 	            startActivity(i);
 	        }
 	    });
+	}
 
+	public void setButtonPfd(){
+	    buttonPFD.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	            Intent i = new Intent(getApplicationContext(),PfdActivity.class);
+	            startActivity(i);
+	        }
+	    });
 	}
 
 	@Override
