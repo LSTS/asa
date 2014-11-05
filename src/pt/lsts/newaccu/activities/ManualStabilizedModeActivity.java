@@ -18,7 +18,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 
-public class ManualStabilizedActivity extends Activity {
+public class ManualStabilizedModeActivity extends Activity {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;

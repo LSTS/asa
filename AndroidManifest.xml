@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="VolumeControl-3-gaeaaf86-dirty (master)" >
+    android:versionName="VolumeControl-5-g148e0a7-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -39,7 +39,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="pt.lsts.newaccu.activities.PfdActivity"
+            android:name="pt.lsts.newaccu.activities.AutoModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_pfd" 
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

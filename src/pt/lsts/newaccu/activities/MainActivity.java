@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 		buttonManualStabilized.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	            Intent i = new Intent(getApplicationContext(),ManualStabilizedActivity.class);
+	            Intent i = new Intent(getApplicationContext(),ManualStabilizedModeActivity.class);
 	            startActivity(i);
 	        }
 	    });
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 	    buttonPFD.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	            Intent i = new Intent(getApplicationContext(),PfdActivity.class);
+	            Intent i = new Intent(getApplicationContext(),AutoModeActivity.class);
 	            startActivity(i);
 	        }
 	    });

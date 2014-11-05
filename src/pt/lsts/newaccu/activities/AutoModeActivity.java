@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class PfdActivity extends Activity {
+public class AutoModeActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
