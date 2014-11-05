@@ -2,7 +2,6 @@ package pt.lsts.newaccu.activities;
 
 import java.util.Vector;
 
-import pt.lsts.newaccu.PfdActivity;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.R.id;

@@ -1,4 +1,8 @@
-package pt.lsts.newaccu;
+package pt.lsts.newaccu.activities;
+
+import pt.lsts.newaccu.R;
+import pt.lsts.newaccu.R.id;
+import pt.lsts.newaccu.R.layout;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
