@@ -1,6 +1,6 @@
 package pt.lsts.newaccu.handlers;
 
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.Sms;

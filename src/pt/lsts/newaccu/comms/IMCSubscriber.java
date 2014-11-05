@@ -1,4 +1,4 @@
-package pt.lsts.newaccu.communications;
+package pt.lsts.newaccu.comms;
 
 import pt.lsts.imc.IMCMessage;
 

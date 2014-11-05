@@ -1,4 +1,4 @@
-package pt.lsts.newaccu.communications;
+package pt.lsts.newaccu.comms;
 
 import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.listenners.LocationChangeListener;

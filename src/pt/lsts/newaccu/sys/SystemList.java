@@ -3,7 +3,7 @@ package pt.lsts.newaccu.sys;
 import java.util.ArrayList;
 
 import pt.lsts.newaccu.newAccu;
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.listenners.SystemListChangeListener;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.newaccu.util.AccuTimer;

@@ -3,15 +3,15 @@ package pt.lsts.newaccu;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import pt.lsts.newaccu.communications.Announcer;
-import pt.lsts.newaccu.communications.CallOut;
+import pt.lsts.newaccu.comms.Announcer;
+import pt.lsts.newaccu.comms.CallOut;
 import pt.lsts.newaccu.feedback.Heart;
 import pt.lsts.newaccu.feedback.HeartbeatVibrator;
 import pt.lsts.newaccu.handlers.AccuSmsHandler;
 import pt.lsts.newaccu.listenners.MainSysChangeListener;
 import pt.lsts.newaccu.managers.GPSManager;
 import pt.lsts.newaccu.managers.IMCManager;
-import pt.lsts.newaccu.positioning.LblBeaconList;
+import pt.lsts.newaccu.pos.LblBeaconList;
 import pt.lsts.newaccu.sys.Sys;
 import pt.lsts.newaccu.sys.SystemList;
 import pt.lsts.newaccu.util.MUtil;

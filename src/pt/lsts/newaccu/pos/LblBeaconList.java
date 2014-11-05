@@ -1,9 +1,9 @@
-package pt.lsts.newaccu.positioning;
+package pt.lsts.newaccu.pos;
 
 import java.util.ArrayList;
 
 import pt.lsts.newaccu.newAccu;
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.listenners.BeaconListChangeListener;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.imc.IMCMessage;

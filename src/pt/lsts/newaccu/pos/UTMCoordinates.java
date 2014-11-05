@@ -1,4 +1,4 @@
-package pt.lsts.newaccu.positioning;
+package pt.lsts.newaccu.pos;
 /*
  * Copyright (c) 2004-2011 Laborat�rio de Sistemas e Tecnologia Subaqu�tica and Authors
  * All rights reserved.

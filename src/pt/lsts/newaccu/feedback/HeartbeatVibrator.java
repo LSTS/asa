@@ -1,7 +1,7 @@
 package pt.lsts.newaccu.feedback;
 
 import pt.lsts.newaccu.newAccu;
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.managers.IMCManager;
 import pt.lsts.imc.IMCMessage;
 import android.content.Context;

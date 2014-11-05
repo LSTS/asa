@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import pt.lsts.newaccu.newAccu;
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.sys.Sys;
 import pt.lsts.newaccu.util.MUtil;
 import pt.lsts.imc.IMCDefinition;

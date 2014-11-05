@@ -1,7 +1,7 @@
-package pt.lsts.newaccu.communications;
+package pt.lsts.newaccu.comms;
 
 import pt.lsts.newaccu.newAccu;
-import pt.lsts.newaccu.communications.IMCSubscriber;
+import pt.lsts.newaccu.comms.IMCSubscriber;
 import pt.lsts.newaccu.util.AccuTimer;
 import pt.lsts.imc.IMCMessage;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package pt.lsts.newaccu.positioning;
+package pt.lsts.newaccu.pos;
 /*
  * GISCoordinate.java
  *

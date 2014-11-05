@@ -1,8 +1,8 @@
 package pt.lsts.newaccu.util;
 
 import pt.lsts.imc.IMCMessage;
-import pt.lsts.newaccu.positioning.GISCoordinate;
-import pt.lsts.newaccu.positioning.UTMCoordinates;
+import pt.lsts.newaccu.pos.GISCoordinate;
+import pt.lsts.newaccu.pos.UTMCoordinates;
 
 public class CoordUtil {
 	/**
