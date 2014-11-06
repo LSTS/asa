@@ -4,7 +4,7 @@
     <string name="app_name">newACCU</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_manual_stabilized">Manual/Stabilized Mode</string>
+    <string name="title_activity_manual_stabilized_mode">Manual/Stabilized Mode</string>
     <string name="title_activity_pfd">PFDActivity</string>
 
 </resources>

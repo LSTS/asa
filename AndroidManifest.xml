@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="VolumeControl-6-g314f53a-dirty (master)" >
+    android:versionName="VolumeControl-7-g373c2a2-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -33,9 +33,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ManualStabilizedActivity"
+            android:name=".activities.ManualStabilizedModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_manual_stabilized"
+            android:label="@string/title_activity_manual_stabilized_mode"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
