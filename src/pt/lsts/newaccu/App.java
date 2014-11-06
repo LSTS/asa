@@ -1,7 +1,10 @@
 package pt.lsts.newaccu;
 
 import pt.lsts.imc.IMCDefinition;
+import pt.lsts.newaccu.managers.SoundManager;
 import android.app.Application;
+import android.content.Context;
+import android.media.AudioManager;
 import android.util.Log;
 
 /**
@@ -12,12 +15,21 @@ import android.util.Log;
  */
 public class App extends Application 
 {	
+	
+	private static AudioManager audioManager;
+		
+	public static AudioManager getAudioManager() {
+		return audioManager;
+	}
+
 	@Override
 	public void onCreate()
 	{
 		super.onCreate();
 
 		IMCDefinition.getInstance();
+		
+		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
 		// Sequence of calls needed to properly initialize ACCU
 		newAccu.getInstance(this);

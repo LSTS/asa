@@ -1,7 +1,10 @@
 package pt.lsts.newaccu.activities;
 
 import pt.lsts.newaccu.R;
+import pt.lsts.newaccu.comms.CallOut;
+import pt.lsts.newaccu.managers.SoundManager;
 import pt.lsts.newaccu.ui.components.VerticalSeekBar;
+import pt.lsts.newaccu.util.AccuTimer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,6 +14,9 @@ import android.content.DialogInterface.OnClickListener;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.provider.Settings.Global;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -22,23 +28,20 @@ public class ManualStabilizedModeActivity extends Activity {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
+	SoundManager soundManager = SoundManager.getInstance();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_manual_stabilized);
+		setContentView(R.layout.activity_manual_stabilized_mode);
 		
 		setVolumeControl();
-		
 	}
 
 	public void setVolumeControl(){
-		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-	    int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-	    int curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 	    VerticalSeekBar volControl = (VerticalSeekBar)findViewById(R.id.seekBarVolume);
-	    volControl.setMax(maxVolume);
-	    volControl.setProgress(curVolume);
+	    volControl.setMax(soundManager.getMaxVolume());
+	    volControl.setProgress(soundManager.getCurrentVolume());
 	    setVolumeControlChanger(volControl, audioManager);
 	    setImageButtonMute();
 	}
@@ -49,17 +52,17 @@ public class ManualStabilizedModeActivity extends Activity {
 		imageButtonMute.setOnClickListener(new View.OnClickListener() {
 	        @Override
 	        public void onClick(View v) {
-	            if (checkVolume()>0)
-	            	mute();
-	            else
+	            if (soundManager.checkMute())
 	            	unmute();
+	            else
+	            	mute();
 	            showToastWithVolume();
 	        }
 	    });
 	}
 	
 	public void setImageButtonMuteIcon(){
-		if (checkVolume()==0)
+		if (soundManager.checkMute())
 			imageButtonMute.setImageResource(R.drawable.sound_off);
 		else
 			imageButtonMute.setImageResource(R.drawable.sound_on);
@@ -78,7 +81,7 @@ public class ManualStabilizedModeActivity extends Activity {
 		    @Override
 		    public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 		        unmute();
-		    	audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, arg1, 0);
+		    	soundManager.setCurrentVolume(arg1);
 		    	adjustVolumeBarAndIcon();
 		    	showToastWithVolume();
 		    }
@@ -86,30 +89,24 @@ public class ManualStabilizedModeActivity extends Activity {
 	}
 	
 	private void adjustVolumeBarAndIcon(){
-		int curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int curVolume = soundManager.getCurrentVolume();
 	    VerticalSeekBar volControl = (VerticalSeekBar)findViewById(R.id.seekBarVolume);
 	    volControl.setProgress(curVolume);
 		setImageButtonMuteIcon();
 	}
 	
 	private void mute() {
-	    audioManager.setStreamMute(AudioManager.STREAM_MUSIC, true);
+	    soundManager.mute();
 	    setImageButtonMuteIcon();
 	}
 
 	public void unmute() {
-		audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
+		soundManager.unmute();
 		setImageButtonMuteIcon();
 	}
 	
-	public int checkVolume(){
-		int vol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-	    //Toast.makeText(this.getApplicationContext(), "vol="+vol, Toast.LENGTH_LONG).show();
-	    return vol;
-	}
-	
 	public void showToastWithVolume(){
-		int vol = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+		int vol = soundManager.getCurrentVolume();
 	    Toast.makeText(this.getApplicationContext(), "vol="+vol, Toast.LENGTH_LONG).show();
 	}
 	
