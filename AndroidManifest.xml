@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="VolumeControl-8-g02bb0db-dirty (master)" >
+    android:versionName="VolumeControl-10-ga3ab6b3-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"

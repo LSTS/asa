@@ -1,7 +1,7 @@
 package pt.lsts.newaccu.activities;
 
 import pt.lsts.newaccu.R;
-import pt.lsts.newaccu.comms.CallOut;
+import pt.lsts.newaccu.feedback.CallOut;
 import pt.lsts.newaccu.managers.SoundManager;
 import pt.lsts.newaccu.ui.components.VerticalSeekBar;
 import pt.lsts.newaccu.util.AccuTimer;
@@ -28,6 +28,7 @@ public class ManualStabilizedModeActivity extends Activity {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
+	CallOut callOut;
 	SoundManager soundManager = SoundManager.getInstance();
 	
 	@Override
@@ -36,6 +37,7 @@ public class ManualStabilizedModeActivity extends Activity {
 		setContentView(R.layout.activity_manual_stabilized_mode);
 		
 		setVolumeControl();
+		callOut = new CallOut(this.getApplicationContext());
 	}
 
 	public void setVolumeControl(){
@@ -103,6 +105,7 @@ public class ManualStabilizedModeActivity extends Activity {
 	public void unmute() {
 		soundManager.unmute();
 		setImageButtonMuteIcon();
+		callOut.startCallOuts();
 	}
 	
 	public void showToastWithVolume(){
@@ -132,6 +135,7 @@ public class ManualStabilizedModeActivity extends Activity {
 	public void back(){
 		super.onBackPressed();
 		unmute();
+		callOut.shutdown();
 	}
 
 
