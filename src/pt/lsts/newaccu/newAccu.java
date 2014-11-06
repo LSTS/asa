@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import pt.lsts.newaccu.comms.Announcer;
-import pt.lsts.newaccu.comms.CallOut;
 import pt.lsts.newaccu.feedback.Heart;
 import pt.lsts.newaccu.feedback.HeartbeatVibrator;
 import pt.lsts.newaccu.handlers.AccuSmsHandler;
@@ -29,6 +28,7 @@ import android.util.Log;
  * @author jqcorreia
  * 
  */
+
 public class newAccu {
 
     private static final String TAG = "ACCU";
@@ -45,7 +45,6 @@ public class newAccu {
     public static HeartbeatVibrator mHBVibrator;
     public static Heart mHeart;
     public static LblBeaconList mBeaconList;
-    public static CallOut callOut;
     public static SensorManager mSensorManager;
 
     private static ArrayList<MainSysChangeListener> mMainSysChangeListeners;
@@ -79,7 +78,6 @@ public class newAccu {
 	mAnnouncer = new Announcer(imcManager, broadcastAddress, "224.0.75.69");
 	mSmsHandler = new AccuSmsHandler(mContext, imcManager);
 	mHBVibrator = new HeartbeatVibrator(mContext, imcManager);
-	callOut = new CallOut(mContext);
     }
 
     public void load() {
@@ -168,11 +166,6 @@ public class newAccu {
     public LblBeaconList getLblBeaconList() {
 	Log.i(TAG, newAccu.class.getSimpleName() + ": getLblBeaconList");
 	return mBeaconList;
-    }
-
-    public CallOut getCallOut() {
-	Log.i(TAG, newAccu.class.getSimpleName() + ": getCallOut");
-	return callOut;
     }
 
     // Main System listeners list related code
