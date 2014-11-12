@@ -17,7 +17,7 @@ public class AutoModeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_pfd);
+		setContentView(R.layout.activity_auto);
 		
 		GoogleMap googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		
