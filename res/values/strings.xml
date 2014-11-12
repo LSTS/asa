@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_manual_stabilized_mode">Manual/Stabilized Mode</string>
     <string name="title_activity_pfd">PFDActivity</string>
+    <string name="gmapsApiKey">AIzaSyBGWlazHgLooksCgatg7rYSImy264Y0HfI</string>
 
 </resources>
