@@ -147,7 +147,7 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage>
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			Log.e("ERROR","ERROR IN MESSAGE PROCESSING, IGNORING MESSAGE: "+e.getMessage());
+			Log.e("IMCprocessMessage","ERROR IN MESSAGE PROCESSING, IGNORING MESSAGE: "+e.getMessage());
 //			Log.e("ERROR",message.toString());
 			return;
 		}
