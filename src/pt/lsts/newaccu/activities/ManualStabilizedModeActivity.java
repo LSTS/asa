@@ -3,6 +3,7 @@ package pt.lsts.newaccu.activities;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.feedback.CallOut;
 import pt.lsts.newaccu.fragments.SoundControlFragment;
+
 import pt.lsts.newaccu.managers.SoundManager;
 import pt.lsts.newaccu.ui.components.VerticalSeekBar;
 import pt.lsts.newaccu.util.AccuTimer;
@@ -41,31 +42,32 @@ public class ManualStabilizedModeActivity extends FragmentActivity
 	SoundManager soundManager = SoundManager.getInstance();
 	SoundControlFragment soundControlFragment=null;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.fragment_container_manual_stabilized);
 		
-		loadSoundControlFragment(savedInstanceState);
-		loadVideoViewFragment(savedInstanceState);
-		
-	}
-	
-	public void loadVideoViewFragment(Bundle savedInstanceState){
-		
-		
+		loadFragments(savedInstanceState);
 		
 	}
 	
-	public void loadSoundControlFragment(Bundle savedInstanceState){
-        FrameLayout frame = new FrameLayout(this);
-        frame.setId(R.id.fragment_sound_control);
-        setContentView(frame, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-
-        if (savedInstanceState == null) {
-            soundControlFragment = new SoundControlFragment(this.getApplicationContext());
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.add(R.id.fragment_sound_control, soundControlFragment).commit();
+	public void loadFragments(Bundle savedInstanceState){
+		if (findViewById(R.id.fragment_container_manual_stabilized) != null) {
+            if (savedInstanceState != null) {
+                return;//restoring state
+            }
+            loadSoundControlFragment();
         }
+	}
+	
+	private void loadSoundControlFragment(){
+        // Create a new Fragment to be placed in the activity layout
+        soundControlFragment = new SoundControlFragment(this.getApplicationContext());
+        
+        // Add the fragment to the 'fragment_container' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container_manual_stabilized, soundControlFragment).commit();
 	}
 	
 	
@@ -90,7 +92,8 @@ public class ManualStabilizedModeActivity extends FragmentActivity
 	
 	public void back(){
 		super.onBackPressed();
-		soundControlFragment.shutdown();
+		if (soundControlFragment!=null)
+			soundControlFragment.shutdown();
 	}
 
 	@Override
