@@ -3,7 +3,7 @@ package pt.lsts.newaccu.activities;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.feedback.CallOut;
 import pt.lsts.newaccu.fragments.SoundControlFragment;
-
+import pt.lsts.newaccu.fragments.VideoViewFragment;
 import pt.lsts.newaccu.managers.SoundManager;
 import pt.lsts.newaccu.ui.components.VerticalSeekBar;
 import pt.lsts.newaccu.util.AccuTimer;
@@ -34,14 +34,14 @@ import android.support.v4.app.FragmentTransaction;
 
 
 public class ManualStabilizedModeActivity extends FragmentActivity
-		implements SoundControlFragment.OnFragmentInteractionListener {
+		implements SoundControlFragment.OnFragmentInteractionListener, VideoViewFragment.OnFragmentInteractionListener {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
 	CallOut callOut;
 	SoundManager soundManager = SoundManager.getInstance();
 	SoundControlFragment soundControlFragment=null;
-	
+	VideoViewFragment videoViewFragment =null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,18 @@ public class ManualStabilizedModeActivity extends FragmentActivity
             if (savedInstanceState != null) {
                 return;//restoring state
             }
+            loadVideoViewFragment();
             loadSoundControlFragment();
         }
+	}
+	
+	private void loadVideoViewFragment(){
+        // Create a new Fragment to be placed in the activity layout
+        videoViewFragment = new VideoViewFragment(this.getApplicationContext());
+        
+        // Add the fragment to the 'fragment_container' FrameLayout
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container_manual_stabilized, videoViewFragment).commit();
 	}
 	
 	private void loadSoundControlFragment(){
