@@ -46,7 +46,7 @@ public class CallOut implements IMCSubscriber{
 		initCallOutIntervals();
 		initTimers();
 		initTextToSpeech();
-		if (soundManager.checkMute())
+		if (!soundManager.checkMute())
 			startCallOuts();
 	}
 	
