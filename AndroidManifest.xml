@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="CallOutConcept-8-gaf89c5c-dirty (master)" >
+    android:versionName="CallOutConcept-9-g77b6432-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
