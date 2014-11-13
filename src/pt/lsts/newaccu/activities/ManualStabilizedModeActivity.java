@@ -17,8 +17,7 @@ import android.widget.ImageButton;
 import android.support.v4.app.FragmentActivity;
 
 
-public class ManualStabilizedModeActivity extends FragmentActivity
-		implements SoundControlFragment.OnFragmentInteractionListener, VideoViewFragment.OnFragmentInteractionListener {
+public class ManualStabilizedModeActivity extends FragmentActivity{
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
@@ -82,11 +81,6 @@ public class ManualStabilizedModeActivity extends FragmentActivity
 		super.onBackPressed();
 		if (soundControlFragment!=null)
 			soundControlFragment.shutdown();
-	}
-
-	@Override
-	public void onFragmentInteraction(Uri uri){
-		
 	}
 
 }

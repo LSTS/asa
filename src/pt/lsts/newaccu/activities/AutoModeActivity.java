@@ -9,8 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 
-public class AutoModeActivity extends FragmentActivity 
-		implements GmapFragment.OnFragmentInteractionListener{
+public class AutoModeActivity extends FragmentActivity{
 
 	GmapFragment gmapFragment=null;
 	
@@ -36,10 +35,6 @@ public class AutoModeActivity extends FragmentActivity
         gmapFragment = new GmapFragment(this.getApplicationContext());
         getSupportFragmentManager().beginTransaction()
         	.add(R.id.fragment_container_auto, gmapFragment).commit();
-	}
-	
-	public void onFragmentInteraction(Uri uri){
-		
 	}
 	
 }
