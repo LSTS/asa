@@ -16,70 +16,72 @@ import android.widget.ImageButton;
 
 import android.support.v4.app.FragmentActivity;
 
-
-public class ManualStabilizedModeActivity extends FragmentActivity{
+public class ManualStabilizedModeActivity extends FragmentActivity {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
 	CallOut callOut;
 	SoundManager soundManager = SoundManager.getInstance();
-	SoundControlFragment soundControlFragment=null;
-	VideoViewFragment videoViewFragment =null;
-	
+	SoundControlFragment soundControlFragment = null;
+	VideoViewFragment videoViewFragment = null;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
-		
+
 		loadFragments(savedInstanceState);
-		
+
 	}
-	
-	public void loadFragments(Bundle savedInstanceState){
+
+	public void loadFragments(Bundle savedInstanceState) {
 		if (findViewById(R.id.fragment_container_manual_stabilized) != null) {
-            if (savedInstanceState != null) {
-                return;//restoring state
-            }
-            loadVideoViewFragment();
-            loadSoundControlFragment();
-        }
+			if (savedInstanceState != null) {
+				return;// restoring state
+			}
+			loadVideoViewFragment();
+			loadSoundControlFragment();
+		}
 	}
-	
-	private void loadVideoViewFragment(){
-        videoViewFragment = new VideoViewFragment(this.getApplicationContext());
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_manual_stabilized, videoViewFragment).commit();
+
+	private void loadVideoViewFragment() {
+		videoViewFragment = new VideoViewFragment(this.getApplicationContext());
+		getSupportFragmentManager()
+				.beginTransaction()
+				.add(R.id.fragment_container_manual_stabilized,
+						videoViewFragment).commit();
 	}
-	
-	private void loadSoundControlFragment(){
-        soundControlFragment = new SoundControlFragment(this.getApplicationContext());
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container_manual_stabilized, soundControlFragment).commit();
+
+	private void loadSoundControlFragment() {
+		soundControlFragment = new SoundControlFragment(
+				this.getApplicationContext());
+		getSupportFragmentManager()
+				.beginTransaction()
+				.add(R.id.fragment_container_manual_stabilized,
+						soundControlFragment).commit();
 	}
-	
-	
+
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 	}
-	
+
 	@Override
 	public void onBackPressed() {
-		new AlertDialog.Builder(this)
-        .setTitle("Exit")
-        .setMessage("Are you sure you want to exit?")
-        .setNegativeButton(android.R.string.no, null)
-        .setNegativeButton(android.R.string.yes, new OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-            	back();
-            }
-        }).create().show();
-		
+		new AlertDialog.Builder(this).setTitle("Exit")
+				.setMessage("Are you sure you want to exit?")
+				.setNegativeButton(android.R.string.no, null)
+				.setNegativeButton(android.R.string.yes, new OnClickListener() {
+					public void onClick(DialogInterface arg0, int arg1) {
+						back();
+					}
+				}).create().show();
+
 	}
-	
-	public void back(){
+
+	public void back() {
 		super.onBackPressed();
-		if (soundControlFragment!=null)
+		if (soundControlFragment != null)
 			soundControlFragment.shutdown();
 	}
 

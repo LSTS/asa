@@ -22,21 +22,21 @@ import android.view.ViewGroup;
  * A simple {@link Fragment} subclass. Activities that contain this fragment
  * must implement the {@link GmapFragment.OnFragmentInteractionListener}
  * interface to handle interaction events. Use the
- * {@link GmapFragment#newInstance} factory method to create an instance of
- * this fragment.
+ * {@link GmapFragment#newInstance} factory method to create an instance of this
+ * fragment.
  *
  */
 public class GmapFragment extends Fragment {
-	
+
 	Context context;
-	GoogleMap googleMap=null;
+	GoogleMap googleMap = null;
 
 	public GmapFragment() {
 		// Required empty public constructor
 	}
-	
+
 	public GmapFragment(Context context) {
-		this.context=context;
+		this.context = context;
 	}
 
 	@Override
@@ -61,9 +61,10 @@ public class GmapFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 	}
-	
-	public void startGmap(){
-		googleMap = ((SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map)).getMap();
+
+	public void startGmap() {
+		googleMap = ((SupportMapFragment) getChildFragmentManager()
+				.findFragmentById(R.id.map)).getMap();
 	}
 
 }

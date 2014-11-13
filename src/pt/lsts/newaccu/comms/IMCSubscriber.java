@@ -4,6 +4,7 @@ import pt.lsts.imc.IMCMessage;
 
 /**
  * Interface that a class should implement to receive IMCMessages
+ * 
  * @author jqcorreia
  *
  */

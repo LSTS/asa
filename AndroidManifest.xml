@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="CallOutConcept-13-g91f0f58-dirty (master)" >
+    android:versionName="Fragments-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -14,15 +14,13 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
-        <meta-data 
+        <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/gmapsApiKey" />
-        
-         <meta-data 
+        <meta-data
             android:name="com.google.android.gms.version"
-     		android:value="@integer/google_play_services_version" />
-	        
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" >
@@ -42,13 +40,12 @@
         <activity
             android:name="pt.lsts.newaccu.activities.AutoModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_pfd" 
+            android:label="@string/title_activity_pfd"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
-        
     </application>
-    
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -59,6 +56,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 </manifest>

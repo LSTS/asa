@@ -21,16 +21,16 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 public class VideoViewFragment extends Fragment {
-	
+
 	Context context;
 	VideoView videoView;
 
 	public VideoViewFragment() {
 		// Required empty public constructor
 	}
-	
-	public VideoViewFragment(Context context){
-		this.context=context;
+
+	public VideoViewFragment(Context context) {
+		this.context = context;
 	}
 
 	@Override
@@ -57,18 +57,19 @@ public class VideoViewFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 	}
-	
+
 	@Override
-	public void onStart(){
+	public void onStart() {
 		super.onStart();
 		setVideoViewClick();
 	}
-	
-	public void setVideoViewClick(){
+
+	public void setVideoViewClick() {
 		videoView.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Toast.makeText(context, "videoView Touched", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "videoView Touched", Toast.LENGTH_SHORT)
+						.show();
 				return false;
 			}
 		});

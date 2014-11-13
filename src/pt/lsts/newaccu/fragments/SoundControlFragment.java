@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import android.support.v4.app.Fragment;
 
-
 public class SoundControlFragment extends Fragment {
 
 	Context context;
@@ -32,9 +31,9 @@ public class SoundControlFragment extends Fragment {
 	public SoundControlFragment() {
 		// Required empty public constructor
 	}
-	
+
 	public SoundControlFragment(Context context) {
-		this.context=context;
+		this.context = context;
 		callOut = new CallOut(context);
 	}
 
@@ -63,74 +62,78 @@ public class SoundControlFragment extends Fragment {
 	public void onDetach() {
 		super.onDetach();
 	}
-	
+
 	@Override
-	public void onStart(){
+	public void onStart() {
 		super.onStart();
 		setVolumeControl();
 		callOut.startCallOuts();
-		
-	}
-
-	public void setVolumeControl(){
-		volControl = (VerticalSeekBar) getView().findViewById(R.id.seekBarVolume);
-	    volControl.setMax(soundManager.getMaxVolume());
-	    volControl.setProgress(soundManager.getCurrentVolume());
-	    setVolumeControlChanger(volControl, audioManager);
-	    setImageButtonMute();
 
 	}
-	
-	public void setImageButtonMute(){
+
+	public void setVolumeControl() {
+		volControl = (VerticalSeekBar) getView().findViewById(
+				R.id.seekBarVolume);
+		volControl.setMax(soundManager.getMaxVolume());
+		volControl.setProgress(soundManager.getCurrentVolume());
+		setVolumeControlChanger(volControl, audioManager);
+		setImageButtonMute();
+
+	}
+
+	public void setImageButtonMute() {
 		setImageButtonMuteIcon();
 		imageButtonMute.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	            if (soundManager.checkMute())
-	            	unmute();
-	            else
-	            	mute();
-	            //showToastWithVolume();
-	        }
-	    });
+			@Override
+			public void onClick(View v) {
+				if (soundManager.checkMute())
+					unmute();
+				else
+					mute();
+				// showToastWithVolume();
+			}
+		});
 	}
-	
-	public void setImageButtonMuteIcon(){
+
+	public void setImageButtonMuteIcon() {
 		if (soundManager.checkMute())
 			imageButtonMute.setImageResource(R.drawable.sound_off);
 		else
 			imageButtonMute.setImageResource(R.drawable.sound_on);
 	}
-	
-	public void setVolumeControlChanger(VerticalSeekBar volControl, final AudioManager audioManager){
-		volControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-		    @Override
-		    public void onStopTrackingTouch(SeekBar arg0) {
-		    }
-		
-		    @Override
-		    public void onStartTrackingTouch(SeekBar arg0) {
-		    }
-		
-		    @Override
-		    public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-		        unmute();
-		    	soundManager.setCurrentVolume(arg1);
-		    	adjustVolumeBarAndIcon();
-		    	//showToastWithVolume();
-		    }
-		});
+
+	public void setVolumeControlChanger(VerticalSeekBar volControl,
+			final AudioManager audioManager) {
+		volControl
+				.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+					@Override
+					public void onStopTrackingTouch(SeekBar arg0) {
+					}
+
+					@Override
+					public void onStartTrackingTouch(SeekBar arg0) {
+					}
+
+					@Override
+					public void onProgressChanged(SeekBar arg0, int arg1,
+							boolean arg2) {
+						unmute();
+						soundManager.setCurrentVolume(arg1);
+						adjustVolumeBarAndIcon();
+						// showToastWithVolume();
+					}
+				});
 	}
-	
-	private void adjustVolumeBarAndIcon(){
+
+	private void adjustVolumeBarAndIcon() {
 		int curVolume = soundManager.getCurrentVolume();
-	    volControl.setProgress(curVolume);
+		volControl.setProgress(curVolume);
 		setImageButtonMuteIcon();
 	}
-	
+
 	public void mute() {
-	    soundManager.mute();
-	    setImageButtonMuteIcon();
+		soundManager.mute();
+		setImageButtonMuteIcon();
 	}
 
 	public void unmute() {
@@ -138,15 +141,15 @@ public class SoundControlFragment extends Fragment {
 		setImageButtonMuteIcon();
 		callOut.startCallOuts();
 	}
-	
-	public void shutdown(){
+
+	public void shutdown() {
 		unmute();
 		callOut.shutdown();
 	}
-	
-	public void showToastWithVolume(){
+
+	public void showToastWithVolume() {
 		int vol = soundManager.getCurrentVolume();
-	    Toast.makeText(context, "vol="+vol, Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "vol=" + vol, Toast.LENGTH_LONG).show();
 	}
-	
+
 }

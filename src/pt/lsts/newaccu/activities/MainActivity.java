@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	
+
 	Button buttonManualStabilized;
 	Button buttonPFD;
 
@@ -23,32 +23,34 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		buttonManualStabilized =(Button)findViewById(R.id.buttonManualStabilized);
+
+		buttonManualStabilized = (Button) findViewById(R.id.buttonManualStabilized);
 		setButtonManualStabilized();
-		buttonPFD =(Button)findViewById(R.id.buttonPfd);
+		buttonPFD = (Button) findViewById(R.id.buttonPfd);
 		setButtonPfd();
 
 	}
-	
-	public void setButtonManualStabilized(){
+
+	public void setButtonManualStabilized() {
 		buttonManualStabilized.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	            Intent i = new Intent(getApplicationContext(),ManualStabilizedModeActivity.class);
-	            startActivity(i);
-	        }
-	    });
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),
+						ManualStabilizedModeActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 
-	public void setButtonPfd(){
-	    buttonPFD.setOnClickListener(new View.OnClickListener() {
-	        @Override
-	        public void onClick(View v) {
-	            Intent i = new Intent(getApplicationContext(),AutoModeActivity.class);
-	            startActivity(i);
-	        }
-	    });
+	public void setButtonPfd() {
+		buttonPFD.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),
+						AutoModeActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 
 	@Override
@@ -69,48 +71,47 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 	@Override
 	public void onPause() {
-	    super.onPause();  // Always call the superclass method first
-	    pauseNewAccu();
+		super.onPause(); // Always call the superclass method first
+		pauseNewAccu();
 	}
-	
+
 	@Override
 	public void onResume() {
-	    super.onResume();  // Always call the superclass method first
-	    resumeNewAccu();
+		super.onResume(); // Always call the superclass method first
+		resumeNewAccu();
 	}
-	
+
 	@Override
 	public void onBackPressed() {
-		new AlertDialog.Builder(this)
-        .setTitle("Exit")
-        .setMessage("Are you sure you want to exit?")
-        .setNegativeButton(android.R.string.no, null)
-        .setNegativeButton(android.R.string.yes, new OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-            	back();
-            }
-        }).create().show();
-		
+		new AlertDialog.Builder(this).setTitle("Exit")
+				.setMessage("Are you sure you want to exit?")
+				.setNegativeButton(android.R.string.no, null)
+				.setNegativeButton(android.R.string.yes, new OnClickListener() {
+					public void onClick(DialogInterface arg0, int arg1) {
+						back();
+					}
+				}).create().show();
+
 	}
-	
-	public void back(){
+
+	public void back() {
 		super.onBackPressed();
 		onPause();
 	}
-	
-	public void pauseNewAccu(){
-		if (newAccu.getInstance()!=null)
+
+	public void pauseNewAccu() {
+		if (newAccu.getInstance() != null)
 			if (newAccu.getInstance().started)
-		    	newAccu.getInstance().pause();
+				newAccu.getInstance().pause();
 	}
-	
-	public void resumeNewAccu(){
-		if (newAccu.getInstance()!=null)
+
+	public void resumeNewAccu() {
+		if (newAccu.getInstance() != null)
 			if (!newAccu.getInstance().started)
-		    	newAccu.getInstance().start();
+				newAccu.getInstance().start();
 	}
-	
+
 }
