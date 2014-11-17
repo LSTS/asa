@@ -77,7 +77,7 @@ public class Settings {
 			String parts[] = key.split("_");
 			String result = parts[1];
 			for (int i = 2; i < parts.length; i++)
-				result += "_" + parts[i];
+				result += " " + parts[i];
 			return result;
 		}
 		return defValue;

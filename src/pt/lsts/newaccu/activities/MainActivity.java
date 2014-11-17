@@ -62,10 +62,11 @@ public class MainActivity extends Activity {
 	public void test2() {
 
 		Settings.clear();
-		Settings.putString("cat1_key1", "StringVal");
-		Settings.putInt("cat2_key2", 123);
-		Settings.putBoolean("cat1_key3_underscore", true);
-		Settings.putBoolean("cat2_key4_1_20_a_b_c_def", false);
+		Settings.putBoolean("audio_global_audio", true);
+		Settings.putBoolean("audio_Altitude_audio", false);
+		Settings.putInt("audio_Altitude_Interval_in_seconds", 15);
+		Settings.putBoolean("audio_IAS_audio", false);
+		Settings.putInt("audio_IAS_Interval_in_seconds", 5);
 
 	}
 
