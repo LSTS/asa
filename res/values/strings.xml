@@ -8,5 +8,6 @@
     <string name="title_activity_pfd">PFDActivity</string>
     <string name="gmapsApiKey">AIzaSyBGWlazHgLooksCgatg7rYSImy264Y0HfI</string>
     <string name="descriptionImageButton">ImageButton for Mute</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

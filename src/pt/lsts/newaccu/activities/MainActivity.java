@@ -1,23 +1,32 @@
 package pt.lsts.newaccu.activities;
 
+import java.util.Map;
+
+import pt.lsts.newaccu.App;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.newAccu;
-
+import pt.lsts.newaccu.util.settings.Settings;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	Button buttonManualStabilized;
 	Button buttonPFD;
+	Button buttonSettingsCheckList;
+	Button buttonTest;
+	Button buttonTest2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,65 @@ public class MainActivity extends Activity {
 		setButtonManualStabilized();
 		buttonPFD = (Button) findViewById(R.id.buttonPfd);
 		setButtonPfd();
+		buttonSettingsCheckList = (Button) findViewById(R.id.buttonSettingsCheckList);
+		setButtonSettingsCheckList();
+		buttonTest = (Button) findViewById(R.id.buttonTest);
+		setButtonTest();
+		buttonTest2 = (Button) findViewById(R.id.buttonTest2);
+		setButtonTest2();
 
+	}
+
+	public void test() {
+		// showToast(sharedPreferences.getString("username", "NA"));
+
+		Map<String, ?> keys = Settings.getAll();
+		for (Map.Entry<String, ?> entry : keys.entrySet()) {
+			String type = entry.getValue().getClass().toString();
+			String key = entry.getKey();
+			String val = entry.getValue().toString();
+			showToast(type + ";" + key + ";" + val);
+		}
+
+	}
+
+	public void test2() {
+
+		Settings.clear();
+		Settings.putString("cat1_key1", "StringVal");
+		Settings.putInt("cat2_key2", 123);
+		Settings.putBoolean("cat1_key3_underscore", true);
+		Settings.putBoolean("cat2_key4_1_20_a_b_c_def", false);
+
+	}
+
+	public void setButtonTest() {
+		buttonTest.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				test();
+			}
+		});
+	}
+
+	public void setButtonTest2() {
+		buttonTest2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				test2();
+			}
+		});
+	}
+
+	public void setButtonSettingsCheckList() {
+		buttonSettingsCheckList.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getApplicationContext(),
+						SettingsActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 
 	public void setButtonManualStabilized() {
@@ -112,6 +179,11 @@ public class MainActivity extends Activity {
 		if (newAccu.getInstance() != null)
 			if (!newAccu.getInstance().started)
 				newAccu.getInstance().start();
+	}
+
+	public void showToast(String text) {
+		Toast.makeText(this.getApplicationContext(), text, Toast.LENGTH_SHORT)
+				.show();
 	}
 
 }
