@@ -14,6 +14,7 @@ import android.text.InputType;
 public class SettingsFactory {
 
 	public static void populate(PreferenceCategory category, Context context) {
+		createHideEntry(category, context);
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			if (!Settings.getCategory(entry.getKey(), "ERROR").equals(
@@ -32,6 +33,47 @@ public class SettingsFactory {
 				createEntry(category, entry.getKey(),
 						(Boolean) entry.getValue(), context);
 		}
+	}
+
+	public static void createHideEntry(final PreferenceCategory category,
+			final Context context) {
+		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
+		checkBoxPref.setTitle("Hide Category");
+		checkBoxPref.setChecked(false);
+
+		checkBoxPref
+				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+					@Override
+					public boolean onPreferenceChange(Preference preference,
+							Object newValue) {
+						hideCategory(category, context);
+						return true;
+					}
+				});
+
+		category.addPreference(checkBoxPref);
+	}
+
+	public static void hideCategory(final PreferenceCategory category,
+			final Context context) {
+		category.removeAll();
+		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
+		checkBoxPref.setTitle("HIDE CATEGORY");
+		checkBoxPref.setChecked(true);
+
+		checkBoxPref
+				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+					@Override
+					public boolean onPreferenceChange(Preference preference,
+							Object newValue) {
+
+						category.removeAll();
+						populate(category, context);
+
+						return true;
+					}
+				});
+		category.addPreference(checkBoxPref);
 	}
 
 	public static EditTextPreference createEntry(PreferenceCategory category,
@@ -101,9 +143,20 @@ public class SettingsFactory {
 		return false;
 	}
 
-	public static PreferenceCategory createCategory(String name, Context context) {
-		PreferenceCategory category = new PreferenceCategory(context);
+	public static PreferenceCategory createCategory(String name,
+			final Context context) {
+		final PreferenceCategory category = new PreferenceCategory(context);
 		category.setTitle(name);
+		category.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				if (category.getPreferenceCount() > 0)
+					category.removeAll();
+				else
+					populate(category, context);
+				return false;
+			}
+		});
 		return category;
 	}
 
