@@ -1,27 +1,15 @@
 package pt.lsts.newaccu.activities;
 
-import java.util.Map;
+import pt.lsts.newaccu.util.settings.SettingsFactory;
+
 import java.util.Vector;
 
-import pt.lsts.newaccu.App;
-import pt.lsts.newaccu.R;
-import pt.lsts.newaccu.util.settings.Settings;
-import pt.lsts.newaccu.util.settings.SettingsFactory;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.EditTextPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
-import android.view.View;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -35,7 +23,7 @@ public class SettingsActivity extends PreferenceActivity {
 
 		// Settings.clear();
 
-		screen = getPreferenceManager().createPreferenceScreen(this);
+		screen = getPreferenceManager().createPreferenceScreen(this);;
 
 		Vector<PreferenceCategory> preferenceCategories = SettingsFactory
 				.fetchCategories(this);
@@ -44,12 +32,14 @@ public class SettingsActivity extends PreferenceActivity {
 			screen.addPreference(pereferenceCategory);
 		for (PreferenceCategory pereferenceCategory : preferenceCategories)
 			SettingsFactory.populate(pereferenceCategory, this);
+		
+		Vector<Preference> preferenceButtons = SettingsFactory
+				.fetchPreferencesButtons(this);
+		
+		for (Preference preferenceButton : preferenceButtons)
+			screen.addPreference(preferenceButton);
 
 		setPreferenceScreen(screen);
-	}
-
-	public void hideCategory(PreferenceCategory preferenceCategory) {
-		screen.removePreference(preferenceCategory);
 	}
 
 }
