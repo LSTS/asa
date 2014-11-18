@@ -1,6 +1,7 @@
 package pt.lsts.newaccu;
 
 import pt.lsts.imc.IMCDefinition;
+import pt.lsts.newaccu.util.FileOperations;
 import android.app.Application;
 import android.content.Context;
 import android.media.AudioManager;
@@ -29,6 +30,8 @@ public class App extends Application {
 
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		pt.lsts.newaccu.util.settings.Settings.initSettings(getBaseContext());
+		FileOperations.copySpecificAsset(getBaseContext(),
+				"default_settings.csv");
 
 		// Sequence of calls needed to properly initialize ACCU
 		newAccu.getInstance(this);
