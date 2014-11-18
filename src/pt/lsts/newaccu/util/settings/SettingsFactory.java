@@ -180,10 +180,10 @@ public class SettingsFactory {
 			preferenceCategories.add(createCategory(entry, context));
 		return preferenceCategories;
 	}
-	
 
-	public static Vector<Preference> fetchPreferencesButtons(final Context context){
-		Vector<Preference> preferenceButtons = new Vector<Preference>(); 
+	public static Vector<Preference> fetchPreferencesButtons(
+			final Context context) {
+		Vector<Preference> preferenceButtons = new Vector<Preference>();
 		preferenceButtons.add(createSaveButton(context));
 		preferenceButtons.add(createLoadButton(context));
 		preferenceButtons.add(createRestoreButton(context));
@@ -191,10 +191,11 @@ public class SettingsFactory {
 
 	}
 
-	public static Preference createSaveButton(final Context context){
+	public static Preference createSaveButton(final Context context) {
 		Preference preference = new Preference(context);
 		preference.setTitle("Save Profile");
-		preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+		preference
+				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					@Override
 					public boolean onPreferenceClick(Preference preference) {
 						save(context);
@@ -203,11 +204,12 @@ public class SettingsFactory {
 				});
 		return preference;
 	}
-	
-	public static Preference createLoadButton(final Context context){
+
+	public static Preference createLoadButton(final Context context) {
 		Preference preference = new Preference(context);
 		preference.setTitle("Load Profile");
-		preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+		preference
+				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					@Override
 					public boolean onPreferenceClick(Preference preference) {
 						load(context);
@@ -216,11 +218,12 @@ public class SettingsFactory {
 				});
 		return preference;
 	}
-	
-	public static Preference createRestoreButton(final Context context){
+
+	public static Preference createRestoreButton(final Context context) {
 		Preference preference = new Preference(context);
 		preference.setTitle("RESTORE DEFAULTS");
-		preference.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+		preference
+				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 					@Override
 					public boolean onPreferenceClick(Preference preference) {
 						restoreDefaults(context);
@@ -229,59 +232,63 @@ public class SettingsFactory {
 				});
 		return preference;
 	}
-	
-	public static void restoreDefaults(final Context context){
+
+	public static void restoreDefaults(final Context context) {
 		new AlertDialog.Builder(context)
-			.setTitle("Restore Settings Default")
-			.setMessage("Are you sure you want to restore settings default?\nWARNING: this action is permenant")
-		   .setPositiveButton("YES", new DialogInterface.OnClickListener() {
-		   public void onClick(DialogInterface dialog, int id) {
+				.setTitle("Restore Settings Default")
+				.setMessage(
+						"Are you sure you want to restore settings default?\nWARNING: this action is permenant")
+				.setPositiveButton("YES",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								String result = Profile.restoreDefaults();
+								Toast.makeText(context, result,
+										Toast.LENGTH_SHORT).show();
+							}
+						})
+				.setNegativeButton("CANCEL",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
 
-		       }
-		   })
-		   .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-		   public void onClick(DialogInterface dialog, int id) {
-
-		   }
-		   }).create().show();
+							}
+						}).create().show();
 	}
 
-	public static void load(final Context context){
-		final Vector<String> vector = Profile.getProfilesAvailable();
-		final String[] array = new String[vector.size()];
-		vector.toArray(array);
-		new AlertDialog.Builder(context)
-				.setTitle("Choose a Profile:")
-	           .setItems(array, new DialogInterface.OnClickListener() {
-	               public void onClick(DialogInterface dialog, int which) {
-	            	   String result = Profile.load(array[which]);
-	            	   Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
-	               }
-	    }).create().show();
+	public static void load(final Context context) {
+		final String[] array = Profile.getProfilesAvailable();
+		new AlertDialog.Builder(context).setTitle("Choose a Profile:")
+				.setItems(array, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						String result = Profile.load(array[which]);
+						Toast.makeText(context, result, Toast.LENGTH_SHORT)
+								.show();
+					}
+				}).create().show();
 	}
-	
-	public static void save(final Context context){
-		
+
+	public static void save(final Context context) {
+
 		final EditText input = new EditText(context);
 		new AlertDialog.Builder(context)
-			.setTitle("Save Profile")
-			.setMessage("Select a name for Profile:")
-			.setView(input)
-			.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
-				  Editable value = input.getText();
-				  String result=Profile.save(value.toString());
-				  Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
-				  }
+				.setTitle("Save Profile")
+				.setMessage("Select a name for Profile:")
+				.setView(input)
+				.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						Editable value = input.getText();
+						String result = Profile.save(value.toString());
+						Toast.makeText(context, result, Toast.LENGTH_SHORT)
+								.show();
+					}
 				})
-			.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-			  public void onClick(DialogInterface dialog, int whichButton){
-				  //canceled
-			  }
-			}).create().show();
+				.setNegativeButton("Cancel",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int whichButton) {
+								// canceled
+							}
+						}).create().show();
 
 	}
-
-
 
 }

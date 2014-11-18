@@ -1,6 +1,6 @@
 type,category_key,value
-java.lang.boolean,audio_global_audio,true
-java.lang.boolean,audio_Altitude_audio,false
-java.lang.Integer,audio_Altitude_Interval_in_seconds,15
-java.lang.boolean,audio_IAS_audio,true
-java.lang.Integer,audio_IAS_Interval_in_seconds,5
+class java.lang.Boolean,audio_global_audio,true
+class java.lang.Boolean,audio_Altitude_audio,false
+class java.lang.Integer,audio_Altitude_Interval_in_seconds,15
+class java.lang.Boolean,audio_IAS_audio,true
+class java.lang.Integer,audio_IAS_Interval_in_seconds,5

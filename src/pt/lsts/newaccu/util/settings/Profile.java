@@ -1,22 +1,28 @@
 package pt.lsts.newaccu.util.settings;
 
+import pt.lsts.newaccu.util.FileOperations;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Map;
 import java.util.Vector;
 
-import pt.lsts.newaccu.util.FileOperations;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
 
 public class Profile {
-	
-	public static File dir = new File("/storage/emulated/0/data/newACCUdata/");
-	public static File defaultSettingsFile = new File(dir, "default_settings.csv");
-	
+
+	public static File mainDir = new File(
+			"/storage/emulated/0/Android/data/pt.lsts.newACCU/");
+	public static String defaultSettingsName = "default_settings.csv";
+	public static File defaultSettingsFile = new File(mainDir,
+			defaultSettingsName);
+	public static String firstLineInCsvFile = "type,category_key,value";
+
 	public static void copyAllAssets(Context context) {
 		AssetManager assetManager = context.getAssets();
 		String[] files = null;
@@ -30,8 +36,8 @@ public class Profile {
 			OutputStream out = null;
 			try {
 				in = assetManager.open(filename);
-				FileOperations.initDir(Profile.dir);
-				File outFile = new File(Profile.dir, filename);
+				FileOperations.initDir(Profile.mainDir);
+				File outFile = new File(Profile.mainDir, filename);
 				out = new FileOutputStream(outFile);
 				FileOperations.copyFile(in, out);
 				in.close();
@@ -60,8 +66,8 @@ public class Profile {
 				continue;
 			try {
 				in = assetManager.open(filename);
-				FileOperations.initDir(Profile.dir);
-				File outFile = new File(Profile.dir, filename);
+				FileOperations.initDir(Profile.mainDir);
+				File outFile = new File(Profile.mainDir, filename);
 				out = new FileOutputStream(outFile);
 				FileOperations.copyFile(in, out);
 				in.close();
@@ -78,16 +84,72 @@ public class Profile {
 		return false;
 	}
 
-	public static void load(String name){
-		
+	public static String restoreDefaults() {
+		return load(defaultSettingsName);
 	}
-	
-	public static void save(String name){
-		
+
+	public static String load(String name) {
+		File profile = new File(mainDir, name);
+		if (!profile.exists())
+			return "Profile file:\n" + name + "\nNot Available";
+		Vector<String> settings = FileOperations.readLines(profile);
+		if (!settings.get(0).equals(firstLineInCsvFile))
+			return "Invalid File";
+		settings.remove(0);// remove first description line
+		Settings.clear();
+		for (String setting : settings)
+			loadSetting(setting);
+		return "Load of file:\n" + name + "\nSucessful!";
 	}
-	
-	public static Vector<String> listProfilesAvailable(){
-		Vector<String> list = new Vector<String>();
-		return list;
+
+	public static void loadSetting(String setting) {
+		String parts[] = setting.split(",");
+		if (parts.length != 3) {
+			Log.e("loadSetting", "parts.length!=3");
+			Log.e("loadSetting", "Line not added:" + setting);
+			return;
+		}
+		String type = parts[0];
+		String key = parts[1];
+		String value = parts[2];
+		if (type.equals("class java.lang.String")) {
+			Settings.putString(key, value);
+			return;
+		}
+		if (type.equals("class java.lang.Integer")) {
+			Settings.putInt(key, Integer.parseInt(value));
+			return;
+		}
+		if (type.equals("class java.lang.Boolean")) {
+			Settings.putBoolean(key, Boolean.parseBoolean(value));
+			return;
+		}
+		Log.e("loadSetting", "Line not added:" + setting);
+
+	}
+
+	public static String save(String name) {
+		Vector<String> lines = new Vector<String>();
+		lines.add(firstLineInCsvFile);
+		Map<String, ?> keys = Settings.getAll();
+		if (keys.size() == 0) {
+			Log.e("save", "Settings.getAll().size()==0");
+			return "ERROR: settings empty";
+		}
+		File file = new File(mainDir, name + ".csv");
+		FileOperations.initDir(Profile.mainDir);
+		for (Map.Entry<String, ?> entry : keys.entrySet()) {
+			String type = entry.getValue().getClass().toString();
+			String key = entry.getKey();
+			String val = entry.getValue().toString();
+			String line = type + "," + key + "," + val;
+			lines.add(line);
+		}
+		FileOperations.writeLines(lines, file);
+		return "Save of file to:\n" + name + "\nSucessful!";
+	}
+
+	public static String[] getProfilesAvailable() {
+		return mainDir.list();
 	}
 }
