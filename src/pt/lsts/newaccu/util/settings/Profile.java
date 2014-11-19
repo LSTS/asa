@@ -150,6 +150,10 @@ public class Profile {
 	}
 
 	public static String[] getProfilesAvailable() {
-		return mainDir.list();
+		String[] filesArray = mainDir.list();
+		String extension = "csv";
+		String[] result = FileOperations.filterFilesByExtension(filesArray, extension); 
+		return result;
 	}
+	
 }
