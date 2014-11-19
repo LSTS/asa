@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.asa"
     android:versionCode="0"
-    android:versionName="ASA-dirty (master)" >
+    android:versionName="ASA-4-g6ee974e-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
