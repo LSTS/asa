@@ -64,7 +64,7 @@ public class SettingsFactory {
 			final Context context) {
 		category.removeAll();
 		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
-		checkBoxPref.setTitle("HIDE CATEGORY");
+		checkBoxPref.setTitle("Hide Category");
 		checkBoxPref.setChecked(true);
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
@@ -170,6 +170,7 @@ public class SettingsFactory {
 		}
 		for (String entry : categoriesStrings)
 			preferenceCategories.add(createCategory(entry, context));
+		preferenceCategories.add(createCategory("Profiles", context));
 		return preferenceCategories;
 	}
 

@@ -13,33 +13,42 @@ import android.preference.PreferenceScreen;
 
 public class SettingsActivity extends PreferenceActivity {
 
-	private Editor sharedPreferencesEditor;
-
 	PreferenceScreen screen;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// Settings.clear();
-
-		screen = getPreferenceManager().createPreferenceScreen(this);;
+		screen = getPreferenceManager().createPreferenceScreen(this);
 
 		Vector<PreferenceCategory> preferenceCategories = SettingsFactory
 				.fetchCategories(this);
 
-		for (PreferenceCategory pereferenceCategory : preferenceCategories)
-			screen.addPreference(pereferenceCategory);
-		for (PreferenceCategory pereferenceCategory : preferenceCategories)
-			SettingsFactory.populate(pereferenceCategory, this);
-		
-		Vector<Preference> preferenceButtons = SettingsFactory
-				.fetchPreferencesButtons(this);
-		
-		for (Preference preferenceButton : preferenceButtons)
-			screen.addPreference(preferenceButton);
+		populateCategories(preferenceCategories);
+
+		for (PreferenceCategory preferenceCategory : preferenceCategories)
+			screen.addPreference(preferenceCategory);
 
 		setPreferenceScreen(screen);
+	}
+
+	public void populateCategories(
+			Vector<PreferenceCategory> preferenceCategories) {
+		for (PreferenceCategory preferenceCategory : preferenceCategories) {
+			if (preferenceCategory.getTitle().equals("Profiles")) {
+				createProfileCategory(preferenceCategory);
+				continue;
+			}
+			SettingsFactory.populate(preferenceCategory, this);
+		}
+	}
+
+	public void createProfileCategory(PreferenceCategory preferenceCategory) {
+		Vector<Preference> preferenceButtons = SettingsFactory
+				.fetchPreferencesButtons(this);
+
+		for (Preference preferenceButton : preferenceButtons)
+			preferenceCategory.addPreference(preferenceButton);
 	}
 
 }
