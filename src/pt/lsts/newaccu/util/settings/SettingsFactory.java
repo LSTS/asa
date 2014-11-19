@@ -3,9 +3,11 @@ package pt.lsts.newaccu.util.settings;
 import java.util.Map;
 import java.util.Vector;
 
+import pt.lsts.newaccu.activities.SettingsActivity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
@@ -46,7 +48,6 @@ public class SettingsFactory {
 		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
 		checkBoxPref.setTitle("Hide Category");
 		checkBoxPref.setChecked(false);
-
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 					@Override
@@ -56,7 +57,6 @@ public class SettingsFactory {
 						return true;
 					}
 				});
-
 		category.addPreference(checkBoxPref);
 	}
 
@@ -66,13 +66,11 @@ public class SettingsFactory {
 		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
 		checkBoxPref.setTitle("HIDE CATEGORY");
 		checkBoxPref.setChecked(true);
-
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 					@Override
 					public boolean onPreferenceChange(Preference preference,
 							Object newValue) {
-
 						category.removeAll();
 						populate(category, context);
 
@@ -111,12 +109,9 @@ public class SettingsFactory {
 
 	public static void createEntry(PreferenceCategory category,
 			final String key, Boolean val, Context context) {
-
 		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
 		checkBoxPref.setTitle(Settings.getKey(key, "ERROR"));
-		// checkBoxPref.setSummary("Val: "+val);
 		checkBoxPref.setChecked(val);
-
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 
@@ -130,12 +125,10 @@ public class SettingsFactory {
 						return result;
 					}
 				});
-
 		category.addPreference(checkBoxPref);
 	}
 
 	public static boolean changeValue(String key, Object newValue) {
-
 		if (newValue.getClass().equals(String.class)) {
 			return Settings.putString(key, (String) newValue);
 		}
@@ -145,7 +138,6 @@ public class SettingsFactory {
 		if (newValue.getClass().equals(Boolean.class)) {
 			return Settings.putBoolean(key, (Boolean) newValue);
 		}
-
 		return false;
 	}
 
@@ -244,6 +236,7 @@ public class SettingsFactory {
 								String result = Profile.restoreDefaults();
 								Toast.makeText(context, result,
 										Toast.LENGTH_SHORT).show();
+								regenerateActivity(context);
 							}
 						})
 				.setNegativeButton("CANCEL",
@@ -262,12 +255,12 @@ public class SettingsFactory {
 						String result = Profile.load(array[which]);
 						Toast.makeText(context, result, Toast.LENGTH_SHORT)
 								.show();
+						regenerateActivity(context);
 					}
 				}).create().show();
 	}
 
 	public static void save(final Context context) {
-
 		final EditText input = new EditText(context);
 		new AlertDialog.Builder(context)
 				.setTitle("Save Profile")
@@ -288,7 +281,11 @@ public class SettingsFactory {
 								// canceled
 							}
 						}).create().show();
+	}
 
+	public static void regenerateActivity(Context context) {
+		Intent i = new Intent(context, SettingsActivity.class);
+		context.startActivity(i);
 	}
 
 }
