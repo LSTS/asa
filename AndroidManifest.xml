@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.newaccu"
     android:versionCode="0"
-    android:versionName="Fragments-11-ge0047c3-dirty (master)" >
+    android:versionName="Settings-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"

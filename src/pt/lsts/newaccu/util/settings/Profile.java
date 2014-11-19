@@ -152,8 +152,9 @@ public class Profile {
 	public static String[] getProfilesAvailable() {
 		String[] filesArray = mainDir.list();
 		String extension = "csv";
-		String[] result = FileOperations.filterFilesByExtension(filesArray, extension); 
+		String[] result = FileOperations.filterFilesByExtension(filesArray,
+				extension);
 		return result;
 	}
-	
+
 }

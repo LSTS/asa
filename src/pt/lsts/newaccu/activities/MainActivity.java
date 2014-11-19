@@ -1,19 +1,17 @@
 package pt.lsts.newaccu.activities;
 
-import java.util.Map;
-
-import pt.lsts.newaccu.App;
 import pt.lsts.newaccu.R;
 import pt.lsts.newaccu.newAccu;
 import pt.lsts.newaccu.util.settings.Settings;
+
+import java.util.Map;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;

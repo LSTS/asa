@@ -4,8 +4,6 @@ import java.util.Map;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 
 public class Settings {

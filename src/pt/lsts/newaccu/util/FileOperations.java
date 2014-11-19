@@ -105,16 +105,17 @@ public class FileOperations {
 			Log.e("writeLine", e.getMessage());
 		}
 	}
-	
-	public static String[] filterFilesByExtension(String[] filesArray, String extension){
+
+	public static String[] filterFilesByExtension(String[] filesArray,
+			String extension) {
 		Vector<String> filesVector = new Vector<String>();
-		for (String file : filesArray){
-			if (file.endsWith("."+extension))
+		for (String file : filesArray) {
+			if (file.endsWith("." + extension))
 				filesVector.add(file);
 		}
 		String[] resultArray = new String[filesVector.size()];
-		for (int i=0;i<resultArray.length && i<filesVector.size();i++)
-			resultArray[i]=filesVector.get(i);
+		for (int i = 0; i < resultArray.length && i < filesVector.size(); i++)
+			resultArray[i] = filesVector.get(i);
 		return resultArray;
 	}
 
