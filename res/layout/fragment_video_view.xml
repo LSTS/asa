@@ -3,7 +3,7 @@
     android:id="@+id/fragment_video_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pt.lsts.newaccu.fragments.SoundControlFragment" >
+    tools:context="pt.lsts.asa.fragments.SoundControlFragment" >
 
     <VideoView
         android:id="@+id/videoViewFullscreen"

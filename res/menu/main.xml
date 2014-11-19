@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="pt.lsts.newaccu.MainActivity" >
+    tools:context="pt.lsts.asa.activities.MainActivity" >
 
     <item
         android:id="@+id/action_settings"

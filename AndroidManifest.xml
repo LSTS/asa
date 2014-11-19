@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pt.lsts.newaccu"
+    package="pt.lsts.asa"
     android:versionCode="0"
-    android:versionName="Settings-dirty (master)" >
+    android:versionName="Settings-1-g91d7fed-dirty (master)" >
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application
-        android:name=".App"
+        android:name="pt.lsts.asa.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -22,7 +22,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="pt.lsts.asa.activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,21 +31,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ManualStabilizedModeActivity"
+            android:name="pt.lsts.asa.activities.ManualStabilizedModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_manual_stabilized_mode"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name=".activities.AutoModeActivity"
+            android:name="pt.lsts.asa.activities.AutoModeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_pfd"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="pt.lsts.newaccu.activities.SettingsActivity"
+            android:name="pt.lsts.asa.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:noHistory="true" >
         </activity>

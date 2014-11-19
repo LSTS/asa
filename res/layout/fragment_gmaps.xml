@@ -3,7 +3,7 @@
     android:id="@+id/fragment_gmaps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pt.lsts.newaccu.fragments.GmapFragment" >
+    tools:context="pt.lsts.asa.fragments.GmapFragment" >
 
     <fragment 
 		android:id="@+id/map"
