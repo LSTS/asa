@@ -1,6 +1,6 @@
 package pt.lsts.asa.activities;
 
-import pt.lsts.asa.util.settings.SettingsFactory;
+import pt.lsts.asa.settings.SettingsFactory;
 
 import java.util.Vector;
 

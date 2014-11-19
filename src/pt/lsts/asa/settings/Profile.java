@@ -1,4 +1,4 @@
-package pt.lsts.asa.util.settings;
+package pt.lsts.asa.settings;
 
 import pt.lsts.asa.util.FileOperations;
 

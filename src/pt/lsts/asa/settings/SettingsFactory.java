@@ -1,4 +1,4 @@
-package pt.lsts.asa.util.settings;
+package pt.lsts.asa.settings;
 
 import java.util.Map;
 import java.util.Vector;

@@ -1,8 +1,8 @@
 package pt.lsts.asa;
 
+import pt.lsts.asa.settings.Profile;
+import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.util.FileOperations;
-import pt.lsts.asa.util.settings.Profile;
-import pt.lsts.asa.util.settings.Settings;
 import pt.lsts.imc.IMCDefinition;
 import android.app.Application;
 import android.content.Context;

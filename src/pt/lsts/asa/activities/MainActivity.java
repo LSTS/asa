@@ -1,7 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.util.settings.Settings;
+import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.R;
 
 import java.util.Map;
