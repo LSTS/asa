@@ -32,7 +32,7 @@ public class SoundControlFragment extends Fragment {
 
 	public SoundControlFragment(Context context) {
 		this.context = context;
-		callOut = new CallOut(context);
+		callOut = new CallOut(context, "");
 	}
 
 	@Override
