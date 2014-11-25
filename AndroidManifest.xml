@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.asa"
     android:versionCode="0"
-    android:versionName="ASA-7-gf1a72f1-dirty (master)" >
+    android:versionName="ASA-10-ged11fdc-dirty (master)" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="8"/>
 
     <application
         android:name="pt.lsts.asa.App"
