@@ -9,33 +9,25 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
-public class AccuSmsHandler implements IMCSubscriber {
+public class AccuSmsHandler {
 
 	private IMCManager mManager;
 	private Context mContext;
+	
 
-	@Override
-	public void onReceive(IMCMessage msg) {
-
-		if (msg.getMgid() == Sms.ID_STATIC
-				&& msg.getDst() == mManager.getLocalId()) {
-			Log.i("SmsManager", "Sending an SMS to " + msg.getString("number"));
-			sendSms(msg.getString("number"), msg.getString("contents"),
-					msg.getInteger("timeout"));
-		} else {
-			Log.w("SmsManager", "Ignoring Sms request");
-			System.out.println(mManager.getLocalId());
-			System.out.println(msg.toString());
-		}
+	public IMCManager getmManager() {
+		return mManager;
 	}
 
-	public AccuSmsHandler(Context context, IMCManager imcComms) {
+	public void setmManager(IMCManager mManager) {
+		this.mManager = mManager;
+	}
+
+	public AccuSmsHandler(Context context) {
 		mContext = context;
-		mManager = imcComms;
-		mManager.addSubscriber(this, "Sms");
 	}
 
-	private void sendSms(String destination, String text, int timeout) {
+	public void sendSms(String destination, String text, int timeout) {
 		SmsManager sms = SmsManager.getDefault();
 		sms.sendTextMessage(destination, null, text, null, null);
 		Toast.makeText(mContext, "SMS sent to " + destination,

@@ -12,6 +12,7 @@ import pt.lsts.asa.listenners.MainSysChangeListener;
 import pt.lsts.asa.managers.GPSManager;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
+import pt.lsts.asa.subscribers.AccuSmsHandlerSubscriber;
 import pt.lsts.asa.subscribers.CallOutSubscriber;
 import pt.lsts.asa.subscribers.HeartbeatVibratorSubscriber;
 import pt.lsts.asa.subscribers.LblBeaconListSubscriber;
@@ -51,6 +52,7 @@ public class ASA {
 	
 	public static Announcer mAnnouncer;
 	public static AccuSmsHandler mSmsHandler;
+	public static AccuSmsHandlerSubscriber accuSmsHandlerSubscriber;
 	public static GPSManager mGpsManager;
 	public static HeartbeatVibrator mHBVibrator;
 	public static HeartbeatVibratorSubscriber heartbeatVibratorSubscriber;
@@ -95,7 +97,11 @@ public class ASA {
 		mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 		mMainSysChangeListeners = new ArrayList<MainSysChangeListener>();
 		mAnnouncer = new Announcer(imcManager, broadcastAddress, "224.0.75.69");
-		mSmsHandler = new AccuSmsHandler(mContext, imcManager);
+		
+		mSmsHandler = new AccuSmsHandler(mContext);
+		accuSmsHandlerSubscriber = new AccuSmsHandlerSubscriber(mSmsHandler);
+		imcManager.addSubscriber(accuSmsHandlerSubscriber, accuSmsHandlerSubscriber.SUBSCRIBED_MSGS);
+		
 		mHBVibrator = new HeartbeatVibrator(mContext, imcManager);
 		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(mHBVibrator);
 		imcManager.addSubscriber(heartbeatVibratorSubscriber, mHBVibrator.SUBSCRIBED_MSGS);
