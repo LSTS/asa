@@ -210,6 +210,7 @@ public class MainActivity extends FragmentActivity {
 
 	public void back() {
 		super.onBackPressed();
+		pauseASA();
 		onStop();
 	}
 
