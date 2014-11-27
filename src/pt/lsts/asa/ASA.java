@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import pt.lsts.asa.comms.Announcer;
+import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.feedback.Heart;
 import pt.lsts.asa.feedback.HeartbeatVibrator;
@@ -39,107 +40,144 @@ public class ASA {
 
 	private static final String TAG = "ASA";
 
-	private static Context mContext;
+	private static Context context;
 	private static ASA instance;
 	private static Sys activeSys;
 
 	private static IMCManager imcManager;
-	public SystemList mSysList;
+	public SystemList sysList;
 	public SystemListSubscriber systemListSubscriber;
 	
 	public CallOut callOut;
 	public CallOutSubscriber callOutSubscriber;
 	
-	public static Announcer mAnnouncer;
-	public static AccuSmsHandler mSmsHandler;
+	public static Announcer announcer;
+	public static AccuSmsHandler smsHandler;
 	public static AccuSmsHandlerSubscriber accuSmsHandlerSubscriber;
-	public static GPSManager mGpsManager;
-	public static HeartbeatVibrator mHBVibrator;
+	public static GPSManager gpsManager;
+	public static HeartbeatVibrator hearbeatVibrator;
 	public static HeartbeatVibratorSubscriber heartbeatVibratorSubscriber;
-	public static Heart mHeart;
-	public static LblBeaconList mBeaconList;
+	public static Heart heart;
+	public static LblBeaconList lblBeaconList;
 	public static LblBeaconListSubscriber lblBeaconListSubscriber;
-	public static SensorManager mSensorManager;
+	public static SensorManager sensorManager;
 
-	private static ArrayList<MainSysChangeListener> mMainSysChangeListeners;
+	private static ArrayList<MainSysChangeListener> mainSysChangeListeners;
 	public String broadcastAddress;
 	public boolean started = false;
-	public SharedPreferences mPrefs;
+	public SharedPreferences sharedPreferences;
 
 	private static Integer requestId = 0xFFFF; // Request ID for quick plan
 
-	// sending
-
 	private ASA(Context context) {
-		Log.i(TAG, ASA.class.getSimpleName()
-				+ ": Initializing Global ACCU Object");
-		mContext = context;
-		imcManager = new IMCManager();
-		imcManager.startComms(); // Start comms here upfront
+		this.context = context;
 
-		mSysList = new SystemList(imcManager);
-		systemListSubscriber = new SystemListSubscriber(mSysList);
-		imcManager.addSubscriberToAllMessages(systemListSubscriber);
-		
-		callOut = new CallOut(context, "");
-		callOutSubscriber = new CallOutSubscriber(callOut);
-
+		initIMCManager();
+		initBroadcast();
+		initGPSManager(context);
+		initPreferences(context);
+		initSystemsList();
+		initAnnouncer();
+		initSubscribers(context);
+	}
+	
+	public void addSubscriber(IMCSubscriber sub){
+		imcManager.addSubscriberToAllMessages(sub);
+	}
+	public void addSubscriber(IMCSubscriber sub, String[] abbrevNameList){
+		imcManager.addSubscriber(sub, abbrevNameList);
+	}
+	
+	public void initBroadcast(){
 		try {
-			broadcastAddress = MUtil.getBroadcastAddress(mContext);
+			broadcastAddress = MUtil.getBroadcastAddress(context);
 		} catch (IOException e) {
 			Log.e(TAG, ASA.class.getSimpleName()
 					+ ": Couldn't get Brodcast address", e);
 		}
-
-		mGpsManager = new GPSManager(mContext);
-		mSensorManager = (SensorManager) context
-				.getSystemService(Context.SENSOR_SERVICE);
-		mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-		mMainSysChangeListeners = new ArrayList<MainSysChangeListener>();
-		mAnnouncer = new Announcer(imcManager, broadcastAddress, "224.0.75.69");
-		
-		mSmsHandler = new AccuSmsHandler(mContext);
-		accuSmsHandlerSubscriber = new AccuSmsHandlerSubscriber(mSmsHandler);
-		imcManager.addSubscriber(accuSmsHandlerSubscriber, accuSmsHandlerSubscriber.SUBSCRIBED_MSGS);
-		
-		mHBVibrator = new HeartbeatVibrator(mContext, imcManager);
-		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(mHBVibrator);
-		imcManager.addSubscriber(heartbeatVibratorSubscriber, heartbeatVibratorSubscriber.SUBSCRIBED_MSGS);
 	}
+	
+	public void initSystemsList(){
+		mainSysChangeListeners = new ArrayList<MainSysChangeListener>();
+		sysList = new SystemList(imcManager);
+		systemListSubscriber = new SystemListSubscriber(sysList);
+	}
+	
+	public void initAnnouncer(){
+		announcer = new Announcer(imcManager, broadcastAddress, "224.0.75.69");
+	}
+	
+	public void initGPSManager(Context context){
+		gpsManager = new GPSManager(context);
+		sensorManager = (SensorManager) context
+				.getSystemService(Context.SENSOR_SERVICE);
+	}
+	
+	public void initPreferences(Context context){
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+	}
+	
+	public void initIMCManager(){
+		imcManager = new IMCManager();
+		imcManager.startComms();
+	}
+	
+	public void initSubscribers(Context context){		
+		callOut = new CallOut(context);
+		callOutSubscriber = new CallOutSubscriber(callOut);
+		
+		smsHandler = new AccuSmsHandler(context);
+		accuSmsHandlerSubscriber = new AccuSmsHandlerSubscriber(smsHandler);
+		
+		hearbeatVibrator = new HeartbeatVibrator(context, imcManager);
+		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(hearbeatVibrator);
+		
+		addInitialSubscribers();
+	}
+	
+	public void addInitialSubscribers(){
+		addSubscriber(heartbeatVibratorSubscriber, heartbeatVibratorSubscriber.SUBSCRIBED_MSGS);
+		addSubscriber(accuSmsHandlerSubscriber, accuSmsHandlerSubscriber.SUBSCRIBED_MSGS);
+		addSubscriber(systemListSubscriber);
+		addSubscriber(lblBeaconListSubscriber, lblBeaconListSubscriber.SUBSCRIBED_MSGS);
+	}	
 
 	public void load() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": load");
-		mHeart = new Heart();
-		mBeaconList = new LblBeaconList();
-		lblBeaconListSubscriber = new LblBeaconListSubscriber(mBeaconList);
-		imcManager.addSubscriber(lblBeaconListSubscriber, lblBeaconListSubscriber.SUBSCRIBED_MSGS);
+		heart = new Heart();
+		addLblSubscriber();
+	}
+	
+	public void addLblSubscriber(){
+		lblBeaconList = new LblBeaconList();
+		lblBeaconListSubscriber = new LblBeaconListSubscriber(lblBeaconList);
 	}
 
 	public void start() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": start");
 		if (!started) {
 			imcManager.startComms();
-			mAnnouncer.start();
-			mSysList.start();
-			mHeart.start();
+			announcer.start();
+			sysList.start();
+			heart.start();
 			started = true;
 		} else
 			Log.e(TAG, ASA.class.getSimpleName()
-					+ ": ACCU ERROR: Already Started ACCU Global");
+					+ ": ASA ERROR: Already Started ASA Global");
 	}
 
 	public void pause() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": pause");
 		if (started) {
 			imcManager.killComms();
-			mAnnouncer.stop();
-			mSysList.stop();
-			mHeart.stop();
-			mSmsHandler.stop();
+			announcer.stop();
+			sysList.stop();
+			heart.stop();
+			smsHandler.stop();
 			started = false;
 		} else
 			Log.e(TAG, ASA.class.getSimpleName()
-					+ ": ACCU ERROR: ACCU Global already stopped");
+					+ ": ASA ERROR: ASA Global already stopped");
 	}
 
 	public static ASA getInstance(Context context) {
@@ -154,13 +192,6 @@ public class ASA {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getInstance");
 		return instance;
 	}
-
-	// public static void killInstance()
-	// {
-	// instance = null;
-	// mSysList.timer.cancel(); //FIXME For now the timer cancelling goes here..
-	// mAnnouncer.timer.cancel(); //FIXME same as above
-	// }
 
 	public Sys getActiveSys() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getActiveSys");
@@ -180,44 +211,44 @@ public class ASA {
 
 	public SystemList getSystemList() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getSystemList");
-		return mSysList;
+		return sysList;
 	}
 
 	public GPSManager getGpsManager() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getGpsManager");
-		return mGpsManager;
+		return gpsManager;
 	}
 
 	public SensorManager getSensorManager() {
-		return mSensorManager;
+		return sensorManager;
 	}
 
 	public LblBeaconList getLblBeaconList() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getLblBeaconList");
-		return mBeaconList;
+		return lblBeaconList;
 	}
 
 	// Main System listeners list related code
 	public void addMainSysChangeListener(MainSysChangeListener listener) {
 		Log.i(TAG, ASA.class.getSimpleName() + ": addMainSysChangeListener");
-		mMainSysChangeListeners.add(listener);
+		mainSysChangeListeners.add(listener);
 	}
 
 	public void removeMainSysChangeListener(MainSysChangeListener listener) {
 		Log.i(TAG, ASA.class.getSimpleName() + ": removeMainSysChangeListener");
-		mMainSysChangeListeners.remove(listener);
+		mainSysChangeListeners.remove(listener);
 	}
 
 	private static void notifyMainSysChange() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": notifyMainSysChange");
-		for (MainSysChangeListener l : mMainSysChangeListeners) {
+		for (MainSysChangeListener l : mainSysChangeListeners) {
 			l.onMainSysChange(activeSys);
 		}
 	}
 
 	public SharedPreferences getPrefs() {
 		Log.i(TAG, ASA.class.getSimpleName() + ": getPrefs");
-		return mPrefs;
+		return sharedPreferences;
 	}
 
 	public boolean isStarted() {

@@ -53,7 +53,7 @@ public class CallOut {
 	}
 
 	public void	startImcSubscribers(){
-		ASA.getInstance().getIMCManager().addSubscriberToAllMessages(ASA.getInstance().callOutSubscriber);
+		ASA.getInstance().addSubscriber(ASA.getInstance().callOutSubscriber);
 	}
 	
 	public void setSys(String selectedSys) {
