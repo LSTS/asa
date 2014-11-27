@@ -14,6 +14,7 @@ import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
 import pt.lsts.asa.subscribers.CallOutSubscriber;
 import pt.lsts.asa.subscribers.HeartbeatVibratorSubscriber;
+import pt.lsts.asa.subscribers.LblBeaconListSubscriber;
 import pt.lsts.asa.subscribers.SystemListSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
@@ -55,6 +56,7 @@ public class ASA {
 	public static HeartbeatVibratorSubscriber heartbeatVibratorSubscriber;
 	public static Heart mHeart;
 	public static LblBeaconList mBeaconList;
+	public static LblBeaconListSubscriber lblBeaconListSubscriber;
 	public static SensorManager mSensorManager;
 
 	private static ArrayList<MainSysChangeListener> mMainSysChangeListeners;
@@ -103,6 +105,8 @@ public class ASA {
 		Log.i(TAG, ASA.class.getSimpleName() + ": load");
 		mHeart = new Heart();
 		mBeaconList = new LblBeaconList();
+		lblBeaconListSubscriber = new LblBeaconListSubscriber(mBeaconList);
+		imcManager.addSubscriber(lblBeaconListSubscriber, lblBeaconListSubscriber.SUBSCRIBED_MSGS);
 	}
 
 	public void start() {
