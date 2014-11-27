@@ -4,6 +4,7 @@ import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
 import pt.lsts.asa.managers.SoundManager;
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -27,9 +28,10 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
-
+		
+		ASA.getInstance().callOut.initCallOuts();
 		loadFragments(savedInstanceState);
-
+		//ASA.getInstance().callOut.initCallOuts();
 	}
 
 	public void loadFragments(Bundle savedInstanceState) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import pt.lsts.asa.comms.Announcer;
+import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.feedback.Heart;
 import pt.lsts.asa.feedback.HeartbeatVibrator;
 import pt.lsts.asa.handlers.AccuSmsHandler;
@@ -11,6 +12,7 @@ import pt.lsts.asa.listenners.MainSysChangeListener;
 import pt.lsts.asa.managers.GPSManager;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
+import pt.lsts.asa.subscribers.CallOutSubscriber;
 import pt.lsts.asa.subscribers.SystemListSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
@@ -42,6 +44,9 @@ public class ASA {
 	public SystemList mSysList;
 	public SystemListSubscriber systemListSubscriber;
 	
+	public CallOut callOut;
+	public CallOutSubscriber callOutSubscriber;
+	
 	public static Announcer mAnnouncer;
 	public static AccuSmsHandler mSmsHandler;
 	public static GPSManager mGpsManager;
@@ -70,6 +75,9 @@ public class ASA {
 		systemListSubscriber = new SystemListSubscriber(mSysList);
 		imcManager.addSubscriberToAllMessages(systemListSubscriber);
 		
+		callOut = new CallOut(context, "");
+		callOutSubscriber = new CallOutSubscriber(callOut);
+
 		try {
 			broadcastAddress = MUtil.getBroadcastAddress(mContext);
 		} catch (IOException e) {

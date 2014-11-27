@@ -3,6 +3,7 @@ package pt.lsts.asa.fragments;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ui.components.VerticalSeekBar;
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import android.app.Activity;
 import android.content.Context;
@@ -32,7 +33,7 @@ public class SoundControlFragment extends Fragment {
 
 	public SoundControlFragment(Context context) {
 		this.context = context;
-		callOut = new CallOut(context, "");
+		callOut = ASA.getInstance().callOut;
 	}
 
 	@Override
@@ -65,7 +66,7 @@ public class SoundControlFragment extends Fragment {
 	public void onStart() {
 		super.onStart();
 		setVolumeControl();
-		callOut.startCallOuts();
+		//callOut.startCallOuts();
 
 	}
 

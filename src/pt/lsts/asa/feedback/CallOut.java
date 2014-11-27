@@ -1,28 +1,35 @@
 package pt.lsts.asa.feedback;
 
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.comms.ImcSystem;
 import pt.lsts.asa.fragments.DataFragment;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.util.AccuTimer;
 import pt.lsts.imc.IMCMessage;
+import pt.lsts.imc.net.IMCProtocol;
+import pt.lsts.neptus.messages.listener.MessageInfo;
+import pt.lsts.neptus.messages.listener.MessageListener;
+
+import java.nio.charset.UnmappableCharacterException;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Text to Speech
  * 
  * @author
  */
-public class CallOut implements IMCSubscriber {
+public class CallOut {
 
 	private TextToSpeech iasTts, altTts;
 	private ScheduledFuture iasCalloutHandle, altCalloutHandle;
@@ -33,8 +40,7 @@ public class CallOut implements IMCSubscriber {
 	Runnable iasCalloutRunnable;
 	Runnable altCalloutRunnable;
 	private ImcSystem sys;
-
-	private float iasValue, altValue;
+	private Float iasValue=0f, altValue=0f;
 	private int iasInterval, altInterval;
 	private boolean iasBoolean, altBoolean;
 	private DataFragment dataFrag;
@@ -45,9 +51,12 @@ public class CallOut implements IMCSubscriber {
 		//this.sys = dataFrag.getSystem(selectedSys);
 		this.context = context;
 		SoundManager.getInstance();
-		initCallOuts();
 	}
 
+	public void	startImcSubscribers(){
+		ASA.getInstance().getIMCManager().addSubscriberToAllMessages(ASA.getInstance().callOutSubscriber);
+	}
+	
 	public void setSys(String selectedSys) {
 		this.sys = dataFrag.getSystem(selectedSys);
 	}
@@ -58,13 +67,8 @@ public class CallOut implements IMCSubscriber {
 		altTts.shutdown();
 	}
 
-	@Override
-	public void onReceive(IMCMessage msg) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void initCallOuts() {
+		startImcSubscribers();
 		initCallOutIntervals();
 		initTimers();
 		initTextToSpeech();
@@ -90,8 +94,8 @@ public class CallOut implements IMCSubscriber {
 	}
 
 	public void initCallOutIntervals() {
-		iasValue = 55.6f;
-		altValue = 199f;
+		//iasValue = 55.6f;
+		//altValue = 199f;
 		iasBoolean = false;
 		altBoolean = true;
 		iasInterval = 10000;
@@ -99,6 +103,7 @@ public class CallOut implements IMCSubscriber {
 	}
 
 	public void startCallOuts() {
+		startImcSubscribers();
 		iasCalloutHandle = iasScheduler.scheduleAtFixedRate(iasCalloutRunnable,
 				0, iasInterval, TimeUnit.MILLISECONDS);
 
@@ -131,9 +136,11 @@ public class CallOut implements IMCSubscriber {
 		altCalloutRunnable = new Runnable() {
 			@Override
 			public void run() {
-				Log.i("CallOut", "Start Runnable Alt");
+				/*
 				altTts.speak("Altitude " + altValue,
 						TextToSpeech.QUEUE_FLUSH, null);
+						*/
+				Log.i("Altitude","alt= "+altValue);
 			}
 		};
 
@@ -155,9 +162,11 @@ public class CallOut implements IMCSubscriber {
 		iasCalloutRunnable = new Runnable() {
 			@Override
 			public void run() {
-				Log.i("CallOut", "Start Runnable IAS");
+				/*
 				iasTts.speak("Speed " + iasValue,
 						TextToSpeech.QUEUE_FLUSH, null);
+						*/
+				Log.i("IAS","ias= "+iasValue);
 			}
 		};
 
@@ -167,6 +176,14 @@ public class CallOut implements IMCSubscriber {
 		if (val == ((float) ((int) val)))
 			return true;
 		return false;
+	}
+	
+	public void setIasValue(Float iasValue) {
+		this.iasValue = iasValue;
+	}
+
+	public void setAltValue(Float altValue) {
+		this.altValue = altValue;
 	}
 
 }
