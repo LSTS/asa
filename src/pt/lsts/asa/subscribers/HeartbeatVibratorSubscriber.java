@@ -7,6 +7,8 @@ import pt.lsts.imc.IMCMessage;
 
 public class HeartbeatVibratorSubscriber implements IMCSubscriber{
 
+	public static final String[] SUBSCRIBED_MSGS = { "Heartbeat" };
+	public static final String TAG = "HeartbeatVibrator";
 	private HeartbeatVibrator heartbeatVibrator;
 	
 	public HeartbeatVibratorSubscriber(HeartbeatVibrator heartbeatVibrator){

@@ -104,7 +104,7 @@ public class ASA {
 		
 		mHBVibrator = new HeartbeatVibrator(mContext, imcManager);
 		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(mHBVibrator);
-		imcManager.addSubscriber(heartbeatVibratorSubscriber, mHBVibrator.SUBSCRIBED_MSGS);
+		imcManager.addSubscriber(heartbeatVibratorSubscriber, heartbeatVibratorSubscriber.SUBSCRIBED_MSGS);
 	}
 
 	public void load() {

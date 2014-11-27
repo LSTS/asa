@@ -15,7 +15,6 @@ import android.os.Vibrator;
  *
  */
 public class HeartbeatVibrator {
-	public static final String[] SUBSCRIBED_MSGS = { "Heartbeat" };
 
 	private Vibrator mVibrator;
 	private int mDuration;
