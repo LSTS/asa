@@ -1,36 +1,53 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
+import pt.lsts.asa.App;
+import pt.lsts.asa.settings.Profile;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.R;
+import pt.lsts.asa.feedback.Heart;
+import pt.lsts.asa.fragments.DataFragment;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
+	public static final String TAG = "MainActivity";
+	private static final String DATA_FRAG_TAG = "data_frag_tag";
+	
+	Button buttonChooseActiveSystem;
 	Button buttonManualStabilized;
 	Button buttonPFD;
 	Button buttonSettingsCheckList;
 	Button buttonTest;
 	Button buttonTest2;
-
+	DataFragment dataFragment;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		buttonChooseActiveSystem = (Button) findViewById(R.id.buttonChooseActiveSys);
+		setButtonChooseActiveSystem(this);
 		buttonManualStabilized = (Button) findViewById(R.id.buttonManualStabilized);
 		setButtonManualStabilized();
 		buttonPFD = (Button) findViewById(R.id.buttonPfd);
@@ -38,15 +55,16 @@ public class MainActivity extends Activity {
 		buttonSettingsCheckList = (Button) findViewById(R.id.buttonSettingsCheckList);
 		setButtonSettingsCheckList();
 		buttonTest = (Button) findViewById(R.id.buttonTest);
+		buttonTest.setText("Show All Settings");
 		setButtonTest();
 		buttonTest2 = (Button) findViewById(R.id.buttonTest2);
+		buttonTest2.setText("Show Active System");
 		setButtonTest2();
 
 	}
 
 	public void test() {
 		// showToast(sharedPreferences.getString("username", "NA"));
-
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			String type = entry.getValue().getClass().toString();
@@ -54,18 +72,46 @@ public class MainActivity extends Activity {
 			String val = entry.getValue().toString();
 			showToast(type + ";" + key + ";" + val);
 		}
-
+		
 	}
 
 	public void test2() {
+		if (ASA.getInstance().getActiveSys() != null)
+			showToast(ASA.getInstance().getActiveSys().getName());
+		else
+			showToast("Null");
 
-		Settings.clear();
-		Settings.putBoolean("audio_global_audio", true);
-		Settings.putBoolean("audio_Altitude_audio", false);
-		Settings.putInt("audio_Altitude_Interval_in_seconds", 15);
-		Settings.putBoolean("audio_IAS_audio", false);
-		Settings.putInt("audio_IAS_Interval_in_seconds", 5);
-
+	}
+	
+	public void setButtonChooseActiveSystem(final Context context){
+		buttonChooseActiveSystem.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {				
+				chooseActiveSystem(context);
+			}
+		});
+	}
+	
+	public void chooseActiveSystem(Context context){
+		
+		final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
+		String[] array = new String[arrayListSys.size()];
+		for (int i=0;i<array.length;i++){
+			array[i]=arrayListSys.get(i).getName();
+		}
+		
+		createChooseActiveSystemDialog(context, array, arrayListSys);
+	}
+	
+	public void createChooseActiveSystemDialog(Context context, String[] array, final ArrayList<Sys> arrayListSys){
+		
+		new AlertDialog.Builder(context).setTitle("Choose a System:")
+		.setItems(array, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				ASA.getInstance().setActiveSys(arrayListSys.get(which));
+			}
+		}).create().show();
+		
 	}
 
 	public void setButtonTest() {
