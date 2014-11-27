@@ -47,8 +47,7 @@ public class CallOut {
 	private Context context;
 	private SoundManager soundManager = SoundManager.getInstance();
 
-	public CallOut(Context context, String selectedSys) {
-		//this.sys = dataFrag.getSystem(selectedSys);
+	public CallOut(Context context) {
 		this.context = context;
 		SoundManager.getInstance();
 	}
