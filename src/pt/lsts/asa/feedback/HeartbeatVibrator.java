@@ -14,7 +14,7 @@ import android.os.Vibrator;
  * @author jqcorreia
  *
  */
-public class HeartbeatVibrator implements IMCSubscriber {
+public class HeartbeatVibrator {
 	public static final String[] SUBSCRIBED_MSGS = { "Heartbeat" };
 
 	private Vibrator mVibrator;
@@ -25,30 +25,29 @@ public class HeartbeatVibrator implements IMCSubscriber {
 	public HeartbeatVibrator(Context context, IMCManager imm) {
 		mVibrator = (Vibrator) context
 				.getSystemService(Context.VIBRATOR_SERVICE);
-		mDuration = DEFAULT_DURATION;
+		setmDuration(DEFAULT_DURATION);
 		this.imm = imm;
-		initialize();
 	}
 
 	public HeartbeatVibrator(Context context, IMCManager imm, int duration) {
 		this(context, imm);
-		mDuration = duration;
+		setmDuration(duration);
 	}
 
-	private void initialize() {
-		imm.addSubscriber(this, SUBSCRIBED_MSGS);
+	public int getmDuration() {
+		return mDuration;
 	}
 
-	@Override
-	public void onReceive(IMCMessage msg) {
-		// If active system doesnt exist or isnt a message from active system
-		if (ASA.getInstance().getActiveSys() == null)
-			return;
-		if (ASA.getInstance().getActiveSys().getId() != (Integer) msg
-				.getHeaderValue("src"))
-			return;
-
-		if (ASA.getInstance().getPrefs().getBoolean("vibrate", true))
-			mVibrator.vibrate(mDuration);
+	public void setmDuration(int mDuration) {
+		this.mDuration = mDuration;
 	}
+
+	public void setmVibrator(Vibrator mVibrator) {
+		this.mVibrator = mVibrator;
+	}
+
+	public Vibrator getmVibrator() {
+		return this.mVibrator;
+	}
+
 }

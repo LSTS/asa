@@ -13,6 +13,7 @@ import pt.lsts.asa.managers.GPSManager;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
 import pt.lsts.asa.subscribers.CallOutSubscriber;
+import pt.lsts.asa.subscribers.HeartbeatVibratorSubscriber;
 import pt.lsts.asa.subscribers.SystemListSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
@@ -51,6 +52,7 @@ public class ASA {
 	public static AccuSmsHandler mSmsHandler;
 	public static GPSManager mGpsManager;
 	public static HeartbeatVibrator mHBVibrator;
+	public static HeartbeatVibratorSubscriber heartbeatVibratorSubscriber;
 	public static Heart mHeart;
 	public static LblBeaconList mBeaconList;
 	public static SensorManager mSensorManager;
@@ -93,6 +95,8 @@ public class ASA {
 		mAnnouncer = new Announcer(imcManager, broadcastAddress, "224.0.75.69");
 		mSmsHandler = new AccuSmsHandler(mContext, imcManager);
 		mHBVibrator = new HeartbeatVibrator(mContext, imcManager);
+		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(mHBVibrator);
+		imcManager.addSubscriber(heartbeatVibratorSubscriber, mHBVibrator.SUBSCRIBED_MSGS);
 	}
 
 	public void load() {
