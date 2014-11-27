@@ -11,6 +11,7 @@ import pt.lsts.asa.listenners.MainSysChangeListener;
 import pt.lsts.asa.managers.GPSManager;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
+import pt.lsts.asa.subscribers.SystemListSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.MUtil;
@@ -39,6 +40,8 @@ public class ASA {
 
 	private static IMCManager imcManager;
 	public SystemList mSysList;
+	public SystemListSubscriber systemListSubscriber;
+	
 	public static Announcer mAnnouncer;
 	public static AccuSmsHandler mSmsHandler;
 	public static GPSManager mGpsManager;
@@ -64,7 +67,9 @@ public class ASA {
 		imcManager.startComms(); // Start comms here upfront
 
 		mSysList = new SystemList(imcManager);
-
+		systemListSubscriber = new SystemListSubscriber(mSysList);
+		imcManager.addSubscriberToAllMessages(systemListSubscriber);
+		
 		try {
 			broadcastAddress = MUtil.getBroadcastAddress(mContext);
 		} catch (IOException e) {
