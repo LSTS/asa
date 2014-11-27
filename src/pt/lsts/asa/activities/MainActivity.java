@@ -187,7 +187,6 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onPause() {
 		super.onPause(); // Always call the superclass method first
-		pauseASA();
 	}
 
 	@Override
