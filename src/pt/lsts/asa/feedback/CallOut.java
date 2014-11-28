@@ -12,6 +12,8 @@ import pt.lsts.neptus.messages.listener.MessageInfo;
 import pt.lsts.neptus.messages.listener.MessageListener;
 
 import java.nio.charset.UnmappableCharacterException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -40,12 +42,13 @@ public class CallOut {
 	Runnable iasCalloutRunnable;
 	Runnable altCalloutRunnable;
 	private ImcSystem sys;
-	private Float iasValue=0f, altValue=0f;
+	private Double altValue=0d, iasValue=0d;
 	private int iasInterval, altInterval;
 	private boolean iasBoolean, altBoolean;
 	private DataFragment dataFrag;
 	private Context context;
 	private SoundManager soundManager = SoundManager.getInstance();
+	NumberFormat formatter = new DecimalFormat("#0.00");
 
 	public CallOut(Context context) {
 		this.context = context;
@@ -98,7 +101,7 @@ public class CallOut {
 		iasBoolean = false;
 		altBoolean = true;
 		iasInterval = 10000;
-		altInterval = 2500;
+		altInterval = 15000;
 	}
 
 	public void startCallOuts() {
@@ -135,10 +138,9 @@ public class CallOut {
 		altCalloutRunnable = new Runnable() {
 			@Override
 			public void run() {
-				/*
-				altTts.speak("Altitude " + altValue,
+				altTts.speak("Altitude " + formatter.format(altValue),
 						TextToSpeech.QUEUE_FLUSH, null);
-						*/
+						
 				Log.i("Altitude","alt= "+altValue);
 			}
 		};
@@ -161,10 +163,10 @@ public class CallOut {
 		iasCalloutRunnable = new Runnable() {
 			@Override
 			public void run() {
-				/*
-				iasTts.speak("Speed " + iasValue,
+				
+				iasTts.speak("Speed " + formatter.format(iasValue),
 						TextToSpeech.QUEUE_FLUSH, null);
-						*/
+						
 				Log.i("IAS","ias= "+iasValue);
 			}
 		};
@@ -177,11 +179,11 @@ public class CallOut {
 		return false;
 	}
 	
-	public void setIasValue(Float iasValue) {
+	public void setIasValue(Double iasValue) {
 		this.iasValue = iasValue;
 	}
 
-	public void setAltValue(Float altValue) {
+	public void setAltValue(Double altValue) {
 		this.altValue = altValue;
 	}
 

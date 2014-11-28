@@ -5,6 +5,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.IMCMessage;
 
 public class CallOutSubscriber implements IMCSubscriber{
@@ -23,16 +24,12 @@ public class CallOutSubscriber implements IMCSubscriber{
 		
 		Log.v("CallOut", "Received Message");
 		
-		if (activeSys.getName().equals(msg.getString("sys_name"))){
+		if (IMCUtils.isMsgFromActive(msg)){
 			if (msg.getAbbrev().equalsIgnoreCase("IndicatedSpeed"))
-				callOut.setIasValue((Float) msg.getValue("value"));
+				callOut.setIasValue((Double) msg.getValue("value"));
 			if (msg.getAbbrev().equalsIgnoreCase("EstimatedState"))
-				callOut.setAltValue((Float) msg.getValue("height"));
-		}
-		
-		Log.i("CallOutSource",msg.getSourceName());
-		Log.i("CallOutType",msg.getAbbrev());
-		Log.i("CallOutEverything",msg.toString());
+				callOut.setAltValue((Double) msg.getValue("height"));
+		}		
 		
 	}
 
