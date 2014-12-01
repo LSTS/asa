@@ -64,6 +64,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
+		soundControlFragment.unmute();
 	}
 
 	@Override
