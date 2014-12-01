@@ -33,17 +33,21 @@ import android.widget.Toast;
  */
 public class CallOut {
 
-	private TextToSpeech iasTts, altTts;
-	private ScheduledFuture iasCalloutHandle, altCalloutHandle;
+	private TextToSpeech tts;
+	private ScheduledFuture iasHandle, altHandle, timeoutHandle;
 	private final ScheduledExecutorService iasScheduler = Executors
 			.newScheduledThreadPool(1);
 	private final ScheduledExecutorService altScheduler = Executors
 			.newScheduledThreadPool(1);
-	Runnable iasCalloutRunnable;
-	Runnable altCalloutRunnable;
+	private final ScheduledExecutorService timeoutScheduler = Executors
+			.newScheduledThreadPool(1);
+	Runnable iasRunnable, altRunnable, timeoutRunnable;
 	private ImcSystem sys;
-	private Double altValue=0d, iasValue=0d;
-	private int iasInterval, altInterval;
+	private Float altValue=0f;
+	private Double iasValue=0d;
+	private long lastMsgReceived = 0;
+	private boolean timeoutBool = false;
+	private int iasInterval, altInterval, timeoutInterval;
 	private boolean iasBoolean, altBoolean;
 	private DataFragment dataFrag;
 	private Context context;
@@ -65,126 +69,135 @@ public class CallOut {
 
 	public void shutdown() {
 		stopCallOuts();
-		iasTts.shutdown();
-		altTts.shutdown();
+		tts.shutdown();
 	}
 
 	public void initCallOuts() {
 		startImcSubscribers();
 		initCallOutIntervals();
-		initTimers();
 		initTextToSpeech();
-		if (!soundManager.checkMute())
-			startCallOuts();
+		initAlt();
+		initIas();
 	}
 
 	public void initTextToSpeech() {
-		iasTts = new TextToSpeech(context, new OnInitListener() {
+		tts = new TextToSpeech(context, new OnInitListener() {
 			@Override
 			public void onInit(int status) {
 
 			}
 		});
-		iasTts.setLanguage(Locale.UK);
-		altTts = new TextToSpeech(context, new OnInitListener() {
-			@Override
-			public void onInit(int status) {
-
-			}
-		});
-		altTts.setLanguage(Locale.UK);
+		tts.setLanguage(Locale.UK);
 	}
 
 	public void initCallOutIntervals() {
 		//iasValue = 55.6f;
 		//altValue = 199f;
+		
 		iasBoolean = false;
 		altBoolean = true;
+		timeoutBool = false;
+		
 		iasInterval = 10000;
 		altInterval = 15000;
+		timeoutInterval=20000;
 	}
 
 	public void startCallOuts() {
 		startImcSubscribers();
-		iasCalloutHandle = iasScheduler.scheduleAtFixedRate(iasCalloutRunnable,
-				0, iasInterval, TimeUnit.MILLISECONDS);
-
-		altCalloutHandle = altScheduler.scheduleAtFixedRate(altCalloutRunnable,
-				0, altInterval, TimeUnit.MILLISECONDS);
+		initIas();
+		initAlt();
 	}
 
 	public void stopCallOuts() {
-		iasCalloutHandle.cancel(true);
-		altCalloutHandle.cancel(true);
+		iasHandle.cancel(true);
+		altHandle.cancel(true);
 	}
 
-	public void initTimers() {
-		initAltTimer();
-		initIasTimer();
-	}
+	public void initAlt() {
 
-	public void initAltTimer() {
-/*
-		altCalloutRunnable = new Runnable() {
+		altRunnable = new Runnable() {
 			@Override
 			public void run() {
-				Log.i("CallOut", "Start Runnable Alt");
-				Log.i("CallOut", "Adding Altitude" + sys.getHeight());
-				altTts.speak("Altitude " + sys.getHeight(),
-						TextToSpeech.QUEUE_FLUSH, null);
-			}
-		};
-		*/
-		altCalloutRunnable = new Runnable() {
-			@Override
-			public void run() {
-				altTts.speak("Altitude " + formatter.format(altValue),
-						TextToSpeech.QUEUE_FLUSH, null);
+				if (isTimeout())
+					return;
+				if (altHandle.isCancelled())
+					initAlt();
+				tts.setPitch(1.15f);
+				tts.speak("Altitude " + formatter.format(altValue),
+						TextToSpeech.QUEUE_ADD, null);
 						
 				Log.i("Altitude","alt= "+altValue);
 			}
 		};
+		altHandle = altScheduler.scheduleAtFixedRate(altRunnable,
+				0, altInterval, TimeUnit.MILLISECONDS);
 
 	}
 
-	public void initIasTimer() {
-/*
-		iasCalloutRunnable = new Runnable() {
-			@Override
-			public void run() {
-				Log.i("CallOut", "Start Runnable IAS");
-				Log.i("CallOut", "Adding Speed" + sys.getSpeed());
-				iasTts.speak("Speed " + sys.getSpeed(),
-						TextToSpeech.QUEUE_FLUSH, null);
-			}
-		};
-		*/
+	public void initIas() {
 		
-		iasCalloutRunnable = new Runnable() {
+		iasRunnable = new Runnable() {
 			@Override
 			public void run() {
-				
-				iasTts.speak("Speed " + formatter.format(iasValue),
-						TextToSpeech.QUEUE_FLUSH, null);
+				if (isTimeout())
+					return;	
+				if (iasHandle.isCancelled())
+					initIas();
+				tts.setPitch(1.15f);
+				tts.speak("Speed " + formatter.format(iasValue),
+						TextToSpeech.QUEUE_ADD, null);
 						
 				Log.i("IAS","ias= "+iasValue);
+
 			}
 		};
+		iasHandle = iasScheduler.scheduleAtFixedRate(iasRunnable,
+				0, iasInterval, TimeUnit.MILLISECONDS);
 
 	}
-
-	public boolean isInt(float val) {
-		if (val == ((float) ((int) val)))
-			return true;
-		return false;
+	
+	public boolean isTimeout(){
+		if (timeoutBool==false && System.currentTimeMillis()-20000>lastMsgReceived){
+			timeoutBool=true;//no message received in over a minute
+			initTimeout();
+		}
+		return timeoutBool;
+	}
+	
+	public void initTimeout() {
+		timeoutRunnable = new Runnable() {
+			@Override
+			public void run() {
+				if (timeoutBool==false){
+					if (timeoutHandle!=null)
+						timeoutHandle.cancel(true);
+					return;
+				}
+				long timeSinceLastMessage = ((System.currentTimeMillis()-lastMsgReceived)/1000);
+				tts.setPitch(1f);
+				tts.speak("No message received in " + timeSinceLastMessage + " seconds",
+						TextToSpeech.QUEUE_FLUSH, null);
+				
+			}
+		};
+		timeoutHandle = timeoutScheduler.scheduleAtFixedRate(timeoutRunnable,
+				0, timeoutInterval, TimeUnit.MILLISECONDS);
+		iasHandle.cancel(false);
+		altHandle.cancel(false);
 	}
 	
 	public void setIasValue(Double iasValue) {
 		this.iasValue = iasValue;
 	}
 
-	public void setAltValue(Double altValue) {
+	public void setAltValue(Float altValue) {
 		this.altValue = altValue;
+	}
+	
+	public void setLastMsgReceived(long lastMsgReceived) {
+		this.lastMsgReceived = lastMsgReceived;
+		timeoutBool=false;
 	}
 
 }

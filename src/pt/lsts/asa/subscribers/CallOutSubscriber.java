@@ -31,7 +31,8 @@ public class CallOutSubscriber implements IMCSubscriber{
 			if (ID_MSG == IndicatedSpeed.ID_STATIC)
 				callOut.setIasValue((Double) msg.getValue("value"));
 			if (ID_MSG == EstimatedState.ID_STATIC)
-				callOut.setAltValue((Double) msg.getValue("height"));
+				callOut.setAltValue(((Float)msg.getValue("height")));
+			callOut.setLastMsgReceived(msg.getTimestampMillis());
 		}		
 		
 	}
