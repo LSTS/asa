@@ -6,8 +6,11 @@ import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.IMCUtils;
+import pt.lsts.imc.Announce;
+import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
+import pt.lsts.imc.VehicleState;
 
 public class SystemListSubscriber implements IMCSubscriber{
 
@@ -26,7 +29,7 @@ public class SystemListSubscriber implements IMCSubscriber{
 		
 		// Process Heartbeat
 		// Update lastHeartbeat received on systemList
-		if (msg.getAbbrev().equalsIgnoreCase("heartbeat")) {
+		if (Heartbeat.ID_STATIC == msg.getMgid()) {
 
 			return;
 		}
@@ -78,20 +81,25 @@ public class SystemListSubscriber implements IMCSubscriber{
 		// }
 
 		// Process Announce routine
-		if (msg.getAbbrev().equalsIgnoreCase("Announce")) {
+		final int ID_MSG = msg.getMgid();
+		if (ID_MSG == Announce.ID_STATIC) {
+			Announce m =  (Announce)msg;
+			
+			Log.v("Announce from", "1 "+m.getSysName());
+			
 			// If System already exists in host list
-			if (systemList.containsSysName(msg.getString("sys_name"))) {
-				Sys s = systemList.findSysByName(msg.getString("sys_name"));
+			if (systemList.containsSysName(m.getSysName())) {
+				Sys s = systemList.findSysByName(m.getSysName());
 
 				if (DEBUG)
 					Log.i("Log",
 							"Repeated announce from: "
-									+ msg.getString("sys_name"));
+									+ m.getSysName());
 
 				if (!s.isConnected()) {
-					systemList.findSysByName(msg.getString("sys_name")).lastMessageReceived = System
+					systemList.findSysByName(m.getSysName()).lastMessageReceived = System
 							.currentTimeMillis();
-					systemList.findSysByName(msg.getString("sys_name")).setConnected(true);
+					systemList.findSysByName(m.getSysName()).setConnected(true);
 					systemList.changeList(systemList.getList());
 					// Send an Heartbeat to resume communications in case of
 					// system prior crash
@@ -106,28 +114,29 @@ public class SystemListSubscriber implements IMCSubscriber{
 						e1.printStackTrace();
 					}
 				}
-
+				Log.v("Announce from", "ret 1 "+m.getSysName());
 				return;
 			}
 			// If Service IMC+UDP doesnt exist or isnt reachable, return...
 			if (IMCUtils.getAnnounceService(msg, "imc+udp") == null) {
-				Log.e(TAG, msg.getString("sys_name")
+				Log.e(TAG, m.getSysName()
 						+ " node doesn't have IMC protocol or isn't reachable");
 				Log.e(TAG, msg.toString());
+				Log.v("Announce from", "ret 2 "+m.getSysName());
 				return;
 			}
 			String[] addrAndPort = IMCUtils.getAnnounceIMCAddressPort(msg);
 			if (addrAndPort == null) {
-				Log.e(TAG, "Unreachable System - " + msg.getString("sys_name"));
+				Log.e(TAG, "No Announce Services - " + m.getSysName());
 				return;
 			}
+			
 			// If Not include it
-			Log.i("Log", "Adding new System");
 			Sys s = new Sys(addrAndPort[0], Integer.parseInt(addrAndPort[1]),
-					msg.getString("sys_name"),
+					m.getSysName(),
 					(Integer) msg.getHeaderValue("src"),
-					msg.getString("sys_type"), true, false);
-
+					m.getSysType().name(), true, false);
+			Log.i("New System Added", s.getName());
 			systemList.getList().add(s);
 
 			// Update the list of available Vehicles
@@ -136,18 +145,18 @@ public class SystemListSubscriber implements IMCSubscriber{
 			// Send an Heartbeat to register as a node in the vehicle (maybe
 			// EntityList?)
 			try {
-				IMCMessage m = IMCDefinition.getInstance().create("Heartbeat");
-				m.getHeader().setValue("src", 0x4100);
+				Heartbeat mm = new Heartbeat();
+				mm.setSrc(0x4100);
 				ASA.getInstance().getIMCManager()
-						.send(s.getAddress(), s.getPort(), m);
+						.send(s.getAddress(), s.getPort(), mm);
 				ASA.getInstance().getIMCManager().getComm()
-						.sendMessage(s.getAddress(), s.getPort(), m);
+						.sendMessage(s.getAddress(), s.getPort(), mm);
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		}
 		// Process VehicleState to get error count
-		else if (msg.getAbbrev().equalsIgnoreCase("VehicleState")) {
+		else if (ID_MSG == VehicleState.ID_STATIC) {
 			if (DEBUG)
 				Log.i("Log", "Received VehicleState" + msg.toString());
 			Sys s = systemList.findSysById((Integer) msg.getHeaderValue("src"));
@@ -166,8 +175,9 @@ public class SystemListSubscriber implements IMCSubscriber{
 
 			// Returning from a ACCU crash this will prevent from listening to
 			// messages with nothing on the list
-			if (sys == null)
+			if (sys == null) {
 				return;
+			}
 			sys.lastMessageReceived = System.currentTimeMillis();
 		}
 		

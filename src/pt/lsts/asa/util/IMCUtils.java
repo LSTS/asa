@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
+import android.util.Log;
 import pt.lsts.asa.ASA;
 import pt.lsts.imc.IMCMessage;
 
@@ -41,21 +42,25 @@ public class IMCUtils {
 	 * @return The node address for IMC communications.
 	 */
 	public static String[] getAnnounceIMCAddressPort(IMCMessage msg) {
+		String res[]=null;
 		for (String s : getAnnounceService(msg, "imc+udp")) {
 			try {
+				String foo[] = s.split(":");
+				res=new String[2];
+				res[0] = foo[0];
+				res[1] = foo[1].substring(0, foo[1].length() - 1);
+				res[1] = res[1].split("/")[0];//remove services after port
 				if (InetAddress.getByName(s.split(":")[0]).isReachable(50)) {
-					String foo[] = s.split(":");
-					String res[] = { foo[0],
-							foo[1].substring(0, foo[1].length() - 1) };
-					return res;
+					return res;//return first reachable
 				}
+				
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-		return null;
+		}		
+		return res;//none reachable, return last one
 	}
 
 	public static boolean isMsgFromActive(IMCMessage msg) {
