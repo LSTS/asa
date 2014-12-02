@@ -95,9 +95,10 @@ public class MainActivity extends FragmentActivity {
 	public void chooseActiveSystem(Context context){
 		
 		final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
-		String[] array = new String[arrayListSys.size()];
+		final ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
+		final String[] array = new String[arrayListName.size()];
 		for (int i=0;i<array.length;i++){
-			array[i]=arrayListSys.get(i).getName();
+			array[i]=arrayListName.get(i);
 		}
 		
 		createChooseActiveSystemDialog(context, array, arrayListSys);
