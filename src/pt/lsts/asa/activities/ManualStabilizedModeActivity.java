@@ -29,7 +29,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
 		
-		ASA.getInstance().callOut.initCallOuts();
+		ASA.getInstance().getCallOut().initCallOuts();
 		loadFragments(savedInstanceState);
 		//ASA.getInstance().callOut.initCallOuts();
 	}

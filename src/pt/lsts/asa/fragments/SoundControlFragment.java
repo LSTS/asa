@@ -33,7 +33,7 @@ public class SoundControlFragment extends Fragment {
 
 	public SoundControlFragment(Context context) {
 		this.context = context;
-		callOut = ASA.getInstance().callOut;
+		callOut = ASA.getInstance().getCallOut();
 	}
 
 	@Override

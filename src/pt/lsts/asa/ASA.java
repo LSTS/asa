@@ -48,8 +48,8 @@ public class ASA {
 	public SystemList sysList;
 	public SystemListSubscriber systemListSubscriber;
 	
-	public CallOut callOut;
-	public CallOutSubscriber callOutSubscriber;
+	private CallOut callOut;
+	private CallOutSubscriber callOutSubscriber;
 	
 	public static Announcer announcer;
 	public static AccuSmsHandler smsHandler;
@@ -270,4 +270,13 @@ public class ASA {
 			return requestId;
 		}
 	}
+	
+	public CallOut getCallOut() {
+		return callOut;
+	}
+
+	public CallOutSubscriber getCallOutSubscriber() {
+		return callOutSubscriber;
+	}
+	
 }
