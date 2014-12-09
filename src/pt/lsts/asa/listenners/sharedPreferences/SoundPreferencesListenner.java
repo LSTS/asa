@@ -23,10 +23,11 @@ public class SoundPreferencesListenner implements OnSharedPreferenceChangeListen
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 		
+		Log.v("onSharedPreferenceChanged", "Preference with "+key+" changed");
+		
 		String keyLowerCase = key.toLowerCase(Locale.getDefault());
 		int integer;
 		boolean bool;
-		String string;
 		switch(keyLowerCase){
 			case "audio_global_audio":
 				bool = Settings.getBoolean(key, true);
@@ -40,7 +41,7 @@ public class SoundPreferencesListenner implements OnSharedPreferenceChangeListen
 				bool = Settings.getBoolean(key, true);
 				callOut.setIasMuteBool(bool);
 				break;
-			case "audio_alt_interval_in_seconds":
+			case "audio_altitude_interval_in_seconds":
 				integer = Settings.getInt(key, 10)*1000;
 				callOut.setAltInterval(integer);
 				break;
