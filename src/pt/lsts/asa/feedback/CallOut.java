@@ -110,11 +110,13 @@ public class CallOut {
 					return;
 				if (altHandle.isCancelled())
 					initAlt();
-				tts.setPitch(1.15f);
+				tts.setSpeechRate(1.25f);
+				/*
 				tts.speak("Altitude " + formatter.format(altValue),
 						TextToSpeech.QUEUE_ADD, null);
+						*/
 
-				Log.i("Altitude", "alt= " + altValue);
+				Log.i("tts.speak", "alt= " + altValue+"\naltInterval= "+altInterval);
 			}
 		};
 		altHandle = altScheduler.scheduleAtFixedRate(altRunnable, 0,
@@ -131,11 +133,13 @@ public class CallOut {
 					return;
 				if (iasHandle.isCancelled())
 					initIas();
-				tts.setPitch(1.15f);
+				tts.setSpeechRate(1.25f);
+				/*
 				tts.speak("Speed " + formatter.format(iasValue),
 						TextToSpeech.QUEUE_ADD, null);
+						*/
 
-				Log.i("IAS", "ias= " + iasValue);
+				Log.i("tts.speak", "ias= " + iasValue+"\niasInterval= "+iasInterval);
 
 			}
 		};
@@ -165,9 +169,12 @@ public class CallOut {
 					return;
 				}
 				long timeSinceLastMessage = ((System.currentTimeMillis() - lastMsgReceived) / 1000);
-				tts.setPitch(1f);
+				tts.setSpeechRate(1f);
+				/*
 				tts.speak("No message received in " + timeSinceLastMessage
 						+ " seconds", TextToSpeech.QUEUE_FLUSH, null);
+						*/
+				Log.i("tts.speak", "timeout= "+timeSinceLastMessage);
 
 			}
 		};
