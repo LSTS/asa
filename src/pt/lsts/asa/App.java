@@ -30,25 +30,23 @@ public class App extends Application {
 	public void onCreate() {
 		super.onCreate();
 
-		
-
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-		initSettings();
 
-		
 		IMCDefinition.getInstance();
 		ASA.getInstance(this);
 		ASA.getInstance().load();
 		ASA.getInstance().start();
 		Log.i("App", "Global ASA Object Initialized");
-		
-		
+
+		initSettings();
+
 	}
 
 	public void initSettings() {
-		Settings.initSettings(getBaseContext());
+		Settings.getSettings();
 		Profile.copySpecificAsset(getBaseContext(), "default_settings.csv");
-		if (Settings.getAll().isEmpty()) {//if no previous settings, set the defaults
+		if (Settings.getAll().isEmpty()) {// if no previous settings, set the
+											// defaults
 			Profile.restoreDefaults();
 		}
 	}
