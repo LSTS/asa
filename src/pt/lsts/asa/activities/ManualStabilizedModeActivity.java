@@ -3,6 +3,7 @@ package pt.lsts.asa.activities;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
+import pt.lsts.asa.listenners.sharedPreferences.SoundPreferencesListenner;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
@@ -19,10 +20,12 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
-	CallOut callOut;
 	SoundManager soundManager = SoundManager.getInstance();
+	
 	SoundControlFragment soundControlFragment = null;
 	VideoViewFragment videoViewFragment = null;
+	
+	private SoundPreferencesListenner soundPreferencesListenner; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,13 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 		
 		ASA.getInstance().getCallOut().initCallOuts();
 		loadFragments(savedInstanceState);
-		//ASA.getInstance().callOut.initCallOuts();
+		loadPreferencesListenners();
+		ASA.getInstance().getCallOut().startCallOuts();
+	}
+	
+	public void loadPreferencesListenners(){
+		soundPreferencesListenner = new SoundPreferencesListenner(this.getApplicationContext());
+		ASA.getInstance().addPreferencesListenner(soundPreferencesListenner);
 	}
 
 	public void loadFragments(Bundle savedInstanceState) {

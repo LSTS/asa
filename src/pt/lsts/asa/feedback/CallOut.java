@@ -49,8 +49,9 @@ public class CallOut {
 		SoundManager.getInstance();
 	}
 
-	public void startImcSubscribers() {
-		ASA.getInstance().addSubscriber(ASA.getInstance().getCallOutSubscriber());
+	public void initImcSubscribers() {
+		ASA.getInstance().addSubscriber(
+				ASA.getInstance().getCallOutSubscriber());
 	}
 
 	public void shutdown() {
@@ -59,12 +60,13 @@ public class CallOut {
 	}
 
 	public void initCallOuts() {
-		startImcSubscribers();
+		initImcSubscribers();
 		initBooleans();
 		initIntervals();
 		initTextToSpeech();
-		initAlt();
-		initIas();
+		initAltRunnale();
+		initIasRunnable();
+		initTimeoutRunnable();
 	}
 
 	public void initTextToSpeech() {
@@ -83,17 +85,16 @@ public class CallOut {
 		timeoutBool = false;
 		globalMuteBool = false;
 	}
-	
-	public void initIntervals(){
+
+	public void initIntervals() {
 		iasInterval = 10000;
 		altInterval = 15000;
-		timeoutInterval = 20000;
+		timeoutInterval = 25000;
 	}
 
 	public void startCallOuts() {
-		startImcSubscribers();
-		initIas();
-		initAlt();
+		startAltHandle();
+		startIasHandle();
 	}
 
 	public void stopCallOuts() {
@@ -101,63 +102,75 @@ public class CallOut {
 		altHandle.cancel(true);
 	}
 
-	public void initAlt() {
+	public void initAltRunnale() {
 
 		altRunnable = new Runnable() {
 			@Override
 			public void run() {
-				if (globalMuteBool==true || isTimeout() || altMuteBool==true)
+				if (globalMuteBool == true || isTimeout()
+						|| altMuteBool == true)
 					return;
 				if (altHandle.isCancelled())
-					initAlt();
+					initAltRunnale();
 				tts.setSpeechRate(1.25f);
 				/*
-				tts.speak("Altitude " + formatter.format(altValue),
-						TextToSpeech.QUEUE_ADD, null);
-						*/
+				 * tts.speak("Altitude " + formatter.format(altValue),
+				 * TextToSpeech.QUEUE_ADD, null);
+				 */
 
-				Log.i("tts.speak", "alt= " + altValue+"\naltInterval= "+altInterval);
+				Log.i("tts.speak", "alt= " + altValue + "\naltInterval= "
+						+ altInterval);
 			}
 		};
-		altHandle = altScheduler.scheduleAtFixedRate(altRunnable, 0,
-				altInterval, TimeUnit.MILLISECONDS);
-
 	}
 
-	public void initIas() {
+	public void startAltHandle() {
+		if (altHandle != null)
+			altHandle.cancel(true);
+		altHandle = altScheduler.scheduleAtFixedRate(altRunnable, 0,
+				altInterval, TimeUnit.MILLISECONDS);
+	}
+
+	public void initIasRunnable() {
 
 		iasRunnable = new Runnable() {
 			@Override
 			public void run() {
-				if (globalMuteBool==true || isTimeout() || iasMuteBool==true)
+				if (globalMuteBool == true || isTimeout()
+						|| iasMuteBool == true)
 					return;
 				if (iasHandle.isCancelled())
-					initIas();
+					initIasRunnable();
 				tts.setSpeechRate(1.25f);
 				/*
-				tts.speak("Speed " + formatter.format(iasValue),
-						TextToSpeech.QUEUE_ADD, null);
-						*/
+				 * tts.speak("Speed " + formatter.format(iasValue),
+				 * TextToSpeech.QUEUE_ADD, null);
+				 */
 
-				Log.i("tts.speak", "ias= " + iasValue+"\niasInterval= "+iasInterval);
+				Log.i("tts.speak", "ias= " + iasValue + "\niasInterval= "
+						+ iasInterval);
 
 			}
 		};
+	}
+
+	public void startIasHandle() {
+		if (iasHandle != null)
+			iasHandle.cancel(true);
 		iasHandle = iasScheduler.scheduleAtFixedRate(iasRunnable, 0,
 				iasInterval, TimeUnit.MILLISECONDS);
-
 	}
 
 	public boolean isTimeout() {
 		if (timeoutBool == false
-				&& System.currentTimeMillis() - 20000 > lastMsgReceived) {
+				&& System.currentTimeMillis() - timeoutInterval > lastMsgReceived) {
 			timeoutBool = true;// no message received in over a minute
-			initTimeout();
+			startTimeoutHandle();
 		}
 		return timeoutBool;
 	}
 
-	public void initTimeout() {
+	public void initTimeoutRunnable() {
 		timeoutRunnable = new Runnable() {
 			@Override
 			public void run() {
@@ -171,17 +184,20 @@ public class CallOut {
 				long timeSinceLastMessage = ((System.currentTimeMillis() - lastMsgReceived) / 1000);
 				tts.setSpeechRate(1f);
 				/*
-				tts.speak("No message received in " + timeSinceLastMessage
-						+ " seconds", TextToSpeech.QUEUE_FLUSH, null);
-						*/
-				Log.i("tts.speak", "timeout= "+timeSinceLastMessage);
-
+				 * tts.speak("No message received in " + timeSinceLastMessage +
+				 * " seconds", TextToSpeech.QUEUE_FLUSH, null);
+				 */
+				Log.i("tts.speak", "timeout= " + timeSinceLastMessage
+						+ "\ntimeoutInterval= " + timeoutInterval);
 			}
 		};
+	}
+
+	public void startTimeoutHandle() {
+		if (timeoutHandle != null)
+			timeoutHandle.cancel(true);
 		timeoutHandle = timeoutScheduler.scheduleAtFixedRate(timeoutRunnable,
 				0, timeoutInterval, TimeUnit.MILLISECONDS);
-		iasHandle.cancel(false);
-		altHandle.cancel(false);
 	}
 
 	public void setIasValue(Double iasValue) {
