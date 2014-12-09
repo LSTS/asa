@@ -2,6 +2,7 @@ package pt.lsts.asa.feedback;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.managers.SoundManager;
+import pt.lsts.asa.settings.Settings;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -41,7 +42,8 @@ public class CallOut {
 	NumberFormat formatter = new DecimalFormat("#0.00");
 	private long lastMsgReceived = 0;
 
-	private int iasInterval, altInterval, timeoutInterval;
+	private int iasInterval = 10000, altInterval = 15000,
+			timeoutInterval = 25000;
 	private boolean iasMuteBool, altMuteBool, timeoutBool, globalMuteBool;
 
 	public CallOut(Context context) {
@@ -61,12 +63,12 @@ public class CallOut {
 
 	public void initCallOuts() {
 		initImcSubscribers();
-		initBooleans();
-		initIntervals();
 		initTextToSpeech();
 		initAltRunnale();
 		initIasRunnable();
 		initTimeoutRunnable();
+		initBooleans();
+		initIntervals();
 	}
 
 	public void initTextToSpeech() {
@@ -87,9 +89,12 @@ public class CallOut {
 	}
 
 	public void initIntervals() {
-		iasInterval = 10000;
-		altInterval = 15000;
-		timeoutInterval = 25000;
+		int integer = Settings.getInt("audio_altitude_interval_in_seconds", 10) * 1000;
+		setAltInterval(integer);
+		integer = Settings.getInt("audio_ias_interval_in_seconds", 10) * 1000;
+		setIasInterval(integer);
+		integer = Settings.getInt("audio_timeout_interval_in_seconds", 60) * 1000;
+		setTimeoutInterval(integer);
 	}
 
 	public void startCallOuts() {
@@ -100,6 +105,7 @@ public class CallOut {
 	public void stopCallOuts() {
 		iasHandle.cancel(true);
 		altHandle.cancel(true);
+		timeoutHandle.cancel(true);
 	}
 
 	public void initAltRunnale() {
@@ -111,7 +117,7 @@ public class CallOut {
 						|| altMuteBool == true)
 					return;
 				if (altHandle.isCancelled())
-					initAltRunnale();
+					startAltHandle();
 				tts.setSpeechRate(1.25f);
 				/*
 				 * tts.speak("Altitude " + formatter.format(altValue),
@@ -140,7 +146,7 @@ public class CallOut {
 						|| iasMuteBool == true)
 					return;
 				if (iasHandle.isCancelled())
-					initIasRunnable();
+					startIasHandle();
 				tts.setSpeechRate(1.25f);
 				/*
 				 * tts.speak("Speed " + formatter.format(iasValue),
@@ -210,7 +216,7 @@ public class CallOut {
 
 	public void setLastMsgReceived(long lastMsgReceived) {
 		this.lastMsgReceived = lastMsgReceived;
-		timeoutBool = false;
+		setTimeoutBool(false);
 	}
 
 	public void setTimeoutBool(boolean timeoutBool) {
@@ -219,17 +225,16 @@ public class CallOut {
 
 	public void setIasInterval(int iasInterval) {
 		this.iasInterval = iasInterval;
-		setIasMuteBool(false);
+		startIasHandle();
 	}
 
 	public void setAltInterval(int altInterval) {
 		this.altInterval = altInterval;
-		setAltMuteBool(false);
+		startAltHandle();
 	}
 
 	public void setTimeoutInterval(int timeoutInterval) {
 		this.timeoutInterval = timeoutInterval;
-		setTimeoutBool(true);
 	}
 
 	public void setIasMuteBool(boolean iasBool) {
