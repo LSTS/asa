@@ -21,26 +21,18 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 	AudioManager audioManager;
 	ImageButton imageButtonMute;
 	SoundManager soundManager = SoundManager.getInstance();
-	
+
 	SoundControlFragment soundControlFragment = null;
 	VideoViewFragment videoViewFragment = null;
-	
-	private SoundPreferencesListenner soundPreferencesListenner; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
-		
+
 		ASA.getInstance().getCallOut().initCallOuts();
 		loadFragments(savedInstanceState);
-		loadPreferencesListenners();
-		ASA.getInstance().getCallOut().startCallOuts();
-	}
-	
-	public void loadPreferencesListenners(){
-		soundPreferencesListenner = new SoundPreferencesListenner(this.getApplicationContext());
-		ASA.getInstance().addPreferencesListenner(soundPreferencesListenner);
+		// ASA.getInstance().getCallOut().startCallOuts();
 	}
 
 	public void loadFragments(Bundle savedInstanceState) {
@@ -93,6 +85,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 		super.onBackPressed();
 		if (soundControlFragment != null)
 			soundControlFragment.shutdown();
+		ASA.getInstance().getCallOut().shutdown();
 	}
 
 }
