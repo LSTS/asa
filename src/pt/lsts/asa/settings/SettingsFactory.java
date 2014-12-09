@@ -33,8 +33,8 @@ public class SettingsFactory {
 						(String) entry.getValue(), context);
 			if (entry.getValue().getClass().equals(Integer.class)) {
 				String valString = ((Integer) entry.getValue()).toString();
-				createEntry(category, entry.getKey(), valString, context)
-						.getEditText()
+				createEntry(category, entry.getKey(),
+						(Integer) entry.getValue(), context).getEditText()
 						.setInputType(InputType.TYPE_CLASS_NUMBER);
 			}
 			if (entry.getValue().getClass().equals(Boolean.class))
@@ -85,7 +85,20 @@ public class SettingsFactory {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
 		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
 		editTextPreference.setSummary("Val: " + valString);
-		editTextPreference.setDefaultValue(valString);
+		// editTextPreference.setDefaultValue(valString);
+		setOnChangeListener(editTextPreference, key);
+		category.addPreference(editTextPreference);
+		return editTextPreference;
+	}
+
+	public static EditTextPreference createEntry(PreferenceCategory category,
+			String key, Integer valInteger, Context context) {
+		EditTextPreference editTextPreference = new EditTextPreference(context);
+		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
+		editTextPreference.setSummary("Val: " + valInteger.toString());
+		editTextPreference.getEditText().setInputType(
+				InputType.TYPE_CLASS_NUMBER);
+		// editTextPreference.setDefaultValue(valInteger);
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
 		return editTextPreference;
@@ -129,13 +142,15 @@ public class SettingsFactory {
 	}
 
 	public static boolean changeValue(String key, Object newValue) {
-		if (newValue.getClass().equals(String.class)) {
+		Object object = Settings.getSharedPreferences().getAll().get(key);
+
+		if (object.getClass().equals(String.class)) {
 			return Settings.putString(key, (String) newValue);
 		}
-		if (newValue.getClass().equals(Integer.class)) {
-			return Settings.putInt(key, (Integer) newValue);
+		if (object.getClass().equals(Integer.class)) {
+			return Settings.putInt(key, Integer.parseInt((String) newValue));
 		}
-		if (newValue.getClass().equals(Boolean.class)) {
+		if (object.getClass().equals(Boolean.class)) {
 			return Settings.putBoolean(key, (Boolean) newValue);
 		}
 		return false;
