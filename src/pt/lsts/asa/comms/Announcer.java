@@ -8,6 +8,9 @@ import pt.lsts.asa.util.AccuTimer;
 import pt.lsts.asa.util.MUtil;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
+
+import java.util.Date;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -176,8 +179,8 @@ public class Announcer {
 		// double height = currentLocation.getAltitude();
 
 		int owner = 0xFFFF;
-		services = "imc+udp://" + MUtil.getLocalIpAddress()
-				+ ":6001/;imc+udp://" + MUtil.getLocalIpAddress() + ":6001/sms"; // FIXME
+		services = "imc+udp://" + MUtil.getLocalIpAddress() + ":6001/" + ";"
+				+ "imc+udp://" + MUtil.getLocalIpAddress() + ":6001/sms"; // FIXME
 		try {
 			announce = IMCDefinition.getInstance().create("Announce",
 					"sys_name", sysName, "sys_type", sysType, "owner", owner,

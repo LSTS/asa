@@ -9,6 +9,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.MUtil;
+import pt.lsts.imc.Announce;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.net.UDPTransport;
@@ -130,10 +131,15 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 				Log.v(TAG, message.toString());
 
 			int id = (Integer) message.getHeaderValue("mgid");
+			boolean isAnnounce = false;
+			if (id == Announce.ID_STATIC) {
+				isAnnounce = true;
+				
+			}
 
 			// First and foremost send the message to components registered to
 			// every message
-			for (IMCSubscriber s : subscribersToAll) {
+			for (IMCSubscriber s : subscribersToAll) {				
 				s.onReceive(message);
 			}
 

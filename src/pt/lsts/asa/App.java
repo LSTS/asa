@@ -1,9 +1,11 @@
 package pt.lsts.asa;
 
+import pt.lsts.asa.managers.IMCManager;
+import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.settings.Profile;
 import pt.lsts.asa.settings.Settings;
-import pt.lsts.asa.util.FileOperations;
 import pt.lsts.imc.IMCDefinition;
+import pt.lsts.imc.net.IMCProtocol;
 import android.app.Application;
 import android.content.Context;
 import android.media.AudioManager;
@@ -28,22 +30,25 @@ public class App extends Application {
 	public void onCreate() {
 		super.onCreate();
 
-		IMCDefinition.getInstance();
+		
 
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 		initSettings();
 
+		
+		IMCDefinition.getInstance();
 		ASA.getInstance(this);
 		ASA.getInstance().load();
 		ASA.getInstance().start();
-		Log.i("App", "Global ACCU Object Initialized");
-
+		Log.i("App", "Global ASA Object Initialized");
+		
+		
 	}
 
 	public void initSettings() {
 		Settings.initSettings(getBaseContext());
 		Profile.copySpecificAsset(getBaseContext(), "default_settings.csv");
-		if (Settings.getAll().isEmpty()) {
+		if (Settings.getAll().isEmpty()) {//if no previous settings, set the defaults
 			Profile.restoreDefaults();
 		}
 	}

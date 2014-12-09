@@ -23,6 +23,7 @@ import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.MUtil;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -277,6 +278,14 @@ public class ASA {
 
 	public CallOutSubscriber getCallOutSubscriber() {
 		return callOutSubscriber;
+	}
+	
+	public static Context getContext() {
+		return context;
+	}
+	
+	public void addPreferencesListenner(OnSharedPreferenceChangeListener listener){
+		ASA.getInstance().sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
 	}
 	
 }
