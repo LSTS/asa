@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.lsts.asa"
     android:versionCode="0"
-    android:versionName="Subscribers-23-gfe554f6-dirty (master)" >
+    android:versionName="Subscribers-27-g29e94de (master)" >
 
     <uses-sdk
         android:minSdkVersion="8"/>
