@@ -16,11 +16,10 @@ import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * Text to Speech
- * 
+ *
  * @author
  */
 public class CallOut {
@@ -44,7 +43,7 @@ public class CallOut {
 
 	private int iasInterval = 10000, altInterval = 15000,
 			timeoutInterval = 25000;
-	private boolean iasMuteBool, altMuteBool, timeoutBool, globalMuteBool;
+	private boolean iasMuteBool = false, altMuteBool = false, timeoutBool = false, globalMuteBool = false;
 
 	public CallOut(Context context) {
 		this.context = context;
@@ -82,10 +81,10 @@ public class CallOut {
 	}
 
 	public void initBooleans() {
-		iasMuteBool = false;
-		altMuteBool = false;
-		timeoutBool = false;
-		globalMuteBool = false;
+		altMuteBool = Settings.getBoolean("audio_altitude_audio",false);
+		iasMuteBool = Settings.getBoolean("audio_ias_audio",false);
+		timeoutBool = Settings.getBoolean("audio_timeout_audio",false);
+		globalMuteBool = Settings.getBoolean("audio_global_audio",false);
 	}
 
 	public void initIntervals() {
