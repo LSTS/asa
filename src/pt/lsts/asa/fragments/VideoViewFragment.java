@@ -1,5 +1,6 @@
 package pt.lsts.asa.fragments;
 
+import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.ui.components.VerticalSeekBar;
 import pt.lsts.asa.R;
 import android.app.Activity;
@@ -12,11 +13,14 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+
+import java.util.StringTokenizer;
 
 public class VideoViewFragment extends Fragment {
 
@@ -43,6 +47,7 @@ public class VideoViewFragment extends Fragment {
 		View v = inflater.inflate(R.layout.fragment_video_view, container,
 				false);
 		videoView = (VideoView) v.findViewById(R.id.videoViewFullscreen);
+		loadVideo();
 		return v;
 	}
 
@@ -66,11 +71,39 @@ public class VideoViewFragment extends Fragment {
 		videoView.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Toast.makeText(context, "videoView Touched", Toast.LENGTH_SHORT)
+				Toast.makeText(context, "videoView Touched\nloadVideo() executed", Toast.LENGTH_SHORT)
 						.show();
+				if(videoView.isPlaying())
+					videoView.stopPlayback();
+				else
+					loadVideo();
 				return false;
 			}
 		});
 	}
+
+	public String getCompleteUrl(){
+		String protocol = Settings.getString("cam_protocol","rtsp");
+		String ip= Settings.getString("cam_ip","10.0.20.199");
+		String location = "axis-media/media.amp";
+		String codec = Settings.getString("cam_codec","h264");
+
+		Toast.makeText(context, "cam_codec:"+codec, Toast.LENGTH_SHORT)
+				.show();
+
+		int width = videoView.getWidth();
+		int height = videoView.getHeight();
+
+		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution"+width+"x"+height;
+		return completeUrl;
+	}
+
+
+	public void loadVideo(){
+		String url = getCompleteUrl();
+		videoView.setVideoPath(url);
+		videoView.start();
+	}
+
 
 }
