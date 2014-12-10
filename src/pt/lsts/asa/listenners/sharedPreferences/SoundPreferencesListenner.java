@@ -23,7 +23,7 @@ public class SoundPreferencesListenner implements OnSharedPreferenceChangeListen
 	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
 			String key) {
 		
-		Log.v("onSharedPreferenceChanged", "Preference with "+key+" changed");
+		Log.v("SoundPreferencesListenner", "Preference with "+key+" changed");
 		
 		String keyLowerCase = key.toLowerCase(Locale.getDefault());
 		int integer;
