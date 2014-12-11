@@ -119,4 +119,14 @@ public class FileOperations {
 		return resultArray;
 	}
 
+	public static String[] removeExtension(String[] filesArray, String extension){
+		String[] result = new String[filesArray.length];
+		for (int i=0;i<filesArray.length;i++) {
+			if (filesArray[i].endsWith("."+extension)) {
+				result[i] = filesArray[i].substring(0, filesArray[i].length() - (extension.length()+1));
+			}
+		}
+		return result;
+	}
+
 }
