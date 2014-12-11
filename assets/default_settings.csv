@@ -1,10 +1,10 @@
 type,category_key,value
-class java.lang.Boolean,audio_global_audio,false
-class java.lang.Boolean,audio_altitude_audio,false
-class java.lang.Integer,audio_altitude_interval_in_seconds,15
-class java.lang.Boolean,audio_ias_audio,true
-class java.lang.Boolean,audio_timeout_audio,false
-class java.lang.Integer,audio_ias_interval_in_seconds,5
-class java.lang.String,cam_protocol,rtsp
-class java.lang.String,cam_ip,10.0.20.199
-class java.lang.String,cam_codec,h264
+java.lang.Boolean,audio_global_audio,false
+java.lang.Boolean,audio_altitude_audio,false
+java.lang.Integer,audio_altitude_interval_in_seconds,15
+java.lang.Boolean,audio_ias_audio,true
+java.lang.Boolean,audio_timeout_audio,false
+java.lang.Integer,audio_ias_interval_in_seconds,5
+java.lang.String,cam_protocol,rtsp
+java.lang.String,cam_ip,10.0.20.199
+java.lang.String,cam_codec,h264

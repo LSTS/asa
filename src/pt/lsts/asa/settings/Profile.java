@@ -18,10 +18,11 @@ public class Profile {
 
 	public static File mainDir = new File(
 			"/storage/emulated/0/Android/data/pt.lsts.ASA/");
-	public static String defaultSettingsName = "default_settings.csv";
+	public static String defaultSettingsName = "default_settings";
 	public static File defaultSettingsFile = new File(mainDir,
 			defaultSettingsName);
 	public static String firstLineInCsvFile = "type,category_key,value";
+	public static final String extension = "csv";
 
 	public static void copyAllAssets(Context context) {
 		AssetManager assetManager = context.getAssets();
@@ -89,7 +90,7 @@ public class Profile {
 	}
 
 	public static String load(String name) {
-		File profile = new File(mainDir, name);
+		File profile = new File(mainDir, name+"."+extension);
 		if (!profile.exists())
 			return "Profile file:\n" + name + "\nNot Available";
 		Vector<String> settings = FileOperations.readLines(profile);
@@ -112,15 +113,15 @@ public class Profile {
 		String type = parts[0];
 		String key = parts[1];
 		String value = parts[2];
-		if (type.equals("class java.lang.String")) {
+		if (type.equalsIgnoreCase("java.lang.String")) {
 			Settings.putString(key, value);
 			return;
 		}
-		if (type.equals("class java.lang.Integer")) {
+		if (type.equalsIgnoreCase("java.lang.Integer")) {
 			Settings.putInt(key, Integer.parseInt(value));
 			return;
 		}
-		if (type.equals("class java.lang.Boolean")) {
+		if (type.equalsIgnoreCase("java.lang.Boolean")) {
 			Settings.putBoolean(key, Boolean.parseBoolean(value));
 			return;
 		}
@@ -136,10 +137,10 @@ public class Profile {
 			Log.e("save", "Settings.getAll().size()==0");
 			return "ERROR: settings empty";
 		}
-		File file = new File(mainDir, name + ".csv");
+		File file = new File(mainDir, name + "." + extension);
 		FileOperations.initDir(Profile.mainDir);
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-			String type = entry.getValue().getClass().toString();
+			String type = entry.getValue().getClass().getName();
 			String key = entry.getKey();
 			String val = entry.getValue().toString();
 			String line = type + "," + key + "," + val;
@@ -151,9 +152,9 @@ public class Profile {
 
 	public static String[] getProfilesAvailable() {
 		String[] filesArray = mainDir.list();
-		String extension = "csv";
-		String[] result = FileOperations.filterFilesByExtension(filesArray,
-				extension);
+		String[] result = FileOperations.filterFilesByExtension(filesArray,extension);
+		result = FileOperations.removeExtension(result, extension);
+
 		return result;
 	}
 
