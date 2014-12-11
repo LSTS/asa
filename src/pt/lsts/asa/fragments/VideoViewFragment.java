@@ -47,7 +47,7 @@ public class VideoViewFragment extends Fragment {
 		View v = inflater.inflate(R.layout.fragment_video_view, container,
 				false);
 		videoView = (VideoView) v.findViewById(R.id.videoViewFullscreen);
-		loadVideo();
+
 		return v;
 	}
 
@@ -65,6 +65,12 @@ public class VideoViewFragment extends Fragment {
 	public void onStart() {
 		super.onStart();
 		setVideoViewClick();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		loadVideo();
 	}
 
 	public void setVideoViewClick() {
@@ -87,22 +93,43 @@ public class VideoViewFragment extends Fragment {
 		String ip= Settings.getString("cam_ip","10.0.20.199");
 		String location = "axis-media/media.amp";
 		String codec = Settings.getString("cam_codec","h264");
+		String resolution = Settings.getString("cam_resolution", "0x0");
 
-		Toast.makeText(context, "cam_codec:"+codec, Toast.LENGTH_SHORT)
-				.show();
+		resolution = validateResolution(resolution);
+		//Toast.makeText(context, "resolution: "+resolution, Toast.LENGTH_SHORT).show();
 
-		int width = videoView.getWidth();
-		int height = videoView.getHeight();
-
-		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution"+width+"x"+height;
+		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution"+resolution;
 		return completeUrl;
 	}
-
 
 	public void loadVideo(){
 		String url = getCompleteUrl();
 		videoView.setVideoPath(url);
 		videoView.start();
+	}
+
+	public String getVideoViewResolution(){
+		int width = videoView.getWidth();
+		int height = videoView.getHeight();
+		String resolution=width+"x"+height;
+		return resolution;
+	}
+
+	public String validateResolution(String resolution){
+		String[] res = resolution.split("x");
+		if (res.length!=2){
+			resolution = getVideoViewResolution();
+			//Toast.makeText(context, "used original - 1st one: "+resolution, Toast.LENGTH_SHORT).show();
+		}else {
+			try {
+				Integer.parseInt(res[0]);
+				Integer.parseInt(res[1]);
+			} catch (Exception e) {
+				resolution = getVideoViewResolution();
+				//Toast.makeText(context, "used original - 2nd one: "+resolution, Toast.LENGTH_SHORT).show();
+			}
+		}
+		return resolution;
 	}
 
 
