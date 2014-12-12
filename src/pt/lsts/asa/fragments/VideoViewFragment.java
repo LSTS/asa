@@ -1,31 +1,36 @@
 package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.settings.Settings;
-import pt.lsts.asa.ui.components.VerticalSeekBar;
 import pt.lsts.asa.R;
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 
-import java.util.StringTokenizer;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 public class VideoViewFragment extends Fragment {
 
-	Context context;
-	VideoView videoView;
+	private Context context;
+	private VideoView videoView;
+
+	private ScheduledFuture handle;
+	private final ScheduledExecutorService scheduler = Executors
+			.newScheduledThreadPool(1);
+	Runnable runnable;
+	private final int timeoutFalse=5000, timeoutTrue=120000;
+	private boolean connectedBool =false;
 
 	public VideoViewFragment() {
 		// Required empty public constructor
@@ -38,6 +43,7 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.context = super.getActivity().getApplicationContext();
 	}
 
 	@Override
@@ -70,19 +76,20 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		loadVideo();
+		startVideo();
+		setConnectionChecker();
 	}
 
 	public void setVideoViewClick() {
 		videoView.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Toast.makeText(context, "videoView Touched\nloadVideo() executed", Toast.LENGTH_SHORT)
+				Toast.makeText(context, "videoView Touched\nstartVideo() executed", Toast.LENGTH_SHORT)
 						.show();
 				if(videoView.isPlaying())
 					videoView.stopPlayback();
 				else
-					loadVideo();
+					restartVideo();
 				return false;
 			}
 		});
@@ -98,14 +105,20 @@ public class VideoViewFragment extends Fragment {
 		resolution = validateResolution(resolution);
 		//Toast.makeText(context, "resolution: "+resolution, Toast.LENGTH_SHORT).show();
 
-		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution"+resolution;
+		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution="+resolution;
 		return completeUrl;
 	}
 
-	public void loadVideo(){
+	public void startVideo(){
 		String url = getCompleteUrl();
 		videoView.setVideoPath(url);
 		videoView.start();
+		Log.i("CamConnection", "Connecting: "+url);
+	}
+
+	public void restartVideo(){
+		videoView.stopPlayback();
+		startVideo();
 	}
 
 	public String getVideoViewResolution(){
@@ -132,5 +145,43 @@ public class VideoViewFragment extends Fragment {
 		return resolution;
 	}
 
+	public void setConnectionChecker(){
+		setRunnable(this.context);
+		startHandle(timeoutFalse);
+	}
+
+	public void setRunnable(final Context context){
+		runnable = new Runnable() {
+			@Override
+			public void run() {
+			if (videoView.isPlaying()) {
+				if (connectedBool==false){
+					connectedBool = true;
+					startHandle(timeoutTrue);
+					Log.w("CamConnection", "Connection Established");
+					Toast.makeText(context, "Connection Established", Toast.LENGTH_SHORT).show();
+				}
+				Log.i("CamConnection", "Connection OK, retrying connection in: "+timeoutTrue);
+				Toast.makeText(context, "Connection OK, retrying connection in: "+timeoutTrue, Toast.LENGTH_SHORT).show();
+			}else{
+				if (connectedBool==true){
+					connectedBool=false;
+					startHandle(timeoutFalse);
+					Log.w("CamConnection", "Connection Dropped");
+					Toast.makeText(context,"Connection Dropped", Toast.LENGTH_SHORT).show();
+				}
+				Log.i("CamConnection", "Connection failed, retrying connection in: "+timeoutFalse);
+				Toast.makeText(context,"Connection failed, retrying connection in: "+timeoutFalse, Toast.LENGTH_SHORT).show();
+				restartVideo();
+			}
+		}};
+	}
+
+	public void startHandle(int timeout){
+		if (handle != null)
+			handle.cancel(true);
+		handle = scheduler.scheduleAtFixedRate(runnable, 0,
+				timeout, TimeUnit.MILLISECONDS);
+	}
 
 }
