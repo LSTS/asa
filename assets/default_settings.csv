@@ -8,4 +8,4 @@ java.lang.Integer,audio_ias_interval_in_seconds,5
 java.lang.String,cam_protocol,rtsp
 java.lang.String,cam_ip,10.0.20.199
 java.lang.String,cam_codec,h264
-java.lang.String,cam_resolution,480x240
+java.lang.String,cam_resolution,640x480
