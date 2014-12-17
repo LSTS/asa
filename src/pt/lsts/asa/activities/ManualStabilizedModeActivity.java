@@ -8,6 +8,7 @@ import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import android.app.AlertDialog;
+import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.media.AudioManager;
@@ -18,12 +19,12 @@ import android.support.v4.app.FragmentActivity;
 
 public class ManualStabilizedModeActivity extends FragmentActivity {
 
-	AudioManager audioManager;
-	ImageButton imageButtonMute;
-	SoundManager soundManager = SoundManager.getInstance();
+	private AudioManager audioManager;
+	private ImageButton imageButtonMute;
+	private SoundManager soundManager = SoundManager.getInstance();
 
-	SoundControlFragment soundControlFragment = null;
-	VideoViewFragment videoViewFragment = null;
+	private SoundControlFragment soundControlFragment = null;
+	private VideoViewFragment videoViewFragment = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,26 +41,20 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 			if (savedInstanceState != null) {
 				return;// restoring state
 			}
-			loadVideoViewFragment();
-			loadSoundControlFragment();
+
+			videoViewFragment = new VideoViewFragment(this);
+			loadFragment(videoViewFragment);
+
+			soundControlFragment = new SoundControlFragment(this.getApplicationContext());
+			loadFragment(soundControlFragment);
 		}
 	}
 
-	private void loadVideoViewFragment() {
-		videoViewFragment = new VideoViewFragment(this.getApplicationContext());
+	public void loadFragment(Fragment fragment){
 		getSupportFragmentManager()
 				.beginTransaction()
 				.add(R.id.fragment_container_manual_stabilized,
-						videoViewFragment).commit();
-	}
-
-	private void loadSoundControlFragment() {
-		soundControlFragment = new SoundControlFragment(
-				this.getApplicationContext());
-		getSupportFragmentManager()
-				.beginTransaction()
-				.add(R.id.fragment_container_manual_stabilized,
-						soundControlFragment).commit();
+						fragment).commit();
 	}
 
 	@Override
