@@ -85,7 +85,8 @@ public class VideoViewFragment extends Fragment {
 		videoView.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				showToastShort("restarting connection to Cam");
+				String url = StringUtils.getCamUrl(videoView);
+				showToastShort("restarting connection to Cam: "+url);
 				if (videoView.isPlaying())
 					videoView.stopPlayback();
 				else
