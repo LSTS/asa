@@ -1,8 +1,5 @@
 package pt.lsts.asa;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import pt.lsts.asa.comms.Announcer;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.CallOut;
@@ -21,6 +18,10 @@ import pt.lsts.asa.subscribers.SystemListSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.MUtil;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -29,11 +30,9 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 /**
- * Global Singleton that actually acts as the workhorse of ACCU. Contains all
- * the structures that need to be global and persistent across all
- * activities/panels
- * 
- * @author jqcorreia
+ * Global Singleton of ASA and necessary components
+ * initiated in App extension of Application.
+ * (Fork from ACCU)
  * 
  */
 
@@ -182,7 +181,7 @@ public class ASA {
 	}
 
 	public static ASA getInstance(Context context) {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getInstance(context)");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getInstance(context)");
 		if (instance == null) {
 			instance = new ASA(context);
 		}
@@ -190,33 +189,33 @@ public class ASA {
 	}
 
 	public static ASA getInstance() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getInstance");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getInstance");
 		return instance;
 	}
 
 	public Sys getActiveSys() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getActiveSys");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getActiveSys");
 		return activeSys;
 	}
 
 	public void setActiveSys(Sys activeS) {
-		Log.i(TAG, ASA.class.getSimpleName() + ": setActiveSys");
+		Log.v(TAG, ASA.class.getSimpleName() + ": setActiveSys");
 		activeSys = activeS;
 		notifyMainSysChange();
 	}
 
 	public IMCManager getIMCManager() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getIMCManager");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getIMCManager");
 		return imcManager;
 	}
 
 	public SystemList getSystemList() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getSystemList");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getSystemList");
 		return sysList;
 	}
 
 	public GPSManager getGpsManager() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getGpsManager");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getGpsManager");
 		return gpsManager;
 	}
 
@@ -225,35 +224,35 @@ public class ASA {
 	}
 
 	public LblBeaconList getLblBeaconList() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getLblBeaconList");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getLblBeaconList");
 		return lblBeaconList;
 	}
 
 	// Main System listeners list related code
 	public void addMainSysChangeListener(MainSysChangeListener listener) {
-		Log.i(TAG, ASA.class.getSimpleName() + ": addMainSysChangeListener");
+		Log.v(TAG, ASA.class.getSimpleName() + ": addMainSysChangeListener");
 		mainSysChangeListeners.add(listener);
 	}
 
 	public void removeMainSysChangeListener(MainSysChangeListener listener) {
-		Log.i(TAG, ASA.class.getSimpleName() + ": removeMainSysChangeListener");
+		Log.v(TAG, ASA.class.getSimpleName() + ": removeMainSysChangeListener");
 		mainSysChangeListeners.remove(listener);
 	}
 
 	private static void notifyMainSysChange() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": notifyMainSysChange");
+		Log.v(TAG, ASA.class.getSimpleName() + ": notifyMainSysChange");
 		for (MainSysChangeListener l : mainSysChangeListeners) {
 			l.onMainSysChange(activeSys);
 		}
 	}
 
 	public SharedPreferences getPrefs() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getPrefs");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getPrefs");
 		return sharedPreferences;
 	}
 
 	public boolean isStarted() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": isStarted");
+		Log.v(TAG, ASA.class.getSimpleName() + ": isStarted");
 		return started;
 	}
 
@@ -261,7 +260,7 @@ public class ASA {
 	 * @return the next requestId
 	 */
 	public int getNextRequestId() {
-		Log.i(TAG, ASA.class.getSimpleName() + ": getNextRequestId");
+		Log.v(TAG, ASA.class.getSimpleName() + ": getNextRequestId");
 		synchronized (requestId) {
 			++requestId;
 			if (requestId > 0xFFFF)

@@ -1,18 +1,14 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.App;
-import pt.lsts.asa.settings.Profile;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.R;
-import pt.lsts.asa.feedback.Heart;
 import pt.lsts.asa.fragments.DataFragment;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,8 +16,6 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
