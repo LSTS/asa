@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,7 +25,7 @@ import android.support.v4.app.Fragment;
 
 public class VideoViewFragment extends Fragment {
 
-	private Context context;
+	private FragmentActivity fragmentActivity;
 	private VideoView videoView;
 
 	private ScheduledFuture handle;
@@ -38,14 +39,13 @@ public class VideoViewFragment extends Fragment {
 		// Required empty public constructor
 	}
 
-	public VideoViewFragment(Context context) {
-		this.context = context;
+	public VideoViewFragment(FragmentActivity fragmentActivity) {
+		this.fragmentActivity = fragmentActivity;
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.context = super.getActivity().getApplicationContext();
 	}
 
 	@Override
@@ -148,11 +148,11 @@ public class VideoViewFragment extends Fragment {
 	}
 
 	public void setConnectionChecker(){
-		setRunnable(this.context);
+		setRunnable();
 		startHandle(timeoutFalse);
 	}
 
-	public void setRunnable(final Context context){
+	public void setRunnable(){
 		runnable = new Runnable() {
 			@Override
 			public void run() {
@@ -182,10 +182,10 @@ public class VideoViewFragment extends Fragment {
 	}
 
 	public void showToastLong(String msg){
-		Toast.makeText(context,msg,Toast.LENGTH_LONG).show();
+		Toast.makeText(fragmentActivity.getApplicationContext(),msg,Toast.LENGTH_LONG).show();
 	}
 
 	public void showToastShort(String msg){
-		Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
+		Toast.makeText(fragmentActivity.getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
 	}
 }

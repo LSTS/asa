@@ -1,18 +1,16 @@
 package pt.lsts.asa.activities;
 
-import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
-import pt.lsts.asa.listenners.sharedPreferences.SoundPreferencesListenner;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+
 import android.app.AlertDialog;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.support.v4.app.FragmentActivity;
