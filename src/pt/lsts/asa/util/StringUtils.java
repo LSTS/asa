@@ -1,0 +1,63 @@
+package pt.lsts.asa.util;
+
+import android.widget.VideoView;
+
+import java.util.Locale;
+
+import pt.lsts.asa.settings.Settings;
+
+/**
+ * Created by jloureiro on 18-12-2014.
+ */
+public class StringUtils {
+
+	public static String getCamUrl(VideoView videoView){
+		String cam = Settings.getString("cam_model","axis");
+		cam = cam.toLowerCase(Locale.UK);
+		switch (cam){
+			case "axis":
+				return getAxisUrl(videoView);
+			default:
+				return "ERROR";
+		}
+
+	}
+
+	public static String getAxisUrl(VideoView videoView){
+		String protocol = Settings.getString("cam_protocol", "rtsp");
+		String ip= Settings.getString("cam_ip", "10.0.20.199");
+		String location = "axis-media/media.amp";
+		String codec = Settings.getString("cam_codec","h264");
+		String resolution = Settings.getString("cam_resolution", "0x0");
+
+		resolution = validateResolution(resolution, videoView);
+
+		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution="+resolution;
+		return completeUrl;
+	}
+
+	public static String validateResolution(String resolution, VideoView videoView){
+		String[] res = resolution.split("x");
+		if (res.length!=2){
+			resolution = getVideoViewResolution(videoView);
+			//Toast.makeText(context, "used original - 1st one: "+resolution, Toast.LENGTH_SHORT).show();
+		}else {
+			try {
+				Integer.parseInt(res[0]);
+				Integer.parseInt(res[1]);
+			} catch (Exception e) {
+				resolution = getVideoViewResolution(videoView);
+				//Toast.makeText(context, "used original - 2nd one: "+resolution, Toast.LENGTH_SHORT).show();
+			}
+		}
+		return resolution;
+	}
+
+	public static String getVideoViewResolution(VideoView videoView){
+		int width = videoView.getWidth();
+		int height = videoView.getHeight();
+		String resolution=width+"x"+height;
+		return resolution;
+	}
+
+}

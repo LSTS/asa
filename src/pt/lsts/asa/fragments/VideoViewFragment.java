@@ -2,6 +2,7 @@ package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.StringUtils;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -94,22 +95,8 @@ public class VideoViewFragment extends Fragment {
 		});
 	}
 
-	public String getCompleteUrl(){
-		String protocol = Settings.getString("cam_protocol", "rtsp");
-		String ip= Settings.getString("cam_ip", "10.0.20.199");
-		String location = "axis-media/media.amp";
-		String codec = Settings.getString("cam_codec","h264");
-		String resolution = Settings.getString("cam_resolution", "0x0");
-
-		resolution = validateResolution(resolution);
-		//Toast.makeText(context, "resolution: "+resolution, Toast.LENGTH_SHORT).show();
-
-		String completeUrl=protocol+"://"+ip+"/"+location+"?videocodec="+codec+"&resolution="+resolution;
-		return completeUrl;
-	}
-
 	public void startVideo(){
-		String url = getCompleteUrl();
+		String url = StringUtils.getCamUrl(videoView);
 		videoView.setVideoPath(url);
 		videoView.start();
 		Log.i(TAG, "Connecting: "+url);
@@ -119,30 +106,6 @@ public class VideoViewFragment extends Fragment {
 		Log.i(TAG, "restartVideo()");
 		videoView.stopPlayback();
 		startVideo();
-	}
-
-	public String getVideoViewResolution(){
-		int width = videoView.getWidth();
-		int height = videoView.getHeight();
-		String resolution=width+"x"+height;
-		return resolution;
-	}
-
-	public String validateResolution(String resolution){
-		String[] res = resolution.split("x");
-		if (res.length!=2){
-			resolution = getVideoViewResolution();
-			//Toast.makeText(context, "used original - 1st one: "+resolution, Toast.LENGTH_SHORT).show();
-		}else {
-			try {
-				Integer.parseInt(res[0]);
-				Integer.parseInt(res[1]);
-			} catch (Exception e) {
-				resolution = getVideoViewResolution();
-				//Toast.makeText(context, "used original - 2nd one: "+resolution, Toast.LENGTH_SHORT).show();
-			}
-		}
-		return resolution;
 	}
 
 	public void setConnectionChecker(){
@@ -183,8 +146,7 @@ public class VideoViewFragment extends Fragment {
 
 	public void showToastLong(final String msg){
 		fragmentActivity.runOnUiThread(new Runnable() {
-			public void run()
-			{
+			public void run() {
 				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_LONG).show();
 			}
 		});
@@ -192,8 +154,7 @@ public class VideoViewFragment extends Fragment {
 
 	public void showToastShort(final String msg){
 		fragmentActivity.runOnUiThread(new Runnable() {
-			public void run()
-			{
+			public void run() {
 				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_SHORT).show();
 			}
 		});
