@@ -9,9 +9,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +23,7 @@ import android.support.v4.app.Fragment;
 
 public class VideoViewFragment extends Fragment {
 
+	private final String TAG = "CamConnection";
 	private FragmentActivity fragmentActivity;
 	private VideoView videoView;
 
@@ -50,10 +49,9 @@ public class VideoViewFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+							 Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		View v = inflater.inflate(R.layout.fragment_video_view, container,
-				false);
+		View v = inflater.inflate(R.layout.fragment_video_view, container,false);
 		videoView = (VideoView) v.findViewById(R.id.videoViewFullscreen);
 
 		return v;
@@ -114,11 +112,11 @@ public class VideoViewFragment extends Fragment {
 		String url = getCompleteUrl();
 		videoView.setVideoPath(url);
 		videoView.start();
-		Log.i("CamConnection", "Connecting: "+url);
+		Log.i(TAG, "Connecting: "+url);
 	}
 
 	public void restartVideo(){
-		Log.i("CamConnection", "restartVideo()");
+		Log.i(TAG, "restartVideo()");
 		videoView.stopPlayback();
 		startVideo();
 	}
@@ -156,22 +154,24 @@ public class VideoViewFragment extends Fragment {
 		runnable = new Runnable() {
 			@Override
 			public void run() {
-			if (videoView.isPlaying()) {
-				if (connectedBool==false){
-					connectedBool = true;
-					startHandle(timeoutTrue);
-					Log.w("CamConnection", "Connection Established");
+				if (videoView.isPlaying()) {
+					if (connectedBool==false){
+						connectedBool = true;
+						startHandle(timeoutTrue);
+						Log.w(TAG, "Connection Established");
+						showToastShort("Connection Established");
+					}
+					Log.i(TAG, "Connection OK, retrying connection in: "+timeoutTrue);
+				}else{
+					if (connectedBool==true){
+						connectedBool=false;
+						startHandle(timeoutFalse);
+						Log.w(TAG, "Connection Lost");
+						showToastLong("Connection Lost");
+					}
+					Log.i(TAG, "Connection failed, retrying connection in: "+timeoutFalse);
 				}
-				Log.i("CamConnection", "Connection OK, retrying connection in: "+timeoutTrue);
-			}else{
-				if (connectedBool==true){
-					connectedBool=false;
-					startHandle(timeoutFalse);
-					Log.w("CamConnection", "Connection Lost");
-				}
-				Log.i("CamConnection", "Connection failed, retrying connection in: "+timeoutFalse);
-			}
-		}};
+			}};
 	}
 
 	public void startHandle(int timeout){
@@ -181,11 +181,22 @@ public class VideoViewFragment extends Fragment {
 				timeout, TimeUnit.MILLISECONDS);
 	}
 
-	public void showToastLong(String msg){
-		Toast.makeText(fragmentActivity.getApplicationContext(),msg,Toast.LENGTH_LONG).show();
+	public void showToastLong(final String msg){
+		fragmentActivity.runOnUiThread(new Runnable() {
+			public void run()
+			{
+				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 
-	public void showToastShort(String msg){
-		Toast.makeText(fragmentActivity.getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+	public void showToastShort(final String msg){
+		fragmentActivity.runOnUiThread(new Runnable() {
+			public void run()
+			{
+				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
+
 }
