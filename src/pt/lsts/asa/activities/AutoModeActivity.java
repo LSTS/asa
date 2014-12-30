@@ -2,9 +2,13 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
+
+import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+
+import com.google.android.gms.maps.MapFragment;
 
 public class AutoModeActivity extends FragmentActivity {
 
@@ -24,14 +28,9 @@ public class AutoModeActivity extends FragmentActivity {
 			if (savedInstanceState != null) {
 				return;// restoring state
 			}
-			loadGmapsFragment();
+            gmapFragment = new GmapFragment(this);
+            gmapFragment.initMapFragment();
 		}
-	}
-
-	private void loadGmapsFragment() {
-		gmapFragment = new GmapFragment(this.getApplicationContext());
-		getSupportFragmentManager().beginTransaction()
-				.add(R.id.fragment_container_auto, gmapFragment).commit();
 	}
 
 }
