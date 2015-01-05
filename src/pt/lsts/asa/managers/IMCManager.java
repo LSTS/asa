@@ -258,11 +258,16 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 	 * Method responsible for effectively giving the order to the UDPTransport
 	 * to send the message
 	 */
-	public void send(String address, int port, IMCMessage msg) {
+	public void send(final String address, final int port, final IMCMessage msg) {
 		try {
 			// FIXME Fill the header of the messages here
 			fillHeader(msg);
-			comm.sendMessage(address, port, msg);
+            new Thread() {
+                @Override
+                public void run() {
+                    comm.sendMessage(address, port, msg);
+                }
+            }.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

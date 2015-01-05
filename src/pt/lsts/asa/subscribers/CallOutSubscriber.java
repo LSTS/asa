@@ -14,26 +14,38 @@ public class CallOutSubscriber implements IMCSubscriber{
 
 	private CallOut callOut;
 	private Sys activeSys;
+    private Thread thread;
 	
 	public CallOutSubscriber(CallOut callOut) {
 		this.callOut = callOut;
 	}
 	
 	@Override
-	public void onReceive(IMCMessage msg) {
+	public void onReceive(final IMCMessage msg) {
+
+        if (thread!=null)//if there is a previous message, finish going through that one
+            while (thread.isAlive());
+
+        thread = new Thread() {
+            @Override
+            public void run() {
 		
-		activeSys = ASA.getInstance().getActiveSys();
-		
-		Log.v("CallOut", "Received Message");
-		
-		if (IMCUtils.isMsgFromActive(msg)){
-			final int ID_MSG = msg.getMgid();
-			if (ID_MSG == IndicatedSpeed.ID_STATIC)
-				callOut.setIasValue((Double) msg.getValue("value"));
-			if (ID_MSG == EstimatedState.ID_STATIC)
-				callOut.setAltValue(((Float)msg.getValue("height")));
-			callOut.setLastMsgReceived(msg.getTimestampMillis());
-		}		
+                activeSys = ASA.getInstance().getActiveSys();
+
+                Log.v("CallOut", "Received Message");
+
+                if (IMCUtils.isMsgFromActive(msg)){
+                    final int ID_MSG = msg.getMgid();
+                    if (ID_MSG == IndicatedSpeed.ID_STATIC)
+                        callOut.setIasValue((Double) msg.getValue("value"));
+                    if (ID_MSG == EstimatedState.ID_STATIC)
+                        callOut.setAltValue(((Float)msg.getValue("height")));
+                    callOut.setLastMsgReceived(msg.getTimestampMillis());
+                }
+
+            }
+        };
+        thread.start();
 		
 	}
 
