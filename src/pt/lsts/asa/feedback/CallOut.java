@@ -119,7 +119,10 @@ public class CallOut {
 				if (altHandle.isCancelled())
 					startAltHandle();
                 while (tts.isSpeaking());
-				tts.speak("Altitude " + formatter.format(altValue),TextToSpeech.QUEUE_FLUSH, null);
+                String ttsString = "Altitude " + formatter.format(altValue);
+                if (iasMuteBool==true)//if ias is mute, speak only the value
+                    ttsString = formatter.format(altValue);
+				tts.speak(ttsString,TextToSpeech.QUEUE_FLUSH, null);
 
 
 				Log.i("tts.speak", "alt= " + altValue);
@@ -146,7 +149,10 @@ public class CallOut {
 					startIasHandle();
 
                 while (tts.isSpeaking());
-				tts.speak("Speed " + formatter.format(iasValue),TextToSpeech.QUEUE_FLUSH, null);
+                String ttsString = "Speed " + formatter.format(iasValue);
+                if (altMuteBool==true)//if alt is mute, speak only the value
+                    ttsString = formatter.format(iasValue);
+				tts.speak(ttsString,TextToSpeech.QUEUE_FLUSH, null);
 
 
 				Log.i("tts.speak", "ias= " + iasValue);
@@ -184,7 +190,8 @@ public class CallOut {
 				}
 				long timeSinceLastMessage = ((System.currentTimeMillis() - lastMsgReceived) / 1000);
                 while (tts.isSpeaking());
-				tts.speak("Lost Comms", TextToSpeech.QUEUE_FLUSH, null);
+                String ttsString = "Lost Comms";
+				tts.speak(ttsString, TextToSpeech.QUEUE_FLUSH, null);
 
 				Log.i("tts.speak", "timeout= " + timeSinceLastMessage
 						+ "\ntimeoutInterval= " + timeoutInterval);
