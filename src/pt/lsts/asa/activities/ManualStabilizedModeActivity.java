@@ -1,5 +1,6 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.fragments.SettingsButtonFragment;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
 import pt.lsts.asa.managers.SoundManager;
@@ -23,6 +24,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 
 	private SoundControlFragment soundControlFragment = null;
 	private VideoViewFragment videoViewFragment = null;
+    private SettingsButtonFragment settingsButtonFragment = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,9 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 
 			soundControlFragment = new SoundControlFragment(this.getApplicationContext());
 			loadFragment(soundControlFragment);
+
+            settingsButtonFragment = new SettingsButtonFragment(this);
+            loadFragment(settingsButtonFragment);
 		}
 	}
 
