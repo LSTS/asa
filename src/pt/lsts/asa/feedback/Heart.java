@@ -1,6 +1,7 @@
 package pt.lsts.asa.feedback;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.SystemListChangeListener;
@@ -40,10 +41,11 @@ public class Heart implements SystemListChangeListener {
 	}
 
 	public void sendHeartbeat() {
-		for (Sys s : vehicleList) {
+        Iterator<Sys> iterator = vehicleList.iterator();
+		while(iterator.hasNext()) {
 			if (DEBUG)
 				Log.v(TAG, "Beating...");
-			imm.sendToSys(s, "HeartBeat");
+			imm.sendToSys(iterator.next(), "HeartBeat");
 		}
 	}
 
