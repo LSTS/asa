@@ -42,58 +42,12 @@ public class SystemListSubscriber implements IMCSubscriber{
                     return;
                 }
 
-                // Process Estimated State
-                // Store Position Information
-                // COMMENTED FOR NOW, WE DONT NEED THIS INFO TO BE GLOBAL
-
-                // if(msg.getAbbrevName().equalsIgnoreCase("EstimatedState"))
-                // {
-                // Sys sys = findSysById((Integer)msg.getHeaderValue("src"));
-                //
-                // if(sys!=null) // Safeguard some rogue message of a system that doesnt
-                // exist
-                // {
-                // String ref = msg.getString("ref");
-                // sys.setRefMode(ref);
-                // double[] rpy =
-                // {msg.getDouble("phi"),msg.getDouble("theta"),msg.getDouble("psi")};
-                // sys.setRPY(rpy);
-                // if(ref.equalsIgnoreCase("LLD_ONLY"))
-                // {
-                // double[] ned = {0.0,0.0,0.0};
-                // double[] lld =
-                // {msg.getDouble("lat"),msg.getDouble("lon"),msg.getDouble("depth")};
-                // sys.setLLD(lld);
-                // sys.setNED(ned);
-                // }
-                // if(ref.equalsIgnoreCase("NED_ONLY"))
-                // {
-                // double[] ned =
-                // {msg.getDouble("x"),msg.getDouble("y"),msg.getDouble("z")};
-                // double[] lld = {0.0,0.0,0.0};
-                // sys.setLLD(lld);
-                // sys.setNED(ned);
-                // }
-                // if(ref.equalsIgnoreCase("NED_LLD"))
-                // {
-                // double[] ned =
-                // {msg.getDouble("x"),msg.getDouble("y"),msg.getDouble("z")};
-                // double[] lld =
-                // {msg.getDouble("lat"),msg.getDouble("lon"),msg.getDouble("depth")};
-                // sys.setLLD(lld);
-                // sys.setNED(ned);
-                // }
-                // if(DEBUG)Log.i("Log","Name : " + sys.getName() + " lat " +
-                // sys.getLLD()[1] + " x " + sys.getNED()[1]); // Simple debug message
-                // }
-                // }
-
                 // Process Announce routine
                 final int ID_MSG = msg.getMgid();
                 if (ID_MSG == Announce.ID_STATIC) {
                     Announce m =  (Announce)msg;
 
-                    Log.v("Announce from", "1 "+m.getSysName());
+                    Log.v("Announce from ", m.getSysName());
 
                     // If System already exists in host list
                     if (systemList.containsSysName(m.getSysName())) {
@@ -122,7 +76,6 @@ public class SystemListSubscriber implements IMCSubscriber{
                                 e1.printStackTrace();
                             }
                         }
-                        Log.v("Announce from", "ret 1 "+m.getSysName());
                         return;
                     }
                     // If Service IMC+UDP doesnt exist or isnt reachable, return...
@@ -130,12 +83,11 @@ public class SystemListSubscriber implements IMCSubscriber{
                         Log.e(TAG, m.getSysName()
                                 + " node doesn't have IMC protocol or isn't reachable");
                         Log.e(TAG, msg.toString());
-                        Log.v("Announce from", "ret 2 "+m.getSysName());
                         return;
                     }
                     String[] addrAndPort = IMCUtils.getAnnounceIMCAddressPort(msg);
                     if (addrAndPort == null) {
-                        Log.e(TAG, "No Announce Services - " + m.getSysName());
+                        Log.e(TAG, "No Announce Services: " + m.getSysName());
                         return;
                     }
 
@@ -144,7 +96,7 @@ public class SystemListSubscriber implements IMCSubscriber{
                             m.getSysName(),
                             (Integer) msg.getHeaderValue("src"),
                             m.getSysType().name(), true, false);
-                    Log.i("New System Added", s.getName());
+                    Log.i("New System Added: ", s.getName());
                     systemList.getList().add(s);
 
                     // Update the list of available Vehicles
@@ -166,7 +118,7 @@ public class SystemListSubscriber implements IMCSubscriber{
                 // Process VehicleState to get error count
                 else if (ID_MSG == VehicleState.ID_STATIC) {
                     if (DEBUG)
-                        Log.i("Log", "Received VehicleState" + msg.toString());
+                        Log.i("Log", "Received VehicleState: " + msg.toString());
                     Sys s = systemList.findSysById((Integer) msg.getHeaderValue("src"));
                     int errors = msg.getInteger("error_count");
                     if (s != null) // Meaning it exists on the list

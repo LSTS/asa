@@ -38,7 +38,7 @@ public class CallOut {
 
 	private Float altValue = 0f;
 	private Double iasValue = 0d;
-	NumberFormat formatter = new DecimalFormat("#0.00");
+	NumberFormat formatter = new DecimalFormat("#0");
 	private long lastMsgReceived = 0;
 
 	private int iasInterval = 10000, altInterval = 15000,
@@ -78,6 +78,7 @@ public class CallOut {
 			}
 		});
 		tts.setLanguage(Locale.UK);
+        tts.setSpeechRate(1.75f);
 	}
 
 	public void initBooleans() {
@@ -117,7 +118,6 @@ public class CallOut {
 					return;
 				if (altHandle.isCancelled())
 					startAltHandle();
-				tts.setSpeechRate(1.25f);
                 while (tts.isSpeaking());
 				tts.speak("Altitude " + formatter.format(altValue),TextToSpeech.QUEUE_FLUSH, null);
 
@@ -144,7 +144,6 @@ public class CallOut {
 					return;
 				if (iasHandle.isCancelled())
 					startIasHandle();
-				tts.setSpeechRate(1.25f);
 
                 while (tts.isSpeaking());
 				tts.speak("Speed " + formatter.format(iasValue),TextToSpeech.QUEUE_FLUSH, null);
@@ -184,7 +183,6 @@ public class CallOut {
 					return;
 				}
 				long timeSinceLastMessage = ((System.currentTimeMillis() - lastMsgReceived) / 1000);
-				tts.setSpeechRate(1f);
                 while (tts.isSpeaking());
 				tts.speak("Lost Comms", TextToSpeech.QUEUE_FLUSH, null);
 
