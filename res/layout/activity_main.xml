@@ -12,9 +12,9 @@
         android:id="@+id/buttonPfd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonManualStabilized"
+        android:text="PFD"
         android:layout_below="@+id/buttonManualStabilized"
-        android:text="PFD" />
+        android:layout_alignLeft="@+id/buttonManualStabilized" />
 
     <Button
         android:id="@+id/buttonSettingsCheckList"
@@ -52,8 +52,16 @@
         android:id="@+id/buttonManualStabilized"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:text="Manual/Stabilized"
+        android:layout_below="@+id/systemListButton"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SystemList"
+        android:id="@+id/systemListButton"
         android:layout_below="@+id/buttonChooseActiveSys"
-        android:text="Manual/Stabilized" />
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

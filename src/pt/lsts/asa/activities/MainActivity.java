@@ -5,6 +5,7 @@ import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.R;
 import pt.lsts.asa.fragments.DataFragment;
+import pt.lsts.asa.sys.SystemList;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class MainActivity extends FragmentActivity {
 	private static final String DATA_FRAG_TAG = "data_frag_tag";
 	
 	Button buttonChooseActiveSystem;
+    Button systemListButton;
 	Button buttonManualStabilized;
 	Button buttonPFD;
 	Button buttonSettingsCheckList;
@@ -42,6 +44,8 @@ public class MainActivity extends FragmentActivity {
 
 		buttonChooseActiveSystem = (Button) findViewById(R.id.buttonChooseActiveSys);
 		setButtonChooseActiveSystem(this);
+        systemListButton = (Button) findViewById(R.id.systemListButton);
+        setSystemListButton();
 		buttonManualStabilized = (Button) findViewById(R.id.buttonManualStabilized);
 		setButtonManualStabilized();
 		buttonPFD = (Button) findViewById(R.id.buttonPfd);
@@ -56,6 +60,17 @@ public class MainActivity extends FragmentActivity {
 		setButtonTest2();
 
 	}
+
+    public void setSystemListButton(){
+        systemListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),
+                        SystemListActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 
 	public void test() {
 		// showToast(sharedPreferences.getString("username", "NA"));

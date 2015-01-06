@@ -48,6 +48,7 @@
             android:label="@string/title_activity_settings"
             android:noHistory="true" >
         </activity>
+        <activity android:name=".activities.SystemListActivity" />
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
