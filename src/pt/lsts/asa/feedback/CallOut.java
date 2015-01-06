@@ -103,9 +103,12 @@ public class CallOut {
 	}
 
 	public void stopCallOuts() {
-		iasHandle.cancel(true);
-		altHandle.cancel(true);
-		timeoutHandle.cancel(true);
+        if (iasHandle!=null)
+            iasHandle.cancel(true);
+        if (altHandle!=null)
+            altHandle.cancel(true);
+        if (timeoutHandle!=null)
+		    timeoutHandle.cancel(true);
 	}
 
 	public void initAltRunnale() {
