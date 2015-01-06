@@ -118,13 +118,11 @@ public class CallOut {
 				if (altHandle.isCancelled())
 					startAltHandle();
 				tts.setSpeechRate(1.25f);
-				/*
-				 * tts.speak("Altitude " + formatter.format(altValue),
-				 * TextToSpeech.QUEUE_ADD, null);
-				 */
+                while (tts.isSpeaking());
+				tts.speak("Altitude " + formatter.format(altValue),TextToSpeech.QUEUE_FLUSH, null);
 
-				Log.i("tts.speak", "alt= " + altValue + "\naltInterval= "
-						+ altInterval);
+
+				Log.i("tts.speak", "alt= " + altValue);
 			}
 		};
 	}
@@ -147,13 +145,12 @@ public class CallOut {
 				if (iasHandle.isCancelled())
 					startIasHandle();
 				tts.setSpeechRate(1.25f);
-				/*
-				 * tts.speak("Speed " + formatter.format(iasValue),
-				 * TextToSpeech.QUEUE_ADD, null);
-				 */
 
-				Log.i("tts.speak", "ias= " + iasValue + "\niasInterval= "
-						+ iasInterval);
+                while (tts.isSpeaking());
+				tts.speak("Speed " + formatter.format(iasValue),TextToSpeech.QUEUE_FLUSH, null);
+
+
+				Log.i("tts.speak", "ias= " + iasValue);
 
 			}
 		};
@@ -188,10 +185,9 @@ public class CallOut {
 				}
 				long timeSinceLastMessage = ((System.currentTimeMillis() - lastMsgReceived) / 1000);
 				tts.setSpeechRate(1f);
-				/*
-				 * tts.speak("No message received in " + timeSinceLastMessage +
-				 * " seconds", TextToSpeech.QUEUE_FLUSH, null);
-				 */
+                while (tts.isSpeaking());
+				tts.speak("Lost Comms", TextToSpeech.QUEUE_FLUSH, null);
+
 				Log.i("tts.speak", "timeout= " + timeSinceLastMessage
 						+ "\ntimeoutInterval= " + timeoutInterval);
 			}
