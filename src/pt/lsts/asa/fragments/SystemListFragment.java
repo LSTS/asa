@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -93,6 +94,7 @@ public class SystemListFragment extends Fragment {
         ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
         if (arrayAdapter == null) {
             createListViewAdapter(arrayListName);
+            setListViewOnItemClickListener();
         } else {
             updateListView(arrayListName);
         }
@@ -104,6 +106,19 @@ public class SystemListFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 arrayListName);
         systemListView.setAdapter(arrayAdapter);
+    }
+
+    public void setListViewOnItemClickListener(){
+        systemListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
+                ASA.getInstance().setActiveSys(arrayListSys.get(position));
+                showToastLong("Active System: "+ASA.getInstance().getActiveSys().getName());
+            }
+        });
     }
 
     public void updateListView(final ArrayList<String> arrayListNameFinal){
