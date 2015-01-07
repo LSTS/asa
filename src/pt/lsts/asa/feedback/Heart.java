@@ -41,11 +41,11 @@ public class Heart implements SystemListChangeListener {
 	}
 
 	public void sendHeartbeat() {
-        Iterator<Sys> iterator = vehicleList.iterator();
-		while(iterator.hasNext()) {
+        ArrayList<Sys> arrayListSys = (ArrayList<Sys>) vehicleList.clone();
+		for (Sys sys : arrayListSys) {
 			if (DEBUG)
 				Log.v(TAG, "Beating...");
-			imm.sendToSys(iterator.next(), "HeartBeat");
+			imm.sendToSys(sys, "HeartBeat");
 		}
 	}
 
