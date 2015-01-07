@@ -1,18 +1,27 @@
 package pt.lsts.asa.fragments;
 
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.sys.Sys;
 
 /**
  * Created by jloureiro on 1/5/15.
@@ -21,6 +30,15 @@ public class SystemListFragment extends Fragment {
 
     private FragmentActivity fragmentActivity = null;
     private ListView systemListView = null;
+    private String TAG = "SystemListFragment";
+
+    private ScheduledFuture handle;
+    private final ScheduledExecutorService scheduler = Executors
+            .newScheduledThreadPool(1);
+    private Runnable runnable;
+    private int interval=2500;
+
+    ArrayAdapter<String> arrayAdapter = null;
 
     public SystemListFragment(){
         // Required empty public constructor
@@ -40,22 +58,78 @@ public class SystemListFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-
-        populateSystemListView();
-
+        //populateSystemListView();
+        initScheduler();
     }
 
-    public void populateSystemListView(){
-        List<String> your_array_list = new ArrayList<String>();
-        your_array_list.add("item1");
-        your_array_list.add("item2");
+    @Override
+    public void onPause(){
+        super.onPause();
+        shutdown();
+    }
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+    public void shutdown(){
+        if (handle!=null)
+            handle.cancel(true);
+    }
+
+    public void initScheduler(){
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                populateSystemListView();
+            }
+        };
+        if (handle!=null)
+            handle.cancel(true);
+        handle = scheduler.scheduleAtFixedRate(runnable, 0,
+                interval, TimeUnit.MILLISECONDS);
+    }
+
+    public void populateSystemListView() {
+        //showToastShort("populating...");
+        Log.i(TAG, "populating");
+
+        ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
+        if (arrayAdapter == null) {
+            createListViewAdapter(arrayListName);
+        } else {
+            updateListView(arrayListName);
+        }
+    }
+
+    public void createListViewAdapter(ArrayList<String> arrayListName){
+        arrayAdapter = new ArrayAdapter<String>(
                 fragmentActivity,
                 android.R.layout.simple_list_item_1,
-                your_array_list );
-
+                arrayListName);
         systemListView.setAdapter(arrayAdapter);
+    }
+
+    public void updateListView(final ArrayList<String> arrayListNameFinal){
+        fragmentActivity.runOnUiThread(new Runnable() {
+            public void run() {
+                arrayAdapter.clear();
+                arrayAdapter.addAll(arrayListNameFinal);
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    public void showToastShort(final String msg){
+        fragmentActivity.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(fragmentActivity, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void showToastLong(final String msg){
+        fragmentActivity.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(fragmentActivity, msg, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 }

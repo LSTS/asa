@@ -42,4 +42,10 @@ public class SystemListActivity extends FragmentActivity {
                 .add(R.id.fragment_container_system_list,
                         fragment).commit();
     }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        systemListFragment.shutdown();
+    }
 }
