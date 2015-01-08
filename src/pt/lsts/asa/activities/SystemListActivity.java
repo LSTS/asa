@@ -1,6 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.R;
+import pt.lsts.asa.fragments.SettingsButtonFragment;
 import pt.lsts.asa.fragments.SystemListFragment;
 import pt.lsts.asa.util.AndroidUtil;
 
@@ -14,6 +15,7 @@ import android.support.v4.app.FragmentActivity;
 public class SystemListActivity extends FragmentActivity {
 
     private SystemListFragment systemListFragment = null;
+    private SettingsButtonFragment settingsButtonFragment = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class SystemListActivity extends FragmentActivity {
 
             systemListFragment = new SystemListFragment(this);
             AndroidUtil.loadFragment(this, systemListFragment, R.id.fragment_container_system_list);
+
+            settingsButtonFragment = new SettingsButtonFragment(this);
+            AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_system_list);
         }
     }
 
