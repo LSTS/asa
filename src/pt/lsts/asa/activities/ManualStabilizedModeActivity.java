@@ -6,6 +6,7 @@ import pt.lsts.asa.fragments.VideoViewFragment;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.AndroidUtil;
 
 import android.app.AlertDialog;
 import android.support.v4.app.Fragment;
@@ -39,21 +40,14 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 			}
 
 			videoViewFragment = new VideoViewFragment(this);
-			loadFragment(videoViewFragment);
+            AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual_stabilized);
 
 			soundControlFragment = new SoundControlFragment(this);
-			loadFragment(soundControlFragment);
+            AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual_stabilized);
 
             settingsButtonFragment = new SettingsButtonFragment(this);
-            loadFragment(settingsButtonFragment);
+            AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_manual_stabilized);
 		}
-	}
-
-	public void loadFragment(Fragment fragment){
-		getSupportFragmentManager()
-				.beginTransaction()
-				.add(R.id.fragment_container_manual_stabilized,
-						fragment).commit();
 	}
 
 	@Override

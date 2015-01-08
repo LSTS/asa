@@ -2,6 +2,7 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.R;
 import pt.lsts.asa.fragments.SystemListFragment;
+import pt.lsts.asa.util.AndroidUtil;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -31,15 +32,8 @@ public class SystemListActivity extends FragmentActivity {
             }
 
             systemListFragment = new SystemListFragment(this);
-            loadFragment(systemListFragment);
+            AndroidUtil.loadFragment(this, systemListFragment, R.id.fragment_container_system_list);
         }
-    }
-
-    public void loadFragment(Fragment fragment){
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container_system_list,
-                        fragment).commit();
     }
 
     @Override
