@@ -18,10 +18,6 @@ import android.support.v4.app.FragmentActivity;
 
 public class ManualStabilizedModeActivity extends FragmentActivity {
 
-	private AudioManager audioManager;
-	private ImageButton imageButtonMute;
-	private SoundManager soundManager = SoundManager.getInstance();
-
 	private SoundControlFragment soundControlFragment = null;
 	private VideoViewFragment videoViewFragment = null;
     private SettingsButtonFragment settingsButtonFragment = null;

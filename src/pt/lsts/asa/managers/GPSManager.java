@@ -1,9 +1,10 @@
 package pt.lsts.asa.managers;
 
-import java.util.ArrayList;
-
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.LocationChangeListener;
+
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;

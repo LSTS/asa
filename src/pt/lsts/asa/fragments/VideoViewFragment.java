@@ -1,6 +1,5 @@
 package pt.lsts.asa.fragments;
 
-import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.StringUtils;
 
@@ -53,7 +52,7 @@ public class VideoViewFragment extends Fragment {
 							 Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
 		View v = inflater.inflate(R.layout.fragment_video_view, container,false);
-		videoView = (VideoView) v.findViewById(R.id.videoViewFullscreen);
+		videoView = (VideoView) v.findViewById(R.id.videoView);
 
 		return v;
 	}

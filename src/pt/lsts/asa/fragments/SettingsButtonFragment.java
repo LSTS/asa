@@ -1,5 +1,8 @@
 package pt.lsts.asa.fragments;
 
+import pt.lsts.asa.R;
+import pt.lsts.asa.activities.SettingsActivity;
+
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -8,9 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import pt.lsts.asa.R;
-import pt.lsts.asa.activities.SettingsActivity;
 
 /**
  * Created by jloureiro on 1/6/15.

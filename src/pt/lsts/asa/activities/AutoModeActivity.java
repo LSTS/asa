@@ -3,12 +3,9 @@ package pt.lsts.asa.activities;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
 
-import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-import com.google.android.gms.maps.MapFragment;
 
 public class AutoModeActivity extends FragmentActivity {
 

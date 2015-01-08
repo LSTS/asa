@@ -6,7 +6,7 @@
     tools:context="pt.lsts.asa.fragments.SoundControlFragment" >
 
     <VideoView
-        android:id="@+id/videoViewFullscreen"
+        android:id="@+id/videoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"

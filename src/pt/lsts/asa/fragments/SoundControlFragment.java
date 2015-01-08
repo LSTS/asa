@@ -5,10 +5,10 @@ import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ui.components.VerticalSeekBar;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +22,10 @@ public class SoundControlFragment extends Fragment {
 
 	Context context;
 	AudioManager audioManager;
-	ImageButton imageButtonMute;
+	ImageButton muteImageButton;
 	CallOut callOut;
 	SoundManager soundManager = SoundManager.getInstance();
-	VerticalSeekBar volControl;
+	VerticalSeekBar volumeVerticalSeekBar;
 
 	public SoundControlFragment() {
 		// Required empty public constructor
@@ -47,8 +47,8 @@ public class SoundControlFragment extends Fragment {
 		// Inflate the layout for this fragment
 		View v = inflater.inflate(R.layout.fragment_sound_control, container,
 				false);
-		volControl = (VerticalSeekBar) v.findViewById(R.id.seekBarVolume);
-		imageButtonMute = (ImageButton) v.findViewById(R.id.imageButtonMute);
+		volumeVerticalSeekBar = (VerticalSeekBar) v.findViewById(R.id.volumeVerticalSeekBar);
+		muteImageButton = (ImageButton) v.findViewById(R.id.muteImageButton);
 		return v;
 	}
 
@@ -71,34 +71,34 @@ public class SoundControlFragment extends Fragment {
 	}
 
 	public void setVolumeControl() {
-		volControl = (VerticalSeekBar) getView().findViewById(
-				R.id.seekBarVolume);
-		volControl.setMax(soundManager.getMaxVolume());
-		volControl.setProgress(soundManager.getCurrentVolume());
-		setVolumeControlChanger(volControl, audioManager);
+		volumeVerticalSeekBar = (VerticalSeekBar) getView().findViewById(
+				R.id.volumeVerticalSeekBar);
+		volumeVerticalSeekBar.setMax(soundManager.getMaxVolume());
+		volumeVerticalSeekBar.setProgress(soundManager.getCurrentVolume());
+		setVolumeControlChanger(volumeVerticalSeekBar, audioManager);
 		setImageButtonMute();
 
 	}
 
 	public void setImageButtonMute() {
 		setImageButtonMuteIcon();
-		imageButtonMute.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (soundManager.checkMute())
-					unmute();
-				else
-					mute();
-				// showToastWithVolume();
-			}
-		});
+		muteImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (soundManager.checkMute())
+                    unmute();
+                else
+                    mute();
+                // showToastWithVolume();
+            }
+        });
 	}
 
 	public void setImageButtonMuteIcon() {
 		if (soundManager.checkMute())
-			imageButtonMute.setImageResource(R.drawable.sound_off);
+			muteImageButton.setImageResource(R.drawable.sound_off);
 		else
-			imageButtonMute.setImageResource(R.drawable.sound_on);
+			muteImageButton.setImageResource(R.drawable.sound_on);
 	}
 
 	public void setVolumeControlChanger(VerticalSeekBar volControl,
@@ -126,7 +126,7 @@ public class SoundControlFragment extends Fragment {
 
 	private void adjustVolumeBarAndIcon() {
 		int curVolume = soundManager.getCurrentVolume();
-		volControl.setProgress(curVolume);
+		volumeVerticalSeekBar.setProgress(curVolume);
 		setImageButtonMuteIcon();
 	}
 

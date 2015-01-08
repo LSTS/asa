@@ -1,10 +1,10 @@
 package pt.lsts.asa.util;
 
-import android.widget.VideoView;
+import pt.lsts.asa.settings.Settings;
 
 import java.util.Locale;
 
-import pt.lsts.asa.settings.Settings;
+import android.widget.VideoView;
 
 /**
  * Created by jloureiro on 18-12-2014.

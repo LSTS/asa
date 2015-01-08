@@ -6,7 +6,6 @@ import pt.lsts.asa.settings.SettingsFactory;
 
 import java.util.Vector;
 
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -15,23 +14,23 @@ import android.preference.PreferenceScreen;
 
 public class SettingsActivity extends PreferenceActivity {
 
-	PreferenceScreen screen;
+	PreferenceScreen preferenceScreen;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		screen = getPreferenceManager().createPreferenceScreen(this);
+		preferenceScreen = getPreferenceManager().createPreferenceScreen(this);
 
 		Vector<PreferenceCategory> preferenceCategories = SettingsFactory
 				.fetchCategories(this);
 
 		for (PreferenceCategory preferenceCategory : preferenceCategories)
-			screen.addPreference(preferenceCategory);
+			preferenceScreen.addPreference(preferenceCategory);
 
 		populateCategories(preferenceCategories);
 
-		setPreferenceScreen(screen);
+		setPreferenceScreen(preferenceScreen);
 		
 		loadPreferencesListenners();
 	}

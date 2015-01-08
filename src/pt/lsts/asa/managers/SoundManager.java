@@ -2,14 +2,9 @@ package pt.lsts.asa.managers;
 
 import pt.lsts.asa.App;
 import pt.lsts.asa.ui.components.VerticalSeekBar;
-import pt.lsts.asa.R;
-import android.content.Context;
+
 import android.media.AudioManager;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 public class SoundManager {
 

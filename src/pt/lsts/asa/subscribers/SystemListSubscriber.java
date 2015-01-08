@@ -1,6 +1,5 @@
 package pt.lsts.asa.subscribers;
 
-import android.util.Log;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
@@ -11,6 +10,8 @@ import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.VehicleState;
+
+import android.util.Log;
 
 public class SystemListSubscriber implements IMCSubscriber{
 

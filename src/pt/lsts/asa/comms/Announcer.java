@@ -9,8 +9,6 @@ import pt.lsts.asa.util.MUtil;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
 
-import java.util.Date;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;

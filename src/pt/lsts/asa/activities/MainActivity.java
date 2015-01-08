@@ -4,8 +4,6 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.R;
-import pt.lsts.asa.fragments.DataFragment;
-import pt.lsts.asa.sys.SystemList;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -26,38 +24,36 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity {
 
 	public static final String TAG = "MainActivity";
-	private static final String DATA_FRAG_TAG = "data_frag_tag";
 	
-	Button buttonChooseActiveSystem;
+	Button chooseActiveSystemButton;
     Button systemListButton;
-	Button buttonManualStabilized;
-	Button buttonPFD;
-	Button buttonSettingsCheckList;
-	Button buttonTest;
-	Button buttonTest2;
-	DataFragment dataFragment;
+	Button manualStabilizedButton;
+	Button autoButton;
+	Button settingsCheckListButton;
+	Button testButton;
+	Button test2Button;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		buttonChooseActiveSystem = (Button) findViewById(R.id.buttonChooseActiveSys);
-		setButtonChooseActiveSystem(this);
+		chooseActiveSystemButton = (Button) findViewById(R.id.chooseActiveSysButton);
+		setChooseActiveSystemButton(this);
         systemListButton = (Button) findViewById(R.id.systemListButton);
         setSystemListButton();
-		buttonManualStabilized = (Button) findViewById(R.id.buttonManualStabilized);
-		setButtonManualStabilized();
-		buttonPFD = (Button) findViewById(R.id.buttonPfd);
-		setButtonPfd();
-		buttonSettingsCheckList = (Button) findViewById(R.id.buttonSettingsCheckList);
-		setButtonSettingsCheckList();
-		buttonTest = (Button) findViewById(R.id.buttonTest);
-		buttonTest.setText("Show All Settings");
-		setButtonTest();
-		buttonTest2 = (Button) findViewById(R.id.buttonTest2);
-		buttonTest2.setText("Show Active System");
-		setButtonTest2();
+		manualStabilizedButton = (Button) findViewById(R.id.manualStabilizedButton);
+		setManualStabilizedButton();
+		autoButton = (Button) findViewById(R.id.autoButton);
+		setAutoButton();
+		settingsCheckListButton = (Button) findViewById(R.id.settingsCheckListButton);
+		setSettingsCheckListButton();
+		testButton = (Button) findViewById(R.id.testButton);
+		testButton.setText("Show All Settings");
+		setTestButton();
+		test2Button = (Button) findViewById(R.id.test2Button);
+		test2Button.setText("Show Active System");
+		setTest2Button();
 
 	}
 
@@ -92,13 +88,13 @@ public class MainActivity extends FragmentActivity {
 
 	}
 	
-	public void setButtonChooseActiveSystem(final Context context){
-		buttonChooseActiveSystem.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {				
-				chooseActiveSystem(context);
-			}
-		});
+	public void setChooseActiveSystemButton(final Context context){
+		chooseActiveSystemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseActiveSystem(context);
+            }
+        });
 	}
 	
 	public void chooseActiveSystem(Context context){
@@ -124,55 +120,55 @@ public class MainActivity extends FragmentActivity {
 		
 	}
 
-	public void setButtonTest() {
-		buttonTest.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				test();
-			}
-		});
+	public void setTestButton() {
+		testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                test();
+            }
+        });
 	}
 
-	public void setButtonTest2() {
-		buttonTest2.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				test2();
-			}
-		});
+	public void setTest2Button() {
+		test2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                test2();
+            }
+        });
 	}
 
-	public void setButtonSettingsCheckList() {
-		buttonSettingsCheckList.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(getApplicationContext(),
-						SettingsActivity.class);
-				startActivity(i);
-			}
-		});
+	public void setSettingsCheckListButton() {
+		settingsCheckListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),
+                        SettingsActivity.class);
+                startActivity(i);
+            }
+        });
 	}
 
-	public void setButtonManualStabilized() {
-		buttonManualStabilized.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(getApplicationContext(),
-						ManualStabilizedModeActivity.class);
-				startActivity(i);
-			}
-		});
+	public void setManualStabilizedButton() {
+		manualStabilizedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),
+                        ManualStabilizedModeActivity.class);
+                startActivity(i);
+            }
+        });
 	}
 
-	public void setButtonPfd() {
-		buttonPFD.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(getApplicationContext(),
-						AutoModeActivity.class);
-				startActivity(i);
-			}
-		});
+	public void setAutoButton() {
+		autoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),
+                        AutoModeActivity.class);
+                startActivity(i);
+            }
+        });
 	}
 
 	@Override

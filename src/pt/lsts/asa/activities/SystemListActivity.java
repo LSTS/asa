@@ -1,12 +1,11 @@
 package pt.lsts.asa.activities;
 
-import android.app.Activity;
+import pt.lsts.asa.R;
+import pt.lsts.asa.fragments.SystemListFragment;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-
-import pt.lsts.asa.R;
-import pt.lsts.asa.fragments.SystemListFragment;
 
 /**
  * Created by jloureiro on 1/5/15.

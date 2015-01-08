@@ -1,9 +1,10 @@
 package pt.lsts.asa.comms;
 
-import java.text.DecimalFormat;
-
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.util.WGS84Utilities;
+
+import java.text.DecimalFormat;
+
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;

@@ -1,9 +1,7 @@
 package pt.lsts.asa.feedback;
 
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.managers.IMCManager;
-import pt.lsts.imc.IMCMessage;
+
 import android.content.Context;
 import android.os.Vibrator;
 

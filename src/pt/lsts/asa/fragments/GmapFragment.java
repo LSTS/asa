@@ -2,20 +2,10 @@ package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.R;
 
-import com.google.android.gms.maps.GoogleMap;
-//import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.GoogleMapOptions;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.location.Location;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -23,6 +13,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
@@ -68,7 +64,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         fragmentTransaction.add(R.id.fragment_container_auto, mapFragment);
         fragmentTransaction.commit();
 
-        MapFragment mapFragment = (MapFragment) fragmentActivity.getFragmentManager().findFragmentById(R.id.map);
+        MapFragment mapFragment = (MapFragment) fragmentActivity.getFragmentManager().findFragmentById(R.id.googleMap);
         mapFragment.getMapAsync(this);
 
     }

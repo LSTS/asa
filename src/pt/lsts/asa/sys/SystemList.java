@@ -1,15 +1,11 @@
 package pt.lsts.asa.sys;
 
-import java.util.ArrayList;
-
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.listenners.SystemListChangeListener;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.util.AccuTimer;
-import pt.lsts.asa.util.IMCUtils;
-import pt.lsts.imc.IMCDefinition;
-import pt.lsts.imc.IMCMessage;
+
+import java.util.ArrayList;
+
 import android.util.Log;
 
 public class SystemList {

@@ -1,6 +1,5 @@
 package pt.lsts.asa.subscribers;
 
-import android.util.Log;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.CallOut;
@@ -9,6 +8,8 @@ import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
+
+import android.util.Log;
 
 public class CallOutSubscriber implements IMCSubscriber{
 

@@ -1,14 +1,14 @@
 package pt.lsts.asa.feedback;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.SystemListChangeListener;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.AccuTimer;
+
+import java.util.ArrayList;
+
 import android.util.Log;
 
 public class Heart implements SystemListChangeListener {

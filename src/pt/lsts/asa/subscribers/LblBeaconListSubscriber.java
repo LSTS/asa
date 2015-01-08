@@ -1,10 +1,11 @@
 package pt.lsts.asa.subscribers;
 
-import android.util.Log;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.pos.Beacon;
 import pt.lsts.asa.pos.LblBeaconList;
 import pt.lsts.imc.IMCMessage;
+
+import android.util.Log;
 
 public class LblBeaconListSubscriber implements IMCSubscriber{
 	

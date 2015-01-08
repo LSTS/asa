@@ -9,39 +9,39 @@
     tools:context="pt.lsts.asa.activities.MainActivity" >
 
     <Button
-        android:id="@+id/buttonPfd"
+        android:id="@+id/autoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PFD"
-        android:layout_below="@+id/buttonManualStabilized"
-        android:layout_alignLeft="@+id/buttonManualStabilized" />
+        android:text="Auto Mode"
+        android:layout_below="@+id/manualStabilizedButton"
+        android:layout_alignLeft="@+id/manualStabilizedButton" />
 
     <Button
-        android:id="@+id/buttonSettingsCheckList"
+        android:id="@+id/settingsCheckListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonPfd"
-        android:layout_below="@+id/buttonPfd"
+        android:layout_alignLeft="@+id/autoButton"
+        android:layout_below="@+id/autoButton"
         android:text="Settings/Checklist" />
 
     <Button
-        android:id="@+id/buttonTest"
+        android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonSettingsCheckList"
-        android:layout_below="@+id/buttonSettingsCheckList"
+        android:layout_alignLeft="@+id/settingsCheckListButton"
+        android:layout_below="@+id/settingsCheckListButton"
         android:text="Test" />
 
     <Button
-        android:id="@+id/buttonTest2"
+        android:id="@+id/test2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonTest"
-        android:layout_below="@+id/buttonTest"
+        android:layout_alignLeft="@+id/testButton"
+        android:layout_below="@+id/testButton"
         android:text="Test 2" />
 
     <Button
-        android:id="@+id/buttonChooseActiveSys"
+        android:id="@+id/chooseActiveSysButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -49,10 +49,10 @@
         android:text="Choose Active System" />
 
     <Button
-        android:id="@+id/buttonManualStabilized"
+        android:id="@+id/manualStabilizedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manual/Stabilized"
+        android:text="Manual/Stabilized Mode"
         android:layout_below="@+id/systemListButton"
         android:layout_alignParentLeft="true" />
 
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="SystemList"
         android:id="@+id/systemListButton"
-        android:layout_below="@+id/buttonChooseActiveSys"
+        android:layout_below="@+id/chooseActiveSysButton"
         android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

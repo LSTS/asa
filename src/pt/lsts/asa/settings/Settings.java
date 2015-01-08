@@ -1,11 +1,10 @@
 package pt.lsts.asa.settings;
 
+import pt.lsts.asa.ASA;
+
 import java.util.Map;
 
-import pt.lsts.asa.ASA;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 public class Settings {
 

@@ -1,5 +1,15 @@
 package pt.lsts.asa.fragments;
 
+import pt.lsts.asa.ASA;
+import pt.lsts.asa.R;
+import pt.lsts.asa.sys.Sys;
+
+import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
+
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -13,16 +23,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
-
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.R;
-import pt.lsts.asa.sys.Sys;
 
 /**
  * Created by jloureiro on 1/5/15.

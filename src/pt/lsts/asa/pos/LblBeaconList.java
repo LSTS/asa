@@ -1,13 +1,9 @@
 package pt.lsts.asa.pos;
 
-import java.util.ArrayList;
-
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.listenners.BeaconListChangeListener;
 import pt.lsts.asa.managers.IMCManager;
-import pt.lsts.imc.IMCMessage;
-import android.util.Log;
+
+import java.util.ArrayList;
 
 public class LblBeaconList {
 	public static final String[] SUBSCRIBED_MSGS = { "LblConfig" };

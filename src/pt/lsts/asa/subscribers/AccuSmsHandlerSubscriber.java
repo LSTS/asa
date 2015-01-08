@@ -1,10 +1,11 @@
 package pt.lsts.asa.subscribers;
 
-import android.util.Log;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.handlers.AccuSmsHandler;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.Sms;
+
+import android.util.Log;
 
 public class AccuSmsHandlerSubscriber implements IMCSubscriber{
 

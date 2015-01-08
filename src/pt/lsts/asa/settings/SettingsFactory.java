@@ -1,9 +1,10 @@
 package pt.lsts.asa.settings;
 
+import pt.lsts.asa.activities.SettingsActivity;
+
 import java.util.Map;
 import java.util.Vector;
 
-import pt.lsts.asa.activities.SettingsActivity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;

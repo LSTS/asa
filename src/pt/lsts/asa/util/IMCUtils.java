@@ -1,13 +1,12 @@
 package pt.lsts.asa.util;
 
+import pt.lsts.asa.ASA;
+import pt.lsts.imc.IMCMessage;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-
-import android.util.Log;
-import pt.lsts.asa.ASA;
-import pt.lsts.imc.IMCMessage;
 
 public class IMCUtils {
 	/**

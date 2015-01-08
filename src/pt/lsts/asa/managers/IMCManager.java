@@ -1,10 +1,5 @@
 package pt.lsts.asa.managers;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
@@ -15,6 +10,12 @@ import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.net.UDPTransport;
 import pt.lsts.neptus.messages.listener.MessageInfo;
 import pt.lsts.neptus.messages.listener.MessageListener;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;

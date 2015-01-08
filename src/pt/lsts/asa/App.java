@@ -1,11 +1,9 @@
 package pt.lsts.asa;
 
-import pt.lsts.asa.managers.IMCManager;
-import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.settings.Profile;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.imc.IMCDefinition;
-import pt.lsts.imc.net.IMCProtocol;
+
 import android.app.Application;
 import android.content.Context;
 import android.media.AudioManager;

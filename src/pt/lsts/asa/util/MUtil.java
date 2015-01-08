@@ -8,19 +8,19 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * Class that gathers miscellaneous utilitary functions that don't really fit
@@ -32,7 +32,7 @@ import android.util.Log;
  */
 public class MUtil {
 
-	private static final String TAG = "ACCU";
+	private static final String TAG = "MUtil";
 
 	public static final double TWO_PI_RADS = Math.PI * 2.0;
 

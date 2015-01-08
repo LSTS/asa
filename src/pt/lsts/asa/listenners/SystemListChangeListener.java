@@ -1,8 +1,8 @@
 package pt.lsts.asa.listenners;
 
-import java.util.ArrayList;
-
 import pt.lsts.asa.sys.Sys;
+
+import java.util.ArrayList;
 
 public interface SystemListChangeListener {
 

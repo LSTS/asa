@@ -1,10 +1,11 @@
 package pt.lsts.asa.listenners.sharedPreferences;
 
-import java.util.Locale;
-
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.settings.Settings;
+
+import java.util.Locale;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;

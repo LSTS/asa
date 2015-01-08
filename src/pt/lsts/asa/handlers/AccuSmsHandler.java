@@ -1,12 +1,10 @@
 package pt.lsts.asa.handlers;
 
-import pt.lsts.asa.comms.IMCSubscriber;
+
 import pt.lsts.asa.managers.IMCManager;
-import pt.lsts.imc.IMCMessage;
-import pt.lsts.imc.Sms;
+
 import android.content.Context;
 import android.telephony.SmsManager;
-import android.util.Log;
 import android.widget.Toast;
 
 public class AccuSmsHandler {
