@@ -4,6 +4,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.AndroidUtil;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -19,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -75,16 +75,16 @@ public class MainActivity extends FragmentActivity {
 			String type = entry.getValue().getClass().toString();
 			String key = entry.getKey();
 			String val = entry.getValue().toString();
-			showToast(type + ";" + key + ";" + val);
+            AndroidUtil.showToastLong(this, type + ";" + key + ";" + val);
 		}
 		
 	}
 
 	public void test2() {
 		if (ASA.getInstance().getActiveSys() != null)
-			showToast(ASA.getInstance().getActiveSys().getName());
+			AndroidUtil.showToastLong(this, ASA.getInstance().getActiveSys().getName());
 		else
-			showToast("Null");
+			AndroidUtil.showToastLong(this,"Null");
 
 	}
 	
@@ -230,11 +230,6 @@ public class MainActivity extends FragmentActivity {
 		if (ASA.getInstance() != null)
 			if (!ASA.getInstance().started)
 				ASA.getInstance().start();
-	}
-
-	public void showToast(String text) {
-		Toast.makeText(this.getApplicationContext(), text, Toast.LENGTH_SHORT)
-				.show();
 	}
 
 }

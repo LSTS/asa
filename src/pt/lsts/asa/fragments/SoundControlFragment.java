@@ -5,11 +5,13 @@ import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ui.components.VerticalSeekBar;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.AndroidUtil;
 
 import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +22,7 @@ import android.support.v4.app.Fragment;
 
 public class SoundControlFragment extends Fragment {
 
-	Context context;
+	FragmentActivity fragmentActivity = null;
 	AudioManager audioManager;
 	ImageButton muteImageButton;
 	CallOut callOut;
@@ -31,8 +33,8 @@ public class SoundControlFragment extends Fragment {
 		// Required empty public constructor
 	}
 
-	public SoundControlFragment(Context context) {
-		this.context = context;
+	public SoundControlFragment(FragmentActivity fragmentActivity) {
+		this.fragmentActivity = fragmentActivity;
 		callOut = ASA.getInstance().getCallOut();
 	}
 
@@ -119,7 +121,7 @@ public class SoundControlFragment extends Fragment {
 						unmute();
 						soundManager.setCurrentVolume(arg1);
 						adjustVolumeBarAndIcon();
-						// showToastWithVolume();
+						AndroidUtil.showToastShort(fragmentActivity, soundManager.getCurrentVolume());
 					}
 				});
 	}

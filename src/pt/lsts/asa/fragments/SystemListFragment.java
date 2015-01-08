@@ -3,6 +3,7 @@ package pt.lsts.asa.fragments;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.AndroidUtil;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
@@ -22,7 +23,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by jloureiro on 1/5/15.
@@ -88,7 +88,6 @@ public class SystemListFragment extends Fragment {
     }
 
     public void populateSystemListView() {
-        //showToastShort("populating...");
         Log.i(TAG, "populating");
 
         ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
@@ -117,7 +116,7 @@ public class SystemListFragment extends Fragment {
             {
                 final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
                 ASA.getInstance().setActiveSys(arrayListSys.get(position));
-                showToastLong("Active System: "+ASA.getInstance().getActiveSys().getName());
+                AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
             }
         });
     }
@@ -170,22 +169,6 @@ public class SystemListFragment extends Fragment {
             }
 
         }
-    }
-
-    public void showToastShort(final String msg){
-        fragmentActivity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(fragmentActivity, msg, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    public void showToastLong(final String msg){
-        fragmentActivity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(fragmentActivity, msg, Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
 }
