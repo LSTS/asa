@@ -1,6 +1,7 @@
 package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
 
 import java.util.concurrent.Executors;
@@ -9,6 +10,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -17,13 +19,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.widget.Toast;
 import android.widget.VideoView;
 import android.support.v4.app.Fragment;
 
 public class VideoViewFragment extends Fragment {
 
-	private final String TAG = "CamConnection";
+	private final String TAG = "VideoView";
 	private FragmentActivity fragmentActivity;
 	private VideoView videoView;
 
@@ -70,7 +71,7 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		setVideoViewClick();
+		setVideoViewListeners();
 	}
 
 	@Override
@@ -80,12 +81,12 @@ public class VideoViewFragment extends Fragment {
 		setConnectionChecker();
 	}
 
-	public void setVideoViewClick() {
+	public void setVideoViewListeners() {
 		videoView.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				String url = StringUtils.getCamUrl(videoView);
-				showToastShort("restarting connection to Cam: "+url);
+                AndroidUtil.showToastShort(fragmentActivity,"restarting connection to Cam: "+url);
 				if (videoView.isPlaying())
 					videoView.stopPlayback();
 				else
@@ -93,12 +94,23 @@ public class VideoViewFragment extends Fragment {
 				return false;
 			}
 		});
+        videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+            @Override
+            public boolean onError(MediaPlayer mp, int what, int extra) {
+                return true;//avoid showing a blocking message when connection fails
+            }
+        });
 	}
 
 	public void startVideo(){
-		String url = StringUtils.getCamUrl(videoView);
-		videoView.setVideoPath(url);
-		videoView.start();
+        final String url = StringUtils.getCamUrl(videoView);
+        fragmentActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                videoView.setVideoPath(url);
+                videoView.start();
+            }
+        });
 		Log.i(TAG, "Connecting: "+url);
 	}
 
@@ -122,7 +134,7 @@ public class VideoViewFragment extends Fragment {
 						connectedBool = true;
 						startHandle(timeoutTrue);
 						Log.w(TAG, "Connection Established");
-						showToastShort("Connection Established");
+                        AndroidUtil.showToastShort(fragmentActivity,"Connection Established");
 					}
 					Log.i(TAG, "Connection OK, retrying connection in: "+timeoutTrue);
 				}else{
@@ -130,9 +142,10 @@ public class VideoViewFragment extends Fragment {
 						connectedBool=false;
 						startHandle(timeoutFalse);
 						Log.w(TAG, "Connection Lost");
-						showToastLong("Connection Lost");
+						AndroidUtil.showToastLong(fragmentActivity,"Connection Lost");
 					}
 					Log.i(TAG, "Connection failed, retrying connection in: "+timeoutFalse);
+                    restartVideo();
 				}
 			}};
 	}
@@ -142,22 +155,6 @@ public class VideoViewFragment extends Fragment {
 			handle.cancel(true);
 		handle = scheduler.scheduleAtFixedRate(runnable, timeout,
 				timeout, TimeUnit.MILLISECONDS);
-	}
-
-	public void showToastLong(final String msg){
-		fragmentActivity.runOnUiThread(new Runnable() {
-			public void run() {
-				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_LONG).show();
-			}
-		});
-	}
-
-	public void showToastShort(final String msg){
-		fragmentActivity.runOnUiThread(new Runnable() {
-			public void run() {
-				Toast.makeText(fragmentActivity, msg, Toast.LENGTH_SHORT).show();
-			}
-		});
 	}
 
 }
