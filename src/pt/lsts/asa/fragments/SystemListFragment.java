@@ -1,6 +1,6 @@
 package pt.lsts.asa.fragments;
 
-import android.speech.tts.TextToSpeech;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -106,6 +106,7 @@ public class SystemListFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 arrayListName);
         systemListView.setAdapter(arrayAdapter);
+        colorItems();
     }
 
     public void setListViewOnItemClickListener(){
@@ -127,8 +128,48 @@ public class SystemListFragment extends Fragment {
                 arrayAdapter.clear();
                 arrayAdapter.addAll(arrayListNameFinal);
                 arrayAdapter.notifyDataSetChanged();
+                colorItems();
             }
         });
+    }
+
+    public void colorItems(){
+        final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
+        int nSys=arrayListSys.size();
+        if (arrayListSys.size()>systemListView.getAdapter().getCount())
+            nSys=systemListView.getAdapter().getCount();
+        for (int i =0;i<nSys;i++){
+            Sys sys = arrayListSys.get(i);
+            TextView textView = (TextView) systemListView.getChildAt(i);
+
+            //Colors for CCU
+            String backgroundColorCode = "#77F171";//green
+            String textColorCode = "#000000";//black
+
+            if (!sys.getType().equalsIgnoreCase("CCU")) {
+                if (sys.isConnected() && sys.isError())
+                    backgroundColorCode = "#FE8E0A";//orange
+                if (sys.isConnected() && !sys.isError())
+                    backgroundColorCode = "#0FA4FF";//light blue
+                if (!sys.isConnected() && sys.isError())
+                    backgroundColorCode = "#FF0000";//red
+                if (!sys.isConnected() && !sys.isError()) {
+                    backgroundColorCode = "#002841";//dark blue
+                    textColorCode = "#FFFFFF";//white
+                }
+            }
+
+            try {
+                textView.setTextColor(Color.parseColor(textColorCode));
+                textView.setBackgroundColor(Color.parseColor(backgroundColorCode));
+            }catch (Exception e){
+                String message = "error in setTextColor/setBackgroudColor";
+                if (e.getMessage()!=null)
+                    message += ": "+e.getMessage();
+                Log.e(TAG,message);
+            }
+
+        }
     }
 
     public void showToastShort(final String msg){
