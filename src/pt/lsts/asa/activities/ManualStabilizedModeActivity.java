@@ -41,7 +41,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 			videoViewFragment = new VideoViewFragment(this);
 			loadFragment(videoViewFragment);
 
-			soundControlFragment = new SoundControlFragment(this.getApplicationContext());
+			soundControlFragment = new SoundControlFragment(this);
 			loadFragment(soundControlFragment);
 
             settingsButtonFragment = new SettingsButtonFragment(this);
