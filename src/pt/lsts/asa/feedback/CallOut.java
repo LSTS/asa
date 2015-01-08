@@ -28,11 +28,11 @@ public class CallOut {
 	private Context context;
 
 	private ScheduledFuture iasHandle, altHandle, timeoutHandle;
-	private final ScheduledExecutorService iasScheduler = Executors
+	private ScheduledExecutorService iasScheduler = Executors
 			.newScheduledThreadPool(1);
-	private final ScheduledExecutorService altScheduler = Executors
+	private ScheduledExecutorService altScheduler = Executors
 			.newScheduledThreadPool(1);
-	private final ScheduledExecutorService timeoutScheduler = Executors
+	private ScheduledExecutorService timeoutScheduler = Executors
 			.newScheduledThreadPool(1);
 	Runnable iasRunnable, altRunnable, timeoutRunnable;
 
@@ -41,8 +41,7 @@ public class CallOut {
 	NumberFormat formatter = new DecimalFormat("#0");
 	private long lastMsgReceived = 0;
 
-	private int iasInterval = 10000, altInterval = 15000,
-			timeoutInterval = 25000;
+	private int iasInterval = 10000, altInterval = 15000,timeoutInterval = 25000;
 	private boolean iasMuteBool = false, altMuteBool = false, timeoutBool = false, globalMuteBool = false;
 
 	public CallOut(Context context) {
@@ -55,13 +54,20 @@ public class CallOut {
 				ASA.getInstance().getCallOutSubscriber());
 	}
 
+    public void initSchedulers(){
+        iasScheduler = Executors.newScheduledThreadPool(1);
+        altScheduler = Executors.newScheduledThreadPool(1);
+        timeoutScheduler = Executors.newScheduledThreadPool(1);
+    }
+
 	public void shutdown() {
-		stopCallOuts();
+		shutdownCallOuts();
 		tts.shutdown();
 	}
 
 	public void initCallOuts() {
-		initImcSubscribers();
+        initSchedulers();
+        initImcSubscribers();
 		initTextToSpeech();
 		initAltRunnale();
 		initIasRunnable();
@@ -98,18 +104,33 @@ public class CallOut {
 	}
 
 	public void startCallOuts() {
+        initSchedulers();
 		startAltHandle();
 		startIasHandle();
 	}
 
-	public void stopCallOuts() {
+	public void shutdownCallOuts() {
+        shutdownHandlers();
+        shutdownSchedulers();
+	}
+
+    public void shutdownHandlers(){
         if (iasHandle!=null)
             iasHandle.cancel(true);
         if (altHandle!=null)
             altHandle.cancel(true);
         if (timeoutHandle!=null)
-		    timeoutHandle.cancel(true);
-	}
+            timeoutHandle.cancel(true);
+    }
+
+    public void shutdownSchedulers(){
+        if (altScheduler!=null)
+            altScheduler.shutdownNow();
+        if (iasScheduler!=null)
+            iasScheduler.shutdownNow();
+        if (timeoutScheduler!=null)
+            timeoutScheduler.shutdownNow();
+    }
 
 	public void initAltRunnale() {
 
