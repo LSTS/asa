@@ -16,81 +16,19 @@ import android.util.Log;
 
 public class Profile {
 
-	public static File mainDir = new File(
-			"/storage/emulated/0/Android/data/pt.lsts.ASA/");
+
 	public static String defaultSettingsName = "default_settings";
-	public static File defaultSettingsFile = new File(mainDir,
+	public static File defaultSettingsFile = new File(FileOperations.mainDir,
 			defaultSettingsName);
 	public static String firstLineInCsvFile = "type,category_key,value";
 	public static final String extension = "csv";
-
-	public static void copyAllAssets(Context context) {
-		AssetManager assetManager = context.getAssets();
-		String[] files = null;
-		try {
-			files = assetManager.list("");
-		} catch (IOException e) {
-			Log.e("copyAllAssets", "Failed to get asset file list.", e);
-		}
-		for (String filename : files) {
-			InputStream in = null;
-			OutputStream out = null;
-			try {
-				in = assetManager.open(filename);
-				FileOperations.initDir(Profile.mainDir);
-				File outFile = new File(Profile.mainDir, filename);
-				out = new FileOutputStream(outFile);
-				FileOperations.copyFile(in, out);
-				in.close();
-				in = null;
-				out.flush();
-				out.close();
-				out = null;
-			} catch (IOException e) {
-				Log.e("tag", "Failed to copy asset file: " + filename, e);
-			}
-		}
-	}
-
-	public static boolean copySpecificAsset(Context context, String name) {
-		AssetManager assetManager = context.getAssets();
-		String[] files = null;
-		try {
-			files = assetManager.list("");
-		} catch (IOException e) {
-			Log.e("tag", "Failed to get asset file list.", e);
-		}
-		InputStream in = null;
-		OutputStream out = null;
-		for (String filename : files) {
-			if (!filename.equals(name))
-				continue;
-			try {
-				in = assetManager.open(filename);
-				FileOperations.initDir(Profile.mainDir);
-				File outFile = new File(Profile.mainDir, filename);
-				out = new FileOutputStream(outFile);
-				FileOperations.copyFile(in, out);
-				in.close();
-				in = null;
-				out.flush();
-				out.close();
-				out = null;
-				return true;
-
-			} catch (IOException e) {
-				Log.e("tag", "Failed to copy asset file: " + filename, e);
-			}
-		}
-		return false;
-	}
 
 	public static String restoreDefaults() {
 		return load(defaultSettingsName);
 	}
 
 	public static String load(String name) {
-		File profile = new File(mainDir, name+"."+extension);
+		File profile = new File(FileOperations.mainDir, name+"."+extension);
 		if (!profile.exists())
 			return "Profile file:\n" + name + "\nNot Available";
 		Vector<String> settings = FileOperations.readLines(profile);
@@ -137,8 +75,8 @@ public class Profile {
 			Log.e("save", "Settings.getAll().size()==0");
 			return "ERROR: settings empty";
 		}
-		File file = new File(mainDir, name + "." + extension);
-		FileOperations.initDir(Profile.mainDir);
+		File file = new File(FileOperations.mainDir, name + "." + extension);
+		FileOperations.initDir(FileOperations.mainDir);
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			String type = entry.getValue().getClass().getName();
 			String key = entry.getKey();
@@ -151,7 +89,7 @@ public class Profile {
 	}
 
 	public static String[] getProfilesAvailable() {
-		String[] filesArray = mainDir.list();
+		String[] filesArray = FileOperations.mainDir.list();
 		String[] result = FileOperations.filterFilesByExtension(filesArray,extension);
 		result = FileOperations.removeExtension(result, extension);
 

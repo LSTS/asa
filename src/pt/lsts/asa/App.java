@@ -2,6 +2,7 @@ package pt.lsts.asa;
 
 import pt.lsts.asa.settings.Profile;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.util.FileOperations;
 import pt.lsts.imc.IMCDefinition;
 
 import android.app.Application;
@@ -42,7 +43,7 @@ public class App extends Application {
 
 	public void initSettings() {
 		Settings.getSettings();
-		Profile.copySpecificAsset(getBaseContext(), "default_settings.csv");
+		FileOperations.copySpecificAsset(getBaseContext(), "default_settings.csv");
 		if (Settings.getAll().isEmpty()) {// if no previous settings, set the
 											// defaults
 			Profile.restoreDefaults();

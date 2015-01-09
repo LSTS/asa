@@ -10,10 +10,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Vector;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
 
 public class FileOperations {
+
+    public static File mainDir = new File(
+            "/storage/emulated/0/Android/data/pt.lsts.ASA/");
 
 	public static void initDir(File dir) {
 		dir.mkdirs();
@@ -128,5 +133,66 @@ public class FileOperations {
 		}
 		return result;
 	}
+
+    public static void copyAllAssets(Context context) {
+        AssetManager assetManager = context.getAssets();
+        String[] files = null;
+        try {
+            files = assetManager.list("");
+        } catch (IOException e) {
+            Log.e("copyAllAssets", "Failed to get asset file list.", e);
+        }
+        for (String filename : files) {
+            InputStream in = null;
+            OutputStream out = null;
+            try {
+                in = assetManager.open(filename);
+                FileOperations.initDir(mainDir);
+                File outFile = new File(mainDir, filename);
+                out = new FileOutputStream(outFile);
+                FileOperations.copyFile(in, out);
+                in.close();
+                in = null;
+                out.flush();
+                out.close();
+                out = null;
+            } catch (IOException e) {
+                Log.e("tag", "Failed to copy asset file: " + filename, e);
+            }
+        }
+    }
+
+    public static boolean copySpecificAsset(Context context, String name) {
+        AssetManager assetManager = context.getAssets();
+        String[] files = null;
+        try {
+            files = assetManager.list("");
+        } catch (IOException e) {
+            Log.e("tag", "Failed to get asset file list.", e);
+        }
+        InputStream in = null;
+        OutputStream out = null;
+        for (String filename : files) {
+            if (!filename.equals(name))
+                continue;
+            try {
+                in = assetManager.open(filename);
+                FileOperations.initDir(mainDir);
+                File outFile = new File(mainDir, filename);
+                out = new FileOutputStream(outFile);
+                FileOperations.copyFile(in, out);
+                in.close();
+                in = null;
+                out.flush();
+                out.close();
+                out = null;
+                return true;
+
+            } catch (IOException e) {
+                Log.e("tag", "Failed to copy asset file: " + filename, e);
+            }
+        }
+        return false;
+    }
 
 }
