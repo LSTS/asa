@@ -4,6 +4,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.AndroidUtil;
+import pt.lsts.asa.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
@@ -145,8 +146,13 @@ public class SystemListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
-                ASA.getInstance().setActiveSys(arrayListSys.get(position));
+                String sysName = systemListView.getAdapter().getItem(position).toString();
+                sysName = StringUtils.removeSysExtraInfo(sysName);
+                ASA.getInstance().setActiveSys(ASA.getInstance().getSystemList().findSysByName(sysName));
+                if (ASA.getInstance().getActiveSys()==null){
+                    AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
+                    return;
+                }
                 AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
             }
         });
@@ -169,7 +175,10 @@ public class SystemListFragment extends Fragment {
         if (arrayListSys.size()>systemListView.getAdapter().getCount())
             nSys=systemListView.getAdapter().getCount();
         for (int i =0;i<nSys;i++){
-            Sys sys = arrayListSys.get(i);
+            String sysName = systemListView.getAdapter().getItem(i).toString();
+            sysName = StringUtils.removeSysExtraInfo(sysName);
+            Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
+
             TextView textView = (TextView) systemListView.getChildAt(i);
 
             //Colors for CCU

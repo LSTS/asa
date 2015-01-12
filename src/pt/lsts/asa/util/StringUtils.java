@@ -92,4 +92,9 @@ public class StringUtils {
 		return resolution;
 	}
 
+    public static String removeSysExtraInfo(String sysName){
+        String res = sysName.split(" | ")[0];
+        return res;
+    }
+
 }
