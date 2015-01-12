@@ -112,6 +112,8 @@ public class SystemListFragment extends Fragment {
             Sys sys = arrayListSys.get(i);
             String s = arrayListName.get(i);
             s += " | ";
+            if(sys.equals(ASA.getInstance().getActiveSys()))
+                s += "Active System ";
             if (!sys.getType().equalsIgnoreCase("CCU")) {
                 if (sys.isConnected() && sys.isError())
                     s += "Connected - Error";
@@ -174,18 +176,22 @@ public class SystemListFragment extends Fragment {
             String backgroundColorCode = "#77F171";//green
             String textColorCode = "#000000";//black
 
-            if (!sys.getType().equalsIgnoreCase("CCU")) {
-                if (sys.isConnected() && sys.isError())
-                    backgroundColorCode = "#FE8E0A";//orange
-                if (sys.isConnected() && !sys.isError())
-                    backgroundColorCode = "#0FA4FF";//light blue
-                if (!sys.isConnected() && sys.isError())
-                    backgroundColorCode = "#FF0000";//red
-                if (!sys.isConnected() && !sys.isError()) {
-                    backgroundColorCode = "#002841";//dark blue
-                    textColorCode = "#FFFFFF";//white
+            if(sys.equals(ASA.getInstance().getActiveSys())){
+                backgroundColorCode = "#000000";//black
+                textColorCode = "#FFFFFF";//white
+            }else
+                if (!sys.getType().equalsIgnoreCase("CCU")) {
+                    if (sys.isConnected() && sys.isError())
+                        backgroundColorCode = "#FE8E0A";//orange
+                    if (sys.isConnected() && !sys.isError())
+                        backgroundColorCode = "#0FA4FF";//light blue
+                    if (!sys.isConnected() && sys.isError())
+                        backgroundColorCode = "#FF0000";//red
+                    if (!sys.isConnected() && !sys.isError()) {
+                        backgroundColorCode = "#002841";//dark blue
+                        textColorCode = "#FFFFFF";//white
+                    }
                 }
-            }
 
             try {
                 textView.setTextColor(Color.parseColor(textColorCode));
