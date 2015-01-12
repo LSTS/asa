@@ -2,6 +2,7 @@ package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
@@ -111,6 +112,8 @@ public class SystemListFragment extends Fragment {
 
         for (int i =0;i<nSys;i++){
             Sys sys = arrayListSys.get(i);
+            if (filterSys(sys))
+                continue;
             String s = arrayListName.get(i);
             s += " | ";
             if(sys.equals(ASA.getInstance().getActiveSys()))
@@ -129,6 +132,20 @@ public class SystemListFragment extends Fragment {
             newArrayListName.add(s);
         }
         return newArrayListName;
+    }
+
+    public boolean filterSys(Sys sys){
+        if (!Settings.getBoolean("systems_hide_non_vehicles",false)){
+            return false;
+        }else{
+            String[] sysList = {"UUV", "USV", "UAV", "UGV"};
+            for (String s :sysList){
+                if (s.equalsIgnoreCase(sys.getType())) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     public void createListViewAdapter(ArrayList<String> arrayListName){

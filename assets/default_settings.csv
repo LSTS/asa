@@ -11,3 +11,4 @@ java.lang.String,cam_protocol,rtsp
 java.lang.String,cam_ip_port,10.0.20.199
 java.lang.String,cam_codec,h264
 java.lang.String,cam_resolution,640x480
+java.lang.Boolean,systems_hide_non_vehicles,false
