@@ -90,13 +90,42 @@ public class SystemListFragment extends Fragment {
     public void populateSystemListView() {
         Log.i(TAG, "populating");
 
-        ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
+        ArrayList<String> arrayListName = addSysStatus();
         if (arrayAdapter == null) {
             createListViewAdapter(arrayListName);
             setListViewOnItemClickListener();
         } else {
             updateListView(arrayListName);
         }
+    }
+
+    public ArrayList<String> addSysStatus(){
+        ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
+        ArrayList<String> newArrayListName = new ArrayList<>();
+        final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
+
+        int nSys=arrayListSys.size();
+        if (arrayListSys.size()>arrayListName.size())
+            nSys=arrayListName.size();
+
+        for (int i =0;i<nSys;i++){
+            Sys sys = arrayListSys.get(i);
+            String s = arrayListName.get(i);
+            s += " | ";
+            if (!sys.getType().equalsIgnoreCase("CCU")) {
+                if (sys.isConnected() && sys.isError())
+                    s += "Connected - Error";
+                if (sys.isConnected() && !sys.isError())
+                    s += "Connected - No Error";
+                if (!sys.isConnected() && sys.isError())
+                    s += "Not Connected - Error";
+                if (!sys.isConnected() && !sys.isError())
+                    s += "Not Connected - No Error";
+            }else
+                s += " CCU";
+            newArrayListName.add(s);
+        }
+        return newArrayListName;
     }
 
     public void createListViewAdapter(ArrayList<String> arrayListName){
