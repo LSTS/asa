@@ -141,7 +141,7 @@ public class SoundControlFragment extends Fragment {
 		soundManager.unmute();
 		soundManager.setCurrentVolume(soundManager.getCurrentVolume());
 		setImageButtonMuteIcon();
-		callOut.startCallOuts();
+		//callOut.startCallOuts();
 	}
 
 	public void shutdown() {
