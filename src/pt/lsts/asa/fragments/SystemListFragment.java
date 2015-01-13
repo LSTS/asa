@@ -19,6 +19,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -33,6 +35,7 @@ public class SystemListFragment extends Fragment {
 
     private FragmentActivity fragmentActivity = null;
     private ListView systemListView = null;
+    private int selectedInt = -1;
     private String TAG = "SystemListFragment";
 
     private ScheduledFuture handle;
@@ -163,16 +166,24 @@ public class SystemListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                String sysName = systemListView.getAdapter().getItem(position).toString();
-                sysName = StringUtils.removeSysExtraInfo(sysName);
-                ASA.getInstance().setActiveSys(ASA.getInstance().getSystemList().findSysByName(sysName));
-                if (ASA.getInstance().getActiveSys()==null){
-                    AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
-                    return;
-                }
-                AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
+                selectedInt=position;
             }
         });
+    }
+
+    public void selectActiveSystem(){
+        if (selectedInt<0 || selectedInt>=systemListView.getAdapter().getCount()) {
+            AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
+            return;
+        }
+        String sysName = systemListView.getAdapter().getItem(selectedInt).toString();
+        sysName = StringUtils.removeSysExtraInfo(sysName);
+        ASA.getInstance().setActiveSys(ASA.getInstance().getSystemList().findSysByName(sysName));
+        if (ASA.getInstance().getActiveSys()==null){
+            AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
+            return;
+        }
+        AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
     }
 
     public void updateListView(final ArrayList<String> arrayListNameFinal){
