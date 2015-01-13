@@ -97,4 +97,38 @@ public class StringUtils {
         return res;
     }
 
+    public static String timeSinceLastMessage(long t1, long t2){
+        String string="Time since last message:\n";
+        long hours=0;
+        long minutes=0;
+        long seconds = 0;
+        long millisec = t1-t2;
+        if (millisec>1000){
+            seconds = millisec/1000;
+            if (seconds>60){
+                minutes = seconds/60;
+                if (minutes>60){
+                    hours = minutes/60;
+                    minutes = minutes%60;
+                }
+                seconds = seconds%60;
+            }
+            millisec = millisec%1000;
+        }
+        if (hours>0){
+            string += hours+"h ";
+        }
+        if (minutes>0){
+            string += minutes+"m ";
+        }
+        if (seconds>0){
+            string += seconds+"s ";
+        }
+        if (millisec>0){
+            string += millisec+"ms";
+        }
+
+        return string;
+    }
+
 }
