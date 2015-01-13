@@ -117,10 +117,11 @@ public class SystemListFragment extends Fragment {
             Sys sys = arrayListSys.get(i);
             if (filterSys(sys))
                 continue;
-            String s = arrayListName.get(i);
+            String s = "";
+            s += arrayListName.get(i);
             s += " | ";
             if(sys.equals(ASA.getInstance().getActiveSys()))
-                s += "Active System ";
+                s += "(M) ";
             if (!sys.getType().equalsIgnoreCase("CCU")) {
                 if (sys.isConnected() && sys.isError())
                     s += "Connected - Error";
@@ -167,6 +168,9 @@ public class SystemListFragment extends Fragment {
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
                 selectedInt=position;
+                TextView textView = (TextView) systemListView.getChildAt(selectedInt);
+                textView.setTextColor(Color.parseColor("#FFFFFF"));
+                textView.setBackgroundColor(Color.parseColor("#000000"));
             }
         });
     }
@@ -184,6 +188,7 @@ public class SystemListFragment extends Fragment {
             return;
         }
         AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
+        selectedInt = -1;
     }
 
     public void updateListView(final ArrayList<String> arrayListNameFinal){
@@ -203,6 +208,8 @@ public class SystemListFragment extends Fragment {
         if (arrayListSys.size()>systemListView.getAdapter().getCount())
             nSys=systemListView.getAdapter().getCount();
         for (int i =0;i<nSys;i++){
+            if (i==selectedInt)
+                continue;
             String sysName = systemListView.getAdapter().getItem(i).toString();
             sysName = StringUtils.removeSysExtraInfo(sysName);
             Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
@@ -213,22 +220,18 @@ public class SystemListFragment extends Fragment {
             String backgroundColorCode = "#77F171";//green
             String textColorCode = "#000000";//black
 
-            if(sys.equals(ASA.getInstance().getActiveSys())){
-                backgroundColorCode = "#000000";//black
-                textColorCode = "#FFFFFF";//white
-            }else
-                if (!sys.getType().equalsIgnoreCase("CCU")) {
-                    if (sys.isConnected() && sys.isError())
-                        backgroundColorCode = "#FE8E0A";//orange
-                    if (sys.isConnected() && !sys.isError())
-                        backgroundColorCode = "#0FA4FF";//light blue
-                    if (!sys.isConnected() && sys.isError())
-                        backgroundColorCode = "#FF0000";//red
-                    if (!sys.isConnected() && !sys.isError()) {
-                        backgroundColorCode = "#002841";//dark blue
-                        textColorCode = "#FFFFFF";//white
-                    }
+            if (!sys.getType().equalsIgnoreCase("CCU")) {
+                if (sys.isConnected() && sys.isError())
+                    backgroundColorCode = "#FE8E0A";//orange
+                if (sys.isConnected() && !sys.isError())
+                    backgroundColorCode = "#0FA4FF";//light blue
+                if (!sys.isConnected() && sys.isError())
+                    backgroundColorCode = "#FF0000";//red
+                if (!sys.isConnected() && !sys.isError()) {
+                    backgroundColorCode = "#002841";//dark blue
+                    textColorCode = "#FFFFFF";//white
                 }
+            }
 
             try {
                 textView.setTextColor(Color.parseColor(textColorCode));
