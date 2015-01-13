@@ -40,10 +40,13 @@ public class SystemListActivity extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case R.id.more_info_menu:
-                return true;
             case R.id.select_as_active_system_menu:
                 systemListFragment.selectActiveSystem();
+                return true;
+            case R.id.more_info_menu:
+                return true;
+            case R.id.refresh_menu:
+                systemListFragment.populateSystemListView();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
