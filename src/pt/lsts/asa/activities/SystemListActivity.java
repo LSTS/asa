@@ -6,7 +6,6 @@ import pt.lsts.asa.fragments.SystemListFragment;
 import pt.lsts.asa.util.AndroidUtil;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,12 +39,12 @@ public class SystemListActivity extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case R.id.select_as_active_system_menu:
+            case R.id.select_as_active_system_system_list_menu:
                 systemListFragment.selectActiveSystem();
                 return true;
-            case R.id.more_info_menu:
+            case R.id.more_info_system_list_menu:
                 return true;
-            case R.id.refresh_menu:
+            case R.id.refresh_system_list_menu:
                 systemListFragment.populateSystemListView();
                 return true;
             default:
