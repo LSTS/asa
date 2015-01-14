@@ -84,7 +84,8 @@ public class CallOut {
 			}
 		});
 		tts.setLanguage(Locale.UK);
-        tts.setSpeechRate(1.75f);
+        float speechrate = Settings.getInt("audio_speech_rate",100)/100;
+        tts.setSpeechRate(speechrate);
 	}
 
 	public void initBooleans() {
