@@ -53,6 +53,14 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 		Log.d(TAG, "System ID: " + localId);
 	}
 
+    public LinkedHashMap<Integer, List<IMCSubscriber>> getSubscribers(){
+        return this.subscribers;
+    }
+
+    public ArrayList<IMCSubscriber> getSubscribersToAll(){
+        return this.subscribersToAll;
+    }
+
 	/**
 	 * Function that adds a subscriber class to the message system, registering
 	 * for a given id

@@ -50,8 +50,7 @@ public class CallOut {
 	}
 
 	public void initImcSubscribers() {
-		ASA.getInstance().addSubscriber(
-				ASA.getInstance().getCallOutSubscriber());
+		ASA.getInstance().addSubscriber(ASA.getInstance().getCallOutSubscriber());
 	}
 
     public void initSchedulers(){
