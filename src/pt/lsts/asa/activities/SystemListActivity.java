@@ -43,6 +43,7 @@ public class SystemListActivity extends FragmentActivity {
                 systemListFragment.selectActiveSystem();
                 return true;
             case R.id.more_info_system_list_menu:
+                systemListFragment.showMoreInfo();
                 return true;
             case R.id.refresh_system_list_menu:
                 systemListFragment.populateSystemListView();

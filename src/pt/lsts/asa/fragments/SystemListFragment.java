@@ -13,6 +13,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -36,13 +39,14 @@ public class SystemListFragment extends Fragment {
     private FragmentActivity fragmentActivity = null;
     private ListView systemListView = null;
     private int selectedInt = -1;
+    private Button selectActiveSystemButton = null;
     private String TAG = "SystemListFragment";
 
     private ScheduledFuture handle;
     private final ScheduledExecutorService scheduler = Executors
             .newScheduledThreadPool(1);
     private Runnable runnable;
-    private int interval=2500;
+    private int interval=100;
 
     ArrayAdapter<String> arrayAdapter = null;
 
@@ -58,6 +62,8 @@ public class SystemListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_system_list_view, container, false);
         systemListView = (ListView) v.findViewById(R.id.systemListView);
+        selectActiveSystemButton = (Button) v.findViewById(R.id.selectAsActiveButton);
+        setSelectActiveSystemButtonOnClickListener();
         return v;
     }
 
@@ -77,6 +83,15 @@ public class SystemListFragment extends Fragment {
     public void shutdown(){
         if (handle!=null)
             handle.cancel(true);
+    }
+
+    public void setSelectActiveSystemButtonOnClickListener(){
+        selectActiveSystemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectActiveSystem();
+            }
+        });
     }
 
     public void initScheduler(){
@@ -104,6 +119,33 @@ public class SystemListFragment extends Fragment {
         }
     }
 
+    public String showMoreInfo(){
+
+        String sysName = StringUtils.removeSysExtraInfo(systemListView.getAdapter().getItem(selectedInt).toString());
+        Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
+        if (sys==null){
+            AndroidUtil.showToastLong(fragmentActivity,"sys==null");
+            return "";
+        }
+
+        String message = "\n";
+        message += "Address: "+sys.getAddress();
+        message += "\n";
+        message += StringUtils.timeSinceLastMessage(System.currentTimeMillis(), sys.lastMessageReceived);;
+        message += "\n";
+
+        if (!sys.isConnected()) {
+            message += "Connected: " + sys.isConnected();
+            message += "\n";
+        }
+        if (sys.isError()) {
+            message += " Error: " + sys.isError();
+            message += "\n";
+        }
+        return message;
+
+    }
+
     public ArrayList<String> addSysStatus(){
         ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
         ArrayList<String> newArrayListName = new ArrayList<>();
@@ -120,19 +162,14 @@ public class SystemListFragment extends Fragment {
             String s = "";
             s += arrayListName.get(i);
             s += " | ";
-            if(sys.equals(ASA.getInstance().getActiveSys()))
-                s += "(M) ";
-            if (!sys.getType().equalsIgnoreCase("CCU")) {
-                if (sys.isConnected() && sys.isError())
-                    s += "Connected - Error";
-                if (sys.isConnected() && !sys.isError())
-                    s += "Connected - No Error";
-                if (!sys.isConnected() && sys.isError())
-                    s += "Not Connected - Error";
-                if (!sys.isConnected() && !sys.isError())
-                    s += "Not Connected - No Error";
-            }else
-                s += " CCU";
+            s += sys.getType();
+            if(sys.equals(ASA.getInstance().getActiveSys())) {
+                s += " (M)";
+            }
+            if (i==selectedInt){
+                s += showMoreInfo();
+            }
+
             newArrayListName.add(s);
         }
         return newArrayListName;
@@ -167,10 +204,13 @@ public class SystemListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
             {
-                selectedInt=position;
-                TextView textView = (TextView) systemListView.getChildAt(selectedInt);
-                textView.setTextColor(Color.parseColor("#FFFFFF"));
-                textView.setBackgroundColor(Color.parseColor("#000000"));
+                if (selectedInt==position){
+                    selectActiveSystemButton.setVisibility(View.INVISIBLE);
+                    selectedInt=-1;
+                }else{
+                    selectedInt=position;
+                    selectActiveSystemButton.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -189,6 +229,7 @@ public class SystemListFragment extends Fragment {
         }
         AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
         selectedInt = -1;
+        selectActiveSystemButton.setVisibility(View.INVISIBLE);
     }
 
     public void updateListView(final ArrayList<String> arrayListNameFinal){
