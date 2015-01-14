@@ -1,20 +1,17 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.fragments.ManualIndicatorsFragment;
 import pt.lsts.asa.fragments.SettingsButtonFragment;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
-import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
 
 import android.app.AlertDialog;
-import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.media.AudioManager;
 import android.os.Bundle;
-import android.widget.ImageButton;
 import android.support.v4.app.FragmentActivity;
 
 public class ManualStabilizedModeActivity extends FragmentActivity {
@@ -22,6 +19,7 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 	private SoundControlFragment soundControlFragment = null;
 	private VideoViewFragment videoViewFragment = null;
     private SettingsButtonFragment settingsButtonFragment = null;
+    private ManualIndicatorsFragment manualIndicatorsFragment = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +45,10 @@ public class ManualStabilizedModeActivity extends FragmentActivity {
 
             settingsButtonFragment = new SettingsButtonFragment(this);
             AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_manual_stabilized);
+
+            manualIndicatorsFragment = new ManualIndicatorsFragment(this);
+            AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual_stabilized);
+
 		}
 	}
 
