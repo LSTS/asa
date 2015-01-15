@@ -4,22 +4,26 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/rightTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Alt: "
-        android:id="@+id/rightTextView"
+        android:text=" Alt: --- "
+        android:minWidth="45pt"
+        android:maxWidth="45pt"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
 
     <TextView
+        android:id="@+id/leftTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="IAS: "
-        android:id="@+id/leftTextView"
+        android:text=" IAS: --- "
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="true"
+        android:minWidth="45pt"
+        android:maxWidth="45pt"
         android:layout_marginLeft="50dp" />
 </RelativeLayout>

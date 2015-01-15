@@ -133,18 +133,18 @@ public class VideoViewFragment extends Fragment {
 					if (connectedBool==false){
 						connectedBool = true;
 						startHandle(timeoutTrue);
-						Log.w(TAG, "Connection Established");
-                        AndroidUtil.showToastShort(fragmentActivity,"Connection Established");
+						Log.w(TAG, "Connection to Cam Established");
+                        AndroidUtil.showToastShort(fragmentActivity,"Connection to Cam Established");
 					}
-					Log.i(TAG, "Connection OK, retrying connection in: "+timeoutTrue);
+					Log.i(TAG, "Connection to Cam OK, retrying connection in: "+timeoutTrue);
 				}else{
 					if (connectedBool==true){
 						connectedBool=false;
 						startHandle(timeoutFalse);
-						Log.w(TAG, "Connection Lost");
-						AndroidUtil.showToastLong(fragmentActivity,"Connection Lost");
+						Log.w(TAG, "Connection to Cam Lost");
+						AndroidUtil.showToastLong(fragmentActivity,"Connection to Cam Lost");
 					}
-					Log.i(TAG, "Connection failed, retrying connection in: "+timeoutFalse);
+					Log.i(TAG, "Connection to Cam failed, retrying connection in: "+timeoutFalse);
                     restartVideo();
 				}
 			}};

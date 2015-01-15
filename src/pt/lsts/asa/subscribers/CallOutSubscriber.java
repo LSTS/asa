@@ -16,11 +16,12 @@ import android.util.Log;
 
 public class CallOutSubscriber implements IMCSubscriber{
 
-	private CallOut callOut;
+	private final String TAG = "CallOutSubscriber";
+    private CallOut callOut;
     private ManualIndicatorsFragment manualIndicatorsfragment = null;
     private Thread thread;
 
-    NumberFormat formatter = new DecimalFormat("#0.00");
+    NumberFormat formatter = new DecimalFormat("#0");
 	
 	public CallOutSubscriber(CallOut callOut) {
 		this.callOut = callOut;
@@ -46,15 +47,17 @@ public class CallOutSubscriber implements IMCSubscriber{
                     final int ID_MSG = msg.getMgid();
                     if (ID_MSG == IndicatedSpeed.ID_STATIC){
                         Double ias = (Double) msg.getValue("value");
+                        Log.v(TAG,"IndicatedSpedd received: ias="+ias);
                         callOut.setIasValue(ias);
                         if (manualIndicatorsfragment!=null)
-                            manualIndicatorsfragment.setLeftTextView("IAS: "+formatter.format(ias));
+                            manualIndicatorsfragment.setLeftTextView(" IAS: "+formatter.format(ias)+" ");
                     }
                     if (ID_MSG == EstimatedState.ID_STATIC){
                         Float alt = (Float) msg.getValue("height");
+                        Log.v(TAG,"EstimatedState received: alt="+alt);
                         callOut.setAltValue(alt);
                         if (manualIndicatorsfragment!=null)
-                            manualIndicatorsfragment.setRightTextView("Alt: " + formatter.format(alt));
+                            manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
                     }
                     callOut.setLastMsgReceived(msg.getTimestampMillis());
                 }
