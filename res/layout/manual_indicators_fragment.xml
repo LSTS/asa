@@ -26,4 +26,14 @@
         android:minWidth="45pt"
         android:maxWidth="45pt"
         android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:id="@+id/centerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" LOST COMMS "
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
 </RelativeLayout>

@@ -23,6 +23,7 @@ public class ManualIndicatorsFragment extends Fragment {
     private FragmentActivity fragmentActivity = null;
     private TextView leftTextView = null;
     private TextView rightTextView = null;
+    private TextView centerTextView = null;
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
@@ -35,13 +36,34 @@ public class ManualIndicatorsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.manual_indicators_fragment, container, false);
+
+        findViews(v);
+        setTextViewsColors();
+
+        return v;
+    }
+
+    public void findViews(View v){
         leftTextView = (TextView) v.findViewById(R.id.leftTextView);
         rightTextView = (TextView) v.findViewById(R.id.rightTextView);
+        centerTextView = (TextView) v.findViewById(R.id.centerTextView);
+    }
+
+    public void setTextViewsColors(){
+        setBackgroundColors();
+        setTextColors();
+    }
+
+    public void setBackgroundColors(){
         leftTextView.setBackgroundColor(Color.parseColor("#000000"));//Black
-        leftTextView.setTextColor(Color.parseColor("#FFFFFF"));//White
         rightTextView.setBackgroundColor(Color.parseColor("#000000"));//Black
+        centerTextView.setBackgroundColor(Color.parseColor("#000000"));//Black
+    }
+
+    public void setTextColors(){
+        leftTextView.setTextColor(Color.parseColor("#FFFFFF"));//White
         rightTextView.setTextColor(Color.parseColor("#FFFFFF"));//White
-        return v;
+        centerTextView.setTextColor(Color.parseColor("#FFFFFF"));//White
     }
 
     @Override
@@ -71,5 +93,15 @@ public class ManualIndicatorsFragment extends Fragment {
             }
         });
     }
+
+    public void setCenterTextViewVisibility(final int visibility){//View.INVISIBLE View.VISIBLE
+        fragmentActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                centerTextView.setVisibility(visibility);
+            }
+        });
+    }
+
 
 }

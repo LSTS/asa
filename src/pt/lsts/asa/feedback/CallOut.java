@@ -16,6 +16,7 @@ import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
+import android.view.View;
 
 /**
  * Text to Speech
@@ -195,7 +196,7 @@ public class CallOut {
 	public boolean isTimeout() {
 		if (timeoutBool == false
 				&& System.currentTimeMillis() - timeoutInterval > lastMsgReceived) {
-			timeoutBool = true;// no message received in over a minute
+			setTimeoutBool(true);// no message received in timeoutInterval
 			startTimeoutHandle();
 		}
 		return timeoutBool;
@@ -245,7 +246,11 @@ public class CallOut {
 
 	public void setTimeoutBool(boolean timeoutBool) {
 		this.timeoutBool = timeoutBool;
-	}
+        if (this.timeoutBool==false)
+            ASA.getInstance().getCallOutSubscriber().setCenterTextViewVisibility(View.INVISIBLE);
+        if (this.timeoutBool==true)
+            ASA.getInstance().getCallOutSubscriber().setCenterTextViewVisibility(View.VISIBLE);
+    }
 
 	public void setIasInterval(int iasInterval) {
 		this.iasInterval = iasInterval;

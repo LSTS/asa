@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import android.util.Log;
+import android.view.View;
 
 
 public class CallOutSubscriber implements IMCSubscriber{
@@ -29,6 +30,11 @@ public class CallOutSubscriber implements IMCSubscriber{
 
     public void setManualIndicatorsFragment(ManualIndicatorsFragment manualIndicatorsfragment){
         this.manualIndicatorsfragment = manualIndicatorsfragment;
+    }
+
+    public void setCenterTextViewVisibility(final int visibility) {//View.INVISIBLE View.VISIBLE
+        if (manualIndicatorsfragment!=null)
+            manualIndicatorsfragment.setCenterTextViewVisibility(visibility);
     }
 
 	@Override
