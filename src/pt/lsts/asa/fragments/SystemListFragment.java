@@ -13,16 +13,12 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -244,6 +240,19 @@ public class SystemListFragment extends Fragment {
     }
 
     public void colorItems(){
+
+        //color codes
+        final String ORANGE = "#FF8000";//orange
+        final String RED = "#FF1428";//red
+        final String GREEN = "#006400";//green
+        final String BLUE = "#2BB6E3";//cyan
+        final String BLUE_LIGHTER = "#B5C6D8";//very light blue
+        final String BLUE_DARKER = "#15596F";//dark blue
+        final String OLD = "#253F3F";//gray
+        final String IDLE = "#6E6E6E";//brighter gray
+        final String BLACK = "#000000";//black
+        final String WHITE = "#FFFFFF";//white
+
         final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
         int nSys=arrayListSys.size();
         if (arrayListSys.size()>systemListView.getAdapter().getCount())
@@ -257,19 +266,24 @@ public class SystemListFragment extends Fragment {
 
             TextView textView = (TextView) systemListView.getChildAt(i);
 
-            //Colors for CCU
-            String backgroundColorCode = "#77F171";//green
-            String textColorCode = "#000000";//black
+            //generic color for text
+            String textColorCode = BLACK;//#000000
+
+            String backgroundColorCode = IDLE;//#6E6E6E
+            if (sys.getType().equalsIgnoreCase("CCU")){
+                textColorCode = "#FFFFFF";//white
+            }
+
 
             if (!sys.getType().equalsIgnoreCase("CCU")) {
                 if (sys.isConnected() && sys.isError())
-                    backgroundColorCode = "#FE8E0A";//orange
+                    backgroundColorCode = ORANGE;//#FF8000
                 if (sys.isConnected() && !sys.isError())
-                    backgroundColorCode = "#0FA4FF";//light blue
+                    backgroundColorCode = BLUE;//#2BB6E3
                 if (!sys.isConnected() && sys.isError())
-                    backgroundColorCode = "#FF0000";//red
+                    backgroundColorCode = RED;//#FF1428
                 if (!sys.isConnected() && !sys.isError()) {
-                    backgroundColorCode = "#002841";//dark blue
+                    backgroundColorCode = BLUE_DARKER;//#15596F
                     textColorCode = "#FFFFFF";//white
                 }
             }
