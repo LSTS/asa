@@ -23,9 +23,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
-    FragmentActivity fragmentActivity=null;
-	GoogleMap googleMap = null;
-    MapFragment mapFragment = null;
+    private FragmentActivity fragmentActivity=null;
+	private GoogleMap googleMap = null;
+    private MapFragment mapFragment = null;
 
 
 	public GmapFragment() {

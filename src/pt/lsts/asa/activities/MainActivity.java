@@ -43,7 +43,7 @@ public class MainActivity extends FragmentActivity {
         systemListButton = (Button) findViewById(R.id.systemListButton);
         setSystemListButton();
 		manualStabilizedButton = (Button) findViewById(R.id.manualStabilizedButton);
-		setManualStabilizedButton();
+		setManualButton();
 		autoButton = (Button) findViewById(R.id.autoButton);
 		setAutoButton();
 		settingsCheckListButton = (Button) findViewById(R.id.settingsCheckListButton);
@@ -149,12 +149,12 @@ public class MainActivity extends FragmentActivity {
         });
 	}
 
-	public void setManualStabilizedButton() {
+	public void setManualButton() {
 		manualStabilizedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
-                        ManualStabilizedModeActivity.class);
+                        ManualActivity.class);
                 startActivity(i);
             }
         });
@@ -165,7 +165,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
-                        AutoModeActivity.class);
+                        AutoActivity.class);
                 startActivity(i);
             }
         });

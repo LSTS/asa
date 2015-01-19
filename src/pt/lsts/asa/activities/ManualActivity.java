@@ -14,7 +14,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
-public class ManualStabilizedModeActivity extends FragmentActivity {
+public class ManualActivity extends FragmentActivity {
 
 	private SoundControlFragment soundControlFragment = null;
 	private VideoViewFragment videoViewFragment = null;

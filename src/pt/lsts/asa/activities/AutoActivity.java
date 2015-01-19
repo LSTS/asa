@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 
-public class AutoModeActivity extends FragmentActivity {
+public class AutoActivity extends FragmentActivity {
 
 	GmapFragment gmapFragment = null;
 

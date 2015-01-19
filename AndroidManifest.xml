@@ -30,14 +30,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="pt.lsts.asa.activities.ManualStabilizedModeActivity"
+            android:name=".activities.ManualActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_manual_stabilized_mode"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="pt.lsts.asa.activities.AutoModeActivity"
+            android:name=".activities.AutoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_pfd"
             android:screenOrientation="landscape"
