@@ -7,9 +7,10 @@ import android.app.FragmentTransaction;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
 	public GmapFragment(FragmentActivity fragmentActivity) {
 		this.fragmentActivity = fragmentActivity;
+        mapFragment = MapFragment.newInstance();
 	}
 
 	@Override
@@ -59,12 +61,6 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 	}
 
     public void initMapFragment() {
-        mapFragment = MapFragment.newInstance();
-        FragmentTransaction fragmentTransaction = fragmentActivity.getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container_auto, mapFragment);
-        fragmentTransaction.commit();
-
-        MapFragment mapFragment = (MapFragment) fragmentActivity.getFragmentManager().findFragmentById(R.id.googleMap);
         mapFragment.getMapAsync(this);
 
     }
@@ -72,6 +68,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap map) {
         //map.setMyLocationEnabled(true);//set a blue dot on position
+        Log.i("onMapReady", "onMapReady");
         this.googleMap=map;
         addMarkerToMyPos();
     }

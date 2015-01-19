@@ -2,6 +2,7 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
+import pt.lsts.asa.util.AndroidUtil;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -25,8 +26,10 @@ public class AutoModeActivity extends FragmentActivity {
 			if (savedInstanceState != null) {
 				return;// restoring state
 			}
+
             gmapFragment = new GmapFragment(this);
-            gmapFragment.initMapFragment();
+            AndroidUtil.loadFragment(this, gmapFragment, R.id.fragment_container_auto);
+
 		}
 	}
 
