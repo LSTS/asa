@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Auto Mode"
-        android:layout_below="@+id/manualStabilizedButton"
-        android:layout_alignLeft="@+id/manualStabilizedButton" />
+        android:layout_below="@+id/manualButton"
+        android:layout_alignLeft="@+id/manualButton" />
 
     <Button
         android:id="@+id/settingsCheckListButton"
@@ -49,10 +49,10 @@
         android:text="Choose Active System" />
 
     <Button
-        android:id="@+id/manualStabilizedButton"
+        android:id="@+id/manualButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Manual/Stabilized Mode"
+        android:text="Manual Mode"
         android:layout_below="@+id/systemListButton"
         android:layout_alignParentLeft="true" />
 
