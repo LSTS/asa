@@ -1,6 +1,7 @@
 package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.R;
+import pt.lsts.asa.listenners.MyLocationListener;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -15,17 +16,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     private FragmentActivity fragmentActivity=null;
-	private GoogleMap googleMap = null;
+
+    private GoogleMap googleMap = null;
     private MapFragment mapFragment = null;
+    private LatLng latLng = new LatLng(0,0);
+    private MyLocationListener myLocationListener = null;
+    private Boolean initZoom = false;
 
 
 	public GmapFragment() {
@@ -34,10 +43,23 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
 	public GmapFragment(FragmentActivity fragmentActivity) {
 		this.fragmentActivity = fragmentActivity;
-        mapFragment = MapFragment.newInstance();
+        myLocationListener = new MyLocationListener(this);
+        myLocationListener.initLocationListener();
 	}
 
-	@Override
+    public FragmentActivity getFragmentActivity() {
+        return fragmentActivity;
+    }
+
+    public GoogleMap getGoogleMap() {
+        return googleMap;
+    }
+
+    public LatLng getLastKnowLatLng(){
+        return this.latLng;
+    }
+
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
@@ -47,6 +69,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
 		View v = inflater.inflate(R.layout.fragment_gmaps, container, false);
+        mapFragment = (MapFragment) fragmentActivity.getFragmentManager().findFragmentById(R.id.googleMap);
+        mapFragment.getMapAsync(this);
 		return v;
 	}
 
@@ -60,21 +84,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 		super.onDetach();
 	}
 
-    public void initMapFragment() {
-        mapFragment.getMapAsync(this);
-
-    }
-
     @Override
     public void onMapReady(GoogleMap map) {
-        //map.setMyLocationEnabled(true);//set a blue dot on position
         Log.i("onMapReady", "onMapReady");
-        this.googleMap=map;
-        addMarkerToMyPos();
-    }
-
-    public void addMarkerToMyPos(){
-        addMarkerToPos("myLocation",getLastKnowLatLng());
+        googleMap=map;
+        googleMap.setMyLocationEnabled(true);//set a blue dot on position
     }
 
     public void addMarkerToPos(String title, LatLng latLng){
@@ -83,20 +97,21 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 .title(title));
     }
 
-    public LatLng getLastKnowLatLng(){
+    public void updateLocation(Location location){
         double lat = 0;
         double lon = 0;
 
-        LocationManager lm;
-        lm = (LocationManager) fragmentActivity.getSystemService(Context.LOCATION_SERVICE);
-        Location lastKnownLoc = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-        if (lastKnownLoc != null) {
-            lat = (int) lastKnownLoc.getLatitude() ;
-            lon = (int) lastKnownLoc.getLongitude();
+        if (location!=null) {
+            lat = location.getLatitude();
+            lon = location.getLongitude();
         }
-        LatLng latlng = new LatLng(lat, lon);
-        return latlng;
+        if (initZoom==false && googleMap!=null){//center camera initialy on my position
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),16.0f,1.0f,1.0f)));
+            initZoom=true;
+        }
+
+        this.latLng = new LatLng(lat, lon);
+
     }
 
 }
