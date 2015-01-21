@@ -10,11 +10,10 @@ import pt.lsts.asa.listenners.MainSysChangeListener;
 import pt.lsts.asa.managers.GPSManager;
 import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.pos.LblBeaconList;
-import pt.lsts.asa.subscribers.AccuSmsHandlerSubscriber;
-import pt.lsts.asa.subscribers.CallOutSubscriber;
-import pt.lsts.asa.subscribers.HeartbeatVibratorSubscriber;
-import pt.lsts.asa.subscribers.LblBeaconListSubscriber;
-import pt.lsts.asa.subscribers.SystemListSubscriber;
+import pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber;
+import pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber;
+import pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber;
+import pt.lsts.asa.subscribers.SystemListIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.MUtil;
@@ -46,21 +45,19 @@ public class ASA {
 
 	private static IMCManager imcManager;
 	public SystemList sysList;
-	public SystemListSubscriber systemListSubscriber;
-	
-	private CallOut callOut;
-	private CallOutSubscriber callOutSubscriber;
+	public SystemListIMCSubscriber systemListIMCSubscriber;
 	
 	public static Announcer announcer;
 	public static AccuSmsHandler smsHandler;
-	public static AccuSmsHandlerSubscriber accuSmsHandlerSubscriber;
+	public static AccuSmsHandlerIMCSubscriber accuSmsHandlerIMCSubscriber;
 	public static GPSManager gpsManager;
 	public static HeartbeatVibrator hearbeatVibrator;
-	public static HeartbeatVibratorSubscriber heartbeatVibratorSubscriber;
+	public static HeartbeatVibratorIMCSubscriber heartbeatVibratorIMCSubscriber;
 	public static Heart heart;
 	public static LblBeaconList lblBeaconList;
-	public static LblBeaconListSubscriber lblBeaconListSubscriber;
+	public static LblBeaconListIMCSubscriber lblBeaconListIMCSubscriber;
 	public static SensorManager sensorManager;
+    private CallOut callOut;
 
 	private static ArrayList<MainSysChangeListener> mainSysChangeListeners;
 	public String broadcastAddress;
@@ -100,7 +97,7 @@ public class ASA {
 	public void initSystemsList(){
 		mainSysChangeListeners = new ArrayList<MainSysChangeListener>();
 		sysList = new SystemList(imcManager);
-		systemListSubscriber = new SystemListSubscriber(sysList);
+		systemListIMCSubscriber = new SystemListIMCSubscriber(sysList);
 	}
 	
 	public void initAnnouncer(){
@@ -122,24 +119,21 @@ public class ASA {
 		imcManager.startComms();
 	}
 	
-	public void initSubscribers(Context context){		
-		callOut = new CallOut(context);
-		callOutSubscriber = new CallOutSubscriber(callOut);
-		
+	public void initSubscribers(Context context){
 		smsHandler = new AccuSmsHandler(context);
-		accuSmsHandlerSubscriber = new AccuSmsHandlerSubscriber(smsHandler);
+		accuSmsHandlerIMCSubscriber = new AccuSmsHandlerIMCSubscriber(smsHandler);
 		
 		hearbeatVibrator = new HeartbeatVibrator(context, imcManager);
-		heartbeatVibratorSubscriber = new HeartbeatVibratorSubscriber(hearbeatVibrator);
+		heartbeatVibratorIMCSubscriber = new HeartbeatVibratorIMCSubscriber(hearbeatVibrator);
 		
 		addInitialSubscribers();
 	}
 	
 	public void addInitialSubscribers(){
-		addSubscriber(heartbeatVibratorSubscriber, heartbeatVibratorSubscriber.SUBSCRIBED_MSGS);
-		addSubscriber(accuSmsHandlerSubscriber, accuSmsHandlerSubscriber.SUBSCRIBED_MSGS);
-		addSubscriber(systemListSubscriber);
-		addSubscriber(lblBeaconListSubscriber, lblBeaconListSubscriber.SUBSCRIBED_MSGS);
+		addSubscriber(heartbeatVibratorIMCSubscriber, heartbeatVibratorIMCSubscriber.SUBSCRIBED_MSGS);
+		addSubscriber(accuSmsHandlerIMCSubscriber, accuSmsHandlerIMCSubscriber.SUBSCRIBED_MSGS);
+		addSubscriber(systemListIMCSubscriber);
+		addSubscriber(lblBeaconListIMCSubscriber, lblBeaconListIMCSubscriber.SUBSCRIBED_MSGS);
 	}	
 
 	public void load() {
@@ -150,7 +144,7 @@ public class ASA {
 	
 	public void addLblSubscriber(){
 		lblBeaconList = new LblBeaconList();
-		lblBeaconListSubscriber = new LblBeaconListSubscriber(lblBeaconList);
+		lblBeaconListIMCSubscriber = new LblBeaconListIMCSubscriber(lblBeaconList);
 	}
 
 	public void start() {
@@ -228,6 +222,14 @@ public class ASA {
 		return lblBeaconList;
 	}
 
+    public CallOut getCallOut() {
+        return callOut;
+    }
+
+    public void setCallOut(CallOut callOut) {
+        this.callOut = callOut;
+    }
+
 	// Main System listeners list related code
 	public void addMainSysChangeListener(MainSysChangeListener listener) {
 		Log.v(TAG, ASA.class.getSimpleName() + ": addMainSysChangeListener");
@@ -269,14 +271,6 @@ public class ASA {
 				requestId = 0;
 			return requestId;
 		}
-	}
-	
-	public CallOut getCallOut() {
-		return callOut;
-	}
-
-	public CallOutSubscriber getCallOutSubscriber() {
-		return callOutSubscriber;
 	}
 	
 	public static Context getContext() {

@@ -1,5 +1,6 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.fragments.ManualIndicatorsFragment;
 import pt.lsts.asa.fragments.SettingsButtonFragment;
 import pt.lsts.asa.fragments.SoundControlFragment;
@@ -20,13 +21,15 @@ public class ManualActivity extends FragmentActivity {
 	private VideoViewFragment videoViewFragment = null;
     private SettingsButtonFragment settingsButtonFragment = null;
     private ManualIndicatorsFragment manualIndicatorsFragment = null;
+    private CallOut callOut;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
 
-		ASA.getInstance().getCallOut().initCallOuts();
+        callOut = new CallOut(ASA.getContext());
+        callOut.initCallOuts();
 		loadFragments(savedInstanceState);
 		// ASA.getInstance().getCallOut().startCallOuts();
 	}
@@ -75,7 +78,7 @@ public class ManualActivity extends FragmentActivity {
 		super.onBackPressed();
 		if (soundControlFragment != null)
 			soundControlFragment.shutdown();
-		ASA.getInstance().getCallOut().shutdown();
+		callOut.shutdown();
 	}
 
 }

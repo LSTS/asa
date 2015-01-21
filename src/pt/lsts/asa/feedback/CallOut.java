@@ -3,6 +3,7 @@ package pt.lsts.asa.feedback;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.subscribers.CallOutIMCSubscriber;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -27,6 +28,7 @@ public class CallOut {
 
 	private TextToSpeech tts;
 	private Context context;
+    private CallOutIMCSubscriber callOutIMCSubscriber;
 
 	private ScheduledFuture iasHandle, altHandle, timeoutHandle;
 	private ScheduledExecutorService iasScheduler = Executors
@@ -48,10 +50,12 @@ public class CallOut {
 	public CallOut(Context context) {
 		this.context = context;
 		SoundManager.getInstance();
+        ASA.getInstance().setCallOut(this);
 	}
 
 	public void initImcSubscribers() {
-		ASA.getInstance().addSubscriber(ASA.getInstance().getCallOutSubscriber());
+        callOutIMCSubscriber = new CallOutIMCSubscriber(this);
+		ASA.getInstance().addSubscriber(callOutIMCSubscriber);
 	}
 
     public void initSchedulers(){
@@ -246,10 +250,6 @@ public class CallOut {
 
 	public void setTimeoutBool(boolean timeoutBool) {
 		this.timeoutBool = timeoutBool;
-        if (this.timeoutBool==false)
-            ASA.getInstance().getCallOutSubscriber().setCenterTextViewVisibility(View.INVISIBLE);
-        if (this.timeoutBool==true)
-            ASA.getInstance().getCallOutSubscriber().setCenterTextViewVisibility(View.VISIBLE);
     }
 
 	public void setIasInterval(int iasInterval) {
