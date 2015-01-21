@@ -104,7 +104,7 @@ public class CallOut {
 		setAltInterval(integer);
 		integer = Settings.getInt("audio_ias_interval_in_seconds", 10) * 1000;
 		setIasInterval(integer);
-		integer = Settings.getInt("audio_timeout_interval_in_seconds", 60) * 1000;
+		integer = Settings.getInt("comms_timeout_interval_in_seconds", 60) * 1000;
 		setTimeoutInterval(integer);
 	}
 

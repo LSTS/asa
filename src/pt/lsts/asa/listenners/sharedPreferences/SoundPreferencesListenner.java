@@ -50,7 +50,7 @@ public class SoundPreferencesListenner implements OnSharedPreferenceChangeListen
 				integer = Settings.getInt(key, 10)*1000;
 				callOut.setIasInterval(integer);
 				break;
-			case "audio_timeout_interval_in_seconds":
+			case "comms_timeout_interval_in_seconds":
 				integer = Settings.getInt(key, 60)*1000;
 				callOut.setTimeoutInterval(integer);
 				break;

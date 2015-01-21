@@ -4,7 +4,7 @@ java.lang.Boolean,audio_altitude_audio,false
 java.lang.Integer,audio_altitude_interval_in_seconds,15
 java.lang.Boolean,audio_ias_audio,true
 java.lang.Boolean,audio_timeout_audio,false
-java.lang.Integer,audio_timeout_interval_in_seconds,60
+java.lang.Integer,comms_timeout_interval_in_seconds,20
 java.lang.Integer,audio_ias_interval_in_seconds,5
 java.lang.Integer,audio_speech_rate,100
 java.lang.String,cam_model,axis

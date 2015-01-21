@@ -33,7 +33,7 @@ public class ManualIndicatorsFragment extends Fragment {
     private final ScheduledExecutorService scheduler = Executors
             .newScheduledThreadPool(1);
     private Runnable runnable;
-    private int interval= (Settings.getInt("audio_timeout_interval_in_seconds", 60) * 1000);
+    private int interval= (Settings.getInt("comms_timeout_interval_in_seconds", 60) * 1000);
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
