@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.listenners.sharedPreferences.ManualIndicatorsPreferencesListenner;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.subscribers.ManualIndicatorsFragmentIMCSubscriber;
 
@@ -56,8 +57,14 @@ public class ManualIndicatorsFragment extends Fragment {
 
     public void init(){
         initIMCSubscriber();
+        initPreferencesListenner();
         setRunnalbe();
         startScheduler(true);
+    }
+
+    public void initPreferencesListenner(){
+        ManualIndicatorsPreferencesListenner manualIndicatorsPreferencesListenner = new ManualIndicatorsPreferencesListenner(this);
+        ASA.getInstance().getBus().register(manualIndicatorsPreferencesListenner);
     }
 
     public void initIMCSubscriber(){
