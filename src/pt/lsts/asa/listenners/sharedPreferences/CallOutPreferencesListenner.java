@@ -1,3 +1,4 @@
+
 package pt.lsts.asa.listenners.sharedPreferences;
 
 import pt.lsts.asa.ASA;
@@ -6,24 +7,21 @@ import pt.lsts.asa.settings.Settings;
 
 import java.util.Locale;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.util.Log;
 
-public class CallOutPreferencesListenner implements OnSharedPreferenceChangeListener{
-    private final String TAG = "CallOutPreferencesListenner";
-    private CallOut callOut = ASA.getInstance().getCallOut();
-    private Context context;
+import com.squareup.otto.Subscribe;
 
-    public CallOutPreferencesListenner(Context context){
-        this.context=context;
+
+public class CallOutPreferencesListenner{
+    private final String TAG = "CallOutPreferencesListenner";
+    private CallOut callOut = null;
+
+    public CallOutPreferencesListenner(CallOut callOut){
+        this.callOut=callOut;
     }
 
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                                          String key) {
-
+    @Subscribe
+    public void onPreferenceChanged(String key) {
         Log.v("CallOutPreferencesListenner", "Preference with "+key+" changed");
 
         String keyLowerCase = key.toLowerCase(Locale.getDefault());
@@ -34,7 +32,7 @@ public class CallOutPreferencesListenner implements OnSharedPreferenceChangeList
                 bool = Settings.getBoolean(key, true);
                 callOut.setGlobalMuteBool(bool);
                 break;
-            case "audio_alt_audio":
+            case "audio_altitude_audio":
                 bool = Settings.getBoolean(key, true);
                 callOut.setAltMuteBool(bool);
                 break;
@@ -56,7 +54,7 @@ public class CallOutPreferencesListenner implements OnSharedPreferenceChangeList
                 break;
 
             default:
-                Log.e(TAG,"Setting changed unrecognized");
+                Log.e(TAG,"Setting changed unrecognized: "+key);
                 break;
         }
     }

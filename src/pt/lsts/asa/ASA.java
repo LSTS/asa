@@ -28,6 +28,9 @@ import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.squareup.otto.Bus;
+import com.squareup.otto.ThreadEnforcer;
+
 /**
  * Global Singleton of ASA and necessary components
  * initiated in App extension of Application.
@@ -63,6 +66,7 @@ public class ASA {
 	public String broadcastAddress;
 	public boolean started = false;
 	public SharedPreferences sharedPreferences;
+    private Bus bus;
 
 	private static Integer requestId = 0xFFFF; // Request ID for quick plan
 
@@ -112,6 +116,7 @@ public class ASA {
 	
 	public void initPreferences(Context context){
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        bus = new Bus(ThreadEnforcer.ANY);
 	}
 	
 	public void initIMCManager(){
@@ -226,6 +231,10 @@ public class ASA {
         return callOut;
     }
 
+    public Bus getBus() {
+        return bus;
+    }
+
     public void setCallOut(CallOut callOut) {
         this.callOut = callOut;
     }
@@ -279,6 +288,7 @@ public class ASA {
 	
 	public void addPreferencesListenner(OnSharedPreferenceChangeListener listener){
 		ASA.getInstance().sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
+        Log.i(TAG,"ASA.getInstance().sharedPreferences.registerOnSharedPreferenceChangeListener(listener);");
 	}
 	
 }

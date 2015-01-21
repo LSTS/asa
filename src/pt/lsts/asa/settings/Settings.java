@@ -5,9 +5,13 @@ import pt.lsts.asa.ASA;
 import java.util.Map;
 
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import com.squareup.otto.Bus;
 
 public class Settings {
 
+    private final static String TAG = "Settings";
 	private static Settings settings = null;
 
 	private Settings() {
@@ -26,15 +30,24 @@ public class Settings {
 	}
 
 	public static boolean putString(String key, String value) {
-		return ASA.getInstance().sharedPreferences.edit().putString(key, value).commit();
+        boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, value).commit();
+        ASA.getInstance().getBus().post(key);
+        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
+		return result;
 	}
 
 	public static boolean putInt(String key, int value) {
-		return ASA.getInstance().sharedPreferences.edit().putInt(key, value).commit();
+        boolean result = ASA.getInstance().sharedPreferences.edit().putInt(key, value).commit();
+        ASA.getInstance().getBus().post(key);
+        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
+		return result;
 	}
 
 	public static boolean putBoolean(String key, boolean value) {
-		return ASA.getInstance().sharedPreferences.edit().putBoolean(key, value).commit();
+        boolean result = ASA.getInstance().sharedPreferences.edit().putBoolean(key, value).commit();
+        ASA.getInstance().getBus().post(key);
+        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
+        return result;
 	}
 
 	public static String getString(String key, String defValue) {
