@@ -167,7 +167,8 @@ public class CallOut {
 	public void startAltHandle() {
 		if (altHandle != null)
 			altHandle.cancel(true);
-		altHandle = altScheduler.scheduleAtFixedRate(altRunnable, 0,
+        altHandle = null;
+		altHandle = altScheduler.scheduleAtFixedRate(altRunnable, altInterval,
 				altInterval, TimeUnit.MILLISECONDS);
 	}
 
@@ -198,7 +199,8 @@ public class CallOut {
 	public void startIasHandle() {
 		if (iasHandle != null)
 			iasHandle.cancel(true);
-		iasHandle = iasScheduler.scheduleAtFixedRate(iasRunnable, 0,
+        iasHandle = null;
+		iasHandle = iasScheduler.scheduleAtFixedRate(iasRunnable, iasInterval,
 				iasInterval, TimeUnit.MILLISECONDS);
 	}
 
