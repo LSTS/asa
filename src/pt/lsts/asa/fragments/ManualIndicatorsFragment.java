@@ -9,11 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.subscribers.ManualIndicatorsFragmentIMCSubscriber;
 
 /**
  * Created by jloureiro on 1/14/15.
@@ -24,6 +28,12 @@ public class ManualIndicatorsFragment extends Fragment {
     private TextView leftTextView = null;
     private TextView rightTextView = null;
     private TextView centerTextView = null;
+    private ManualIndicatorsFragmentIMCSubscriber manualIndicatorsFragmentIMCSubscriber = null;
+    private ScheduledFuture handle;
+    private final ScheduledExecutorService scheduler = Executors
+            .newScheduledThreadPool(1);
+    private Runnable runnable;
+    private int interval= (Settings.getInt("audio_timeout_interval_in_seconds", 60) * 1000);
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
@@ -39,6 +49,9 @@ public class ManualIndicatorsFragment extends Fragment {
 
         findViews(v);
         setTextViewsColors();
+        manualIndicatorsFragmentIMCSubscriber = new ManualIndicatorsFragmentIMCSubscriber(this);
+        ASA.getInstance().addSubscriber(manualIndicatorsFragmentIMCSubscriber);
+        initScheduler();
 
         return v;
     }
@@ -69,12 +82,8 @@ public class ManualIndicatorsFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-        setListener();
     }
 
-    public void setListener(){
-        ASA.getInstance().getCallOutSubscriber().setManualIndicatorsFragment(this);
-    }
 
     public void setLeftTextView(final String text){
         fragmentActivity.runOnUiThread(new Runnable() {
@@ -94,14 +103,40 @@ public class ManualIndicatorsFragment extends Fragment {
         });
     }
 
-    public void setCenterTextViewVisibility(final int visibility){//View.INVISIBLE View.VISIBLE
+    public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                centerTextView.setVisibility(visibility);
+                if (visibility==true){
+                    centerTextView.setVisibility(View.VISIBLE);
+                    setRightTextView(" " + "Alt:" + " " + "---" + " ");
+                    setLeftTextView(" " + "IAS:" + " " + "---" + " ");
+                }
+                if (visibility==false){
+                    centerTextView.setVisibility(View.INVISIBLE);
+                }
             }
         });
     }
 
+    public void initScheduler(){
+        setCenterTextViewVisibility(true);
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                setCenterTextViewVisibility(true);
+            }
+        };
+        if (handle!=null)
+            handle.cancel(true);
+        handle = scheduler.scheduleAtFixedRate(runnable,interval,interval,TimeUnit.MILLISECONDS);
+    }
+
+    public void resetScheduler(){
+        setCenterTextViewVisibility(false);
+        if (handle!=null)
+            handle.cancel(true);
+        handle = scheduler.scheduleAtFixedRate(runnable, interval, interval, TimeUnit.MILLISECONDS);
+    }
 
 }

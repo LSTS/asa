@@ -18,24 +18,12 @@ import android.view.View;
 public class CallOutIMCSubscriber implements IMCSubscriber{
 
 	private final String TAG = "CallOutIMCSubscriber";
-    private CallOut callOut;
-    private ManualIndicatorsFragment manualIndicatorsfragment = null;
     private Thread thread;
-
-    NumberFormat formatter = new DecimalFormat("#0");
+    private CallOut callOut;
 	
 	public CallOutIMCSubscriber(CallOut callOut) {
 		this.callOut = callOut;
 	}
-
-    public void setManualIndicatorsFragment(ManualIndicatorsFragment manualIndicatorsfragment){
-        this.manualIndicatorsfragment = manualIndicatorsfragment;
-    }
-
-    public void setCenterTextViewVisibility(final int visibility) {//View.INVISIBLE View.VISIBLE
-        if (manualIndicatorsfragment!=null)
-            manualIndicatorsfragment.setCenterTextViewVisibility(visibility);
-    }
 
 	@Override
 	public void onReceive(final IMCMessage msg) {
@@ -55,16 +43,12 @@ public class CallOutIMCSubscriber implements IMCSubscriber{
                         Double ias = (Double) msg.getValue("value");
                         Log.v(TAG,"IndicatedSpedd received: ias="+ias);
                         callOut.setIasValue(ias);
-                        if (manualIndicatorsfragment!=null)
-                            manualIndicatorsfragment.setLeftTextView(" IAS: "+formatter.format(ias)+" ");
                     }
                     if (ID_MSG == EstimatedState.ID_STATIC){
                         Float alt = (Float) msg.getValue("height");
                         Log.v(TAG,"EstimatedState received: alt="+alt);
                         Log.v("EstimatedState","lat:"+msg.getValue("lat")+" | lon:"+msg.getValue("lon"));
                         callOut.setAltValue(alt);
-                        if (manualIndicatorsfragment!=null)
-                            manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
                     }
                     callOut.setLastMsgReceived(msg.getTimestampMillis());
                 }
