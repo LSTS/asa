@@ -86,7 +86,7 @@ public class SettingsFactory {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
 		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
 		editTextPreference.setSummary("Val: " + valString);
-		// editTextPreference.setDefaultValue(valString);
+		editTextPreference.setDefaultValue(valString);
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
 		return editTextPreference;
@@ -99,7 +99,7 @@ public class SettingsFactory {
 		editTextPreference.setSummary("Val: " + valInteger.toString());
 		editTextPreference.getEditText().setInputType(
 				InputType.TYPE_CLASS_NUMBER);
-		// editTextPreference.setDefaultValue(valInteger);
+		editTextPreference.setDefaultValue(""+valInteger);
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
 		return editTextPreference;
