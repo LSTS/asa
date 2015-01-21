@@ -1,7 +1,5 @@
 package pt.lsts.asa.activities;
 
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.listenners.sharedPreferences.SoundPreferencesListenner;
 import pt.lsts.asa.settings.SettingsFactory;
 
 import java.util.Vector;
@@ -31,13 +29,7 @@ public class SettingsActivity extends PreferenceActivity {
 		populateCategories(preferenceCategories);
 
 		setPreferenceScreen(preferenceScreen);
-		
-		loadPreferencesListenners();
-	}
-	
-	public void loadPreferencesListenners(){
-		SoundPreferencesListenner soundPreferencesListenner = new SoundPreferencesListenner(this.getApplicationContext());
-		ASA.getInstance().addPreferencesListenner(soundPreferencesListenner);
+
 	}
 
 	public void populateCategories(
