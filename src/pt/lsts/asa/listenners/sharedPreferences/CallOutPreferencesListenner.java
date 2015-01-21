@@ -22,7 +22,7 @@ public class CallOutPreferencesListenner{
 
     @Subscribe
     public void onPreferenceChanged(String key) {
-        Log.v("CallOutPreferencesListenner", "Preference with "+key+" changed");
+        Log.v(TAG, "Preference with "+key+" changed");
 
         String keyLowerCase = key.toLowerCase(Locale.getDefault());
         int integer;

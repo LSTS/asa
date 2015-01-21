@@ -27,12 +27,7 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
     public ManualIndicatorsFragmentIMCSubscriber(ManualIndicatorsFragment manualIndicatorsfragment){
         this.manualIndicatorsfragment=manualIndicatorsfragment;
     }
-
-    public void setCenterTextViewVisibility(boolean visibility) {//View.INVISIBLE View.VISIBLE
-        if (manualIndicatorsfragment!=null)
-            manualIndicatorsfragment.setCenterTextViewVisibility(visibility);
-    }
-
+    
     @Override
     public void onReceive(final IMCMessage msg) {
         if (thread!=null)//if there is a previous message, finish going through that one
@@ -45,7 +40,7 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
                 Log.v(TAG, "Received Message");
 
                 if (IMCUtils.isMsgFromActive(msg)){
-                    manualIndicatorsfragment.resetScheduler();
+                    manualIndicatorsfragment.startScheduler(false);
                     Log.v(TAG,"Message from active:"+msg.getAbbrev());
                     final int ID_MSG = msg.getMgid();
                     if (ID_MSG == IndicatedSpeed.ID_STATIC){

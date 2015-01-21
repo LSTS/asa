@@ -49,11 +49,20 @@ public class ManualIndicatorsFragment extends Fragment {
 
         findViews(v);
         setTextViewsColors();
-        manualIndicatorsFragmentIMCSubscriber = new ManualIndicatorsFragmentIMCSubscriber(this);
-        ASA.getInstance().addSubscriber(manualIndicatorsFragmentIMCSubscriber);
-        initScheduler();
+        init();
 
         return v;
+    }
+
+    public void init(){
+        initIMCSubscriber();
+        setRunnalbe();
+        startScheduler(true);
+    }
+
+    public void initIMCSubscriber(){
+        manualIndicatorsFragmentIMCSubscriber = new ManualIndicatorsFragmentIMCSubscriber(this);
+        ASA.getInstance().addSubscriber(manualIndicatorsFragmentIMCSubscriber);
     }
 
     public void findViews(View v){
@@ -103,6 +112,11 @@ public class ManualIndicatorsFragment extends Fragment {
         });
     }
 
+    public void setInterval(int interval) {
+        this.interval = interval;
+        startScheduler(true);
+    }
+
     public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
@@ -119,24 +133,20 @@ public class ManualIndicatorsFragment extends Fragment {
         });
     }
 
-    public void initScheduler(){
-        setCenterTextViewVisibility(true);
+    public void setRunnalbe() {
         runnable = new Runnable() {
             @Override
             public void run() {
                 setCenterTextViewVisibility(true);
             }
         };
+    }
+
+    public void startScheduler(Boolean visibility){
+        setCenterTextViewVisibility(visibility);
         if (handle!=null)
             handle.cancel(true);
         handle = scheduler.scheduleAtFixedRate(runnable,interval,interval,TimeUnit.MILLISECONDS);
-    }
-
-    public void resetScheduler(){
-        setCenterTextViewVisibility(false);
-        if (handle!=null)
-            handle.cancel(true);
-        handle = scheduler.scheduleAtFixedRate(runnable, interval, interval, TimeUnit.MILLISECONDS);
     }
 
 }
