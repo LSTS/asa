@@ -13,7 +13,7 @@ import pt.lsts.imc.VehicleState;
 
 import android.util.Log;
 
-public class SystemListSubscriber implements IMCSubscriber{
+public class SystemListIMCSubscriber implements IMCSubscriber{
 
 	public static final String TAG = "SystemList";
 	public static final int CONNECTED_TIME_LIMIT = 5000;
@@ -21,7 +21,7 @@ public class SystemListSubscriber implements IMCSubscriber{
 	private SystemList systemList;
     private Thread thread;
 	
-	public SystemListSubscriber(SystemList systemList){
+	public SystemListIMCSubscriber(SystemList systemList){
 		this.systemList = systemList;
 	}
 	

@@ -5,14 +5,14 @@ import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.HeartbeatVibrator;
 import pt.lsts.imc.IMCMessage;
 
-public class HeartbeatVibratorSubscriber implements IMCSubscriber{
+public class HeartbeatVibratorIMCSubscriber implements IMCSubscriber{
 
 	public static final String[] SUBSCRIBED_MSGS = { "Heartbeat" };
 	public static final String TAG = "HeartbeatVibrator";
 	private HeartbeatVibrator heartbeatVibrator;
     private Thread thread;
 	
-	public HeartbeatVibratorSubscriber(HeartbeatVibrator heartbeatVibrator){
+	public HeartbeatVibratorIMCSubscriber(HeartbeatVibrator heartbeatVibrator){
 		this.heartbeatVibrator = heartbeatVibrator;
 	}
 	

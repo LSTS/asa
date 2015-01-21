@@ -15,16 +15,16 @@ import android.util.Log;
 import android.view.View;
 
 
-public class CallOutSubscriber implements IMCSubscriber{
+public class CallOutIMCSubscriber implements IMCSubscriber{
 
-	private final String TAG = "CallOutSubscriber";
+	private final String TAG = "CallOutIMCSubscriber";
     private CallOut callOut;
     private ManualIndicatorsFragment manualIndicatorsfragment = null;
     private Thread thread;
 
     NumberFormat formatter = new DecimalFormat("#0");
 	
-	public CallOutSubscriber(CallOut callOut) {
+	public CallOutIMCSubscriber(CallOut callOut) {
 		this.callOut = callOut;
 	}
 
@@ -47,7 +47,7 @@ public class CallOutSubscriber implements IMCSubscriber{
             @Override
             public void run() {
 
-                Log.v("CallOut", "Received Message");
+                Log.v(TAG, "Received Message");
 
                 if (IMCUtils.isMsgFromActive(msg)){
                     final int ID_MSG = msg.getMgid();
@@ -61,6 +61,7 @@ public class CallOutSubscriber implements IMCSubscriber{
                     if (ID_MSG == EstimatedState.ID_STATIC){
                         Float alt = (Float) msg.getValue("height");
                         Log.v(TAG,"EstimatedState received: alt="+alt);
+                        Log.v("EstimatedState","lat:"+msg.getValue("lat")+" | lon:"+msg.getValue("lon"));
                         callOut.setAltValue(alt);
                         if (manualIndicatorsfragment!=null)
                             manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");

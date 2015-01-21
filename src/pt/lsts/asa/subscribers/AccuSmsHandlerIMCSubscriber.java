@@ -7,14 +7,14 @@ import pt.lsts.imc.Sms;
 
 import android.util.Log;
 
-public class AccuSmsHandlerSubscriber implements IMCSubscriber{
+public class AccuSmsHandlerIMCSubscriber implements IMCSubscriber{
 
 	public static final String[] SUBSCRIBED_MSGS = { "Sms" };
 	public static final String TAG = "AccuSmsHandler";
 	private AccuSmsHandler accuSmsHandler;
     private Thread thread;
 	
-	public AccuSmsHandlerSubscriber(AccuSmsHandler accuSmsHandler){
+	public AccuSmsHandlerIMCSubscriber(AccuSmsHandler accuSmsHandler){
 		this.accuSmsHandler = accuSmsHandler;
 	}
 	

@@ -7,14 +7,14 @@ import pt.lsts.imc.IMCMessage;
 
 import android.util.Log;
 
-public class LblBeaconListSubscriber implements IMCSubscriber{
+public class LblBeaconListIMCSubscriber implements IMCSubscriber{
 	
 	public static final String[] SUBSCRIBED_MSGS = { "LblConfig" };
 	public static final String TAG = "LblBeaconList";
 	private LblBeaconList lblBeaconList;
     private Thread thread;
 	
-	public LblBeaconListSubscriber(LblBeaconList lblBeaconList) {
+	public LblBeaconListIMCSubscriber(LblBeaconList lblBeaconList) {
 		this.lblBeaconList= lblBeaconList;
 	}
 	
