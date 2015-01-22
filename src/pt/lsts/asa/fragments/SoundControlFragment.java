@@ -114,7 +114,7 @@ public class SoundControlFragment extends Fragment {
 						unmute();
 						soundManager.setCurrentVolume(arg1);
 						adjustVolumeBarAndIcon();
-						AndroidUtil.showToastShort(fragmentActivity, "volume: "+soundManager.getCurrentVolume());
+						//AndroidUtil.showToastShort(fragmentActivity, "volume: "+soundManager.getCurrentVolume());
 					}
 				});
 	}
