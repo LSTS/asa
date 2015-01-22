@@ -97,6 +97,13 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 .title(title));
     }
 
+    public void addMarkerToPos(String title, LatLng latLng, int iconRid){//R.drawable.icon
+        this.googleMap.addMarker(new MarkerOptions()
+                .position(latLng)
+                .title(title)
+                .icon(BitmapDescriptorFactory.fromResource(iconRid)));
+    }
+
     public void updateLocation(Location location){
         double lat = 0;
         double lon = 0;
