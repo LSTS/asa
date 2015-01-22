@@ -4,13 +4,10 @@ import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.MyLocationListener;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +15,6 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -32,7 +28,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap googleMap = null;
     private MapFragment mapFragment = null;
-    private LatLng latLng = new LatLng(0,0);
+    private LatLng myLatLng = new LatLng(0,0);
     private MyLocationListener myLocationListener = null;
     private Boolean initZoom = false;
 
@@ -56,7 +52,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public LatLng getLastKnowLatLng(){
-        return this.latLng;
+        return this.myLatLng;
     }
 
     @Override
@@ -104,7 +100,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 .icon(BitmapDescriptorFactory.fromResource(iconRid)));
     }
 
-    public void updateLocation(Location location){
+    public void updateMyLocation(Location location){
         double lat = 0;
         double lon = 0;
 
@@ -116,9 +112,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),16.0f,1.0f,1.0f)));
             initZoom=true;
         }
-
-        this.latLng = new LatLng(lat, lon);
-
+        this.myLatLng = new LatLng(lat, lon);
     }
 
 }

@@ -7,8 +7,6 @@ import android.os.Bundle;
 
 import android.location.LocationListener;
 
-import com.google.android.gms.maps.GoogleMap;
-
 import pt.lsts.asa.fragments.GmapFragment;
 
 
@@ -34,7 +32,7 @@ public class MyLocationListener{
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
                 // Called when a new location is found by the network location provider.
-                gmapFragment.updateLocation(location);
+                gmapFragment.updateMyLocation(location);
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
