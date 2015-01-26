@@ -107,12 +107,21 @@ public class Settings {
         return false;
     }
 
+    public static String[] getOptions(String key){
+        String[] result = new String[0];
+        if (hasOptions(key)==true){
+            key += "_options";
+            result = getStrings(key, new String[0]);
+        }
+        return result;
+    }
+
     public static boolean exists(String key){
         return ASA.getInstance().sharedPreferences.contains(key);
     }
 
     public static String getType(String key, String defValue){
-        if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// get Type
             return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[0];
         }
         return defValue;
@@ -127,14 +136,14 @@ public class Settings {
     }
 
     public static String getKey(String key, String defValue) {
-		if (ASA.getInstance().sharedPreferences.contains(key)) {// get key to setting
+		if (ASA.getInstance().sharedPreferences.contains(key)) {// get key of setting
             return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[2];
 		}
 		return defValue;
 	}
 
     public static String getDescription(String key, String defValue){
-        if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// get description
             return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[3];
         }
         return defValue;
@@ -145,6 +154,18 @@ public class Settings {
         if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
             String valueString = ASA.getInstance().sharedPreferences.getString(key,String.valueOf(defValue));
             return valueString.split(",")[4];
+        }
+        return defValue;
+    }
+
+    public static String[] getStrings(String key, String[] defValue){
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
+            String valueString = ASA.getInstance().sharedPreferences.getString(key,String.valueOf(defValue));
+            String[] result = new String[valueString.split(",").length-4];
+            for (int i=4;i<valueString.split(",").length;i++){
+                result[i-4] = valueString.split(",")[i];
+            }
+            return result;
         }
         return defValue;
     }

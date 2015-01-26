@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -32,21 +33,27 @@ public class SettingsFactory {
 				continue;// not in this category
             if (Settings.isOptions(key))
                 continue;//do not display options
+            if (Settings.hasOptions(key)) {
+                createEntry(category, key, Settings.getString(key, "null"), Settings.getOptions(key), context);
+                continue;
+            }
 			if (Settings.getType(key,"ERROR").equalsIgnoreCase(String.class.getName())) {
                 createEntry(category, key,
                         (String) entry.getValue(), context);
+                continue;
             }
             if (Settings.getType(key,"ERROR").equalsIgnoreCase(Integer.class.getName())){
 				int valInt = Settings.getInt(key,-1);
-                String valString = String.valueOf( Settings.getInt(key,-1) );
 				createEntry(category, key,
 						valInt, context).getEditText()
 						.setInputType(InputType.TYPE_CLASS_NUMBER);
+                continue;
 			}
             if (Settings.getType(key,"ERROR").equalsIgnoreCase(Boolean.class.getName())){
                 boolean valBoolean = Settings.getBoolean(key,false);
                 createEntry(category, key,
 						valBoolean, context);
+                continue;
             }
 		}
 	}
@@ -101,16 +108,42 @@ public class SettingsFactory {
 
 	public static EditTextPreference createEntry(PreferenceCategory category,
 			String key, Integer valInteger, Context context) {
-		EditTextPreference editTextPreference = new EditTextPreference(context);
-		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
-		editTextPreference.setSummary(Settings.getDescription(key,"null"));
-		editTextPreference.getEditText().setInputType(
-				InputType.TYPE_CLASS_NUMBER);
-		editTextPreference.setDefaultValue(""+valInteger);
-		setOnChangeListener(editTextPreference, key);
-		category.addPreference(editTextPreference);
-		return editTextPreference;
+
+        EditTextPreference editTextPreference = new EditTextPreference(context);
+        editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
+        editTextPreference.setSummary(Settings.getDescription(key,"null"));
+        editTextPreference.getEditText().setInputType(
+                InputType.TYPE_CLASS_NUMBER);
+        editTextPreference.setDefaultValue(""+valInteger);
+        setOnChangeListener(editTextPreference, key);
+        category.addPreference(editTextPreference);
+        return editTextPreference;
 	}
+
+    public static ListPreference createEntry(PreferenceCategory category, String key, String defValue, String[] list, Context context){
+        ListPreference listPreference = new ListPreference(context);
+        listPreference.setTitle(Settings.getKey(key,"ERROR"));
+        listPreference.setSummary(Settings.getDescription(key,"null"));
+        listPreference.setDefaultValue(defValue);
+        listPreference.setEntries(list);
+        listPreference.setEntryValues(list);
+        setOnChangeListenerList(listPreference,key);
+        category.addPreference(listPreference);
+        return listPreference;
+    }
+
+    public static void setOnChangeListenerList(final ListPreference listPreference, final String key){
+        listPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                boolean result = changeValue(key, newValue);
+                preference.setDefaultValue(newValue);
+                preference.setSummary(Settings.getDescription(key,"null"));
+
+                return result;
+            }
+        });
+    }
 
 	public static void setOnChangeListener(
 			final EditTextPreference editTextPreference, final String key) {
