@@ -165,6 +165,7 @@ public class SettingsFactory {
 			final String key, Boolean val, Context context) {
 		CheckBoxPreference checkBoxPref = new CheckBoxPreference(context);
 		checkBoxPref.setTitle(Settings.getKey(key, "ERROR"));
+        checkBoxPref.setSummary(Settings.getDescription(key,"null"));
 		checkBoxPref.setChecked(val);
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
