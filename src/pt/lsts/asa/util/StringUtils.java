@@ -12,7 +12,7 @@ import android.widget.VideoView;
 public class StringUtils {
 
 	public static String getCamUrl(VideoView videoView){
-		String cam = Settings.getString("cam_model","axis");
+		String cam = Settings.getString("model","axis");
 		cam = cam.toLowerCase(Locale.UK);
 		switch (cam){
 			case "axis":
@@ -27,11 +27,11 @@ public class StringUtils {
 
 	public static String getAirCamUrl(VideoView videoView){
 		//rtsp://<CAM_IP>:554/live/ch00_0 - Full resolution - 1280 (w) x 720 (h)
-		String protocol = Settings.getString("cam_protocol", "rtsp");
+		String protocol = Settings.getString("protocol", "rtsp");
 		String ip_port= Settings.getString("cam_ip_port", "10.0.20.102:554");
 		String location = "live";
 
-		String resolution = Settings.getString("cam_resolution", "0x0");
+		String resolution = Settings.getString("resolution", "0x0");
 		resolution = resolution.toLowerCase(Locale.UK);
 		switch (resolution){
 			case "160x96":
@@ -56,11 +56,11 @@ public class StringUtils {
 
 	public static String getAxisUrl(VideoView videoView){
 		//rtsp://IPADDRESS/axis-media/media.amp?videocodec=h264&resolution=640x480
-		String protocol = Settings.getString("cam_protocol", "rtsp");
+		String protocol = Settings.getString("protocol", "rtsp");
 		String ip_port= Settings.getString("cam_ip", "10.0.20.199");
 		String location = "axis-media/media.amp";
-		String codec = Settings.getString("cam_codec","h264");
-		String resolution = Settings.getString("cam_resolution", "0x0");
+		String codec = Settings.getString("codec","h264");
+		String resolution = Settings.getString("resolution", "0x0");
 
 		resolution = validateResolution(resolution, videoView);
 

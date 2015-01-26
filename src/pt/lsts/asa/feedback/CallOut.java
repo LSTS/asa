@@ -93,23 +93,22 @@ public class CallOut {
 			}
 		});
 		tts.setLanguage(Locale.UK);
-        float speechrate = Settings.getInt("audio_speech_rate",100)/100;
-        tts.setSpeechRate(speechrate);
+        setSpeechRate(Settings.getInt("speech_rate",100));
 	}
 
 	public void initBooleans() {
-		altMuteBool = Settings.getBoolean("audio_altitude_audio",false);
-		iasMuteBool = Settings.getBoolean("audio_ias_audio",false);
-		timeoutBool = Settings.getBoolean("audio_timeout_audio",false);
-		globalMuteBool = Settings.getBoolean("audio_global_audio",false);
+		altMuteBool = Settings.getBoolean("altitude_audio",false);
+		iasMuteBool = Settings.getBoolean("ias_audio",false);
+		timeoutBool = Settings.getBoolean("timeout_audio",false);
+		globalMuteBool = Settings.getBoolean("global_audio",false);
 	}
 
 	public void initIntervals() {
-		int integer = Settings.getInt("audio_altitude_interval_in_seconds", 10) * 1000;
+		int integer = Settings.getInt("altitude_interval_in_seconds", 10) * 1000;
 		setAltInterval(integer);
-		integer = Settings.getInt("audio_ias_interval_in_seconds", 10) * 1000;
+		integer = Settings.getInt("ias_interval_in_seconds", 10) * 1000;
 		setIasInterval(integer);
-		integer = Settings.getInt("comms_timeout_interval_in_seconds", 60) * 1000;
+		integer = Settings.getInt("timeout_interval_in_seconds", 60) * 1000;
 		setTimeoutInterval(integer);
 	}
 
@@ -251,6 +250,10 @@ public class CallOut {
 		this.altValue = altValue;
 	}
 
+    public void setSpeechRate(int speechRate){
+        tts.setSpeechRate(speechRate/100);
+    }
+
 	public void setLastMsgReceived(long lastMsgReceived) {
 		this.lastMsgReceived = lastMsgReceived;
 		setTimeoutBool(false);
@@ -258,6 +261,7 @@ public class CallOut {
 
 	public void setTimeoutBool(boolean timeoutBool) {
 		this.timeoutBool = timeoutBool;
+        isTimeout();
     }
 
 	public void setIasInterval(int iasInterval) {

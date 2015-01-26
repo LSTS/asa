@@ -172,7 +172,7 @@ public class SystemListFragment extends Fragment {
     }
 
     public boolean filterSys(Sys sys){
-        if (!Settings.getBoolean("systems_hide_non_vehicles",false)){
+        if (!Settings.getBoolean("hide_non_vehicles",false)){
             return false;
         }else{
             String[] sysList = {"UUV", "USV", "UAV", "UGV"};

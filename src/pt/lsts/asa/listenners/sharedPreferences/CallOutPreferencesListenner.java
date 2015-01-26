@@ -28,31 +28,38 @@ public class CallOutPreferencesListenner{
         int integer;
         boolean bool;
         switch(keyLowerCase){
-            case "audio_global_audio":
+            case "global_audio":
                 bool = Settings.getBoolean(key, true);
                 callOut.setGlobalMuteBool(bool);
                 break;
-            case "audio_altitude_audio":
+            case "altitude_audio":
                 bool = Settings.getBoolean(key, true);
                 callOut.setAltMuteBool(bool);
                 break;
-            case "audio_ias_audio":
+            case "ias_audio":
                 bool = Settings.getBoolean(key, true);
                 callOut.setIasMuteBool(bool);
                 break;
-            case "audio_altitude_interval_in_seconds":
+            case "timeout_audio":
+                bool = Settings.getBoolean(key, true);
+                callOut.setTimeoutBool(bool);
+                break;
+            case "altitude_interval_in_seconds":
                 integer = Settings.getInt(key, 10)*1000;
                 callOut.setAltInterval(integer);
                 break;
-            case "audio_ias_interval_in_seconds":
+            case "ias_interval_in_seconds":
                 integer = Settings.getInt(key, 10)*1000;
                 callOut.setIasInterval(integer);
                 break;
-            case "comms_timeout_interval_in_seconds":
+            case "timeout_interval_in_seconds":
                 integer = Settings.getInt(key, 60)*1000;
                 callOut.setTimeoutInterval(integer);
                 break;
-
+            case "speech_rate":
+                integer = Settings.getInt(key, 100)*1000;
+                callOut.setSpeechRate(integer);
+                break;
             default:
                 Log.e(TAG,"Setting changed unrecognized: "+key);
                 break;

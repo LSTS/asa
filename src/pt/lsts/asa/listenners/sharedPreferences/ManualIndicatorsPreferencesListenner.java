@@ -29,7 +29,7 @@ public class ManualIndicatorsPreferencesListenner {
         int integer;
         boolean bool;
         switch(keyLowerCase){
-            case "comms_timeout_interval_in_seconds":
+            case "timeout_interval_in_seconds":
                 integer = Settings.getInt(key, 60)*1000;
                 manualIndicatorsFragment.setInterval(integer);
                 break;
