@@ -238,8 +238,9 @@ public class CallOut {
 	public void startTimeoutHandle() {
 		if (timeoutHandle != null)
 			timeoutHandle.cancel(true);
+        timeoutHandle=null;
 		timeoutHandle = timeoutScheduler.scheduleAtFixedRate(timeoutRunnable,
-				0, timeoutInterval, TimeUnit.MILLISECONDS);
+				timeoutInterval, timeoutInterval, TimeUnit.MILLISECONDS);
 	}
 
 	public void setIasValue(Double iasValue) {
@@ -271,6 +272,7 @@ public class CallOut {
 
 	public void setTimeoutInterval(int timeoutInterval) {
 		this.timeoutInterval = timeoutInterval;
+        startTimeoutHandle();
 	}
 
 	public void setIasMuteBool(boolean iasBool) {
