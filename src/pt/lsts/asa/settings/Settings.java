@@ -50,18 +50,6 @@ public class Settings {
         return result;
 	}
 
-	public static String getString(String key, String defValue) {
-		return ASA.getInstance().sharedPreferences.getString(key, defValue);
-	}
-
-	public static int getInt(String key, int defValue) {
-		return ASA.getInstance().sharedPreferences.getInt(key, defValue);
-	}
-
-	public static boolean getBoolean(String key, boolean defValue) {
-		return ASA.getInstance().sharedPreferences.getBoolean(key, defValue);
-	}
-
 	public static boolean clear() {
 		return ASA.getInstance().sharedPreferences.edit().clear().commit();
 	}
@@ -70,22 +58,60 @@ public class Settings {
 		return ASA.getInstance().sharedPreferences.getAll();
 	}
 
-	public static String getCategory(String key, String defValue) {
-		if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
-			return key.split("_")[0];
+
+
+    public static String getType(String key, String defValue){
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
+            return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[0];
+        }
+        return defValue;
+    }
+
+    public static String getCategory(String key, String defValue) {
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
+            Log.i(TAG,key+" .getString.toString= "+ASA.getInstance().sharedPreferences.getString(key,"null").toString());
+            return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[1];
+        }
+        return defValue;
+    }
+
+    public static String getKey(String key, String defValue) {
+		if (ASA.getInstance().sharedPreferences.contains(key)) {// get key to setting
+            return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[2];
 		}
 		return defValue;
 	}
 
-	public static String getKey(String key, String defValue) {
-		if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
-			String parts[] = key.split("_");
-			String result = parts[1];
-			for (int i = 2; i < parts.length; i++)
-				result += " " + parts[i];
-			return result;
-		}
-		return defValue;
-	}
+    public static String getDescription(String key, String defValue){
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category
+            return ASA.getInstance().sharedPreferences.getString(key,"null").split(",")[3];
+        }
+        return defValue;
+    }
+
+
+    public static String getString(String key, String defValue) {
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
+            String valueString = ASA.getInstance().sharedPreferences.getString(key,String.valueOf(defValue));
+            return valueString.split(",")[4];
+        }
+        return defValue;
+    }
+
+    public static int getInt(String key, int defValue) {
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
+            String valueString = ASA.getInstance().sharedPreferences.getString(key,String.valueOf(defValue));
+            return Integer.parseInt(valueString.split(",")[4]);
+        }
+        return defValue;
+    }
+
+    public static boolean getBoolean(String key, boolean defValue) {
+        if (ASA.getInstance().sharedPreferences.contains(key)) {// remove Category
+            String valueString = ASA.getInstance().sharedPreferences.getString(key,String.valueOf(defValue));
+            return Boolean.parseBoolean(valueString.split(",")[4]);
+        }
+        return defValue;
+    }
 
 }

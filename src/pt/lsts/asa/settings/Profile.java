@@ -46,8 +46,10 @@ public class Profile {
             Log.i(TAG,"setting not valid: "+setting);
             return;
         }
+        String key = parts[2];
+        /*
 		String type = parts[0];
-        String category = parts[1];
+		String category = parts[1];
 		String key = parts[2];
         String description=parts[3];
 		String value = parts[4];
@@ -64,6 +66,8 @@ public class Profile {
 			Settings.putBoolean(key, Boolean.parseBoolean(value));
 			return;
 		}
+		*/
+        Settings.putString(key,setting);
 		Log.e(TAG, "Line not added:" + setting);
 
 	}

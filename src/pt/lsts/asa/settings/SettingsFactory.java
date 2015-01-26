@@ -29,18 +29,22 @@ public class SettingsFactory {
 			if (!Settings.getCategory(entry.getKey(), "ERROR").equals(
 					category.getTitle()))
 				continue;// not in this category
-			if (entry.getValue().getClass().equals(String.class))
+			if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(String.class.getName())) {
+                createEntry(category, entry.getKey(),
+                        (String) entry.getValue(), context);
+            }
+            if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(Integer.class.getName())){
+				int valInt = Settings.getInt(entry.getKey(),-1);
+                String valString = String.valueOf( Settings.getInt(entry.getKey(),-1) );
 				createEntry(category, entry.getKey(),
-						(String) entry.getValue(), context);
-			if (entry.getValue().getClass().equals(Integer.class)) {
-				String valString = ((Integer) entry.getValue()).toString();
-				createEntry(category, entry.getKey(),
-						(Integer) entry.getValue(), context).getEditText()
+						valInt, context).getEditText()
 						.setInputType(InputType.TYPE_CLASS_NUMBER);
 			}
-			if (entry.getValue().getClass().equals(Boolean.class))
-				createEntry(category, entry.getKey(),
-						(Boolean) entry.getValue(), context);
+            if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(Boolean.class.getName())){
+                boolean valBoolean = Settings.getBoolean(entry.getKey(),false);
+                createEntry(category, entry.getKey(),
+						valBoolean, context);
+            }
 		}
 	}
 
@@ -85,8 +89,8 @@ public class SettingsFactory {
 			String key, String valString, Context context) {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
 		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
-		editTextPreference.setSummary("Val: " + valString);
-		editTextPreference.setDefaultValue(valString);
+		editTextPreference.setSummary(Settings.getDescription(key,"null"));
+		editTextPreference.setDefaultValue(Settings.getString(key,"null"));
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
 		return editTextPreference;
@@ -96,7 +100,7 @@ public class SettingsFactory {
 			String key, Integer valInteger, Context context) {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
 		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
-		editTextPreference.setSummary("Val: " + valInteger.toString());
+		editTextPreference.setSummary(Settings.getDescription(key,"null"));
 		editTextPreference.getEditText().setInputType(
 				InputType.TYPE_CLASS_NUMBER);
 		editTextPreference.setDefaultValue(""+valInteger);
@@ -114,7 +118,7 @@ public class SettingsFactory {
 							Object newValue) {
 						boolean result = changeValue(key, newValue);
 						preference.setDefaultValue(newValue);
-						preference.setSummary("Val: " + ((String) newValue));
+						preference.setSummary(Settings.getDescription(key,"null"));
 
 						return result;
 					}
@@ -135,6 +139,7 @@ public class SettingsFactory {
 
 						boolean result = changeValue(key, newValue);
 						preference.setDefaultValue(newValue);
+                        preference.setSummary(Settings.getDescription(key,"null"));
 
 						return result;
 					}
@@ -178,12 +183,14 @@ public class SettingsFactory {
 		Vector<PreferenceCategory> preferenceCategories = new Vector<PreferenceCategory>();
 		Vector<String> categoriesStrings = new Vector<String>();
 		Map<String, ?> keys = Settings.getAll();
+
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			String categoryString = Settings.getCategory(entry.getKey(),
 					"ERROR");
 			if (!categoriesStrings.contains(categoryString))
 				categoriesStrings.add(categoryString);
 		}
+
 		for (String entry : categoriesStrings)
 			preferenceCategories.add(createCategory(entry, context));
 		preferenceCategories.add(createCategory("Profiles", context));

@@ -72,10 +72,18 @@ public class MainActivity extends FragmentActivity {
 		// showToast(sharedPreferences.getString("username", "NA"));
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-			String type = entry.getValue().getClass().toString();
-			String key = entry.getKey();
-			String val = entry.getValue().toString();
-            AndroidUtil.showToastLong(this, type + ";" + key + ";" + val);
+			String type = Settings.getType(entry.getKey(),"null");
+			String cat = Settings.getKey(entry.getKey(),"null");
+            String key =Settings.getCategory(entry.getKey(),"null");
+            String description = Settings.getDescription(entry.getKey(),"null");
+            String val ="null";
+            if (type.equalsIgnoreCase("java.lang.String"))
+			    val = Settings.getString(key,"null");
+            if (type.equalsIgnoreCase("java.lang.Integer"))
+                val = String.valueOf(Settings.getInt(key,-1));
+            if (type.equalsIgnoreCase("java.lang.Boolean"))
+                val = String.valueOf(Settings.getBoolean(key,false));
+            AndroidUtil.showToastLong(this, type + "," + cat +"," + key + "," + description + "," + val);
 		}
 		
 	}
