@@ -92,7 +92,24 @@ public class Settings {
 		return ASA.getInstance().sharedPreferences.getAll();
 	}
 
+    public static boolean isOptions(String key){
+        if (key.endsWith("_options")==false)
+            return false;
+        if (exists(key)==false)
+            return false;
+        return true;
+    }
 
+    public static boolean hasOptions(String key){
+        String keyOptions = key + "_options";
+        if (exists(keyOptions))
+            return true;
+        return false;
+    }
+
+    public static boolean exists(String key){
+        return ASA.getInstance().sharedPreferences.contains(key);
+    }
 
     public static String getType(String key, String defValue){
         if (ASA.getInstance().sharedPreferences.contains(key)) {// get only Category

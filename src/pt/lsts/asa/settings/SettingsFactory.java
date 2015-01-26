@@ -26,23 +26,26 @@ public class SettingsFactory {
 		createHideEntry(category, context);
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-			if (!Settings.getCategory(entry.getKey(), "ERROR").equals(
+            String key = entry.getKey();
+			if (!Settings.getCategory(key, "ERROR").equals(
 					category.getTitle()))
 				continue;// not in this category
-			if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(String.class.getName())) {
-                createEntry(category, entry.getKey(),
+            if (Settings.isOptions(key))
+                continue;//do not display options
+			if (Settings.getType(key,"ERROR").equalsIgnoreCase(String.class.getName())) {
+                createEntry(category, key,
                         (String) entry.getValue(), context);
             }
-            if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(Integer.class.getName())){
-				int valInt = Settings.getInt(entry.getKey(),-1);
-                String valString = String.valueOf( Settings.getInt(entry.getKey(),-1) );
-				createEntry(category, entry.getKey(),
+            if (Settings.getType(key,"ERROR").equalsIgnoreCase(Integer.class.getName())){
+				int valInt = Settings.getInt(key,-1);
+                String valString = String.valueOf( Settings.getInt(key,-1) );
+				createEntry(category, key,
 						valInt, context).getEditText()
 						.setInputType(InputType.TYPE_CLASS_NUMBER);
 			}
-            if (Settings.getType(entry.getKey(),"ERROR").equalsIgnoreCase(Boolean.class.getName())){
-                boolean valBoolean = Settings.getBoolean(entry.getKey(),false);
-                createEntry(category, entry.getKey(),
+            if (Settings.getType(key,"ERROR").equalsIgnoreCase(Boolean.class.getName())){
+                boolean valBoolean = Settings.getBoolean(key,false);
+                createEntry(category, key,
 						valBoolean, context);
             }
 		}
