@@ -73,8 +73,8 @@ public class MainActivity extends FragmentActivity {
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			String type = Settings.getType(entry.getKey(),"null");
-			String cat = Settings.getKey(entry.getKey(),"null");
-            String key =Settings.getCategory(entry.getKey(),"null");
+            String cat =Settings.getCategory(entry.getKey(),"null");
+            String key = Settings.getKey(entry.getKey(),"null");
             String description = Settings.getDescription(entry.getKey(),"null");
             String val ="null";
             if (type.equalsIgnoreCase("java.lang.String"))

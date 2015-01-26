@@ -67,7 +67,7 @@ public class Profile {
 			return;
 		}
 		*/
-        Settings.putString(key,setting);
+        Settings.putFullString(key,setting);
 		Log.e(TAG, "Line not added:" + setting);
 
 	}

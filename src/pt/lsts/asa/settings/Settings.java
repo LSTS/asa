@@ -29,24 +29,58 @@ public class Settings {
 		return ASA.getInstance().sharedPreferences;
 	}
 
-	public static boolean putString(String key, String value) {
+    public static boolean putFullString(String key, String value) {
         boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, value).commit();
+        //ASA.getInstance().getBus().post(key);
+        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
+        return result;
+    }
+
+	public static boolean putString(String key, String value) {
+        String finalValueString = getType(key,"java.lang.String");
+        finalValueString += ",";
+        finalValueString += getCategory(key,"null");
+        finalValueString += ",";
+        finalValueString += getKey(key,"null");
+        finalValueString += ",";
+        finalValueString += getDescription(key,"null");
+        finalValueString += ",";
+        finalValueString += value;
+        boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
         ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
+        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
 		return result;
 	}
 
 	public static boolean putInt(String key, int value) {
-        boolean result = ASA.getInstance().sharedPreferences.edit().putInt(key, value).commit();
+        String finalValueString = getType(key,"java.lang.String");
+        finalValueString += ",";
+        finalValueString += getCategory(key,"null");
+        finalValueString += ",";
+        finalValueString += getKey(key,"null");
+        finalValueString += ",";
+        finalValueString += getDescription(key,"null");
+        finalValueString += ",";
+        finalValueString += value;
+        boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
         ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
-		return result;
+        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
+        return result;
 	}
 
 	public static boolean putBoolean(String key, boolean value) {
-        boolean result = ASA.getInstance().sharedPreferences.edit().putBoolean(key, value).commit();
+        String finalValueString = getType(key,"java.lang.String");
+        finalValueString += ",";
+        finalValueString += getCategory(key,"null");
+        finalValueString += ",";
+        finalValueString += getKey(key,"null");
+        finalValueString += ",";
+        finalValueString += getDescription(key,"null");
+        finalValueString += ",";
+        finalValueString += value;
+        boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
         ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post(key);");
+        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
         return result;
 	}
 
