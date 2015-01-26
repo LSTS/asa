@@ -1,15 +1,16 @@
-type,category_key,value
-java.lang.Boolean,audio_global_audio,false
-java.lang.Boolean,audio_altitude_audio,false
-java.lang.Integer,audio_altitude_interval_in_seconds,15
-java.lang.Boolean,audio_ias_audio,true
-java.lang.Boolean,audio_timeout_audio,false
-java.lang.Integer,comms_timeout_interval_in_seconds,20
-java.lang.Integer,audio_ias_interval_in_seconds,5
-java.lang.Integer,audio_speech_rate,100
-java.lang.String,cam_model,axis
-java.lang.String,cam_protocol,rtsp
-java.lang.String,cam_ip,10.0.20.199
-java.lang.String,cam_codec,h264
-java.lang.String,cam_resolution,640x480
-java.lang.Boolean,systems_hide_non_vehicles,false
+type,category,key,description,value(s)
+# commented line
+java.lang.Boolean,audio,audio_global_audio,mute global audio,false
+java.lang.Boolean,audio,audio_altitude_audio,mute altitude audio,false
+java.lang.Integer,audio,audio_altitude_interval_in_seconds,set altitude callouts interval in seconds,15
+java.lang.Boolean,audio,audio_ias_audio,mute Indicated Air Speed callouts,true
+java.lang.Boolean,audio,audio_timeout_audio,mute Lost Comms callout,false
+java.lang.Integer,comms,comms_timeout_interval_in_seconds,set time to consider Lost Comms,20
+java.lang.Integer,audio,audio_ias_interval_in_seconds,set Indicated Air Speed callouts interval in seconds,5
+java.lang.Integer,audio,audio_speech_rate,set TextToSpeech speech rate in percentage,100
+java.lang.String,cam,cam_model,specify camera model,axis
+java.lang.String,cam,cam_protocol,communication protocol to be used in IP camera,rtsp
+java.lang.String,cam,cam_ip,Define Camera IP address,10.0.20.199
+java.lang.String,cam,cam_codec,specify camera video codec used,h264
+java.lang.String,cam,cam_resolution,change resolution requested to camera,640x480
+java.lang.Boolean,systems,systems_hide_non_vehicles,hide/show non vehicles in systems list,false

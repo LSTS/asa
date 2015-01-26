@@ -1,26 +1,21 @@
 package pt.lsts.asa.settings;
 
 import pt.lsts.asa.util.FileOperations;
+import pt.lsts.asa.util.StringUtils;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Map;
 import java.util.Vector;
 
-import android.content.Context;
-import android.content.res.AssetManager;
 import android.util.Log;
 
 public class Profile {
 
-
+    public static final String TAG = "Profile";
 	public static String defaultSettingsName = "default_settings";
 	public static File defaultSettingsFile = new File(FileOperations.mainDir,
 			defaultSettingsName);
-	public static String firstLineInCsvFile = "type,category_key,value";
+	public static String firstLineInCsvFile = "type,category,key,description,value(s)";
 	public static final String extension = "csv";
 
 	public static String restoreDefaults() {
@@ -42,15 +37,21 @@ public class Profile {
 	}
 
 	public static void loadSetting(String setting) {
-		String parts[] = setting.split(",");
-		if (parts.length != 3) {
-			Log.e("loadSetting", "parts.length!=3");
-			Log.e("loadSetting", "Line not added:" + setting);
-			return;
-		}
+        String parts[] = setting.split(",");
+        if (parts[0].charAt(0) == '#'){
+            Log.i(TAG,"setting commented: "+setting);
+            return;
+        }
+		if (StringUtils.validateSetting(setting)==false){
+            Log.i(TAG,"setting not valid: "+setting);
+            return;
+        }
 		String type = parts[0];
-		String key = parts[1];
-		String value = parts[2];
+        String category = parts[1];
+		String key = parts[2];
+        String description=parts[3];
+		String value = parts[4];
+
 		if (type.equalsIgnoreCase("java.lang.String")) {
 			Settings.putString(key, value);
 			return;
@@ -63,7 +64,7 @@ public class Profile {
 			Settings.putBoolean(key, Boolean.parseBoolean(value));
 			return;
 		}
-		Log.e("loadSetting", "Line not added:" + setting);
+		Log.e(TAG, "Line not added:" + setting);
 
 	}
 

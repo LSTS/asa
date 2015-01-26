@@ -131,4 +131,30 @@ public class StringUtils {
         return string;
     }
 
+    public static boolean validateSetting(String setting){
+        String parts[] = setting.split(",");
+        if (parts.length<5)
+            return false;
+        String type = parts[0];
+        switch (type){
+            case "java.lang.String":
+                break;
+            case "java.lang.Integer":
+                try{
+                    int x = Integer.parseInt(parts[4]);
+                    break;
+                }catch (NumberFormatException e){
+                    return false;
+                }
+            case "java.lang.Boolean":
+                break;
+            case "java.util.LinkedHashSet":
+                break;
+            default:
+                return false;
+        }
+
+        return true;
+    }
+
 }
