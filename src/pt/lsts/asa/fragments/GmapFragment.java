@@ -5,6 +5,7 @@ import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.MyLocationListener;
 import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.GmapsUtil;
 
 import android.app.Activity;
 import android.location.Location;
@@ -103,9 +104,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         initIMCSubscriber();
     }
 
-    public Marker addMarkerToPos(final Sys sys, final String title, final LatLng latLng){//standard googles red marker
-        if (googleMap!=null) {
-
+    public Marker addMarkerToPos(final Sys sys){//standard googles red marker
+        final String title = sys.getName();
+        final LatLng latLng = sys.getLatLng();
+        if (googleMap!=null && ASA.getInstance().UIThread==false) {
+            ASA.getInstance().UIThread=true;
             fragmentActivity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -114,15 +117,18 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                                     .title(title)
                     );
                     sys.setMaker(marker);
+                    ASA.getInstance().UIThread=false;
                 }
             });
         }
         return sys.getMaker();
     }
 
-    public Marker addMarkerToPos(final Sys sys, final String title, final LatLng latLng, final int iconRid){//R.drawable.icon
-        if (googleMap!=null) {
-
+    public Marker addMarkerToPos(final Sys sys, final int iconRid){//R.drawable.icon
+        final String title = sys.getName();
+        final LatLng latLng = sys.getLatLng();
+        if (googleMap!=null && ASA.getInstance().UIThread==false) {
+            ASA.getInstance().UIThread=true;
             fragmentActivity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -133,6 +139,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
                     );
                     sys.setMaker(marker);
+                    ASA.getInstance().UIThread=false;
                 }
             });
         }
@@ -157,17 +164,30 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     public void setActiveSysLatLng(final LatLng vehicleLatLng) {
         ASA.getInstance().getActiveSys().setLatLng(vehicleLatLng);
         final String vehicleName = ASA.getInstance().getActiveSys().getName().toString();
-        if (ASA.getInstance().getActiveSys().getMaker()==null)
-            addMarkerToPos(ASA.getInstance().getActiveSys(), vehicleName, vehicleLatLng, R.drawable.ic_orange_arrow);
-        else {
-            fragmentActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    ASA.getInstance().getActiveSys().getMaker().setPosition(vehicleLatLng);
-                    Log.i(TAG, "setPosition("+vehicleLatLng.toString()+")");
-                }
-            });
-        }
+        Log.i(TAG, "setPosition("+vehicleLatLng.toString()+")");
+    }
+
+    public void setActiveSysPsi(final float psi){
+        ASA.getInstance().getActiveSys().setPsi(psi);
+        Log.i(TAG, "setRotation("+psi+")");
+    }
+
+    public void updateActiveSysMarker(){
+        if (googleMap==null)
+            return;
+        final Sys sys = ASA.getInstance().getActiveSys();
+        if (sys.getMaker()==null)
+            addMarkerToPos(sys, R.drawable.ic_orange_arrow);
+
+        fragmentActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                float rotation = GmapsUtil.getRotation(sys.getPsi(), googleMap);
+                sys.getMaker().setRotation(rotation);
+                sys.getMaker().setPosition(sys.getLatLng());
+            }
+        });
+
     }
 
     public void removeMarker(String title){

@@ -34,6 +34,8 @@ public class GmapIMCSubscriber implements IMCSubscriber {
         thread = new Thread() {
             @Override
             public void run() {
+                if (gmapfragment.getGoogleMap()==null)
+                    return;
                 Log.v(TAG, "Received Message");
                 if (IMCUtils.isMsgFromActive(msg)){
                     Log.v(TAG,"Message from active:"+msg.getAbbrev());
@@ -51,6 +53,11 @@ public class GmapIMCSubscriber implements IMCSubscriber {
 
                         Log.i(TAG,"latLng="+latLng.toString());
                         gmapfragment.setActiveSysLatLng(latLng);
+
+                        float psi = msg.getFloat("psi");
+                        double psiDouble = psi;
+                        gmapfragment.setActiveSysPsi((float) Math.toDegrees(psiDouble));
+                        gmapfragment.updateActiveSysMarker();
                     }
                 }
 
