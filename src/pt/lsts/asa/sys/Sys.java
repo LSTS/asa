@@ -17,7 +17,7 @@ public class Sys {
 	private double[] RPY = { 0.0, 0.0, 0.0 }; // Roll Pitch Yaw in radians
 
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
-    private float phi = 0.0f;//last known orientation from EstimatedState.phi
+    private float psi = 0.0f;//last known orientation from EstimatedState.psi
     private Marker maker=null;//googleMap marker
 
 
@@ -120,12 +120,12 @@ public class Sys {
         this.latLng = latLng;
     }
 
-    public float getPhi() {
-        return phi;
+    public float getPsi() {
+        return psi;
     }
 
-    public void setPhi(float phi) {
-        this.phi = phi;
+    public void setPsi(float psi) {
+        this.psi = psi;
     }
 
     public Marker getMaker() {
