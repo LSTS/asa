@@ -42,6 +42,8 @@ public class ASA {
 
 	private static final String TAG = "ASA";
 
+    public boolean UIThread = false;
+
 	private static Context context;
 	private static ASA instance;
 	private static Sys activeSys;
