@@ -1,5 +1,8 @@
 package pt.lsts.asa.sys;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+
 public class Sys {
 
 	private String mAddress;
@@ -13,7 +16,12 @@ public class Sys {
 	private double[] NED = { 0.0, 0.0, 0.0 }; // North East Down in meters
 	private double[] RPY = { 0.0, 0.0, 0.0 }; // Roll Pitch Yaw in radians
 
-	private String refMode; // Reference Mode name
+    private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
+    private float phi = 0.0f;//last known orientation from EstimatedState.phi
+    private Marker maker=null;//googleMap marker
+
+
+    private String refMode; // Reference Mode name
 
 	// This 2 Booleans are used to compute the color of
 	// each sys in system list and serve as the actual state
@@ -103,6 +111,30 @@ public class Sys {
 	public void setRefMode(String refMode) {
 		this.refMode = refMode;
 	}
+
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
+    }
+
+    public float getPhi() {
+        return phi;
+    }
+
+    public void setPhi(float phi) {
+        this.phi = phi;
+    }
+
+    public Marker getMaker() {
+        return maker;
+    }
+
+    public void setMaker(Marker maker) {
+        this.maker = maker;
+    }
 
 	public Sys(String address, int port, String name, int id, String type,
 			boolean connected, boolean error) {
