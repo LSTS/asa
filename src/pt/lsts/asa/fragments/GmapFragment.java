@@ -115,6 +115,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(title)
+                                    .anchor(0.5f,0.5f)//center
                     );
                     sys.setMaker(marker);
                     ASA.getInstance().UIThread=false;
@@ -135,8 +136,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(title)
+                                    .anchor(0.5f, 0.5f)//center
                                     .icon(BitmapDescriptorFactory.fromResource(iconRid))
-
                     );
                     sys.setMaker(marker);
                     ASA.getInstance().UIThread=false;
@@ -183,8 +184,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void run() {
                 float rotation = GmapsUtil.getRotation(sys.getPsi(), googleMap);
-                sys.getMaker().setRotation(rotation);
-                sys.getMaker().setPosition(sys.getLatLng());
+                Marker marker = sys.getMaker();
+                marker.setRotation(rotation);
+                marker.setPosition(sys.getLatLng());
+                marker.showInfoWindow();//show info
+                marker.setAnchor(0.5f,0.5f);
             }
         });
 
