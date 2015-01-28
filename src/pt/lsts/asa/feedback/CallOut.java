@@ -120,7 +120,7 @@ public class CallOut {
 
 	public void shutdownCallOuts() {
         shutdownHandlers();
-        shutdownSchedulers();
+        //shutdownSchedulers();
 	}
 
     public void shutdownHandlers(){

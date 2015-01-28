@@ -90,6 +90,9 @@ public class ASA {
 	public void addSubscriber(IMCSubscriber sub, String[] abbrevNameList){
 		imcManager.addSubscriber(sub, abbrevNameList);
 	}
+    public void removeSubscriber(IMCSubscriber sub){
+        imcManager.removeSubscriberToAll(sub);
+    }
 	
 	public void initBroadcast(){
 		try {

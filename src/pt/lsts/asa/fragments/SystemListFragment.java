@@ -264,6 +264,8 @@ public class SystemListFragment extends Fragment {
             sysName = StringUtils.removeSysExtraInfo(sysName);
             Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
 
+            if (i>=systemListView.getChildCount())
+                continue;
             TextView textView = (TextView) systemListView.getChildAt(i);
 
             //generic color for text
