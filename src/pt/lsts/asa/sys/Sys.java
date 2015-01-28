@@ -1,5 +1,6 @@
 package pt.lsts.asa.sys;
 
+import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
@@ -19,6 +20,7 @@ public class Sys {
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
     private Marker maker=null;//googleMap marker
+    private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
 
 
     private String refMode; // Reference Mode name
@@ -134,6 +136,14 @@ public class Sys {
 
     public void setMaker(Marker maker) {
         this.maker = maker;
+    }
+
+    public GroundOverlay getGroundOverlay() {
+        return groundOverlay;
+    }
+
+    public void setGroundOverlay(GroundOverlay groundOverlay) {
+        this.groundOverlay = groundOverlay;
     }
 
 	public Sys(String address, int port, String name, int id, String type,
