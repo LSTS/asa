@@ -5,6 +5,7 @@ import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.MyLocationListener;
 import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.GmapsUtil;
 
 import android.app.Activity;
@@ -40,6 +41,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap googleMap = null;
     private MapFragment mapFragment = null;
+    private GmapIMCSubscriber gmapIMCSubscriber = null;
 
     private LatLng myLatLng = new LatLng(0,0);
     private MyLocationListener myLocationListener = null;
@@ -88,15 +90,21 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        //initIMCSubscriber();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
+        for (Sys sys : ASA.getInstance().getSystemList().getList())
+            sys.resetVisualizations();
+        ASA.getInstance().removeSubscriber(gmapIMCSubscriber);
+        gmapIMCSubscriber=null;
+
     }
 
     public void initIMCSubscriber(){
-        GmapIMCSubscriber gmapIMCSubscriber = new GmapIMCSubscriber(this);
+        gmapIMCSubscriber = new GmapIMCSubscriber(this);
         ASA.getInstance().addSubscriber(gmapIMCSubscriber);
     }
 
@@ -143,15 +151,14 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
                                     .bearing(bearing)
                                     .image(image)
-                                    .position(latLng, 500, 500)
-                                    .anchor(0.5f,0.5f)
+                                    .position(latLng, 100, 100)
+                                    .anchor(0.5f, 0.5f)
                                     .transparency(0.25f)
                     );
 
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(sysName)
-                                    .snippet(sys.getType())
                                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.transparent))
                     );
 
@@ -173,7 +180,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             lon = location.getLongitude();
         }
         if (initZoom==false && googleMap!=null){//center camera initialy on my position
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),14.0f,1.0f,1.0f)));
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),4.0f,1.0f,1.0f)));
             initZoom=true;
         }
         this.myLatLng = new LatLng(lat, lon);
@@ -194,8 +201,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         if (googleMap==null)
             return;
         final Sys sys = ASA.getInstance().getActiveSys();
-        if (sys.getMaker()==null)
+        if (sys.isOnMap()==false){
             addMarkerToPos(sys, R.drawable.ic_orange_arrow);
+            Log.i(TAG,"sys.isOnMap()==false");
+        }else
+            Log.i(TAG,"sys.isOnMap()!=false");
 
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
@@ -203,11 +213,12 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
                 Marker marker = sys.getMaker();
                 LatLng latLng = sys.getLatLng();
+                float psi = sys.getPsi();
                 GroundOverlay groundOverlay = sys.getGroundOverlay();
                 marker.setPosition(latLng);
                 groundOverlay.setPosition(latLng);
+                groundOverlay.setBearing(psi);
                 marker.showInfoWindow();//show info
-                //marker.setAnchor(0.5f,0.5f);
 
             }
         });

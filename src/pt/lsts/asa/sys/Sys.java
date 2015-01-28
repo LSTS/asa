@@ -146,6 +146,17 @@ public class Sys {
         this.groundOverlay = groundOverlay;
     }
 
+    public void resetVisualizations(){
+        setMaker(null);
+        setGroundOverlay(null);
+    }
+
+    public boolean isOnMap(){
+        if (getMaker()==null && getGroundOverlay()==null)
+            return false;
+        return true;
+    }
+
 	public Sys(String address, int port, String name, int id, String type,
 			boolean connected, boolean error) {
 		super();
