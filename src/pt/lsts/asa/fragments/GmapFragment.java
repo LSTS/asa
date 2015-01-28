@@ -21,9 +21,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -126,20 +130,33 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public Marker addMarkerToPos(final Sys sys, final int iconRid){//R.drawable.icon
-        final String title = sys.getName();
-        final LatLng latLng = sys.getLatLng();
         if (googleMap!=null && ASA.getInstance().UIThread==false) {
             ASA.getInstance().UIThread=true;
+            final String sysName = sys.getName();
+            final LatLng latLng = sys.getLatLng();
+            final float bearing = sys.getPsi();
             fragmentActivity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+
+                    BitmapDescriptor image = BitmapDescriptorFactory.fromResource(iconRid); //image
+                    GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
+                                    .bearing(bearing)
+                                    .image(image)
+                                    .position(latLng, 500, 500)
+                                    .anchor(0.5f,0.5f)
+                                    .transparency(0.25f)
+                    );
+
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
-                                    .title(title)
-                                    .anchor(0.5f, 0.5f)//center
-                                    .icon(BitmapDescriptorFactory.fromResource(iconRid))
+                                    .title(sysName)
+                                    .snippet(sys.getType())
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.transparent))
                     );
+
                     sys.setMaker(marker);
+                    sys.setGroundOverlay(groundOverlay);
                     ASA.getInstance().UIThread=false;
                 }
             });
@@ -156,7 +173,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             lon = location.getLongitude();
         }
         if (initZoom==false && googleMap!=null){//center camera initialy on my position
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),6.0f,1.0f,1.0f)));
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),14.0f,1.0f,1.0f)));
             initZoom=true;
         }
         this.myLatLng = new LatLng(lat, lon);
@@ -165,7 +182,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     public void setActiveSysLatLng(final LatLng vehicleLatLng) {
         ASA.getInstance().getActiveSys().setLatLng(vehicleLatLng);
         final String vehicleName = ASA.getInstance().getActiveSys().getName().toString();
-        Log.i(TAG, "setPosition("+vehicleLatLng.toString()+")");
+        Log.i(TAG, vehicleName + ".setPosition("+vehicleLatLng.toString()+")");
     }
 
     public void setActiveSysPsi(final float psi){
@@ -183,12 +200,15 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                float rotation = GmapsUtil.getRotation(sys.getPsi(), googleMap);
+
                 Marker marker = sys.getMaker();
-                marker.setRotation(rotation);
-                marker.setPosition(sys.getLatLng());
+                LatLng latLng = sys.getLatLng();
+                GroundOverlay groundOverlay = sys.getGroundOverlay();
+                marker.setPosition(latLng);
+                groundOverlay.setPosition(latLng);
                 marker.showInfoWindow();//show info
-                marker.setAnchor(0.5f,0.5f);
+                //marker.setAnchor(0.5f,0.5f);
+
             }
         });
 
