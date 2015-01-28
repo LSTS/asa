@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::fragments::SystemListFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac7b772fe4d6f717eac3d51d0ea59a63" prot="private" static="no" mutable="no">
+        <type>FragmentActivity</type>
+        <definition>FragmentActivity pt.lsts.asa.fragments.SystemListFragment.fragmentActivity</definition>
+        <argsstring></argsstring>
+        <name>fragmentActivity</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aab652dd19f9e7d8b3ea5b693417f5311" compoundref="SystemListFragment_8java" startline="188" endline="195">pt.lsts.asa.fragments.SystemListFragment.createListViewAdapter</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae1a75eb621a73d7d671a2e178d955ab" compoundref="SystemListFragment_8java" startline="53" endline="55">pt.lsts.asa.fragments.SystemListFragment.SystemListFragment</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a30aa8b6899bb6b1e24349d5cbc93ee98" prot="private" static="no" mutable="no">
+        <type>ListView</type>
+        <definition>ListView pt.lsts.asa.fragments.SystemListFragment.systemListView</definition>
+        <argsstring></argsstring>
+        <name>systemListView</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="36" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ab3759533393b5cc748d55bd4f77d456a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.fragments.SystemListFragment.selectedInt</definition>
+        <argsstring></argsstring>
+        <name>selectedInt</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="37" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a173670a84f396edae24f52fa9919f765" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button pt.lsts.asa.fragments.SystemListFragment.selectActiveSystemButton</definition>
+        <argsstring></argsstring>
+        <name>selectActiveSystemButton</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="38" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aa32f4be3e58e7efc53b8ea0fff594403" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.fragments.SystemListFragment.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;SystemListFragment&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a9e029280f5b4d3f021759c3f04e24c5d" prot="private" static="no" mutable="no">
+        <type>ScheduledFuture</type>
+        <definition>ScheduledFuture pt.lsts.asa.fragments.SystemListFragment.handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="41" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a5218e0d7f19f158c3e6e2a89dfd91e37" prot="private" static="no" mutable="no">
+        <type>final ScheduledExecutorService</type>
+        <definition>final ScheduledExecutorService pt.lsts.asa.fragments.SystemListFragment.scheduler</definition>
+        <argsstring></argsstring>
+        <name>scheduler</name>
+        <initializer>= Executors
+            .newScheduledThreadPool(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="42" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a9d8989458c81cdb6db38b4f5bc0c96fb" prot="private" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable pt.lsts.asa.fragments.SystemListFragment.runnable</definition>
+        <argsstring></argsstring>
+        <name>runnable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="44" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a0e16295942ad809a73c61d9ed9cd7684" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.fragments.SystemListFragment.interval</definition>
+        <argsstring></argsstring>
+        <name>interval</name>
+        <initializer>=100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="45" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4eb9e5a18af2e984a14e3320bc61f664" prot="package" static="no" mutable="no">
+        <type>ArrayAdapter&lt; String &gt;</type>
+        <definition>ArrayAdapter&lt;String&gt; pt.lsts.asa.fragments.SystemListFragment.arrayAdapter</definition>
+        <argsstring></argsstring>
+        <name>arrayAdapter</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="47" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac655155a02371e37bf721f60f1e5788" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SystemListFragment.SystemListFragment</definition>
+        <argsstring>()</argsstring>
+        <name>SystemListFragment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="49" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae1a75eb621a73d7d671a2e178d955ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SystemListFragment.SystemListFragment</definition>
+        <argsstring>(FragmentActivity fragmentActivity)</argsstring>
+        <name>SystemListFragment</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="53" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="53" bodyend="55"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac7b772fe4d6f717eac3d51d0ea59a63" compoundref="SystemListFragment_8java" startline="35">pt.lsts.asa.fragments.SystemListFragment.fragmentActivity</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad21d52ae3e093d19e5ecc936e70d78e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View pt.lsts.asa.fragments.SystemListFragment.onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="58" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="58" bodyend="64"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a812ffe3a2083710623ec9cf6afb97b96" compoundref="SystemListFragment_8java" startline="84" endline="91">pt.lsts.asa.fragments.SystemListFragment.setSelectActiveSystemButtonOnClickListener</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a7b88a996a0786c2b30a32be85bdb6349" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.onResume</definition>
+        <argsstring>()</argsstring>
+        <name>onResume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="67" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="67" bodyend="71"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a2964574ca2b74394575cb78b4dacac4d" compoundref="SystemListFragment_8java" startline="93" endline="104">pt.lsts.asa.fragments.SystemListFragment.initScheduler</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a71068b9ee1d2d64aa1ef8b2ab2aa5399" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.onPause</definition>
+        <argsstring>()</argsstring>
+        <name>onPause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="74" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="74" bodyend="77"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae4e3feff2d73082186b4af778ca6514" compoundref="SystemListFragment_8java" startline="79" endline="82">pt.lsts.asa.fragments.SystemListFragment.shutdown</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae4e3feff2d73082186b4af778ca6514" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="79" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="79" bodyend="82"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1acc9f5cdb9a9a350ec870ff72b5c173e0" compoundref="SystemListActivity_8java" startline="72" endline="75">pt.lsts.asa.activities.SystemListActivity.onBackPressed</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a71068b9ee1d2d64aa1ef8b2ab2aa5399" compoundref="SystemListFragment_8java" startline="74" endline="77">pt.lsts.asa.fragments.SystemListFragment.onPause</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a812ffe3a2083710623ec9cf6afb97b96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.setSelectActiveSystemButtonOnClickListener</definition>
+        <argsstring>()</argsstring>
+        <name>setSelectActiveSystemButtonOnClickListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="84" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="84" bodyend="91"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad21d52ae3e093d19e5ecc936e70d78e9" compoundref="SystemListFragment_8java" startline="58" endline="64">pt.lsts.asa.fragments.SystemListFragment.onCreateView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a2964574ca2b74394575cb78b4dacac4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.initScheduler</definition>
+        <argsstring>()</argsstring>
+        <name>initScheduler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="93" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="93" bodyend="104"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a7b88a996a0786c2b30a32be85bdb6349" compoundref="SystemListFragment_8java" startline="67" endline="71">pt.lsts.asa.fragments.SystemListFragment.onResume</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</definition>
+        <argsstring>()</argsstring>
+        <name>populateSystemListView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="106" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="106" bodyend="116"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aab652dd19f9e7d8b3ea5b693417f5311" compoundref="SystemListFragment_8java" startline="188" endline="195">pt.lsts.asa.fragments.SystemListFragment.createListViewAdapter</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aafbd2cf250bdf07a51ce4c10273cba27" compoundref="SystemListFragment_8java" startline="197" endline="212">pt.lsts.asa.fragments.SystemListFragment.setListViewOnItemClickListener</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4ae44f67f1be900b9f426494fe963c7a" compoundref="SystemListFragment_8java" startline="231" endline="240">pt.lsts.asa.fragments.SystemListFragment.updateListView</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a2964574ca2b74394575cb78b4dacac4d" compoundref="SystemListFragment_8java" startline="93" endline="104">pt.lsts.asa.fragments.SystemListFragment.initScheduler</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4a169cb51fbfdc7650727cf806aa03e9" compoundref="SystemListActivity_8java" startline="39" endline="54">pt.lsts.asa.activities.SystemListActivity.onOptionsItemSelected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</definition>
+        <argsstring>()</argsstring>
+        <name>showMoreInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="118" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="118" bodyend="143"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" compoundref="SystemList_8java" startline="81" endline="87">pt.lsts.asa.sys.SystemList.findSysByName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adbc78a7cd0993e46ec9ac727a1460962" compoundref="Sys_8java" startline="47" endline="49">pt.lsts.asa.sys.Sys.getAddress</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" compoundref="ASA_8java" startline="213" endline="216">pt.lsts.asa.ASA.getSystemList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1afa49c29d6fe25c3ab3ec6ed183bdc32f" compoundref="Sys_8java" startline="39" endline="41">pt.lsts.asa.sys.Sys.isConnected</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a84f5d6feafbc6b694d19064657566e49" compoundref="Sys_8java" startline="31" endline="33">pt.lsts.asa.sys.Sys.isError</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ac6b2954f1dadd92dd574ae9c6af2a2e5" compoundref="Sys_8java" startline="12">pt.lsts.asa.sys.Sys.lastMessageReceived</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1StringUtils_1a43ff1dcc3e8e861f57a432a1c918294b" compoundref="StringUtils_8java" startline="95" endline="98">pt.lsts.asa.util.StringUtils.removeSysExtraInfo</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1a0028d95c856d06666e0bb0231c7212af" compoundref="AndroidUtil_8java" startline="23" endline="29">pt.lsts.asa.util.AndroidUtil.showToastLong</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1StringUtils_1a02717127427e23bf10d84df838599977" compoundref="StringUtils_8java" startline="100" endline="132">pt.lsts.asa.util.StringUtils.timeSinceLastMessage</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4a169cb51fbfdc7650727cf806aa03e9" compoundref="SystemListActivity_8java" startline="39" endline="54">pt.lsts.asa.activities.SystemListActivity.onOptionsItemSelected</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ArrayList&lt; String &gt;</type>
+        <definition>ArrayList&lt;String&gt; pt.lsts.asa.fragments.SystemListFragment.addSysStatus</definition>
+        <argsstring>()</argsstring>
+        <name>addSysStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="145" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="145" bodyend="172"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ae8f2642bdc85b739dfe76f0f6f4b6282" compoundref="SystemListFragment_8java" startline="174" endline="186">pt.lsts.asa.fragments.SystemListFragment.filterSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a5d442f08c33d72123d1673650fd2975e" compoundref="SystemList_8java" startline="97" endline="99">pt.lsts.asa.sys.SystemList.getList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a51d0cf4d583420807f2497418342648a" compoundref="SystemList_8java" startline="101" endline="107">pt.lsts.asa.sys.SystemList.getNameList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" compoundref="ASA_8java" startline="213" endline="216">pt.lsts.asa.ASA.getSystemList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" compoundref="Sys_8java" startline="79" endline="81">pt.lsts.asa.sys.Sys.getType</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ae8f2642bdc85b739dfe76f0f6f4b6282" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.fragments.SystemListFragment.filterSys</definition>
+        <argsstring>(Sys sys)</argsstring>
+        <name>filterSys</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+          <declname>sys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="174" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="174" bodyend="186"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1ac71827af5d162d6c779eafc2c221b32d" compoundref="Settings_8java" startline="181" endline="187">pt.lsts.asa.settings.Settings.getBoolean</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" compoundref="Sys_8java" startline="79" endline="81">pt.lsts.asa.sys.Sys.getType</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aab652dd19f9e7d8b3ea5b693417f5311" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.createListViewAdapter</definition>
+        <argsstring>(ArrayList&lt; String &gt; arrayListName)</argsstring>
+        <name>createListViewAdapter</name>
+        <param>
+          <type>ArrayList&lt; String &gt;</type>
+          <declname>arrayListName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="188" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="188" bodyend="195"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac7b772fe4d6f717eac3d51d0ea59a63" compoundref="SystemListFragment_8java" startline="35">pt.lsts.asa.fragments.SystemListFragment.fragmentActivity</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aafbd2cf250bdf07a51ce4c10273cba27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.setListViewOnItemClickListener</definition>
+        <argsstring>()</argsstring>
+        <name>setListViewOnItemClickListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="197" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="197" bodyend="212"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</definition>
+        <argsstring>()</argsstring>
+        <name>selectActiveSystem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="214" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="214" bodyend="229"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" compoundref="SystemList_8java" startline="81" endline="87">pt.lsts.asa.sys.SystemList.findSysByName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" compoundref="ASA_8java" startline="213" endline="216">pt.lsts.asa.ASA.getSystemList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1StringUtils_1a43ff1dcc3e8e861f57a432a1c918294b" compoundref="StringUtils_8java" startline="95" endline="98">pt.lsts.asa.util.StringUtils.removeSysExtraInfo</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aed516abf7cd5070569abea82c281f2d4" compoundref="ASA_8java" startline="202" endline="206">pt.lsts.asa.ASA.setActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1a0028d95c856d06666e0bb0231c7212af" compoundref="AndroidUtil_8java" startline="23" endline="29">pt.lsts.asa.util.AndroidUtil.showToastLong</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4a169cb51fbfdc7650727cf806aa03e9" compoundref="SystemListActivity_8java" startline="39" endline="54">pt.lsts.asa.activities.SystemListActivity.onOptionsItemSelected</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a812ffe3a2083710623ec9cf6afb97b96" compoundref="SystemListFragment_8java" startline="84" endline="91">pt.lsts.asa.fragments.SystemListFragment.setSelectActiveSystemButtonOnClickListener</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4ae44f67f1be900b9f426494fe963c7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.updateListView</definition>
+        <argsstring>(final ArrayList&lt; String &gt; arrayListNameFinal)</argsstring>
+        <name>updateListView</name>
+        <param>
+          <type>final ArrayList&lt; String &gt;</type>
+          <declname>arrayListNameFinal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="231" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="231" bodyend="240"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SystemListFragment.colorItems</definition>
+        <argsstring>()</argsstring>
+        <name>colorItems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="242" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="242" bodyend="302"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" compoundref="SystemList_8java" startline="81" endline="87">pt.lsts.asa.sys.SystemList.findSysByName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a5d442f08c33d72123d1673650fd2975e" compoundref="SystemList_8java" startline="97" endline="99">pt.lsts.asa.sys.SystemList.getList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" compoundref="ASA_8java" startline="213" endline="216">pt.lsts.asa.ASA.getSystemList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" compoundref="Sys_8java" startline="79" endline="81">pt.lsts.asa.sys.Sys.getType</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1afa49c29d6fe25c3ab3ec6ed183bdc32f" compoundref="Sys_8java" startline="39" endline="41">pt.lsts.asa.sys.Sys.isConnected</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a84f5d6feafbc6b694d19064657566e49" compoundref="Sys_8java" startline="31" endline="33">pt.lsts.asa.sys.Sys.isError</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1StringUtils_1a43ff1dcc3e8e861f57a432a1c918294b" compoundref="StringUtils_8java" startline="95" endline="98">pt.lsts.asa.util.StringUtils.removeSysExtraInfo</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aab652dd19f9e7d8b3ea5b693417f5311" compoundref="SystemListFragment_8java" startline="188" endline="195">pt.lsts.asa.fragments.SystemListFragment.createListViewAdapter</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4ae44f67f1be900b9f426494fe963c7a" compoundref="SystemListFragment_8java" startline="231" endline="240">pt.lsts.asa.fragments.SystemListFragment.updateListView</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/5/15. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="415">
+        <label>pt.lsts.asa.fragments.SystemListFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment"/>
+        <childnode refid="416" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="416">
+        <label>Fragment</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="417">
+        <label>pt.lsts.asa.fragments.SystemListFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment"/>
+        <childnode refid="418" relation="public-inheritance">
+        </childnode>
+        <childnode refid="419" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="420" relation="usage">
+          <edgelabel>selectActiveSystemButton</edgelabel>
+        </childnode>
+        <childnode refid="421" relation="usage">
+          <edgelabel>arrayAdapter</edgelabel>
+        </childnode>
+        <childnode refid="422" relation="usage">
+          <edgelabel>systemListView</edgelabel>
+        </childnode>
+        <childnode refid="423" relation="usage">
+          <edgelabel>scheduler</edgelabel>
+        </childnode>
+        <childnode refid="424" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="419">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="420">
+        <label>Button</label>
+      </node>
+      <node id="422">
+        <label>ListView</label>
+      </node>
+      <node id="421">
+        <label>ArrayAdapter&lt; String &gt;</label>
+      </node>
+      <node id="424">
+        <label>ScheduledFuture</label>
+      </node>
+      <node id="423">
+        <label>ScheduledExecutorService</label>
+      </node>
+      <node id="418">
+        <label>Fragment</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" line="33" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SystemListFragment.java" bodystart="33" bodyend="304"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>addSysStatus</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4eb9e5a18af2e984a14e3320bc61f664" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>arrayAdapter</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>colorItems</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aab652dd19f9e7d8b3ea5b693417f5311" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>createListViewAdapter</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ae8f2642bdc85b739dfe76f0f6f4b6282" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>filterSys</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac7b772fe4d6f717eac3d51d0ea59a63" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>fragmentActivity</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a9e029280f5b4d3f021759c3f04e24c5d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>handle</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a2964574ca2b74394575cb78b4dacac4d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>initScheduler</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a0e16295942ad809a73c61d9ed9cd7684" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>interval</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad21d52ae3e093d19e5ecc936e70d78e9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>onCreateView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a71068b9ee1d2d64aa1ef8b2ab2aa5399" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>onPause</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a7b88a996a0786c2b30a32be85bdb6349" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>onResume</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>populateSystemListView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a9d8989458c81cdb6db38b4f5bc0c96fb" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>runnable</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a5218e0d7f19f158c3e6e2a89dfd91e37" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>scheduler</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>selectActiveSystem</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a173670a84f396edae24f52fa9919f765" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>selectActiveSystemButton</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ab3759533393b5cc748d55bd4f77d456a" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>selectedInt</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aafbd2cf250bdf07a51ce4c10273cba27" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>setListViewOnItemClickListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a812ffe3a2083710623ec9cf6afb97b96" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>setSelectActiveSystemButtonOnClickListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>showMoreInfo</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae4e3feff2d73082186b4af778ca6514" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>shutdown</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aac655155a02371e37bf721f60f1e5788" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>SystemListFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae1a75eb621a73d7d671a2e178d955ab" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>SystemListFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a30aa8b6899bb6b1e24349d5cbc93ee98" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>systemListView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aa32f4be3e58e7efc53b8ea0fff594403" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a4ae44f67f1be900b9f426494fe963c7a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SystemListFragment</scope><name>updateListView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

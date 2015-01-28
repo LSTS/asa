@@ -1,0 +1,399 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer}{}\section{pt.\+lsts.\+asa.\+comms.\+Announcer Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer}\index{pt.\+lsts.\+asa.\+comms.\+Announcer@{pt.\+lsts.\+asa.\+comms.\+Announcer}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485a1d4071edc469e9a991bb0378007c}{Announcer} (\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager}{I\+M\+C\+Manager} \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{imm}, String broadcast, String multicast)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485992536f87e50b74cb0620cca60d7c}{start} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_add4dd0f5d7e5b2ebf4c8f2415d87e60c}{stop} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ae9e999b0bb75955049b2824613c296bc}{set\+Broadcast\+Address} (String addr)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_aac16139f8922ddf5faa9bdcf6b52922a}{generate\+Announce} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a126257643f3cf4a5ecfe2d7982c6450a}{T\+A\+G} = \char`\"{}Announcer\char`\"{}
+\item 
+static final String \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a991339b7b53ed8b0948d2421bcb05ff4}{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R} = \char`\"{}224.\+0.\+75.\+69\char`\"{}
+\item 
+static final int \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a8f1d0dde03c935646275bb0ca3d247da}{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T} = 30100
+\item 
+static final long \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a11efc9cfd8265c7710b2c42698977ae7}{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y} = 10000
+\item 
+static final boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a708b0e5d2f0d2e716f55597dbbc8f5d4}{D\+E\+B\+U\+G} = false
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a7826694b7d80ba969a9b35f11959a142}{update\+Location\+On\+Announce} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a34cc1070a50e7a229ea0349111dce02b}{update\+Heading\+On\+Announce} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+I\+M\+C\+Message \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}{announce}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager}{I\+M\+C\+Manager} \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{imm}
+\item 
+String \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a849ac220046482feb3bbc0a3ce2e8767}{broadcast\+Address}
+\item 
+String \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac2278bc6a01e42484ffbd47efbe575e3}{multicast\+Address}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer}{Accu\+Timer} \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ab58beeb4d4dcf2157e94042a7d27f8ac}{at}
+\item 
+int \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gps\+Add\+Listener\+Counter} = 0
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager}{G\+P\+S\+Manager} \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}{gps\+Manager}
+\item 
+Sensor\+Manager \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a78ba041e6948dffe1bf29e0f9eb74d5b}{sensor\+Manager}
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a12bf9859e53e247eea25e7d1428ce942}{my\+Heading} = Double.\+Na\+N
+\item 
+String \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ad98caa0827d953121f9ac5e8e79178b4}{services} = \char`\"{}\char`\"{}
+\item 
+Sensor \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_afab33815ef31c419af79ffc274c59030}{sensor}
+\item 
+Runnable \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a95133bcfa573e3178268dc3b05cbe131}{task}
+\item 
+\hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener}{Location\+Change\+Listener} \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}{loc\+Listener}
+\item 
+Sensor\+Event\+Listener \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a785165a29d4299dd7e5cddf9a656eccd}{orientation\+Listener}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Announcer.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485a1d4071edc469e9a991bb0378007c}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!Announcer@{Announcer}}
+\index{Announcer@{Announcer}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{Announcer}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+comms.\+Announcer.\+Announcer (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+M\+C\+Manager}}]{imm, }
+\item[{String}]{broadcast, }
+\item[{String}]{multicast}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485a1d4071edc469e9a991bb0378007c}
+
+
+Definition at line 86 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+comms.\+Announcer.\+imm.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_aac16139f8922ddf5faa9bdcf6b52922a}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!generate\+Announce@{generate\+Announce}}
+\index{generate\+Announce@{generate\+Announce}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{generate\+Announce}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+generate\+Announce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_aac16139f8922ddf5faa9bdcf6b52922a}
+This function can be called to (re)generate the Announce message sent by the console 
+
+Definition at line 159 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+I\+M\+C\+Manager.\+get\+Local\+Id(), pt.\+lsts.\+asa.\+util.\+M\+Util.\+get\+Local\+Ip\+Address(), and pt.\+lsts.\+asa.\+comms.\+Announcer.\+update\+Location\+On\+Announce().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+start().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ae9e999b0bb75955049b2824613c296bc}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!set\+Broadcast\+Address@{set\+Broadcast\+Address}}
+\index{set\+Broadcast\+Address@{set\+Broadcast\+Address}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{set\+Broadcast\+Address}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+set\+Broadcast\+Address (
+\begin{DoxyParamCaption}
+\item[{String}]{addr}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ae9e999b0bb75955049b2824613c296bc}
+
+
+Definition at line 121 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485992536f87e50b74cb0620cca60d7c}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!start@{start}}
+\index{start@{start}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a485992536f87e50b74cb0620cca60d7c}
+
+
+Definition at line 95 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+add\+Listener(), pt.\+lsts.\+asa.\+comms.\+Announcer.\+generate\+Announce(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Gps\+Manager(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Instance(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Prefs(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Sensor\+Manager(), and pt.\+lsts.\+asa.\+util.\+Accu\+Timer.\+start().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+A\+S\+A.\+start().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_add4dd0f5d7e5b2ebf4c8f2415d87e60c}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!stop@{stop}}
+\index{stop@{stop}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_add4dd0f5d7e5b2ebf4c8f2415d87e60c}
+
+
+Definition at line 115 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+remove\+Listener(), and pt.\+lsts.\+asa.\+util.\+Accu\+Timer.\+stop().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+A\+S\+A.\+pause().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a34cc1070a50e7a229ea0349111dce02b}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!update\+Heading\+On\+Announce@{update\+Heading\+On\+Announce}}
+\index{update\+Heading\+On\+Announce@{update\+Heading\+On\+Announce}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{update\+Heading\+On\+Announce}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+update\+Heading\+On\+Announce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a34cc1070a50e7a229ea0349111dce02b}
+
+
+Definition at line 142 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Instance(), and pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Prefs().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a7826694b7d80ba969a9b35f11959a142}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!update\+Location\+On\+Announce@{update\+Location\+On\+Announce}}
+\index{update\+Location\+On\+Announce@{update\+Location\+On\+Announce}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{update\+Location\+On\+Announce}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+comms.\+Announcer.\+update\+Location\+On\+Announce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a7826694b7d80ba969a9b35f11959a142}
+
+
+Definition at line 125 of file Announcer.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+get\+Current\+Location(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Gps\+Manager(), pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Instance(), and pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Prefs().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+generate\+Announce().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!announce@{announce}}
+\index{announce@{announce}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{announce}]{\setlength{\rightskip}{0pt plus 5cm}I\+M\+C\+Message pt.\+lsts.\+asa.\+comms.\+Announcer.\+announce\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}
+
+
+Definition at line 27 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a991339b7b53ed8b0948d2421bcb05ff4}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R}}
+\index{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+comms.\+Announcer.\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+A\+D\+D\+R = \char`\"{}224.\+0.\+75.\+69\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a991339b7b53ed8b0948d2421bcb05ff4}
+
+
+Definition at line 21 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a11efc9cfd8265c7710b2c42698977ae7}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y}}
+\index{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}final long pt.\+lsts.\+asa.\+comms.\+Announcer.\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+D\+E\+L\+A\+Y = 10000\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a11efc9cfd8265c7710b2c42698977ae7}
+
+
+Definition at line 24 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a8f1d0dde03c935646275bb0ca3d247da}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T}}
+\index{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T@{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int pt.\+lsts.\+asa.\+comms.\+Announcer.\+A\+N\+N\+O\+U\+N\+C\+E\+\_\+\+P\+O\+R\+T = 30100\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a8f1d0dde03c935646275bb0ca3d247da}
+
+
+Definition at line 23 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ab58beeb4d4dcf2157e94042a7d27f8ac}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!at@{at}}
+\index{at@{at}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Accu\+Timer} pt.\+lsts.\+asa.\+comms.\+Announcer.\+at\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ab58beeb4d4dcf2157e94042a7d27f8ac}
+
+
+Definition at line 31 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a849ac220046482feb3bbc0a3ce2e8767}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!broadcast\+Address@{broadcast\+Address}}
+\index{broadcast\+Address@{broadcast\+Address}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{broadcast\+Address}]{\setlength{\rightskip}{0pt plus 5cm}String pt.\+lsts.\+asa.\+comms.\+Announcer.\+broadcast\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a849ac220046482feb3bbc0a3ce2e8767}
+
+
+Definition at line 29 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a708b0e5d2f0d2e716f55597dbbc8f5d4}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!D\+E\+B\+U\+G@{D\+E\+B\+U\+G}}
+\index{D\+E\+B\+U\+G@{D\+E\+B\+U\+G}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}final boolean pt.\+lsts.\+asa.\+comms.\+Announcer.\+D\+E\+B\+U\+G = false\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a708b0e5d2f0d2e716f55597dbbc8f5d4}
+
+
+Definition at line 25 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!gps\+Add\+Listener\+Counter@{gps\+Add\+Listener\+Counter}}
+\index{gps\+Add\+Listener\+Counter@{gps\+Add\+Listener\+Counter}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{gps\+Add\+Listener\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}int pt.\+lsts.\+asa.\+comms.\+Announcer.\+gps\+Add\+Listener\+Counter = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}
+
+
+Definition at line 32 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!gps\+Manager@{gps\+Manager}}
+\index{gps\+Manager@{gps\+Manager}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{gps\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+P\+S\+Manager} pt.\+lsts.\+asa.\+comms.\+Announcer.\+gps\+Manager\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}
+
+
+Definition at line 33 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!imm@{imm}}
+\index{imm@{imm}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{imm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+M\+C\+Manager} pt.\+lsts.\+asa.\+comms.\+Announcer.\+imm\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}
+
+
+Definition at line 28 of file Announcer.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+Announcer().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!loc\+Listener@{loc\+Listener}}
+\index{loc\+Listener@{loc\+Listener}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{loc\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Location\+Change\+Listener} pt.\+lsts.\+asa.\+comms.\+Announcer.\+loc\+Listener\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} LocationChangeListener() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onLocationChange(Location location) \{
+            \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a7826694b7d80ba969a9b35f11959a142}{updateLocationOnAnnounce}();
+        \}
+    \}
+\end{DoxyCode}
+
+
+Definition at line 67 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac2278bc6a01e42484ffbd47efbe575e3}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!multicast\+Address@{multicast\+Address}}
+\index{multicast\+Address@{multicast\+Address}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{multicast\+Address}]{\setlength{\rightskip}{0pt plus 5cm}String pt.\+lsts.\+asa.\+comms.\+Announcer.\+multicast\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac2278bc6a01e42484ffbd47efbe575e3}
+
+
+Definition at line 30 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a12bf9859e53e247eea25e7d1428ce942}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!my\+Heading@{my\+Heading}}
+\index{my\+Heading@{my\+Heading}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{my\+Heading}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+comms.\+Announcer.\+my\+Heading = Double.\+Na\+N\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a12bf9859e53e247eea25e7d1428ce942}
+
+
+Definition at line 36 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a785165a29d4299dd7e5cddf9a656eccd}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!orientation\+Listener@{orientation\+Listener}}
+\index{orientation\+Listener@{orientation\+Listener}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{orientation\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}Sensor\+Event\+Listener pt.\+lsts.\+asa.\+comms.\+Announcer.\+orientation\+Listener\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a785165a29d4299dd7e5cddf9a656eccd}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} SensorEventListener() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onSensorChanged(SensorEvent event) \{
+            \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a12bf9859e53e247eea25e7d1428ce942}{myHeading} = \textcolor{keyword}{event}.values[0];
+            \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a34cc1070a50e7a229ea0349111dce02b}{updateHeadingOnAnnounce}();
+        \}
+
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAccuracyChanged(Sensor \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_afab33815ef31c419af79ffc274c59030}{sensor}, \textcolor{keywordtype}{int} accuracy) \{
+        \}
+    \}
+\end{DoxyCode}
+
+
+Definition at line 74 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_afab33815ef31c419af79ffc274c59030}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!sensor@{sensor}}
+\index{sensor@{sensor}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{sensor}]{\setlength{\rightskip}{0pt plus 5cm}Sensor pt.\+lsts.\+asa.\+comms.\+Announcer.\+sensor\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_afab33815ef31c419af79ffc274c59030}
+
+
+Definition at line 38 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a78ba041e6948dffe1bf29e0f9eb74d5b}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!sensor\+Manager@{sensor\+Manager}}
+\index{sensor\+Manager@{sensor\+Manager}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{sensor\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}Sensor\+Manager pt.\+lsts.\+asa.\+comms.\+Announcer.\+sensor\+Manager\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a78ba041e6948dffe1bf29e0f9eb74d5b}
+
+
+Definition at line 34 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ad98caa0827d953121f9ac5e8e79178b4}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!services@{services}}
+\index{services@{services}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{services}]{\setlength{\rightskip}{0pt plus 5cm}String pt.\+lsts.\+asa.\+comms.\+Announcer.\+services = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ad98caa0827d953121f9ac5e8e79178b4}
+
+
+Definition at line 37 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a126257643f3cf4a5ecfe2d7982c6450a}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!T\+A\+G@{T\+A\+G}}
+\index{T\+A\+G@{T\+A\+G}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+comms.\+Announcer.\+T\+A\+G = \char`\"{}Announcer\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a126257643f3cf4a5ecfe2d7982c6450a}
+
+
+Definition at line 20 of file Announcer.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a95133bcfa573e3178268dc3b05cbe131}{}\index{pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}!task@{task}}
+\index{task@{task}!pt\+::lsts\+::asa\+::comms\+::\+Announcer@{pt\+::lsts\+::asa\+::comms\+::\+Announcer}}
+\subsubsection[{task}]{\setlength{\rightskip}{0pt plus 5cm}Runnable pt.\+lsts.\+asa.\+comms.\+Announcer.\+task\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a95133bcfa573e3178268dc3b05cbe131}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} Runnable() \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{
+            \textcolor{keywordtype}{boolean} announcePosition = ASA.getInstance().getPrefs()
+                    .getBoolean(\textcolor{stringliteral}{"announcePosition"}, \textcolor{keyword}{true});
+
+            \textcolor{keywordflow}{if} (\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a708b0e5d2f0d2e716f55597dbbc8f5d4}{DEBUG})
+                Log.i(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a126257643f3cf4a5ecfe2d7982c6450a}{TAG}, \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}{announce}.toString());
+            \textcolor{keywordflow}{if} (\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{imm}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_a9be4a4a3d73a2b01b242c8f4ad87d005}{getListener}() == null) \{
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}{gpsManager}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a3e8544b05970e32a8906ed6f84baf14c}{removeListener}(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}{locListener});
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gpsAddListenerCounter} = 0;
+                \textcolor{keywordflow}{return};
+            \}
+            \textcolor{keywordflow}{if} (\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gpsAddListenerCounter} == 0 && announcePosition) \{
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}{gpsManager}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa81bbc2318b1c27bc20b4a3de3e4f5a5}{addListener}(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}{locListener});
+            \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gpsAddListenerCounter} == 2) \{
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a08b04d9ec24009895e3f19671bf92e55}{gpsManager}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a3e8544b05970e32a8906ed6f84baf14c}{removeListener}(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a3e5ba0512f5ecc6368c17edf3143cd2b}{locListener});
+            \}
+            \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gpsAddListenerCounter} = (\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a6c6423b8c761aca8f7b0063bb2e18635}{gpsAddListenerCounter} + 1) %
+       4;
+
+            \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a7826694b7d80ba969a9b35f11959a142}{updateLocationOnAnnounce}();
+            \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 5; i++) \{
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{imm}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_a34d863c0fc2bb23350e4493e12bdf6e6}{send}(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a849ac220046482feb3bbc0a3ce2e8767}{broadcastAddress}, \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a8f1d0dde03c935646275bb0ca3d247da}{ANNOUNCE\_PORT} + i, 
+      \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}{announce});
+                \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a899369bb5523890384993f85eea10fdd}{imm}.\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_a34d863c0fc2bb23350e4493e12bdf6e6}{send}(\hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac2278bc6a01e42484ffbd47efbe575e3}{multicastAddress}, \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_a8f1d0dde03c935646275bb0ca3d247da}{ANNOUNCE\_PORT} + i, 
+      \hyperlink{classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_ac313418f572f98ec1f2ea28f46a46451}{announce});
+            \}
+        \}
+    \}
+\end{DoxyCode}
+
+
+Definition at line 40 of file Announcer.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/comms/\hyperlink{Announcer_8java}{Announcer.\+java}\end{DoxyCompactItemize}

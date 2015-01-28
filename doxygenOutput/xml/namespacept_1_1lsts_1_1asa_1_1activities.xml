@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacept_1_1lsts_1_1asa_1_1activities" kind="namespace" language="Java">
+    <compoundname>pt::lsts::asa::activities</compoundname>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity" prot="public">pt::lsts::asa::activities::AutoActivity</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity" prot="public">pt::lsts::asa::activities::MainActivity</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1activities_1_1ManualActivity" prot="public">pt::lsts::asa::activities::ManualActivity</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity" prot="public">pt::lsts::asa::activities::SettingsActivity</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity" prot="public">pt::lsts::asa::activities::SystemListActivity</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" line="1" column="1"/>
+  </compounddef>
+</doxygen>

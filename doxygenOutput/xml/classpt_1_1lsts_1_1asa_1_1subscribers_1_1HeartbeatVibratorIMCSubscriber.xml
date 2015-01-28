@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</compoundname>
+    <basecompoundref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" prot="public" virt="non-virtual">pt.lsts.asa.comms.IMCSubscriber</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a9153056f3639306e0cd124d25db53247" prot="public" static="yes" mutable="no">
+        <type>final String[]</type>
+        <definition>final String [] pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.SUBSCRIBED_MSGS</definition>
+        <argsstring></argsstring>
+        <name>SUBSCRIBED_MSGS</name>
+        <initializer>= { &quot;Heartbeat&quot; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="10" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" compoundref="ASA_8java" startline="139" endline="144">pt.lsts.asa.ASA.addInitialSubscribers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1ae15a436e06007ae060a70852ed1b4ee4" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;HeartbeatVibrator&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a568d123e03e28a2e8ad4385d4227a743" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator" kindref="compound">HeartbeatVibrator</ref></type>
+        <definition>HeartbeatVibrator pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.heartbeatVibrator</definition>
+        <argsstring></argsstring>
+        <name>heartbeatVibrator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a5b904ada3aba570b408a6fb5c2780e26" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="15" endline="17">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.HeartbeatVibratorIMCSubscriber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a5a62cedac61d07d602b602ca28023cbf" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a5b904ada3aba570b408a6fb5c2780e26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.HeartbeatVibratorIMCSubscriber</definition>
+        <argsstring>(HeartbeatVibrator heartbeatVibrator)</argsstring>
+        <name>HeartbeatVibratorIMCSubscriber</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator" kindref="compound">HeartbeatVibrator</ref></type>
+          <declname>heartbeatVibrator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="15" bodyend="17"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a568d123e03e28a2e8ad4385d4227a743" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="12">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.heartbeatVibrator</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.onReceive</definition>
+        <argsstring>(final IMCMessage msg)</argsstring>
+        <name>onReceive</name>
+        <param>
+          <type>final IMCMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="20" bodyend="42"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1add2c719c1cf588ed4b37c181bcc7248f" compoundref="Sys_8java" startline="71" endline="73">pt.lsts.asa.sys.Sys.getId</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator_1a0eeff3fb6da5b00dafaefc6925bef6b9" compoundref="HeartbeatVibrator_8java" startline="34" endline="36">pt.lsts.asa.feedback.HeartbeatVibrator.getmDuration</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator_1a78cfbe7cf03a261a552587ca6372fe31" compoundref="HeartbeatVibrator_8java" startline="46" endline="48">pt.lsts.asa.feedback.HeartbeatVibrator.getmVibrator</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="215">
+        <label>pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber"/>
+        <childnode refid="216" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="219">
+        <label>pt.lsts.asa.feedback.HeartbeatVibrator</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator"/>
+        <childnode refid="220" relation="usage">
+          <edgelabel>mVibrator</edgelabel>
+        </childnode>
+        <childnode refid="221" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="217">
+        <label>pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber"/>
+        <childnode refid="218" relation="public-inheritance">
+        </childnode>
+        <childnode refid="219" relation="usage">
+          <edgelabel>heartbeatVibrator</edgelabel>
+        </childnode>
+      </node>
+      <node id="222">
+        <label>pt::lsts::neptus::messages::listener::MessageListener&lt; MessageInfo, IMCMessage &gt;</label>
+      </node>
+      <node id="225">
+        <label>LinkedHashMap&lt; Integer, List&lt; pt.lsts.asa.comms.IMCSubscriber &gt; &gt;</label>
+      </node>
+      <node id="226">
+        <label>ArrayList&lt; pt.lsts.asa.comms.IMCSubscriber &gt;</label>
+      </node>
+      <node id="218">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="223">
+        <label>UDPTransport</label>
+      </node>
+      <node id="224">
+        <label>Handler</label>
+      </node>
+      <node id="220">
+        <label>Vibrator</label>
+      </node>
+      <node id="221">
+        <label>pt.lsts.asa.managers.IMCManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager"/>
+        <childnode refid="222" relation="public-inheritance">
+        </childnode>
+        <childnode refid="223" relation="usage">
+          <edgelabel>announceListener</edgelabel>
+          <edgelabel>comm</edgelabel>
+        </childnode>
+        <childnode refid="224" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+        <childnode refid="225" relation="usage">
+          <edgelabel>subscribers</edgelabel>
+        </childnode>
+        <childnode refid="226" relation="usage">
+          <edgelabel>subscribersToAll</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" line="8" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/HeartbeatVibratorIMCSubscriber.java" bodystart="8" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a568d123e03e28a2e8ad4385d4227a743" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>heartbeatVibrator</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a5b904ada3aba570b408a6fb5c2780e26" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>HeartbeatVibratorIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber_1a69a6f911572580c234e4255634360db3" prot="public" virt="non-virtual" ambiguityscope="pt::lsts::asa::comms::IMCSubscriber."><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a9153056f3639306e0cd124d25db53247" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>SUBSCRIBED_MSGS</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1ae15a436e06007ae060a70852ed1b4ee4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a5a62cedac61d07d602b602ca28023cbf" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::HeartbeatVibratorIMCSubscriber</scope><name>thread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

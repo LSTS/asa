@@ -1,0 +1,120 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber}{}\section{pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber}\index{pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber@{pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber}}
+Inheritance diagram for pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a555e7dd4919a5465c41ea9b8961f8e51}{Gmap\+I\+M\+C\+Subscriber} (\hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment}{Gmap\+Fragment} gmap\+Fragment)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ac6d24ac3995718323ff35de94a4155c9}{on\+Receive} (final I\+M\+C\+Message msg)
+\item 
+Lat\+Lng \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ae6e89bbe61d55400f92cfd278a91699c}{translate\+Coordinates} (final Lat\+Lng origpoint, final float offset\+X, final float offset\+Y)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final String \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a82931d20557266c733e1f2232aa862ee}{T\+A\+G} = \char`\"{}Gmap\+I\+M\+C\+Subscriber\char`\"{}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment}{Gmap\+Fragment} \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a2d4bc80f27aac786b6844b87e412eb6d}{gmapfragment} = null
+\item 
+Thread \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a660f1cda16c29729aec264c80f9b6bec}{thread}
+\item 
+float \hyperlink{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a1634fd9119d38ae52377687fe3ac186d}{r\+\_\+earth} = 6378 $\ast$ 1000
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Created by jloureiro on 1/22/15. 
+
+Definition at line 18 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a555e7dd4919a5465c41ea9b8961f8e51}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!Gmap\+I\+M\+C\+Subscriber@{Gmap\+I\+M\+C\+Subscriber}}
+\index{Gmap\+I\+M\+C\+Subscriber@{Gmap\+I\+M\+C\+Subscriber}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{Gmap\+I\+M\+C\+Subscriber}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+Gmap\+I\+M\+C\+Subscriber (
+\begin{DoxyParamCaption}
+\item[{{\bf Gmap\+Fragment}}]{gmap\+Fragment}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a555e7dd4919a5465c41ea9b8961f8e51}
+
+
+Definition at line 25 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ac6d24ac3995718323ff35de94a4155c9}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!on\+Receive@{on\+Receive}}
+\index{on\+Receive@{on\+Receive}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{on\+Receive}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+on\+Receive (
+\begin{DoxyParamCaption}
+\item[{final I\+M\+C\+Message}]{msg}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ac6d24ac3995718323ff35de94a4155c9}
+
+
+Definition at line 30 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Gmap\+Fragment.\+get\+Google\+Map(), pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+is\+Msg\+From\+Active(), pt.\+lsts.\+asa.\+fragments.\+Gmap\+Fragment.\+set\+Active\+Sys\+Lat\+Lng(), pt.\+lsts.\+asa.\+fragments.\+Gmap\+Fragment.\+set\+Active\+Sys\+Psi(), pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+translate\+Coordinates(), and pt.\+lsts.\+asa.\+fragments.\+Gmap\+Fragment.\+update\+Active\+Sys\+Marker().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ae6e89bbe61d55400f92cfd278a91699c}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!translate\+Coordinates@{translate\+Coordinates}}
+\index{translate\+Coordinates@{translate\+Coordinates}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{translate\+Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}Lat\+Lng pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+translate\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{final Lat\+Lng}]{origpoint, }
+\item[{final float}]{offset\+X, }
+\item[{final float}]{offset\+Y}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_ae6e89bbe61d55400f92cfd278a91699c}
+
+
+Definition at line 69 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a2d4bc80f27aac786b6844b87e412eb6d}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!gmapfragment@{gmapfragment}}
+\index{gmapfragment@{gmapfragment}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{gmapfragment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gmap\+Fragment} pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+gmapfragment = null\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a2d4bc80f27aac786b6844b87e412eb6d}
+
+
+Definition at line 21 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a1634fd9119d38ae52377687fe3ac186d}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!r\+\_\+earth@{r\+\_\+earth}}
+\index{r\+\_\+earth@{r\+\_\+earth}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{r\+\_\+earth}]{\setlength{\rightskip}{0pt plus 5cm}float pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+r\+\_\+earth = 6378 $\ast$ 1000\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a1634fd9119d38ae52377687fe3ac186d}
+
+
+Definition at line 23 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a82931d20557266c733e1f2232aa862ee}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!T\+A\+G@{T\+A\+G}}
+\index{T\+A\+G@{T\+A\+G}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+T\+A\+G = \char`\"{}Gmap\+I\+M\+C\+Subscriber\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a82931d20557266c733e1f2232aa862ee}
+
+
+Definition at line 20 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a660f1cda16c29729aec264c80f9b6bec}{}\index{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}!thread@{thread}}
+\index{thread@{thread}!pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber@{pt\+::lsts\+::asa\+::subscribers\+::\+Gmap\+I\+M\+C\+Subscriber}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}Thread pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+thread\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_a660f1cda16c29729aec264c80f9b6bec}
+
+
+Definition at line 22 of file Gmap\+I\+M\+C\+Subscriber.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/subscribers/\hyperlink{GmapIMCSubscriber_8java}{Gmap\+I\+M\+C\+Subscriber.\+java}\end{DoxyCompactItemize}

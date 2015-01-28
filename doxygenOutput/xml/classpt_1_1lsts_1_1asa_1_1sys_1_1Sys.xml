@@ -1,0 +1,790 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::sys::Sys</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adc306cc2f9bdf3006383c7612c5125c6" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.mAddress</definition>
+        <argsstring></argsstring>
+        <name>mAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="8" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="8" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adbc78a7cd0993e46ec9ac727a1460962" compoundref="Sys_8java" startline="47" endline="49">pt.lsts.asa.sys.Sys.getAddress</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a35506036a8dbc58d09d0eea04e425698" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.sys.Sys.mPort</definition>
+        <argsstring></argsstring>
+        <name>mPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="9" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="9" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1c0428223aa7fd8b35917dad4fae462e" compoundref="Sys_8java" startline="55" endline="57">pt.lsts.asa.sys.Sys.getPort</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a027640f2299a0769350254ebe9ccb1bd" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.mName</definition>
+        <argsstring></argsstring>
+        <name>mName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="10" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="10" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ad0bd9feb2771224b99c8fcfb39f1baac" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.sys.Sys.mId</definition>
+        <argsstring></argsstring>
+        <name>mId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="11" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1add2c719c1cf588ed4b37c181bcc7248f" compoundref="Sys_8java" startline="71" endline="73">pt.lsts.asa.sys.Sys.getId</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a3d26aacb60b4bcd95b5afdd8960206d3" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.mType</definition>
+        <argsstring></argsstring>
+        <name>mType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="13" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" compoundref="Sys_8java" startline="79" endline="81">pt.lsts.asa.sys.Sys.getType</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a7b0e04954a2efba7989aba9124b2cd40" prot="private" static="no" mutable="no">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.LLD</definition>
+        <argsstring></argsstring>
+        <name>LLD</name>
+        <initializer>= { 0.0, 0.0, 0.0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="14" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a13d0f8ba8a76651668e6adc0ba67634c" compoundref="Sys_8java" startline="83" endline="85">pt.lsts.asa.sys.Sys.getLLD</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8a7eb29a9dfdc5a62012b81859932847" prot="private" static="no" mutable="no">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.NED</definition>
+        <argsstring></argsstring>
+        <name>NED</name>
+        <initializer>= { 0.0, 0.0, 0.0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="16" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8462c98894f36b1591e49cf8c7dfb397" compoundref="Sys_8java" startline="91" endline="93">pt.lsts.asa.sys.Sys.getNED</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89e85c508c7aa491c390961763b0666e" prot="private" static="no" mutable="no">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.RPY</definition>
+        <argsstring></argsstring>
+        <name>RPY</name>
+        <initializer>= { 0.0, 0.0, 0.0 }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="17" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a528c6aef39df450240d4d24ea45f915b" compoundref="Sys_8java" startline="99" endline="101">pt.lsts.asa.sys.Sys.getRPY</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1aaba346d090fae8aabf5c809245fd2" prot="private" static="no" mutable="no">
+        <type>LatLng</type>
+        <definition>LatLng pt.lsts.asa.sys.Sys.latLng</definition>
+        <argsstring></argsstring>
+        <name>latLng</name>
+        <initializer>= new LatLng(0,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" compoundref="Sys_8java" startline="115" endline="117">pt.lsts.asa.sys.Sys.getLatLng</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a902a68da2d855284165727dbc2c2ac64" compoundref="Sys_8java" startline="119" endline="121">pt.lsts.asa.sys.Sys.setLatLng</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a23d5b791a79a3e5b8863d35ee9dd21c7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pt.lsts.asa.sys.Sys.psi</definition>
+        <argsstring></argsstring>
+        <name>psi</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89a2ade426daa74e2e5d7e3b6037a00d" compoundref="Sys_8java" startline="123" endline="125">pt.lsts.asa.sys.Sys.getPsi</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5a1e69839b4c6e0272657f8e2f8c0134" compoundref="Sys_8java" startline="127" endline="129">pt.lsts.asa.sys.Sys.setPsi</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adae0c402ab1bf93eef2e5cd7b7acafe4" prot="private" static="no" mutable="no">
+        <type>Marker</type>
+        <definition>Marker pt.lsts.asa.sys.Sys.maker</definition>
+        <argsstring></argsstring>
+        <name>maker</name>
+        <initializer>=null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" compoundref="Sys_8java" startline="131" endline="133">pt.lsts.asa.sys.Sys.getMaker</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a88dfe7d5dced05d6b76631176d4620a2" compoundref="Sys_8java" startline="135" endline="137">pt.lsts.asa.sys.Sys.setMaker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aefcbaa46921015c924311d0a2d3dbbe0" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.refMode</definition>
+        <argsstring></argsstring>
+        <name>refMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1acf4262f0285ace3ddb3b77f5c8ae4f96" compoundref="Sys_8java" startline="107" endline="109">pt.lsts.asa.sys.Sys.getRefMode</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aba75b354b0ee9a3149fc4d3baab27e50" compoundref="Sys_8java" startline="111" endline="113">pt.lsts.asa.sys.Sys.setRefMode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ac6b2954f1dadd92dd574ae9c6af2a2e5" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long pt.lsts.asa.sys.Sys.lastMessageReceived</definition>
+        <argsstring></argsstring>
+        <name>lastMessageReceived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ab5ece0a54081a3432b7582eadd125c90" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.Sys.mConnected</definition>
+        <argsstring></argsstring>
+        <name>mConnected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="28" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a4624d53d329bde8b4bbae0998fc04223" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.Sys.mError</definition>
+        <argsstring></argsstring>
+        <name>mError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="29" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a84f5d6feafbc6b694d19064657566e49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.Sys.isError</definition>
+        <argsstring>()</argsstring>
+        <name>isError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="31" bodyend="33"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a0b8b78b965c43365638c569f07c04778" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setError</definition>
+        <argsstring>(boolean error)</argsstring>
+        <name>setError</name>
+        <param>
+          <type>boolean</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="35" bodyend="37"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1afa49c29d6fe25c3ab3ec6ed183bdc32f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.Sys.isConnected</definition>
+        <argsstring>()</argsstring>
+        <name>isConnected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="39" bodyend="41"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1d70424cbacf2700b1e5975a736c30d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setConnected</definition>
+        <argsstring>(boolean mConnected)</argsstring>
+        <name>setConnected</name>
+        <param>
+          <type>boolean</type>
+          <declname>mConnected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="43" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adbc78a7cd0993e46ec9ac727a1460962" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.getAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="47" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="47" bodyend="49"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adc306cc2f9bdf3006383c7612c5125c6" compoundref="Sys_8java" startline="8">pt.lsts.asa.sys.Sys.mAddress</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a3106a674836644e3dafb5ff8f2a4165b" compoundref="IMCManager_8java" startline="241" endline="247">pt.lsts.asa.managers.IMCManager.sendToSys</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1acd0c90a71fcdccda990ffe06ab3abc7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setAddress</definition>
+        <argsstring>(String address)</argsstring>
+        <name>setAddress</name>
+        <param>
+          <type>String</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="51" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1c0428223aa7fd8b35917dad4fae462e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.sys.Sys.getPort</definition>
+        <argsstring>()</argsstring>
+        <name>getPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="55" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="55" bodyend="57"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a35506036a8dbc58d09d0eea04e425698" compoundref="Sys_8java" startline="9">pt.lsts.asa.sys.Sys.mPort</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a3106a674836644e3dafb5ff8f2a4165b" compoundref="IMCManager_8java" startline="241" endline="247">pt.lsts.asa.managers.IMCManager.sendToSys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5d81c32b775190afa9bfb290c1ed39d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setPort</definition>
+        <argsstring>(int port)</argsstring>
+        <name>setPort</name>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="59" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="63" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="63" bodyend="65"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a027640f2299a0769350254ebe9ccb1bd" compoundref="Sys_8java" startline="10">pt.lsts.asa.sys.Sys.mName</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" compoundref="GmapFragment_8java" startline="165" endline="169">pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a2266b419ecc85137e8c4fd77b30b69f5" compoundref="MainActivity_8java" startline="91" endline="97">pt.lsts.asa.activities.MainActivity.test2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a67f81be4534ee073cffc9a8ab4ee0be6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setName</definition>
+        <argsstring>(String name)</argsstring>
+        <name>setName</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="67" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1add2c719c1cf588ed4b37c181bcc7248f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.sys.Sys.getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="71" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="71" bodyend="73"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ad0bd9feb2771224b99c8fcfb39f1baac" compoundref="Sys_8java" startline="11">pt.lsts.asa.sys.Sys.mId</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1a5a99d40700575232601a40ec44ee78c5" compoundref="IMCUtils_8java" startline="65" endline="73">pt.lsts.asa.util.IMCUtils.isMsgFromActive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="20" endline="42">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a60483645f6710a59a6d79eb4a7d1df10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setId</definition>
+        <argsstring>(int id)</argsstring>
+        <name>setId</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="75" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.getType</definition>
+        <argsstring>()</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="79" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="79" bodyend="81"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a3d26aacb60b4bcd95b5afdd8960206d3" compoundref="Sys_8java" startline="13">pt.lsts.asa.sys.Sys.mType</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ae8f2642bdc85b739dfe76f0f6f4b6282" compoundref="SystemListFragment_8java" startline="174" endline="186">pt.lsts.asa.fragments.SystemListFragment.filterSys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a13d0f8ba8a76651668e6adc0ba67634c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.getLLD</definition>
+        <argsstring>()</argsstring>
+        <name>getLLD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="83" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="83" bodyend="85"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a7b0e04954a2efba7989aba9124b2cd40" compoundref="Sys_8java" startline="14">pt.lsts.asa.sys.Sys.LLD</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ab1311d9e9bbe3473af4975f3629d5c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setLLD</definition>
+        <argsstring>(double[] lLD)</argsstring>
+        <name>setLLD</name>
+        <param>
+          <type>double[]</type>
+          <declname>lLD</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="87" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8462c98894f36b1591e49cf8c7dfb397" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.getNED</definition>
+        <argsstring>()</argsstring>
+        <name>getNED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="91" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="91" bodyend="93"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8a7eb29a9dfdc5a62012b81859932847" compoundref="Sys_8java" startline="16">pt.lsts.asa.sys.Sys.NED</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a4a9d4bec8dc5cabd41c6463edb9ea72f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setNED</definition>
+        <argsstring>(double[] nED)</argsstring>
+        <name>setNED</name>
+        <param>
+          <type>double[]</type>
+          <declname>nED</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="95" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a528c6aef39df450240d4d24ea45f915b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double[]</type>
+        <definition>double [] pt.lsts.asa.sys.Sys.getRPY</definition>
+        <argsstring>()</argsstring>
+        <name>getRPY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="99" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="99" bodyend="101"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89e85c508c7aa491c390961763b0666e" compoundref="Sys_8java" startline="17">pt.lsts.asa.sys.Sys.RPY</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5c7f24a047797189c03488e0a8c68014" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setRPY</definition>
+        <argsstring>(double[] rPY)</argsstring>
+        <name>setRPY</name>
+        <param>
+          <type>double[]</type>
+          <declname>rPY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="103" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1acf4262f0285ace3ddb3b77f5c8ae4f96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.sys.Sys.getRefMode</definition>
+        <argsstring>()</argsstring>
+        <name>getRefMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="107" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="107" bodyend="109"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aefcbaa46921015c924311d0a2d3dbbe0" compoundref="Sys_8java" startline="24">pt.lsts.asa.sys.Sys.refMode</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aba75b354b0ee9a3149fc4d3baab27e50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setRefMode</definition>
+        <argsstring>(String refMode)</argsstring>
+        <name>setRefMode</name>
+        <param>
+          <type>String</type>
+          <declname>refMode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="111" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="111" bodyend="113"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aefcbaa46921015c924311d0a2d3dbbe0" compoundref="Sys_8java" startline="24">pt.lsts.asa.sys.Sys.refMode</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LatLng</type>
+        <definition>LatLng pt.lsts.asa.sys.Sys.getLatLng</definition>
+        <argsstring>()</argsstring>
+        <name>getLatLng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="115" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="115" bodyend="117"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1aaba346d090fae8aabf5c809245fd2" compoundref="Sys_8java" startline="19">pt.lsts.asa.sys.Sys.latLng</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a902a68da2d855284165727dbc2c2ac64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setLatLng</definition>
+        <argsstring>(LatLng latLng)</argsstring>
+        <name>setLatLng</name>
+        <param>
+          <type>LatLng</type>
+          <declname>latLng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="119" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="119" bodyend="121"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1aaba346d090fae8aabf5c809245fd2" compoundref="Sys_8java" startline="19">pt.lsts.asa.sys.Sys.latLng</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" compoundref="GmapFragment_8java" startline="165" endline="169">pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89a2ade426daa74e2e5d7e3b6037a00d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float pt.lsts.asa.sys.Sys.getPsi</definition>
+        <argsstring>()</argsstring>
+        <name>getPsi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="123" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="123" bodyend="125"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a23d5b791a79a3e5b8863d35ee9dd21c7" compoundref="Sys_8java" startline="20">pt.lsts.asa.sys.Sys.psi</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5a1e69839b4c6e0272657f8e2f8c0134" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setPsi</definition>
+        <argsstring>(float psi)</argsstring>
+        <name>setPsi</name>
+        <param>
+          <type>float</type>
+          <declname>psi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="127" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="127" bodyend="129"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a23d5b791a79a3e5b8863d35ee9dd21c7" compoundref="Sys_8java" startline="20">pt.lsts.asa.sys.Sys.psi</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" compoundref="GmapFragment_8java" startline="171" endline="174">pt.lsts.asa.fragments.GmapFragment.setActiveSysPsi</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Marker</type>
+        <definition>Marker pt.lsts.asa.sys.Sys.getMaker</definition>
+        <argsstring>()</argsstring>
+        <name>getMaker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="131" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="131" bodyend="133"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adae0c402ab1bf93eef2e5cd7b7acafe4" compoundref="Sys_8java" startline="21">pt.lsts.asa.sys.Sys.maker</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a88dfe7d5dced05d6b76631176d4620a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.Sys.setMaker</definition>
+        <argsstring>(Marker maker)</argsstring>
+        <name>setMaker</name>
+        <param>
+          <type>Marker</type>
+          <declname>maker</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="135" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="135" bodyend="137"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adae0c402ab1bf93eef2e5cd7b7acafe4" compoundref="Sys_8java" startline="21">pt.lsts.asa.sys.Sys.maker</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1e3b790a9ee0e1dc52d89c47e4bc14e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.sys.Sys.Sys</definition>
+        <argsstring>(String address, int port, String name, int id, String type, boolean connected, boolean error)</argsstring>
+        <name>Sys</name>
+        <param>
+          <type>String</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>connected</declname>
+        </param>
+        <param>
+          <type>boolean</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="139" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="139" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="392">
+        <label>Marker</label>
+      </node>
+      <node id="393">
+        <label>LatLng</label>
+      </node>
+      <node id="391">
+        <label>pt.lsts.asa.sys.Sys</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys"/>
+        <childnode refid="392" relation="usage">
+          <edgelabel>maker</edgelabel>
+        </childnode>
+        <childnode refid="393" relation="usage">
+          <edgelabel>latLng</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" line="6" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/Sys.java" bodystart="6" bodyend="152"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adbc78a7cd0993e46ec9ac727a1460962" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1add2c719c1cf588ed4b37c181bcc7248f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getLatLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a13d0f8ba8a76651668e6adc0ba67634c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getLLD</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getMaker</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8462c98894f36b1591e49cf8c7dfb397" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getNED</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1c0428223aa7fd8b35917dad4fae462e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getPort</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89a2ade426daa74e2e5d7e3b6037a00d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getPsi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1acf4262f0285ace3ddb3b77f5c8ae4f96" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getRefMode</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a528c6aef39df450240d4d24ea45f915b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getRPY</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8b6ef47896e7dfe01c872ef2229f96c0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>getType</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1afa49c29d6fe25c3ab3ec6ed183bdc32f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>isConnected</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a84f5d6feafbc6b694d19064657566e49" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>isError</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ac6b2954f1dadd92dd574ae9c6af2a2e5" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>lastMessageReceived</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1aaba346d090fae8aabf5c809245fd2" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>latLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a7b0e04954a2efba7989aba9124b2cd40" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>LLD</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adc306cc2f9bdf3006383c7612c5125c6" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adae0c402ab1bf93eef2e5cd7b7acafe4" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>maker</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ab5ece0a54081a3432b7582eadd125c90" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mConnected</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a4624d53d329bde8b4bbae0998fc04223" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mError</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ad0bd9feb2771224b99c8fcfb39f1baac" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a027640f2299a0769350254ebe9ccb1bd" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a35506036a8dbc58d09d0eea04e425698" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mPort</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a3d26aacb60b4bcd95b5afdd8960206d3" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>mType</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a8a7eb29a9dfdc5a62012b81859932847" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>NED</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a23d5b791a79a3e5b8863d35ee9dd21c7" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>psi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aefcbaa46921015c924311d0a2d3dbbe0" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>refMode</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89e85c508c7aa491c390961763b0666e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>RPY</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1acd0c90a71fcdccda990ffe06ab3abc7a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1af1d70424cbacf2700b1e5975a736c30d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setConnected</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a0b8b78b965c43365638c569f07c04778" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setError</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a60483645f6710a59a6d79eb4a7d1df10" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a902a68da2d855284165727dbc2c2ac64" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setLatLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ab1311d9e9bbe3473af4975f3629d5c0c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setLLD</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a88dfe7d5dced05d6b76631176d4620a2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setMaker</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a67f81be4534ee073cffc9a8ab4ee0be6" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a4a9d4bec8dc5cabd41c6463edb9ea72f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setNED</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5d81c32b775190afa9bfb290c1ed39d8" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setPort</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5a1e69839b4c6e0272657f8e2f8c0134" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setPsi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aba75b354b0ee9a3149fc4d3baab27e50" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setRefMode</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5c7f24a047797189c03488e0a8c68014" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>setRPY</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1e3b790a9ee0e1dc52d89c47e4bc14e2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::Sys</scope><name>Sys</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

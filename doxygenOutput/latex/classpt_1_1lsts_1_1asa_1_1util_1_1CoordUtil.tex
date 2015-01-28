@@ -1,0 +1,234 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil}{}\section{pt.\+lsts.\+asa.\+util.\+Coord\+Util Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil}\index{pt.\+lsts.\+asa.\+util.\+Coord\+Util@{pt.\+lsts.\+asa.\+util.\+Coord\+Util}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a5f98c356c6cf3c9c37df74c6475c011e}{lat\+Lon\+Diff} (double lat, double lon, double alat, double alon)
+\item 
+static double\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a759149da4682638afc21a06ccdef7bbb}{get\+Absolute\+Lat\+Lon\+Depth} (double latitude, double longitude, double depth, double offset\+North, double offset\+East, double offset\+Down)
+\item 
+static double\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a332d10e8b90dd9457cc4354b8bffb21e}{get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg} (I\+M\+C\+Message msg)
+\item 
+static double\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a33e99d55311ff751cbc46a99fcdbf0b6}{lat\+Lon\+Add\+N\+E2} (double lat, double lon, double north, double east)
+\item 
+static double \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a1b7343abbf6ea85f6e0790fa78536398}{dist2\+Lat\+Lon} (double lat1, double lon1, double lat2, double lon2)
+\item 
+static double \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a515a435faa2da22468c1d751af0327f6}{bearing2\+Lat\+Lon} (double lat1, double lon1, double lat2, double lon2)
+\item 
+static String \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd94cc8e8ea8b675f76f6befce33746d}{degrees\+To\+D\+M\+S} (double deg, boolean is\+Lat)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd45c1e9c896dcbf308a73420d2c0d33}{ms\+To\+Knot} = 1.\+9438612860586
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Coord\+Util.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a515a435faa2da22468c1d751af0327f6}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!bearing2\+Lat\+Lon@{bearing2\+Lat\+Lon}}
+\index{bearing2\+Lat\+Lon@{bearing2\+Lat\+Lon}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{bearing2\+Lat\+Lon}]{\setlength{\rightskip}{0pt plus 5cm}static double pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+bearing2\+Lat\+Lon (
+\begin{DoxyParamCaption}
+\item[{double}]{lat1, }
+\item[{double}]{lon1, }
+\item[{double}]{lat2, }
+\item[{double}]{lon2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a515a435faa2da22468c1d751af0327f6}
+The heading that point 1 needs to follow to get to point 2
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & \\
+\hline
+{\em lon1} & \\
+\hline
+{\em lat2} & \\
+\hline
+{\em lon2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bearing in degress (0 to 360 degrees) 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file Coord\+Util.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd94cc8e8ea8b675f76f6befce33746d}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!degrees\+To\+D\+M\+S@{degrees\+To\+D\+M\+S}}
+\index{degrees\+To\+D\+M\+S@{degrees\+To\+D\+M\+S}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{degrees\+To\+D\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}static String pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+degrees\+To\+D\+M\+S (
+\begin{DoxyParamCaption}
+\item[{double}]{deg, }
+\item[{boolean}]{is\+Lat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd94cc8e8ea8b675f76f6befce33746d}
+
+\begin{DoxyParams}{Parameters}
+{\em deg} & Degrees to convert \\
+\hline
+{\em is\+Lat} & boolean to check if it is a latitude, if false the calculation is done assuming longitude \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String expressing the conversion in the Dº\+M\textquotesingle{}S" format 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file Coord\+Util.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+Beacon.\+get\+Lat\+D\+M\+S(), and pt.\+lsts.\+asa.\+pos.\+Beacon.\+get\+Lon\+D\+M\+S().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a1b7343abbf6ea85f6e0790fa78536398}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!dist2\+Lat\+Lon@{dist2\+Lat\+Lon}}
+\index{dist2\+Lat\+Lon@{dist2\+Lat\+Lon}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{dist2\+Lat\+Lon}]{\setlength{\rightskip}{0pt plus 5cm}static double pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+dist2\+Lat\+Lon (
+\begin{DoxyParamCaption}
+\item[{double}]{lat1, }
+\item[{double}]{lon1, }
+\item[{double}]{lat2, }
+\item[{double}]{lon2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a1b7343abbf6ea85f6e0790fa78536398}
+Distance between 2 Lat\+Lon points (ignoring depth)
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & \\
+\hline
+{\em lon1} & \\
+\hline
+{\em lat2} & \\
+\hline
+{\em lon2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance between the 2 points in Kilometers 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Coord\+Util.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a759149da4682638afc21a06ccdef7bbb}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!get\+Absolute\+Lat\+Lon\+Depth@{get\+Absolute\+Lat\+Lon\+Depth}}
+\index{get\+Absolute\+Lat\+Lon\+Depth@{get\+Absolute\+Lat\+Lon\+Depth}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{get\+Absolute\+Lat\+Lon\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}static double \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+get\+Absolute\+Lat\+Lon\+Depth (
+\begin{DoxyParamCaption}
+\item[{double}]{latitude, }
+\item[{double}]{longitude, }
+\item[{double}]{depth, }
+\item[{double}]{offset\+North, }
+\item[{double}]{offset\+East, }
+\item[{double}]{offset\+Down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a759149da4682638afc21a06ccdef7bbb}
+Modified by jqcorreia for A\+C\+C\+U
+
+\begin{DoxyReturn}{Returns}
+The total Lat(), Lon() and Depth(m) 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file Coord\+Util.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Add\+N\+E2().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a332d10e8b90dd9457cc4354b8bffb21e}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg@{get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg}}
+\index{get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg@{get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}static double \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+get\+Absolute\+Lat\+Lon\+Depth\+From\+Msg (
+\begin{DoxyParamCaption}
+\item[{I\+M\+C\+Message}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a332d10e8b90dd9457cc4354b8bffb21e}
+Returns an Absolute Position based solely on a I\+M\+C\+Message This message has to be an Estimated\+State (or equivalent)
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message to process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of size 3 with Lat-\/\+Lon-\/\+Depth 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file Coord\+Util.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+get\+Absolute\+Lat\+Lon\+Depth().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a33e99d55311ff751cbc46a99fcdbf0b6}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!lat\+Lon\+Add\+N\+E2@{lat\+Lon\+Add\+N\+E2}}
+\index{lat\+Lon\+Add\+N\+E2@{lat\+Lon\+Add\+N\+E2}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{lat\+Lon\+Add\+N\+E2}]{\setlength{\rightskip}{0pt plus 5cm}static double \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Add\+N\+E2 (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{double}]{north, }
+\item[{double}]{east}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a33e99d55311ff751cbc46a99fcdbf0b6}
+Add an offset in meters(north, east) to a (lat,lon) in decimal degrees Modified by jqcorreia for A\+C\+C\+U 
+
+Definition at line 112 of file Coord\+Util.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+G\+I\+S\+Coordinate.\+get\+Lat\+In\+Dec\+Deg(), pt.\+lsts.\+asa.\+pos.\+G\+I\+S\+Coordinate.\+get\+Lon\+In\+Dec\+Deg(), pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Diff(), pt.\+lsts.\+asa.\+pos.\+G\+I\+S\+Coordinate.\+move(), and pt.\+lsts.\+asa.\+pos.\+G\+I\+S\+Coordinate.\+W\+G\+S84.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+get\+Absolute\+Lat\+Lon\+Depth().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a5f98c356c6cf3c9c37df74c6475c011e}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!lat\+Lon\+Diff@{lat\+Lon\+Diff}}
+\index{lat\+Lon\+Diff@{lat\+Lon\+Diff}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{lat\+Lon\+Diff}]{\setlength{\rightskip}{0pt plus 5cm}static double \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Diff (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{double}]{alat, }
+\item[{double}]{alon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_a5f98c356c6cf3c9c37df74c6475c011e}
+
+
+Definition at line 16 of file Coord\+Util.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Easting(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Northing().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Add\+N\+E2().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd45c1e9c896dcbf308a73420d2c0d33}{}\index{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}!ms\+To\+Knot@{ms\+To\+Knot}}
+\index{ms\+To\+Knot@{ms\+To\+Knot}!pt\+::lsts\+::asa\+::util\+::\+Coord\+Util@{pt\+::lsts\+::asa\+::util\+::\+Coord\+Util}}
+\subsubsection[{ms\+To\+Knot}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+ms\+To\+Knot = 1.\+9438612860586\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_abd45c1e9c896dcbf308a73420d2c0d33}
+Computes the offset (north, east) in meters from (lat, lon) to (alat, alon) \mbox{[}both of these in decimal degrees\mbox{]}.~\newline
+ Subtract the two latlons and come up with the distance in meters N/\+S and E/\+W between them. 
+
+Definition at line 14 of file Coord\+Util.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/util/\hyperlink{CoordUtil_8java}{Coord\+Util.\+java}\end{DoxyCompactItemize}

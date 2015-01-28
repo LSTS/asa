@@ -1,0 +1,347 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment}{}\section{pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment}\index{pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment@{pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment}}
+Inheritance diagram for pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab72d2ab3013b36180d4d971894785cb5}{Video\+View\+Fragment} ()
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ac96721c753ce93f59f7b4af090110134}{Video\+View\+Fragment} (Fragment\+Activity \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aeb88f42f68296885aed21df5ef1296a8}{fragment\+Activity})
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6cdc955b7283e934acf2c58cea6742a2}{on\+Create} (Bundle saved\+Instance\+State)
+\item 
+View \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a492772a2d1457b983d299466b976df87}{on\+Create\+View} (Layout\+Inflater inflater, View\+Group container, Bundle saved\+Instance\+State)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a0f80faeb81dfbfa068a80ac67c7d16f8}{on\+Attach} (Activity activity)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a1e131c894c38ddc2a3325e08d081c0ee}{on\+Detach} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab3e341f095706ebd1dd9d58cf557a90d}{on\+Start} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a58fba05677c7d080bb4bd5db75616b4e}{on\+Resume} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad9e8fda00aef515b0355966089592da2}{set\+Video\+View\+Listeners} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6b4460132d8c2fe2b693009f141c02c7}{start\+Video} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a19fd1dfab2d1fc8d3fa8203777d2ee16}{restart\+Video} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adab837c3a43f05ce066fb99950fe50fc}{set\+Connection\+Checker} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4c75fa27d91299f95f01b58f25f3ef3d}{set\+Runnable} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adea2a0ef71021c27b7fcb69047d32664}{start\+Handle} (int timeout)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final String \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aba4ef1bec9e8ed8234b57753c016a124}{T\+A\+G} = \char`\"{}Video\+View\char`\"{}
+\item 
+Fragment\+Activity \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aeb88f42f68296885aed21df5ef1296a8}{fragment\+Activity}
+\item 
+Video\+View \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a2a48c818563de3b28b98778928088cd1}{video\+View}
+\item 
+Scheduled\+Future \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a895a83974690a3457694a7785f0166c1}{handle}
+\item 
+final Scheduled\+Executor\+Service \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4d2b6fb27e4dc4d86576cba1158f1b8a}{scheduler}
+\item 
+final int \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad90f5f78e9fb42d5b0d4c64ccc94b8f5}{timeout\+False} =5000
+\item 
+boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a5581d477ef3c120697f7871e520f213c}{connected\+Bool} =false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file Video\+View\+Fragment.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab72d2ab3013b36180d4d971894785cb5}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!Video\+View\+Fragment@{Video\+View\+Fragment}}
+\index{Video\+View\+Fragment@{Video\+View\+Fragment}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{Video\+View\+Fragment}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+Video\+View\+Fragment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab72d2ab3013b36180d4d971894785cb5}
+
+
+Definition at line 38 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ac96721c753ce93f59f7b4af090110134}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!Video\+View\+Fragment@{Video\+View\+Fragment}}
+\index{Video\+View\+Fragment@{Video\+View\+Fragment}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{Video\+View\+Fragment}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+Video\+View\+Fragment (
+\begin{DoxyParamCaption}
+\item[{Fragment\+Activity}]{fragment\+Activity}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ac96721c753ce93f59f7b4af090110134}
+
+
+Definition at line 42 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+fragment\+Activity.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a0f80faeb81dfbfa068a80ac67c7d16f8}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Attach@{on\+Attach}}
+\index{on\+Attach@{on\+Attach}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Attach}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Attach (
+\begin{DoxyParamCaption}
+\item[{Activity}]{activity}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a0f80faeb81dfbfa068a80ac67c7d16f8}
+
+
+Definition at line 62 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6cdc955b7283e934acf2c58cea6742a2}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Create@{on\+Create}}
+\index{on\+Create@{on\+Create}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Create}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Create (
+\begin{DoxyParamCaption}
+\item[{Bundle}]{saved\+Instance\+State}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6cdc955b7283e934acf2c58cea6742a2}
+
+
+Definition at line 47 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a492772a2d1457b983d299466b976df87}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Create\+View@{on\+Create\+View}}
+\index{on\+Create\+View@{on\+Create\+View}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Create\+View}]{\setlength{\rightskip}{0pt plus 5cm}View pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Create\+View (
+\begin{DoxyParamCaption}
+\item[{Layout\+Inflater}]{inflater, }
+\item[{View\+Group}]{container, }
+\item[{Bundle}]{saved\+Instance\+State}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a492772a2d1457b983d299466b976df87}
+
+
+Definition at line 52 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a1e131c894c38ddc2a3325e08d081c0ee}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Detach@{on\+Detach}}
+\index{on\+Detach@{on\+Detach}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Detach}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a1e131c894c38ddc2a3325e08d081c0ee}
+
+
+Definition at line 67 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a58fba05677c7d080bb4bd5db75616b4e}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Resume@{on\+Resume}}
+\index{on\+Resume@{on\+Resume}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Resume}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Resume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a58fba05677c7d080bb4bd5db75616b4e}
+
+
+Definition at line 78 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Connection\+Checker(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Video().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab3e341f095706ebd1dd9d58cf557a90d}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!on\+Start@{on\+Start}}
+\index{on\+Start@{on\+Start}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{on\+Start}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ab3e341f095706ebd1dd9d58cf557a90d}
+
+
+Definition at line 72 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Video\+View\+Listeners().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a19fd1dfab2d1fc8d3fa8203777d2ee16}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!restart\+Video@{restart\+Video}}
+\index{restart\+Video@{restart\+Video}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{restart\+Video}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+restart\+Video (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a19fd1dfab2d1fc8d3fa8203777d2ee16}
+
+
+Definition at line 117 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Video().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Runnable(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Video\+View\+Listeners().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adab837c3a43f05ce066fb99950fe50fc}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!set\+Connection\+Checker@{set\+Connection\+Checker}}
+\index{set\+Connection\+Checker@{set\+Connection\+Checker}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{set\+Connection\+Checker}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Connection\+Checker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adab837c3a43f05ce066fb99950fe50fc}
+
+
+Definition at line 123 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Runnable(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Handle().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Resume().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4c75fa27d91299f95f01b58f25f3ef3d}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!set\+Runnable@{set\+Runnable}}
+\index{set\+Runnable@{set\+Runnable}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{set\+Runnable}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Runnable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4c75fa27d91299f95f01b58f25f3ef3d}
+
+
+Definition at line 128 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+restart\+Video(), pt.\+lsts.\+asa.\+util.\+Android\+Util.\+show\+Toast\+Long(), pt.\+lsts.\+asa.\+util.\+Android\+Util.\+show\+Toast\+Short(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Handle().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Connection\+Checker().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad9e8fda00aef515b0355966089592da2}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!set\+Video\+View\+Listeners@{set\+Video\+View\+Listeners}}
+\index{set\+Video\+View\+Listeners@{set\+Video\+View\+Listeners}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{set\+Video\+View\+Listeners}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Video\+View\+Listeners (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad9e8fda00aef515b0355966089592da2}
+
+
+Definition at line 84 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+String\+Utils.\+get\+Cam\+Url(), pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+restart\+Video(), and pt.\+lsts.\+asa.\+util.\+Android\+Util.\+show\+Toast\+Short().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Start().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adea2a0ef71021c27b7fcb69047d32664}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!start\+Handle@{start\+Handle}}
+\index{start\+Handle@{start\+Handle}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{start\+Handle}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Handle (
+\begin{DoxyParamCaption}
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_adea2a0ef71021c27b7fcb69047d32664}
+
+
+Definition at line 153 of file Video\+View\+Fragment.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Connection\+Checker(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+set\+Runnable().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6b4460132d8c2fe2b693009f141c02c7}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!start\+Video@{start\+Video}}
+\index{start\+Video@{start\+Video}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{start\+Video}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+start\+Video (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a6b4460132d8c2fe2b693009f141c02c7}
+
+
+Definition at line 105 of file Video\+View\+Fragment.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+String\+Utils.\+get\+Cam\+Url().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+on\+Resume(), and pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+restart\+Video().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a5581d477ef3c120697f7871e520f213c}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!connected\+Bool@{connected\+Bool}}
+\index{connected\+Bool@{connected\+Bool}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{connected\+Bool}]{\setlength{\rightskip}{0pt plus 5cm}boolean pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+connected\+Bool =false\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a5581d477ef3c120697f7871e520f213c}
+
+
+Definition at line 36 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aeb88f42f68296885aed21df5ef1296a8}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!fragment\+Activity@{fragment\+Activity}}
+\index{fragment\+Activity@{fragment\+Activity}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{fragment\+Activity}]{\setlength{\rightskip}{0pt plus 5cm}Fragment\+Activity pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+fragment\+Activity\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aeb88f42f68296885aed21df5ef1296a8}
+
+
+Definition at line 28 of file Video\+View\+Fragment.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+Video\+View\+Fragment().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a895a83974690a3457694a7785f0166c1}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!handle@{handle}}
+\index{handle@{handle}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{handle}]{\setlength{\rightskip}{0pt plus 5cm}Scheduled\+Future pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+handle\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a895a83974690a3457694a7785f0166c1}
+
+
+Definition at line 31 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4d2b6fb27e4dc4d86576cba1158f1b8a}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!scheduler@{scheduler}}
+\index{scheduler@{scheduler}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{scheduler}]{\setlength{\rightskip}{0pt plus 5cm}final Scheduled\+Executor\+Service pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+scheduler\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a4d2b6fb27e4dc4d86576cba1158f1b8a}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= Executors
+            .newScheduledThreadPool(1)
+\end{DoxyCode}
+
+
+Definition at line 32 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aba4ef1bec9e8ed8234b57753c016a124}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!T\+A\+G@{T\+A\+G}}
+\index{T\+A\+G@{T\+A\+G}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+T\+A\+G = \char`\"{}Video\+View\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_aba4ef1bec9e8ed8234b57753c016a124}
+
+
+Definition at line 27 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad90f5f78e9fb42d5b0d4c64ccc94b8f5}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!timeout\+False@{timeout\+False}}
+\index{timeout\+False@{timeout\+False}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{timeout\+False}]{\setlength{\rightskip}{0pt plus 5cm}final int pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+timeout\+False =5000\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_ad90f5f78e9fb42d5b0d4c64ccc94b8f5}
+
+
+Definition at line 35 of file Video\+View\+Fragment.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a2a48c818563de3b28b98778928088cd1}{}\index{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}!video\+View@{video\+View}}
+\index{video\+View@{video\+View}!pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment@{pt\+::lsts\+::asa\+::fragments\+::\+Video\+View\+Fragment}}
+\subsubsection[{video\+View}]{\setlength{\rightskip}{0pt plus 5cm}Video\+View pt.\+lsts.\+asa.\+fragments.\+Video\+View\+Fragment.\+video\+View\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_a2a48c818563de3b28b98778928088cd1}
+
+
+Definition at line 29 of file Video\+View\+Fragment.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/fragments/\hyperlink{VideoViewFragment_8java}{Video\+View\+Fragment.\+java}\end{DoxyCompactItemize}

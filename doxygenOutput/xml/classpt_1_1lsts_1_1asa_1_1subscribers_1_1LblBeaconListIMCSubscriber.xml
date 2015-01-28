@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</compoundname>
+    <basecompoundref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" prot="public" virt="non-virtual">pt.lsts.asa.comms.IMCSubscriber</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a7295ca3b36dc60fb9f3ecd04e2589de2" prot="public" static="yes" mutable="no">
+        <type>final String[]</type>
+        <definition>final String [] pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.SUBSCRIBED_MSGS</definition>
+        <argsstring></argsstring>
+        <name>SUBSCRIBED_MSGS</name>
+        <initializer>= { &quot;LblConfig&quot; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" compoundref="ASA_8java" startline="139" endline="144">pt.lsts.asa.ASA.addInitialSubscribers</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a32c2d10354ceba194c068d3acd295d5e" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;LblBeaconList&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aeff98fec2248ed71734e4027cae8f22c" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" kindref="compound">LblBeaconList</ref></type>
+        <definition>LblBeaconList pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.lblBeaconList</definition>
+        <argsstring></argsstring>
+        <name>lblBeaconList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="14" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1ad23f9fc807afeb565ee5f1cf62875199" compoundref="LblBeaconListIMCSubscriber_8java" startline="17" endline="19">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.LblBeaconListIMCSubscriber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a4f908fdfeaca91b999f52703b716ffb7" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1ad23f9fc807afeb565ee5f1cf62875199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.LblBeaconListIMCSubscriber</definition>
+        <argsstring>(LblBeaconList lblBeaconList)</argsstring>
+        <name>LblBeaconListIMCSubscriber</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" kindref="compound">LblBeaconList</ref></type>
+          <declname>lblBeaconList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="17" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="17" bodyend="19"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aeff98fec2248ed71734e4027cae8f22c" compoundref="LblBeaconListIMCSubscriber_8java" startline="14">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.lblBeaconList</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aa82d48614e999086b15ef7b952d38a0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.onReceive</definition>
+        <argsstring>(final IMCMessage msg)</argsstring>
+        <name>onReceive</name>
+        <param>
+          <type>final IMCMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="22" bodyend="58"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1aa0f3b34a25074943d634454e7bda8669" compoundref="LblBeaconList_8java" startline="26" endline="28">pt.lsts.asa.pos.LblBeaconList.getList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1ac773b3c4abec186552d723770248b952" compoundref="LblBeaconList_8java" startline="20" endline="24">pt.lsts.asa.pos.LblBeaconList.notifyListeners</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ac736b6771bc172306bb36acf189f8ac0" compoundref="Beacon_8java" startline="55" endline="57">pt.lsts.asa.pos.Beacon.setInterrogationChannel</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a476bf87444463dc26b0ea8b1877e3ff9" compoundref="Beacon_8java" startline="63" endline="65">pt.lsts.asa.pos.Beacon.setReplyChannel</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aeab2347363a19b9e1f163c5e10de4727" compoundref="Beacon_8java" startline="71" endline="73">pt.lsts.asa.pos.Beacon.setTransponderDelay</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="260">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="259">
+        <label>pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber"/>
+        <childnode refid="260" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="263">
+        <label>pt.lsts.asa.pos.LblBeaconList</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList"/>
+        <childnode refid="264" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+        <childnode refid="265" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="266" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="267">
+        <label>pt::lsts::neptus::messages::listener::MessageListener&lt; MessageInfo, IMCMessage &gt;</label>
+      </node>
+      <node id="265">
+        <label>ArrayList&lt; pt.lsts.asa.pos.Beacon &gt;</label>
+      </node>
+      <node id="270">
+        <label>LinkedHashMap&lt; Integer, List&lt; pt.lsts.asa.comms.IMCSubscriber &gt; &gt;</label>
+      </node>
+      <node id="264">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.BeaconListChangeListener &gt;</label>
+      </node>
+      <node id="271">
+        <label>ArrayList&lt; pt.lsts.asa.comms.IMCSubscriber &gt;</label>
+      </node>
+      <node id="262">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="261">
+        <label>pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber"/>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="usage">
+          <edgelabel>lblBeaconList</edgelabel>
+        </childnode>
+      </node>
+      <node id="268">
+        <label>UDPTransport</label>
+      </node>
+      <node id="269">
+        <label>Handler</label>
+      </node>
+      <node id="266">
+        <label>pt.lsts.asa.managers.IMCManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager"/>
+        <childnode refid="267" relation="public-inheritance">
+        </childnode>
+        <childnode refid="268" relation="usage">
+          <edgelabel>announceListener</edgelabel>
+          <edgelabel>comm</edgelabel>
+        </childnode>
+        <childnode refid="269" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+        <childnode refid="270" relation="usage">
+          <edgelabel>subscribers</edgelabel>
+        </childnode>
+        <childnode refid="271" relation="usage">
+          <edgelabel>subscribersToAll</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" line="10" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/LblBeaconListIMCSubscriber.java" bodystart="10" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aeff98fec2248ed71734e4027cae8f22c" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>lblBeaconList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1ad23f9fc807afeb565ee5f1cf62875199" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>LblBeaconListIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aa82d48614e999086b15ef7b952d38a0d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber_1a69a6f911572580c234e4255634360db3" prot="public" virt="non-virtual" ambiguityscope="pt::lsts::asa::comms::IMCSubscriber."><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a7295ca3b36dc60fb9f3ecd04e2589de2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>SUBSCRIBED_MSGS</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a32c2d10354ceba194c068d3acd295d5e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a4f908fdfeaca91b999f52703b716ffb7" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::LblBeaconListIMCSubscriber</scope><name>thread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

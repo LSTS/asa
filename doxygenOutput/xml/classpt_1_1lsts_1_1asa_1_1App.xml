@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1App" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::App</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Application</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1App_1aab071fb193087c96ae6ee746e694e8ff" prot="private" static="yes" mutable="no">
+        <type>AudioManager</type>
+        <definition>AudioManager pt.lsts.asa.App.audioManager</definition>
+        <argsstring></argsstring>
+        <name>audioManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1a5154c0d421fd36b0ad2632a5558a0a0c" compoundref="App_8java" startline="24" endline="26">pt.lsts.asa.App.getAudioManager</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1App_1a5154c0d421fd36b0ad2632a5558a0a0c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>AudioManager</type>
+        <definition>static AudioManager pt.lsts.asa.App.getAudioManager</definition>
+        <argsstring>()</argsstring>
+        <name>getAudioManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" bodystart="24" bodyend="26"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1App_1aab071fb193087c96ae6ee746e694e8ff" compoundref="App_8java" startline="22">pt.lsts.asa.App.audioManager</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1ae49058bec0a41b602efb438853f84a53" compoundref="SoundManager_8java" startline="18" endline="20">pt.lsts.asa.managers.SoundManager.SoundManager</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.App.onCreate</definition>
+        <argsstring>()</argsstring>
+        <name>onCreate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" line="29" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" bodystart="29" bodyend="42"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1App_1ac43f2d10efb22342f021d38fd4be041b" compoundref="App_8java" startline="44" endline="51">pt.lsts.asa.App.initSettings</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a274dab64eaac88c9e34e782e4ccf0bc2" compoundref="ASA_8java" startline="146" endline="150">pt.lsts.asa.ASA.load</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2edf96c7f2884a66e3cf9c7109c9607" compoundref="ASA_8java" startline="157" endline="168">pt.lsts.asa.ASA.start</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1App_1ac43f2d10efb22342f021d38fd4be041b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.App.initSettings</definition>
+        <argsstring>()</argsstring>
+        <name>initSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" line="44" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" bodystart="44" bodyend="51"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a2f7260ffc1f25dc8228c1cfbce4fae45" compoundref="FileOperations_8java" startline="165" endline="196">pt.lsts.asa.util.FileOperations.copySpecificAsset</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a2d9948395451794fe20a0bc2748452a2" compoundref="Settings_8java" startline="91" endline="93">pt.lsts.asa.settings.Settings.getAll</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a8a6bce4f0d98ff1e0839841893de62be" compoundref="Settings_8java" startline="21" endline="26">pt.lsts.asa.settings.Settings.getSettings</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1add507f3a61d6118e5c3d69cd25988258" compoundref="Profile_8java" startline="21" endline="23">pt.lsts.asa.settings.Profile.restoreDefaults</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" compoundref="App_8java" startline="29" endline="42">pt.lsts.asa.App.onCreate</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Class extending application that does a single startup for the application needed to initialize ACCU state object</para><para><simplesect kind="author"><para>sharp </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="46">
+        <label>Application</label>
+      </node>
+      <node id="45">
+        <label>pt.lsts.asa.App</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1App"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="48">
+        <label>Application</label>
+      </node>
+      <node id="47">
+        <label>pt.lsts.asa.App</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1App"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>audioManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="49">
+        <label>AudioManager</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/App.java" bodystart="20" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1App_1aab071fb193087c96ae6ee746e694e8ff" prot="private" virt="non-virtual"><scope>pt::lsts::asa::App</scope><name>audioManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1App_1a5154c0d421fd36b0ad2632a5558a0a0c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::App</scope><name>getAudioManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1App_1ac43f2d10efb22342f021d38fd4be041b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::App</scope><name>initSettings</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" prot="public" virt="non-virtual"><scope>pt::lsts::asa::App</scope><name>onCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

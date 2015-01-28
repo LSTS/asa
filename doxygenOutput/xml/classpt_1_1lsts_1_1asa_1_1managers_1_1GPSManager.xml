@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::managers::GPSManager</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a87bf0b045ff632c19f847ac728d0001d" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.managers.GPSManager.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;GPSManager&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1af73ea0310ba9e163f181c226b9d0a322" prot="package" static="no" mutable="no">
+        <type>LocationManager</type>
+        <definition>LocationManager pt.lsts.asa.managers.GPSManager.manager</definition>
+        <argsstring></argsstring>
+        <name>manager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="25" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa5be8d55a55c238ba81755a5149cf60c" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.managers.GPSManager.running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="28" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a318dbf908322b590a5db4524a07ddc24" prot="package" static="no" mutable="no">
+        <type>LocationListener</type>
+        <definition>LocationListener pt.lsts.asa.managers.GPSManager.listener</definition>
+        <argsstring></argsstring>
+        <name>listener</name>
+        <initializer>= new LocationListener() {
+
+		@Override
+		public void onLocationChanged(Location location) {
+			<ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a291ba592c1ad6a42c3dd5bd1c721234e" kindref="member">currentLocation</ref> = location;
+			<ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a9d88c4565df05512b24607c497dbff5f" kindref="member">updateLocation</ref>();
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+			Log.i(&quot;GPSManager&quot;, provider + &quot; out&quot;);
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+			Log.i(&quot;GPSManager&quot;, provider + &quot; on&quot;);
+
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="30" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a1a073ba9977885873325873a5a57f628" prot="private" static="no" mutable="no">
+        <type>ArrayList&lt; <ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref> &gt;</type>
+        <definition>ArrayList&lt;LocationChangeListener&gt; pt.lsts.asa.managers.GPSManager.listeners</definition>
+        <argsstring></argsstring>
+        <name>listeners</name>
+        <initializer>= new ArrayList&lt;<ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="26" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a291ba592c1ad6a42c3dd5bd1c721234e" prot="private" static="no" mutable="no">
+        <type>Location</type>
+        <definition>Location pt.lsts.asa.managers.GPSManager.currentLocation</definition>
+        <argsstring></argsstring>
+        <name>currentLocation</name>
+        <initializer>= new Location(&quot;gps&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa1ca6cad2daeb23e596f075a344249fa" compoundref="GPSManager_8java" startline="91" endline="93">pt.lsts.asa.managers.GPSManager.getCurrentLocation</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a57d38e41bae7793807103f97c8b1e0b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.managers.GPSManager.GPSManager</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>GPSManager</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="55" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa81bbc2318b1c27bc20b4a3de3e4f5a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.managers.GPSManager.addListener</definition>
+        <argsstring>(LocationChangeListener l)</argsstring>
+        <name>addListener</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="60" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="60" bodyend="71"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a648bac49b2828cd36ffd89505b340a46" compoundref="GPSManager_8java" startline="95" endline="106">pt.lsts.asa.managers.GPSManager.start</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a9d88c4565df05512b24607c497dbff5f" compoundref="GPSManager_8java" startline="85" endline="89">pt.lsts.asa.managers.GPSManager.updateLocation</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a3e8544b05970e32a8906ed6f84baf14c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.managers.GPSManager.removeListener</definition>
+        <argsstring>(LocationChangeListener l)</argsstring>
+        <name>removeListener</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="73" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="73" bodyend="82"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a71f7b97e412a8f3faa21e5d15e1d60c3" compoundref="GPSManager_8java" startline="108" endline="113">pt.lsts.asa.managers.GPSManager.stop</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1add4dd0f5d7e5b2ebf4c8f2415d87e60c" compoundref="Announcer_8java" startline="115" endline="119">pt.lsts.asa.comms.Announcer.stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa1ca6cad2daeb23e596f075a344249fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Location</type>
+        <definition>Location pt.lsts.asa.managers.GPSManager.getCurrentLocation</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentLocation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="91" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="91" bodyend="93"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a291ba592c1ad6a42c3dd5bd1c721234e" compoundref="GPSManager_8java" startline="27">pt.lsts.asa.managers.GPSManager.currentLocation</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" compoundref="Announcer_8java" startline="125" endline="140">pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a648bac49b2828cd36ffd89505b340a46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.managers.GPSManager.start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="95" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="95" bodyend="106"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa81bbc2318b1c27bc20b4a3de3e4f5a5" compoundref="GPSManager_8java" startline="60" endline="71">pt.lsts.asa.managers.GPSManager.addListener</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a71f7b97e412a8f3faa21e5d15e1d60c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.managers.GPSManager.stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="108" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="108" bodyend="113"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a3e8544b05970e32a8906ed6f84baf14c" compoundref="GPSManager_8java" startline="73" endline="82">pt.lsts.asa.managers.GPSManager.removeListener</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a9d88c4565df05512b24607c497dbff5f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.managers.GPSManager.updateLocation</definition>
+        <argsstring>()</argsstring>
+        <name>updateLocation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="85" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="85" bodyend="89"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa81bbc2318b1c27bc20b4a3de3e4f5a5" compoundref="GPSManager_8java" startline="60" endline="71">pt.lsts.asa.managers.GPSManager.addListener</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Simple GPS manager that only deals with location changes and routes the info to a series of listeners in a list. If there is no listener it auto-shutdown the GPS locator</para><para><simplesect kind="author"><para>sharp </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="188">
+        <label>LocationListener</label>
+      </node>
+      <node id="189">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.LocationChangeListener &gt;</label>
+      </node>
+      <node id="190">
+        <label>LocationManager</label>
+      </node>
+      <node id="187">
+        <label>pt.lsts.asa.managers.GPSManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager"/>
+        <childnode refid="188" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+        <childnode refid="189" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+        <childnode refid="190" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="191" relation="usage">
+          <edgelabel>currentLocation</edgelabel>
+        </childnode>
+      </node>
+      <node id="191">
+        <label>Location</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/GPSManager.java" bodystart="23" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa81bbc2318b1c27bc20b4a3de3e4f5a5" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>addListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a291ba592c1ad6a42c3dd5bd1c721234e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>currentLocation</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa1ca6cad2daeb23e596f075a344249fa" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>getCurrentLocation</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a57d38e41bae7793807103f97c8b1e0b7" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>GPSManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a318dbf908322b590a5db4524a07ddc24" prot="package" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>listener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a1a073ba9977885873325873a5a57f628" prot="private" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>listeners</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1af73ea0310ba9e163f181c226b9d0a322" prot="package" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>manager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a3e8544b05970e32a8906ed6f84baf14c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>removeListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa5be8d55a55c238ba81755a5149cf60c" prot="package" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>running</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a648bac49b2828cd36ffd89505b340a46" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>start</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a71f7b97e412a8f3faa21e5d15e1d60c3" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>stop</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a87bf0b045ff632c19f847ac728d0001d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a9d88c4565df05512b24607c497dbff5f" prot="private" virt="non-virtual"><scope>pt::lsts::asa::managers::GPSManager</scope><name>updateLocation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

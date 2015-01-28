@@ -1,0 +1,1481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1ASA" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::ASA</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1acbc3f54345385bf9a149020e88ff8f9d" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.ASA.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;ASA&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="43" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1ad16e2c7db27b0a63a471c62f1fdcc1df" prot="private" static="yes" mutable="no">
+        <type>Context</type>
+        <definition>Context pt.lsts.asa.ASA.context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="47" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab5ab0fc8f101a27c96444bd02b4c0672" compoundref="ASA_8java" startline="287" endline="289">pt.lsts.asa.ASA.getContext</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa2d7c4c00a6fe360e39facc220d35d23" prot="private" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1ASA" kindref="compound">ASA</ref></type>
+        <definition>ASA pt.lsts.asa.ASA.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="48" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa3882391994a66fbda943030282f5d20" prot="private" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+        <definition>Sys pt.lsts.asa.ASA.activeSys</definition>
+        <argsstring></argsstring>
+        <name>activeSys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="49" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a767130ab277b7f44d350625b5f1bcda3" prot="private" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+        <definition>IMCManager pt.lsts.asa.ASA.imcManager</definition>
+        <argsstring></argsstring>
+        <name>imcManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="51" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7516e93a72663ebf84fff6887fd6899d" compoundref="ASA_8java" startline="208" endline="211">pt.lsts.asa.ASA.getIMCManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1afb8ea93835a90aa2b9ad4fa39321f784" prot="private" static="yes" mutable="no">
+        <type>ArrayList&lt; <ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener" kindref="compound">MainSysChangeListener</ref> &gt;</type>
+        <definition>ArrayList&lt;MainSysChangeListener&gt; pt.lsts.asa.ASA.mainSysChangeListeners</definition>
+        <argsstring></argsstring>
+        <name>mainSysChangeListeners</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="67" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a377d6b4e9ec10904dd211d16eb724cc8" prot="private" static="yes" mutable="no">
+        <type>Integer</type>
+        <definition>Integer pt.lsts.asa.ASA.requestId</definition>
+        <argsstring></argsstring>
+        <name>requestId</name>
+        <initializer>= 0xFFFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="73" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="73" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1acf6f750e88c4c0c8b6fa792196f84867" compoundref="ASA_8java" startline="275" endline="285">pt.lsts.asa.ASA.getNextRequestId</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1af45cdf877804002113beca9a8c497e4e" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.ASA.UIThread</definition>
+        <argsstring></argsstring>
+        <name>UIThread</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="45" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a7d9323dbee5f882abe734625c536158b" prot="public" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList" kindref="compound">SystemList</ref></type>
+        <definition>SystemList pt.lsts.asa.ASA.sysList</definition>
+        <argsstring></argsstring>
+        <name>sysList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="52" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" compoundref="ASA_8java" startline="213" endline="216">pt.lsts.asa.ASA.getSystemList</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a62b74f0d8e70e3c48956556b4a059c7a" prot="public" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber" kindref="compound">SystemListIMCSubscriber</ref></type>
+        <definition>SystemListIMCSubscriber pt.lsts.asa.ASA.systemListIMCSubscriber</definition>
+        <argsstring></argsstring>
+        <name>systemListIMCSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="53" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa9bbbbc42eb2b87d06a8a6cf3fcc7c96" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.ASA.broadcastAddress</definition>
+        <argsstring></argsstring>
+        <name>broadcastAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="68" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a6ed3c06b1580866836c2d0d39ae8c643" prot="public" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.ASA.started</definition>
+        <argsstring></argsstring>
+        <name>started</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="69" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aaef92561b2ee1d4a1e5b60c32b1f22ea" compoundref="ASA_8java" startline="267" endline="270">pt.lsts.asa.ASA.isStarted</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a129af89fa887445f09ef261630bdce7b" compoundref="MainActivity_8java" startline="231" endline="235">pt.lsts.asa.activities.MainActivity.pauseASA</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1add8081c3c78a8b9d7aacd0d928d45976" compoundref="MainActivity_8java" startline="237" endline="241">pt.lsts.asa.activities.MainActivity.resumeASA</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a7ba8cb6b6565d074dce7b016da83d1ba" prot="public" static="no" mutable="no">
+        <type>SharedPreferences</type>
+        <definition>SharedPreferences pt.lsts.asa.ASA.sharedPreferences</definition>
+        <argsstring></argsstring>
+        <name>sharedPreferences</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="70" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1adbff2f21137ed321d401ef09921f8910" compoundref="ASA_8java" startline="291" endline="294">pt.lsts.asa.ASA.addPreferencesListenner</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a1fe71f4bc3ce78d542ceb322589d2592" compoundref="Settings_8java" startline="87" endline="89">pt.lsts.asa.settings.Settings.clear</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1accfc82b1ee86ef4e9bee8520c544944e" compoundref="Settings_8java" startline="119" endline="121">pt.lsts.asa.settings.Settings.exists</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a2d9948395451794fe20a0bc2748452a2" compoundref="Settings_8java" startline="91" endline="93">pt.lsts.asa.settings.Settings.getAll</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1ac71827af5d162d6c779eafc2c221b32d" compoundref="Settings_8java" startline="181" endline="187">pt.lsts.asa.settings.Settings.getBoolean</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a544a8c09568c9b8566bb6f18edb2c258" compoundref="Settings_8java" startline="130" endline="136">pt.lsts.asa.settings.Settings.getCategory</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a19707bcfc8eaf45eaffe3a86b3657364" compoundref="Settings_8java" startline="145" endline="150">pt.lsts.asa.settings.Settings.getDescription</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a6837acc4e04ce43560ab198fb0e68acc" compoundref="Settings_8java" startline="173" endline="179">pt.lsts.asa.settings.Settings.getInt</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a8a8d0bbf0941154fe44cf1cf21fe9f24" compoundref="Settings_8java" startline="138" endline="143">pt.lsts.asa.settings.Settings.getKey</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1ac3ae82318b29a27033d1b1f2897f692b" compoundref="Settings_8java" startline="28" endline="30">pt.lsts.asa.settings.Settings.getSharedPreferences</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1aa78bb0429e56d58dc891df61404bdb0e" compoundref="Settings_8java" startline="153" endline="159">pt.lsts.asa.settings.Settings.getString</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a5cbf61d0dd3c4a87c7a1b7d3a965a671" compoundref="Settings_8java" startline="161" endline="171">pt.lsts.asa.settings.Settings.getStrings</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1af431b67c6421743053ef658f18592102" compoundref="Settings_8java" startline="123" endline="128">pt.lsts.asa.settings.Settings.getType</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a65065c35affa4c8ade2d7aa9fc4c75e8" compoundref="Settings_8java" startline="71" endline="85">pt.lsts.asa.settings.Settings.putBoolean</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a7a44778db45e954269a8622dde633ab5" compoundref="Settings_8java" startline="32" endline="37">pt.lsts.asa.settings.Settings.putFullString</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a567a25e80e3180556b4868d7bc0e90b8" compoundref="Settings_8java" startline="55" endline="69">pt.lsts.asa.settings.Settings.putInt</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a60dad12334ae68b8f9c985188fd2107a" compoundref="Settings_8java" startline="39" endline="53">pt.lsts.asa.settings.Settings.putString</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a09a7fbc6fa8123eaea605bbece39554b" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer" kindref="compound">Announcer</ref></type>
+        <definition>Announcer pt.lsts.asa.ASA.announcer</definition>
+        <argsstring></argsstring>
+        <name>announcer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="55" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa2a2cd288c2a2634632735baa0bf5a6b" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler" kindref="compound">AccuSmsHandler</ref></type>
+        <definition>AccuSmsHandler pt.lsts.asa.ASA.smsHandler</definition>
+        <argsstring></argsstring>
+        <name>smsHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="56" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1ad6e77863d43fd469324d4e5afb8e8a4e" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1AccuSmsHandlerIMCSubscriber" kindref="compound">AccuSmsHandlerIMCSubscriber</ref></type>
+        <definition>AccuSmsHandlerIMCSubscriber pt.lsts.asa.ASA.accuSmsHandlerIMCSubscriber</definition>
+        <argsstring></argsstring>
+        <name>accuSmsHandlerIMCSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="57" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a3231592629454d15eb368a68b7c59ddd" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager" kindref="compound">GPSManager</ref></type>
+        <definition>GPSManager pt.lsts.asa.ASA.gpsManager</definition>
+        <argsstring></argsstring>
+        <name>gpsManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="58" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a326c786de016395dceae22f2b3284110" compoundref="ASA_8java" startline="218" endline="221">pt.lsts.asa.ASA.getGpsManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a96229d228ceec5d091b7376cf8b1af53" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator" kindref="compound">HeartbeatVibrator</ref></type>
+        <definition>HeartbeatVibrator pt.lsts.asa.ASA.hearbeatVibrator</definition>
+        <argsstring></argsstring>
+        <name>hearbeatVibrator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="59" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a04225cde8a01f7dc651d6af1bd154545" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber" kindref="compound">HeartbeatVibratorIMCSubscriber</ref></type>
+        <definition>HeartbeatVibratorIMCSubscriber pt.lsts.asa.ASA.heartbeatVibratorIMCSubscriber</definition>
+        <argsstring></argsstring>
+        <name>heartbeatVibratorIMCSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="60" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a3c881b1e93731bb07899672e80d503f3" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1Heart" kindref="compound">Heart</ref></type>
+        <definition>Heart pt.lsts.asa.ASA.heart</definition>
+        <argsstring></argsstring>
+        <name>heart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="61" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1ae16acaf6a366616f9d7b7487666f030e" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" kindref="compound">LblBeaconList</ref></type>
+        <definition>LblBeaconList pt.lsts.asa.ASA.lblBeaconList</definition>
+        <argsstring></argsstring>
+        <name>lblBeaconList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="62" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1afdf0ace1a02f2bd19ff56fff521df6a0" compoundref="ASA_8java" startline="227" endline="230">pt.lsts.asa.ASA.getLblBeaconList</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa2b1a5f76f5a080ba4e4f3d4f2e83a3c" prot="public" static="yes" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber" kindref="compound">LblBeaconListIMCSubscriber</ref></type>
+        <definition>LblBeaconListIMCSubscriber pt.lsts.asa.ASA.lblBeaconListIMCSubscriber</definition>
+        <argsstring></argsstring>
+        <name>lblBeaconListIMCSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="63" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a4eb3c4a73c2c1631c94574384f6323e2" prot="public" static="yes" mutable="no">
+        <type>SensorManager</type>
+        <definition>SensorManager pt.lsts.asa.ASA.sensorManager</definition>
+        <argsstring></argsstring>
+        <name>sensorManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="64" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a58971b878ca91d7c571a5a512478fe6b" compoundref="ASA_8java" startline="223" endline="225">pt.lsts.asa.ASA.getSensorManager</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1aedf7af794060d789656aa41a10649684" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut" kindref="compound">CallOut</ref></type>
+        <definition>CallOut pt.lsts.asa.ASA.callOut</definition>
+        <argsstring></argsstring>
+        <name>callOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="65" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aac9108033c17cc70acbb95098d3b9867" compoundref="ASA_8java" startline="232" endline="234">pt.lsts.asa.ASA.getCallOut</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aeb6419187654c91d4202bb0aa3b35d20" compoundref="ASA_8java" startline="240" endline="242">pt.lsts.asa.ASA.setCallOut</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1ASA_1a3b1468022b12779c73e5d8bb41e39f8e" prot="private" static="no" mutable="no">
+        <type>Bus</type>
+        <definition>Bus pt.lsts.asa.ASA.bus</definition>
+        <argsstring></argsstring>
+        <name>bus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="71" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="71" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ac3f1a6f82a4b3a2e34c07bf9d6b65361" compoundref="ASA_8java" startline="236" endline="238">pt.lsts.asa.ASA.getBus</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.ASA.ASA</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>ASA</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="75" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="75" bodyend="85"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad16e2c7db27b0a63a471c62f1fdcc1df" compoundref="ASA_8java" startline="47">pt.lsts.asa.ASA.context</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ac5a02ce0548dd6009e29397bd66538bf" compoundref="ASA_8java" startline="109" endline="111">pt.lsts.asa.ASA.initAnnouncer</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad8cd0a63644f0e3b120d2db762abfa4f" compoundref="ASA_8java" startline="94" endline="101">pt.lsts.asa.ASA.initBroadcast</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a5586a5ebd4f2ee02a41072544440f53d" compoundref="ASA_8java" startline="113" endline="117">pt.lsts.asa.ASA.initGPSManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a98f14397296a725e2f289e8b2a1f473b" compoundref="ASA_8java" startline="124" endline="127">pt.lsts.asa.ASA.initIMCManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a6a93b8538e58d17a5e1d88b55787c5a4" compoundref="ASA_8java" startline="119" endline="122">pt.lsts.asa.ASA.initPreferences</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1afdf4f36c77660164aa94bb7eb2ed0658" compoundref="ASA_8java" startline="129" endline="137">pt.lsts.asa.ASA.initSubscribers</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1af952ed04d184b779b0ed380ba63b00b1" compoundref="ASA_8java" startline="103" endline="107">pt.lsts.asa.ASA.initSystemsList</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a2cf6734759676841fd40b2cb63656f30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addSubscriber</definition>
+        <argsstring>(IMCSubscriber sub)</argsstring>
+        <name>addSubscriber</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" kindref="compound">IMCSubscriber</ref></type>
+          <declname>sub</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="87" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="87" bodyend="89"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a194d3355aa07bb230462325b07bed9a2" compoundref="IMCManager_8java" startline="108" endline="112">pt.lsts.asa.managers.IMCManager.addSubscriberToAllMessages</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" compoundref="ASA_8java" startline="139" endline="144">pt.lsts.asa.ASA.addInitialSubscribers</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1ManualIndicatorsFragment_1a9128f597a78e2016cb6f37e3093e8264" compoundref="ManualIndicatorsFragment_8java" startline="70" endline="73">pt.lsts.asa.fragments.ManualIndicatorsFragment.initIMCSubscriber</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aba78114684c514b15c0da8dfcd621f79" compoundref="GmapFragment_8java" startline="94" endline="97">pt.lsts.asa.fragments.GmapFragment.initIMCSubscriber</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut_1a878d2c0daf5c7ed7b65611bcb09e6276" compoundref="CallOut_8java" startline="61" endline="64">pt.lsts.asa.feedback.CallOut.initImcSubscribers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa603b315532b73078a2472e2cf40cce1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addSubscriber</definition>
+        <argsstring>(IMCSubscriber sub, String[] abbrevNameList)</argsstring>
+        <name>addSubscriber</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" kindref="compound">IMCSubscriber</ref></type>
+          <declname>sub</declname>
+        </param>
+        <param>
+          <type>String[]</type>
+          <declname>abbrevNameList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="90" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="90" bodyend="92"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1abb51e536ed1b8455a675c1a9e092c95a" compoundref="IMCManager_8java" startline="71" endline="92">pt.lsts.asa.managers.IMCManager.addSubscriber</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ad8cd0a63644f0e3b120d2db762abfa4f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initBroadcast</definition>
+        <argsstring>()</argsstring>
+        <name>initBroadcast</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="94" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="94" bodyend="101"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1acae08ebd1baa26894e2a01cfafd95926" compoundref="MUtil_8java" startline="81" endline="93">pt.lsts.asa.util.MUtil.getBroadcastAddress</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1af952ed04d184b779b0ed380ba63b00b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initSystemsList</definition>
+        <argsstring>()</argsstring>
+        <name>initSystemsList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="103" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="103" bodyend="107"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ac5a02ce0548dd6009e29397bd66538bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initAnnouncer</definition>
+        <argsstring>()</argsstring>
+        <name>initAnnouncer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="109" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="109" bodyend="111"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a5586a5ebd4f2ee02a41072544440f53d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initGPSManager</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>initGPSManager</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="113" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="113" bodyend="117"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a6a93b8538e58d17a5e1d88b55787c5a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initPreferences</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>initPreferences</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="119" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="119" bodyend="122"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a98f14397296a725e2f289e8b2a1f473b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initIMCManager</definition>
+        <argsstring>()</argsstring>
+        <name>initIMCManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="124" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="124" bodyend="127"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a81628cd324cd6cc09098f74b6d9a4c23" compoundref="IMCManager_8java" startline="204" endline="218">pt.lsts.asa.managers.IMCManager.startComms</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1afdf4f36c77660164aa94bb7eb2ed0658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.initSubscribers</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>initSubscribers</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="129" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="129" bodyend="137"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" compoundref="ASA_8java" startline="139" endline="144">pt.lsts.asa.ASA.addInitialSubscribers</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addInitialSubscribers</definition>
+        <argsstring>()</argsstring>
+        <name>addInitialSubscribers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="139" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="139" bodyend="144"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a2cf6734759676841fd40b2cb63656f30" compoundref="ASA_8java" startline="87" endline="89">pt.lsts.asa.ASA.addSubscriber</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a9153056f3639306e0cd124d25db53247" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="10">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.SUBSCRIBED_MSGS</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1AccuSmsHandlerIMCSubscriber_1aff3ba7434ed0b051563cca42a6299401" compoundref="AccuSmsHandlerIMCSubscriber_8java" startline="12">pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber.SUBSCRIBED_MSGS</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1a7295ca3b36dc60fb9f3ecd04e2589de2" compoundref="LblBeaconListIMCSubscriber_8java" startline="12">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.SUBSCRIBED_MSGS</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1afdf4f36c77660164aa94bb7eb2ed0658" compoundref="ASA_8java" startline="129" endline="137">pt.lsts.asa.ASA.initSubscribers</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a274dab64eaac88c9e34e782e4ccf0bc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="146" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="146" bodyend="150"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ae92cbe9e9151ca092c7ee6a2802bba79" compoundref="ASA_8java" startline="152" endline="155">pt.lsts.asa.ASA.addLblSubscriber</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" compoundref="App_8java" startline="29" endline="42">pt.lsts.asa.App.onCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ae92cbe9e9151ca092c7ee6a2802bba79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addLblSubscriber</definition>
+        <argsstring>()</argsstring>
+        <name>addLblSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="152" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="152" bodyend="155"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a274dab64eaac88c9e34e782e4ccf0bc2" compoundref="ASA_8java" startline="146" endline="150">pt.lsts.asa.ASA.load</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aa2edf96c7f2884a66e3cf9c7109c9607" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="157" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="157" bodyend="168"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1Heart_1adf7c3d62caa26711673a5ba77b952c9d" compoundref="Heart_8java" startline="35" endline="37">pt.lsts.asa.feedback.Heart.start</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a2ee385876fe6cff395fd43f1c4a8079c" compoundref="SystemList_8java" startline="118" endline="120">pt.lsts.asa.sys.SystemList.start</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a81628cd324cd6cc09098f74b6d9a4c23" compoundref="IMCManager_8java" startline="204" endline="218">pt.lsts.asa.managers.IMCManager.startComms</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" compoundref="App_8java" startline="29" endline="42">pt.lsts.asa.App.onCreate</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1add8081c3c78a8b9d7aacd0d928d45976" compoundref="MainActivity_8java" startline="237" endline="241">pt.lsts.asa.activities.MainActivity.resumeASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a4500e769d8f489e76393028b64f38bcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.pause</definition>
+        <argsstring>()</argsstring>
+        <name>pause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="170" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="170" bodyend="182"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1ab93d6de31234342a2f98dfac9e26aca3" compoundref="IMCManager_8java" startline="188" endline="202">pt.lsts.asa.managers.IMCManager.killComms</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1ac3464a4db0b2174a65d3ffbe01661dda" compoundref="AccuSmsHandler_8java" startline="35" endline="37">pt.lsts.asa.handlers.AccuSmsHandler.stop</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1Heart_1adc1a93acd4f7fdf1f4da59d4601ae63a" compoundref="Heart_8java" startline="39" endline="41">pt.lsts.asa.feedback.Heart.stop</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1add4dd0f5d7e5b2ebf4c8f2415d87e60c" compoundref="Announcer_8java" startline="115" endline="119">pt.lsts.asa.comms.Announcer.stop</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c8dada0cf44535221a13781e207cf45" compoundref="SystemList_8java" startline="122" endline="124">pt.lsts.asa.sys.SystemList.stop</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a129af89fa887445f09ef261630bdce7b" compoundref="MainActivity_8java" startline="231" endline="235">pt.lsts.asa.activities.MainActivity.pauseASA</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+        <definition>Sys pt.lsts.asa.ASA.getActiveSys</definition>
+        <argsstring>()</argsstring>
+        <name>getActiveSys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="197" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="197" bodyend="200"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa3882391994a66fbda943030282f5d20" compoundref="ASA_8java" startline="49">pt.lsts.asa.ASA.activeSys</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1a5a99d40700575232601a40ec44ee78c5" compoundref="IMCUtils_8java" startline="65" endline="73">pt.lsts.asa.util.IMCUtils.isMsgFromActive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="20" endline="42">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a7b754e032cdfb9eaf601d64bfefcb5dd" compoundref="IMCManager_8java" startline="233" endline="235">pt.lsts.asa.managers.IMCManager.sendToActiveSys</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" compoundref="GmapFragment_8java" startline="165" endline="169">pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" compoundref="GmapFragment_8java" startline="171" endline="174">pt.lsts.asa.fragments.GmapFragment.setActiveSysPsi</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a2266b419ecc85137e8c4fd77b30b69f5" compoundref="MainActivity_8java" startline="91" endline="97">pt.lsts.asa.activities.MainActivity.test2</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aed516abf7cd5070569abea82c281f2d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.setActiveSys</definition>
+        <argsstring>(Sys activeS)</argsstring>
+        <name>setActiveSys</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+          <declname>activeS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="202" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="202" bodyend="206"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1acfece516fe24da0385e93f531766671c" compoundref="ASA_8java" startline="255" endline="260">pt.lsts.asa.ASA.notifyMainSysChange</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a5c68fea76562d4870a67f4a9f47edb12" compoundref="MainActivity_8java" startline="120" endline="129">pt.lsts.asa.activities.MainActivity.createChooseActiveSystemDialog</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a7516e93a72663ebf84fff6887fd6899d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+        <definition>IMCManager pt.lsts.asa.ASA.getIMCManager</definition>
+        <argsstring>()</argsstring>
+        <name>getIMCManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="208" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="208" bodyend="211"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a767130ab277b7f44d350625b5f1bcda3" compoundref="ASA_8java" startline="51">pt.lsts.asa.ASA.imcManager</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList" kindref="compound">SystemList</ref></type>
+        <definition>SystemList pt.lsts.asa.ASA.getSystemList</definition>
+        <argsstring>()</argsstring>
+        <name>getSystemList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="213" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="213" bodyend="216"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7d9323dbee5f882abe734625c536158b" compoundref="ASA_8java" startline="52">pt.lsts.asa.ASA.sysList</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1acc52da4726bd2b6b34c3e9e2c847169b" compoundref="MainActivity_8java" startline="108" endline="118">pt.lsts.asa.activities.MainActivity.chooseActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a326c786de016395dceae22f2b3284110" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager" kindref="compound">GPSManager</ref></type>
+        <definition>GPSManager pt.lsts.asa.ASA.getGpsManager</definition>
+        <argsstring>()</argsstring>
+        <name>getGpsManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="218" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="218" bodyend="221"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a3231592629454d15eb368a68b7c59ddd" compoundref="ASA_8java" startline="58">pt.lsts.asa.ASA.gpsManager</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" compoundref="Announcer_8java" startline="125" endline="140">pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a58971b878ca91d7c571a5a512478fe6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SensorManager</type>
+        <definition>SensorManager pt.lsts.asa.ASA.getSensorManager</definition>
+        <argsstring>()</argsstring>
+        <name>getSensorManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="223" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="223" bodyend="225"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4eb3c4a73c2c1631c94574384f6323e2" compoundref="ASA_8java" startline="64">pt.lsts.asa.ASA.sensorManager</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1afdf0ace1a02f2bd19ff56fff521df6a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" kindref="compound">LblBeaconList</ref></type>
+        <definition>LblBeaconList pt.lsts.asa.ASA.getLblBeaconList</definition>
+        <argsstring>()</argsstring>
+        <name>getLblBeaconList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="227" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="227" bodyend="230"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ae16acaf6a366616f9d7b7487666f030e" compoundref="ASA_8java" startline="62">pt.lsts.asa.ASA.lblBeaconList</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aac9108033c17cc70acbb95098d3b9867" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut" kindref="compound">CallOut</ref></type>
+        <definition>CallOut pt.lsts.asa.ASA.getCallOut</definition>
+        <argsstring>()</argsstring>
+        <name>getCallOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="232" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="232" bodyend="234"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aedf7af794060d789656aa41a10649684" compoundref="ASA_8java" startline="65">pt.lsts.asa.ASA.callOut</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ac3f1a6f82a4b3a2e34c07bf9d6b65361" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bus</type>
+        <definition>Bus pt.lsts.asa.ASA.getBus</definition>
+        <argsstring>()</argsstring>
+        <name>getBus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="236" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="236" bodyend="238"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a3b1468022b12779c73e5d8bb41e39f8e" compoundref="ASA_8java" startline="71">pt.lsts.asa.ASA.bus</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut_1a632cf1b51f5e5fa9d8675e136f874b5e" compoundref="CallOut_8java" startline="52" endline="59">pt.lsts.asa.feedback.CallOut.CallOut</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1ManualIndicatorsFragment_1a679b000827db94319eb945b081de0078" compoundref="ManualIndicatorsFragment_8java" startline="65" endline="68">pt.lsts.asa.fragments.ManualIndicatorsFragment.initPreferencesListenner</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a65065c35affa4c8ade2d7aa9fc4c75e8" compoundref="Settings_8java" startline="71" endline="85">pt.lsts.asa.settings.Settings.putBoolean</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a567a25e80e3180556b4868d7bc0e90b8" compoundref="Settings_8java" startline="55" endline="69">pt.lsts.asa.settings.Settings.putInt</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a60dad12334ae68b8f9c985188fd2107a" compoundref="Settings_8java" startline="39" endline="53">pt.lsts.asa.settings.Settings.putString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aeb6419187654c91d4202bb0aa3b35d20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.setCallOut</definition>
+        <argsstring>(CallOut callOut)</argsstring>
+        <name>setCallOut</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut" kindref="compound">CallOut</ref></type>
+          <declname>callOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="240" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="240" bodyend="242"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aedf7af794060d789656aa41a10649684" compoundref="ASA_8java" startline="65">pt.lsts.asa.ASA.callOut</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut_1a632cf1b51f5e5fa9d8675e136f874b5e" compoundref="CallOut_8java" startline="52" endline="59">pt.lsts.asa.feedback.CallOut.CallOut</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a7af9bbb412bf2abea4dd19561db8c510" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addMainSysChangeListener</definition>
+        <argsstring>(MainSysChangeListener listener)</argsstring>
+        <name>addMainSysChangeListener</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener" kindref="compound">MainSysChangeListener</ref></type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="245" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="245" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ab84be20f79f7bd52a961b7ffac367aaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.removeMainSysChangeListener</definition>
+        <argsstring>(MainSysChangeListener listener)</argsstring>
+        <name>removeMainSysChangeListener</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener" kindref="compound">MainSysChangeListener</ref></type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="250" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SharedPreferences</type>
+        <definition>SharedPreferences pt.lsts.asa.ASA.getPrefs</definition>
+        <argsstring>()</argsstring>
+        <name>getPrefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="262" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="262" bodyend="265"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7ba8cb6b6565d074dce7b016da83d1ba" compoundref="ASA_8java" startline="70">pt.lsts.asa.ASA.sharedPreferences</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="20" endline="42">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a648bac49b2828cd36ffd89505b340a46" compoundref="GPSManager_8java" startline="95" endline="106">pt.lsts.asa.managers.GPSManager.start</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a34cc1070a50e7a229ea0349111dce02b" compoundref="Announcer_8java" startline="142" endline="153">pt.lsts.asa.comms.Announcer.updateHeadingOnAnnounce</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" compoundref="Announcer_8java" startline="125" endline="140">pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1aaef92561b2ee1d4a1e5b60c32b1f22ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.ASA.isStarted</definition>
+        <argsstring>()</argsstring>
+        <name>isStarted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="267" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="267" bodyend="270"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a6ed3c06b1580866836c2d0d39ae8c643" compoundref="ASA_8java" startline="69">pt.lsts.asa.ASA.started</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1acf6f750e88c4c0c8b6fa792196f84867" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.ASA.getNextRequestId</definition>
+        <argsstring>()</argsstring>
+        <name>getNextRequestId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the next requestId </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="275" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="275" bodyend="285"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a377d6b4e9ec10904dd211d16eb724cc8" compoundref="ASA_8java" startline="73">pt.lsts.asa.ASA.requestId</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1adbff2f21137ed321d401ef09921f8910" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ASA.addPreferencesListenner</definition>
+        <argsstring>(OnSharedPreferenceChangeListener listener)</argsstring>
+        <name>addPreferencesListenner</name>
+        <param>
+          <type>OnSharedPreferenceChangeListener</type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="291" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="291" bodyend="294"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7ba8cb6b6565d074dce7b016da83d1ba" compoundref="ASA_8java" startline="70">pt.lsts.asa.ASA.sharedPreferences</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1ASA" kindref="compound">ASA</ref></type>
+        <definition>static ASA pt.lsts.asa.ASA.getInstance</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>getInstance</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="184" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="184" bodyend="190"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" compoundref="ASA_8java" startline="75" endline="85">pt.lsts.asa.ASA.ASA</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2d7c4c00a6fe360e39facc220d35d23" compoundref="ASA_8java" startline="48">pt.lsts.asa.ASA.instance</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1adbff2f21137ed321d401ef09921f8910" compoundref="ASA_8java" startline="291" endline="294">pt.lsts.asa.ASA.addPreferencesListenner</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut_1a632cf1b51f5e5fa9d8675e136f874b5e" compoundref="CallOut_8java" startline="52" endline="59">pt.lsts.asa.feedback.CallOut.CallOut</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1acc52da4726bd2b6b34c3e9e2c847169b" compoundref="MainActivity_8java" startline="108" endline="118">pt.lsts.asa.activities.MainActivity.chooseActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a1fe71f4bc3ce78d542ceb322589d2592" compoundref="Settings_8java" startline="87" endline="89">pt.lsts.asa.settings.Settings.clear</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a5c68fea76562d4870a67f4a9f47edb12" compoundref="MainActivity_8java" startline="120" endline="129">pt.lsts.asa.activities.MainActivity.createChooseActiveSystemDialog</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1accfc82b1ee86ef4e9bee8520c544944e" compoundref="Settings_8java" startline="119" endline="121">pt.lsts.asa.settings.Settings.exists</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a2d9948395451794fe20a0bc2748452a2" compoundref="Settings_8java" startline="91" endline="93">pt.lsts.asa.settings.Settings.getAll</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1ac71827af5d162d6c779eafc2c221b32d" compoundref="Settings_8java" startline="181" endline="187">pt.lsts.asa.settings.Settings.getBoolean</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a544a8c09568c9b8566bb6f18edb2c258" compoundref="Settings_8java" startline="130" endline="136">pt.lsts.asa.settings.Settings.getCategory</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a19707bcfc8eaf45eaffe3a86b3657364" compoundref="Settings_8java" startline="145" endline="150">pt.lsts.asa.settings.Settings.getDescription</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a6837acc4e04ce43560ab198fb0e68acc" compoundref="Settings_8java" startline="173" endline="179">pt.lsts.asa.settings.Settings.getInt</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a8a8d0bbf0941154fe44cf1cf21fe9f24" compoundref="Settings_8java" startline="138" endline="143">pt.lsts.asa.settings.Settings.getKey</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1ac3ae82318b29a27033d1b1f2897f692b" compoundref="Settings_8java" startline="28" endline="30">pt.lsts.asa.settings.Settings.getSharedPreferences</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1aa78bb0429e56d58dc891df61404bdb0e" compoundref="Settings_8java" startline="153" endline="159">pt.lsts.asa.settings.Settings.getString</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a5cbf61d0dd3c4a87c7a1b7d3a965a671" compoundref="Settings_8java" startline="161" endline="171">pt.lsts.asa.settings.Settings.getStrings</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1af431b67c6421743053ef658f18592102" compoundref="Settings_8java" startline="123" endline="128">pt.lsts.asa.settings.Settings.getType</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1ManualIndicatorsFragment_1a9128f597a78e2016cb6f37e3093e8264" compoundref="ManualIndicatorsFragment_8java" startline="70" endline="73">pt.lsts.asa.fragments.ManualIndicatorsFragment.initIMCSubscriber</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aba78114684c514b15c0da8dfcd621f79" compoundref="GmapFragment_8java" startline="94" endline="97">pt.lsts.asa.fragments.GmapFragment.initIMCSubscriber</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut_1a878d2c0daf5c7ed7b65611bcb09e6276" compoundref="CallOut_8java" startline="61" endline="64">pt.lsts.asa.feedback.CallOut.initImcSubscribers</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1ManualIndicatorsFragment_1a679b000827db94319eb945b081de0078" compoundref="ManualIndicatorsFragment_8java" startline="65" endline="68">pt.lsts.asa.fragments.ManualIndicatorsFragment.initPreferencesListenner</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1a5a99d40700575232601a40ec44ee78c5" compoundref="IMCUtils_8java" startline="65" endline="73">pt.lsts.asa.util.IMCUtils.isMsgFromActive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1a3a8e529a72a95a644541b5c841afdcce" compoundref="App_8java" startline="29" endline="42">pt.lsts.asa.App.onCreate</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber_1a0d31422303e9422f732bce64f647d6ab" compoundref="HeartbeatVibratorIMCSubscriber_8java" startline="20" endline="42">pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a129af89fa887445f09ef261630bdce7b" compoundref="MainActivity_8java" startline="231" endline="235">pt.lsts.asa.activities.MainActivity.pauseASA</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a65065c35affa4c8ade2d7aa9fc4c75e8" compoundref="Settings_8java" startline="71" endline="85">pt.lsts.asa.settings.Settings.putBoolean</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a7a44778db45e954269a8622dde633ab5" compoundref="Settings_8java" startline="32" endline="37">pt.lsts.asa.settings.Settings.putFullString</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a567a25e80e3180556b4868d7bc0e90b8" compoundref="Settings_8java" startline="55" endline="69">pt.lsts.asa.settings.Settings.putInt</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a60dad12334ae68b8f9c985188fd2107a" compoundref="Settings_8java" startline="39" endline="53">pt.lsts.asa.settings.Settings.putString</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1add8081c3c78a8b9d7aacd0d928d45976" compoundref="MainActivity_8java" startline="237" endline="241">pt.lsts.asa.activities.MainActivity.resumeASA</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a7b754e032cdfb9eaf601d64bfefcb5dd" compoundref="IMCManager_8java" startline="233" endline="235">pt.lsts.asa.managers.IMCManager.sendToActiveSys</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" compoundref="GmapFragment_8java" startline="165" endline="169">pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" compoundref="GmapFragment_8java" startline="171" endline="174">pt.lsts.asa.fragments.GmapFragment.setActiveSysPsi</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a648bac49b2828cd36ffd89505b340a46" compoundref="GPSManager_8java" startline="95" endline="106">pt.lsts.asa.managers.GPSManager.start</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a2266b419ecc85137e8c4fd77b30b69f5" compoundref="MainActivity_8java" startline="91" endline="97">pt.lsts.asa.activities.MainActivity.test2</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a34cc1070a50e7a229ea0349111dce02b" compoundref="Announcer_8java" startline="142" endline="153">pt.lsts.asa.comms.Announcer.updateHeadingOnAnnounce</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" compoundref="Announcer_8java" startline="125" endline="140">pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1a2be22113af4d4bbfd6061c5292760c54" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1ASA" kindref="compound">ASA</ref></type>
+        <definition>static ASA pt.lsts.asa.ASA.getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="192" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="192" bodyend="195"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2d7c4c00a6fe360e39facc220d35d23" compoundref="ASA_8java" startline="48">pt.lsts.asa.ASA.instance</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1ab5ab0fc8f101a27c96444bd02b4c0672" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Context</type>
+        <definition>static Context pt.lsts.asa.ASA.getContext</definition>
+        <argsstring>()</argsstring>
+        <name>getContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="287" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="287" bodyend="289"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad16e2c7db27b0a63a471c62f1fdcc1df" compoundref="ASA_8java" startline="47">pt.lsts.asa.ASA.context</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1ManualActivity_1ab80e4ec2e04ff12b49eeff9f48702dcf" compoundref="ManualActivity_8java" startline="27" endline="35">pt.lsts.asa.activities.ManualActivity.onCreate</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1a0028d95c856d06666e0bb0231c7212af" compoundref="AndroidUtil_8java" startline="23" endline="29">pt.lsts.asa.util.AndroidUtil.showToastLong</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1ad8a7b99415566e4a42fffbceadef5e43" compoundref="AndroidUtil_8java" startline="15" endline="21">pt.lsts.asa.util.AndroidUtil.showToastShort</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ASA_1acfece516fe24da0385e93f531766671c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pt.lsts.asa.ASA.notifyMainSysChange</definition>
+        <argsstring>()</argsstring>
+        <name>notifyMainSysChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="255" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="255" bodyend="260"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aed516abf7cd5070569abea82c281f2d4" compoundref="ASA_8java" startline="202" endline="206">pt.lsts.asa.ASA.setActiveSys</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Global Singleton of <ref refid="classpt_1_1lsts_1_1asa_1_1ASA" kindref="compound">ASA</ref> and necessary components initiated in <ref refid="classpt_1_1lsts_1_1asa_1_1App" kindref="compound">App</ref> extension of Application. (Fork from ACCU) </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="64">
+        <label>pt.lsts.asa.handlers.AccuSmsHandler</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler"/>
+        <childnode refid="65" relation="usage">
+          <edgelabel>mContext</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>mManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>NumberFormat</label>
+      </node>
+      <node id="58">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.SystemListChangeListener &gt;</label>
+      </node>
+      <node id="57">
+        <label>pt.lsts.asa.sys.SystemList</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList"/>
+        <childnode refid="54" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>sysList</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+      </node>
+      <node id="53">
+        <label>pt.lsts.asa.listenners.SystemListChangeListener</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1SystemListChangeListener"/>
+      </node>
+      <node id="76">
+        <label>pt.lsts.asa.feedback.HeartbeatVibrator</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1HeartbeatVibrator"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>mVibrator</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>Marker</label>
+      </node>
+      <node id="92">
+        <label>pt.lsts.asa.listenners.LocationChangeListener</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener"/>
+      </node>
+      <node id="95">
+        <label>SensorEventListener</label>
+      </node>
+      <node id="52">
+        <label>pt.lsts.asa.feedback.Heart</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1Heart"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>vehicleList</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>sysList</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>Sensor</label>
+      </node>
+      <node id="72">
+        <label>pt.lsts.asa.pos.LblBeaconList</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList"/>
+        <childnode refid="73" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>list</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>pt.lsts.asa.comms.Announcer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer"/>
+        <childnode refid="92" relation="usage">
+          <edgelabel>locListener</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>at</edgelabel>
+        </childnode>
+        <childnode refid="93" relation="usage">
+          <edgelabel>sensor</edgelabel>
+        </childnode>
+        <childnode refid="84" relation="usage">
+          <edgelabel>sensorManager</edgelabel>
+        </childnode>
+        <childnode refid="85" relation="usage">
+          <edgelabel>gpsManager</edgelabel>
+        </childnode>
+        <childnode refid="94" relation="usage">
+          <edgelabel>announce</edgelabel>
+        </childnode>
+        <childnode refid="95" relation="usage">
+          <edgelabel>orientationListener</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1HeartbeatVibratorIMCSubscriber"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>heartbeatVibrator</edgelabel>
+        </childnode>
+      </node>
+      <node id="60">
+        <label>pt::lsts::neptus::messages::listener::MessageListener&lt; MessageInfo, IMCMessage &gt;</label>
+      </node>
+      <node id="68">
+        <label>LatLng</label>
+      </node>
+      <node id="51">
+        <label>pt.lsts.asa.ASA</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1ASA"/>
+        <childnode refid="52" relation="usage">
+          <edgelabel>heart</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>smsHandler</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>activeSys</edgelabel>
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>sharedPreferences</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>lblBeaconListIMCSubscriber</edgelabel>
+        </childnode>
+        <childnode refid="75" relation="usage">
+          <edgelabel>heartbeatVibratorIMCSubscriber</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>callOut</edgelabel>
+        </childnode>
+        <childnode refid="84" relation="usage">
+          <edgelabel>sensorManager</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>lblBeaconList</edgelabel>
+        </childnode>
+        <childnode refid="85" relation="usage">
+          <edgelabel>gpsManager</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>context</edgelabel>
+        </childnode>
+        <childnode refid="90" relation="usage">
+          <edgelabel>accuSmsHandlerIMCSubscriber</edgelabel>
+        </childnode>
+        <childnode refid="91" relation="usage">
+          <edgelabel>announcer</edgelabel>
+        </childnode>
+        <childnode refid="96" relation="usage">
+          <edgelabel>bus</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>sysList</edgelabel>
+        </childnode>
+        <childnode refid="97" relation="usage">
+          <edgelabel>mainSysChangeListeners</edgelabel>
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>hearbeatVibrator</edgelabel>
+        </childnode>
+        <childnode refid="98" relation="usage">
+          <edgelabel>systemListIMCSubscriber</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>imcManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="86">
+        <label>LocationListener</label>
+      </node>
+      <node id="78">
+        <label>pt.lsts.asa.feedback.CallOut</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1feedback_1_1CallOut"/>
+        <childnode refid="79" relation="usage">
+          <edgelabel>formatter</edgelabel>
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>altScheduler</edgelabel>
+          <edgelabel>timeoutScheduler</edgelabel>
+          <edgelabel>iasScheduler</edgelabel>
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>context</edgelabel>
+        </childnode>
+        <childnode refid="81" relation="usage">
+          <edgelabel>tts</edgelabel>
+        </childnode>
+        <childnode refid="82" relation="usage">
+          <edgelabel>callOutIMCSubscriber</edgelabel>
+        </childnode>
+        <childnode refid="83" relation="usage">
+          <edgelabel>iasHandle</edgelabel>
+          <edgelabel>altHandle</edgelabel>
+          <edgelabel>timeoutHandle</edgelabel>
+        </childnode>
+      </node>
+      <node id="87">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.LocationChangeListener &gt;</label>
+      </node>
+      <node id="74">
+        <label>ArrayList&lt; pt.lsts.asa.pos.Beacon &gt;</label>
+      </node>
+      <node id="82">
+        <label>pt.lsts.asa.subscribers.CallOutIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1CallOutIMCSubscriber"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>callOut</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>SharedPreferences</label>
+      </node>
+      <node id="62">
+        <label>LinkedHashMap&lt; Integer, List&lt; pt.lsts.asa.comms.IMCSubscriber &gt; &gt;</label>
+      </node>
+      <node id="73">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.BeaconListChangeListener &gt;</label>
+      </node>
+      <node id="63">
+        <label>ArrayList&lt; pt.lsts.asa.comms.IMCSubscriber &gt;</label>
+      </node>
+      <node id="71">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="70">
+        <label>pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>lblBeaconList</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>ArrayList&lt; pt.lsts.asa.sys.Sys &gt;</label>
+      </node>
+      <node id="83">
+        <label>ScheduledFuture</label>
+      </node>
+      <node id="65">
+        <label>Context</label>
+      </node>
+      <node id="54">
+        <label>pt.lsts.asa.util.AccuTimer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer"/>
+        <childnode refid="55" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="96">
+        <label>Bus</label>
+      </node>
+      <node id="94">
+        <label>IMCMessage</label>
+      </node>
+      <node id="80">
+        <label>ScheduledExecutorService</label>
+      </node>
+      <node id="90">
+        <label>pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1AccuSmsHandlerIMCSubscriber"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>accuSmsHandler</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>UDPTransport</label>
+      </node>
+      <node id="98">
+        <label>pt.lsts.asa.subscribers.SystemListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>systemList</edgelabel>
+        </childnode>
+      </node>
+      <node id="55">
+        <label>Handler</label>
+      </node>
+      <node id="77">
+        <label>Vibrator</label>
+      </node>
+      <node id="66">
+        <label>pt.lsts.asa.sys.Sys</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>maker</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>latLng</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>TextToSpeech</label>
+      </node>
+      <node id="88">
+        <label>LocationManager</label>
+      </node>
+      <node id="59">
+        <label>pt.lsts.asa.managers.IMCManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>announceListener</edgelabel>
+          <edgelabel>comm</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+        <childnode refid="62" relation="usage">
+          <edgelabel>subscribers</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>subscribersToAll</edgelabel>
+        </childnode>
+      </node>
+      <node id="85">
+        <label>pt.lsts.asa.managers.GPSManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager"/>
+        <childnode refid="86" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+        <childnode refid="87" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+        <childnode refid="88" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="89" relation="usage">
+          <edgelabel>currentLocation</edgelabel>
+        </childnode>
+      </node>
+      <node id="89">
+        <label>Location</label>
+      </node>
+      <node id="97">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.MainSysChangeListener &gt;</label>
+      </node>
+      <node id="84">
+        <label>SensorManager</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" line="41" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ASA.java" bodystart="41" bodyend="296"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad6e77863d43fd469324d4e5afb8e8a4e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>accuSmsHandlerIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa3882391994a66fbda943030282f5d20" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>activeSys</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab864488952ef8706ff5c487846d7ec7c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addInitialSubscribers</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ae92cbe9e9151ca092c7ee6a2802bba79" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addLblSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7af9bbb412bf2abea4dd19561db8c510" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addMainSysChangeListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1adbff2f21137ed321d401ef09921f8910" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addPreferencesListenner</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a2cf6734759676841fd40b2cb63656f30" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa603b315532b73078a2472e2cf40cce1" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>addSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a09a7fbc6fa8123eaea605bbece39554b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>announcer</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a60a8551e0d2c3897887ff8e560b937ab" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>ASA</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa9bbbbc42eb2b87d06a8a6cf3fcc7c96" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>broadcastAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a3b1468022b12779c73e5d8bb41e39f8e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>bus</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aedf7af794060d789656aa41a10649684" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>callOut</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad16e2c7db27b0a63a471c62f1fdcc1df" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>context</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getActiveSys</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ac3f1a6f82a4b3a2e34c07bf9d6b65361" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getBus</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aac9108033c17cc70acbb95098d3b9867" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getCallOut</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab5ab0fc8f101a27c96444bd02b4c0672" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getContext</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a326c786de016395dceae22f2b3284110" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getGpsManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7516e93a72663ebf84fff6887fd6899d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getIMCManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getInstance</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a2be22113af4d4bbfd6061c5292760c54" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getInstance</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1afdf0ace1a02f2bd19ff56fff521df6a0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getLblBeaconList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1acf6f750e88c4c0c8b6fa792196f84867" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getNextRequestId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getPrefs</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a58971b878ca91d7c571a5a512478fe6b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getSensorManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab1bc552721c509ad22aef422833dd052" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>getSystemList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a3231592629454d15eb368a68b7c59ddd" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>gpsManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a96229d228ceec5d091b7376cf8b1af53" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>hearbeatVibrator</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a3c881b1e93731bb07899672e80d503f3" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>heart</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a04225cde8a01f7dc651d6af1bd154545" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>heartbeatVibratorIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a767130ab277b7f44d350625b5f1bcda3" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>imcManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ac5a02ce0548dd6009e29397bd66538bf" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initAnnouncer</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad8cd0a63644f0e3b120d2db762abfa4f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initBroadcast</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a5586a5ebd4f2ee02a41072544440f53d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initGPSManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a98f14397296a725e2f289e8b2a1f473b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initIMCManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a6a93b8538e58d17a5e1d88b55787c5a4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initPreferences</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1afdf4f36c77660164aa94bb7eb2ed0658" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initSubscribers</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1af952ed04d184b779b0ed380ba63b00b1" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>initSystemsList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2d7c4c00a6fe360e39facc220d35d23" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>instance</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aaef92561b2ee1d4a1e5b60c32b1f22ea" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>isStarted</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ae16acaf6a366616f9d7b7487666f030e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>lblBeaconList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2b1a5f76f5a080ba4e4f3d4f2e83a3c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>lblBeaconListIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a274dab64eaac88c9e34e782e4ccf0bc2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>load</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1afb8ea93835a90aa2b9ad4fa39321f784" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>mainSysChangeListeners</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1acfece516fe24da0385e93f531766671c" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>notifyMainSysChange</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4500e769d8f489e76393028b64f38bcd" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>pause</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab84be20f79f7bd52a961b7ffac367aaa" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>removeMainSysChangeListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a377d6b4e9ec10904dd211d16eb724cc8" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>requestId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4eb3c4a73c2c1631c94574384f6323e2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>sensorManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aed516abf7cd5070569abea82c281f2d4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>setActiveSys</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aeb6419187654c91d4202bb0aa3b35d20" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>setCallOut</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7ba8cb6b6565d074dce7b016da83d1ba" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>sharedPreferences</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2a2cd288c2a2634632735baa0bf5a6b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>smsHandler</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2edf96c7f2884a66e3cf9c7109c9607" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>start</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a6ed3c06b1580866836c2d0d39ae8c643" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>started</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7d9323dbee5f882abe734625c536158b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>sysList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1a62b74f0d8e70e3c48956556b4a059c7a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>systemListIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1acbc3f54345385bf9a149020e88ff8f9d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ASA_1af45cdf877804002113beca9a8c497e4e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ASA</scope><name>UIThread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

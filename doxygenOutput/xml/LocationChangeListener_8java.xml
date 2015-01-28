@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="LocationChangeListener_8java" kind="file" language="Java">
+    <compoundname>LocationChangeListener.java</compoundname>
+    <innerclass refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" prot="public">pt::lsts::asa::listenners::LocationChangeListener</innerclass>
+    <innernamespace refid="namespacept_1_1lsts_1_1asa_1_1listenners">pt::lsts::asa::listenners</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">pt.lsts.asa.listenners;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.location.Location;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener_1a0965572dd5a869cef6ba8a358ef583ea" kindref="member">onLocationChange</ref>(Location<sp/>location);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/LocationChangeListener.java"/>
+  </compounddef>
+</doxygen>

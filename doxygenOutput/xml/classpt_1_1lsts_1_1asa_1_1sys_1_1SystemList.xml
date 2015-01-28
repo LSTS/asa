@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::sys::SystemList</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7608c9771fb92071d80375d26d7f6f31" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.sys.SystemList.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;SystemList&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a17a9d3d83e510f92c5bc8224ec6220d7" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int pt.lsts.asa.sys.SystemList.CONNECTED_TIME_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>CONNECTED_TIME_LIMIT</name>
+        <initializer>= 5000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="14" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a3c735cbd1b8ddd85b788ba8a90596d87" prot="public" static="yes" mutable="no">
+        <type>final boolean</type>
+        <definition>final boolean pt.lsts.asa.sys.SystemList.DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a45555aed8db6291722643f51e2101d82" prot="package" static="no" mutable="no">
+        <type>ArrayList&lt; <ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref> &gt;</type>
+        <definition>ArrayList&lt;Sys&gt; pt.lsts.asa.sys.SystemList.sysList</definition>
+        <argsstring></argsstring>
+        <name>sysList</name>
+        <initializer>= new ArrayList&lt;<ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="17" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a117312204da00d7fc81d01a4aa4836ed" prot="package" static="no" mutable="no">
+        <type>ArrayList&lt; <ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1SystemListChangeListener" kindref="compound">SystemListChangeListener</ref> &gt;</type>
+        <definition>ArrayList&lt;SystemListChangeListener&gt; pt.lsts.asa.sys.SystemList.listeners</definition>
+        <argsstring></argsstring>
+        <name>listeners</name>
+        <initializer>= new ArrayList&lt;<ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1SystemListChangeListener" kindref="compound">SystemListChangeListener</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a9a66e3a7db1a1e96b1100300abfcb16d" prot="package" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer" kindref="compound">AccuTimer</ref></type>
+        <definition>AccuTimer pt.lsts.asa.sys.SystemList.timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1ac8bbe9765c59e7d638970c5c3d0b3645" prot="package" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable pt.lsts.asa.sys.SystemList.task</definition>
+        <argsstring></argsstring>
+        <name>task</name>
+        <initializer>= new Runnable() {
+		public void run() {
+			<ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c94d3cf2b85da3e1e76466deda74871" kindref="member">checkConnection</ref>();
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a560a4426e7a9bf372868034239390672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.sys.SystemList.SystemList</definition>
+        <argsstring>(IMCManager imm)</argsstring>
+        <name>SystemList</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+          <declname>imm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1afe59f36f8485e1b59e3f2a9577b90633" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.SystemList.addSystemListChangeListener</definition>
+        <argsstring>(SystemListChangeListener l)</argsstring>
+        <name>addSystemListChangeListener</name>
+        <param>
+          <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1SystemListChangeListener" kindref="compound">SystemListChangeListener</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="55" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1adca42b514f9c5aa0fa22151b766490ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.SystemList.changeList</definition>
+        <argsstring>(ArrayList&lt; Sys &gt; list)</argsstring>
+        <name>changeList</name>
+        <param>
+          <type>ArrayList&lt; <ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref> &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="59" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="59" bodyend="63"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c94d3cf2b85da3e1e76466deda74871" compoundref="SystemList_8java" startline="33" endline="53">pt.lsts.asa.sys.SystemList.checkConnection</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a32b7b6137f5551b47af60af7c4dab238" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.SystemList.containsSysName</definition>
+        <argsstring>(String name)</argsstring>
+        <name>containsSysName</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="65" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="65" bodyend="71"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1aa9d076d2cca90e547d004d078e618d59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.sys.SystemList.containsSysId</definition>
+        <argsstring>(int id)</argsstring>
+        <name>containsSysId</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="73" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+        <definition>Sys pt.lsts.asa.sys.SystemList.findSysByName</definition>
+        <argsstring>(String name)</argsstring>
+        <name>findSysByName</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="81" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="81" bodyend="87"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a831997ba7282ac1062bc34e46adbd30f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+        <definition>Sys pt.lsts.asa.sys.SystemList.findSysById</definition>
+        <argsstring>(int id)</argsstring>
+        <name>findSysById</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="89" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="89" bodyend="95"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a5d442f08c33d72123d1673650fd2975e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ArrayList&lt; <ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref> &gt;</type>
+        <definition>ArrayList&lt;Sys&gt; pt.lsts.asa.sys.SystemList.getList</definition>
+        <argsstring>()</argsstring>
+        <name>getList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="97" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="97" bodyend="99"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1acc52da4726bd2b6b34c3e9e2c847169b" compoundref="MainActivity_8java" startline="108" endline="118">pt.lsts.asa.activities.MainActivity.chooseActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a579532fd19607eadf12affb884616362" compoundref="SystemListFragment_8java" startline="242" endline="302">pt.lsts.asa.fragments.SystemListFragment.colorItems</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" compoundref="SystemListIMCSubscriber_8java" startline="30" endline="149">pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a51d0cf4d583420807f2497418342648a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ArrayList&lt; String &gt;</type>
+        <definition>ArrayList&lt;String&gt; pt.lsts.asa.sys.SystemList.getNameList</definition>
+        <argsstring>()</argsstring>
+        <name>getNameList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="101" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="101" bodyend="107"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aaaae202bd677ce17ebc5efc1b6fba846" compoundref="SystemListFragment_8java" startline="145" endline="172">pt.lsts.asa.fragments.SystemListFragment.addSysStatus</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1acc52da4726bd2b6b34c3e9e2c847169b" compoundref="MainActivity_8java" startline="108" endline="118">pt.lsts.asa.activities.MainActivity.chooseActiveSystem</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a9af6ea7aa5cca50cbb45a72bbe5cfa6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ArrayList&lt; String &gt;</type>
+        <definition>ArrayList&lt;String&gt; pt.lsts.asa.sys.SystemList.getNameListByType</definition>
+        <argsstring>(String type)</argsstring>
+        <name>getNameListByType</name>
+        <param>
+          <type>String</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="109" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="109" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a2ee385876fe6cff395fd43f1c4a8079c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.SystemList.start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="118" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="118" bodyend="120"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2edf96c7f2884a66e3cf9c7109c9607" compoundref="ASA_8java" startline="157" endline="168">pt.lsts.asa.ASA.start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c8dada0cf44535221a13781e207cf45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.SystemList.stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="122" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="122" bodyend="124"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4500e769d8f489e76393028b64f38bcd" compoundref="ASA_8java" startline="170" endline="182">pt.lsts.asa.ASA.pause</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c94d3cf2b85da3e1e76466deda74871" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.sys.SystemList.checkConnection</definition>
+        <argsstring>()</argsstring>
+        <name>checkConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="33" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="33" bodyend="53"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1adca42b514f9c5aa0fa22151b766490ea" compoundref="SystemList_8java" startline="59" endline="63">pt.lsts.asa.sys.SystemList.changeList</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="399">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.SystemListChangeListener &gt;</label>
+      </node>
+      <node id="395">
+        <label>pt.lsts.asa.sys.SystemList</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList"/>
+        <childnode refid="396" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="398" relation="usage">
+          <edgelabel>sysList</edgelabel>
+        </childnode>
+        <childnode refid="399" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+      </node>
+      <node id="398">
+        <label>ArrayList&lt; pt.lsts.asa.sys.Sys &gt;</label>
+      </node>
+      <node id="396">
+        <label>pt.lsts.asa.util.AccuTimer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer"/>
+        <childnode refid="397" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="397">
+        <label>Handler</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/sys/SystemList.java" bodystart="11" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1afe59f36f8485e1b59e3f2a9577b90633" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>addSystemListChangeListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1adca42b514f9c5aa0fa22151b766490ea" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>changeList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c94d3cf2b85da3e1e76466deda74871" prot="private" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>checkConnection</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a17a9d3d83e510f92c5bc8224ec6220d7" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>CONNECTED_TIME_LIMIT</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1aa9d076d2cca90e547d004d078e618d59" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>containsSysId</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a32b7b6137f5551b47af60af7c4dab238" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>containsSysName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a3c735cbd1b8ddd85b788ba8a90596d87" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>DEBUG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a831997ba7282ac1062bc34e46adbd30f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>findSysById</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>findSysByName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a5d442f08c33d72123d1673650fd2975e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>getList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a51d0cf4d583420807f2497418342648a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>getNameList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a9af6ea7aa5cca50cbb45a72bbe5cfa6d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>getNameListByType</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a117312204da00d7fc81d01a4aa4836ed" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>listeners</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a2ee385876fe6cff395fd43f1c4a8079c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>start</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7c8dada0cf44535221a13781e207cf45" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>stop</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a45555aed8db6291722643f51e2101d82" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>sysList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a560a4426e7a9bf372868034239390672" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>SystemList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a7608c9771fb92071d80375d26d7f6f31" prot="public" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1ac8bbe9765c59e7d638970c5c3d0b3645" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>task</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a9a66e3a7db1a1e96b1100300abfcb16d" prot="package" virt="non-virtual"><scope>pt::lsts::asa::sys::SystemList</scope><name>timer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

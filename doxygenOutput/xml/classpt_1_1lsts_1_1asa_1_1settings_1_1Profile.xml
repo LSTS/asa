@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::settings::Profile</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a6e84bd737cf1fd83b07f0f306b70b710" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.settings.Profile.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;Profile&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="14" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a5ca440f54ce3ac78f7ea00ecd6cd16fe" prot="public" static="yes" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.settings.Profile.defaultSettingsName</definition>
+        <argsstring></argsstring>
+        <name>defaultSettingsName</name>
+        <initializer>= &quot;default_settings&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a2167ba64067e5386f3cd1242c2132538" prot="public" static="yes" mutable="no">
+        <type>File</type>
+        <definition>File pt.lsts.asa.settings.Profile.defaultSettingsFile</definition>
+        <argsstring></argsstring>
+        <name>defaultSettingsFile</name>
+        <initializer>= new File(<ref refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a87bb111eb431d2790126cbc9223f06a6" kindref="member">FileOperations.mainDir</ref>,
+			<ref refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a5ca440f54ce3ac78f7ea00ecd6cd16fe" kindref="member">defaultSettingsName</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a7d8087f7e815d9f9fc6e839e8d08d82c" prot="public" static="yes" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.settings.Profile.firstLineInCsvFile</definition>
+        <argsstring></argsstring>
+        <name>firstLineInCsvFile</name>
+        <initializer>= &quot;type,category,key,description,value(s)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a436c9b9aa032eb20632476c9369d09fb" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.settings.Profile.extension</definition>
+        <argsstring></argsstring>
+        <name>extension</name>
+        <initializer>= &quot;csv&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1add507f3a61d6118e5c3d69cd25988258" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String pt.lsts.asa.settings.Profile.restoreDefaults</definition>
+        <argsstring>()</argsstring>
+        <name>restoreDefaults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="21" bodyend="23"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a4fb4dbd8ec09de17231b3b12b2e55354" compoundref="Profile_8java" startline="25" endline="37">pt.lsts.asa.settings.Profile.load</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1App_1ac43f2d10efb22342f021d38fd4be041b" compoundref="App_8java" startline="44" endline="51">pt.lsts.asa.App.initSettings</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a5db302d8f472b17dd61cbd5b0928812f" compoundref="SettingsFactory_8java" startline="289" endline="309">pt.lsts.asa.settings.SettingsFactory.restoreDefaults</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a4fb4dbd8ec09de17231b3b12b2e55354" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String pt.lsts.asa.settings.Profile.load</definition>
+        <argsstring>(String name)</argsstring>
+        <name>load</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="25" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="25" bodyend="37"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a1fe71f4bc3ce78d542ceb322589d2592" compoundref="Settings_8java" startline="87" endline="89">pt.lsts.asa.settings.Settings.clear</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a9cac4e092ff968e1f9d55528cd8ea17b" compoundref="Profile_8java" startline="39" endline="73">pt.lsts.asa.settings.Profile.loadSetting</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a87bb111eb431d2790126cbc9223f06a6" compoundref="FileOperations_8java" startline="20">pt.lsts.asa.util.FileOperations.mainDir</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1aa354fab4ccc07e50fa04bc6f1984cd42" compoundref="FileOperations_8java" startline="55" endline="62">pt.lsts.asa.util.FileOperations.readLines</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a617dc330ef928d5835368be14931f795" compoundref="SettingsFactory_8java" startline="311" endline="322">pt.lsts.asa.settings.SettingsFactory.load</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1add507f3a61d6118e5c3d69cd25988258" compoundref="Profile_8java" startline="21" endline="23">pt.lsts.asa.settings.Profile.restoreDefaults</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a9cac4e092ff968e1f9d55528cd8ea17b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pt.lsts.asa.settings.Profile.loadSetting</definition>
+        <argsstring>(String setting)</argsstring>
+        <name>loadSetting</name>
+        <param>
+          <type>String</type>
+          <declname>setting</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="39" bodyend="73"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a7a44778db45e954269a8622dde633ab5" compoundref="Settings_8java" startline="32" endline="37">pt.lsts.asa.settings.Settings.putFullString</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1StringUtils_1a4886e8d0f1a6e6d08171b090d3862dcd" compoundref="StringUtils_8java" startline="134" endline="158">pt.lsts.asa.util.StringUtils.validateSetting</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a4fb4dbd8ec09de17231b3b12b2e55354" compoundref="Profile_8java" startline="25" endline="37">pt.lsts.asa.settings.Profile.load</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a754a6bb95163f47447bc4df516fd09ce" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String pt.lsts.asa.settings.Profile.save</definition>
+        <argsstring>(String name)</argsstring>
+        <name>save</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="75" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="75" bodyend="94"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Settings_1a2d9948395451794fe20a0bc2748452a2" compoundref="Settings_8java" startline="91" endline="93">pt.lsts.asa.settings.Settings.getAll</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a56f20a01c88e7ea22a750483046ec1af" compoundref="FileOperations_8java" startline="23" endline="25">pt.lsts.asa.util.FileOperations.initDir</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a87bb111eb431d2790126cbc9223f06a6" compoundref="FileOperations_8java" startline="20">pt.lsts.asa.util.FileOperations.mainDir</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1aafda98f402e49f29ccf9737207d35202" compoundref="FileOperations_8java" startline="91" endline="94">pt.lsts.asa.util.FileOperations.writeLines</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a1cc73da18f95cfec5d5f2f1e4c0a3707" compoundref="SettingsFactory_8java" startline="324" endline="345">pt.lsts.asa.settings.SettingsFactory.save</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a2ff4fde8864722fe463d3c5a653518dd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String[]</type>
+        <definition>static String [] pt.lsts.asa.settings.Profile.getProfilesAvailable</definition>
+        <argsstring>()</argsstring>
+        <name>getProfilesAvailable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="96" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="96" bodyend="102"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a5e1d4172b7efdf76c444175e7eff7600" compoundref="FileOperations_8java" startline="114" endline="125">pt.lsts.asa.util.FileOperations.filterFilesByExtension</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a87bb111eb431d2790126cbc9223f06a6" compoundref="FileOperations_8java" startline="20">pt.lsts.asa.util.FileOperations.mainDir</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_1a53092cfc07efd7fdc44eb9441a32bcd9" compoundref="FileOperations_8java" startline="127" endline="135">pt.lsts.asa.util.FileOperations.removeExtension</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a617dc330ef928d5835368be14931f795" compoundref="SettingsFactory_8java" startline="311" endline="322">pt.lsts.asa.settings.SettingsFactory.load</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="357">
+        <label>File</label>
+      </node>
+      <node id="356">
+        <label>pt.lsts.asa.settings.Profile</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile"/>
+        <childnode refid="357" relation="usage">
+          <edgelabel>defaultSettingsFile</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/settings/Profile.java" bodystart="12" bodyend="104"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a2167ba64067e5386f3cd1242c2132538" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>defaultSettingsFile</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a5ca440f54ce3ac78f7ea00ecd6cd16fe" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>defaultSettingsName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a436c9b9aa032eb20632476c9369d09fb" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>extension</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a7d8087f7e815d9f9fc6e839e8d08d82c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>firstLineInCsvFile</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a2ff4fde8864722fe463d3c5a653518dd" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>getProfilesAvailable</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a4fb4dbd8ec09de17231b3b12b2e55354" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>load</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a9cac4e092ff968e1f9d55528cd8ea17b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>loadSetting</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1add507f3a61d6118e5c3d69cd25988258" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>restoreDefaults</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a754a6bb95163f47447bc4df516fd09ce" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>save</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1settings_1_1Profile_1a6e84bd737cf1fd83b07f0f306b70b710" prot="public" virt="non-virtual"><scope>pt::lsts::asa::settings::Profile</scope><name>TAG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

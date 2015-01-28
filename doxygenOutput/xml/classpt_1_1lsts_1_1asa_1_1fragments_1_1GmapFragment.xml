@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::fragments::GmapFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">OnMapReadyCallback</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a82229b8ab24e3f6c61eb2a0da23d51a9" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.fragments.GmapFragment.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;GmapFragment&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="34" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a53da1ea1f7df545a178174db9401a07e" prot="private" static="no" mutable="no">
+        <type>FragmentActivity</type>
+        <definition>FragmentActivity pt.lsts.asa.fragments.GmapFragment.fragmentActivity</definition>
+        <argsstring></argsstring>
+        <name>fragmentActivity</name>
+        <initializer>=null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a2af202f161cb77fc72414977acb5d735" compoundref="GmapFragment_8java" startline="57" endline="59">pt.lsts.asa.fragments.GmapFragment.getFragmentActivity</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a81a61a16dad14fed83f228aac38c2076" compoundref="GmapFragment_8java" startline="51" endline="55">pt.lsts.asa.fragments.GmapFragment.GmapFragment</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4fda85fb2f7c977b51c476e6ddd2951f" prot="private" static="no" mutable="no">
+        <type>GoogleMap</type>
+        <definition>GoogleMap pt.lsts.asa.fragments.GmapFragment.googleMap</definition>
+        <argsstring></argsstring>
+        <name>googleMap</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="37" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae5e9ff1cb5c87d0770483c4800310321" compoundref="GmapFragment_8java" startline="61" endline="63">pt.lsts.asa.fragments.GmapFragment.getGoogleMap</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ad69a1fb296f59670076853cbfc6703cf" prot="private" static="no" mutable="no">
+        <type>MapFragment</type>
+        <definition>MapFragment pt.lsts.asa.fragments.GmapFragment.mapFragment</definition>
+        <argsstring></argsstring>
+        <name>mapFragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="38" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a5517306dfa5a0e06c006abb9b5dd908d" prot="private" static="no" mutable="no">
+        <type>LatLng</type>
+        <definition>LatLng pt.lsts.asa.fragments.GmapFragment.myLatLng</definition>
+        <argsstring></argsstring>
+        <name>myLatLng</name>
+        <initializer>= new LatLng(0,0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="40" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a919dc6ee6d4886304413fb5788c1be0d" compoundref="GmapFragment_8java" startline="65" endline="67">pt.lsts.asa.fragments.GmapFragment.getLastKnowLatLng</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1acebab14aaa9af771ab13b151d8576ef9" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener" kindref="compound">MyLocationListener</ref></type>
+        <definition>MyLocationListener pt.lsts.asa.fragments.GmapFragment.myLocationListener</definition>
+        <argsstring></argsstring>
+        <name>myLocationListener</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="41" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a91796464e380fcd7dacfe95fa2d19883" prot="private" static="no" mutable="no">
+        <type>Boolean</type>
+        <definition>Boolean pt.lsts.asa.fragments.GmapFragment.initZoom</definition>
+        <argsstring></argsstring>
+        <name>initZoom</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="42" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a072003d0c8ba99401be861ddfd19f31a" prot="private" static="no" mutable="no">
+        <type>ArrayList&lt; Marker &gt;</type>
+        <definition>ArrayList&lt;Marker&gt; pt.lsts.asa.fragments.GmapFragment.markersArrayList</definition>
+        <argsstring></argsstring>
+        <name>markersArrayList</name>
+        <initializer>= new ArrayList&lt;Marker&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="44" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1abba08e56a03203f0e2a706bea0fdaa7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.GmapFragment.GmapFragment</definition>
+        <argsstring>()</argsstring>
+        <name>GmapFragment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="47" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a81a61a16dad14fed83f228aac38c2076" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.GmapFragment.GmapFragment</definition>
+        <argsstring>(FragmentActivity fragmentActivity)</argsstring>
+        <name>GmapFragment</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="51" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="51" bodyend="55"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a53da1ea1f7df545a178174db9401a07e" compoundref="GmapFragment_8java" startline="35">pt.lsts.asa.fragments.GmapFragment.fragmentActivity</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" compoundref="MyLocationListener_8java" startline="29" endline="47">pt.lsts.asa.listenners.MyLocationListener.initLocationListener</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a2af202f161cb77fc72414977acb5d735" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>FragmentActivity</type>
+        <definition>FragmentActivity pt.lsts.asa.fragments.GmapFragment.getFragmentActivity</definition>
+        <argsstring>()</argsstring>
+        <name>getFragmentActivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="57" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="57" bodyend="59"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a53da1ea1f7df545a178174db9401a07e" compoundref="GmapFragment_8java" startline="35">pt.lsts.asa.fragments.GmapFragment.fragmentActivity</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" compoundref="MyLocationListener_8java" startline="22" endline="27">pt.lsts.asa.listenners.MyLocationListener.MyLocationListener</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae5e9ff1cb5c87d0770483c4800310321" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GoogleMap</type>
+        <definition>GoogleMap pt.lsts.asa.fragments.GmapFragment.getGoogleMap</definition>
+        <argsstring>()</argsstring>
+        <name>getGoogleMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="61" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="61" bodyend="63"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4fda85fb2f7c977b51c476e6ddd2951f" compoundref="GmapFragment_8java" startline="37">pt.lsts.asa.fragments.GmapFragment.googleMap</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" compoundref="GmapIMCSubscriber_8java" startline="30" endline="67">pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a919dc6ee6d4886304413fb5788c1be0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LatLng</type>
+        <definition>LatLng pt.lsts.asa.fragments.GmapFragment.getLastKnowLatLng</definition>
+        <argsstring>()</argsstring>
+        <name>getLastKnowLatLng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="65" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="65" bodyend="67"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a5517306dfa5a0e06c006abb9b5dd908d" compoundref="GmapFragment_8java" startline="40">pt.lsts.asa.fragments.GmapFragment.myLatLng</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a0cd69e702a6ce6f79c1dc37dd75309a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="70" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1afdb66417bfc2a66fa6df23717a2b0cc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View pt.lsts.asa.fragments.GmapFragment.onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="75" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="75" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae8811088ca02fc335348969669f77f4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.onAttach</definition>
+        <argsstring>(Activity activity)</argsstring>
+        <name>onAttach</name>
+        <param>
+          <type>Activity</type>
+          <declname>activity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="85" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="85" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a637e2efdd88fbb7afcddd531dc5a22e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.onDetach</definition>
+        <argsstring>()</argsstring>
+        <name>onDetach</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="90" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="90" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aba78114684c514b15c0da8dfcd621f79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.initIMCSubscriber</definition>
+        <argsstring>()</argsstring>
+        <name>initIMCSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="94" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="94" bodyend="97"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a2cf6734759676841fd40b2cb63656f30" compoundref="ASA_8java" startline="87" endline="89">pt.lsts.asa.ASA.addSubscriber</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a7690e9427773cb0174132b325b0007bd" compoundref="GmapFragment_8java" startline="100" endline="105">pt.lsts.asa.fragments.GmapFragment.onMapReady</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a7690e9427773cb0174132b325b0007bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.onMapReady</definition>
+        <argsstring>(GoogleMap map)</argsstring>
+        <name>onMapReady</name>
+        <param>
+          <type>GoogleMap</type>
+          <declname>map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="100" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="100" bodyend="105"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aba78114684c514b15c0da8dfcd621f79" compoundref="GmapFragment_8java" startline="94" endline="97">pt.lsts.asa.fragments.GmapFragment.initIMCSubscriber</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Marker</type>
+        <definition>Marker pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</definition>
+        <argsstring>(final Sys sys)</argsstring>
+        <name>addMarkerToPos</name>
+        <param>
+          <type>final <ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+          <declname>sys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="107" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="107" bodyend="126"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" compoundref="Sys_8java" startline="115" endline="117">pt.lsts.asa.sys.Sys.getLatLng</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" compoundref="Sys_8java" startline="131" endline="133">pt.lsts.asa.sys.Sys.getMaker</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a88dfe7d5dced05d6b76631176d4620a2" compoundref="Sys_8java" startline="135" endline="137">pt.lsts.asa.sys.Sys.setMaker</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1af45cdf877804002113beca9a8c497e4e" compoundref="ASA_8java" startline="45">pt.lsts.asa.ASA.UIThread</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a037e4fafbb7e73f97452251217cdc0d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Marker</type>
+        <definition>Marker pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</definition>
+        <argsstring>(final Sys sys, final int iconRid)</argsstring>
+        <name>addMarkerToPos</name>
+        <param>
+          <type>final <ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+          <declname>sys</declname>
+        </param>
+        <param>
+          <type>final int</type>
+          <declname>iconRid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="128" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="128" bodyend="148"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" compoundref="Sys_8java" startline="115" endline="117">pt.lsts.asa.sys.Sys.getLatLng</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" compoundref="Sys_8java" startline="131" endline="133">pt.lsts.asa.sys.Sys.getMaker</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a88dfe7d5dced05d6b76631176d4620a2" compoundref="Sys_8java" startline="135" endline="137">pt.lsts.asa.sys.Sys.setMaker</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1af45cdf877804002113beca9a8c497e4e" compoundref="ASA_8java" startline="45">pt.lsts.asa.ASA.UIThread</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a266cbf3ee5f8ab35236e498d6e47226b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.updateMyLocation</definition>
+        <argsstring>(Location location)</argsstring>
+        <name>updateMyLocation</name>
+        <param>
+          <type>Location</type>
+          <declname>location</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="150" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="150" bodyend="163"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" compoundref="MyLocationListener_8java" startline="29" endline="47">pt.lsts.asa.listenners.MyLocationListener.initLocationListener</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</definition>
+        <argsstring>(final LatLng vehicleLatLng)</argsstring>
+        <name>setActiveSysLatLng</name>
+        <param>
+          <type>final LatLng</type>
+          <declname>vehicleLatLng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="165" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="165" bodyend="169"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a902a68da2d855284165727dbc2c2ac64" compoundref="Sys_8java" startline="119" endline="121">pt.lsts.asa.sys.Sys.setLatLng</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" compoundref="GmapIMCSubscriber_8java" startline="30" endline="67">pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.setActiveSysPsi</definition>
+        <argsstring>(final float psi)</argsstring>
+        <name>setActiveSysPsi</name>
+        <param>
+          <type>final float</type>
+          <declname>psi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="171" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="171" bodyend="174"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a5a1e69839b4c6e0272657f8e2f8c0134" compoundref="Sys_8java" startline="127" endline="129">pt.lsts.asa.sys.Sys.setPsi</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" compoundref="GmapIMCSubscriber_8java" startline="30" endline="67">pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</definition>
+        <argsstring>()</argsstring>
+        <name>updateActiveSysMarker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="176" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="176" bodyend="195"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" compoundref="GmapFragment_8java" startline="107" endline="126">pt.lsts.asa.fragments.GmapFragment.addMarkerToPos</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a558e9e6676018c9996cf7492d4cfb097" compoundref="ASA_8java" startline="197" endline="200">pt.lsts.asa.ASA.getActiveSys</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1aa26833f550f2a0762b2b1b7541a8df2a" compoundref="Sys_8java" startline="115" endline="117">pt.lsts.asa.sys.Sys.getLatLng</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a36a33b3c486f62c21bfbc0e886910ae2" compoundref="Sys_8java" startline="131" endline="133">pt.lsts.asa.sys.Sys.getMaker</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a89a2ade426daa74e2e5d7e3b6037a00d" compoundref="Sys_8java" startline="123" endline="125">pt.lsts.asa.sys.Sys.getPsi</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil_1a4f5a10eea46f6da8468e9870dc41bdde" compoundref="GmapsUtil_8java" startline="15" endline="18">pt.lsts.asa.util.GmapsUtil.getRotation</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4fda85fb2f7c977b51c476e6ddd2951f" compoundref="GmapFragment_8java" startline="37">pt.lsts.asa.fragments.GmapFragment.googleMap</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" compoundref="GmapIMCSubscriber_8java" startline="30" endline="67">pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4e3659d51dbab32e35d8f10b13e253e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.GmapFragment.removeMarker</definition>
+        <argsstring>(String title)</argsstring>
+        <name>removeMarker</name>
+        <param>
+          <type>String</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="197" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="197" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="159">
+        <label>OnMapReadyCallback</label>
+      </node>
+      <node id="158">
+        <label>Fragment</label>
+      </node>
+      <node id="157">
+        <label>pt.lsts.asa.fragments.GmapFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="164">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="168">
+        <label>MapFragment</label>
+      </node>
+      <node id="162">
+        <label>OnMapReadyCallback</label>
+      </node>
+      <node id="163">
+        <label>GoogleMap</label>
+      </node>
+      <node id="165">
+        <label>LatLng</label>
+      </node>
+      <node id="169">
+        <label>ArrayList&lt; Marker &gt;</label>
+      </node>
+      <node id="166">
+        <label>pt.lsts.asa.listenners.MyLocationListener</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener"/>
+        <childnode refid="160" relation="usage">
+          <edgelabel>gmapFragment</edgelabel>
+        </childnode>
+        <childnode refid="167" relation="usage">
+          <edgelabel>locationManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="161">
+        <label>Fragment</label>
+      </node>
+      <node id="167">
+        <label>LocationManager</label>
+      </node>
+      <node id="160">
+        <label>pt.lsts.asa.fragments.GmapFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment"/>
+        <childnode refid="161" relation="public-inheritance">
+        </childnode>
+        <childnode refid="162" relation="public-inheritance">
+        </childnode>
+        <childnode refid="163" relation="usage">
+          <edgelabel>googleMap</edgelabel>
+        </childnode>
+        <childnode refid="164" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="165" relation="usage">
+          <edgelabel>myLatLng</edgelabel>
+        </childnode>
+        <childnode refid="166" relation="usage">
+          <edgelabel>myLocationListener</edgelabel>
+        </childnode>
+        <childnode refid="168" relation="usage">
+          <edgelabel>mapFragment</edgelabel>
+        </childnode>
+        <childnode refid="169" relation="usage">
+          <edgelabel>markersArrayList</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="32" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" bodystart="32" bodyend="207"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ab805a4d1de16fd77b8219e356736cc7b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>addMarkerToPos</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a037e4fafbb7e73f97452251217cdc0d6" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>addMarkerToPos</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a53da1ea1f7df545a178174db9401a07e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>fragmentActivity</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a2af202f161cb77fc72414977acb5d735" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>getFragmentActivity</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae5e9ff1cb5c87d0770483c4800310321" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>getGoogleMap</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a919dc6ee6d4886304413fb5788c1be0d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>getLastKnowLatLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1abba08e56a03203f0e2a706bea0fdaa7e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>GmapFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a81a61a16dad14fed83f228aac38c2076" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>GmapFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4fda85fb2f7c977b51c476e6ddd2951f" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>googleMap</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aba78114684c514b15c0da8dfcd621f79" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>initIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a91796464e380fcd7dacfe95fa2d19883" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>initZoom</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ad69a1fb296f59670076853cbfc6703cf" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>mapFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a072003d0c8ba99401be861ddfd19f31a" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>markersArrayList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a5517306dfa5a0e06c006abb9b5dd908d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>myLatLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1acebab14aaa9af771ab13b151d8576ef9" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>myLocationListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae8811088ca02fc335348969669f77f4d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>onAttach</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a0cd69e702a6ce6f79c1dc37dd75309a2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>onCreate</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1afdb66417bfc2a66fa6df23717a2b0cc4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>onCreateView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a637e2efdd88fbb7afcddd531dc5a22e9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>onDetach</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a7690e9427773cb0174132b325b0007bd" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>onMapReady</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a4e3659d51dbab32e35d8f10b13e253e2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>removeMarker</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>setActiveSysLatLng</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>setActiveSysPsi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a82229b8ab24e3f6c61eb2a0da23d51a9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>updateActiveSysMarker</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a266cbf3ee5f8ab35236e498d6e47226b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::GmapFragment</scope><name>updateMyLocation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

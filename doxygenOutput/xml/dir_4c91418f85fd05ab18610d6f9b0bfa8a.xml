@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_4c91418f85fd05ab18610d6f9b0bfa8a" kind="dir">
+    <compoundname>src/pt/lsts/asa/subscribers</compoundname>
+    <innerfile refid="AccuSmsHandlerIMCSubscriber_8java">AccuSmsHandlerIMCSubscriber.java</innerfile>
+    <innerfile refid="CallOutIMCSubscriber_8java">CallOutIMCSubscriber.java</innerfile>
+    <innerfile refid="GmapIMCSubscriber_8java">GmapIMCSubscriber.java</innerfile>
+    <innerfile refid="HeartbeatVibratorIMCSubscriber_8java">HeartbeatVibratorIMCSubscriber.java</innerfile>
+    <innerfile refid="LblBeaconListIMCSubscriber_8java">LblBeaconListIMCSubscriber.java</innerfile>
+    <innerfile refid="ManualIndicatorsFragmentIMCSubscriber_8java">ManualIndicatorsFragmentIMCSubscriber.java</innerfile>
+    <innerfile refid="SystemListIMCSubscriber_8java">SystemListIMCSubscriber.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::listenners::MyLocationListener</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a085b8eb27f3299f763e51c9241e95557" prot="private" static="no" mutable="no">
+        <type>LocationManager</type>
+        <definition>LocationManager pt.lsts.asa.listenners.MyLocationListener.locationManager</definition>
+        <argsstring></argsstring>
+        <name>locationManager</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref></type>
+        <definition>GmapFragment pt.lsts.asa.listenners.MyLocationListener.gmapFragment</definition>
+        <argsstring></argsstring>
+        <name>gmapFragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" compoundref="MyLocationListener_8java" startline="22" endline="27">pt.lsts.asa.listenners.MyLocationListener.MyLocationListener</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.listenners.MyLocationListener.MyLocationListener</definition>
+        <argsstring>(final GmapFragment gmapFragment)</argsstring>
+        <name>MyLocationListener</name>
+        <param>
+          <type>final <ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref></type>
+          <declname>gmapFragment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" bodystart="22" bodyend="27"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a2af202f161cb77fc72414977acb5d735" compoundref="GmapFragment_8java" startline="57" endline="59">pt.lsts.asa.fragments.GmapFragment.getFragmentActivity</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" compoundref="MyLocationListener_8java" startline="19">pt.lsts.asa.listenners.MyLocationListener.gmapFragment</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.listenners.MyLocationListener.initLocationListener</definition>
+        <argsstring>()</argsstring>
+        <name>initLocationListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" line="29" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" bodystart="29" bodyend="47"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a266cbf3ee5f8ab35236e498d6e47226b" compoundref="GmapFragment_8java" startline="150" endline="163">pt.lsts.asa.fragments.GmapFragment.updateMyLocation</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a81a61a16dad14fed83f228aac38c2076" compoundref="GmapFragment_8java" startline="51" endline="55">pt.lsts.asa.fragments.GmapFragment.GmapFragment</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/20/15. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="350">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="352">
+        <label>MapFragment</label>
+      </node>
+      <node id="348">
+        <label>OnMapReadyCallback</label>
+      </node>
+      <node id="349">
+        <label>GoogleMap</label>
+      </node>
+      <node id="351">
+        <label>LatLng</label>
+      </node>
+      <node id="353">
+        <label>ArrayList&lt; Marker &gt;</label>
+      </node>
+      <node id="345">
+        <label>pt.lsts.asa.listenners.MyLocationListener</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener"/>
+        <childnode refid="346" relation="usage">
+          <edgelabel>gmapFragment</edgelabel>
+        </childnode>
+        <childnode refid="354" relation="usage">
+          <edgelabel>locationManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="347">
+        <label>Fragment</label>
+      </node>
+      <node id="354">
+        <label>LocationManager</label>
+      </node>
+      <node id="346">
+        <label>pt.lsts.asa.fragments.GmapFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment"/>
+        <childnode refid="347" relation="public-inheritance">
+        </childnode>
+        <childnode refid="348" relation="public-inheritance">
+        </childnode>
+        <childnode refid="349" relation="usage">
+          <edgelabel>googleMap</edgelabel>
+        </childnode>
+        <childnode refid="350" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="351" relation="usage">
+          <edgelabel>myLatLng</edgelabel>
+        </childnode>
+        <childnode refid="345" relation="usage">
+          <edgelabel>myLocationListener</edgelabel>
+        </childnode>
+        <childnode refid="352" relation="usage">
+          <edgelabel>mapFragment</edgelabel>
+        </childnode>
+        <childnode refid="353" relation="usage">
+          <edgelabel>markersArrayList</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java" bodystart="16" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::listenners::MyLocationListener</scope><name>gmapFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::listenners::MyLocationListener</scope><name>initLocationListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a085b8eb27f3299f763e51c9241e95557" prot="private" virt="non-virtual"><scope>pt::lsts::asa::listenners::MyLocationListener</scope><name>locationManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" prot="public" virt="non-virtual"><scope>pt::lsts::asa::listenners::MyLocationListener</scope><name>MyLocationListener</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::subscribers::GmapIMCSubscriber</compoundname>
+    <basecompoundref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" prot="public" virt="non-virtual">pt.lsts.asa.comms.IMCSubscriber</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a82931d20557266c733e1f2232aa862ee" prot="private" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.subscribers.GmapIMCSubscriber.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;GmapIMCSubscriber&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a2d4bc80f27aac786b6844b87e412eb6d" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref></type>
+        <definition>GmapFragment pt.lsts.asa.subscribers.GmapIMCSubscriber.gmapfragment</definition>
+        <argsstring></argsstring>
+        <name>gmapfragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a660f1cda16c29729aec264c80f9b6bec" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread pt.lsts.asa.subscribers.GmapIMCSubscriber.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a1634fd9119d38ae52377687fe3ac186d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pt.lsts.asa.subscribers.GmapIMCSubscriber.r_earth</definition>
+        <argsstring></argsstring>
+        <name>r_earth</name>
+        <initializer>= 6378 * 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a555e7dd4919a5465c41ea9b8961f8e51" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.subscribers.GmapIMCSubscriber.GmapIMCSubscriber</definition>
+        <argsstring>(GmapFragment gmapFragment)</argsstring>
+        <name>GmapIMCSubscriber</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref></type>
+          <declname>gmapFragment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="25" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</definition>
+        <argsstring>(final IMCMessage msg)</argsstring>
+        <name>onReceive</name>
+        <param>
+          <type>final IMCMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="30" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="30" bodyend="67"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1ae5e9ff1cb5c87d0770483c4800310321" compoundref="GmapFragment_8java" startline="61" endline="63">pt.lsts.asa.fragments.GmapFragment.getGoogleMap</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1a5a99d40700575232601a40ec44ee78c5" compoundref="IMCUtils_8java" startline="65" endline="73">pt.lsts.asa.util.IMCUtils.isMsgFromActive</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a96c0fb5bd26e96479d540b4736dd6120" compoundref="GmapFragment_8java" startline="165" endline="169">pt.lsts.asa.fragments.GmapFragment.setActiveSysLatLng</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a57526cc5349c5f47f95e899342f6f486" compoundref="GmapFragment_8java" startline="171" endline="174">pt.lsts.asa.fragments.GmapFragment.setActiveSysPsi</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ae6e89bbe61d55400f92cfd278a91699c" compoundref="GmapIMCSubscriber_8java" startline="69" endline="76">pt.lsts.asa.subscribers.GmapIMCSubscriber.translateCoordinates</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ae6e89bbe61d55400f92cfd278a91699c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LatLng</type>
+        <definition>LatLng pt.lsts.asa.subscribers.GmapIMCSubscriber.translateCoordinates</definition>
+        <argsstring>(final LatLng origpoint, final float offsetX, final float offsetY)</argsstring>
+        <name>translateCoordinates</name>
+        <param>
+          <type>final LatLng</type>
+          <declname>origpoint</declname>
+        </param>
+        <param>
+          <type>final float</type>
+          <declname>offsetX</declname>
+        </param>
+        <param>
+          <type>final float</type>
+          <declname>offsetY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="69" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="69" bodyend="76"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" compoundref="GmapIMCSubscriber_8java" startline="30" endline="67">pt.lsts.asa.subscribers.GmapIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/22/15. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="170">
+        <label>pt.lsts.asa.subscribers.GmapIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber"/>
+        <childnode refid="171" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="178">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="182">
+        <label>MapFragment</label>
+      </node>
+      <node id="176">
+        <label>OnMapReadyCallback</label>
+      </node>
+      <node id="177">
+        <label>GoogleMap</label>
+      </node>
+      <node id="179">
+        <label>LatLng</label>
+      </node>
+      <node id="172">
+        <label>pt.lsts.asa.subscribers.GmapIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber"/>
+        <childnode refid="173" relation="public-inheritance">
+        </childnode>
+        <childnode refid="174" relation="usage">
+          <edgelabel>gmapfragment</edgelabel>
+        </childnode>
+      </node>
+      <node id="173">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="183">
+        <label>ArrayList&lt; Marker &gt;</label>
+      </node>
+      <node id="180">
+        <label>pt.lsts.asa.listenners.MyLocationListener</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener"/>
+        <childnode refid="174" relation="usage">
+          <edgelabel>gmapFragment</edgelabel>
+        </childnode>
+        <childnode refid="181" relation="usage">
+          <edgelabel>locationManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="175">
+        <label>Fragment</label>
+      </node>
+      <node id="181">
+        <label>LocationManager</label>
+      </node>
+      <node id="174">
+        <label>pt.lsts.asa.fragments.GmapFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment"/>
+        <childnode refid="175" relation="public-inheritance">
+        </childnode>
+        <childnode refid="176" relation="public-inheritance">
+        </childnode>
+        <childnode refid="177" relation="usage">
+          <edgelabel>googleMap</edgelabel>
+        </childnode>
+        <childnode refid="178" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="179" relation="usage">
+          <edgelabel>myLatLng</edgelabel>
+        </childnode>
+        <childnode refid="180" relation="usage">
+          <edgelabel>myLocationListener</edgelabel>
+        </childnode>
+        <childnode refid="182" relation="usage">
+          <edgelabel>mapFragment</edgelabel>
+        </childnode>
+        <childnode refid="183" relation="usage">
+          <edgelabel>markersArrayList</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/GmapIMCSubscriber.java" bodystart="18" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a2d4bc80f27aac786b6844b87e412eb6d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>gmapfragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a555e7dd4919a5465c41ea9b8961f8e51" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>GmapIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ac6d24ac3995718323ff35de94a4155c9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber_1a69a6f911572580c234e4255634360db3" prot="public" virt="non-virtual" ambiguityscope="pt::lsts::asa::comms::IMCSubscriber."><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a1634fd9119d38ae52377687fe3ac186d" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>r_earth</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a82931d20557266c733e1f2232aa862ee" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1a660f1cda16c29729aec264c80f9b6bec" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>thread</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1GmapIMCSubscriber_1ae6e89bbe61d55400f92cfd278a91699c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::GmapIMCSubscriber</scope><name>translateCoordinates</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

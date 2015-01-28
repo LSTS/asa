@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::pos::Beacon</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a6100e535bea057bea88986c7df055c9d" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.Beacon.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="7" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ab803568e35451655fd80cb56c7290c82" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="8" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a59dd942d557623529658de15f6c4970b" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="9" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a45b6b0e9b74908b87659424825dc50b1" prot="package" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="10" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a0fc46ba6e5e8566f23368bdfd1122f20" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.interrogationChannel</definition>
+        <argsstring></argsstring>
+        <name>interrogationChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a020144f27e2173abd81be3e5f5ec341d" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.replayChannel</definition>
+        <argsstring></argsstring>
+        <name>replayChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ae9954e8625dc8bad3d8db41976b76bc4" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.transponderDelay</definition>
+        <argsstring></argsstring>
+        <name>transponderDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a0f03ddf5addca9d0f4822696ad27a912" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.pos.Beacon.Beacon</definition>
+        <argsstring>(String name, double lat, double lon, double depth)</argsstring>
+        <name>Beacon</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ad5013fdab76b106ca3dd51bb7c6f54c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.Beacon.getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aa32af015c3a2e2114e32c0a462d6637a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.getLat</definition>
+        <argsstring>()</argsstring>
+        <name>getLat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a2d7d5505d9ac7a02814862ad20702c75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setLat</definition>
+        <argsstring>(double lat)</argsstring>
+        <name>setLat</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aba2d43d83ccf43aab9b7d1dd73dbf93e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.getLon</definition>
+        <argsstring>()</argsstring>
+        <name>getLon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a6371fdfa4370985a0e2125ac66c36726" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setLon</definition>
+        <argsstring>(double lon)</argsstring>
+        <name>setLon</name>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1afb8f5df5a046d758e9dce2803e9baa21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.Beacon.getDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="43" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a253dfef86f9eca5a48622c9150e00cc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setDepth</definition>
+        <argsstring>(double depth)</argsstring>
+        <name>setDepth</name>
+        <param>
+          <type>double</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="47" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ab255c1aae95840cc8b819e06b1925eba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.getInterrogationChannel</definition>
+        <argsstring>()</argsstring>
+        <name>getInterrogationChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="51" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ac736b6771bc172306bb36acf189f8ac0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setInterrogationChannel</definition>
+        <argsstring>(int interrogationChannel)</argsstring>
+        <name>setInterrogationChannel</name>
+        <param>
+          <type>int</type>
+          <declname>interrogationChannel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="55" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="55" bodyend="57"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aa82d48614e999086b15ef7b952d38a0d" compoundref="LblBeaconListIMCSubscriber_8java" startline="22" endline="58">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a7c9392b6ae79ce6870c4502cd388b388" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.getReplayChannel</definition>
+        <argsstring>()</argsstring>
+        <name>getReplayChannel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="59" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a476bf87444463dc26b0ea8b1877e3ff9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setReplyChannel</definition>
+        <argsstring>(int replayChannel)</argsstring>
+        <name>setReplyChannel</name>
+        <param>
+          <type>int</type>
+          <declname>replayChannel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="63" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="63" bodyend="65"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aa82d48614e999086b15ef7b952d38a0d" compoundref="LblBeaconListIMCSubscriber_8java" startline="22" endline="58">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a73e862cc36b3f72d3e3fc365f02c9f46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int pt.lsts.asa.pos.Beacon.getTransponderDelay</definition>
+        <argsstring>()</argsstring>
+        <name>getTransponderDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="67" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aeab2347363a19b9e1f163c5e10de4727" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.pos.Beacon.setTransponderDelay</definition>
+        <argsstring>(int transponderDelay)</argsstring>
+        <name>setTransponderDelay</name>
+        <param>
+          <type>int</type>
+          <declname>transponderDelay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="71" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="71" bodyend="73"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1LblBeaconListIMCSubscriber_1aa82d48614e999086b15ef7b952d38a0d" compoundref="LblBeaconListIMCSubscriber_8java" startline="22" endline="58">pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5ae06be27750d2d9802cf9ebb30fadc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.Beacon.getLatDMS</definition>
+        <argsstring>()</argsstring>
+        <name>getLatDMS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="75" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="75" bodyend="77"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_1abd94cc8e8ea8b675f76f6befce33746d" compoundref="CoordUtil_8java" startline="206" endline="233">pt.lsts.asa.util.CoordUtil.degreesToDMS</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5fabc5d2df9e53ac262c75f601298999" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.Beacon.getLonDMS</definition>
+        <argsstring>()</argsstring>
+        <name>getLonDMS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="79" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="79" bodyend="81"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1CoordUtil_1abd94cc8e8ea8b675f76f6befce33746d" compoundref="CoordUtil_8java" startline="206" endline="233">pt.lsts.asa.util.CoordUtil.degreesToDMS</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5d933e87e72a4fbe07c748ed99bb75a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.Beacon.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="84" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="84" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" line="5" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/Beacon.java" bodystart="5" bodyend="89"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a0f03ddf5addca9d0f4822696ad27a912" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>Beacon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a45b6b0e9b74908b87659424825dc50b1" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>depth</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1afb8f5df5a046d758e9dce2803e9baa21" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getDepth</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ab255c1aae95840cc8b819e06b1925eba" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getInterrogationChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aa32af015c3a2e2114e32c0a462d6637a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getLat</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5ae06be27750d2d9802cf9ebb30fadc1" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getLatDMS</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aba2d43d83ccf43aab9b7d1dd73dbf93e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getLon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5fabc5d2df9e53ac262c75f601298999" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getLonDMS</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ad5013fdab76b106ca3dd51bb7c6f54c1" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a7c9392b6ae79ce6870c4502cd388b388" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getReplayChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a73e862cc36b3f72d3e3fc365f02c9f46" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>getTransponderDelay</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a0fc46ba6e5e8566f23368bdfd1122f20" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>interrogationChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ab803568e35451655fd80cb56c7290c82" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>lat</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a59dd942d557623529658de15f6c4970b" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>lon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a6100e535bea057bea88986c7df055c9d" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>name</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a020144f27e2173abd81be3e5f5ec341d" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>replayChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a253dfef86f9eca5a48622c9150e00cc3" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setDepth</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ac736b6771bc172306bb36acf189f8ac0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setInterrogationChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a2d7d5505d9ac7a02814862ad20702c75" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setLat</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a6371fdfa4370985a0e2125ac66c36726" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setLon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a476bf87444463dc26b0ea8b1877e3ff9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setReplyChannel</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1aeab2347363a19b9e1f163c5e10de4727" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>setTransponderDelay</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1a5d933e87e72a4fbe07c748ed99bb75a8" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>toString</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon_1ae9954e8625dc8bad3d8db41976b76bc4" prot="package" virt="non-virtual"><scope>pt::lsts::asa::pos::Beacon</scope><name>transponderDelay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

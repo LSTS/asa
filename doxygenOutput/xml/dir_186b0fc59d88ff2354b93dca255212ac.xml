@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_186b0fc59d88ff2354b93dca255212ac" kind="dir">
+    <compoundname>src/pt/lsts/asa</compoundname>
+    <innerdir refid="dir_fbc031bdb29cb10741b47f127817b0d0">src/pt/lsts/asa/activities</innerdir>
+    <innerdir refid="dir_064c86db62bc006411c9de58d52dcc7d">src/pt/lsts/asa/comms</innerdir>
+    <innerdir refid="dir_552c43d148830edc4b74a27d2dc01172">src/pt/lsts/asa/feedback</innerdir>
+    <innerdir refid="dir_45263eae1d0c54d8f4f2b37851219dac">src/pt/lsts/asa/fragments</innerdir>
+    <innerdir refid="dir_03a27ffaab085ebc76858702adc8d8da">src/pt/lsts/asa/handlers</innerdir>
+    <innerdir refid="dir_e2b3eaf34e4b8bf614764845361fcfc7">src/pt/lsts/asa/listenners</innerdir>
+    <innerdir refid="dir_0464841a4ba740771b2c68b9cf245fb4">src/pt/lsts/asa/managers</innerdir>
+    <innerdir refid="dir_b6f04de85546b91096debb1d5d8dd35c">src/pt/lsts/asa/pos</innerdir>
+    <innerdir refid="dir_a3780f97e428de0362b6f097f8e63ccd">src/pt/lsts/asa/settings</innerdir>
+    <innerdir refid="dir_4c91418f85fd05ab18610d6f9b0bfa8a">src/pt/lsts/asa/subscribers</innerdir>
+    <innerdir refid="dir_1ee91e06a7ca7852cf95837a7a266d1f">src/pt/lsts/asa/sys</innerdir>
+    <innerdir refid="dir_c56aa5cbe0b0fbe46fd905d4eddcdc1e">src/pt/lsts/asa/ui</innerdir>
+    <innerdir refid="dir_b596d36185c5e3ae438add2997a9c35b">src/pt/lsts/asa/util</innerdir>
+    <innerfile refid="App_8java">App.java</innerfile>
+    <innerfile refid="ASA_8java">ASA.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/"/>
+  </compounddef>
+</doxygen>

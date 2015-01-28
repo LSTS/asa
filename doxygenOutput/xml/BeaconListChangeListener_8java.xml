@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="BeaconListChangeListener_8java" kind="file" language="Java">
+    <compoundname>BeaconListChangeListener.java</compoundname>
+    <innerclass refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" prot="public">pt::lsts::asa::listenners::BeaconListChangeListener</innerclass>
+    <innernamespace refid="namespacept_1_1lsts_1_1asa_1_1listenners">pt::lsts::asa::listenners</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacept_1_1lsts_1_1asa_1_1listenners" refkind="compound"><highlight class="keyword">package<sp/></highlight><highlight class="normal">pt.lsts.asa.listenners;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacept" kindref="compound">pt</ref>.<ref refid="namespacept_1_1lsts" kindref="compound">lsts</ref>.<ref refid="namespacept_1_1lsts_1_1asa" kindref="compound">asa</ref>.<ref refid="namespacept_1_1lsts_1_1asa_1_1pos" kindref="compound">pos</ref>.<ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon" kindref="compound">Beacon</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.ArrayList;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" kindref="compound">BeaconListChangeListener</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener_1a4a654b3944b023fb20f306dc431f51d7" kindref="member">onBeaconListChange</ref>(ArrayList&lt;Beacon&gt;<sp/>newlist);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/BeaconListChangeListener.java"/>
+  </compounddef>
+</doxygen>

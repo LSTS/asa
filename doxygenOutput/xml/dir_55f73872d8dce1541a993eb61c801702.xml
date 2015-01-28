@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_55f73872d8dce1541a993eb61c801702" kind="dir">
+    <compoundname>gen/pt/lsts/asa</compoundname>
+    <innerfile refid="BuildConfig_8java">BuildConfig.java</innerfile>
+    <innerfile refid="Manifest_8java">Manifest.java</innerfile>
+    <innerfile refid="R_8java">R.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/gen/pt/lsts/asa/"/>
+  </compounddef>
+</doxygen>

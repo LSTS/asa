@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::subscribers::SystemListIMCSubscriber</compoundname>
+    <basecompoundref refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber" prot="public" virt="non-virtual">pt.lsts.asa.comms.IMCSubscriber</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1a0f2b35c5f24bfea6e732312db320590a" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.subscribers.SystemListIMCSubscriber.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;SystemList&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1aec1152e9d16d24dcfe74ce7ea8cbc5aa" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int pt.lsts.asa.subscribers.SystemListIMCSubscriber.CONNECTED_TIME_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>CONNECTED_TIME_LIMIT</name>
+        <initializer>= 5000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1afac8a6f4363e99128d3aefcddf29ca34" prot="public" static="yes" mutable="no">
+        <type>final boolean</type>
+        <definition>final boolean pt.lsts.asa.subscribers.SystemListIMCSubscriber.DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1a8f2e523c325d1b02c42aebc7a778fd73" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList" kindref="compound">SystemList</ref></type>
+        <definition>SystemList pt.lsts.asa.subscribers.SystemListIMCSubscriber.systemList</definition>
+        <argsstring></argsstring>
+        <name>systemList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1abfc2cf1f2a071f756c7af960e00fc5d6" compoundref="SystemListIMCSubscriber_8java" startline="24" endline="26">pt.lsts.asa.subscribers.SystemListIMCSubscriber.SystemListIMCSubscriber</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1aada64c6435de6c7efc2504dcfc7a2a91" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread pt.lsts.asa.subscribers.SystemListIMCSubscriber.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1abfc2cf1f2a071f756c7af960e00fc5d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.subscribers.SystemListIMCSubscriber.SystemListIMCSubscriber</definition>
+        <argsstring>(SystemList systemList)</argsstring>
+        <name>SystemListIMCSubscriber</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList" kindref="compound">SystemList</ref></type>
+          <declname>systemList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="24" bodyend="26"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1a8f2e523c325d1b02c42aebc7a778fd73" compoundref="SystemListIMCSubscriber_8java" startline="21">pt.lsts.asa.subscribers.SystemListIMCSubscriber.systemList</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.subscribers.SystemListIMCSubscriber.onReceive</definition>
+        <argsstring>(final IMCMessage msg)</argsstring>
+        <name>onReceive</name>
+        <param>
+          <type>final IMCMessage</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="30" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="30" bodyend="149"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1adca42b514f9c5aa0fa22151b766490ea" compoundref="SystemList_8java" startline="59" endline="63">pt.lsts.asa.sys.SystemList.changeList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a32b7b6137f5551b47af60af7c4dab238" compoundref="SystemList_8java" startline="65" endline="71">pt.lsts.asa.sys.SystemList.containsSysName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a831997ba7282ac1062bc34e46adbd30f" compoundref="SystemList_8java" startline="89" endline="95">pt.lsts.asa.sys.SystemList.findSysById</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a09765da2052f55a6681f1a9afd834cdb" compoundref="SystemList_8java" startline="81" endline="87">pt.lsts.asa.sys.SystemList.findSysByName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1adbc78a7cd0993e46ec9ac727a1460962" compoundref="Sys_8java" startline="47" endline="49">pt.lsts.asa.sys.Sys.getAddress</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1a1c7cf0dfab7f40ec2489de9f40032f6b" compoundref="IMCUtils_8java" startline="43" endline="63">pt.lsts.asa.util.IMCUtils.getAnnounceIMCAddressPort</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_1ab3a1ec50ded5278d67d178a197936640" compoundref="IMCUtils_8java" startline="23" endline="34">pt.lsts.asa.util.IMCUtils.getAnnounceService</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a8cd7ce16041f8bbb2a3b7016a87e929a" compoundref="IMCManager_8java" startline="220" endline="222">pt.lsts.asa.managers.IMCManager.getComm</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a7516e93a72663ebf84fff6887fd6899d" compoundref="ASA_8java" startline="208" endline="211">pt.lsts.asa.ASA.getIMCManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_1a5d442f08c33d72123d1673650fd2975e" compoundref="SystemList_8java" startline="97" endline="99">pt.lsts.asa.sys.SystemList.getList</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a931c657141f731d81563d56daa0e9282" compoundref="Sys_8java" startline="63" endline="65">pt.lsts.asa.sys.Sys.getName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a1c0428223aa7fd8b35917dad4fae462e" compoundref="Sys_8java" startline="55" endline="57">pt.lsts.asa.sys.Sys.getPort</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1afa49c29d6fe25c3ab3ec6ed183bdc32f" compoundref="Sys_8java" startline="39" endline="41">pt.lsts.asa.sys.Sys.isConnected</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1ac6b2954f1dadd92dd574ae9c6af2a2e5" compoundref="Sys_8java" startline="12">pt.lsts.asa.sys.Sys.lastMessageReceived</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a34d863c0fc2bb23350e4493e12bdf6e6" compoundref="IMCManager_8java" startline="257" endline="264">pt.lsts.asa.managers.IMCManager.send</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys_1a0b8b78b965c43365638c569f07c04778" compoundref="Sys_8java" startline="35" endline="37">pt.lsts.asa.sys.Sys.setError</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="426">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="425">
+        <label>pt.lsts.asa.subscribers.SystemListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber"/>
+        <childnode refid="426" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="433">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.SystemListChangeListener &gt;</label>
+      </node>
+      <node id="429">
+        <label>pt.lsts.asa.sys.SystemList</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList"/>
+        <childnode refid="430" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="432" relation="usage">
+          <edgelabel>sysList</edgelabel>
+        </childnode>
+        <childnode refid="433" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+      </node>
+      <node id="428">
+        <label>pt.lsts.asa.comms.IMCSubscriber</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber"/>
+      </node>
+      <node id="432">
+        <label>ArrayList&lt; pt.lsts.asa.sys.Sys &gt;</label>
+      </node>
+      <node id="430">
+        <label>pt.lsts.asa.util.AccuTimer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer"/>
+        <childnode refid="431" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="427">
+        <label>pt.lsts.asa.subscribers.SystemListIMCSubscriber</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber"/>
+        <childnode refid="428" relation="public-inheritance">
+        </childnode>
+        <childnode refid="429" relation="usage">
+          <edgelabel>systemList</edgelabel>
+        </childnode>
+      </node>
+      <node id="431">
+        <label>Handler</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/subscribers/SystemListIMCSubscriber.java" bodystart="16" bodyend="151"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1aec1152e9d16d24dcfe74ce7ea8cbc5aa" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>CONNECTED_TIME_LIMIT</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1afac8a6f4363e99128d3aefcddf29ca34" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>DEBUG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1ab211db95a93daec850348ecf8bffe5fb" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1comms_1_1IMCSubscriber_1a69a6f911572580c234e4255634360db3" prot="public" virt="non-virtual" ambiguityscope="pt::lsts::asa::comms::IMCSubscriber."><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>onReceive</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1a8f2e523c325d1b02c42aebc7a778fd73" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>systemList</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1abfc2cf1f2a071f756c7af960e00fc5d6" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>SystemListIMCSubscriber</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1a0f2b35c5f24bfea6e732312db320590a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1SystemListIMCSubscriber_1aada64c6435de6c7efc2504dcfc7a2a91" prot="private" virt="non-virtual"><scope>pt::lsts::asa::subscribers::SystemListIMCSubscriber</scope><name>thread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

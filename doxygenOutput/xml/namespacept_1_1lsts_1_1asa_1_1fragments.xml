@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacept_1_1lsts_1_1asa_1_1fragments" kind="namespace" language="Java">
+    <compoundname>pt::lsts::asa::fragments</compoundname>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" prot="public">pt::lsts::asa::fragments::GmapFragment</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1ManualIndicatorsFragment" prot="public">pt::lsts::asa::fragments::ManualIndicatorsFragment</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment" prot="public">pt::lsts::asa::fragments::SettingsButtonFragment</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment" prot="public">pt::lsts::asa::fragments::SoundControlFragment</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment" prot="public">pt::lsts::asa::fragments::SystemListFragment</innerclass>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment" prot="public">pt::lsts::asa::fragments::VideoViewFragment</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/GmapFragment.java" line="1" column="1"/>
+  </compounddef>
+</doxygen>

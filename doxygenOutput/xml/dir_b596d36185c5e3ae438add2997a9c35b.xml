@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_b596d36185c5e3ae438add2997a9c35b" kind="dir">
+    <compoundname>src/pt/lsts/asa/util</compoundname>
+    <innerfile refid="AccuTimer_8java">AccuTimer.java</innerfile>
+    <innerfile refid="AndroidUtil_8java">AndroidUtil.java</innerfile>
+    <innerfile refid="CoordUtil_8java">CoordUtil.java</innerfile>
+    <innerfile refid="FileOperations_8java">FileOperations.java</innerfile>
+    <innerfile refid="GmapsUtil_8java">GmapsUtil.java</innerfile>
+    <innerfile refid="IMCUtils_8java">IMCUtils.java</innerfile>
+    <innerfile refid="MUtil_8java">MUtil.java</innerfile>
+    <innerfile refid="StringUtils_8java">StringUtils.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/"/>
+  </compounddef>
+</doxygen>

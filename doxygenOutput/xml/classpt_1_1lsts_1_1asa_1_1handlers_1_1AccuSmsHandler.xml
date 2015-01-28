@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::handlers::AccuSmsHandler</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a53314d73ca49397901ad83dc26890767" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+        <definition>IMCManager pt.lsts.asa.handlers.AccuSmsHandler.mManager</definition>
+        <argsstring></argsstring>
+        <name>mManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="12" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a8bc52ebd1474ceb7bfd40a9a1560495c" compoundref="AccuSmsHandler_8java" startline="16" endline="18">pt.lsts.asa.handlers.AccuSmsHandler.getmManager</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a5cbee7e3a182381c959e24e9088cf830" compoundref="AccuSmsHandler_8java" startline="20" endline="22">pt.lsts.asa.handlers.AccuSmsHandler.setmManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a569ffff7311591c5c7081850872c01b6" prot="private" static="no" mutable="no">
+        <type>Context</type>
+        <definition>Context pt.lsts.asa.handlers.AccuSmsHandler.mContext</definition>
+        <argsstring></argsstring>
+        <name>mContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a8bc52ebd1474ceb7bfd40a9a1560495c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+        <definition>IMCManager pt.lsts.asa.handlers.AccuSmsHandler.getmManager</definition>
+        <argsstring>()</argsstring>
+        <name>getmManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="16" bodyend="18"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a53314d73ca49397901ad83dc26890767" compoundref="AccuSmsHandler_8java" startline="12">pt.lsts.asa.handlers.AccuSmsHandler.mManager</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1AccuSmsHandlerIMCSubscriber_1af9e61b3e7a2367bed897a9b7c8f1e0c9" compoundref="AccuSmsHandlerIMCSubscriber_8java" startline="22" endline="46">pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a5cbee7e3a182381c959e24e9088cf830" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.handlers.AccuSmsHandler.setmManager</definition>
+        <argsstring>(IMCManager mManager)</argsstring>
+        <name>setmManager</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+          <declname>mManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="20" bodyend="22"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a53314d73ca49397901ad83dc26890767" compoundref="AccuSmsHandler_8java" startline="12">pt.lsts.asa.handlers.AccuSmsHandler.mManager</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a73cc38ed0cf13673a2a34b35a6311b32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.handlers.AccuSmsHandler.AccuSmsHandler</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>AccuSmsHandler</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a80652aee99a9f6ed3af1273d18ace884" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.handlers.AccuSmsHandler.sendSms</definition>
+        <argsstring>(String destination, String text, int timeout)</argsstring>
+        <name>sendSms</name>
+        <param>
+          <type>String</type>
+          <declname>destination</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="28" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="28" bodyend="33"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1subscribers_1_1AccuSmsHandlerIMCSubscriber_1af9e61b3e7a2367bed897a9b7c8f1e0c9" compoundref="AccuSmsHandlerIMCSubscriber_8java" startline="22" endline="46">pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber.onReceive</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1ac3464a4db0b2174a65d3ffbe01661dda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.handlers.AccuSmsHandler.stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="35" bodyend="37"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4500e769d8f489e76393028b64f38bcd" compoundref="ASA_8java" startline="170" endline="182">pt.lsts.asa.ASA.pause</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>pt.lsts.asa.handlers.AccuSmsHandler</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mContext</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>mManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>pt::lsts::neptus::messages::listener::MessageListener&lt; MessageInfo, IMCMessage &gt;</label>
+      </node>
+      <node id="7">
+        <label>LinkedHashMap&lt; Integer, List&lt; pt.lsts.asa.comms.IMCSubscriber &gt; &gt;</label>
+      </node>
+      <node id="8">
+        <label>ArrayList&lt; pt.lsts.asa.comms.IMCSubscriber &gt;</label>
+      </node>
+      <node id="2">
+        <label>Context</label>
+      </node>
+      <node id="5">
+        <label>UDPTransport</label>
+      </node>
+      <node id="6">
+        <label>Handler</label>
+      </node>
+      <node id="3">
+        <label>pt.lsts.asa.managers.IMCManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>announceListener</edgelabel>
+          <edgelabel>comm</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>subscribers</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>subscribersToAll</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" line="10" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/handlers/AccuSmsHandler.java" bodystart="10" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a73cc38ed0cf13673a2a34b35a6311b32" prot="public" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>AccuSmsHandler</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a8bc52ebd1474ceb7bfd40a9a1560495c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>getmManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a569ffff7311591c5c7081850872c01b6" prot="private" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>mContext</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a53314d73ca49397901ad83dc26890767" prot="private" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>mManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a80652aee99a9f6ed3af1273d18ace884" prot="public" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>sendSms</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1a5cbee7e3a182381c959e24e9088cf830" prot="public" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>setmManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1handlers_1_1AccuSmsHandler_1ac3464a4db0b2174a65d3ffbe01661dda" prot="public" virt="non-virtual"><scope>pt::lsts::asa::handlers::AccuSmsHandler</scope><name>stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

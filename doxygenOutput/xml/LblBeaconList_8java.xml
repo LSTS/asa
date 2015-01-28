@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="LblBeaconList_8java" kind="file" language="Java">
+    <compoundname>LblBeaconList.java</compoundname>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" prot="public">pt::lsts::asa::pos::LblBeaconList</innerclass>
+    <innernamespace refid="namespacept_1_1lsts_1_1asa_1_1pos">pt::lsts::asa::pos</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">pt.lsts.asa.pos;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacept" kindref="compound">pt</ref>.<ref refid="namespacept_1_1lsts" kindref="compound">lsts</ref>.<ref refid="namespacept_1_1lsts_1_1asa" kindref="compound">asa</ref>.<ref refid="namespacept_1_1lsts_1_1asa_1_1listenners" kindref="compound">listenners</ref>.<ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" kindref="compound">BeaconListChangeListener</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacept" kindref="compound">pt</ref>.<ref refid="namespacept_1_1lsts" kindref="compound">lsts</ref>.<ref refid="namespacept_1_1lsts_1_1asa" kindref="compound">asa</ref>.<ref refid="namespacept_1_1lsts_1_1asa_1_1managers" kindref="compound">managers</ref>.<ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.ArrayList;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList" kindref="compound">LblBeaconList</ref><sp/>{</highlight></codeline>
+<codeline lineno="9" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a3e8fd5179c8a1b4ce340ac6d90bd38a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String[]<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a3e8fd5179c8a1b4ce340ac6d90bd38a5" kindref="member">SUBSCRIBED_MSGS</ref><sp/>=<sp/>{<sp/></highlight><highlight class="stringliteral">&quot;LblConfig&quot;</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="10" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a5275cc5b312241a0fe5454d8066decd8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a5275cc5b312241a0fe5454d8066decd8" kindref="member">TAG</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;LblBeaconList&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1acd2c07d69a1f2525124660c33f4315d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>ArrayList&lt;Beacon&gt;<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1acd2c07d69a1f2525124660c33f4315d2" kindref="member">list</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ArrayList&lt;Beacon&gt;();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>ArrayList&lt;BeaconListChangeListener&gt;<sp/>listeners<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ArrayList&lt;BeaconListChangeListener&gt;();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref><sp/>imm;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a587615b5e53ce4ab7eb1c07912afb737" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a587615b5e53ce4ab7eb1c07912afb737" kindref="member">LblBeaconList</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1ac773b3c4abec186552d723770248b952" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1ac773b3c4abec186552d723770248b952" kindref="member">notifyListeners</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" kindref="compound">BeaconListChangeListener</ref><sp/>l<sp/>:<sp/>listeners)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l.onBeaconListChange(list);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1aa0f3b34a25074943d634454e7bda8669" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>ArrayList&lt;Beacon&gt;<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1aa0f3b34a25074943d634454e7bda8669" kindref="member">getList</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1acd2c07d69a1f2525124660c33f4315d2" kindref="member">list</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1adce35cd29b4b16707bf28a6c750ee59f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>ArrayList&lt;String&gt;<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1adce35cd29b4b16707bf28a6c750ee59f" kindref="member">getNameList</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ArrayList&lt;String&gt;<sp/>array<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>ArrayList&lt;String&gt;();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon" kindref="compound">Beacon</ref><sp/>b<sp/>:<sp/>list)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array.add(b.getName());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>array;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a924b922c7971f11906c55be14b93be1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon" kindref="compound">Beacon</ref><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a924b922c7971f11906c55be14b93be1c" kindref="member">getBeaconByName</ref>(String<sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1Beacon" kindref="compound">Beacon</ref><sp/>b<sp/>:<sp/>list)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.getName().equalsIgnoreCase(name))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>null;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a982c9483da0e1ec3fa53e9bec511fbd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1pos_1_1LblBeaconList_1a982c9483da0e1ec3fa53e9bec511fbd2" kindref="member">addBeaconListChangeListener</ref>(<ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1BeaconListChangeListener" kindref="compound">BeaconListChangeListener</ref><sp/>l)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>listeners.add(l);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/LblBeaconList.java"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::activities::SettingsActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">PreferenceActivity</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1ad4bbaa49797aed2630324bce9ff1ddeb" prot="package" static="no" mutable="no">
+        <type>PreferenceScreen</type>
+        <definition>PreferenceScreen pt.lsts.asa.activities.SettingsActivity.preferenceScreen</definition>
+        <argsstring></argsstring>
+        <name>preferenceScreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a296125633c21a4a8b4e15724c6e8ab7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SettingsActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" bodystart="18" bodyend="33"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a88146718a94d0e869b99b9bbdc20c28f" compoundref="SettingsFactory_8java" startline="219" endline="235">pt.lsts.asa.settings.SettingsFactory.fetchCategories</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1af852a6cfd3386e246801c1091ce829ca" compoundref="SettingsActivity_8java" startline="35" endline="44">pt.lsts.asa.activities.SettingsActivity.populateCategories</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1af852a6cfd3386e246801c1091ce829ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SettingsActivity.populateCategories</definition>
+        <argsstring>(Vector&lt; PreferenceCategory &gt; preferenceCategories)</argsstring>
+        <name>populateCategories</name>
+        <param>
+          <type>Vector&lt; PreferenceCategory &gt;</type>
+          <declname>preferenceCategories</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" bodystart="35" bodyend="44"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a89f11eba0b242b9ef305e5a867cc6c44" compoundref="SettingsActivity_8java" startline="46" endline="52">pt.lsts.asa.activities.SettingsActivity.createProfileCategory</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a27da95491a651aa134419c9c18c07cd3" compoundref="SettingsFactory_8java" startline="26" endline="59">pt.lsts.asa.settings.SettingsFactory.populate</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a296125633c21a4a8b4e15724c6e8ab7d" compoundref="SettingsActivity_8java" startline="18" endline="33">pt.lsts.asa.activities.SettingsActivity.onCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a89f11eba0b242b9ef305e5a867cc6c44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SettingsActivity.createProfileCategory</definition>
+        <argsstring>(PreferenceCategory preferenceCategory)</argsstring>
+        <name>createProfileCategory</name>
+        <param>
+          <type>PreferenceCategory</type>
+          <declname>preferenceCategory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" line="46" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" bodystart="46" bodyend="52"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1settings_1_1SettingsFactory_1a32091b71d0d888f665cd4d4fc89e4f21" compoundref="SettingsFactory_8java" startline="237" endline="245">pt.lsts.asa.settings.SettingsFactory.fetchPreferencesButtons</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1af852a6cfd3386e246801c1091ce829ca" compoundref="SettingsActivity_8java" startline="35" endline="44">pt.lsts.asa.activities.SettingsActivity.populateCategories</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="363">
+        <label>PreferenceActivity</label>
+      </node>
+      <node id="362">
+        <label>pt.lsts.asa.activities.SettingsActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity"/>
+        <childnode refid="363" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="365">
+        <label>PreferenceActivity</label>
+      </node>
+      <node id="366">
+        <label>PreferenceScreen</label>
+      </node>
+      <node id="364">
+        <label>pt.lsts.asa.activities.SettingsActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity"/>
+        <childnode refid="365" relation="public-inheritance">
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>preferenceScreen</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SettingsActivity.java" bodystart="13" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a89f11eba0b242b9ef305e5a867cc6c44" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SettingsActivity</scope><name>createProfileCategory</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1a296125633c21a4a8b4e15724c6e8ab7d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SettingsActivity</scope><name>onCreate</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1af852a6cfd3386e246801c1091ce829ca" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SettingsActivity</scope><name>populateCategories</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SettingsActivity_1ad4bbaa49797aed2630324bce9ff1ddeb" prot="package" virt="non-virtual"><scope>pt::lsts::asa::activities::SettingsActivity</scope><name>preferenceScreen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

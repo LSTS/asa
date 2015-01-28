@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::util::GmapsUtil</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil_1a4f5a10eea46f6da8468e9870dc41bdde" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float pt.lsts.asa.util.GmapsUtil.getRotation</definition>
+        <argsstring>(float psi)</argsstring>
+        <name>getRotation</name>
+        <param>
+          <type>float</type>
+          <declname>psi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0=N 90=E 180=S 270=W Clockwise </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Gmaps Rotation 0=E 90=S 180=W 270=N Clockwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" bodystart="15" bodyend="18"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1aa5a7c28538b8d866457b90e09d07b98b" compoundref="GmapFragment_8java" startline="176" endline="195">pt.lsts.asa.fragments.GmapFragment.updateActiveSysMarker</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil_1a36d411199220bb0a5e92e88a2625ea75" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float pt.lsts.asa.util.GmapsUtil.getRotation</definition>
+        <argsstring>(float psi, GoogleMap googleMap)</argsstring>
+        <name>getRotation</name>
+        <param>
+          <type>float</type>
+          <declname>psi</declname>
+        </param>
+        <param>
+          <type>GoogleMap</type>
+          <declname>googleMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0=N 90=E 180=S 270=W Clockwise </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>googleMap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>include user rotation of map </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Gmaps Rotation 0=E 90=S 180=W 270=N Clockwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" line="26" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" bodystart="26" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/27/15. </para>    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" line="8" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/GmapsUtil.java" bodystart="8" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil_1a4f5a10eea46f6da8468e9870dc41bdde" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::GmapsUtil</scope><name>getRotation</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1GmapsUtil_1a36d411199220bb0a5e92e88a2625ea75" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::GmapsUtil</scope><name>getRotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

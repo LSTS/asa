@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::activities::SystemListActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">FragmentActivity</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4eb642ad2e208d4e95a381c9993441ad" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment" kindref="compound">SystemListFragment</ref></type>
+        <definition>SystemListFragment pt.lsts.asa.activities.SystemListActivity.systemListFragment</definition>
+        <argsstring></argsstring>
+        <name>systemListFragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a078738718a2f7e8c64274d53cf1cb373" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment" kindref="compound">SettingsButtonFragment</ref></type>
+        <definition>SettingsButtonFragment pt.lsts.asa.activities.SystemListActivity.settingsButtonFragment</definition>
+        <argsstring></argsstring>
+        <name>settingsButtonFragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1aae2288293590b40f86db0462e12415ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SystemListActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="23" bodyend="28"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1af02c115fc6f8e8be5e9e3ccd12234838" compoundref="SystemListActivity_8java" startline="56" endline="69">pt.lsts.asa.activities.SystemListActivity.loadFragments</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a00cc7bfe4397f281d8f4143340eb0108" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.activities.SystemListActivity.onCreateOptionsMenu</definition>
+        <argsstring>(Menu menu)</argsstring>
+        <name>onCreateOptionsMenu</name>
+        <param>
+          <type>Menu</type>
+          <declname>menu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4a169cb51fbfdc7650727cf806aa03e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.activities.SystemListActivity.onOptionsItemSelected</definition>
+        <argsstring>(MenuItem item)</argsstring>
+        <name>onOptionsItemSelected</name>
+        <param>
+          <type>MenuItem</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="39" bodyend="54"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1acae872fafb4dd562d69bb96c497b205e" compoundref="SystemListFragment_8java" startline="106" endline="116">pt.lsts.asa.fragments.SystemListFragment.populateSystemListView</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1af02c115fc6f8e8be5e9e3ccd12234838" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SystemListActivity.loadFragments</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>loadFragments</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="56" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="56" bodyend="69"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1adc7c1ad1f600e852b23af36db3f865ba" compoundref="AndroidUtil_8java" startline="31" endline="36">pt.lsts.asa.util.AndroidUtil.loadFragment</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1aae2288293590b40f86db0462e12415ce" compoundref="SystemListActivity_8java" startline="23" endline="28">pt.lsts.asa.activities.SystemListActivity.onCreate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1acc9f5cdb9a9a350ec870ff72b5c173e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.SystemListActivity.onBackPressed</definition>
+        <argsstring>()</argsstring>
+        <name>onBackPressed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="72" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="72" bodyend="75"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1aae4e3feff2d73082186b4af778ca6514" compoundref="SystemListFragment_8java" startline="79" endline="82">pt.lsts.asa.fragments.SystemListFragment.shutdown</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/5/15. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="401">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="400">
+        <label>pt.lsts.asa.activities.SystemListActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity"/>
+        <childnode refid="401" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="407">
+        <label>pt.lsts.asa.fragments.SystemListFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment"/>
+        <childnode refid="405" relation="public-inheritance">
+        </childnode>
+        <childnode refid="403" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="406" relation="usage">
+          <edgelabel>selectActiveSystemButton</edgelabel>
+        </childnode>
+        <childnode refid="408" relation="usage">
+          <edgelabel>arrayAdapter</edgelabel>
+        </childnode>
+        <childnode refid="409" relation="usage">
+          <edgelabel>systemListView</edgelabel>
+        </childnode>
+        <childnode refid="410" relation="usage">
+          <edgelabel>scheduler</edgelabel>
+        </childnode>
+        <childnode refid="411" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="403">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="406">
+        <label>Button</label>
+      </node>
+      <node id="409">
+        <label>ListView</label>
+      </node>
+      <node id="404">
+        <label>pt.lsts.asa.fragments.SettingsButtonFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment"/>
+        <childnode refid="405" relation="public-inheritance">
+        </childnode>
+        <childnode refid="403" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="406" relation="usage">
+          <edgelabel>settingsButton</edgelabel>
+        </childnode>
+      </node>
+      <node id="408">
+        <label>ArrayAdapter&lt; String &gt;</label>
+      </node>
+      <node id="402">
+        <label>pt.lsts.asa.activities.SystemListActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity"/>
+        <childnode refid="403" relation="public-inheritance">
+        </childnode>
+        <childnode refid="404" relation="usage">
+          <edgelabel>settingsButtonFragment</edgelabel>
+        </childnode>
+        <childnode refid="407" relation="usage">
+          <edgelabel>systemListFragment</edgelabel>
+        </childnode>
+      </node>
+      <node id="411">
+        <label>ScheduledFuture</label>
+      </node>
+      <node id="410">
+        <label>ScheduledExecutorService</label>
+      </node>
+      <node id="405">
+        <label>Fragment</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" line="17" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/SystemListActivity.java" bodystart="17" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1af02c115fc6f8e8be5e9e3ccd12234838" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>loadFragments</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1acc9f5cdb9a9a350ec870ff72b5c173e0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>onBackPressed</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1aae2288293590b40f86db0462e12415ce" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>onCreate</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a00cc7bfe4397f281d8f4143340eb0108" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>onCreateOptionsMenu</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4a169cb51fbfdc7650727cf806aa03e9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>onOptionsItemSelected</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a078738718a2f7e8c64274d53cf1cb373" prot="private" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>settingsButtonFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1a4eb642ad2e208d4e95a381c9993441ad" prot="private" virt="non-virtual"><scope>pt::lsts::asa::activities::SystemListActivity</scope><name>systemListFragment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

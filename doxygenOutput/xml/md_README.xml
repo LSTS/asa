@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>ASA</title>
+    <detaileddescription>
+<para>Aerial Supervisor for Android</para><para>Checkout: <linebreak/>
+ <ulink url="https://github.com/LSTS/ASA/wiki/Cloning-Instructions">Cloning Instructions</ulink> <linebreak/>
+ <ulink url="https://github.com/LSTS/ASA/wiki/Idea-and-Motivation">Idea and Motivation</ulink> </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

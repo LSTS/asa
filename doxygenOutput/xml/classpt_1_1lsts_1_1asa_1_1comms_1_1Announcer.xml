@@ -1,0 +1,592 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::comms::Announcer</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a126257643f3cf4a5ecfe2d7982c6450a" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.comms.Announcer.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;Announcer&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a991339b7b53ed8b0948d2421bcb05ff4" prot="public" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.comms.Announcer.ANNOUNCE_ADDR</definition>
+        <argsstring></argsstring>
+        <name>ANNOUNCE_ADDR</name>
+        <initializer>= &quot;224.0.75.69&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a8f1d0dde03c935646275bb0ca3d247da" prot="public" static="yes" mutable="no">
+        <type>final int</type>
+        <definition>final int pt.lsts.asa.comms.Announcer.ANNOUNCE_PORT</definition>
+        <argsstring></argsstring>
+        <name>ANNOUNCE_PORT</name>
+        <initializer>= 30100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a11efc9cfd8265c7710b2c42698977ae7" prot="public" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long pt.lsts.asa.comms.Announcer.ANNOUNCE_DELAY</definition>
+        <argsstring></argsstring>
+        <name>ANNOUNCE_DELAY</name>
+        <initializer>= 10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a708b0e5d2f0d2e716f55597dbbc8f5d4" prot="public" static="yes" mutable="no">
+        <type>final boolean</type>
+        <definition>final boolean pt.lsts.asa.comms.Announcer.DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="25" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac313418f572f98ec1f2ea28f46a46451" prot="private" static="no" mutable="no">
+        <type>IMCMessage</type>
+        <definition>IMCMessage pt.lsts.asa.comms.Announcer.announce</definition>
+        <argsstring></argsstring>
+        <name>announce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a899369bb5523890384993f85eea10fdd" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+        <definition>IMCManager pt.lsts.asa.comms.Announcer.imm</definition>
+        <argsstring></argsstring>
+        <name>imm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="28" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485a1d4071edc469e9a991bb0378007c" compoundref="Announcer_8java" startline="86" endline="93">pt.lsts.asa.comms.Announcer.Announcer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a849ac220046482feb3bbc0a3ce2e8767" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.comms.Announcer.broadcastAddress</definition>
+        <argsstring></argsstring>
+        <name>broadcastAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="29" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac2278bc6a01e42484ffbd47efbe575e3" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.comms.Announcer.multicastAddress</definition>
+        <argsstring></argsstring>
+        <name>multicastAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="30" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ab58beeb4d4dcf2157e94042a7d27f8ac" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer" kindref="compound">AccuTimer</ref></type>
+        <definition>AccuTimer pt.lsts.asa.comms.Announcer.at</definition>
+        <argsstring></argsstring>
+        <name>at</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pt.lsts.asa.comms.Announcer.gpsAddListenerCounter</definition>
+        <argsstring></argsstring>
+        <name>gpsAddListenerCounter</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="32" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a08b04d9ec24009895e3f19671bf92e55" prot="private" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager" kindref="compound">GPSManager</ref></type>
+        <definition>GPSManager pt.lsts.asa.comms.Announcer.gpsManager</definition>
+        <argsstring></argsstring>
+        <name>gpsManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="33" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a78ba041e6948dffe1bf29e0f9eb74d5b" prot="private" static="no" mutable="no">
+        <type>SensorManager</type>
+        <definition>SensorManager pt.lsts.asa.comms.Announcer.sensorManager</definition>
+        <argsstring></argsstring>
+        <name>sensorManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="34" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a12bf9859e53e247eea25e7d1428ce942" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.comms.Announcer.myHeading</definition>
+        <argsstring></argsstring>
+        <name>myHeading</name>
+        <initializer>= Double.NaN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="36" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ad98caa0827d953121f9ac5e8e79178b4" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.comms.Announcer.services</definition>
+        <argsstring></argsstring>
+        <name>services</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="37" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1afab33815ef31c419af79ffc274c59030" prot="private" static="no" mutable="no">
+        <type>Sensor</type>
+        <definition>Sensor pt.lsts.asa.comms.Announcer.sensor</definition>
+        <argsstring></argsstring>
+        <name>sensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="38" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a95133bcfa573e3178268dc3b05cbe131" prot="private" static="no" mutable="no">
+        <type>Runnable</type>
+        <definition>Runnable pt.lsts.asa.comms.Announcer.task</definition>
+        <argsstring></argsstring>
+        <name>task</name>
+        <initializer>= new Runnable() {
+		@Override
+		public void run() {
+			boolean announcePosition = <ref refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" kindref="member">ASA.getInstance</ref>().getPrefs()
+					.getBoolean(&quot;announcePosition&quot;, true);
+
+			if (<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a708b0e5d2f0d2e716f55597dbbc8f5d4" kindref="member">DEBUG</ref>)
+				Log.i(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a126257643f3cf4a5ecfe2d7982c6450a" kindref="member">TAG</ref>, announce.toString());
+			if (imm.getListener() == null) {
+				gpsManager.removeListener(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a3e5ba0512f5ecc6368c17edf3143cd2b" kindref="member">locListener</ref>);
+				<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" kindref="member">gpsAddListenerCounter</ref> = 0;
+				return;
+			}
+			if (<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" kindref="member">gpsAddListenerCounter</ref> == 0 &amp;&amp; announcePosition) {
+				gpsManager.addListener(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a3e5ba0512f5ecc6368c17edf3143cd2b" kindref="member">locListener</ref>);
+			} else if (<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" kindref="member">gpsAddListenerCounter</ref> == 2) {
+				gpsManager.removeListener(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a3e5ba0512f5ecc6368c17edf3143cd2b" kindref="member">locListener</ref>);
+			}
+			<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" kindref="member">gpsAddListenerCounter</ref> = (<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" kindref="member">gpsAddListenerCounter</ref> + 1) % 4;
+
+			<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" kindref="member">updateLocationOnAnnounce</ref>();
+			for (int i = 0; i &lt; 5; i++) {
+				imm.send(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a849ac220046482feb3bbc0a3ce2e8767" kindref="member">broadcastAddress</ref>, <ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a8f1d0dde03c935646275bb0ca3d247da" kindref="member">ANNOUNCE_PORT</ref> + i, <ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac313418f572f98ec1f2ea28f46a46451" kindref="member">announce</ref>);
+				imm.send(<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac2278bc6a01e42484ffbd47efbe575e3" kindref="member">multicastAddress</ref>, <ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a8f1d0dde03c935646275bb0ca3d247da" kindref="member">ANNOUNCE_PORT</ref> + i, <ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac313418f572f98ec1f2ea28f46a46451" kindref="member">announce</ref>);
+			}
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="40" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a3e5ba0512f5ecc6368c17edf3143cd2b" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref></type>
+        <definition>LocationChangeListener pt.lsts.asa.comms.Announcer.locListener</definition>
+        <argsstring></argsstring>
+        <name>locListener</name>
+        <initializer>= new <ref refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kindref="compound">LocationChangeListener</ref>() {
+		@Override
+		public void onLocationChange(Location location) {
+			<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" kindref="member">updateLocationOnAnnounce</ref>();
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="67" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a785165a29d4299dd7e5cddf9a656eccd" prot="private" static="no" mutable="no">
+        <type>SensorEventListener</type>
+        <definition>SensorEventListener pt.lsts.asa.comms.Announcer.orientationListener</definition>
+        <argsstring></argsstring>
+        <name>orientationListener</name>
+        <initializer>= new SensorEventListener() {
+		@Override
+		public void onSensorChanged(SensorEvent event) {
+			<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a12bf9859e53e247eea25e7d1428ce942" kindref="member">myHeading</ref> = event.values[0];
+			<ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a34cc1070a50e7a229ea0349111dce02b" kindref="member">updateHeadingOnAnnounce</ref>();
+		}
+
+		@Override
+		public void onAccuracyChanged(Sensor <ref refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1afab33815ef31c419af79ffc274c59030" kindref="member">sensor</ref>, int accuracy) {
+		}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="74" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485a1d4071edc469e9a991bb0378007c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.comms.Announcer.Announcer</definition>
+        <argsstring>(IMCManager imm, String broadcast, String multicast)</argsstring>
+        <name>Announcer</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager" kindref="compound">IMCManager</ref></type>
+          <declname>imm</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>broadcast</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>multicast</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="86" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="86" bodyend="93"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a899369bb5523890384993f85eea10fdd" compoundref="Announcer_8java" startline="28">pt.lsts.asa.comms.Announcer.imm</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="95" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="95" bodyend="113"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa81bbc2318b1c27bc20b4a3de3e4f5a5" compoundref="GPSManager_8java" startline="60" endline="71">pt.lsts.asa.managers.GPSManager.addListener</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1aac16139f8922ddf5faa9bdcf6b52922a" compoundref="Announcer_8java" startline="159" endline="196">pt.lsts.asa.comms.Announcer.generateAnnounce</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a326c786de016395dceae22f2b3284110" compoundref="ASA_8java" startline="218" endline="221">pt.lsts.asa.ASA.getGpsManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a58971b878ca91d7c571a5a512478fe6b" compoundref="ASA_8java" startline="223" endline="225">pt.lsts.asa.ASA.getSensorManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer_1a2d29d9a34cc71e0dc813687a472c4e4b" compoundref="AccuTimer_8java" startline="32" endline="35">pt.lsts.asa.util.AccuTimer.start</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1aa2edf96c7f2884a66e3cf9c7109c9607" compoundref="ASA_8java" startline="157" endline="168">pt.lsts.asa.ASA.start</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1add4dd0f5d7e5b2ebf4c8f2415d87e60c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="115" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="115" bodyend="119"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1a3e8544b05970e32a8906ed6f84baf14c" compoundref="GPSManager_8java" startline="73" endline="82">pt.lsts.asa.managers.GPSManager.removeListener</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer_1a3e860c79811b5b083ae4adc8ba087650" compoundref="AccuTimer_8java" startline="37" endline="39">pt.lsts.asa.util.AccuTimer.stop</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1a4500e769d8f489e76393028b64f38bcd" compoundref="ASA_8java" startline="170" endline="182">pt.lsts.asa.ASA.pause</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ae9e999b0bb75955049b2824613c296bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.setBroadcastAddress</definition>
+        <argsstring>(String addr)</argsstring>
+        <name>setBroadcastAddress</name>
+        <param>
+          <type>String</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="121" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="121" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1aac16139f8922ddf5faa9bdcf6b52922a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.generateAnnounce</definition>
+        <argsstring>()</argsstring>
+        <name>generateAnnounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function can be called to (re)generate the Announce message sent by the console </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="159" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="159" bodyend="196"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1a37aaf44fd3850d32e440976816e9974e" compoundref="IMCManager_8java" startline="228" endline="230">pt.lsts.asa.managers.IMCManager.getLocalId</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a2c7c343f4a64a22bf8271c44d07d7326" compoundref="MUtil_8java" startline="61" endline="79">pt.lsts.asa.util.MUtil.getLocalIpAddress</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" compoundref="Announcer_8java" startline="125" endline="140">pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" compoundref="Announcer_8java" startline="95" endline="113">pt.lsts.asa.comms.Announcer.start</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.updateLocationOnAnnounce</definition>
+        <argsstring>()</argsstring>
+        <name>updateLocationOnAnnounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="125" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="125" bodyend="140"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_1aa1ca6cad2daeb23e596f075a344249fa" compoundref="GPSManager_8java" startline="91" endline="93">pt.lsts.asa.managers.GPSManager.getCurrentLocation</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a326c786de016395dceae22f2b3284110" compoundref="ASA_8java" startline="218" endline="221">pt.lsts.asa.ASA.getGpsManager</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1aac16139f8922ddf5faa9bdcf6b52922a" compoundref="Announcer_8java" startline="159" endline="196">pt.lsts.asa.comms.Announcer.generateAnnounce</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a34cc1070a50e7a229ea0349111dce02b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.comms.Announcer.updateHeadingOnAnnounce</definition>
+        <argsstring>()</argsstring>
+        <name>updateHeadingOnAnnounce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="142" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="142" bodyend="153"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a688c04ccf2e4c837925dd73d84f8b9bf" compoundref="ASA_8java" startline="184" endline="190">pt.lsts.asa.ASA.getInstance</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1a8714046f8afa82d2eda8d9e0ae22ffb5" compoundref="ASA_8java" startline="262" endline="265">pt.lsts.asa.ASA.getPrefs</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>pt.lsts.asa.listenners.LocationChangeListener</label>
+        <link refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener"/>
+      </node>
+      <node id="39">
+        <label>SensorEventListener</label>
+      </node>
+      <node id="31">
+        <label>Sensor</label>
+      </node>
+      <node id="27">
+        <label>pt.lsts.asa.comms.Announcer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer"/>
+        <childnode refid="28" relation="usage">
+          <edgelabel>locListener</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>at</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>sensor</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>sensorManager</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>gpsManager</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>announce</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>orientationListener</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>imm</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>pt::lsts::neptus::messages::listener::MessageListener&lt; MessageInfo, IMCMessage &gt;</label>
+      </node>
+      <node id="34">
+        <label>LocationListener</label>
+      </node>
+      <node id="35">
+        <label>ArrayList&lt; pt.lsts.asa.listenners.LocationChangeListener &gt;</label>
+      </node>
+      <node id="43">
+        <label>LinkedHashMap&lt; Integer, List&lt; pt.lsts.asa.comms.IMCSubscriber &gt; &gt;</label>
+      </node>
+      <node id="44">
+        <label>ArrayList&lt; pt.lsts.asa.comms.IMCSubscriber &gt;</label>
+      </node>
+      <node id="29">
+        <label>pt.lsts.asa.util.AccuTimer</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1util_1_1AccuTimer"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>IMCMessage</label>
+      </node>
+      <node id="42">
+        <label>UDPTransport</label>
+      </node>
+      <node id="30">
+        <label>Handler</label>
+      </node>
+      <node id="36">
+        <label>LocationManager</label>
+      </node>
+      <node id="40">
+        <label>pt.lsts.asa.managers.IMCManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>announceListener</edgelabel>
+          <edgelabel>comm</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>handle</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>subscribers</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>subscribersToAll</edgelabel>
+        </childnode>
+      </node>
+      <node id="33">
+        <label>pt.lsts.asa.managers.GPSManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager"/>
+        <childnode refid="34" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>listeners</edgelabel>
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>manager</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>currentLocation</edgelabel>
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Location</label>
+      </node>
+      <node id="32">
+        <label>SensorManager</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/Announcer.java" bodystart="19" bodyend="221"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac313418f572f98ec1f2ea28f46a46451" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>announce</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a991339b7b53ed8b0948d2421bcb05ff4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>ANNOUNCE_ADDR</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a11efc9cfd8265c7710b2c42698977ae7" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>ANNOUNCE_DELAY</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a8f1d0dde03c935646275bb0ca3d247da" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>ANNOUNCE_PORT</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485a1d4071edc469e9a991bb0378007c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>Announcer</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ab58beeb4d4dcf2157e94042a7d27f8ac" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>at</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a849ac220046482feb3bbc0a3ce2e8767" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>broadcastAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a708b0e5d2f0d2e716f55597dbbc8f5d4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>DEBUG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1aac16139f8922ddf5faa9bdcf6b52922a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>generateAnnounce</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a6c6423b8c761aca8f7b0063bb2e18635" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>gpsAddListenerCounter</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a08b04d9ec24009895e3f19671bf92e55" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>gpsManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a899369bb5523890384993f85eea10fdd" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>imm</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a3e5ba0512f5ecc6368c17edf3143cd2b" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>locListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ac2278bc6a01e42484ffbd47efbe575e3" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>multicastAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a12bf9859e53e247eea25e7d1428ce942" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>myHeading</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a785165a29d4299dd7e5cddf9a656eccd" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>orientationListener</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1afab33815ef31c419af79ffc274c59030" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>sensor</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a78ba041e6948dffe1bf29e0f9eb74d5b" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>sensorManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ad98caa0827d953121f9ac5e8e79178b4" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>services</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1ae9e999b0bb75955049b2824613c296bc" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>setBroadcastAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a485992536f87e50b74cb0620cca60d7c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>start</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1add4dd0f5d7e5b2ebf4c8f2415d87e60c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>stop</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a126257643f3cf4a5ecfe2d7982c6450a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a95133bcfa573e3178268dc3b05cbe131" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>task</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a34cc1070a50e7a229ea0349111dce02b" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>updateHeadingOnAnnounce</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1a7826694b7d80ba969a9b35f11959a142" prot="private" virt="non-virtual"><scope>pt::lsts::asa::comms::Announcer</scope><name>updateLocationOnAnnounce</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

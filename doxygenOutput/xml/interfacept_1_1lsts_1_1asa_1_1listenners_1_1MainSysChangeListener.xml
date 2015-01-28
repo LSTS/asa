@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener" kind="interface" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::listenners::MainSysChangeListener</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener_1add4b100cbc8c3af0648cbaa588c340a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.listenners.MainSysChangeListener.onMainSysChange</definition>
+        <argsstring>(Sys newMainSys)</argsstring>
+        <name>onMainSysChange</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1sys_1_1Sys" kindref="compound">Sys</ref></type>
+          <declname>newMainSys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MainSysChangeListener.java" line="7" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MainSysChangeListener.java" line="5" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MainSysChangeListener.java" bodystart="5" bodyend="8"/>
+    <listofallmembers>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1MainSysChangeListener_1add4b100cbc8c3af0648cbaa588c340a5" prot="public" virt="non-virtual"><scope>pt::lsts::asa::listenners::MainSysChangeListener</scope><name>onMainSysChange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

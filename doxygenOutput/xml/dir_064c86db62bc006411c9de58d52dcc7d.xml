@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_064c86db62bc006411c9de58d52dcc7d" kind="dir">
+    <compoundname>src/pt/lsts/asa/comms</compoundname>
+    <innerfile refid="Announcer_8java">Announcer.java</innerfile>
+    <innerfile refid="IMCSubscriber_8java">IMCSubscriber.java</innerfile>
+    <innerfile refid="ImcSystem_8java">ImcSystem.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/comms/"/>
+  </compounddef>
+</doxygen>

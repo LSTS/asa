@@ -1,0 +1,202 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager}{}\section{pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager}\index{pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager@{pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a57d38e41bae7793807103f97c8b1e0b7}{G\+P\+S\+Manager} (Context context)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa81bbc2318b1c27bc20b4a3de3e4f5a5}{add\+Listener} (\hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener}{Location\+Change\+Listener} l)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a3e8544b05970e32a8906ed6f84baf14c}{remove\+Listener} (\hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener}{Location\+Change\+Listener} l)
+\item 
+Location \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa1ca6cad2daeb23e596f075a344249fa}{get\+Current\+Location} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a648bac49b2828cd36ffd89505b340a46}{start} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a71f7b97e412a8f3faa21e5d15e1d60c3}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a87bf0b045ff632c19f847ac728d0001d}{T\+A\+G} = \char`\"{}G\+P\+S\+Manager\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a9d88c4565df05512b24607c497dbff5f}{update\+Location} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener}{Location\+Change\+Listener} $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a1a073ba9977885873325873a5a57f628}{listeners} = new Array\+List$<$\hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener}{Location\+Change\+Listener}$>$()
+\item 
+Location \hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a291ba592c1ad6a42c3dd5bd1c721234e}{current\+Location} = new Location(\char`\"{}gps\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple G\+P\+S manager that only deals with location changes and routes the info to a series of listeners in a list. If there is no listener it auto-\/shutdown the G\+P\+S locator
+
+\begin{DoxyAuthor}{Author}
+sharp 
+\end{DoxyAuthor}
+
+
+Definition at line 23 of file G\+P\+S\+Manager.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a57d38e41bae7793807103f97c8b1e0b7}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!G\+P\+S\+Manager@{G\+P\+S\+Manager}}
+\index{G\+P\+S\+Manager@{G\+P\+S\+Manager}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{G\+P\+S\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+G\+P\+S\+Manager (
+\begin{DoxyParamCaption}
+\item[{Context}]{context}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a57d38e41bae7793807103f97c8b1e0b7}
+
+
+Definition at line 55 of file G\+P\+S\+Manager.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa81bbc2318b1c27bc20b4a3de3e4f5a5}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+add\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Location\+Change\+Listener}}]{l}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa81bbc2318b1c27bc20b4a3de3e4f5a5}
+
+
+Definition at line 60 of file G\+P\+S\+Manager.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+start(), and pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+update\+Location().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+start().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa1ca6cad2daeb23e596f075a344249fa}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!get\+Current\+Location@{get\+Current\+Location}}
+\index{get\+Current\+Location@{get\+Current\+Location}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{get\+Current\+Location}]{\setlength{\rightskip}{0pt plus 5cm}Location pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+get\+Current\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_aa1ca6cad2daeb23e596f075a344249fa}
+
+
+Definition at line 91 of file G\+P\+S\+Manager.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+current\+Location.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+update\+Location\+On\+Announce().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a3e8544b05970e32a8906ed6f84baf14c}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf Location\+Change\+Listener}}]{l}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a3e8544b05970e32a8906ed6f84baf14c}
+
+
+Definition at line 73 of file G\+P\+S\+Manager.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+stop().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+comms.\+Announcer.\+stop().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a648bac49b2828cd36ffd89505b340a46}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!start@{start}}
+\index{start@{start}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a648bac49b2828cd36ffd89505b340a46}
+
+
+Definition at line 95 of file G\+P\+S\+Manager.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Instance(), and pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Prefs().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+add\+Listener().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a71f7b97e412a8f3faa21e5d15e1d60c3}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!stop@{stop}}
+\index{stop@{stop}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a71f7b97e412a8f3faa21e5d15e1d60c3}
+
+
+Definition at line 108 of file G\+P\+S\+Manager.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+remove\+Listener().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a9d88c4565df05512b24607c497dbff5f}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!update\+Location@{update\+Location}}
+\index{update\+Location@{update\+Location}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{update\+Location}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+update\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a9d88c4565df05512b24607c497dbff5f}
+
+
+Definition at line 85 of file G\+P\+S\+Manager.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+add\+Listener().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a291ba592c1ad6a42c3dd5bd1c721234e}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!current\+Location@{current\+Location}}
+\index{current\+Location@{current\+Location}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{current\+Location}]{\setlength{\rightskip}{0pt plus 5cm}Location pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+current\+Location = new Location(\char`\"{}gps\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a291ba592c1ad6a42c3dd5bd1c721234e}
+
+
+Definition at line 27 of file G\+P\+S\+Manager.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+get\+Current\+Location().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a1a073ba9977885873325873a5a57f628}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!listeners@{listeners}}
+\index{listeners@{listeners}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{listeners}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Location\+Change\+Listener}$>$ pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+listeners = new Array\+List$<${\bf Location\+Change\+Listener}$>$()\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a1a073ba9977885873325873a5a57f628}
+
+
+Definition at line 26 of file G\+P\+S\+Manager.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a87bf0b045ff632c19f847ac728d0001d}{}\index{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}!T\+A\+G@{T\+A\+G}}
+\index{T\+A\+G@{T\+A\+G}!pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager@{pt\+::lsts\+::asa\+::managers\+::\+G\+P\+S\+Manager}}
+\subsubsection[{T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+managers.\+G\+P\+S\+Manager.\+T\+A\+G = \char`\"{}G\+P\+S\+Manager\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1managers_1_1GPSManager_a87bf0b045ff632c19f847ac728d0001d}
+
+
+Definition at line 24 of file G\+P\+S\+Manager.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/managers/\hyperlink{GPSManager_8java}{G\+P\+S\+Manager.\+java}\end{DoxyCompactItemize}

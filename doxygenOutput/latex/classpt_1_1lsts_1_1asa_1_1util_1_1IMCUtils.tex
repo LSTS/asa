@@ -1,0 +1,100 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils}{}\section{pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils}\index{pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils@{pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Array\+List$<$ String $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_ab3a1ec50ded5278d67d178a197936640}{get\+Announce\+Service} (I\+M\+C\+Message msg, String service)
+\item 
+static String\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a1c7cf0dfab7f40ec2489de9f40032f6b}{get\+Announce\+I\+M\+C\+Address\+Port} (I\+M\+C\+Message msg)
+\item 
+static boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a5a99d40700575232601a40ec44ee78c5}{is\+Msg\+From\+Active} (I\+M\+C\+Message msg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file I\+M\+C\+Utils.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a1c7cf0dfab7f40ec2489de9f40032f6b}{}\index{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}!get\+Announce\+I\+M\+C\+Address\+Port@{get\+Announce\+I\+M\+C\+Address\+Port}}
+\index{get\+Announce\+I\+M\+C\+Address\+Port@{get\+Announce\+I\+M\+C\+Address\+Port}!pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}}
+\subsubsection[{get\+Announce\+I\+M\+C\+Address\+Port}]{\setlength{\rightskip}{0pt plus 5cm}static String \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+get\+Announce\+I\+M\+C\+Address\+Port (
+\begin{DoxyParamCaption}
+\item[{I\+M\+C\+Message}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a1c7cf0dfab7f40ec2489de9f40032f6b}
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & I\+M\+C\+Message containing the Announce to extract the address from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The node address for I\+M\+C communications. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file I\+M\+C\+Utils.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+get\+Announce\+Service().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_ab3a1ec50ded5278d67d178a197936640}{}\index{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}!get\+Announce\+Service@{get\+Announce\+Service}}
+\index{get\+Announce\+Service@{get\+Announce\+Service}!pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}}
+\subsubsection[{get\+Announce\+Service}]{\setlength{\rightskip}{0pt plus 5cm}static Array\+List$<$String$>$ pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+get\+Announce\+Service (
+\begin{DoxyParamCaption}
+\item[{I\+M\+C\+Message}]{msg, }
+\item[{String}]{service}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_ab3a1ec50ded5278d67d178a197936640}
+This function return the full address on a service specified in the Announce message of a node
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the message to be inspected \\
+\hline
+{\em service} & The name of the service to be looked for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a string like $<$address\+:port$>$, null if msg not an announce or service doesnt exist. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file I\+M\+C\+Utils.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+get\+Announce\+I\+M\+C\+Address\+Port(), and pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a5a99d40700575232601a40ec44ee78c5}{}\index{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}!is\+Msg\+From\+Active@{is\+Msg\+From\+Active}}
+\index{is\+Msg\+From\+Active@{is\+Msg\+From\+Active}!pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils@{pt\+::lsts\+::asa\+::util\+::\+I\+M\+C\+Utils}}
+\subsubsection[{is\+Msg\+From\+Active}]{\setlength{\rightskip}{0pt plus 5cm}static boolean pt.\+lsts.\+asa.\+util.\+I\+M\+C\+Utils.\+is\+Msg\+From\+Active (
+\begin{DoxyParamCaption}
+\item[{I\+M\+C\+Message}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1IMCUtils_a5a99d40700575232601a40ec44ee78c5}
+
+
+Definition at line 65 of file I\+M\+C\+Utils.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Active\+Sys(), pt.\+lsts.\+asa.\+sys.\+Sys.\+get\+Id(), and pt.\+lsts.\+asa.\+A\+S\+A.\+get\+Instance().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+subscribers.\+Call\+Out\+I\+M\+C\+Subscriber.\+on\+Receive(), pt.\+lsts.\+asa.\+subscribers.\+Gmap\+I\+M\+C\+Subscriber.\+on\+Receive(), and pt.\+lsts.\+asa.\+subscribers.\+Manual\+Indicators\+Fragment\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/util/\hyperlink{IMCUtils_8java}{I\+M\+C\+Utils.\+java}\end{DoxyCompactItemize}

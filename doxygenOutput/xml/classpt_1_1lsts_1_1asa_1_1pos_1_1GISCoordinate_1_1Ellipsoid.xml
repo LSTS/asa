@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a9761003ee693f1303d7ce10babdfb21d" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.GISCoordinate.Ellipsoid.dispName</definition>
+        <argsstring></argsstring>
+        <name>dispName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="37" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" compoundref="GISCoordinate_8java" startline="30" endline="35">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.Ellipsoid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ae543a217d5f349088f023378690b139c" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String pt.lsts.asa.pos.GISCoordinate.Ellipsoid.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="38" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" compoundref="GISCoordinate_8java" startline="30" endline="35">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.Ellipsoid</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1a704914e4d44bb89c34ff9b793fbd9cdd" compoundref="GISCoordinate_8java" startline="193" endline="221">pt.lsts.asa.pos.GISCoordinate.move</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1aaaec46426b01cb056a3feb1ee32b54a6" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.GISCoordinate.Ellipsoid.a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" compoundref="GISCoordinate_8java" startline="30" endline="35">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.Ellipsoid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ad93c80547246333dbad9dcc44804a8f7" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double pt.lsts.asa.pos.GISCoordinate.Ellipsoid.invf</definition>
+        <argsstring></argsstring>
+        <name>invf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="40" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" compoundref="GISCoordinate_8java" startline="30" endline="35">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.Ellipsoid</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.pos.GISCoordinate.Ellipsoid.Ellipsoid</definition>
+        <argsstring>(String dispName, String name, double a, double invf)</argsstring>
+        <name>Ellipsoid</name>
+        <param>
+          <type>String</type>
+          <declname>dispName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>invf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="30" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="30" bodyend="35"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1aaaec46426b01cb056a3feb1ee32b54a6" compoundref="GISCoordinate_8java" startline="39">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.a</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a9761003ee693f1303d7ce10babdfb21d" compoundref="GISCoordinate_8java" startline="37">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.dispName</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ad93c80547246333dbad9dcc44804a8f7" compoundref="GISCoordinate_8java" startline="40">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.invf</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ae543a217d5f349088f023378690b139c" compoundref="GISCoordinate_8java" startline="38">pt.lsts.asa.pos.GISCoordinate.Ellipsoid.name</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" line="29" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/pos/GISCoordinate.java" bodystart="29" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1aaaec46426b01cb056a3feb1ee32b54a6" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</scope><name>a</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a9761003ee693f1303d7ce10babdfb21d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</scope><name>dispName</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1a32c80ec5a0a219670421887c4bba0b4d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</scope><name>Ellipsoid</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ad93c80547246333dbad9dcc44804a8f7" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</scope><name>invf</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1pos_1_1GISCoordinate_1_1Ellipsoid_1ae543a217d5f349088f023378690b139c" prot="public" virt="non-virtual"><scope>pt::lsts::asa::pos::GISCoordinate::Ellipsoid</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::fragments::SettingsButtonFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1aaeabd1b26ef6599c9b5a60f7baa4515e" prot="private" static="no" mutable="no">
+        <type>FragmentActivity</type>
+        <definition>FragmentActivity pt.lsts.asa.fragments.SettingsButtonFragment.fragmentActivity</definition>
+        <argsstring></argsstring>
+        <name>fragmentActivity</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="20" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a375c79555f6414e94cf944440edc7d9f" compoundref="SettingsButtonFragment_8java" startline="27" endline="29">pt.lsts.asa.fragments.SettingsButtonFragment.SettingsButtonFragment</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a664eb62fa210bdf78ef91838efda3ce1" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button pt.lsts.asa.fragments.SettingsButtonFragment.settingsButton</definition>
+        <argsstring></argsstring>
+        <name>settingsButton</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a5a6e3e6781bc9f1e9edf39a1e000b94e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SettingsButtonFragment.SettingsButtonFragment</definition>
+        <argsstring>()</argsstring>
+        <name>SettingsButtonFragment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a375c79555f6414e94cf944440edc7d9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SettingsButtonFragment.SettingsButtonFragment</definition>
+        <argsstring>(FragmentActivity fragmentActivity)</argsstring>
+        <name>SettingsButtonFragment</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="27" bodyend="29"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1aaeabd1b26ef6599c9b5a60f7baa4515e" compoundref="SettingsButtonFragment_8java" startline="20">pt.lsts.asa.fragments.SettingsButtonFragment.fragmentActivity</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1aedfbabe14521ebaebea10b95994519af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View pt.lsts.asa.fragments.SettingsButtonFragment.onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="32" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a1af897ac87b2efa9374ec7eb71ddf533" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SettingsButtonFragment.onResume</definition>
+        <argsstring>()</argsstring>
+        <name>onResume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="39" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="39" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/6/15. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="367">
+        <label>pt.lsts.asa.fragments.SettingsButtonFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment"/>
+        <childnode refid="368" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="368">
+        <label>Fragment</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="371">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="372">
+        <label>Button</label>
+      </node>
+      <node id="369">
+        <label>pt.lsts.asa.fragments.SettingsButtonFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment"/>
+        <childnode refid="370" relation="public-inheritance">
+        </childnode>
+        <childnode refid="371" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="372" relation="usage">
+          <edgelabel>settingsButton</edgelabel>
+        </childnode>
+      </node>
+      <node id="370">
+        <label>Fragment</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" line="18" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SettingsButtonFragment.java" bodystart="18" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1aaeabd1b26ef6599c9b5a60f7baa4515e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>fragmentActivity</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1aedfbabe14521ebaebea10b95994519af" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>onCreateView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a1af897ac87b2efa9374ec7eb71ddf533" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>onResume</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a664eb62fa210bdf78ef91838efda3ce1" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>settingsButton</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a5a6e3e6781bc9f1e9edf39a1e000b94e" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>SettingsButtonFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SettingsButtonFragment_1a375c79555f6414e94cf944440edc7d9f" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SettingsButtonFragment</scope><name>SettingsButtonFragment</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

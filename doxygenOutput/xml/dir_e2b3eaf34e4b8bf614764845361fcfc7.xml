@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_e2b3eaf34e4b8bf614764845361fcfc7" kind="dir">
+    <compoundname>src/pt/lsts/asa/listenners</compoundname>
+    <innerdir refid="dir_0f91804ddd653a0540e95669a102fe09">src/pt/lsts/asa/listenners/sharedPreferences</innerdir>
+    <innerfile refid="BeaconListChangeListener_8java">BeaconListChangeListener.java</innerfile>
+    <innerfile refid="LocationChangeListener_8java">LocationChangeListener.java</innerfile>
+    <innerfile refid="MainSysChangeListener_8java">MainSysChangeListener.java</innerfile>
+    <innerfile refid="MyLocationListener_8java">MyLocationListener.java</innerfile>
+    <innerfile refid="SystemListChangeListener_8java">SystemListChangeListener.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/"/>
+  </compounddef>
+</doxygen>

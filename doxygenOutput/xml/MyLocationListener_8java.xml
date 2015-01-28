@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="MyLocationListener_8java" kind="file" language="Java">
+    <compoundname>MyLocationListener.java</compoundname>
+    <innerclass refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener" prot="public">pt::lsts::asa::listenners::MyLocationListener</innerclass>
+    <innernamespace refid="namespacept_1_1lsts_1_1asa_1_1listenners">pt::lsts::asa::listenners</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">pt.lsts.asa.listenners;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.content.Context;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.location.Location;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.location.LocationManager;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.os.Bundle;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>android.location.LocationListener;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacept" kindref="compound">pt</ref>.<ref refid="namespacept_1_1lsts" kindref="compound">lsts</ref>.<ref refid="namespacept_1_1lsts_1_1asa" kindref="compound">asa</ref>.<ref refid="namespacept_1_1lsts_1_1asa_1_1fragments" kindref="compound">fragments</ref>.<ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener" kindref="compound">MyLocationListener</ref>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a085b8eb27f3299f763e51c9241e95557" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>LocationManager<sp/><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a085b8eb27f3299f763e51c9241e95557" kindref="member">locationManager</ref><sp/>=<sp/>null;</highlight></codeline>
+<codeline lineno="19" refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" kindref="member">gmapFragment</ref><sp/>=<sp/>null;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1a382e9a54b3e13a6e3ba86109ee8939de" kindref="member">MyLocationListener</ref>(</highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref><sp/>gmapFragment)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.gmapFragment=<ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ace35f73344448e8a08a8c456c82de12d" kindref="member">gmapFragment</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Acquire<sp/>a<sp/>reference<sp/>to<sp/>the<sp/>system<sp/>Location<sp/>Manager</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.locationManager<sp/>=<sp/>(LocationManager)<sp/>gmapFragment.<ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a2af202f161cb77fc72414977acb5d735" kindref="member">getFragmentActivity</ref>().getSystemService(Context.LOCATION_SERVICE);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener_1ab95e14042fb6008824808ec3396d142e" kindref="member">initLocationListener</ref>(){</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>a<sp/>listener<sp/>that<sp/>responds<sp/>to<sp/>location<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LocationListener<sp/>locationListener<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>LocationListener()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onLocationChanged(Location<sp/>location)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Called<sp/>when<sp/>a<sp/>new<sp/>location<sp/>is<sp/>found<sp/>by<sp/>the<sp/>network<sp/>location<sp/>provider.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gmapFragment.<ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment_1a266cbf3ee5f8ab35236e498d6e47226b" kindref="member">updateMyLocation</ref>(location);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onStatusChanged(String<sp/>provider,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status,<sp/>Bundle<sp/>extras)<sp/>{}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onProviderEnabled(String<sp/>provider)<sp/>{}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onProviderDisabled(String<sp/>provider)<sp/>{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>the<sp/>listener<sp/>with<sp/>the<sp/>Location<sp/>Manager<sp/>to<sp/>receive<sp/>location<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,<sp/>0,<sp/>0,<sp/>locationListener);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/MyLocationListener.java"/>
+  </compounddef>
+</doxygen>

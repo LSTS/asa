@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::ui::components::VerticalSeekBar</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">SeekBar</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a45b188523a9596db861ae1078ec7e338" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.ui.components.VerticalSeekBar.VerticalSeekBar</definition>
+        <argsstring>(Context context)</argsstring>
+        <name>VerticalSeekBar</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1ac7a137d704ef72829e29eb4c72519821" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.ui.components.VerticalSeekBar.VerticalSeekBar</definition>
+        <argsstring>(Context context, AttributeSet attrs, int defStyle)</argsstring>
+        <name>VerticalSeekBar</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>AttributeSet</type>
+          <declname>attrs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>defStyle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1af07378c05a0cb172e12d9a619ab213cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.ui.components.VerticalSeekBar.VerticalSeekBar</definition>
+        <argsstring>(Context context, AttributeSet attrs)</argsstring>
+        <name>VerticalSeekBar</name>
+        <param>
+          <type>Context</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>AttributeSet</type>
+          <declname>attrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a340f7db56e4d98e5606b916b946feb8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean pt.lsts.asa.ui.components.VerticalSeekBar.onTouchEvent</definition>
+        <argsstring>(MotionEvent event)</argsstring>
+        <name>onTouchEvent</name>
+        <param>
+          <type>MotionEvent</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="42" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="42" bodyend="60"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1afd9f4bc25bd3faf4c1c0ffa0e22f9120" compoundref="VerticalSeekBar_8java" startline="23" endline="25">pt.lsts.asa.ui.components.VerticalSeekBar.onSizeChanged</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1afd9f4bc25bd3faf4c1c0ffa0e22f9120" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ui.components.VerticalSeekBar.onSizeChanged</definition>
+        <argsstring>(int w, int h, int oldw, int oldh)</argsstring>
+        <name>onSizeChanged</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>oldw</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>oldh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="23" bodyend="25"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a340f7db56e4d98e5606b916b946feb8a" compoundref="VerticalSeekBar_8java" startline="42" endline="60">pt.lsts.asa.ui.components.VerticalSeekBar.onTouchEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a18cf118e6d0203cc6b757aa889959fd6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>synchronized void</type>
+        <definition>synchronized void pt.lsts.asa.ui.components.VerticalSeekBar.onMeasure</definition>
+        <argsstring>(int widthMeasureSpec, int heightMeasureSpec)</argsstring>
+        <name>onMeasure</name>
+        <param>
+          <type>int</type>
+          <declname>widthMeasureSpec</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>heightMeasureSpec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="28" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a1c5a14b57fb5ad3ea24172faef7e7529" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.ui.components.VerticalSeekBar.onDraw</definition>
+        <argsstring>(Canvas c)</argsstring>
+        <name>onDraw</name>
+        <param>
+          <type>Canvas</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="34" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="34" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="436">
+        <label>pt.lsts.asa.ui.components.VerticalSeekBar</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar"/>
+        <childnode refid="437" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="437">
+        <label>SeekBar</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="438">
+        <label>pt.lsts.asa.ui.components.VerticalSeekBar</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar"/>
+        <childnode refid="439" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="439">
+        <label>SeekBar</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" line="9" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/ui/components/VerticalSeekBar.java" bodystart="9" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a1c5a14b57fb5ad3ea24172faef7e7529" prot="protected" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>onDraw</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a18cf118e6d0203cc6b757aa889959fd6" prot="protected" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>onMeasure</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1afd9f4bc25bd3faf4c1c0ffa0e22f9120" prot="protected" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>onSizeChanged</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a340f7db56e4d98e5606b916b946feb8a" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>onTouchEvent</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1a45b188523a9596db861ae1078ec7e338" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>VerticalSeekBar</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1ac7a137d704ef72829e29eb4c72519821" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>VerticalSeekBar</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar_1af07378c05a0cb172e12d9a619ab213cc" prot="public" virt="non-virtual"><scope>pt::lsts::asa::ui::components::VerticalSeekBar</scope><name>VerticalSeekBar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

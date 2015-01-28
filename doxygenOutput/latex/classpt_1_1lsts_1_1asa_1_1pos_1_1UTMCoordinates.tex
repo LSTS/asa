@@ -1,0 +1,394 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates}{}\section{pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates}\index{pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates@{pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_abbcf0f370ecb55687a43b0a144fab6c5}{U\+T\+M\+Coordinates} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a508f46c459b0b1eacb4d7949412e8603}{easting}, double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a67e32d6d5f1e61c42c06ebb06e3223ac}{northing}, int \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a90bf03e81ee88041f7831e0b6a6bc08c}{zone\+\_\+number}, char \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8677ce9f27943bc0beec8797559338a5}{zone\+\_\+letter})
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a58b13372b7fc85e7c814a46518d7f342}{U\+T\+M\+Coordinates} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aad153e29fa181fa437b3dbdb493651fd}{latitude}, double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a408c6bf75745de5c290f77e65948ea2d}{longitude})
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8ad0b721b01ba175ff021e1ce5e9632b}{U\+T\+Mto\+L\+L} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa37e3f855345a999c7bb3270ac0be6a1}{L\+Lto\+U\+T\+M} ()
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a5b0a12c9f6f7c6ccd5576cf41ff4d0a6}{get\+Easting} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a1a2a20f62de9ed6c9976dff755b215bf}{set\+Easting} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a508f46c459b0b1eacb4d7949412e8603}{easting})
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a509cbb8e2470ae396ff2a261f2fc9857}{get\+Northing} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aec93621f39753a63584ff6f7d70aa3ae}{set\+Northing} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a67e32d6d5f1e61c42c06ebb06e3223ac}{northing})
+\item 
+char \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a055ac34f256ea0936d365e6c2a8601d9}{get\+Zone\+\_\+letter} ()
+\item 
+int \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aaeb605008344ef2c5356ba421fdb28b4}{get\+Zone\+\_\+number} ()
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a3a304305fedc66bab2afe4a467b70d2b}{get\+Latitude} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa22e7e64b2c9e9243d8f44a405700748}{set\+Latitude} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aad153e29fa181fa437b3dbdb493651fd}{latitude})
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a49f23c920d7fc238391a75a7d79f2a04}{get\+Longitude} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a89481f141d1f78f8d1fdb6535f9104f6}{set\+Longitude} (double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a408c6bf75745de5c290f77e65948ea2d}{longitude})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a4831382346b13b053880be4b8fecb8db}{W\+G\+S84\+\_\+radius} = 6378137.\+0d
+\item 
+final double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a9e95f9f1c3337f24dd6b4a1b08479559}{W\+G\+S84\+\_\+ecc\+Sqared} = 0.\+00669438d
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a508f46c459b0b1eacb4d7949412e8603}{easting} = 0.\+0
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a67e32d6d5f1e61c42c06ebb06e3223ac}{northing} = 0.\+0
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aad153e29fa181fa437b3dbdb493651fd}{latitude} = 0.\+0
+\item 
+double \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a408c6bf75745de5c290f77e65948ea2d}{longitude} = 0.\+0
+\item 
+int \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a90bf03e81ee88041f7831e0b6a6bc08c}{zone\+\_\+number} = 0
+\item 
+char \hyperlink{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8677ce9f27943bc0beec8797559338a5}{zone\+\_\+letter} = \textquotesingle{}T\textquotesingle{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Z\+P 
+\end{DoxyAuthor}
+
+
+Definition at line 22 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_abbcf0f370ecb55687a43b0a144fab6c5}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!U\+T\+M\+Coordinates@{U\+T\+M\+Coordinates}}
+\index{U\+T\+M\+Coordinates@{U\+T\+M\+Coordinates}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{U\+T\+M\+Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{double}]{easting, }
+\item[{double}]{northing, }
+\item[{int}]{zone\+\_\+number, }
+\item[{char}]{zone\+\_\+letter}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_abbcf0f370ecb55687a43b0a144fab6c5}
+
+
+Definition at line 35 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+easting, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+northing, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+letter, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+number.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a58b13372b7fc85e7c814a46518d7f342}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!U\+T\+M\+Coordinates@{U\+T\+M\+Coordinates}}
+\index{U\+T\+M\+Coordinates@{U\+T\+M\+Coordinates}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{U\+T\+M\+Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{double}]{latitude, }
+\item[{double}]{longitude}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a58b13372b7fc85e7c814a46518d7f342}
+
+
+Definition at line 44 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+latitude, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+longitude.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a5b0a12c9f6f7c6ccd5576cf41ff4d0a6}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Easting@{get\+Easting}}
+\index{get\+Easting@{get\+Easting}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Easting}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Easting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a5b0a12c9f6f7c6ccd5576cf41ff4d0a6}
+
+
+Definition at line 225 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+easting.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Diff().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a3a304305fedc66bab2afe4a467b70d2b}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Latitude@{get\+Latitude}}
+\index{get\+Latitude@{get\+Latitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Latitude}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Latitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a3a304305fedc66bab2afe4a467b70d2b}
+
+
+Definition at line 251 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+latitude.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a49f23c920d7fc238391a75a7d79f2a04}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Longitude@{get\+Longitude}}
+\index{get\+Longitude@{get\+Longitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Longitude}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Longitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a49f23c920d7fc238391a75a7d79f2a04}
+
+
+Definition at line 260 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+longitude.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a509cbb8e2470ae396ff2a261f2fc9857}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Northing@{get\+Northing}}
+\index{get\+Northing@{get\+Northing}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Northing}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Northing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a509cbb8e2470ae396ff2a261f2fc9857}
+
+
+Definition at line 234 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+northing.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+Coord\+Util.\+lat\+Lon\+Diff().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a055ac34f256ea0936d365e6c2a8601d9}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Zone\+\_\+letter@{get\+Zone\+\_\+letter}}
+\index{get\+Zone\+\_\+letter@{get\+Zone\+\_\+letter}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Zone\+\_\+letter}]{\setlength{\rightskip}{0pt plus 5cm}char pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Zone\+\_\+letter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a055ac34f256ea0936d365e6c2a8601d9}
+
+
+Definition at line 243 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+letter.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aaeb605008344ef2c5356ba421fdb28b4}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!get\+Zone\+\_\+number@{get\+Zone\+\_\+number}}
+\index{get\+Zone\+\_\+number@{get\+Zone\+\_\+number}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{get\+Zone\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Zone\+\_\+number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aaeb605008344ef2c5356ba421fdb28b4}
+
+
+Definition at line 247 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+number.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa37e3f855345a999c7bb3270ac0be6a1}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!L\+Lto\+U\+T\+M@{L\+Lto\+U\+T\+M}}
+\index{L\+Lto\+U\+T\+M@{L\+Lto\+U\+T\+M}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{L\+Lto\+U\+T\+M}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa37e3f855345a999c7bb3270ac0be6a1}
+
+
+Definition at line 130 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+latitude, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+longitude, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+ecc\+Sqared, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+radius.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Latitude(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Longitude(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a1a2a20f62de9ed6c9976dff755b215bf}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!set\+Easting@{set\+Easting}}
+\index{set\+Easting@{set\+Easting}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{set\+Easting}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Easting (
+\begin{DoxyParamCaption}
+\item[{double}]{easting}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a1a2a20f62de9ed6c9976dff755b215bf}
+
+
+Definition at line 229 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+easting, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa22e7e64b2c9e9243d8f44a405700748}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!set\+Latitude@{set\+Latitude}}
+\index{set\+Latitude@{set\+Latitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{set\+Latitude}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Latitude (
+\begin{DoxyParamCaption}
+\item[{double}]{latitude}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aa22e7e64b2c9e9243d8f44a405700748}
+
+
+Definition at line 255 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+latitude, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a89481f141d1f78f8d1fdb6535f9104f6}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!set\+Longitude@{set\+Longitude}}
+\index{set\+Longitude@{set\+Longitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{set\+Longitude}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Longitude (
+\begin{DoxyParamCaption}
+\item[{double}]{longitude}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a89481f141d1f78f8d1fdb6535f9104f6}
+
+
+Definition at line 264 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+longitude.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aec93621f39753a63584ff6f7d70aa3ae}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!set\+Northing@{set\+Northing}}
+\index{set\+Northing@{set\+Northing}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{set\+Northing}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Northing (
+\begin{DoxyParamCaption}
+\item[{double}]{northing}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aec93621f39753a63584ff6f7d70aa3ae}
+
+
+Definition at line 238 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+northing, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8ad0b721b01ba175ff021e1ce5e9632b}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!U\+T\+Mto\+L\+L@{U\+T\+Mto\+L\+L}}
+\index{U\+T\+Mto\+L\+L@{U\+T\+Mto\+L\+L}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{U\+T\+Mto\+L\+L}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8ad0b721b01ba175ff021e1ce5e9632b}
+
+
+Definition at line 52 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+northing, pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+ecc\+Sqared, and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+radius.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Easting(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Northing(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a508f46c459b0b1eacb4d7949412e8603}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!easting@{easting}}
+\index{easting@{easting}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{easting}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+easting = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a508f46c459b0b1eacb4d7949412e8603}
+
+
+Definition at line 26 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Easting(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Easting(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aad153e29fa181fa437b3dbdb493651fd}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!latitude@{latitude}}
+\index{latitude@{latitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{latitude}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+latitude = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_aad153e29fa181fa437b3dbdb493651fd}
+
+
+Definition at line 29 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Latitude(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Latitude(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a408c6bf75745de5c290f77e65948ea2d}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!longitude@{longitude}}
+\index{longitude@{longitude}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{longitude}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+longitude = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a408c6bf75745de5c290f77e65948ea2d}
+
+
+Definition at line 30 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Longitude(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Longitude(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a67e32d6d5f1e61c42c06ebb06e3223ac}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!northing@{northing}}
+\index{northing@{northing}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{northing}]{\setlength{\rightskip}{0pt plus 5cm}double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+northing = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a67e32d6d5f1e61c42c06ebb06e3223ac}
+
+
+Definition at line 27 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Northing(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+set\+Northing(), pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a9e95f9f1c3337f24dd6b4a1b08479559}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!W\+G\+S84\+\_\+ecc\+Sqared@{W\+G\+S84\+\_\+ecc\+Sqared}}
+\index{W\+G\+S84\+\_\+ecc\+Sqared@{W\+G\+S84\+\_\+ecc\+Sqared}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{W\+G\+S84\+\_\+ecc\+Sqared}]{\setlength{\rightskip}{0pt plus 5cm}final double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+ecc\+Sqared = 0.\+00669438d\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a9e95f9f1c3337f24dd6b4a1b08479559}
+
+
+Definition at line 24 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a4831382346b13b053880be4b8fecb8db}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!W\+G\+S84\+\_\+radius@{W\+G\+S84\+\_\+radius}}
+\index{W\+G\+S84\+\_\+radius@{W\+G\+S84\+\_\+radius}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{W\+G\+S84\+\_\+radius}]{\setlength{\rightskip}{0pt plus 5cm}final double pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+W\+G\+S84\+\_\+radius = 6378137.\+0d\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a4831382346b13b053880be4b8fecb8db}
+
+
+Definition at line 23 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+L\+Lto\+U\+T\+M(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+Mto\+L\+L().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8677ce9f27943bc0beec8797559338a5}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!zone\+\_\+letter@{zone\+\_\+letter}}
+\index{zone\+\_\+letter@{zone\+\_\+letter}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{zone\+\_\+letter}]{\setlength{\rightskip}{0pt plus 5cm}char pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+letter = \textquotesingle{}T\textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a8677ce9f27943bc0beec8797559338a5}
+
+
+Definition at line 33 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Zone\+\_\+letter(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a90bf03e81ee88041f7831e0b6a6bc08c}{}\index{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}!zone\+\_\+number@{zone\+\_\+number}}
+\index{zone\+\_\+number@{zone\+\_\+number}!pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates@{pt\+::lsts\+::asa\+::pos\+::\+U\+T\+M\+Coordinates}}
+\subsubsection[{zone\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+zone\+\_\+number = 0\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1pos_1_1UTMCoordinates_a90bf03e81ee88041f7831e0b6a6bc08c}
+
+
+Definition at line 32 of file U\+T\+M\+Coordinates.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+get\+Zone\+\_\+number(), and pt.\+lsts.\+asa.\+pos.\+U\+T\+M\+Coordinates.\+U\+T\+M\+Coordinates().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/pos/\hyperlink{UTMCoordinates_8java}{U\+T\+M\+Coordinates.\+java}\end{DoxyCompactItemize}

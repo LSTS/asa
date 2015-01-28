@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::util::AndroidUtil</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1ad8a7b99415566e4a42fffbceadef5e43" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pt.lsts.asa.util.AndroidUtil.showToastShort</definition>
+        <argsstring>(FragmentActivity fragmentActivity, final String msg)</argsstring>
+        <name>showToastShort</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <param>
+          <type>final String</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" line="15" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" bodystart="15" bodyend="21"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab5ab0fc8f101a27c96444bd02b4c0672" compoundref="ASA_8java" startline="287" endline="289">pt.lsts.asa.ASA.getContext</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_1a4c75fa27d91299f95f01b58f25f3ef3d" compoundref="VideoViewFragment_8java" startline="128" endline="151">pt.lsts.asa.fragments.VideoViewFragment.setRunnable</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_1ad9e8fda00aef515b0355966089592da2" compoundref="VideoViewFragment_8java" startline="84" endline="103">pt.lsts.asa.fragments.VideoViewFragment.setVideoViewListeners</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1a0028d95c856d06666e0bb0231c7212af" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pt.lsts.asa.util.AndroidUtil.showToastLong</definition>
+        <argsstring>(FragmentActivity fragmentActivity, final String msg)</argsstring>
+        <name>showToastLong</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <param>
+          <type>final String</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" bodystart="23" bodyend="29"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1ASA_1ab5ab0fc8f101a27c96444bd02b4c0672" compoundref="ASA_8java" startline="287" endline="289">pt.lsts.asa.ASA.getContext</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1ad72566b38e912e9ca914cbcde54a484a" compoundref="SystemListFragment_8java" startline="214" endline="229">pt.lsts.asa.fragments.SystemListFragment.selectActiveSystem</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1VideoViewFragment_1a4c75fa27d91299f95f01b58f25f3ef3d" compoundref="VideoViewFragment_8java" startline="128" endline="151">pt.lsts.asa.fragments.VideoViewFragment.setRunnable</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SystemListFragment_1a86f52843362b5d387452cbf2b008b819" compoundref="SystemListFragment_8java" startline="118" endline="143">pt.lsts.asa.fragments.SystemListFragment.showMoreInfo</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a1a1d1ddcf5eb19e909404ebc0809a732" compoundref="MainActivity_8java" startline="71" endline="89">pt.lsts.asa.activities.MainActivity.test</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1MainActivity_1a2266b419ecc85137e8c4fd77b30b69f5" compoundref="MainActivity_8java" startline="91" endline="97">pt.lsts.asa.activities.MainActivity.test2</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1adc7c1ad1f600e852b23af36db3f865ba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void pt.lsts.asa.util.AndroidUtil.loadFragment</definition>
+        <argsstring>(FragmentActivity fragmentActivity, Fragment fragment, int fragmentContainerID)</argsstring>
+        <name>loadFragment</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <param>
+          <type>Fragment</type>
+          <declname>fragment</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fragmentContainerID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" bodystart="31" bodyend="36"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1aa9c394d0e0674bdce5de46cb0c1e0550" compoundref="AutoActivity_8java" startline="24" endline="34">pt.lsts.asa.activities.AutoActivity.loadFragments</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1ManualActivity_1a9830353f491e2b0827dfc6fed433ba36" compoundref="ManualActivity_8java" startline="37" endline="56">pt.lsts.asa.activities.ManualActivity.loadFragments</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1SystemListActivity_1af02c115fc6f8e8be5e9e3ccd12234838" compoundref="SystemListActivity_8java" startline="56" endline="69">pt.lsts.asa.activities.SystemListActivity.loadFragments</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Created by jloureiro on 1/8/15. </para>    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" line="12" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/AndroidUtil.java" bodystart="12" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1adc7c1ad1f600e852b23af36db3f865ba" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::AndroidUtil</scope><name>loadFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1a0028d95c856d06666e0bb0231c7212af" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::AndroidUtil</scope><name>showToastLong</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1ad8a7b99415566e4a42fffbceadef5e43" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::AndroidUtil</scope><name>showToastShort</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::util::MUtil</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1aaa7c2f3d287c68af20d3fdbea7d338bc" prot="private" static="yes" mutable="no">
+        <type>final String</type>
+        <definition>final String pt.lsts.asa.util.MUtil.TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;MUtil&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="35" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a26d21613af5d7dd4eb7106987b409f76" prot="public" static="yes" mutable="no">
+        <type>final double</type>
+        <definition>final double pt.lsts.asa.util.MUtil.TWO_PI_RADS</definition>
+        <argsstring></argsstring>
+        <name>TWO_PI_RADS</name>
+        <initializer>= Math.PI * 2.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="37" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a516d19547bbc79d4948f99873f5d4c45" compoundref="MUtil_8java" startline="172" endline="178">pt.lsts.asa.util.MUtil.nomalizeAngleRads2Pi</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a30bd72a5910d8ba33a4a710a159ac9d0" compoundref="MUtil_8java" startline="184" endline="191">pt.lsts.asa.util.MUtil.nomalizeAngleRadsPi</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a7689d9691597f8d7385d2b500b34d6f2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double pt.lsts.asa.util.MUtil.roundn</definition>
+        <argsstring>(double d, int n)</argsstring>
+        <name>roundn</name>
+        <param>
+          <type>double</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function that rounds a number to N decimal places</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Double to round </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of decimal places to round to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="48" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a2c7c343f4a64a22bf8271c44d07d7326" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String pt.lsts.asa.util.MUtil.getLocalIpAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getLocalIpAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Android function to retrieve the IP independent of the connection used (3G or WiFi)</para><para><simplesect kind="return"><para>string containing the IP </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="61" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="61" bodyend="79"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1comms_1_1Announcer_1aac16139f8922ddf5faa9bdcf6b52922a" compoundref="Announcer_8java" startline="159" endline="196">pt.lsts.asa.comms.Announcer.generateAnnounce</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager_1ae5e396c9fe1fd0ed4957d2f2147d70fd" compoundref="IMCManager_8java" startline="42" endline="54">pt.lsts.asa.managers.IMCManager.IMCManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1acae08ebd1baa26894e2a01cfafd95926" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String pt.lsts.asa.util.MUtil.getBroadcastAddress</definition>
+        <argsstring>(Context mContext)</argsstring>
+        <name>getBroadcastAddress</name>
+        <param>
+          <type>Context</type>
+          <declname>mContext</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="81" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="81" bodyend="93"/>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1ASA_1ad8cd0a63644f0e3b120d2db762abfa4f" compoundref="ASA_8java" startline="94" endline="101">pt.lsts.asa.ASA.initBroadcast</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1ab9d522d6ac82d66fbca6a08e43d5e9e4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Bitmap</type>
+        <definition>static Bitmap pt.lsts.asa.util.MUtil.requestBitmap</definition>
+        <argsstring>(double requestLat1, double requestLon1, double requestLat2, double requestLon2, int w, int h)</argsstring>
+        <name>requestBitmap</name>
+        <param>
+          <type>double</type>
+          <declname>requestLat1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>requestLon1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>requestLat2</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>requestLon2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="95" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="95" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a516d19547bbc79d4948f99873f5d4c45" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double pt.lsts.asa.util.MUtil.nomalizeAngleRads2Pi</definition>
+        <argsstring>(double angle)</argsstring>
+        <name>nomalizeAngleRads2Pi</name>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the angle between 0 and 2pi </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="172" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="172" bodyend="178"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a26d21613af5d7dd4eb7106987b409f76" compoundref="MUtil_8java" startline="37">pt.lsts.asa.util.MUtil.TWO_PI_RADS</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a30bd72a5910d8ba33a4a710a159ac9d0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double pt.lsts.asa.util.MUtil.nomalizeAngleRadsPi</definition>
+        <argsstring>(double angle)</argsstring>
+        <name>nomalizeAngleRadsPi</name>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the angle between -pi and pi </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="184" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="184" bodyend="191"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a26d21613af5d7dd4eb7106987b409f76" compoundref="MUtil_8java" startline="37">pt.lsts.asa.util.MUtil.TWO_PI_RADS</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a963bc991b41c2d848fb68500207774e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double pt.lsts.asa.util.MUtil.nomalizeAngleDegrees360</definition>
+        <argsstring>(double angle)</argsstring>
+        <name>nomalizeAngleDegrees360</name>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the angle between 0 and 360 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="197" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="197" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1aa1ccf111d7ba733e7e22e9e08c294204" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double pt.lsts.asa.util.MUtil.nomalizeAngleDegrees180</definition>
+        <argsstring>(double angle)</argsstring>
+        <name>nomalizeAngleDegrees180</name>
+        <param>
+          <type>double</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the angle between -180 and 180 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="209" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="209" bodyend="216"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Class that gathers miscellaneous utilitary functions that don&apos;t really fit anywhere If I have a bunch of them in the same category i move them to a separate class</para><para><simplesect kind="author"><para>jqcorreia </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" line="33" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/util/MUtil.java" bodystart="33" bodyend="218"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1acae08ebd1baa26894e2a01cfafd95926" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>getBroadcastAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a2c7c343f4a64a22bf8271c44d07d7326" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>getLocalIpAddress</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1aa1ccf111d7ba733e7e22e9e08c294204" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>nomalizeAngleDegrees180</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a963bc991b41c2d848fb68500207774e9" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>nomalizeAngleDegrees360</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a516d19547bbc79d4948f99873f5d4c45" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>nomalizeAngleRads2Pi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a30bd72a5910d8ba33a4a710a159ac9d0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>nomalizeAngleRadsPi</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1ab9d522d6ac82d66fbca6a08e43d5e9e4" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>requestBitmap</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a7689d9691597f8d7385d2b500b34d6f2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>roundn</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1aaa7c2f3d287c68af20d3fdbea7d338bc" prot="private" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>TAG</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1util_1_1MUtil_1a26d21613af5d7dd4eb7106987b409f76" prot="public" virt="non-virtual"><scope>pt::lsts::asa::util::MUtil</scope><name>TWO_PI_RADS</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

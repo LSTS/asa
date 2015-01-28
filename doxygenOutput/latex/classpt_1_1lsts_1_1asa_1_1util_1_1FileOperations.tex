@@ -1,0 +1,308 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations}{}\section{pt.\+lsts.\+asa.\+util.\+File\+Operations Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations}\index{pt.\+lsts.\+asa.\+util.\+File\+Operations@{pt.\+lsts.\+asa.\+util.\+File\+Operations}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a56f20a01c88e7ea22a750483046ec1af}{init\+Dir} (File dir)
+\item 
+static boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a94d5def017a990d766d8a7ba22305d83}{is\+External\+Storage\+Writable} ()
+\item 
+static boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_abd3c62a82ebb5db762c6d6b1f07b9635}{is\+External\+Storage\+Readable} ()
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9f288d8c05ae35b8d493976b2a0d683c}{copy\+File} (Input\+Stream in, Output\+Stream out)  throws I\+O\+Exception 
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_ac01327249ace222fe46f68e5f1e8f889}{copy\+File} (File file\+In, File file\+Out)  throws I\+O\+Exception 
+\item 
+static Vector$<$ String $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aa354fab4ccc07e50fa04bc6f1984cd42}{read\+Lines} (File file)
+\item 
+static Vector$<$ String $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_adab6a6a9933ed2eb17635d76113fedc1}{read\+Lines} (Input\+Stream in)
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafd349197f86f3acefdbe681f0e62971}{write\+Line} (String line, Output\+Stream out)
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafda98f402e49f29ccf9737207d35202}{write\+Lines} (Vector$<$ String $>$ lines, Output\+Stream out)
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a939a8966779f64f2784f591ff1676fe8}{write\+Line} (String line, File file)
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a0aff19fcb86424e49a1520fa795cdf76}{write\+Lines} (Vector$<$ String $>$ lines, File file)
+\item 
+static String\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a5e1d4172b7efdf76c444175e7eff7600}{filter\+Files\+By\+Extension} (String\mbox{[}$\,$\mbox{]} files\+Array, String extension)
+\item 
+static String\mbox{[}$\,$\mbox{]} \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a53092cfc07efd7fdc44eb9441a32bcd9}{remove\+Extension} (String\mbox{[}$\,$\mbox{]} files\+Array, String extension)
+\item 
+static void \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9a2c18916edbe9585d024d445d08877f}{copy\+All\+Assets} (Context context)
+\item 
+static boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a2f7260ffc1f25dc8228c1cfbce4fae45}{copy\+Specific\+Asset} (Context context, String name)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static File \hyperlink{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a87bb111eb431d2790126cbc9223f06a6}{main\+Dir}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file File\+Operations.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9a2c18916edbe9585d024d445d08877f}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!copy\+All\+Assets@{copy\+All\+Assets}}
+\index{copy\+All\+Assets@{copy\+All\+Assets}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{copy\+All\+Assets}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+All\+Assets (
+\begin{DoxyParamCaption}
+\item[{Context}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9a2c18916edbe9585d024d445d08877f}
+
+
+Definition at line 137 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+init\+Dir().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9f288d8c05ae35b8d493976b2a0d683c}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!copy\+File@{copy\+File}}
+\index{copy\+File@{copy\+File}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{copy\+File}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File (
+\begin{DoxyParamCaption}
+\item[{Input\+Stream}]{in, }
+\item[{Output\+Stream}]{out}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a9f288d8c05ae35b8d493976b2a0d683c}
+
+
+Definition at line 46 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+read\+Lines(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+All\+Assets(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+Specific\+Asset().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_ac01327249ace222fe46f68e5f1e8f889}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!copy\+File@{copy\+File}}
+\index{copy\+File@{copy\+File}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{copy\+File}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File (
+\begin{DoxyParamCaption}
+\item[{File}]{file\+In, }
+\item[{File}]{file\+Out}
+\end{DoxyParamCaption}
+) throws I\+O\+Exception\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_ac01327249ace222fe46f68e5f1e8f889}
+
+
+Definition at line 51 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+read\+Lines(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a2f7260ffc1f25dc8228c1cfbce4fae45}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!copy\+Specific\+Asset@{copy\+Specific\+Asset}}
+\index{copy\+Specific\+Asset@{copy\+Specific\+Asset}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{copy\+Specific\+Asset}]{\setlength{\rightskip}{0pt plus 5cm}static boolean pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+Specific\+Asset (
+\begin{DoxyParamCaption}
+\item[{Context}]{context, }
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a2f7260ffc1f25dc8228c1cfbce4fae45}
+
+
+Definition at line 165 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+init\+Dir().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+App.\+init\+Settings().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a5e1d4172b7efdf76c444175e7eff7600}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!filter\+Files\+By\+Extension@{filter\+Files\+By\+Extension}}
+\index{filter\+Files\+By\+Extension@{filter\+Files\+By\+Extension}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{filter\+Files\+By\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}static String \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+File\+Operations.\+filter\+Files\+By\+Extension (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{files\+Array, }
+\item[{String}]{extension}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a5e1d4172b7efdf76c444175e7eff7600}
+
+
+Definition at line 114 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+settings.\+Profile.\+get\+Profiles\+Available().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a56f20a01c88e7ea22a750483046ec1af}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!init\+Dir@{init\+Dir}}
+\index{init\+Dir@{init\+Dir}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{init\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+init\+Dir (
+\begin{DoxyParamCaption}
+\item[{File}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a56f20a01c88e7ea22a750483046ec1af}
+
+
+Definition at line 23 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+All\+Assets(), pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+Specific\+Asset(), and pt.\+lsts.\+asa.\+settings.\+Profile.\+save().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_abd3c62a82ebb5db762c6d6b1f07b9635}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!is\+External\+Storage\+Readable@{is\+External\+Storage\+Readable}}
+\index{is\+External\+Storage\+Readable@{is\+External\+Storage\+Readable}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{is\+External\+Storage\+Readable}]{\setlength{\rightskip}{0pt plus 5cm}static boolean pt.\+lsts.\+asa.\+util.\+File\+Operations.\+is\+External\+Storage\+Readable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_abd3c62a82ebb5db762c6d6b1f07b9635}
+
+
+Definition at line 37 of file File\+Operations.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a94d5def017a990d766d8a7ba22305d83}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!is\+External\+Storage\+Writable@{is\+External\+Storage\+Writable}}
+\index{is\+External\+Storage\+Writable@{is\+External\+Storage\+Writable}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{is\+External\+Storage\+Writable}]{\setlength{\rightskip}{0pt plus 5cm}static boolean pt.\+lsts.\+asa.\+util.\+File\+Operations.\+is\+External\+Storage\+Writable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a94d5def017a990d766d8a7ba22305d83}
+
+
+Definition at line 28 of file File\+Operations.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aa354fab4ccc07e50fa04bc6f1984cd42}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!read\+Lines@{read\+Lines}}
+\index{read\+Lines@{read\+Lines}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{read\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}static Vector$<$String$>$ pt.\+lsts.\+asa.\+util.\+File\+Operations.\+read\+Lines (
+\begin{DoxyParamCaption}
+\item[{File}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aa354fab4ccc07e50fa04bc6f1984cd42}
+
+
+Definition at line 55 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File(), and pt.\+lsts.\+asa.\+settings.\+Profile.\+load().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_adab6a6a9933ed2eb17635d76113fedc1}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!read\+Lines@{read\+Lines}}
+\index{read\+Lines@{read\+Lines}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{read\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}static Vector$<$String$>$ pt.\+lsts.\+asa.\+util.\+File\+Operations.\+read\+Lines (
+\begin{DoxyParamCaption}
+\item[{Input\+Stream}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_adab6a6a9933ed2eb17635d76113fedc1}
+
+
+Definition at line 64 of file File\+Operations.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a53092cfc07efd7fdc44eb9441a32bcd9}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!remove\+Extension@{remove\+Extension}}
+\index{remove\+Extension@{remove\+Extension}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{remove\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}static String \mbox{[}$\,$\mbox{]} pt.\+lsts.\+asa.\+util.\+File\+Operations.\+remove\+Extension (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{files\+Array, }
+\item[{String}]{extension}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a53092cfc07efd7fdc44eb9441a32bcd9}
+
+
+Definition at line 127 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+settings.\+Profile.\+get\+Profiles\+Available().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafd349197f86f3acefdbe681f0e62971}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!write\+Line@{write\+Line}}
+\index{write\+Line@{write\+Line}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{write\+Line}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Line (
+\begin{DoxyParamCaption}
+\item[{String}]{line, }
+\item[{Output\+Stream}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafd349197f86f3acefdbe681f0e62971}
+
+
+Definition at line 81 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Line(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a939a8966779f64f2784f591ff1676fe8}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!write\+Line@{write\+Line}}
+\index{write\+Line@{write\+Line}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{write\+Line}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Line (
+\begin{DoxyParamCaption}
+\item[{String}]{line, }
+\item[{File}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a939a8966779f64f2784f591ff1676fe8}
+
+
+Definition at line 96 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Line().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafda98f402e49f29ccf9737207d35202}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!write\+Lines@{write\+Lines}}
+\index{write\+Lines@{write\+Lines}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{write\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines (
+\begin{DoxyParamCaption}
+\item[{Vector$<$ String $>$}]{lines, }
+\item[{Output\+Stream}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_aafda98f402e49f29ccf9737207d35202}
+
+
+Definition at line 91 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Line().
+
+
+
+Referenced by pt.\+lsts.\+asa.\+util.\+File\+Operations.\+copy\+File(), pt.\+lsts.\+asa.\+settings.\+Profile.\+save(), and pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a0aff19fcb86424e49a1520fa795cdf76}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!write\+Lines@{write\+Lines}}
+\index{write\+Lines@{write\+Lines}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{write\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}static void pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines (
+\begin{DoxyParamCaption}
+\item[{Vector$<$ String $>$}]{lines, }
+\item[{File}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a0aff19fcb86424e49a1520fa795cdf76}
+
+
+Definition at line 105 of file File\+Operations.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+util.\+File\+Operations.\+write\+Lines().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a87bb111eb431d2790126cbc9223f06a6}{}\index{pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}!main\+Dir@{main\+Dir}}
+\index{main\+Dir@{main\+Dir}!pt\+::lsts\+::asa\+::util\+::\+File\+Operations@{pt\+::lsts\+::asa\+::util\+::\+File\+Operations}}
+\subsubsection[{main\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}File pt.\+lsts.\+asa.\+util.\+File\+Operations.\+main\+Dir\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1util_1_1FileOperations_a87bb111eb431d2790126cbc9223f06a6}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} File(
+            \textcolor{stringliteral}{"/storage/emulated/0/Android/data/pt.lsts.ASA/"})
+\end{DoxyCode}
+
+
+Definition at line 20 of file File\+Operations.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+settings.\+Profile.\+get\+Profiles\+Available(), pt.\+lsts.\+asa.\+settings.\+Profile.\+load(), and pt.\+lsts.\+asa.\+settings.\+Profile.\+save().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/util/\hyperlink{FileOperations_8java}{File\+Operations.\+java}\end{DoxyCompactItemize}

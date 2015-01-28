@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_0464841a4ba740771b2c68b9cf245fb4" kind="dir">
+    <compoundname>src/pt/lsts/asa/managers</compoundname>
+    <innerfile refid="GPSManager_8java">GPSManager.java</innerfile>
+    <innerfile refid="IMCManager_8java">IMCManager.java</innerfile>
+    <innerfile refid="SoundManager_8java">SoundManager.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/managers/"/>
+  </compounddef>
+</doxygen>

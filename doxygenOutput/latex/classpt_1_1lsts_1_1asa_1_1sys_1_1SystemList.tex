@@ -1,0 +1,264 @@
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList}{}\section{pt.\+lsts.\+asa.\+sys.\+System\+List Class Reference}
+\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList}\index{pt.\+lsts.\+asa.\+sys.\+System\+List@{pt.\+lsts.\+asa.\+sys.\+System\+List}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a560a4426e7a9bf372868034239390672}{System\+List} (\hyperlink{classpt_1_1lsts_1_1asa_1_1managers_1_1IMCManager}{I\+M\+C\+Manager} imm)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_afe59f36f8485e1b59e3f2a9577b90633}{add\+System\+List\+Change\+Listener} (\hyperlink{interfacept_1_1lsts_1_1asa_1_1listenners_1_1SystemListChangeListener}{System\+List\+Change\+Listener} l)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_adca42b514f9c5aa0fa22151b766490ea}{change\+List} (Array\+List$<$ \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1Sys}{Sys} $>$ list)
+\item 
+boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a32b7b6137f5551b47af60af7c4dab238}{contains\+Sys\+Name} (String name)
+\item 
+boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_aa9d076d2cca90e547d004d078e618d59}{contains\+Sys\+Id} (int id)
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1Sys}{Sys} \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a09765da2052f55a6681f1a9afd834cdb}{find\+Sys\+By\+Name} (String name)
+\item 
+\hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1Sys}{Sys} \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a831997ba7282ac1062bc34e46adbd30f}{find\+Sys\+By\+Id} (int id)
+\item 
+Array\+List$<$ \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1Sys}{Sys} $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a5d442f08c33d72123d1673650fd2975e}{get\+List} ()
+\item 
+Array\+List$<$ String $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a51d0cf4d583420807f2497418342648a}{get\+Name\+List} ()
+\item 
+Array\+List$<$ String $>$ \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a9af6ea7aa5cca50cbb45a72bbe5cfa6d}{get\+Name\+List\+By\+Type} (String type)
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a2ee385876fe6cff395fd43f1c4a8079c}{start} ()
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c8dada0cf44535221a13781e207cf45}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7608c9771fb92071d80375d26d7f6f31}{T\+A\+G} = \char`\"{}System\+List\char`\"{}
+\item 
+static final int \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a17a9d3d83e510f92c5bc8224ec6220d7}{C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T} = 5000
+\item 
+static final boolean \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a3c735cbd1b8ddd85b788ba8a90596d87}{D\+E\+B\+U\+G} = false
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c94d3cf2b85da3e1e76466deda74871}{check\+Connection} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file System\+List.\+java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a560a4426e7a9bf372868034239390672}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!System\+List@{System\+List}}
+\index{System\+List@{System\+List}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{System\+List}]{\setlength{\rightskip}{0pt plus 5cm}pt.\+lsts.\+asa.\+sys.\+System\+List.\+System\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+M\+C\+Manager}}]{imm}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a560a4426e7a9bf372868034239390672}
+
+
+Definition at line 27 of file System\+List.\+java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_afe59f36f8485e1b59e3f2a9577b90633}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!add\+System\+List\+Change\+Listener@{add\+System\+List\+Change\+Listener}}
+\index{add\+System\+List\+Change\+Listener@{add\+System\+List\+Change\+Listener}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{add\+System\+List\+Change\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+sys.\+System\+List.\+add\+System\+List\+Change\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf System\+List\+Change\+Listener}}]{l}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_afe59f36f8485e1b59e3f2a9577b90633}
+
+
+Definition at line 55 of file System\+List.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_adca42b514f9c5aa0fa22151b766490ea}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!change\+List@{change\+List}}
+\index{change\+List@{change\+List}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{change\+List}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+sys.\+System\+List.\+change\+List (
+\begin{DoxyParamCaption}
+\item[{Array\+List$<$ {\bf Sys} $>$}]{list}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_adca42b514f9c5aa0fa22151b766490ea}
+
+
+Definition at line 59 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+sys.\+System\+List.\+check\+Connection(), and pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c94d3cf2b85da3e1e76466deda74871}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!check\+Connection@{check\+Connection}}
+\index{check\+Connection@{check\+Connection}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{check\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+sys.\+System\+List.\+check\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c94d3cf2b85da3e1e76466deda74871}
+
+
+Definition at line 33 of file System\+List.\+java.
+
+
+
+References pt.\+lsts.\+asa.\+sys.\+System\+List.\+change\+List().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_aa9d076d2cca90e547d004d078e618d59}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!contains\+Sys\+Id@{contains\+Sys\+Id}}
+\index{contains\+Sys\+Id@{contains\+Sys\+Id}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{contains\+Sys\+Id}]{\setlength{\rightskip}{0pt plus 5cm}boolean pt.\+lsts.\+asa.\+sys.\+System\+List.\+contains\+Sys\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_aa9d076d2cca90e547d004d078e618d59}
+
+
+Definition at line 73 of file System\+List.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a32b7b6137f5551b47af60af7c4dab238}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!contains\+Sys\+Name@{contains\+Sys\+Name}}
+\index{contains\+Sys\+Name@{contains\+Sys\+Name}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{contains\+Sys\+Name}]{\setlength{\rightskip}{0pt plus 5cm}boolean pt.\+lsts.\+asa.\+sys.\+System\+List.\+contains\+Sys\+Name (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a32b7b6137f5551b47af60af7c4dab238}
+
+
+Definition at line 65 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a831997ba7282ac1062bc34e46adbd30f}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!find\+Sys\+By\+Id@{find\+Sys\+By\+Id}}
+\index{find\+Sys\+By\+Id@{find\+Sys\+By\+Id}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{find\+Sys\+By\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sys} pt.\+lsts.\+asa.\+sys.\+System\+List.\+find\+Sys\+By\+Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a831997ba7282ac1062bc34e46adbd30f}
+
+
+Definition at line 89 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a09765da2052f55a6681f1a9afd834cdb}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!find\+Sys\+By\+Name@{find\+Sys\+By\+Name}}
+\index{find\+Sys\+By\+Name@{find\+Sys\+By\+Name}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{find\+Sys\+By\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sys} pt.\+lsts.\+asa.\+sys.\+System\+List.\+find\+Sys\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{String}]{name}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a09765da2052f55a6681f1a9afd834cdb}
+
+
+Definition at line 81 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+color\+Items(), pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive(), pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+select\+Active\+System(), and pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+show\+More\+Info().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a5d442f08c33d72123d1673650fd2975e}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!get\+List@{get\+List}}
+\index{get\+List@{get\+List}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{get\+List}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<${\bf Sys}$>$ pt.\+lsts.\+asa.\+sys.\+System\+List.\+get\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a5d442f08c33d72123d1673650fd2975e}
+
+
+Definition at line 97 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+add\+Sys\+Status(), pt.\+lsts.\+asa.\+activities.\+Main\+Activity.\+choose\+Active\+System(), pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+color\+Items(), and pt.\+lsts.\+asa.\+subscribers.\+System\+List\+I\+M\+C\+Subscriber.\+on\+Receive().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a51d0cf4d583420807f2497418342648a}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!get\+Name\+List@{get\+Name\+List}}
+\index{get\+Name\+List@{get\+Name\+List}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{get\+Name\+List}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ pt.\+lsts.\+asa.\+sys.\+System\+List.\+get\+Name\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a51d0cf4d583420807f2497418342648a}
+
+
+Definition at line 101 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+fragments.\+System\+List\+Fragment.\+add\+Sys\+Status(), and pt.\+lsts.\+asa.\+activities.\+Main\+Activity.\+choose\+Active\+System().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a9af6ea7aa5cca50cbb45a72bbe5cfa6d}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!get\+Name\+List\+By\+Type@{get\+Name\+List\+By\+Type}}
+\index{get\+Name\+List\+By\+Type@{get\+Name\+List\+By\+Type}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{get\+Name\+List\+By\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Array\+List$<$String$>$ pt.\+lsts.\+asa.\+sys.\+System\+List.\+get\+Name\+List\+By\+Type (
+\begin{DoxyParamCaption}
+\item[{String}]{type}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a9af6ea7aa5cca50cbb45a72bbe5cfa6d}
+
+
+Definition at line 109 of file System\+List.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a2ee385876fe6cff395fd43f1c4a8079c}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!start@{start}}
+\index{start@{start}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+sys.\+System\+List.\+start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a2ee385876fe6cff395fd43f1c4a8079c}
+
+
+Definition at line 118 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+A\+S\+A.\+start().
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c8dada0cf44535221a13781e207cf45}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!stop@{stop}}
+\index{stop@{stop}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void pt.\+lsts.\+asa.\+sys.\+System\+List.\+stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7c8dada0cf44535221a13781e207cf45}
+
+
+Definition at line 122 of file System\+List.\+java.
+
+
+
+Referenced by pt.\+lsts.\+asa.\+A\+S\+A.\+pause().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a17a9d3d83e510f92c5bc8224ec6220d7}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T@{C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T}}
+\index{C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T@{C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}final int pt.\+lsts.\+asa.\+sys.\+System\+List.\+C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+L\+I\+M\+I\+T = 5000\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a17a9d3d83e510f92c5bc8224ec6220d7}
+
+
+Definition at line 14 of file System\+List.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a3c735cbd1b8ddd85b788ba8a90596d87}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!D\+E\+B\+U\+G@{D\+E\+B\+U\+G}}
+\index{D\+E\+B\+U\+G@{D\+E\+B\+U\+G}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{D\+E\+B\+U\+G}]{\setlength{\rightskip}{0pt plus 5cm}final boolean pt.\+lsts.\+asa.\+sys.\+System\+List.\+D\+E\+B\+U\+G = false\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a3c735cbd1b8ddd85b788ba8a90596d87}
+
+
+Definition at line 15 of file System\+List.\+java.
+
+\hypertarget{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7608c9771fb92071d80375d26d7f6f31}{}\index{pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}!T\+A\+G@{T\+A\+G}}
+\index{T\+A\+G@{T\+A\+G}!pt\+::lsts\+::asa\+::sys\+::\+System\+List@{pt\+::lsts\+::asa\+::sys\+::\+System\+List}}
+\subsubsection[{T\+A\+G}]{\setlength{\rightskip}{0pt plus 5cm}final String pt.\+lsts.\+asa.\+sys.\+System\+List.\+T\+A\+G = \char`\"{}System\+List\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classpt_1_1lsts_1_1asa_1_1sys_1_1SystemList_a7608c9771fb92071d80375d26d7f6f31}
+
+
+Definition at line 13 of file System\+List.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pt/lsts/asa/sys/\hyperlink{SystemList_8java}{System\+List.\+java}\end{DoxyCompactItemize}

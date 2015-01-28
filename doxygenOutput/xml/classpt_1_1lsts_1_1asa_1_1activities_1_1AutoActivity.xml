@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::activities::AutoActivity</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">FragmentActivity</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1a78b6d5aff1dc404ab4db2187fec695ef" prot="package" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment" kindref="compound">GmapFragment</ref></type>
+        <definition>GmapFragment pt.lsts.asa.activities.AutoActivity.gmapFragment</definition>
+        <argsstring></argsstring>
+        <name>gmapFragment</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" line="13" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1a9a2d4c8b25b59bc9b86e7d460f7b5181" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.AutoActivity.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" line="16" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" bodystart="16" bodyend="22"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1aa9c394d0e0674bdce5de46cb0c1e0550" compoundref="AutoActivity_8java" startline="24" endline="34">pt.lsts.asa.activities.AutoActivity.loadFragments</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1aa9c394d0e0674bdce5de46cb0c1e0550" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.activities.AutoActivity.loadFragments</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>loadFragments</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" bodystart="24" bodyend="34"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1util_1_1AndroidUtil_1adc7c1ad1f600e852b23af36db3f865ba" compoundref="AndroidUtil_8java" startline="31" endline="36">pt.lsts.asa.util.AndroidUtil.loadFragment</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1a9a2d4c8b25b59bc9b86e7d460f7b5181" compoundref="AutoActivity_8java" startline="16" endline="22">pt.lsts.asa.activities.AutoActivity.onCreate</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="100">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="99">
+        <label>pt.lsts.asa.activities.AutoActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="102">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="110">
+        <label>MapFragment</label>
+      </node>
+      <node id="105">
+        <label>OnMapReadyCallback</label>
+      </node>
+      <node id="106">
+        <label>GoogleMap</label>
+      </node>
+      <node id="107">
+        <label>LatLng</label>
+      </node>
+      <node id="111">
+        <label>ArrayList&lt; Marker &gt;</label>
+      </node>
+      <node id="101">
+        <label>pt.lsts.asa.activities.AutoActivity</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity"/>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+        <childnode refid="103" relation="usage">
+          <edgelabel>gmapFragment</edgelabel>
+        </childnode>
+      </node>
+      <node id="108">
+        <label>pt.lsts.asa.listenners.MyLocationListener</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1listenners_1_1MyLocationListener"/>
+        <childnode refid="103" relation="usage">
+          <edgelabel>gmapFragment</edgelabel>
+        </childnode>
+        <childnode refid="109" relation="usage">
+          <edgelabel>locationManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="104">
+        <label>Fragment</label>
+      </node>
+      <node id="109">
+        <label>LocationManager</label>
+      </node>
+      <node id="103">
+        <label>pt.lsts.asa.fragments.GmapFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1GmapFragment"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+        <childnode refid="106" relation="usage">
+          <edgelabel>googleMap</edgelabel>
+        </childnode>
+        <childnode refid="102" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="107" relation="usage">
+          <edgelabel>myLatLng</edgelabel>
+        </childnode>
+        <childnode refid="108" relation="usage">
+          <edgelabel>myLocationListener</edgelabel>
+        </childnode>
+        <childnode refid="110" relation="usage">
+          <edgelabel>mapFragment</edgelabel>
+        </childnode>
+        <childnode refid="111" relation="usage">
+          <edgelabel>markersArrayList</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" line="11" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/activities/AutoActivity.java" bodystart="11" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1a78b6d5aff1dc404ab4db2187fec695ef" prot="package" virt="non-virtual"><scope>pt::lsts::asa::activities::AutoActivity</scope><name>gmapFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1aa9c394d0e0674bdce5de46cb0c1e0550" prot="public" virt="non-virtual"><scope>pt::lsts::asa::activities::AutoActivity</scope><name>loadFragments</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1activities_1_1AutoActivity_1a9a2d4c8b25b59bc9b86e7d460f7b5181" prot="protected" virt="non-virtual"><scope>pt::lsts::asa::activities::AutoActivity</scope><name>onCreate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

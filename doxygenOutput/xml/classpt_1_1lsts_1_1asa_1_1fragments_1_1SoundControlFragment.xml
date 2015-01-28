@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment" kind="class" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::fragments::SoundControlFragment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Fragment</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a972f4236d2bae8c69b646c3480bb049e" prot="package" static="no" mutable="no">
+        <type>FragmentActivity</type>
+        <definition>FragmentActivity pt.lsts.asa.fragments.SoundControlFragment.fragmentActivity</definition>
+        <argsstring></argsstring>
+        <name>fragmentActivity</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="21" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0274c6cde306d91706f2314896aa85f8" prot="package" static="no" mutable="no">
+        <type>AudioManager</type>
+        <definition>AudioManager pt.lsts.asa.fragments.SoundControlFragment.audioManager</definition>
+        <argsstring></argsstring>
+        <name>audioManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="22" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0680d67b02d03ce3955921d97356164c" prot="package" static="no" mutable="no">
+        <type>ImageButton</type>
+        <definition>ImageButton pt.lsts.asa.fragments.SoundControlFragment.muteImageButton</definition>
+        <argsstring></argsstring>
+        <name>muteImageButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="23" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1abcee7b93b4b704daaf6edd710d903b6c" prot="package" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager" kindref="compound">SoundManager</ref></type>
+        <definition>SoundManager pt.lsts.asa.fragments.SoundControlFragment.soundManager</definition>
+        <argsstring></argsstring>
+        <name>soundManager</name>
+        <initializer>= <ref refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1ad6c4e83c02bcde903bd15c24a0e50b79" kindref="member">SoundManager.getInstance</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="24" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a5dbab273ea03e34f13c67a858b4cd342" prot="package" static="no" mutable="no">
+        <type><ref refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar" kindref="compound">VerticalSeekBar</ref></type>
+        <definition>VerticalSeekBar pt.lsts.asa.fragments.SoundControlFragment.volumeVerticalSeekBar</definition>
+        <argsstring></argsstring>
+        <name>volumeVerticalSeekBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="25" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0acb60837e9cf56352656e4cdc5bd6e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SoundControlFragment.SoundControlFragment</definition>
+        <argsstring>()</argsstring>
+        <name>SoundControlFragment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="27" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a8f5e0b61e08783b09ecdf00bcb2bde89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>pt.lsts.asa.fragments.SoundControlFragment.SoundControlFragment</definition>
+        <argsstring>(FragmentActivity fragmentActivity)</argsstring>
+        <name>SoundControlFragment</name>
+        <param>
+          <type>FragmentActivity</type>
+          <declname>fragmentActivity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="31" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1adddc5cf9e8cd68ab4f72f203a1ccd97d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.onCreate</definition>
+        <argsstring>(Bundle savedInstanceState)</argsstring>
+        <name>onCreate</name>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="36" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a415103cd0c1c5033974f3429022a85e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>View</type>
+        <definition>View pt.lsts.asa.fragments.SoundControlFragment.onCreateView</definition>
+        <argsstring>(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</argsstring>
+        <name>onCreateView</name>
+        <param>
+          <type>LayoutInflater</type>
+          <declname>inflater</declname>
+        </param>
+        <param>
+          <type>ViewGroup</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>Bundle</type>
+          <declname>savedInstanceState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="41" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a37e0622e960391ece262fa6c576e144d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.onAttach</definition>
+        <argsstring>(Activity activity)</argsstring>
+        <name>onAttach</name>
+        <param>
+          <type>Activity</type>
+          <declname>activity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="52" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa2b01007ed894ab46f24c3e96c90e323" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.onDetach</definition>
+        <argsstring>()</argsstring>
+        <name>onDetach</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="57" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1add408be2e604a2dfa75f3ccd3c7f1da0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.onStart</definition>
+        <argsstring>()</argsstring>
+        <name>onStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="62" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="62" bodyend="66"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a95f758e16b260462b8460e39430cc2e2" compoundref="SoundControlFragment_8java" startline="68" endline="76">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControl</references>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a95f758e16b260462b8460e39430cc2e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.setVolumeControl</definition>
+        <argsstring>()</argsstring>
+        <name>setVolumeControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="68" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="68" bodyend="76"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1acae2438da2be39fd6a744e3e925f1ef1" compoundref="SoundManager_8java" startline="34" endline="39">pt.lsts.asa.managers.SoundManager.getCurrentVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1ab837cf032463483d61ec5d84b37c5695" compoundref="SoundManager_8java" startline="14" endline="16">pt.lsts.asa.managers.SoundManager.getMaxVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" compoundref="SoundControlFragment_8java" startline="78" endline="90">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMute</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a07bdc3dea292c4d5253397afc043d8c7" compoundref="SoundControlFragment_8java" startline="99" endline="120">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControlChanger</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1add408be2e604a2dfa75f3ccd3c7f1da0" compoundref="SoundControlFragment_8java" startline="62" endline="66">pt.lsts.asa.fragments.SoundControlFragment.onStart</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMute</definition>
+        <argsstring>()</argsstring>
+        <name>setImageButtonMute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="78" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="78" bodyend="90"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1aaeedcf7a2b659ab29d230812684850f6" compoundref="SoundManager_8java" startline="28" endline="32">pt.lsts.asa.managers.SoundManager.checkMute</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa4afb989986ef623aef6e4038f4d7a49" compoundref="SoundControlFragment_8java" startline="128" endline="131">pt.lsts.asa.fragments.SoundControlFragment.mute</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" compoundref="SoundControlFragment_8java" startline="92" endline="97">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMuteIcon</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" compoundref="SoundControlFragment_8java" startline="133" endline="137">pt.lsts.asa.fragments.SoundControlFragment.unmute</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a95f758e16b260462b8460e39430cc2e2" compoundref="SoundControlFragment_8java" startline="68" endline="76">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMuteIcon</definition>
+        <argsstring>()</argsstring>
+        <name>setImageButtonMuteIcon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="92" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="92" bodyend="97"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1aaeedcf7a2b659ab29d230812684850f6" compoundref="SoundManager_8java" startline="28" endline="32">pt.lsts.asa.managers.SoundManager.checkMute</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1acee1ebf98754ee30c03846d782c98f2e" compoundref="SoundControlFragment_8java" startline="122" endline="126">pt.lsts.asa.fragments.SoundControlFragment.adjustVolumeBarAndIcon</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa4afb989986ef623aef6e4038f4d7a49" compoundref="SoundControlFragment_8java" startline="128" endline="131">pt.lsts.asa.fragments.SoundControlFragment.mute</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" compoundref="SoundControlFragment_8java" startline="78" endline="90">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMute</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" compoundref="SoundControlFragment_8java" startline="133" endline="137">pt.lsts.asa.fragments.SoundControlFragment.unmute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a07bdc3dea292c4d5253397afc043d8c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.setVolumeControlChanger</definition>
+        <argsstring>(VerticalSeekBar volControl, final AudioManager audioManager)</argsstring>
+        <name>setVolumeControlChanger</name>
+        <param>
+          <type><ref refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar" kindref="compound">VerticalSeekBar</ref></type>
+          <declname>volControl</declname>
+        </param>
+        <param>
+          <type>final AudioManager</type>
+          <declname>audioManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="99" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="99" bodyend="120"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1acee1ebf98754ee30c03846d782c98f2e" compoundref="SoundControlFragment_8java" startline="122" endline="126">pt.lsts.asa.fragments.SoundControlFragment.adjustVolumeBarAndIcon</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1a5885bb6c5d6918979b1bfdf87eaed657" compoundref="SoundManager_8java" startline="41" endline="43">pt.lsts.asa.managers.SoundManager.setCurrentVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" compoundref="SoundControlFragment_8java" startline="133" endline="137">pt.lsts.asa.fragments.SoundControlFragment.unmute</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a95f758e16b260462b8460e39430cc2e2" compoundref="SoundControlFragment_8java" startline="68" endline="76">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControl</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa4afb989986ef623aef6e4038f4d7a49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.mute</definition>
+        <argsstring>()</argsstring>
+        <name>mute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="128" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="128" bodyend="131"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1a27db8676b032c2f1a1f860e6a37ace38" compoundref="SoundManager_8java" startline="67" endline="69">pt.lsts.asa.managers.SoundManager.mute</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" compoundref="SoundControlFragment_8java" startline="92" endline="97">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMuteIcon</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" compoundref="SoundControlFragment_8java" startline="78" endline="90">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.unmute</definition>
+        <argsstring>()</argsstring>
+        <name>unmute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="133" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="133" bodyend="137"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1acae2438da2be39fd6a744e3e925f1ef1" compoundref="SoundManager_8java" startline="34" endline="39">pt.lsts.asa.managers.SoundManager.getCurrentVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1a5885bb6c5d6918979b1bfdf87eaed657" compoundref="SoundManager_8java" startline="41" endline="43">pt.lsts.asa.managers.SoundManager.setCurrentVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" compoundref="SoundControlFragment_8java" startline="92" endline="97">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMuteIcon</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1ae1c94368fcbee210aecd334b329df815" compoundref="SoundManager_8java" startline="71" endline="73">pt.lsts.asa.managers.SoundManager.unmute</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1ManualActivity_1ae663bf1244d944dbf1cbc3d6a7d86d86" compoundref="ManualActivity_8java" startline="59" endline="62">pt.lsts.asa.activities.ManualActivity.onPostCreate</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" compoundref="SoundControlFragment_8java" startline="78" endline="90">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMute</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a07bdc3dea292c4d5253397afc043d8c7" compoundref="SoundControlFragment_8java" startline="99" endline="120">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControlChanger</referencedby>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a9e05534cb6c3e319966b3d38e1433440" compoundref="SoundControlFragment_8java" startline="139" endline="141">pt.lsts.asa.fragments.SoundControlFragment.shutdown</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a9e05534cb6c3e319966b3d38e1433440" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="139" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="139" bodyend="141"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" compoundref="SoundControlFragment_8java" startline="133" endline="137">pt.lsts.asa.fragments.SoundControlFragment.unmute</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1activities_1_1ManualActivity_1adfddcc7c8bb74a1c3af26e2301aee4cd" compoundref="ManualActivity_8java" startline="77" endline="82">pt.lsts.asa.activities.ManualActivity.back</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1acee1ebf98754ee30c03846d782c98f2e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.fragments.SoundControlFragment.adjustVolumeBarAndIcon</definition>
+        <argsstring>()</argsstring>
+        <name>adjustVolumeBarAndIcon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="122" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="122" bodyend="126"/>
+        <references refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager_1acae2438da2be39fd6a744e3e925f1ef1" compoundref="SoundManager_8java" startline="34" endline="39">pt.lsts.asa.managers.SoundManager.getCurrentVolume</references>
+        <references refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" compoundref="SoundControlFragment_8java" startline="92" endline="97">pt.lsts.asa.fragments.SoundControlFragment.setImageButtonMuteIcon</references>
+        <referencedby refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a07bdc3dea292c4d5253397afc043d8c7" compoundref="SoundControlFragment_8java" startline="99" endline="120">pt.lsts.asa.fragments.SoundControlFragment.setVolumeControlChanger</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="375">
+        <label>pt.lsts.asa.fragments.SoundControlFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment"/>
+        <childnode refid="376" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="376">
+        <label>Fragment</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="379">
+        <label>FragmentActivity</label>
+      </node>
+      <node id="382">
+        <label>pt.lsts.asa.managers.SoundManager</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1managers_1_1SoundManager"/>
+        <childnode refid="382" relation="usage">
+          <edgelabel>instance</edgelabel>
+        </childnode>
+        <childnode refid="383" relation="usage">
+          <edgelabel>audioManager</edgelabel>
+        </childnode>
+      </node>
+      <node id="380">
+        <label>pt.lsts.asa.ui.components.VerticalSeekBar</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1ui_1_1components_1_1VerticalSeekBar"/>
+        <childnode refid="381" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="381">
+        <label>SeekBar</label>
+      </node>
+      <node id="384">
+        <label>ImageButton</label>
+      </node>
+      <node id="377">
+        <label>pt.lsts.asa.fragments.SoundControlFragment</label>
+        <link refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment"/>
+        <childnode refid="378" relation="public-inheritance">
+        </childnode>
+        <childnode refid="379" relation="usage">
+          <edgelabel>fragmentActivity</edgelabel>
+        </childnode>
+        <childnode refid="380" relation="usage">
+          <edgelabel>volumeVerticalSeekBar</edgelabel>
+        </childnode>
+        <childnode refid="382" relation="usage">
+          <edgelabel>soundManager</edgelabel>
+        </childnode>
+        <childnode refid="383" relation="usage">
+          <edgelabel>audioManager</edgelabel>
+        </childnode>
+        <childnode refid="384" relation="usage">
+          <edgelabel>muteImageButton</edgelabel>
+        </childnode>
+      </node>
+      <node id="378">
+        <label>Fragment</label>
+      </node>
+      <node id="383">
+        <label>AudioManager</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" line="19" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/fragments/SoundControlFragment.java" bodystart="19" bodyend="143"/>
+    <listofallmembers>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1acee1ebf98754ee30c03846d782c98f2e" prot="private" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>adjustVolumeBarAndIcon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0274c6cde306d91706f2314896aa85f8" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>audioManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a972f4236d2bae8c69b646c3480bb049e" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>fragmentActivity</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa4afb989986ef623aef6e4038f4d7a49" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>mute</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0680d67b02d03ce3955921d97356164c" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>muteImageButton</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a37e0622e960391ece262fa6c576e144d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>onAttach</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1adddc5cf9e8cd68ab4f72f203a1ccd97d" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>onCreate</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a415103cd0c1c5033974f3429022a85e6" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>onCreateView</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1aa2b01007ed894ab46f24c3e96c90e323" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>onDetach</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1add408be2e604a2dfa75f3ccd3c7f1da0" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>onStart</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a99c0abd79e534853c8864980ad5b1761" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>setImageButtonMute</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1ab8d4bd7ff9c3d48a6ed8df6fe6447ad1" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>setImageButtonMuteIcon</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a95f758e16b260462b8460e39430cc2e2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>setVolumeControl</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a07bdc3dea292c4d5253397afc043d8c7" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>setVolumeControlChanger</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a9e05534cb6c3e319966b3d38e1433440" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>shutdown</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a0acb60837e9cf56352656e4cdc5bd6e2" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>SoundControlFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a8f5e0b61e08783b09ecdf00bcb2bde89" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>SoundControlFragment</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1abcee7b93b4b704daaf6edd710d903b6c" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>soundManager</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a44c96cb9d4e32353413320aaf348435b" prot="public" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>unmute</name></member>
+      <member refid="classpt_1_1lsts_1_1asa_1_1fragments_1_1SoundControlFragment_1a5dbab273ea03e34f13c67a858b4cd342" prot="package" virt="non-virtual"><scope>pt::lsts::asa::fragments::SoundControlFragment</scope><name>volumeVerticalSeekBar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

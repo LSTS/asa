@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener" kind="interface" language="Java" prot="public">
+    <compoundname>pt::lsts::asa::listenners::LocationChangeListener</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener_1a0965572dd5a869cef6ba8a358ef583ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pt.lsts.asa.listenners.LocationChangeListener.onLocationChange</definition>
+        <argsstring>(Location location)</argsstring>
+        <name>onLocationChange</name>
+        <param>
+          <type>Location</type>
+          <declname>location</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/LocationChangeListener.java" line="7" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/LocationChangeListener.java" line="5" column="1" bodyfile="/home/jloureiro/workspace/asa/src/pt/lsts/asa/listenners/LocationChangeListener.java" bodystart="5" bodyend="8"/>
+    <listofallmembers>
+      <member refid="interfacept_1_1lsts_1_1asa_1_1listenners_1_1LocationChangeListener_1a0965572dd5a869cef6ba8a358ef583ea" prot="public" virt="non-virtual"><scope>pt::lsts::asa::listenners::LocationChangeListener</scope><name>onLocationChange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
