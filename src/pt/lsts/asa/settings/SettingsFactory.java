@@ -38,8 +38,7 @@ public class SettingsFactory {
                 continue;
             }
 			if (Settings.getType(key,"ERROR").equalsIgnoreCase(String.class.getName())) {
-                createEntry(category, key,
-                        (String) entry.getValue(), context);
+                createEntry(category, key, Settings.getString(key,"null"), context);
                 continue;
             }
             if (Settings.getType(key,"ERROR").equalsIgnoreCase(Integer.class.getName())){
@@ -98,9 +97,9 @@ public class SettingsFactory {
 	public static EditTextPreference createEntry(PreferenceCategory category,
 			String key, String valString, Context context) {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
-		editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
+		editTextPreference.setTitle(Settings.getKey(key, "ERROR")+": "+valString);
 		editTextPreference.setSummary(Settings.getDescription(key,"null"));
-		editTextPreference.setDefaultValue(Settings.getString(key,"null"));
+		editTextPreference.setDefaultValue(valString);
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
 		return editTextPreference;
@@ -110,7 +109,7 @@ public class SettingsFactory {
 			String key, Integer valInteger, Context context) {
 
         EditTextPreference editTextPreference = new EditTextPreference(context);
-        editTextPreference.setTitle(Settings.getKey(key, "ERROR"));
+        editTextPreference.setTitle(Settings.getKey(key, "ERROR")+": "+valInteger);
         editTextPreference.setSummary(Settings.getDescription(key,"null"));
         editTextPreference.getEditText().setInputType(
                 InputType.TYPE_CLASS_NUMBER);
@@ -122,7 +121,7 @@ public class SettingsFactory {
 
     public static ListPreference createEntry(PreferenceCategory category, String key, String defValue, String[] list, Context context){
         ListPreference listPreference = new ListPreference(context);
-        listPreference.setTitle(Settings.getKey(key,"ERROR"));
+        listPreference.setTitle(Settings.getKey(key,"ERROR")+": "+defValue);
         listPreference.setSummary(Settings.getDescription(key,"null"));
         listPreference.setDefaultValue(defValue);
         listPreference.setEntries(list);
@@ -137,6 +136,7 @@ public class SettingsFactory {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 boolean result = changeValue(key, newValue);
+                preference.setTitle(key+": "+newValue);
                 preference.setDefaultValue(newValue);
                 preference.setSummary(Settings.getDescription(key,"null"));
 
@@ -153,6 +153,7 @@ public class SettingsFactory {
 					public boolean onPreferenceChange(Preference preference,
 							Object newValue) {
 						boolean result = changeValue(key, newValue);
+                        preference.setTitle(key + ": " + newValue);
 						preference.setDefaultValue(newValue);
 						preference.setSummary(Settings.getDescription(key,"null"));
 
