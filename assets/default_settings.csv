@@ -9,12 +9,8 @@ java.lang.Integer,comms,timeout_interval_in_seconds,set time to consider Lost Co
 java.lang.Integer,audio,ias_interval_in_seconds,set Indicated Air Speed callouts interval in seconds,5
 java.lang.Integer,audio,speech_rate,set TextToSpeech speech rate in percentage,100
 java.lang.String,cam,model,specify camera model,axis
-java.lang.String,cam,model_options,camera models,axis,aircam
-java.lang.String,cam,protocol,communication protocol to be used in IP camera,rtsp
-java.lang.String,cam,protocol_options,protocols available,rtsp
+java.lang.String,cam,model_options,camera models,axis
 java.lang.String,cam,cam_ip,Define Camera IP address,10.0.20.112
-java.lang.String,cam,codec,specify camera video codec used,h264
-java.lang.String,cam,codec_options,video codecs available,h264
 java.lang.String,cam,resolution,change resolution requested to camera,640x480
 java.lang.String,cam,resolution_options,available resolution for requesting camera,160x96,320x176,640x368,640x480,1280x720
 java.lang.Boolean,systems,hide_non_vehicles,hide/show non vehicles in systems list,false

@@ -4,6 +4,7 @@ import pt.lsts.asa.settings.Settings;
 
 import java.util.Locale;
 
+import android.util.Log;
 import android.widget.VideoView;
 
 /**
@@ -11,61 +12,38 @@ import android.widget.VideoView;
  */
 public class StringUtils {
 
-	public static String getCamUrl(VideoView videoView){
+    public static final String TAG = "StringUtils";
+
+	public static String getCamUrl(){
 		String cam = Settings.getString("model","axis");
 		cam = cam.toLowerCase(Locale.UK);
 		switch (cam){
 			case "axis":
-				return getAxisUrl(videoView);
-			case "aircam":
-				return getAirCamUrl(videoView);
+				return getAxisUrl();
 			default:
 				return "ERROR";
 		}
 
 	}
 
-	public static String getAirCamUrl(VideoView videoView){
-		//rtsp://<CAM_IP>:554/live/ch00_0 - Full resolution - 1280 (w) x 720 (h)
-		String protocol = Settings.getString("protocol", "rtsp");
-		String ip_port= Settings.getString("cam_ip_port", "10.0.20.102:554");
-		String location = "live";
+	public static String getAxisUrl(){
+		//http://10.0.20.112/?date=1&clock=1&camera=1&resolution=640x480
 
-		String resolution = Settings.getString("resolution", "0x0");
-		resolution = resolution.toLowerCase(Locale.UK);
-		switch (resolution){
-			case "160x96":
-				resolution="ch03_0";
-				break;
-			case "320x176":
-				resolution="ch02_0";
-				break;
-			case "640x368":
-				resolution="ch01_0";
-				break;
-			case "1280x720":
-			default:
-				resolution="ch00_0";
-		}
+		String protocol = "http";
+		String ip_port= Settings.getString("cam_ip", "10.0.20.112");
+		String location = "axis-cgi/mjpg/video.cgi?date=1&clock=1&camera=1&resolution=";
+        String resolution = Settings.getString("resolution","640x480");
 
-		//resolution = validateResolution(resolution, videoView);
+        String completeUrl = protocol;
+        completeUrl += "://";
+        completeUrl += ip_port;
+        completeUrl += "/";
+        completeUrl += location;
+        completeUrl += resolution;
 
-		String completeUrl=protocol+"://"+ip_port+"/"+location+"/"+resolution;
+        Log.i(TAG, completeUrl);
 		return completeUrl;
-	}
 
-	public static String getAxisUrl(VideoView videoView){
-		//rtsp://IPADDRESS/axis-media/media.amp?videocodec=h264&resolution=640x480
-		String protocol = Settings.getString("protocol", "rtsp");
-		String ip_port= Settings.getString("cam_ip", "10.0.20.199");
-		String location = "axis-media/media.amp";
-		String codec = Settings.getString("codec","h264");
-		String resolution = Settings.getString("resolution", "0x0");
-
-		resolution = validateResolution(resolution, videoView);
-
-		String completeUrl=protocol+"://"+ip_port+"/"+location+"?videocodec="+codec+"&resolution="+resolution;
-		return completeUrl;
 	}
 
 	public static String validateResolution(String resolution, VideoView videoView){
