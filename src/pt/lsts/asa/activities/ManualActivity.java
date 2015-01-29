@@ -13,6 +13,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 
 public class ManualActivity extends FragmentActivity {
@@ -25,7 +26,9 @@ public class ManualActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
 
         callOut = new CallOut(ASA.getContext());
