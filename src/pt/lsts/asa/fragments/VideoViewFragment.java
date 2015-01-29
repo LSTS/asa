@@ -3,6 +3,8 @@ package pt.lsts.asa.fragments;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
+import pt.lsts.asa.util.mjpeg.MjpegInputStream;
+import pt.lsts.asa.util.mjpeg.MjpegView;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -10,7 +12,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -19,14 +20,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.widget.VideoView;
 import android.support.v4.app.Fragment;
 
 public class VideoViewFragment extends Fragment {
 
 	private final String TAG = "VideoView";
 	private FragmentActivity fragmentActivity;
-	private VideoView videoView;
+    private MjpegView mv;
+    private View view;
 
 	private ScheduledFuture handle;
 	private final ScheduledExecutorService scheduler = Executors
@@ -53,8 +54,7 @@ public class VideoViewFragment extends Fragment {
 							 Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
 		View v = inflater.inflate(R.layout.fragment_video_view, container,false);
-		videoView = (VideoView) v.findViewById(R.id.videoView);
-
+        view = v;
 		return v;
 	}
 
@@ -77,47 +77,31 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		startVideo();
+        startMjpegVideo();
 		setConnectionChecker();
 	}
 
 	public void setVideoViewListeners() {
-		videoView.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				String url = StringUtils.getCamUrl(videoView);
-                AndroidUtil.showToastShort(fragmentActivity,"restarting connection to Cam: "+url);
-				if (videoView.isPlaying())
-					videoView.stopPlayback();
-				else
-					restartVideo();
-				return false;
-			}
-		});
-        videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+        mv = (MjpegView) view.findViewById(R.id.mjpegVideoView);
+		mv.setOnTouchListener(new OnTouchListener() {
             @Override
-            public boolean onError(MediaPlayer mp, int what, int extra) {
-                return true;//avoid showing a blocking message when connection fails
+            public boolean onTouch(View v, MotionEvent event) {
+                String url = StringUtils.getCamUrl();
+                AndroidUtil.showToastShort(fragmentActivity, "restarting connection to Cam: " + url);
+                restartVideo();
+                return false;
             }
         });
 	}
 
-	public void startVideo(){
-        final String url = StringUtils.getCamUrl(videoView);
-        fragmentActivity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                videoView.setVideoPath(url);
-                videoView.start();
-            }
-        });
-		Log.i(TAG, "Connecting: "+url);
-	}
 
 	public void restartVideo(){
 		Log.i(TAG, "restartVideo()");
-		videoView.stopPlayback();
-		startVideo();
+		if (mv!=null) {
+            mv.stopPlayback();
+            mv=null;
+        }
+		startMjpegVideo();
 	}
 
 	public void setConnectionChecker(){
@@ -129,7 +113,7 @@ public class VideoViewFragment extends Fragment {
 		runnable = new Runnable() {
 			@Override
 			public void run() {
-				if (videoView.isPlaying()) {
+				if (mv.isActivated()) {
 					if (connectedBool==false){
 						connectedBool = true;
 						startHandle(timeoutTrue);
@@ -150,11 +134,23 @@ public class VideoViewFragment extends Fragment {
 			}};
 	}
 
+
 	public void startHandle(int timeout){
 		if (handle != null)
 			handle.cancel(true);
 		handle = scheduler.scheduleAtFixedRate(runnable, timeout,
 				timeout, TimeUnit.MILLISECONDS);
 	}
+
+    public void startMjpegVideo(){
+        setVideoViewListeners();
+        String URL = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
+        Log.i(TAG,"URL: "+URL);
+
+        mv.setSource(MjpegInputStream.read(URL));
+        mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
+        mv.showFps(true);
+
+    }
 
 }
