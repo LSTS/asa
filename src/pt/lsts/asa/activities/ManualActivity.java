@@ -66,22 +66,11 @@ public class ManualActivity extends FragmentActivity {
 
 	@Override
 	public void onBackPressed() {
-		new AlertDialog.Builder(this).setTitle("Exit")
-				.setMessage("Are you sure you want to exit?")
-				.setNegativeButton(android.R.string.no, null)
-				.setNegativeButton(android.R.string.yes, new OnClickListener() {
-					public void onClick(DialogInterface arg0, int arg1) {
-						back();
-					}
-				}).create().show();
+        super.onBackPressed();
+        if (soundControlFragment != null)
+            soundControlFragment.shutdown();
+        callOut.shutdown();
 
-	}
-
-	public void back() {
-		super.onBackPressed();
-		if (soundControlFragment != null)
-			soundControlFragment.shutdown();
-		callOut.shutdown();
 	}
 
 }
