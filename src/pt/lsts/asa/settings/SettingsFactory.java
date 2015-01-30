@@ -186,15 +186,15 @@ public class SettingsFactory {
 	}
 
 	public static boolean changeValue(String key, Object newValue) {
-		Object object = Settings.getSharedPreferences().getAll().get(key);
+		String type = Settings.getType(key,"ERROR");
 
-		if (object.getClass().equals(String.class)) {
+		if (type.equalsIgnoreCase(String.class.getName())) {
 			return Settings.putString(key, (String) newValue);
 		}
-		if (object.getClass().equals(Integer.class)) {
+		if (type.equalsIgnoreCase(Integer.class.getName())) {
 			return Settings.putInt(key, Integer.parseInt((String) newValue));
 		}
-		if (object.getClass().equals(Boolean.class)) {
+		if (type.equalsIgnoreCase(Boolean.class.getName())) {
 			return Settings.putBoolean(key, (Boolean) newValue);
 		}
 		return false;
