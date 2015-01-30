@@ -34,7 +34,7 @@ public class VideoViewFragment extends Fragment {
 
 	private final String TAG = "VideoView";
 	private FragmentActivity fragmentActivity;
-    private MjpegView mv;
+    private MjpegView mjpegView;
     private View view;
 
 	private ScheduledFuture handle;
@@ -85,13 +85,13 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-        startMjpegVideo();
+        startVideo();
 		setConnectionChecker();
 	}
 
 	public void setVideoViewListeners() {
-        mv = (MjpegView) view.findViewById(R.id.mjpegVideoView);
-		mv.setOnTouchListener(new OnTouchListener() {
+        mjpegView = (MjpegView) view.findViewById(R.id.mjpegVideoView);
+		mjpegView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 String url = StringUtils.getCamUrl();
@@ -105,11 +105,11 @@ public class VideoViewFragment extends Fragment {
 
 	public void restartVideo(){
 		Log.i(TAG, "restartVideo()");
-		if (mv!=null) {
-            mv.stopPlayback();
-            mv=null;
+		if (mjpegView !=null) {
+            mjpegView.stopPlayback();
+            mjpegView =null;
         }
-		startMjpegVideo();
+		startVideo();
 	}
 
 	public void setConnectionChecker(){
@@ -121,7 +121,7 @@ public class VideoViewFragment extends Fragment {
 		runnable = new Runnable() {
 			@Override
 			public void run() {
-				if (mv.isActivated()) {
+				if (mjpegView.isActivated()) {
 					if (connectedBool==false){
 						connectedBool = true;
 						startHandle(timeoutTrue);
@@ -150,21 +150,20 @@ public class VideoViewFragment extends Fragment {
 				timeout, TimeUnit.MILLISECONDS);
 	}
 
-    public void startMjpegVideo(){
+    public void startVideo(){
         setVideoViewListeners();
-        String URL = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
-        Log.i(TAG,"URL: "+URL);
+        String camUrl = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
+        Log.i(TAG,"URL: "+camUrl);
 
-        //mv.setSource(MjpegInputStream.read(URL));
-        //mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
-        //mv.showFps(true);
-        new DoRead().execute(URL);
+        //mjpegView.setSource(MjpegInputStream.read(URL));
+        //mjpegView.setDisplayMode(MjpegView.SIZE_BEST_FIT);
+        //mjpegView.showFps(true);
+        new getMjpegInputStreamAsyncTask().execute(camUrl);
 
     }
 
-    public class DoRead extends AsyncTask<String, Void, MjpegInputStream> {
+    public class getMjpegInputStreamAsyncTask extends AsyncTask<String, Void, MjpegInputStream> {
         protected MjpegInputStream doInBackground(String... url) {
-            //TODO: if camera has authentication deal with it and don't just not work
             HttpResponse res = null;
             DefaultHttpClient httpclient = new DefaultHttpClient();
             Log.d(TAG, "1. Sending http request");
@@ -190,9 +189,9 @@ public class VideoViewFragment extends Fragment {
         }
 
         protected void onPostExecute(MjpegInputStream result) {
-            mv.setSource(result);
-            mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
-            mv.showFps(true);
+            mjpegView.setSource(result);
+            mjpegView.setDisplayMode(MjpegView.SIZE_FULLSCREEN);
+            mjpegView.showFps(true);
         }
     }
 

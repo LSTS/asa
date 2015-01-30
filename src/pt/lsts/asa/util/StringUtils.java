@@ -31,7 +31,7 @@ public class StringUtils {
 
 		String protocol = "http";
 		String ip_port= Settings.getString("cam_ip", "10.0.20.112");
-		String location = "axis-cgi/mjpg/video.cgi?date=1&clock=1&camera=1&resolution=";
+		String location = "axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=";
         String resolution = Settings.getString("resolution","640x480");
 
         String completeUrl = protocol;
