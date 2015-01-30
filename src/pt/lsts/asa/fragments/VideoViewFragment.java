@@ -6,12 +6,15 @@ import pt.lsts.asa.util.StringUtils;
 import pt.lsts.asa.util.mjpeg.MjpegInputStream;
 import pt.lsts.asa.util.mjpeg.MjpegView;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -21,6 +24,11 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 public class VideoViewFragment extends Fragment {
 
@@ -147,10 +155,45 @@ public class VideoViewFragment extends Fragment {
         String URL = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
         Log.i(TAG,"URL: "+URL);
 
-        mv.setSource(MjpegInputStream.read(URL));
-        mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
-        mv.showFps(true);
+        //mv.setSource(MjpegInputStream.read(URL));
+        //mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
+        //mv.showFps(true);
+        new DoRead().execute(URL);
 
+    }
+
+    public class DoRead extends AsyncTask<String, Void, MjpegInputStream> {
+        protected MjpegInputStream doInBackground(String... url) {
+            //TODO: if camera has authentication deal with it and don't just not work
+            HttpResponse res = null;
+            DefaultHttpClient httpclient = new DefaultHttpClient();
+            Log.d(TAG, "1. Sending http request");
+            try {
+                res = httpclient.execute(new HttpGet(URI.create(url[0])));
+                Log.d(TAG, "2. Request finished, status = " + res.getStatusLine().getStatusCode());
+                if(res.getStatusLine().getStatusCode()==401){
+                    //You must turn off camera User Access Control before this will work
+                    return null;
+                }
+                return new MjpegInputStream(res.getEntity().getContent());
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+                Log.d(TAG, "Request failed-ClientProtocolException", e);
+                //Error connecting to camera
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d(TAG, "Request failed-IOException", e);
+                //Error connecting to camera
+            }
+
+            return null;
+        }
+
+        protected void onPostExecute(MjpegInputStream result) {
+            mv.setSource(result);
+            mv.setDisplayMode(MjpegView.SIZE_BEST_FIT);
+            mv.showFps(true);
+        }
     }
 
 }
