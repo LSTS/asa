@@ -1,5 +1,8 @@
 #/bin/bash
 
+rm -r doxygenOutput/
+mkdir doxygenOutput
+
 doxygen asa.doxyfile
 
 echo "------------------------------------------------------------------------"
