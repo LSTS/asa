@@ -1,7 +1,9 @@
 package pt.lsts.asa.subscribers;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.fragments.GmapFragment;
+import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.imc.IMCMessage;
@@ -37,28 +39,32 @@ public class GmapIMCSubscriber implements IMCSubscriber {
                 if (gmapfragment.getGoogleMap()==null)
                     return;
                 Log.v(TAG, "Received Message");
-                if (IMCUtils.isMsgFromActive(msg)){
-                    Log.v(TAG,"Message from active:"+msg.getAbbrev());
-                    final int ID_MSG = msg.getMgid();
-                    if (ID_MSG == EstimatedState.ID_STATIC){
-                        Double latRad = msg.getDouble("lat");
-                        Double lonRad = msg.getDouble("lon");
-                        Double latDeg = (Double) Math.toDegrees(latRad);
-                        Double lonDeg = (Double) Math.toDegrees(lonRad);
+                Sys sys = ASA.getInstance().getSystemList().findSysById(msg.getSrc());
+                if (sys==null)
+                    return;
+                Log.v(TAG, "Received Message from "+sys.getId()+", "+sys.getName());
+                final int ID_MSG = msg.getMgid();
+                if (ID_MSG == EstimatedState.ID_STATIC){
+                    Double latRad = msg.getDouble("lat");
+                    Double lonRad = msg.getDouble("lon");
+                    Double latDeg = (Double) Math.toDegrees(latRad);
+                    Double lonDeg = (Double) Math.toDegrees(lonRad);
 
-                        float offsetX = msg.getFloat("x");//offset north
-                        float offsetY = msg.getFloat("y");//offset east
+                    float offsetX = msg.getFloat("x");//offset north
+                    float offsetY = msg.getFloat("y");//offset east
 
-                        LatLng latLng = translateCoordinates(new LatLng(latDeg,lonDeg), offsetX, offsetY);
+                    LatLng latLng = translateCoordinates(new LatLng(latDeg,lonDeg), offsetX, offsetY);
 
-                        Log.i(TAG,"latLng="+latLng.toString());
-                        gmapfragment.setActiveSysLatLng(latLng);
+                    Log.i(TAG,"latLng="+latLng.toString());
+                    //gmapfragment.setActiveSysLatLng(latLng);
+                    sys.setLatLng(latLng);
 
-                        float psi = msg.getFloat("psi");
-                        double psiDouble = psi;
-                        gmapfragment.setActiveSysPsi((float) Math.toDegrees(psiDouble));
-                        gmapfragment.updateActiveSysMarker();
-                    }
+                    float psi = msg.getFloat("psi");
+                    double psiDouble = psi;
+                    //gmapfragment.setActiveSysPsi((float) Math.toDegrees(psiDouble));
+                    sys.setPsi((float) Math.toDegrees(psiDouble));
+                    //gmapfragment.updateActiveSysMarker();
+                    gmapfragment.updateSysMarker(sys);
                 }
 
             }
