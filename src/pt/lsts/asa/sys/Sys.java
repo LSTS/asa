@@ -11,7 +11,13 @@ public class Sys {
 	private String mName;
 	private int mId;
 	public long lastMessageReceived;
-	private String mType;
+
+    /**
+     * CCU, STATICSENSOR, HUMANSENSOR, MOBILESENSOR, WSN, UUV, USV, UAV, UGV,
+     *
+     */
+    private String mType;
+
 	private double[] LLD = { 0.0, 0.0, 0.0 }; // Lat Lon depth in radians and
 												// meters
 	private double[] NED = { 0.0, 0.0, 0.0 }; // North East Down in meters
@@ -152,7 +158,7 @@ public class Sys {
     }
 
     public boolean isOnMap(){
-        if (getMaker()==null && getGroundOverlay()==null)
+        if (getMaker()==null || getGroundOverlay()==null)
             return false;
         return true;
     }
