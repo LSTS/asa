@@ -11,7 +11,6 @@ import java.net.URI;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -43,6 +42,7 @@ public class VideoViewFragment extends Fragment {
 	Runnable runnable;
 	private final int timeoutFalse=5000, timeoutTrue=10000;
 	private boolean connectedBool =false;
+    private AsyncTask task = null;
 
 	public VideoViewFragment() {
 		// Required empty public constructor
@@ -79,86 +79,41 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		setVideoViewListeners();
+		initMjpegView();
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
         startVideo();
-		setConnectionChecker();
 	}
 
-	public void setVideoViewListeners() {
+	public void initMjpegView() {
+        if (mjpegView!=null)
+            mjpegView=null;
         mjpegView = (MjpegView) view.findViewById(R.id.mjpegVideoView);
 		mjpegView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 String url = StringUtils.getCamUrl();
                 AndroidUtil.showToastShort(fragmentActivity, "restarting connection to Cam: " + url);
-                restartVideo();
+                startVideo();
                 return false;
             }
         });
 	}
 
 
-	public void restartVideo(){
-		Log.i(TAG, "restartVideo()");
-		if (mjpegView !=null) {
-            mjpegView.stopPlayback();
-            mjpegView =null;
-        }
-		startVideo();
-	}
-
-	public void setConnectionChecker(){
-		setRunnable();
-		startHandle(timeoutFalse);
-	}
-
-	public void setRunnable(){
-		runnable = new Runnable() {
-			@Override
-			public void run() {
-				if (mjpegView.isActivated()) {
-					if (connectedBool==false){
-						connectedBool = true;
-						startHandle(timeoutTrue);
-						Log.w(TAG, "Connection to Cam Established");
-                        AndroidUtil.showToastShort(fragmentActivity,"Connection to Cam Established");
-					}
-					Log.i(TAG, "Connection to Cam OK, retrying connection in: "+timeoutTrue);
-				}else{
-					if (connectedBool==true){
-						connectedBool=false;
-						startHandle(timeoutFalse);
-						Log.w(TAG, "Connection to Cam Lost");
-						AndroidUtil.showToastLong(fragmentActivity,"Connection to Cam Lost");
-					}
-					Log.i(TAG, "Connection to Cam failed, retrying connection in: "+timeoutFalse);
-                    restartVideo();
-				}
-			}};
-	}
-
-
-	public void startHandle(int timeout){
-		if (handle != null)
-			handle.cancel(true);
-		handle = scheduler.scheduleAtFixedRate(runnable, timeout,
-				timeout, TimeUnit.MILLISECONDS);
-	}
-
     public void startVideo(){
-        setVideoViewListeners();
+        initMjpegView();
         String camUrl = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
         Log.i(TAG,"URL: "+camUrl);
 
-        //mjpegView.setSource(MjpegInputStream.read(URL));
-        //mjpegView.setDisplayMode(MjpegView.SIZE_BEST_FIT);
-        //mjpegView.showFps(true);
-        new getMjpegInputStreamAsyncTask().execute(camUrl);
+        if (task!=null){
+            task.cancel(true);
+            task = null;
+        }
+        task = new getMjpegInputStreamAsyncTask().execute(camUrl);
 
     }
 
