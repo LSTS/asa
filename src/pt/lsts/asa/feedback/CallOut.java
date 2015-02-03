@@ -251,7 +251,9 @@ public class CallOut {
 	}
 
     public void setSpeechRate(int speechRate){
-        tts.setSpeechRate(speechRate/100);
+        float newSpeechRate = (((float)speechRate)/100);
+        Log.i(TAG, "speechRateInt= "+speechRate+" | speechRateFloat= "+newSpeechRate);
+        tts.setSpeechRate(newSpeechRate);
     }
 
 	public void setLastMsgReceived(long lastMsgReceived) {

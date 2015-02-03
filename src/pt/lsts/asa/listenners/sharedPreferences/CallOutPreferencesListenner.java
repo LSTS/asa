@@ -57,7 +57,7 @@ public class CallOutPreferencesListenner{
                 callOut.setTimeoutInterval(integer);
                 break;
             case "speech_rate":
-                integer = Settings.getInt(key, 100)*1000;
+                integer = Settings.getInt(key, 100);
                 callOut.setSpeechRate(integer);
                 break;
             default:
