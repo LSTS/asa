@@ -230,7 +230,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             lon = location.getLongitude();
         }
         if (initZoom==false && googleMap!=null){//center camera initialy on my position
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),4.0f,1.0f,1.0f)));
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),16.0f,1.0f,1.0f)));
             initZoom=true;
         }
         this.myLatLng = new LatLng(lat, lon);
