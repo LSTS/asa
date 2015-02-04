@@ -49,7 +49,7 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
                         manualIndicatorsfragment.setLeftTextView(" IAS: "+formatter.format(ias)+" ");
                     }
                     if (ID_MSG == EstimatedState.ID_STATIC){
-                        Float alt = (Float) msg.getValue("height");
+                        Float alt = -( (Float) msg.getValue("z"));
                         Log.v(TAG,"received alt="+alt);
                         manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
                     }
