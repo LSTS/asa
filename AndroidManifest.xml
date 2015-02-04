@@ -48,7 +48,10 @@
             android:label="@string/title_activity_settings"
             android:noHistory="true" >
         </activity>
-        <activity android:name=".activities.SystemListActivity" />
+        <activity android:name=".activities.SystemListActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/title_activity_systems_list" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
