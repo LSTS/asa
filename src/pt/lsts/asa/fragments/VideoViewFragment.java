@@ -92,6 +92,8 @@ public class VideoViewFragment extends Fragment {
         if (mjpegView!=null)
             mjpegView=null;
         mjpegView = (MjpegView) view.findViewById(R.id.mjpegVideoView);
+
+        /*
 		mjpegView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -101,11 +103,13 @@ public class VideoViewFragment extends Fragment {
                 return false;
             }
         });
+        */
 	}
 
 
     public void startVideo(){
         initMjpegView();
+        //String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
         String camUrl = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
         Log.i(TAG,"URL: "+camUrl);
 
