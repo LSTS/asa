@@ -173,7 +173,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
                                     .bearing(bearing)
                                     .image(groundOverlayBitmapDescriptor)
-                                    .position(latLng, 100, 100)
+                                    .position(latLng, 20, 20)
                                     .anchor(0.5f, 0.5f)
                                     .transparency(0.25f)
                     );
@@ -230,7 +230,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             lon = location.getLongitude();
         }
         if (initZoom==false && googleMap!=null){//center camera initialy on my position
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),16.0f,1.0f,1.0f)));
+            //lat = 41.2907;lon= -8.569;//lipa
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),18f,1.0f,1.0f)));
             initZoom=true;
         }
         this.myLatLng = new LatLng(lat, lon);
