@@ -9,8 +9,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=" Alt: --- "
-        android:minWidth="45pt"
-        android:maxWidth="45pt"
+        android:minWidth="50pt"
+        android:maxWidth="60pt"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:textSize="30dp" />
@@ -24,8 +24,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="true"
-        android:minWidth="45pt"
-        android:maxWidth="45pt"
+        android:minWidth="50pt"
+        android:maxWidth="60pt"
         android:layout_marginLeft="50dp"
         android:textSize="30dp" />
 
