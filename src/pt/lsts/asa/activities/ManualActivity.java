@@ -45,7 +45,7 @@ public class ManualActivity extends FragmentActivity {
         super.onResume();
         loadFragments(null);//always load fragments from null
         soundControlFragment.unmute();
-        AndroidUtil.showToastShort(this, "onResume()");
+        //AndroidUtil.showToastShort(this, "onResume()");
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ManualActivity extends FragmentActivity {
         AndroidUtil.removeAllFragments(this);
         super.onPause();
         //AndroidUtil.removeAllFragments(this);
-        AndroidUtil.showToastShort(this, "onPause()");
+        //AndroidUtil.showToastShort(this, "onPause()");
     }
 
 	public void loadFragments(Bundle savedInstanceState) {
