@@ -35,4 +35,17 @@ public class AndroidUtil {
         fragmentActivity.getSupportFragmentManager().executePendingTransactions();
     }
 
+    public static void removeFragment(FragmentActivity fragmentActivity, Fragment fragment){
+        fragmentActivity.getSupportFragmentManager()
+                .beginTransaction()
+                .remove(fragment).commit();
+        fragmentActivity.getSupportFragmentManager().executePendingTransactions();
+    }
+
+    public static void removeAllFragments(FragmentActivity fragmentActivity){
+        for ( Fragment fragment : fragmentActivity.getSupportFragmentManager().getFragments()){
+            removeFragment(fragmentActivity, fragment);
+        }
+    }
+
 }

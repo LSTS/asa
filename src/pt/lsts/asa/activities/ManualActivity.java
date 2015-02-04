@@ -10,6 +10,7 @@ import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
 
 import android.app.AlertDialog;
+import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
@@ -26,16 +27,34 @@ public class ManualActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        /*
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        */
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_manual_stabilized);
 
         callOut = new CallOut(ASA.getContext());
         callOut.initCallOuts();
-		loadFragments(savedInstanceState);
+		//loadFragments(savedInstanceState);
 		// ASA.getInstance().getCallOut().startCallOuts();
 	}
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        loadFragments(null);//always load fragments from null
+        soundControlFragment.unmute();
+        AndroidUtil.showToastShort(this, "onResume()");
+    }
+
+    @Override
+    public void onPause(){
+        AndroidUtil.removeAllFragments(this);
+        super.onPause();
+        //AndroidUtil.removeAllFragments(this);
+        AndroidUtil.showToastShort(this, "onPause()");
+    }
 
 	public void loadFragments(Bundle savedInstanceState) {
 		if (findViewById(R.id.fragment_container_manual_stabilized) != null) {
@@ -61,7 +80,7 @@ public class ManualActivity extends FragmentActivity {
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
-		soundControlFragment.unmute();
+		//soundControlFragment.unmute();
 	}
 
 	@Override
