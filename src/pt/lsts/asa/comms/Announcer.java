@@ -170,7 +170,7 @@ public class Announcer {
 			ip = ipfull.split("\\.");
 		}
 
-		String sysName = "ASA-" + ip[2] + ip[3];
+		String sysName = "ASA-01" + "_" + ip[2] + "." + ip[3];
 		String sysType = "CCU";
 		// double lat = currentLocation.getLatitude();
 		// double lon = currentLocation.getLongitude();
