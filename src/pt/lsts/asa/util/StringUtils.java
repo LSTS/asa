@@ -20,14 +20,36 @@ public class StringUtils {
 		switch (cam){
 			case "axis":
 				return getAxisUrl();
+            case "axis infra red":
+                return getAxisInfraRedUrl();
 			default:
 				return "ERROR";
 		}
 
 	}
 
+    public static String getAxisInfraRedUrl(){
+        //http://10.0.20.113/axis-cgi/mjpg/video.cgi
+
+        String protocol = "http";
+        String ip_port= Settings.getString("cam_ip", "10.0.20.113");
+        String location = "axis-cgi/mjpg/video.cgi";
+
+        //String resolution = Settings.getString("resolution","640x480");
+
+        String completeUrl = protocol;
+        completeUrl += "://";
+        completeUrl += ip_port;
+        completeUrl += "/";
+        completeUrl += location;
+        //completeUrl += resolution;
+
+        Log.i(TAG, completeUrl);
+        return completeUrl;
+    }
+
 	public static String getAxisUrl(){
-		//http://10.0.20.112/?date=1&clock=1&camera=1&resolution=640x480
+		//http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=1&clock=1&camera=1&resolution=640x480
 
 		String protocol = "http";
 		String ip_port= Settings.getString("cam_ip", "10.0.20.112");
