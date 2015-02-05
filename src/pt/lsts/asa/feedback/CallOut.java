@@ -151,7 +151,7 @@ public class CallOut {
 					return;
 				if (altHandle.isCancelled())
 					startAltHandle();
-                while (tts.isSpeaking());
+                //while (tts.isSpeaking());
                 String ttsString = "Altitude " + formatter.format(altValue);
                 if (iasMuteBool==true)//if ias is mute, speak only the value
                     ttsString = formatter.format(altValue);
@@ -182,7 +182,7 @@ public class CallOut {
 				if (iasHandle.isCancelled())
 					startIasHandle();
 
-                while (tts.isSpeaking());
+                //while (tts.isSpeaking());
                 String ttsString = "Speed " + formatter.format(iasValue);
                 if (altMuteBool==true)//if alt is mute, speak only the value
                     ttsString = formatter.format(iasValue);
