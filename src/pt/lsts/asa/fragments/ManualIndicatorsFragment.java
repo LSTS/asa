@@ -34,7 +34,9 @@ public class ManualIndicatorsFragment extends Fragment {
     private final ScheduledExecutorService scheduler = Executors
             .newScheduledThreadPool(1);
     private Runnable runnable;
+
     private int interval= (Settings.getInt("timeout_interval_in_seconds", 60) * 1000);
+    private double alt=0,ias=0;
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
@@ -156,4 +158,19 @@ public class ManualIndicatorsFragment extends Fragment {
         handle = scheduler.scheduleAtFixedRate(runnable,interval,interval,TimeUnit.MILLISECONDS);
     }
 
+    public double getAlt() {
+        return alt;
+    }
+
+    public void setAlt(double alt) {
+        this.alt = alt;
+    }
+
+    public double getIas() {
+        return ias;
+    }
+
+    public void setIas(double ias) {
+        this.ias = ias;
+    }
 }

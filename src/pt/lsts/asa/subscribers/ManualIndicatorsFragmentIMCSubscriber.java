@@ -46,12 +46,22 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
                     if (ID_MSG == IndicatedSpeed.ID_STATIC){
                         Double ias = (Double) msg.getValue("value");
                         Log.v(TAG,"received speed="+ias);
-                        manualIndicatorsfragment.setLeftTextView(" IAS: "+formatter.format(ias)+" ");
+                        long previousIasLong = Math.round(manualIndicatorsfragment.getIas());
+                        long newIasLong = Math.round(ias);
+                        if (previousIasLong!=newIasLong) {
+                            manualIndicatorsfragment.setLeftTextView(" IAS: " + formatter.format(ias) + " ");
+                            manualIndicatorsfragment.setIas(ias);
+                        }
                     }
-                    if (ID_MSG == EstimatedState.ID_STATIC){
-                        Float alt = -( (Float) msg.getValue("z"));
-                        Log.v(TAG,"received alt="+alt);
-                        manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
+                    if (ID_MSG == EstimatedState.ID_STATIC) {
+                        Float alt = -((Float) msg.getValue("z"));
+                        Log.v(TAG, "received alt=" + alt);
+                        long previousAltLong = Math.round(manualIndicatorsfragment.getAlt());
+                        long newAltLong = Math.round(alt);
+                        if (previousAltLong!=newAltLong) {
+                            manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
+                            manualIndicatorsfragment.setAlt(alt);
+                        }
                     }
                 }
 
