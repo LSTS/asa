@@ -3,6 +3,8 @@ package pt.lsts.asa.settings;
 import pt.lsts.asa.activities.SettingsActivity;
 
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.Vector;
 
 import android.app.AlertDialog;
@@ -26,8 +28,8 @@ public class SettingsFactory {
 	public static void populate(PreferenceCategory category, Context context) {
 		createHideEntry(category, context);
 		Map<String, ?> keys = Settings.getAll();
-		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-            String key = entry.getKey();
+        SortedSet<String> keysSorted = new TreeSet<String>(keys.keySet());
+		for (String key : keysSorted) {
 			if (!Settings.getCategory(key, "ERROR").equals(
 					category.getTitle()))
 				continue;// not in this category

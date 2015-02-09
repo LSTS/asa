@@ -5,6 +5,8 @@ import pt.lsts.asa.util.StringUtils;
 
 import java.io.File;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.Vector;
 
 import android.util.Log;
@@ -76,17 +78,39 @@ public class Profile {
 		Vector<String> lines = new Vector<String>();
 		lines.add(firstLineInCsvFile);
 		Map<String, ?> keys = Settings.getAll();
+
 		if (keys.size() == 0) {
 			Log.e("save", "Settings.getAll().size()==0");
 			return "ERROR: settings empty";
 		}
 		File file = new File(FileOperations.mainDir, name + "." + extension);
 		FileOperations.initDir(FileOperations.mainDir);
-		for (Map.Entry<String, ?> entry : keys.entrySet()) {
-			String type = entry.getValue().getClass().getName();
-			String key = entry.getKey();
-			String val = entry.getValue().toString();
-			String line = type + "," + key + "," + val;
+        SortedSet<String> keysSorted = new TreeSet<String>(keys.keySet());
+        for (String key : keysSorted) {
+			String type = Settings.getType(key, "java.lang.String");
+            String category = Settings.getCategory(key, "category");
+            //String key;
+            String description = Settings.getDescription(key, " ");
+            String val = "";
+            if (Settings.isOptions(key)){
+                for (String s : Settings.getStrings(key, new String[0])){
+                    val += s +",";
+                }
+                val = val.substring(0, val.length()-1);
+            }else {
+                switch (type) {
+                    case "java.lang.Integer":
+                        val += Settings.getInt(key, -1);
+                        break;
+                    case "java.lang.Boolean":
+                        val += Settings.getBoolean(key, false);
+                        break;
+                    case "java.lang.String":
+                        val = Settings.getString(key, "");
+                        break;
+                }
+            }
+			String line = type+","+category+","+key+","+description+","+val;
 			lines.add(line);
 		}
 		FileOperations.writeLines(lines, file);
