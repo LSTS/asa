@@ -15,12 +15,12 @@ public class StringUtils {
     public static final String TAG = "StringUtils";
 
 	public static String getCamUrl(){
-		String cam = Settings.getString("model","axis");
+		String cam = Settings.getString("model","Digital Camera");
 		cam = cam.toLowerCase(Locale.UK);
 		switch (cam){
-            case "Digital Camera":
+            case "digital camera":
                 return getAxisUrlWithResolutionSpecification();
-            case "Analog Camera":
+            case "analog camera":
                 return getAxisGenericUrl();
 			default:
 				return "ERROR";
