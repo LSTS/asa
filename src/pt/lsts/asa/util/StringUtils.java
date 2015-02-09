@@ -18,17 +18,17 @@ public class StringUtils {
 		String cam = Settings.getString("model","axis");
 		cam = cam.toLowerCase(Locale.UK);
 		switch (cam){
-			case "axis":
-				return getAxisUrl();
-            case "axis infra red":
-                return getAxisInfraRedUrl();
+            case "Digital Camera":
+                return getAxisUrlWithResolutionSpecification();
+            case "Analog Camera":
+                return getAxisGenericUrl();
 			default:
 				return "ERROR";
 		}
 
 	}
 
-    public static String getAxisInfraRedUrl(){
+    public static String getAxisGenericUrl(){
         //http://10.0.20.113/axis-cgi/mjpg/video.cgi
 
         String protocol = "http";
@@ -48,7 +48,7 @@ public class StringUtils {
         return completeUrl;
     }
 
-	public static String getAxisUrl(){
+	public static String getAxisUrlWithResolutionSpecification(){
 		//http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=1&clock=1&camera=1&resolution=640x480
 
 		String protocol = "http";
