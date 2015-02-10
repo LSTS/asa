@@ -1,5 +1,7 @@
 package pt.lsts.asa.util;
 
+import android.util.Log;
+
 import pt.lsts.asa.ASA;
 import pt.lsts.imc.IMCMessage;
 
@@ -9,6 +11,9 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class IMCUtils {
+
+    public static final String TAG = "IMCUtils";
+
 	/**
 	 * This function return the full address on a service specified in the
 	 * Announce message of a node
@@ -43,22 +48,20 @@ public class IMCUtils {
 	public static String[] getAnnounceIMCAddressPort(IMCMessage msg) {
 		String res[]=null;
 		for (String s : getAnnounceService(msg, "imc+udp")) {
-			try {
-				String foo[] = s.split(":");
-				res=new String[2];
-				res[0] = foo[0];
-				res[1] = foo[1].substring(0, foo[1].length() - 1);
-				res[1] = res[1].split("/")[0];//remove services after port
-				if (InetAddress.getByName(s.split(":")[0]).isReachable(50)) {
-					return res;//return first reachable
-				}
-				
-			} catch (UnknownHostException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}		
+                String foo[] = s.split(":");
+                res = new String[2];
+                res[0] = foo[0];
+                res[1] = foo[1].substring(0, foo[1].length() - 1);
+                res[1] = res[1].split("/")[0];//remove services after port
+				try {
+                    if (InetAddress.getByName(s.split(":")[0]).isReachable(50)) {
+                        return res;//return first reachable
+                    }
+                }catch(Exception e){
+                    Log.e(TAG,"erro:"+e.getMessage());
+                }
+
+		}
 		return res;//none reachable, return last one
 	}
 
