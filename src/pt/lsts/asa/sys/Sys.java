@@ -23,18 +23,56 @@ public class Sys {
 	private double[] NED = { 0.0, 0.0, 0.0 }; // North East Down in meters
 	private double[] RPY = { 0.0, 0.0, 0.0 }; // Roll Pitch Yaw in radians
 
+    private String refMode; // Reference Mode name
+
+    // This 2 Booleans are used to compute the color of
+    // each sys in system list and serve as the actual state
+    boolean mConnected;
+    boolean mError;
+
+
+    //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
     private Marker maker=null;//googleMap marker
     private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
 
+    //variables for manual mode
+    private float alt;
+    private double ias;
+    private int iasInt, altInt;
 
-    private String refMode; // Reference Mode name
+    public int getAltInt() {
+        return altInt;
+    }
 
-	// This 2 Booleans are used to compute the color of
-	// each sys in system list and serve as the actual state
-	boolean mConnected;
-	boolean mError;
+    public void setAltInt(int altInt) {
+        this.altInt = altInt;
+    }
+
+    public double getIas() {
+        return ias;
+    }
+
+    public void setIas(double ias) {
+        this.ias = ias;
+    }
+
+    public float getAlt() {
+        return alt;
+    }
+
+    public void setAlt(float alt) {
+        this.alt = alt;
+    }
+
+    public int getIasInt() {
+        return iasInt;
+    }
+
+    public void setIasInt(int iasInt) {
+        this.iasInt = iasInt;
+    }
 
 	public boolean isError() {
 		return mError;
