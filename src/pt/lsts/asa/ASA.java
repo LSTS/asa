@@ -14,6 +14,7 @@ import pt.lsts.asa.subscribers.AccuSmsHandlerIMCSubscriber;
 import pt.lsts.asa.subscribers.HeartbeatVibratorIMCSubscriber;
 import pt.lsts.asa.subscribers.LblBeaconListIMCSubscriber;
 import pt.lsts.asa.subscribers.SystemListIMCSubscriber;
+import pt.lsts.asa.subscribers.SystemsUpdaterServiceIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.MUtil;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.hardware.SensorManager;
@@ -70,7 +72,9 @@ public class ASA {
 	public SharedPreferences sharedPreferences;
     private Bus bus;
 
-	private static Integer requestId = 0xFFFF; // Request ID for quick plan
+    private SystemsUpdaterServiceIMCSubscriber systemsUpdaterServiceIMCSubscriber;
+
+    private static Integer requestId = 0xFFFF; // Request ID for quick plan
 
 	private ASA(Context context) {
 		this.context = context;
@@ -106,7 +110,7 @@ public class ASA {
 	public void initSystemsList(){
 		mainSysChangeListeners = new ArrayList<MainSysChangeListener>();
 		sysList = new SystemList(imcManager);
-		systemListIMCSubscriber = new SystemListIMCSubscriber(sysList);
+		//systemListIMCSubscriber = new SystemListIMCSubscriber(sysList);
 	}
 	
 	public void initAnnouncer(){
@@ -142,7 +146,7 @@ public class ASA {
 	public void addInitialSubscribers(){
 		addSubscriber(heartbeatVibratorIMCSubscriber, heartbeatVibratorIMCSubscriber.SUBSCRIBED_MSGS);
 		addSubscriber(accuSmsHandlerIMCSubscriber, accuSmsHandlerIMCSubscriber.SUBSCRIBED_MSGS);
-		addSubscriber(systemListIMCSubscriber);
+		//addSubscriber(systemListIMCSubscriber);
 		addSubscriber(lblBeaconListIMCSubscriber, lblBeaconListIMCSubscriber.SUBSCRIBED_MSGS);
 	}	
 
@@ -165,6 +169,7 @@ public class ASA {
 			sysList.start();
 			heart.start();
 			started = true;
+            startAndBindSystemsUpdaterIMCSubscriber();
 		} else
 			Log.e(TAG, ASA.class.getSimpleName()
 					+ ": ASA ERROR: Already Started ASA Global");
@@ -232,6 +237,14 @@ public class ASA {
 		return lblBeaconList;
 	}
 
+    public SystemsUpdaterServiceIMCSubscriber getSystemsUpdaterServiceIMCSubscriber() {
+        return systemsUpdaterServiceIMCSubscriber;
+    }
+
+    public void setSystemsUpdaterServiceIMCSubscriber(SystemsUpdaterServiceIMCSubscriber systemsUpdaterServiceIMCSubscriber) {
+        this.systemsUpdaterServiceIMCSubscriber = systemsUpdaterServiceIMCSubscriber;
+    }
+
     public CallOut getCallOut() {
         return callOut;
     }
@@ -295,5 +308,12 @@ public class ASA {
 		ASA.getInstance().sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
         Log.i(TAG,"ASA.getInstance().sharedPreferences.registerOnSharedPreferenceChangeListener(listener);");
 	}
+
+    public void startAndBindSystemsUpdaterIMCSubscriber(){
+        SystemsUpdaterServiceIMCSubscriber systemsUpdaterServiceIMCSubscriber = new SystemsUpdaterServiceIMCSubscriber();
+        Intent intent = new Intent(getContext(),SystemsUpdaterServiceIMCSubscriber.class);
+        systemsUpdaterServiceIMCSubscriber.onStartCommand(intent,0,0);
+        systemsUpdaterServiceIMCSubscriber.onBind(intent);
+    }
 	
 }
