@@ -260,13 +260,16 @@ public class SystemListFragment extends Fragment {
         for (int i =0;i<nSys;i++){
             if (i==selectedInt)
                 continue;
-            String sysName = systemListView.getAdapter().getItem(i).toString();
-            sysName = StringUtils.removeSysExtraInfo(sysName);
-            Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
-
             if (i>=systemListView.getChildCount())
                 continue;
             TextView textView = (TextView) systemListView.getChildAt(i);
+            Log.i(TAG,"textViewSysName= "+textView.getText().toString());
+
+            String sysName = textView.getText().toString();
+            Log.i(TAG,"sysName antes= "+sysName);
+            sysName = StringUtils.removeSysExtraInfo(sysName);
+            Log.i(TAG,"sysName depois= "+sysName);
+            Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
 
             //generic color for text
             String textColorCode = BLACK;//#000000
