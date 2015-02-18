@@ -157,8 +157,8 @@ public class CallOut {
                     ttsString = formatter.format(altValue);
 				tts.speak(ttsString,TextToSpeech.QUEUE_FLUSH, null);
 
+                Log.i("tts.speak", "alt -- "+System.currentTimeMillis());
 
-				Log.i("tts.speak", "alt= " + altValue);
 			}
 		};
 	}
@@ -189,7 +189,7 @@ public class CallOut {
 				tts.speak(ttsString,TextToSpeech.QUEUE_FLUSH, null);
 
 
-				Log.i("tts.speak", "ias= " + iasValue);
+                Log.i("tts.speak", "ias -- "+System.currentTimeMillis());
 
 			}
 		};

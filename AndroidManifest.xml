@@ -58,6 +58,12 @@
             android:label="SystemsUpdaterServiceIMCSubscriber"
             android:process=":SystemsUpdaterServiceIMCSubscriberProcess" />
 
+
+        <service
+            android:name=".feedback.CallOutService"
+            android:label="CallOutService"
+            android:process=":CallOutServiceProcess"/>
+
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
