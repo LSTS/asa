@@ -12,6 +12,7 @@ import java.util.TimerTask;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.sharedPreferences.CallOutPreferencesListenner;
+import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
 
 /**
@@ -22,6 +23,10 @@ public class CallOutService extends Service {
     public static final String TAG = "CallOutService";
     private TextToSpeech tts;
     private CallOutPreferencesListenner callOutPreferencesListenner;
+    CallOutSysUpdaterListenner callOutSysUpdaterListenner;
+
+    private int iasInt=0;
+    private int altInt=0;
 
     private TimerTask iasTimerTask, altTimerTask, timeoutTimerTask;
     private Timer iasTimer = new Timer();
@@ -37,13 +42,16 @@ public class CallOutService extends Service {
 
 
     public CallOutService(){
-        initCallOutPreferencesListenner();
+        initListenners();
 
     }
 
-    public void initCallOutPreferencesListenner() {
+    public void initListenners() {
         callOutPreferencesListenner = new CallOutPreferencesListenner(this);
         ASA.getInstance().getBus().register(callOutPreferencesListenner);
+
+        callOutSysUpdaterListenner = new CallOutSysUpdaterListenner(this);
+        ASA.getInstance().getBus().register(callOutSysUpdaterListenner);
     }
 
     /**
@@ -145,8 +153,6 @@ public class CallOutService extends Service {
         Log.i(TAG,"finish initRunnables");
     }
 
-
-
     public void initAltRunnale() {
 
         altRunnable = new Runnable() {
@@ -156,7 +162,7 @@ public class CallOutService extends Service {
                         || altMuteBool == true)
                     return;
 
-                int altInt = ASA.getInstance().getActiveSys().getAltInt();
+                //int altInt = ASA.getInstance().getActiveSys().getAltInt();
 
                 String ttsString = "Altitude " + altInt;
                 if (iasMuteBool==true)//if ias is mute, speak only the value
@@ -202,14 +208,15 @@ public class CallOutService extends Service {
                         || iasMuteBool == true)
                     return;
 
-                int iasInt = ASA.getInstance().getActiveSys().getIasInt();
+                //int iasInt = ASA.getInstance().getActiveSys().getIasInt();
 
-                String ttsString = "Speed " + iasInt;
+                String ttsString;
                 if (altMuteBool==true)//if alt is muted, speak only the value
                     ttsString = ""+iasInt;
-                final String ttsStringFinal = ttsString;
+                else
+                    ttsString = "Speed " + iasInt;
 
-                tts.speak(ttsStringFinal,TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak(ttsString,TextToSpeech.QUEUE_FLUSH, null);
 
                 Log.i("tts.speak", "ias -- "+System.currentTimeMillis());//log timestamp for debugging
             }
@@ -319,11 +326,19 @@ public class CallOutService extends Service {
 
     }
 
-
     public void setSpeechRate(int speechRate){
         float newSpeechRate = (((float)speechRate)/100);
         Log.i(TAG, "speechRateInt= "+speechRate+" | speechRateFloat= "+newSpeechRate);
         tts.setSpeechRate(newSpeechRate);
+    }
+
+
+    public void setIasInt(int iasInt) {
+        this.iasInt = iasInt;
+    }
+
+    public void setAltInt(int altInt) {
+        this.altInt = altInt;
     }
 
     public void setTimeoutBool(boolean timeoutBool) {

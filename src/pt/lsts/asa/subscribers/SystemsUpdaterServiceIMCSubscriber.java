@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
+import android.util.Pair;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -62,7 +63,11 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
                     if (altInt!=sys.getAltInt()){
                         sys.setAltInt(altInt);
-                        //call OTTO
+                        if (ASA.getInstance().getActiveSys().equals(sys)){
+                            Log.i(TAG,"alt: getActiveSys().equals(sys)");
+                            ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
+                        }
+
                     }
                     Double latRad = msg.getDouble("lat");
                     Double lonRad = msg.getDouble("lon");
@@ -93,7 +98,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     Log.i(TAG,"iasDouble= "+ias+" | iasInt="+iasInt+" | sys.getIasInt()="+sys.getIasInt());
                     if (iasInt!=sys.getIasInt()){
                         sys.setIasInt(iasInt);
-                        //call OTTO
+                        if (ASA.getInstance().getActiveSys().equals(sys)){
+                            Log.i(TAG,"getActiveSys().equals(sys)");
+                            ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
+                        }
                     }
                     //call OTTO
                     break;
