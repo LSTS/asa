@@ -28,6 +28,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
 
     public static final String TAG = "SystemsUpdaterServiceIMCSubscriber";
     public static final boolean DEBUG = false;
+    private SystemList systemList = ASA.getInstance().getSystemList();
 
     public SystemsUpdaterServiceIMCSubscriber(){}
 
@@ -35,7 +36,6 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public void onReceive(final IMCMessage msg) {
 
         final int ID_MSG = msg.getMgid();
-        SystemList systemList = ASA.getInstance().getSystemList();
         if (ID_MSG==Announce.ID_STATIC){
             // Process Announce routine
             processAnnounce(msg,systemList);
@@ -169,6 +169,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
 
         // Update the list of available Vehicles
         systemList.changeList(systemList.getList());
+        ASA.getInstance().sysList = systemList;
 
         // Send an Heartbeat to register as a node in the vehicle (maybe
         // EntityList?)
