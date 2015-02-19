@@ -19,8 +19,11 @@ import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 public class ManualActivity extends FragmentActivity {
+
+    public static final String TAG = "ManualActivity";
 
     private SoundControlFragment soundControlFragment = null;
     private VideoViewFragment videoViewFragment = null;
@@ -49,19 +52,25 @@ public class ManualActivity extends FragmentActivity {
         super.onResume();
         loadFragments(null);//always load fragments from null
         soundControlFragment.unmute();
-        callOutService = new CallOutService();
+
+        callOutService = new CallOutService(this);
         Intent intent = new Intent(this,CallOutService.class);
         callOutService.onStartCommand(intent,1,0);
         callOutService.onBind(intent);
+
         //AndroidUtil.showToastShort(this, "onResume()");
     }
 
     @Override
     public void onPause(){
+        Log.i(TAG, "ManualActivity.onPause() called");
         AndroidUtil.removeAllFragments(this);
         super.onPause();
         //AndroidUtil.removeAllFragments(this);
         //AndroidUtil.showToastShort(this, "onPause()");
+        Intent intent = new Intent(this,CallOutService.class);
+        callOutService.onUnbind(intent);
+        stopService(intent);
         callOutService.onDestroy();
     }
 
@@ -70,19 +79,19 @@ public class ManualActivity extends FragmentActivity {
             if (savedInstanceState != null) {
                 return;// restoring state
             }
-
+/*
             videoViewFragment = new VideoViewFragment(this);
             AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual_stabilized);
-
+*/
             soundControlFragment = new SoundControlFragment(this);
             AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual_stabilized);
 
             settingsButtonFragment = new SettingsButtonFragment(this);
             AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_manual_stabilized);
-
+/*
             manualIndicatorsFragment = new ManualIndicatorsFragment(this);
             AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual_stabilized);
-
+*/
         }
     }
 

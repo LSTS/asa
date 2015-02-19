@@ -26,12 +26,9 @@ public class CallOutSysUpdaterListenner {
     }
 
     @Subscribe
-    public void onPreferenceChanged(Pair<String,Integer> pair) {
+    public void onAltIASintegerValChanged(Pair<String,Integer> pair) {
         String valChanged = pair.first;
         Integer newVal = pair.second;
-
-        if (DEBUG)
-            Log.v(TAG, "Preference with " + valChanged + " changed");
 
         String valChangedLowerCase = valChanged.toLowerCase(Locale.getDefault());
         switch(valChangedLowerCase){
