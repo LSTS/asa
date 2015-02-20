@@ -79,10 +79,10 @@ public class ManualActivity extends FragmentActivity {
             if (savedInstanceState != null) {
                 return;// restoring state
             }
-/*
+
             videoViewFragment = new VideoViewFragment(this);
             AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual_stabilized);
-*/
+
             soundControlFragment = new SoundControlFragment(this);
             AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual_stabilized);
 
