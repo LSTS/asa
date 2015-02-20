@@ -36,11 +36,11 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
         thread = new Thread() {
             @Override
             public void run() {
-
+/*
                 Log.v(TAG, "Received Message");
 
                 if (IMCUtils.isMsgFromActive(msg)){
-                    manualIndicatorsfragment.startScheduler(false);
+                    //manualIndicatorsfragment.startScheduler(false);
                     Log.v(TAG,"Message from active:"+msg.getAbbrev());
                     final int ID_MSG = msg.getMgid();
                     if (ID_MSG == IndicatedSpeed.ID_STATIC){
@@ -50,13 +50,13 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
                         long newIasLong = Math.round(ias);
                         if (previousIasLong!=newIasLong) {
                             manualIndicatorsfragment.setLeftTextView(" IAS: " + formatter.format(ias) + " ");
-                            manualIndicatorsfragment.setIas(ias);
+                            //manualIndicatorsfragment.setIas(ias);
                         }
                     }
                     if (ID_MSG == EstimatedState.ID_STATIC) {
                         Float alt = -((Float) msg.getValue("z"));
                         Log.v(TAG, "received alt=" + alt);
-                        long previousAltLong = Math.round(manualIndicatorsfragment.getAlt());
+                        //long previousAltLong = Math.round(manualIndicatorsfragment.getAlt());
                         long newAltLong = Math.round(alt);
                         if (previousAltLong!=newAltLong) {
                             manualIndicatorsfragment.setRightTextView(" Alt: " + formatter.format(alt)+" ");
@@ -64,9 +64,10 @@ public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
                         }
                     }
                 }
-
+*/
             }
+
         };
-        thread.start();
+        //thread.start();
     }
 }

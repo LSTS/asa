@@ -1,14 +1,18 @@
 package pt.lsts.asa.fragments;
 
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -17,6 +21,8 @@ import java.util.concurrent.TimeUnit;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.sharedPreferences.ManualIndicatorsPreferencesListenner;
+import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
+import pt.lsts.asa.listenners.sysUpdates.ManualIndicatorsSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.subscribers.ManualIndicatorsFragmentIMCSubscriber;
 
@@ -29,14 +35,12 @@ public class ManualIndicatorsFragment extends Fragment {
     private TextView leftTextView = null;
     private TextView rightTextView = null;
     private TextView centerTextView = null;
-    private ManualIndicatorsFragmentIMCSubscriber manualIndicatorsFragmentIMCSubscriber = null;
-    private ScheduledFuture handle;
-    private final ScheduledExecutorService scheduler = Executors
-            .newScheduledThreadPool(1);
-    private Runnable runnable;
 
-    private int interval= (Settings.getInt("timeout_interval_in_seconds", 60) * 1000);
-    private double alt=0,ias=0;
+    private TimerTask timeoutTimerTask;
+    private Timer timeoutTimer;
+    private int timeoutInterval = (Settings.getInt("timeout_interval_in_seconds", 60) * 1000);
+    private long lastMsgReceived;
+    private ManualIndicatorsSysUpdaterListenner manualIndicatorsSysUpdaterListenner;
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
@@ -58,20 +62,14 @@ public class ManualIndicatorsFragment extends Fragment {
     }
 
     public void init(){
-        initIMCSubscriber();
-        initPreferencesListenner();
-        setRunnalbe();
-        startScheduler(true);
+        initTimeoutTimerTask();
+        manualIndicatorsSysUpdaterListenner = new ManualIndicatorsSysUpdaterListenner(this);
+        ASA.getInstance().getBus().register(manualIndicatorsSysUpdaterListenner);
     }
 
     public void initPreferencesListenner(){
         ManualIndicatorsPreferencesListenner manualIndicatorsPreferencesListenner = new ManualIndicatorsPreferencesListenner(this);
         ASA.getInstance().getBus().register(manualIndicatorsPreferencesListenner);
-    }
-
-    public void initIMCSubscriber(){
-        manualIndicatorsFragmentIMCSubscriber = new ManualIndicatorsFragmentIMCSubscriber(this);
-        ASA.getInstance().addSubscriber(manualIndicatorsFragmentIMCSubscriber);
     }
 
     public void findViews(View v){
@@ -99,32 +97,34 @@ public class ManualIndicatorsFragment extends Fragment {
 
     @Override
     public void onResume(){
+        startTimeoutTimer();
         super.onResume();
     }
 
+    @Override
+    public void onPause(){
+        cancelTimeout();
+        super.onPause();
+    }
 
-    public void setLeftTextView(final String text){
+    public void setLeftTextView(final int val){
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                leftTextView.setText(text);
+                leftTextView.setText(" " + "IAS:" + " " + val + " ");
             }
         });
     }
 
-    public void setRightTextView(final String text){
+    public void setRightTextView(final int val){
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                rightTextView.setText(text);
+                rightTextView.setText(" " + "Alt:" + " " + val + " ");
             }
         });
     }
 
-    public void setInterval(int interval) {
-        this.interval = interval;
-        startScheduler(true);
-    }
 
     public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
         fragmentActivity.runOnUiThread(new Runnable() {
@@ -132,8 +132,8 @@ public class ManualIndicatorsFragment extends Fragment {
             public void run() {
                 if (visibility==true){
                     centerTextView.setVisibility(View.VISIBLE);
-                    setRightTextView(" " + "Alt:" + " " + "---" + " ");
-                    setLeftTextView(" " + "IAS:" + " " + "---" + " ");
+                    leftTextView.setText(" " + "IAS:" + " " + "---" + " ");
+                    rightTextView.setText(" " + "Alt:" + " " + "---" + " ");
                 }
                 if (visibility==false){
                     centerTextView.setVisibility(View.INVISIBLE);
@@ -142,35 +142,37 @@ public class ManualIndicatorsFragment extends Fragment {
         });
     }
 
-    public void setRunnalbe() {
-        runnable = new Runnable() {
+    public void initTimeoutTimerTask(){
+        timeoutTimerTask = new TimerTask() {
             @Override
             public void run() {
-                setCenterTextViewVisibility(true);
+                if (System.currentTimeMillis() > lastMsgReceived+timeoutInterval) {
+                    setCenterTextViewVisibility(true);
+                }
             }
         };
     }
+    public void startTimeoutTimer(){
+        timeoutTimer = new Timer();
+        long delay = timeoutInterval;//initialDelay
 
-    public void startScheduler(Boolean visibility){
-        setCenterTextViewVisibility(visibility);
-        if (handle!=null)
-            handle.cancel(true);
-        handle = scheduler.scheduleAtFixedRate(runnable,interval,interval,TimeUnit.MILLISECONDS);
+        // schedules the task to be run in an interval
+        timeoutTimer.scheduleAtFixedRate(timeoutTimerTask, delay, timeoutInterval);
     }
 
-    public double getAlt() {
-        return alt;
+    public void cancelTimeout(){
+        if (timeoutTimer!=null){
+            timeoutTimer.cancel();
+            timeoutTimer=null;
+            timeoutTimerTask.cancel();
+            timeoutTimerTask=null;
+        }
     }
 
-    public void setAlt(double alt) {
-        this.alt = alt;
+
+    public void setLastMsgReceived(long lastMsgReceived) {
+        this.lastMsgReceived = lastMsgReceived;
+        setCenterTextViewVisibility(false);
     }
 
-    public double getIas() {
-        return ias;
-    }
-
-    public void setIas(double ias) {
-        this.ias = ias;
-    }
 }

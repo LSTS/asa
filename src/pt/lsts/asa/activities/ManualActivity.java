@@ -88,10 +88,10 @@ public class ManualActivity extends FragmentActivity {
 
             settingsButtonFragment = new SettingsButtonFragment(this);
             AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_manual_stabilized);
-/*
+
             manualIndicatorsFragment = new ManualIndicatorsFragment(this);
             AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual_stabilized);
-*/
+
         }
     }
 

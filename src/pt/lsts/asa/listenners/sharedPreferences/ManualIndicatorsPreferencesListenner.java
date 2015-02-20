@@ -31,7 +31,7 @@ public class ManualIndicatorsPreferencesListenner {
         switch(keyLowerCase){
             case "timeout_interval_in_seconds":
                 integer = Settings.getInt(key, 60)*1000;
-                manualIndicatorsFragment.setInterval(integer);
+                //manualIndicatorsFragment.setInterval(integer);
                 break;
             default:
                 Log.e(TAG,"Setting changed unrecognized: "+key);
