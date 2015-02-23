@@ -15,10 +15,14 @@ import android.content.res.AssetManager;
 import android.os.Environment;
 import android.util.Log;
 
+
 public class FileOperations {
 
+
+    public static final String TAG = "FileOperations";
     public static File mainDir = new File(
             "/storage/emulated/0/Android/data/pt.lsts.ASA/");
+    public static final String mainDirString = "/storage/emulated/0/Android/data/pt.lsts.ASA/";
 
 	public static void initDir(File dir) {
 		dir.mkdirs();
@@ -56,7 +60,7 @@ public class FileOperations {
 		try {
 			return readLines(new FileInputStream(file));
 		} catch (Exception e) {
-			Log.e("readLines", e.getMessage());
+			Log.e(TAG,"readLines: "+e.getMessage(),e);
 		}
 		return null;
 	}
@@ -73,7 +77,7 @@ public class FileOperations {
 			}
 			br.close();
 		} catch (Exception e) {
-			Log.e("readLines", e.getMessage());
+			Log.e(TAG, "readLines: "+e.getMessage(),e);
 		}
 		return lines;
 	}
@@ -84,7 +88,7 @@ public class FileOperations {
 			out.write(buffer);
 			out.write("\n".getBytes());
 		} catch (Exception e) {
-			Log.e("writeLine", e.getMessage());
+			Log.e(TAG,"writeLine: "+e.getMessage(),e);
 		}
 	}
 
@@ -98,7 +102,7 @@ public class FileOperations {
 			FileOutputStream out = new FileOutputStream(file);
 			writeLine(line, out);
 		} catch (Exception e) {
-			Log.e("writeLine", e.getMessage());
+			Log.e(TAG,"writeLine: "+e.getMessage(),e);
 		}
 	}
 
@@ -107,7 +111,7 @@ public class FileOperations {
 			FileOutputStream out = new FileOutputStream(file);
 			writeLines(lines, out);
 		} catch (Exception e) {
-			Log.e("writeLine", e.getMessage());
+			Log.e(TAG,"writeLine: "+e.getMessage(),e);
 		}
 	}
 
@@ -134,51 +138,40 @@ public class FileOperations {
 		return result;
 	}
 
-    public static void copyAllAssets(Context context) {
+    public static void copyAssetsFolder(Context context, String listPath) {
+        File dir = new File(mainDir+"listPath/");
+        dir.mkdirs();//initialize folder
+        Log.i(TAG, dir.getAbsolutePath() + ".mkdirs()");
         AssetManager assetManager = context.getAssets();
         String[] files = null;
         try {
-            files = assetManager.list("");
-        } catch (IOException e) {
-            Log.e("copyAllAssets", "Failed to get asset file list.", e);
-        }
-        for (String filename : files) {
-            InputStream in = null;
-            OutputStream out = null;
-            try {
-                in = assetManager.open(filename);
-                FileOperations.initDir(mainDir);
-                File outFile = new File(mainDir, filename);
-                out = new FileOutputStream(outFile);
-                FileOperations.copyFile(in, out);
-                in.close();
-                in = null;
-                out.flush();
-                out.close();
-                out = null;
-            } catch (IOException e) {
-                Log.e("tag", "Failed to copy asset file: " + filename, e);
+            files = assetManager.list(listPath);
+            for (String filename : files) {
+                if (assetManager.list(filename).length==0){
+                    if (listPath.equalsIgnoreCase("")) {
+                        Log.i(TAG,"copySpecificAsset(context, "+filename+");");
+                        copySpecificAsset(context, filename);
+                    }else{
+                        Log.i(TAG,"copySpecificAsset(context, "+listPath+"/"+filename+");");
+                        copySpecificAsset(context, listPath+"/"+filename);
+                    }
+                }else{
+                    Log.i(TAG,filename+".isFolder");
+                }
             }
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to get asset file list.", e);
         }
     }
 
     public static boolean copySpecificAsset(Context context, String name) {
         AssetManager assetManager = context.getAssets();
-        String[] files = null;
-        try {
-            files = assetManager.list("");
-        } catch (IOException e) {
-            Log.e("tag", "Failed to get asset file list.", e);
-        }
         InputStream in = null;
         OutputStream out = null;
-        for (String filename : files) {
-            if (!filename.equals(name))
-                continue;
             try {
-                in = assetManager.open(filename);
+                in = assetManager.open(name);
                 FileOperations.initDir(mainDir);
-                File outFile = new File(mainDir, filename);
+                File outFile = new File(mainDir, name);
                 out = new FileOutputStream(outFile);
                 FileOperations.copyFile(in, out);
                 in.close();
@@ -189,10 +182,13 @@ public class FileOperations {
                 return true;
 
             } catch (IOException e) {
-                Log.e("tag", "Failed to copy asset file: " + filename, e);
+                Log.e(TAG, "Failed to copy asset file: " + name, e);
             }
-        }
         return false;
+    }
+
+    public static void downloadFile(String urlString, String destinationPath, String filename){
+        new DownloaFileAsyncTask().execute(urlString, destinationPath, filename);
     }
 
 }

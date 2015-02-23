@@ -43,7 +43,9 @@ public class App extends Application {
 
 	public void initSettings() {
 		Settings.getSettings();
-		FileOperations.copySpecificAsset(getBaseContext(), "default_settings.csv");
+		//FileOperations.copySpecificAsset(getBaseContext(), "default_settings.csv");
+        FileOperations.copyAssetsFolder(getBaseContext(), "");//"" root folder
+        //FileOperations.downloadFile("https://evolution.voxeo.com/library/audio/prompts/numbers/1.wav", "/storage/emulated/0/Android/data/pt.lsts.ASA/audio-numbers/", "1.wav");//test download audio-number
 		if (Settings.getAll().isEmpty()) {// if no previous settings, set the
 											// defaults
 			Profile.restoreDefaults();
