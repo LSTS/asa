@@ -15,6 +15,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.sharedPreferences.CallOutPreferencesListenner;
 import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.util.TextToSpeechUtilService;
 
 
 /**
@@ -127,6 +128,8 @@ public class CallOutService extends Service implements
             @Override
             public void run() {
                 Log.i(TAG,"ias= "+iasInt+ " -- "+System.currentTimeMillis());
+                if (tts==null)
+                    initTts();
                 tts.speak(""+iasInt,TextToSpeech.QUEUE_FLUSH, null);
             }
         };
@@ -137,6 +140,8 @@ public class CallOutService extends Service implements
             @Override
             public void run() {
                 Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
+                if (tts==null)
+                    initTts();
                 tts.speak(""+altInt,TextToSpeech.QUEUE_FLUSH, null);
             }
         };
@@ -245,12 +250,33 @@ public class CallOutService extends Service implements
                     || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e(TAG, "This Language is not supported, result="+result);
             } else {
-                Log.i(TAG,"tts initialized with sucess: Lang="+tts.getLanguage().toString());
+                Log.i(TAG, "tts initialized with sucess: Lang=" + tts.getLanguage().toString());
+                //downloadAndAssociateAudioNumbers();
             }
 
         } else {
             Log.e(TAG, "Initilization Failed. TTS.Status="+status);
         }
+    }
+
+    public void downloadAudioNumbers(){
+        TextToSpeechUtilService textToSpeechUtilService  = new TextToSpeechUtilService(tts);
+        Intent intent = new Intent(context,TextToSpeechUtilService.class);
+        textToSpeechUtilService.onStartCommand(intent,1,0);//1 only downloadFiles
+        textToSpeechUtilService.onBind(intent);
+    }
+
+    public void associateAudioNumbers(){
+        Log.i(TAG,"associateAudioNumbers()");
+        TextToSpeechUtilService textToSpeechUtilService  = new TextToSpeechUtilService(tts);
+        Intent intent = new Intent(context,TextToSpeechUtilService.class);
+        textToSpeechUtilService.onStartCommand(intent,2,0);//2: associate DownloadedFiles with tts
+        textToSpeechUtilService.onBind(intent);
+    }
+
+    public void downloadAndAssociateAudioNumbers(){
+        downloadAudioNumbers();
+        associateAudioNumbers();
     }
 
     @Override
