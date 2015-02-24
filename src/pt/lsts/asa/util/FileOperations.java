@@ -12,17 +12,23 @@ import java.util.Vector;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
+
+import pt.lsts.asa.ASA;
 
 
 public class FileOperations {
 
 
     public static final String TAG = "FileOperations";
-    public static File mainDir = new File(
-            "/storage/emulated/0/Android/data/pt.lsts.ASA/");
-    public static final String mainDirString = "/storage/emulated/0/Android/data/pt.lsts.ASA/";
+
+    public static final String mainDirString17 = "/storage/emulated/0/Android/data/pt.lsts.ASA/";//Android 4.2+
+    public static final String mainDirString14 = "/storage/sdcard0/";//Android 4.0 4.1
+    public static final String mainDirStringPrior = "/mnt/sdcard/";//Before 4.0
+    public static String mainDirString=null;
+    //public static final String mainDirString = "/storage/emulated/0/Android/data/pt.lsts.ASA/";
 
 	public static void initDir(File dir) {
 		dir.mkdirs();
@@ -139,7 +145,11 @@ public class FileOperations {
 	}
 
     public static void copyAssetsFolder(Context context, String listPath) {
-        File dir = new File(mainDir+"listPath/");
+        File dir;
+        if (listPath.equalsIgnoreCase(""))
+            dir = getMainDir();
+        else
+            dir = new File(getMainDir(),listPath+"/");
         dir.mkdirs();//initialize folder
         Log.i(TAG, dir.getAbsolutePath() + ".mkdirs()");
         AssetManager assetManager = context.getAssets();
@@ -170,8 +180,8 @@ public class FileOperations {
         OutputStream out = null;
             try {
                 in = assetManager.open(name);
-                FileOperations.initDir(mainDir);
-                File outFile = new File(mainDir, name);
+                FileOperations.initDir(getMainDir());
+                File outFile = new File(getMainDir(), name);
                 out = new FileOutputStream(outFile);
                 FileOperations.copyFile(in, out);
                 in.close();
@@ -185,6 +195,24 @@ public class FileOperations {
                 Log.e(TAG, "Failed to copy asset file: " + name, e);
             }
         return false;
+    }
+
+    public static File getMainDir(){
+        int SDK_INT = Build.VERSION.SDK_INT;
+        if (SDK_INT<14){
+            mainDirString=mainDirStringPrior;
+            return new File(mainDirStringPrior);//before ICS 4.0
+        }
+        if (SDK_INT>=17){
+            mainDirString=mainDirString17;
+            return new File(mainDirString17);//After JB 4.2
+        }
+        if (SDK_INT==14 || SDK_INT==15 || SDK_INT==16) {// ICS & JB 4.0 4.1
+            mainDirString=mainDirString14;
+            return new File(mainDirString14);
+        }
+        mainDirString=ASA.getContext().getFilesDir().getAbsolutePath();
+        return ASA.getContext().getFilesDir();//no version recognized
     }
 
     public static void downloadFile(String urlString, String destinationPath, String filename){

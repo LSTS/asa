@@ -15,7 +15,7 @@ public class Profile {
 
     public static final String TAG = "Profile";
 	public static String defaultSettingsName = "default_settings";
-	public static File defaultSettingsFile = new File(FileOperations.mainDir,
+	public static File defaultSettingsFile = new File(FileOperations.getMainDir(),
 			defaultSettingsName);
 	public static String firstLineInCsvFile = "type,category,key,description,value(s)";
 	public static final String extension = "csv";
@@ -25,7 +25,7 @@ public class Profile {
 	}
 
 	public static String load(String name) {
-		File profile = new File(FileOperations.mainDir, name+"."+extension);
+		File profile = new File(FileOperations.getMainDir(), name+"."+extension);
 		if (!profile.exists())
 			return "Profile file:\n" + name + "\nNot Available";
 		Vector<String> settings = FileOperations.readLines(profile);
@@ -83,8 +83,8 @@ public class Profile {
 			Log.e("save", "Settings.getAll().size()==0");
 			return "ERROR: settings empty";
 		}
-		File file = new File(FileOperations.mainDir, name + "." + extension);
-		FileOperations.initDir(FileOperations.mainDir);
+		File file = new File(FileOperations.getMainDir(), name + "." + extension);
+		FileOperations.initDir(FileOperations.getMainDir());
         SortedSet<String> keysSorted = new TreeSet<String>(keys.keySet());
         for (String key : keysSorted) {
 			String type = Settings.getType(key, "java.lang.String");
@@ -118,7 +118,7 @@ public class Profile {
 	}
 
 	public static String[] getProfilesAvailable() {
-		String[] filesArray = FileOperations.mainDir.list();
+		String[] filesArray = FileOperations.getMainDir().list();
 		String[] result = FileOperations.filterFilesByExtension(filesArray,extension);
 		result = FileOperations.removeExtension(result, extension);
 
