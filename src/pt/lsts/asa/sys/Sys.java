@@ -36,11 +36,28 @@ public class Sys {
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
     private Marker maker=null;//googleMap marker
     private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
+    private String planID = "";//plan executing
 
     //variables for manual mode
     private float alt;
     private double ias;
     private int iasInt, altInt;
+
+    public String getPlanID() {
+        return planID;
+    }
+
+    /**
+     *
+     * @param planID new PlanID from PlanControlState.getPlanID()
+     * @return true if changed
+     */
+    public boolean setPlanID(String planID) {
+        if (this.planID.equals(planID))
+            return false;
+        this.planID = planID;
+        return true;
+    }
 
     public int getAltInt() {
         return altInt;
