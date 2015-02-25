@@ -20,6 +20,9 @@ import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
+import pt.lsts.imc.PlanControlState;
+import pt.lsts.imc.PlanDB;
+import pt.lsts.imc.PlanDBState;
 import pt.lsts.imc.VehicleState;
 
 /**
@@ -27,7 +30,7 @@ import pt.lsts.imc.VehicleState;
  */
 public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSubscriber {
 
-    public static final String TAG = "SystemsUpdaterServiceIMCSubscriber";
+    public static final String TAG = "SysUpdaterServiceIMCSub";
     public static final boolean DEBUG = false;
     private SystemList systemList = ASA.getInstance().getSystemList();
 
@@ -104,6 +107,26 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         }
                     }
                     //call OTTO
+                    break;
+
+                case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
+                    Log.i(TAG,"PlanDB: \n"+msg.toString());
+
+                    break;
+                case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
+                    if (IMCUtils.isMsgFromActive(msg)) {
+                        Log.i(TAG, "PlanControlState: \n" + msg.toString());
+                        PlanControlState planControlState = (PlanControlState) msg;
+                        if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
+                            boolean changed = ASA.getInstance().getActiveSys().setPlanID(planControlState.getPlanId());
+                            if (changed==true){
+                                Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planControlState.getPlanId());
+                                //notification to user
+                                //planDB.request(planID) -> planDB.reply(arg=Plan Spec)
+                            }
+                        }
+                    }
+
                     break;
 
                 // Nothing to do on other messages
