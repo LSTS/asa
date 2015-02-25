@@ -3,7 +3,9 @@ package pt.lsts.asa.util;
 import android.util.Log;
 
 import pt.lsts.asa.ASA;
+import pt.lsts.asa.sys.Sys;
 import pt.lsts.imc.IMCMessage;
+import pt.lsts.imc.PlanDB;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -74,4 +76,10 @@ public class IMCUtils {
 			return false;
 		return true;
 	}
+
+    public static void updateSysLastMsgReceived(IMCMessage msg){
+        Sys sys = ASA.getInstance().getSystemList().findSysById((Integer) msg.getHeaderValue("src"));
+        sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
+    }
+
 }
