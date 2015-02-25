@@ -45,6 +45,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             processAnnounce(msg,systemList);
         }else {
             Sys sys = systemList.findSysById((Integer) msg.getHeaderValue("src"));
+            boolean isFromActive = IMCUtils.isMsgFromActive(msg);
             switch (ID_MSG) {
                 // Process VehicleState to get error count
                 case VehicleState.ID_STATIC:
@@ -66,7 +67,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
                     if (altInt!=sys.getAltInt()){
                         sys.setAltInt(altInt);
-                        if (ASA.getInstance().getActiveSys().equals(sys)){
+                        if (isFromActive){
                             Log.i(TAG,"alt: getActiveSys().equals(sys)");
                             ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
                         }
@@ -101,7 +102,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     Log.i(TAG,"iasDouble= "+ias+" | iasInt="+iasInt+" | sys.getIasInt()="+sys.getIasInt());
                     if (iasInt!=sys.getIasInt()){
                         sys.setIasInt(iasInt);
-                        if (ASA.getInstance().getActiveSys().equals(sys)){
+                        if (isFromActive){
                             Log.i(TAG,"getActiveSys().equals(sys)");
                             ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
                         }
@@ -114,11 +115,11 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
 
                     break;
                 case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
-                    if (IMCUtils.isMsgFromActive(msg)) {
+                    if (isFromActive) {
                         Log.i(TAG, "PlanControlState: \n" + msg.toString());
                         PlanControlState planControlState = (PlanControlState) msg;
                         if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
-                            boolean changed = ASA.getInstance().getActiveSys().setPlanID(planControlState.getPlanId());
+                            boolean changed = sys.setPlanID(planControlState.getPlanId());
                             if (changed==true){
                                 Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planControlState.getPlanId());
                                 //notification to user
