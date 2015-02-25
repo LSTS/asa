@@ -71,6 +71,7 @@ public class SystemListActivity extends FragmentActivity {
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        systemListFragment.shutdown();
+        if (systemListFragment!=null)
+            systemListFragment.shutdown();
     }
 }
