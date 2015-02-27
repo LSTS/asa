@@ -76,9 +76,30 @@ public class ASA {
 
     private static Integer requestId = 0xFFFF; // Request ID for quick plan
 
-	private ASA(Context context) {
-		this.context = context;
+    public  enum MODE {
+        NONE,//MainActivity, in between Activities, all messages are handled
+        SYSTEMLIST,//only announces are handled
+        CHECKLIST,//only messages from Active Sys
+        SETTINGS,//no messages handled
+        MANUAL,//only messages from Active Sys
+        AUTO,//all?
+        OTHER//should not be used
+    }
 
+    private MODE mode=MODE.NONE;
+
+    public MODE getMode() {
+        return mode;
+    }
+
+    public void setMode(MODE mode) {
+        this.mode = mode;
+        Log.v(TAG,"ASA.mode changed to: "+mode.toString());
+    }
+
+    private ASA(Context context) {
+		this.context = context;
+        setMode(MODE.NONE);
 		initIMCManager();
 		initBroadcast();
 		initGPSManager(context);

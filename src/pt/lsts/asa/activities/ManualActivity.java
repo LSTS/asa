@@ -50,6 +50,7 @@ public class ManualActivity extends FragmentActivity {
     @Override
     public void onResume(){
         super.onResume();
+        ASA.getInstance().setMode(ASA.MODE.MANUAL);
         loadFragments(null);//always load fragments from null
         soundControlFragment.unmute();
 

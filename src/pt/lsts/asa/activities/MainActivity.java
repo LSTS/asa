@@ -206,7 +206,8 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onResume() {
 		super.onResume(); // Always call the superclass method first
-		resumeASA();
+        ASA.getInstance().setMode(ASA.MODE.NONE);
+        resumeASA();
 	}
 
 	@Override

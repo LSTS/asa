@@ -1,5 +1,6 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.settings.SettingsFactory;
 
 import java.util.Vector;
@@ -31,6 +32,12 @@ public class SettingsActivity extends PreferenceActivity {
 		setPreferenceScreen(preferenceScreen);
 
 	}
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        ASA.getInstance().setMode(ASA.MODE.SETTINGS);
+    }
 
 	public void populateCategories(
 			Vector<PreferenceCategory> preferenceCategories) {

@@ -1,5 +1,6 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.fragments.SettingsButtonFragment;
 import pt.lsts.asa.fragments.SystemListFragment;
@@ -66,6 +67,12 @@ public class SystemListActivity extends FragmentActivity {
             settingsButtonFragment = new SettingsButtonFragment(this);
             AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_system_list);
         }
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        ASA.getInstance().setMode(ASA.MODE.SYSTEMLIST);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package pt.lsts.asa.activities;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
@@ -20,6 +21,12 @@ public class AutoActivity extends FragmentActivity {
 		loadFragments(savedInstanceState);
 
 	}
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        ASA.getInstance().setMode(ASA.MODE.AUTO);
+    }
 
 	public void loadFragments(Bundle savedInstanceState) {
 		if (findViewById(R.id.fragment_container_auto) != null) {
