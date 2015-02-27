@@ -22,7 +22,6 @@ import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
 import pt.lsts.imc.PlanControlState;
 import pt.lsts.imc.PlanDB;
-import pt.lsts.imc.PlanDBState;
 import pt.lsts.imc.VehicleState;
 
 /**
@@ -41,92 +40,34 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
 
         final int ID_MSG = msg.getMgid();
         if (ID_MSG==Announce.ID_STATIC){
-            // Process Announce routine
+            Log.v(TAG, "Announce:\n"+msg.toString());
             processAnnounce(msg,systemList);
         }else {
             Sys sys = systemList.findSysById((Integer) msg.getHeaderValue("src"));
             switch (ID_MSG) {
+
                 // Process VehicleState to get error count
                 case VehicleState.ID_STATIC:
-                    Log.i(TAG, "Received VehicleState: " + msg.toString());
-                    int errors = msg.getInteger("error_count");
-                    if (sys != null) // Meaning it exists on the list
-                    {
-                        Log.i(TAG, "" + errors);
-                        sys.setError(errors > 0);
-                        systemList.changeList(systemList.getList()); // Update the list
-                    }
+                    Log.v(TAG, "Received VehicleState:\n"+msg.toString());
+                    processVehicleState(msg, sys);
                     break;
 
                 case EstimatedState.ID_STATIC:
-                    Log.i(TAG, "EstimatedState");
-                    Float alt = - ((Float) msg.getValue("z"));
-                    sys.setAlt(alt);
-                    int altInt = Math.round(alt);
-                    Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
-                    if (altInt!=sys.getAltInt()){
-                        sys.setAltInt(altInt);
-                        if (ASA.getInstance().getActiveSys().equals(sys)){
-                            Log.i(TAG,"alt: getActiveSys().equals(sys)");
-                            ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
-                        }
-
-                    }
-                    Double latRad = msg.getDouble("lat");
-                    Double lonRad = msg.getDouble("lon");
-                    Double latDeg = (Double) Math.toDegrees(latRad);
-                    Double lonDeg = (Double) Math.toDegrees(lonRad);
-
-                    float offsetX = msg.getFloat("x");//offset north
-                    float offsetY = msg.getFloat("y");//offset east
-
-                    LatLng latLng = GmapsUtil.translateCoordinates(new LatLng(latDeg,lonDeg), offsetX, offsetY);
-
-                    Log.i(TAG,"latLng="+latLng.toString());
-                    //gmapfragment.setActiveSysLatLng(latLng);
-                    sys.setLatLng(latLng);
-
-                    float psi = msg.getFloat("psi");
-                    double psiDouble = psi;
-                    sys.setPsi((float) Math.toDegrees(psiDouble));
-                    //gmapfragment.updateSysMarker(sys);
-                    //call OTTO
+                    Log.v(TAG, "EstimatedState:\n"+msg.toString());
+                    processEstimatedState(msg,sys);
                     break;
                 case IndicatedSpeed.ID_STATIC:
-                    Log.i(TAG, "IndicatedSpeed");
-                    Double ias = (Double) msg.getValue("value");
-                    Log.v(TAG,"IndicatedSpedd received: ias="+ias);
-                    sys.setIas(ias);
-                    int iasInt = (int) Math.round(ias);
-                    Log.i(TAG,"iasDouble= "+ias+" | iasInt="+iasInt+" | sys.getIasInt()="+sys.getIasInt());
-                    if (iasInt!=sys.getIasInt()){
-                        sys.setIasInt(iasInt);
-                        if (ASA.getInstance().getActiveSys().equals(sys)){
-                            Log.i(TAG,"getActiveSys().equals(sys)");
-                            ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
-                        }
-                    }
-                    //call OTTO
+                    Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
+                    processIndicatedSpeed(msg,sys);
                     break;
 
                 case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
-                    Log.i(TAG,"PlanDB: \n"+msg.toString());
+                    Log.v(TAG,"PlanDB:\n"+msg.toString());
 
                     break;
                 case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
-                    if (IMCUtils.isMsgFromActive(msg)) {
-                        Log.i(TAG, "PlanControlState: \n" + msg.toString());
-                        PlanControlState planControlState = (PlanControlState) msg;
-                        if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
-                            boolean changed = ASA.getInstance().getActiveSys().setPlanID(planControlState.getPlanId());
-                            if (changed==true){
-                                Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planControlState.getPlanId());
-                                //notification to user
-                                //planDB.request(planID) -> planDB.reply(arg=Plan Spec)
-                            }
-                        }
-                    }
-
+                    Log.v(TAG,"PlanControlState:\n"+msg.toString());
+                    processPlanControlState(msg,sys);
                     break;
 
                 // Nothing to do on other messages
@@ -213,6 +154,81 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     .sendMessage(sys.getAddress(), sys.getPort(), mm);
         } catch (Exception e1) {
             e1.printStackTrace();
+        }
+    }
+
+    public void processVehicleState(IMCMessage msg, Sys sys){
+        int errors = msg.getInteger("error_count");
+        if (sys != null) // Meaning it exists on the list
+        {
+            Log.i(TAG, "" + errors);
+            sys.setError(errors > 0);
+            systemList.changeList(systemList.getList()); // Update the list
+        }
+    }
+
+    public void processEstimatedState(IMCMessage msg, Sys sys){
+        Float alt = - ((Float) msg.getValue("z"));
+        sys.setAlt(alt);
+        int altInt = Math.round(alt);
+        Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
+        if (altInt!=sys.getAltInt()){
+            sys.setAltInt(altInt);
+            if (ASA.getInstance().getActiveSys().equals(sys)){
+                Log.i(TAG,"alt: getActiveSys().equals(sys)");
+                ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
+            }
+
+        }
+        Double latRad = msg.getDouble("lat");
+        Double lonRad = msg.getDouble("lon");
+        Double latDeg = (Double) Math.toDegrees(latRad);
+        Double lonDeg = (Double) Math.toDegrees(lonRad);
+
+        float offsetX = msg.getFloat("x");//offset north
+        float offsetY = msg.getFloat("y");//offset east
+
+        LatLng latLng = GmapsUtil.translateCoordinates(new LatLng(latDeg,lonDeg), offsetX, offsetY);
+
+        Log.i(TAG,"latLng="+latLng.toString());
+        //gmapfragment.setActiveSysLatLng(latLng);
+        sys.setLatLng(latLng);
+
+        float psi = msg.getFloat("psi");
+        double psiDouble = psi;
+        sys.setPsi((float) Math.toDegrees(psiDouble));
+        //gmapfragment.updateSysMarker(sys);
+        //call OTTO
+    }
+
+    public void processIndicatedSpeed(IMCMessage msg, Sys sys){
+        Double ias = (Double) msg.getValue("value");
+        Log.v(TAG,"IndicatedSpedd received: ias="+ias);
+        sys.setIas(ias);
+        int iasInt = (int) Math.round(ias);
+        Log.i(TAG,"iasDouble= "+ias+" | iasInt="+iasInt+" | sys.getIasInt()="+sys.getIasInt());
+        if (iasInt!=sys.getIasInt()){
+            sys.setIasInt(iasInt);
+            if (ASA.getInstance().getActiveSys().equals(sys)){
+                Log.i(TAG,"getActiveSys().equals(sys)");
+                ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
+            }
+        }
+        //call OTTO
+    }
+
+    public void processPlanControlState(IMCMessage msg,Sys sys){
+        if (IMCUtils.isMsgFromActive(msg)) {
+            Log.i(TAG, "PlanControlState: \n" + msg.toString());
+            PlanControlState planControlState = (PlanControlState) msg;
+            if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
+                boolean changed = ASA.getInstance().getActiveSys().setPlanID(planControlState.getPlanId());
+                if (changed==true){
+                    Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planControlState.getPlanId());
+                    //notification to user
+                    //planDB.request(planID) -> planDB.reply(arg=Plan Spec)
+                }
+            }
         }
     }
 
