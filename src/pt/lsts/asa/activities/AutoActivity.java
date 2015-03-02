@@ -18,14 +18,21 @@ public class AutoActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_container_auto);
 
-		loadFragments(savedInstanceState);
+		//loadFragments(savedInstanceState);
 
 	}
+
+    @Override
+    protected void onPause(){
+        AndroidUtil.removeAllFragments(this);
+        super.onPause();
+    }
 
     @Override
     protected void onResume(){
         super.onResume();
         ASA.getInstance().setMode(ASA.MODE.AUTO);
+        loadFragments(null);//always load fragments from null
     }
 
 	public void loadFragments(Bundle savedInstanceState) {
