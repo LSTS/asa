@@ -39,44 +39,64 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public void onReceive(final IMCMessage msg) {
 
         final int ID_MSG = msg.getMgid();
-        if (ID_MSG==Announce.ID_STATIC){
+        final ASA.MODE mode = ASA.getInstance().getMode();
+        Sys sys = systemList.findSysById((Integer) msg.getHeaderValue("src"));
+
+        //system does not exist, only interesting message is announce
+        if (sys==null && ID_MSG==Announce.ID_STATIC){//system does not exist, only interesting message is announce
             Log.v(TAG, "Announce:\n"+msg.toString());
             processAnnounce(msg,systemList);
-        }else {
-            Sys sys = systemList.findSysById((Integer) msg.getHeaderValue("src"));
-            switch (ID_MSG) {
-
-                // Process VehicleState to get error count
-                case VehicleState.ID_STATIC:
-                    Log.v(TAG, "Received VehicleState:\n"+msg.toString());
-                    processVehicleState(msg, sys);
-                    break;
-
-                case EstimatedState.ID_STATIC:
-                    Log.v(TAG, "EstimatedState:\n"+msg.toString());
-                    processEstimatedState(msg,sys);
-                    break;
-                case IndicatedSpeed.ID_STATIC:
-                    Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
-                    processIndicatedSpeed(msg,sys);
-                    break;
-
-                case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
-                    Log.v(TAG,"PlanDB:\n"+msg.toString());
-
-                    break;
-                case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
-                    Log.v(TAG,"PlanControlState:\n"+msg.toString());
-                    processPlanControlState(msg,sys);
-                    break;
-
-                // Nothing to do on other messages
-                default:
-                    Log.i(TAG,"other - "+msg.getAbbrev());
-                    break;
-            }
-            sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
+            return;
         }
+        //system already exists
+        switch (mode){
+            case CHECKLIST:
+                //only parse messages from active Sys
+                //see what messages are important
+                break;
+            case MANUAL:
+                //only parse EstimatedState and IndicatedSpeed from active Sys
+                switch (ID_MSG) {
+                    case EstimatedState.ID_STATIC:
+                        Log.v(TAG, "EstimatedState:\n"+msg.toString());
+                        processEstimatedState(msg,sys);
+                        break;
+                    case IndicatedSpeed.ID_STATIC:
+                        Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
+                        processIndicatedSpeed(msg,sys);
+                        break;
+                }
+                break;
+            case AUTO:
+                switch (ID_MSG) {
+                    case EstimatedState.ID_STATIC:
+                        Log.v(TAG, "EstimatedState:\n"+msg.toString());
+                        processEstimatedState(msg,sys);
+                        break;
+                    case IndicatedSpeed.ID_STATIC:
+                        Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
+                        processIndicatedSpeed(msg,sys);
+                        break;
+                    case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
+                        Log.v(TAG,"PlanDB:\n"+msg.toString());
+
+                        break;
+                    case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
+                        Log.v(TAG,"PlanControlState:\n"+msg.toString());
+                        processPlanControlState(msg,sys);
+                        break;
+                }
+                break;
+            case SYSTEMLIST:
+                Log.v(TAG,"ASA.mode==SYSTEMLIST, message ignored:\n"+msg.toString());
+                break;
+            default:
+                Log.e(TAG,"Unreacognized mode: "+mode.toString());
+                break;
+        }
+        //Log.v(TAG,"MsgType:"+msg.getAbbrev());
+        //Log.v(TAG,"Msg:\n"+msg.toString());
+        sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
 
     }
 
