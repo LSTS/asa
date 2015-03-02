@@ -38,15 +38,15 @@ public class GmapSysUpdaterListenner {
     @Subscribe
     public void onPlanChanged(PlanSpecification planSpecification){//called from PlanDB
         Log.v(TAG,"onPlanChanged");
-        List<PlanUtilities.Waypoint> listWaypoints = PlanUtilities.computeWaypoints(planSpecification);
-        for (PlanUtilities.Waypoint waypoint : listWaypoints){
+        List<PlanUtilities.Waypoint> waypointList = PlanUtilities.computeWaypoints(planSpecification);
+        for (PlanUtilities.Waypoint waypoint : waypointList){
             Log.i(TAG,"Waypoint:\n"+"alt: "+waypoint.getAltitude()
                     +"\n"+"height: "+waypoint.getHeight()
                     +"\n"+"depth: "+waypoint.getDepth()
                     +"\n"+"lat/lon: "+waypoint.getLatitude()+" , "+waypoint.getLongitude()
                     +"\n"+"Radius: "+waypoint.getRadius());
         }
-        //gmapFragment.updatePlanMarkers();
+        gmapFragment.updateCurrentPlanMarkers(waypointList);
     }
 
 }
