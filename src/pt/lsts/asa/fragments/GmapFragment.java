@@ -3,6 +3,8 @@ package pt.lsts.asa.fragments;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.MyLocationListener;
+import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
+import pt.lsts.asa.listenners.sysUpdates.GmapSysUpdaterListenner;
 import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 
@@ -36,6 +38,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -49,13 +52,13 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     private MapFragment mapFragment = null;
 
     private GmapIMCSubscriber gmapIMCSubscriber = null;
+    private GmapSysUpdaterListenner gmapSysUpdaterListenner = null;
 
     private LatLng myLatLng = new LatLng(0,0);
     private MyLocationListener myLocationListener = null;
     private Boolean initZoom = false;
 
     private ArrayList<Marker> markersArrayList = new ArrayList<Marker>();//markers of vehicles positions
-
 
     public GmapFragment() {
         // Required empty public constructor
@@ -118,12 +121,18 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         ASA.getInstance().addSubscriber(gmapIMCSubscriber);
     }
 
+    public void initGmapSysUpdaterListenner(){
+        gmapSysUpdaterListenner = new GmapSysUpdaterListenner(this);
+        ASA.getInstance().getBus().register(gmapSysUpdaterListenner);
+    }
+
     @Override
     public void onMapReady(GoogleMap map) {
         Log.i("onMapReady", "onMapReady");
         googleMap=map;
         googleMap.setMyLocationEnabled(true);//set a blue dot on position
-        initIMCSubscriber();
+        //initIMCSubscriber();
+        initGmapSysUpdaterListenner();
     }
 
     public void addMarkerToPos(final Sys sys){//standard googles red marker

@@ -8,6 +8,8 @@ import android.util.Pair;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.util.List;
+
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
@@ -22,7 +24,9 @@ import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
 import pt.lsts.imc.PlanControlState;
 import pt.lsts.imc.PlanDB;
+import pt.lsts.imc.PlanSpecification;
 import pt.lsts.imc.VehicleState;
+import pt.lsts.util.PlanUtilities;
 
 /**
  * Created by jloureiro on 2/10/15.
@@ -77,13 +81,13 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
                         processIndicatedSpeed(msg,sys);
                         break;
-                    case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
-                        Log.v(TAG,"PlanDB:\n"+msg.toString());
-
-                        break;
                     case PlanControlState.ID_STATIC://STATE = EXECUTING, READY, INITIALIZING, BLOCKED
                         Log.v(TAG,"PlanControlState:\n"+msg.toString());
                         processPlanControlState(msg,sys);
+                        break;
+                    case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
+                        Log.v(TAG,"PlanDB:\n"+msg.toString());
+                        processPlanDB(msg, sys);
                         break;
                 }
                 break;
@@ -217,6 +221,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         float psi = msg.getFloat("psi");
         double psiDouble = psi;
         sys.setPsi((float) Math.toDegrees(psiDouble));
+        ASA.getInstance().getBus().post(sys);
         //gmapfragment.updateSysMarker(sys);
         //call OTTO
     }
@@ -242,13 +247,35 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             Log.i(TAG, "PlanControlState: \n" + msg.toString());
             PlanControlState planControlState = (PlanControlState) msg;
             if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
-                boolean changed = ASA.getInstance().getActiveSys().setPlanID(planControlState.getPlanId());
+                String planID = planControlState.getPlanId();
+                boolean changed = ASA.getInstance().getActiveSys().setPlanID(planID);
                 if (changed==true){
-                    Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planControlState.getPlanId());
+                    Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planID);
                     //notification to user
                     //planDB.request(planID) -> planDB.reply(arg=Plan Spec)
+                    sendPlanDBrequestPlanID(planID);
                 }
             }
+        }
+    }
+
+    public static void sendPlanDBrequestPlanID(String planID){
+        PlanDB planDB = new PlanDB();
+        planDB.setType(PlanDB.TYPE.REQUEST);
+        planDB.setOp(PlanDB.OP.GET);
+        planDB.setPlanId(planID);
+        ASA.getInstance().getIMCManager().sendToActiveSys(planDB);
+    }
+
+    public void processPlanDB(IMCMessage msg, Sys sys){
+        PlanDB planDB = (PlanDB) msg;
+        String planID = planDB.getPlanId();
+        if (planDB.getType().equals(PlanDB.TYPE.SUCCESS)
+                && IMCUtils.isMsgFromActive(msg)){
+            Log.i(TAG,"PlanDB:\n"+"plan switched in sys:"+sys.getName()+" to plan:"+planID);
+            sys.setPlanID(planID);
+            PlanSpecification planSpecification = (PlanSpecification) planDB.getArg();
+            ASA.getInstance().getBus().post(planSpecification);
         }
     }
 
