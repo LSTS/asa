@@ -65,8 +65,10 @@ public class ManualIndicatorsFragment extends Fragment {
         initTimeoutTimerTask();
         manualIndicatorsSysUpdaterListenner = new ManualIndicatorsSysUpdaterListenner(this);
         ASA.getInstance().getBus().register(manualIndicatorsSysUpdaterListenner);
-        setLeftTextView(ASA.getInstance().getActiveSys().getIasInt());
-        setRightTextView(ASA.getInstance().getActiveSys().getAltInt());
+        if (ASA.getInstance().getActiveSys()!=null){
+            setLeftTextView(ASA.getInstance().getActiveSys().getIasInt());
+            setRightTextView(ASA.getInstance().getActiveSys().getAltInt());
+        }
     }
 
     public void initPreferencesListenner(){
