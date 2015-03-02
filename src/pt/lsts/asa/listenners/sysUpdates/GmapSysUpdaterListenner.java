@@ -12,6 +12,7 @@ import java.util.Locale;
 import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.imc.PlanSpecification;
 import pt.lsts.util.PlanUtilities;
 
@@ -47,6 +48,7 @@ public class GmapSysUpdaterListenner {
                     +"\n"+"Radius: "+waypoint.getRadius());
         }
         gmapFragment.updateCurrentPlanMarkers(waypointList);
+        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), "Plan changed to: "+planSpecification.getPlanId());
     }
 
 }
