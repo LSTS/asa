@@ -100,19 +100,30 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        //initIMCSubscriber();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        for (Sys sys : ASA.getInstance().getSystemList().getList())
-            sys.resetVisualizations();
-        ASA.getInstance().removeSubscriber(gmapIMCSubscriber);
-        gmapIMCSubscriber=null;
-
     }
 
+    @Override
+    public void onResume(){
+        //initIMCSubscriber();
+        initGmapSysUpdaterListenner();
+        Log.i(TAG,"onAttach");
+        super.onResume();
+    }
+
+    @Override
+    public void onPause(){
+        for (Sys sys : ASA.getInstance().getSystemList().getList())
+            sys.resetVisualizations();
+        ASA.getInstance().getBus().unregister(gmapSysUpdaterListenner);
+        gmapSysUpdaterListenner=null;
+        super.onPause();
+    }
+/*
     public void initIMCSubscriber(){
         for (Sys sys : ASA.getInstance().getSystemList().getList()){
             updateSysMarker(sys);
@@ -120,8 +131,15 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         gmapIMCSubscriber = new GmapIMCSubscriber(this);
         ASA.getInstance().addSubscriber(gmapIMCSubscriber);
     }
-
+*/
     public void initGmapSysUpdaterListenner(){
+        for (Sys sys : ASA.getInstance().getSystemList().getList()) {
+            updateSysMarker(sys);
+        }
+        if (gmapSysUpdaterListenner!=null) {
+            ASA.getInstance().getBus().unregister(gmapSysUpdaterListenner);
+            gmapSysUpdaterListenner=null;
+        }
         gmapSysUpdaterListenner = new GmapSysUpdaterListenner(this);
         ASA.getInstance().getBus().register(gmapSysUpdaterListenner);
     }
