@@ -132,6 +132,9 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         googleMap=map;
         googleMap.setMyLocationEnabled(true);//set a blue dot on position
         //initIMCSubscriber();
+        for (Sys sys : ASA.getInstance().getSystemList().getList()){
+            updateSysMarker(sys);
+        }
         initGmapSysUpdaterListenner();
     }
 
