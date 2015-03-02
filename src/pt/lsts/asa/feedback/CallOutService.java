@@ -151,7 +151,8 @@ public class CallOutService extends Service implements
         timeoutTimerTask = new TimerTask() {
             @Override
             public void run() {
-                if (System.currentTimeMillis() > lastMsgReceived+timeoutInterval) {
+                if (System.currentTimeMillis() > lastMsgReceived+timeoutInterval
+                        && System.currentTimeMillis() > ASA.getInstance().getActiveSys().lastMessageReceived+timeoutInterval) {
                     Log.i(TAG, "Lost Comms");
                     tts.speak("Lost Comms", TextToSpeech.QUEUE_FLUSH, null);
                     if (iasTimer!=null) {
