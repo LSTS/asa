@@ -36,6 +36,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public static final String TAG = "SysUpdaterServiceIMCSub";
     public static final boolean DEBUG = false;
     private SystemList systemList = ASA.getInstance().getSystemList();
+    private long lastMsgSentTimeMills = -1;//time in milliseconds since last Message Sent
 
     public SystemsUpdaterServiceIMCSubscriber(){}
 
@@ -248,18 +249,21 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             PlanControlState planControlState = (PlanControlState) msg;
             if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
                 String planID = planControlState.getPlanId();
+                String paintedPlanID = ASA.getInstance().getActiveSys().getPaintedPlanID();
                 boolean changed = ASA.getInstance().getActiveSys().setPlanID(planID);
-                if (changed==true){
-                    Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planID);
-                    //notification to user
+                if (!ASA.getInstance().getActiveSys().isPaintedPlanUpdated()
+                        && lastMsgSentTimeMills+500<System.currentTimeMillis()){//only send message every 500ms
+                    //Log.i(TAG,"PlanControlState: \n"+"Changed Plan to: "+planID);
                     //planDB.request(planID) -> planDB.reply(arg=Plan Spec)
                     sendPlanDBrequestPlanID(planID);
+                    this.lastMsgSentTimeMills=System.currentTimeMillis();
                 }
             }
         }
     }
 
     public static void sendPlanDBrequestPlanID(String planID){
+        Log.i(TAG,"sendPlanDBrequestPlanID");
         PlanDB planDB = new PlanDB();
         planDB.setType(PlanDB.TYPE.REQUEST);
         planDB.setOp(PlanDB.OP.GET);

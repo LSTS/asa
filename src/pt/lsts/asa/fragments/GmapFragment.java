@@ -6,6 +6,7 @@ import pt.lsts.asa.listenners.MyLocationListener;
 import pt.lsts.asa.listenners.sysUpdates.GmapSysUpdaterListenner;
 import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.util.PlanUtilities;
 
 import android.app.Activity;
@@ -313,6 +314,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             id++;
         }
         paintLinesBettweenWaypoints(waypointList);
+        ASA.getInstance().getActiveSys().setPaintedPlanID(ASA.getInstance().getActiveSys().getPlanID());
     }
 
     public void paintLinesBettweenWaypoints(List<PlanUtilities.Waypoint> waypointList){

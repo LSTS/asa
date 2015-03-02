@@ -37,6 +37,8 @@ public class Sys {
     private Marker maker=null;//googleMap marker
     private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
     private String planID = "";//plan executing
+    private String paintedPlanID = "";//painted plan in GoogleMaps
+
 
     //variables for manual mode
     private float alt;
@@ -57,6 +59,20 @@ public class Sys {
             return false;
         this.planID = planID;
         return true;
+    }
+
+
+    public String getPaintedPlanID() {
+        return paintedPlanID;
+    }
+
+    public void setPaintedPlanID(String paintedPlanID) {
+        this.paintedPlanID = paintedPlanID;
+    }
+
+    public boolean isPaintedPlanUpdated(){
+        return this.paintedPlanID.equals(this.planID);
+
     }
 
     public int getAltInt() {
