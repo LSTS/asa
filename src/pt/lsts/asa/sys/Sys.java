@@ -226,6 +226,8 @@ public class Sys {
     public void resetVisualizations(){
         setMaker(null);
         setGroundOverlay(null);
+        setPlanID("");
+        setPaintedPlanID("");
     }
 
     public boolean isOnMap(){
