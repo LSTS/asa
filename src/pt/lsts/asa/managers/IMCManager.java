@@ -66,7 +66,6 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 	 * for a given id
 	 * 
 	 * @param sub
-	 * @param mgid
 	 */
 	public boolean addSubscriber(IMCSubscriber sub, String abbrevName) {
 		int mgid;
@@ -235,6 +234,8 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 	}
 
 	public void sendToActiveSys(IMCMessage msg) {
+        if (msg==null)
+            Log.e(TAG,"sendToActiveSys msg==null");
 		sendToSys(ASA.getInstance().getActiveSys(), msg);
 	}
 
@@ -242,12 +243,15 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 		try {
 			send(sys.getAddress(), sys.getPort(), name, values);
 		} catch (Exception e) {
+            Log.e(TAG,"sendToSys erro:"+e.getMessage(),e);
 			e.printStackTrace();
 		}
 	}
 
 	public void sendToSys(Sys sys, IMCMessage msg) {
 		try {
+            if (msg==null)
+                Log.e(TAG,"sendToSys msg==null");
 			send(sys.getAddress(), sys.getPort(), msg);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -257,8 +261,13 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 	public void send(String address, int port, String name, Object... values) {
 		try {
 			IMCMessage msg = IMCDefinition.getInstance().create(name, values);
+            if (msg==null) {
+                Log.e(TAG, "send msg==null");
+                return;//msg==null don't send it
+            }
 			send(address, port, msg);
 		} catch (Exception e) {
+            Log.e(TAG,"send erro:"+e.getMessage(),e);
 			e.printStackTrace();
 		}
 	}
@@ -270,7 +279,9 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 	public void send(final String address, final int port, final IMCMessage msg) {
 		try {
 			// FIXME Fill the header of the messages here
-			fillHeader(msg);
+            if (msg==null)
+                Log.e(TAG,"sendFinal msg==null");
+            fillHeader(msg);
             new Thread() {
                 @Override
                 public void run() {
@@ -278,6 +289,7 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
                 }
             }.start();
 		} catch (Exception e) {
+            Log.e(TAG,"send2 erro:"+e.getMessage(),e);
 			e.printStackTrace();
 		}
 	}

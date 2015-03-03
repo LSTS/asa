@@ -6,13 +6,15 @@ import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.AccuTimer;
+import pt.lsts.imc.Heartbeat;
+import pt.lsts.imc.PlanDB;
 
 import java.util.ArrayList;
 
 import android.util.Log;
 
 public class Heart implements SystemListChangeListener {
-	public static final boolean DEBUG = false;
+	public static final boolean DEBUG = true;
 	public static final String TAG = "Heart";
 	AccuTimer timer;
 	ArrayList<Sys> vehicleList = new ArrayList<Sys>();
@@ -44,8 +46,15 @@ public class Heart implements SystemListChangeListener {
         ArrayList<Sys> arrayListSys = (ArrayList<Sys>) vehicleList.clone();
 		for (Sys sys : arrayListSys) {
 			if (DEBUG)
-				Log.v(TAG, "Beating...");
-			imm.sendToSys(sys, "HeartBeat");
+				Log.v(TAG, "Beating... to sys:"+sys.getName());
+			try {
+                //imm.sendToSys(sys, "HeartBeat");//accu old version
+                Heartbeat heartbeat = new Heartbeat();
+                ASA.getInstance().getIMCManager().sendToSys(sys,heartbeat);
+            }catch(Exception e){
+                Log.e(TAG,"sendHeartBeat exception: "+e.getMessage(),e);
+                e.printStackTrace();
+            }
 		}
 	}
 
