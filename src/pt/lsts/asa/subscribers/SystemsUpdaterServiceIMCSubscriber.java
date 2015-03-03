@@ -48,9 +48,11 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         Sys sys = systemList.findSysById((Integer) msg.getHeaderValue("src"));
 
         //system does not exist, only interesting message is announce
-        if (sys==null && ID_MSG==Announce.ID_STATIC){//system does not exist, only interesting message is announce
-            Log.v(TAG, "Announce:\n"+msg.toString());
-            processAnnounce(msg,systemList);
+        if (sys==null){//system does not exist
+            if (ID_MSG==Announce.ID_STATIC){//only interesting message is announce
+                Log.v(TAG, "Announce:\n"+msg.toString());
+                processAnnounce(msg,systemList);
+            }
             return;
         }
         //system already exists
@@ -95,13 +97,17 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             case SYSTEMLIST:
                 Log.v(TAG,"ASA.mode==SYSTEMLIST, message ignored:\n"+msg.toString());
                 break;
+            case NONE:
+                Log.v(TAG,"ASA.mode==NONE, message ignored:\n"+msg.toString());
+                break;
             default:
                 Log.e(TAG,"Unreacognized mode: "+mode.toString());
                 break;
         }
         //Log.v(TAG,"MsgType:"+msg.getAbbrev());
         //Log.v(TAG,"Msg:\n"+msg.toString());
-        sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
+        if (sys!=null)
+            sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
 
     }
 
@@ -274,8 +280,13 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public void processPlanDB(IMCMessage msg, Sys sys){
         PlanDB planDB = (PlanDB) msg;
         String planID = planDB.getPlanId();
+        if (ASA.getInstance().getActiveSys().getPaintedPlanID().equals(planID)){
+            Log.i(TAG,"processPlanDB: no update needed");
+            return;//no update needed
+        }
         if (planDB.getType().equals(PlanDB.TYPE.SUCCESS)
-                && IMCUtils.isMsgFromActive(msg)){
+                && IMCUtils.isMsgFromActive(msg)
+                && planDB.getArg().getAbbrev().equals("PlanSpecification")){
             Log.i(TAG,"PlanDB:\n"+"plan switched in sys:"+sys.getName()+" to plan:"+planID);
             sys.setPlanID(planID);
             PlanSpecification planSpecification = (PlanSpecification) planDB.getArg();
