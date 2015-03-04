@@ -335,7 +335,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             id++;
         }
         paintLinesBettweenWaypoints(waypointList);
-        ASA.getInstance().getActiveSys().setPaintedPlanID(ASA.getInstance().getActiveSys().getPlanID());
+        if (ASA.getInstance().getActiveSys()!=null)
+            ASA.getInstance().getActiveSys().setPaintedPlanID(ASA.getInstance().getActiveSys().getPlanID());
     }
 
     public void paintLinesBettweenWaypoints(List<PlanUtilities.Waypoint> waypointList){

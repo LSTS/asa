@@ -71,7 +71,8 @@ public class IMCUtils {
 		// If active system doesnt exist or isnt a message from active system
 		if (ASA.getInstance().getActiveSys() == null)
 			return false;
-		if (ASA.getInstance().getActiveSys().getId() != (Integer) msg
+		if (ASA.getInstance().getActiveSys()!=null
+                && ASA.getInstance().getActiveSys().getId() != (Integer) msg
 				.getHeaderValue("src"))
 			return false;
 		return true;

@@ -151,6 +151,7 @@ public class ManualIndicatorsFragment extends Fragment {
             @Override
             public void run() {
                 if (System.currentTimeMillis() > lastMsgReceived+timeoutInterval
+                        && ASA.getInstance().getActiveSys()!=null
                         && System.currentTimeMillis() > ASA.getInstance().getActiveSys().lastMessageReceived+timeoutInterval) {
                     setCenterTextViewVisibility(true);
                 }

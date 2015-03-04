@@ -230,17 +230,27 @@ public class IMCManager implements MessageListener<MessageInfo, IMCMessage> {
 
 	// Message helper functions
 	public void sendToActiveSys(String name, Object... values) {
+        if(ASA.getInstance().getActiveSys()==null)
+            Log.e(TAG,"sendToActiveSys: no ActiveSys selected");
 		sendToSys(ASA.getInstance().getActiveSys(), name, values);
 	}
 
 	public void sendToActiveSys(IMCMessage msg) {
         if (msg==null)
             Log.e(TAG,"sendToActiveSys msg==null");
+        if (ASA.getInstance().getActiveSys()==null){
+            Log.e(TAG,"sendToActiveSys: no ActiveSys selected");
+            return;
+        }
 		sendToSys(ASA.getInstance().getActiveSys(), msg);
 	}
 
 	public void sendToSys(Sys sys, String name, Object... values) {
 		try {
+            if (sys==null){
+                Log.e(TAG,"sendToSys: sys is null");
+            }
+
 			send(sys.getAddress(), sys.getPort(), name, values);
 		} catch (Exception e) {
             Log.e(TAG,"sendToSys erro:"+e.getMessage(),e);

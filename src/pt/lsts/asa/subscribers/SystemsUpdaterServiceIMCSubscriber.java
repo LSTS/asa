@@ -255,6 +255,8 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             PlanControlState planControlState = (PlanControlState) msg;
             if (planControlState.getState() == PlanControlState.STATE.EXECUTING){
                 String planID = planControlState.getPlanId();
+                if (ASA.getInstance().getActiveSys()==null)
+                    return;
                 String paintedPlanID = ASA.getInstance().getActiveSys().getPaintedPlanID();
                 boolean changed = ASA.getInstance().getActiveSys().setPlanID(planID);
                 if (!ASA.getInstance().getActiveSys().isPaintedPlanUpdated()
@@ -280,7 +282,8 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public void processPlanDB(IMCMessage msg, Sys sys){
         PlanDB planDB = (PlanDB) msg;
         String planID = planDB.getPlanId();
-        if (ASA.getInstance().getActiveSys().getPaintedPlanID().equals(planID)){
+        if (ASA.getInstance().getActiveSys()!=null
+                && ASA.getInstance().getActiveSys().getPaintedPlanID().equals(planID)){
             Log.i(TAG,"processPlanDB: no update needed");
             return;//no update needed
         }

@@ -53,7 +53,7 @@ public class CallOutService extends Service implements
     private boolean timeoutBool=false;
     private boolean globalMuteBool=false;
 
-    private long lastMsgReceived;
+    private long lastMsgReceived=-1;
 
     public CallOutService(Context context){
         this.context=context;
@@ -152,6 +152,7 @@ public class CallOutService extends Service implements
             @Override
             public void run() {
                 if (System.currentTimeMillis() > lastMsgReceived+timeoutInterval
+                        && ASA.getInstance().getActiveSys()!=null
                         && System.currentTimeMillis() > ASA.getInstance().getActiveSys().lastMessageReceived+timeoutInterval) {
                     Log.i(TAG, "Lost Comms");
                     tts.speak("Lost Comms", TextToSpeech.QUEUE_FLUSH, null);
