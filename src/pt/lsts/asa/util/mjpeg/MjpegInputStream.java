@@ -15,14 +15,18 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 public class MjpegInputStream extends DataInputStream {
+
+    private static final String TAG = "MjpegInputStream";
     private final byte[] SOI_MARKER = { (byte) 0xFF, (byte) 0xD8 };
     private final byte[] EOF_MARKER = { (byte) 0xFF, (byte) 0xD9 };
     private final String CONTENT_LENGTH = "Content-Length";
     private final static int HEADER_MAX_LENGTH = 100;
     private final static int FRAME_MAX_LENGTH = 40000 + HEADER_MAX_LENGTH;
     private int mContentLength = -1;
+    private long lastFrameReceived=-1;
 
     public static MjpegInputStream read(String url) {
         HttpResponse res;
@@ -63,6 +67,8 @@ public class MjpegInputStream extends DataInputStream {
     }
 
     public Bitmap readMjpegFrame() throws IOException {
+        setLastFrameReceived(System.currentTimeMillis());
+        //Log.v(TAG, "Frame received in:" + lastFrameReceived);
         mark(FRAME_MAX_LENGTH);
         int headerLen = getStartOfSequence(this, SOI_MARKER);
         reset();
@@ -79,4 +85,14 @@ public class MjpegInputStream extends DataInputStream {
         readFully(frameData);
         return BitmapFactory.decodeStream(new ByteArrayInputStream(frameData));
     }
+
+    public long getLastFrameReceived() {
+        return lastFrameReceived;
+    }
+
+    public void setLastFrameReceived(long lastFrameReceived) {
+        this.lastFrameReceived = lastFrameReceived;
+    }
+
+
 }
