@@ -20,6 +20,7 @@ import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.Announce;
 import pt.lsts.imc.AutopilotMode;
 import pt.lsts.imc.EstimatedState;
+import pt.lsts.imc.FuelLevel;
 import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
@@ -78,6 +79,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         Log.v(TAG, "AutoPilotMode:\n"+msg.toString());
                         processAutoPilotMode(msg, sys);
                         break;
+                    case FuelLevel.ID_STATIC:
+                        Log.v(TAG, "FuelLevel:\n"+msg.toString());
+                        processFuelLevel(msg,sys);
+                        break;
                 }
                 break;
             case AUTO:
@@ -101,6 +106,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     case AutopilotMode.ID_STATIC:
                         Log.v(TAG, "AutoPilotMode:\n"+msg.toString());
                         processAutoPilotMode(msg, sys);
+                        break;
+                    case FuelLevel.ID_STATIC:
+                        Log.v(TAG, "FuelLevel:\n"+msg.toString());
+                        processFuelLevel(msg,sys);
                         break;
                 }
                 break;
@@ -269,6 +278,17 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         sys.setAutonomy(autonomy);
         Log.i(TAG,"AutoPilotMode.autonomy changed to: "+autonomy.toString());
         ASA.getInstance().getBus().post(autonomy);
+    }
+
+    public void processFuelLevel(IMCMessage msg, Sys sys){
+        if (!sys.equals(ASA.getInstance().getActiveSys()))
+            return;
+        FuelLevel fuelLevel = (FuelLevel) msg;
+        double fuelLevelValue = fuelLevel.getValue();
+        Log.i(TAG,"fuelLevel.getValue(): "+fuelLevelValue);
+        if (fuelLevelValue<20 && sys.getFuelLevelValue()>=20)
+            ASA.getInstance().getBus().post(sys.getName()+"'s FuelLevel LOW: "+fuelLevelValue+"%");
+        sys.setFuelLevelValue(fuelLevelValue);
     }
 
     public void processPlanControlState(IMCMessage msg,Sys sys){

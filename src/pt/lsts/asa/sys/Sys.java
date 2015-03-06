@@ -33,6 +33,7 @@ public class Sys {
     boolean mError;
 
     private AutopilotMode.AUTONOMY autonomy = null;//UAV mode: ASSISTED, AUTO, MANUAL
+    private double fuelLevelValue = 100.0;
 
     //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
@@ -234,6 +235,14 @@ public class Sys {
         this.autonomy = autonomy;
     }
 
+
+    public double getFuelLevelValue() {
+        return fuelLevelValue;
+    }
+
+    public void setFuelLevelValue(double fuelLevelValue) {
+        this.fuelLevelValue = fuelLevelValue;
+    }
 
     public void resetVisualizations(){
         setMaker(null);
