@@ -4,6 +4,8 @@ import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
+import pt.lsts.imc.AutopilotMode;
+
 public class Sys {
 
 	private String mAddress;
@@ -30,6 +32,7 @@ public class Sys {
     boolean mConnected;
     boolean mError;
 
+    private AutopilotMode.AUTONOMY autonomy = null;//UAV mode: ASSISTED, AUTO, MANUAL
 
     //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
@@ -222,6 +225,15 @@ public class Sys {
     public void setGroundOverlay(GroundOverlay groundOverlay) {
         this.groundOverlay = groundOverlay;
     }
+
+    public AutopilotMode.AUTONOMY getAutonomy() {
+        return autonomy;
+    }
+
+    public void setAutonomy(AutopilotMode.AUTONOMY autonomy) {
+        this.autonomy = autonomy;
+    }
+
 
     public void resetVisualizations(){
         setMaker(null);

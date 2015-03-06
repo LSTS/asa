@@ -14,9 +14,11 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
+import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.GmapsUtil;
 import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.Announce;
+import pt.lsts.imc.AutopilotMode;
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
@@ -72,6 +74,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         Log.v(TAG, "IndicatedSpeed:\n"+msg.toString());
                         processIndicatedSpeed(msg,sys);
                         break;
+                    case AutopilotMode.ID_STATIC:
+                        Log.v(TAG, "AutoPilotMode:\n"+msg.toString());
+                        processAutoPilotMode(msg, sys);
+                        break;
                 }
                 break;
             case AUTO:
@@ -91,6 +97,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     case PlanDB.ID_STATIC://interaction with PlanDB, request and reply with plan spec
                         Log.v(TAG,"PlanDB:\n"+msg.toString());
                         processPlanDB(msg, sys);
+                        break;
+                    case AutopilotMode.ID_STATIC:
+                        Log.v(TAG, "AutoPilotMode:\n"+msg.toString());
+                        processAutoPilotMode(msg, sys);
                         break;
                 }
                 break;
@@ -247,6 +257,18 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             }
         }
         //call OTTO
+    }
+
+    public void processAutoPilotMode(IMCMessage msg,Sys sys){
+        if (!sys.equals(ASA.getInstance().getActiveSys()))
+            return;
+        AutopilotMode autopilotMode = (AutopilotMode) msg;
+        AutopilotMode.AUTONOMY autonomy = autopilotMode.getAutonomy();
+        if (autonomy.equals(sys.getAutonomy()))
+            return;
+        sys.setAutonomy(autonomy);
+        Log.i(TAG,"AutoPilotMode.autonomy changed to: "+autonomy.toString());
+        ASA.getInstance().getBus().post(autonomy);
     }
 
     public void processPlanControlState(IMCMessage msg,Sys sys){
