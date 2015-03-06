@@ -4,6 +4,7 @@ import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
 import pt.lsts.asa.util.mjpeg.MjpegInputStream;
+import pt.lsts.asa.util.mjpeg.MjpegService;
 import pt.lsts.asa.util.mjpeg.MjpegView;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -34,15 +36,8 @@ public class VideoViewFragment extends Fragment {
 	private final String TAG = "VideoView";
 	private FragmentActivity fragmentActivity;
     private MjpegView mjpegView;
+    private MjpegService mjpegService=null;
     private View view;
-
-	private ScheduledFuture handle;
-	private final ScheduledExecutorService scheduler = Executors
-			.newScheduledThreadPool(1);
-	Runnable runnable;
-	private final int timeoutFalse=5000, timeoutTrue=10000;
-	private boolean connectedBool =false;
-    private AsyncTask task = null;
 
 	public VideoViewFragment() {
 		// Required empty public constructor
@@ -93,34 +88,51 @@ public class VideoViewFragment extends Fragment {
             mjpegView=null;
         mjpegView = (MjpegView) view.findViewById(R.id.mjpegVideoView);
 
-        /*
 		mjpegView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 String url = StringUtils.getCamUrl();
                 AndroidUtil.showToastShort(fragmentActivity, "restarting connection to Cam: " + url);
-                startVideo();
+                reset();
                 return false;
             }
         });
-        */
+
 	}
 
+    public void reset(){
+        this.onPause();
+        this.onResume();
+    }
 
     public void startVideo(){
         initMjpegView();
+/*
         //String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
         String camUrl = StringUtils.getCamUrl();//"http://10.0.20.112/axis-cgi/mjpg/video.cgi?date=0&clock=0&camera=1&resolution=640x480";
         Log.i(TAG,"URL: "+camUrl);
-
         if (task!=null){
             task.cancel(true);
             task = null;
         }
         task = new getMjpegInputStreamAsyncTask().execute(camUrl);
-
+*/
+        startMjpegService();
     }
 
+    public void startMjpegService(){
+        if (mjpegService!=null){
+            mjpegService.reconnect();
+        }else{
+            mjpegService = new MjpegService(mjpegView);
+
+            Intent intent = new Intent(fragmentActivity,MjpegService.class);
+            mjpegService.onStartCommand(intent,1,0);
+            mjpegService.onBind(intent);
+        }
+    }
+
+    /*
     public class getMjpegInputStreamAsyncTask extends AsyncTask<String, Void, MjpegInputStream> {
         protected MjpegInputStream doInBackground(String... url) {
             HttpResponse res = null;
@@ -153,5 +165,6 @@ public class VideoViewFragment extends Fragment {
             mjpegView.showFps(true);
         }
     }
+    */
 
 }

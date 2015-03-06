@@ -64,6 +64,11 @@
             android:label="CallOutService"
             android:process=":CallOutServiceProcess"/>
 
+        <service 
+            android:name=".util.mjpeg.MjpegService" 
+            android:label="MjpegService"
+            android:process=":MjpegServiceProcess"/>e na
+
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
