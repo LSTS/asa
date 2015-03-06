@@ -181,4 +181,12 @@ public class ManualIndicatorsFragment extends Fragment {
         setCenterTextViewVisibility(false);
     }
 
+    public FragmentActivity getFragmentActivity() {
+        return fragmentActivity;
+    }
+
+    public void setFragmentActivity(FragmentActivity fragmentActivity) {
+        this.fragmentActivity = fragmentActivity;
+    }
+
 }

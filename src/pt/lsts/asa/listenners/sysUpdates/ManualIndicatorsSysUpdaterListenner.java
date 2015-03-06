@@ -7,8 +7,11 @@ import com.squareup.otto.Subscribe;
 
 import java.util.Locale;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.fragments.ManualIndicatorsFragment;
+import pt.lsts.asa.util.AndroidUtil;
+import pt.lsts.imc.AutopilotMode;
 
 /**
  * Created by jloureiro on 2/19/15.
@@ -41,9 +44,14 @@ public class ManualIndicatorsSysUpdaterListenner {
                 break;
             default:
                 if (DEBUG)
-                    Log.e(TAG,"Setting changed unrecognized: "+valChanged);
+                    Log.e(TAG,"String changed unrecognized: "+valChanged);
                 break;
         }
+    }
+
+    @Subscribe
+    public void onModeChanged(AutopilotMode.AUTONOMY autonomy){
+        AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
 }

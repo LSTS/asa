@@ -9,10 +9,12 @@ import com.squareup.otto.Subscribe;
 import java.util.List;
 import java.util.Locale;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.AndroidUtil;
+import pt.lsts.imc.AutopilotMode;
 import pt.lsts.imc.PlanSpecification;
 import pt.lsts.util.PlanUtilities;
 
@@ -49,6 +51,11 @@ public class GmapSysUpdaterListenner {
         }
         gmapFragment.updateCurrentPlanMarkers(waypointList);
         AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), "Plan changed to: "+planSpecification.getPlanId());
+    }
+
+    @Subscribe
+    public void onModeChanged(AutopilotMode.AUTONOMY autonomy){
+        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
 }
