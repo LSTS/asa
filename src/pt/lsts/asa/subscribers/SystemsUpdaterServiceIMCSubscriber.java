@@ -199,7 +199,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     }
 
     public void processEstimatedState(IMCMessage msg, Sys sys){
-        Float alt = - ((Float) msg.getValue("z"));
+        Float alt = ((Float) msg.getValue("height")) - ((Float) msg.getValue("z"));
         sys.setAlt(alt);
         int altInt = Math.round(alt);
         Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
