@@ -54,4 +54,9 @@ public class ManualIndicatorsSysUpdaterListenner {
         AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
+    @Subscribe
+    public void onLowFuelLevel(String s){
+        AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), s);
+    }
+
 }

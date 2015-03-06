@@ -58,6 +58,11 @@ public class GmapSysUpdaterListenner {
         AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
+    @Subscribe
+    public void onLowFuelLevel(String s){
+        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), s);
+    }
+
 }
 
 
