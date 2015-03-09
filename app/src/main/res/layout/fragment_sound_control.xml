@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_sound_control"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pt.lsts.asa.fragments.SoundControlFragment" >
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/muteImageButton"
+        android:contentDescription="@string/descriptionImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/sound_on"/>
+
+    <pt.lsts.asa.ui.components.VerticalSeekBar
+        android:id="@+id/volumeVerticalSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/muteImageButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+</RelativeLayout>
