@@ -287,7 +287,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         double fuelLevelValue = fuelLevel.getValue();
         Log.i(TAG,"fuelLevel.getValue(): "+fuelLevelValue);
         if (fuelLevelValue<20 && sys.getFuelLevelValue()>=20)
-            ASA.getInstance().getBus().post(sys.getName()+"'s FuelLevel LOW: "+fuelLevelValue+"%");
+            ASA.getInstance().getBus().post("LOW FUEL on: "+sys.getName());
         sys.setFuelLevelValue(fuelLevelValue);
     }
 
