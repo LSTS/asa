@@ -10,6 +10,7 @@ import java.util.Locale;
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.util.AndroidUtil;
 
 /**
  * Created by jloureiro on 2/18/15.
@@ -40,9 +41,14 @@ public class CallOutSysUpdaterListenner {
                 break;
             default:
                 if (DEBUG)
-                    Log.e(TAG,"Setting changed unrecognized: "+valChanged);
+                    Log.e(TAG,"String changed unrecognized: "+valChanged);
                 break;
         }
+    }
+
+    @Subscribe
+    public void onLowFuelLevel(String s){
+        callOutService.onLowFuelLevel(s);
     }
 
 }

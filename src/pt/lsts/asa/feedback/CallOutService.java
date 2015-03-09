@@ -297,6 +297,14 @@ public class CallOutService extends Service implements
         cancelTimeout();
     }
 
+
+    public void onLowFuelLevel(String s){
+        if (tts!=null)
+            tts.speak(s, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+
+
     @Override
     public void onDestroy() {
         Log.v(TAG,"onDestroy()");
@@ -328,7 +336,6 @@ public class CallOutService extends Service implements
         this.iasInt = iasInt;
         setLastMsgReceived(System.currentTimeMillis());
     }
-
 
     public int getIasInterval() {
         return iasInterval;
