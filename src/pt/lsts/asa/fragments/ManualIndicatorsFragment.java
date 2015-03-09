@@ -36,6 +36,7 @@ public class ManualIndicatorsFragment extends Fragment {
     private TextView rightTextView = null;
     private TextView centerTextView = null;
 
+    private String lost_comms=" LOST COMMS ";
     private TimerTask timeoutTimerTask;
     private Timer timeoutTimer;
     private int timeoutInterval = (Settings.getInt("timeout_interval_in_seconds", 60) * 1000);
@@ -120,6 +121,17 @@ public class ManualIndicatorsFragment extends Fragment {
         });
     }
 
+    public void setCenterTextView(final String s){
+        fragmentActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                centerTextView.setTextSize(35f);
+                centerTextView.setText(s);
+                centerTextView.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
     public void setRightTextView(final int val){
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
@@ -140,7 +152,9 @@ public class ManualIndicatorsFragment extends Fragment {
                     rightTextView.setText(" " + "Alt:" + " " + "---" + " ");
                 }
                 if (visibility==false){
-                    centerTextView.setVisibility(View.INVISIBLE);
+                    Log.i("TAG", "centerTextView.getText(): "+centerTextView.getText());
+                    if (centerTextView.getText().equals(lost_comms))
+                        centerTextView.setVisibility(View.INVISIBLE);
                 }
             }
         });

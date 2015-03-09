@@ -57,6 +57,7 @@ public class ManualIndicatorsSysUpdaterListenner {
     @Subscribe
     public void onLowFuelLevel(String s){
         AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), s);
+        manualIndicatorsFragment.setCenterTextView(s);
     }
 
 }
