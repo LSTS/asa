@@ -10,7 +10,7 @@
     <application
         android:name="pt.lsts.asa.App"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/orange_arrow_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -67,7 +67,7 @@
         <service 
             android:name=".util.mjpeg.MjpegService" 
             android:label="MjpegService"
-            android:process=":MjpegServiceProcess"/>e na
+            android:process=":MjpegServiceProcess"/>
 
     </application>
 
