@@ -11,6 +11,6 @@ gen/
 .settings/
 build/
 out/
-*.iml
+asa.iml
 *.sh
 *.txt
