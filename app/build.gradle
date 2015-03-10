@@ -8,8 +8,8 @@ android {
         applicationId "pt.lsts.asa"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "0.2.1-16-gcee65ab-dirty (master)"
     }
     buildTypes {
         release {
@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+          checkReleaseBuilds false
+          // Or, if you prefer, you can continue to check for errors in release builds,
+          // but continue the build even when errors are found:
+          abortOnError false
+        }
+
 }
 
 dependencies {
@@ -25,3 +32,10 @@ dependencies {
     compile 'com.google.android.gms:play-services:6.5.87'
     compile 'com.squareup:otto:1.3.6'
 }
+
+task versioning(type: Exec) {
+    executable "sh"
+    args "../versioning.sh"
+}
+assembleRelease.dependsOn versioning
+assembleDebug.dependsOn versioning
