@@ -8,37 +8,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pt.lsts.asa.activities.MainActivity" >
 
-    <Button
-        android:id="@+id/mainAutoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Auto Mode"
-        android:layout_below="@+id/mainManualButton"
-        android:layout_alignLeft="@+id/mainManualButton" />
 
     <Button
         android:id="@+id/settingsCheckListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/mainAutoButton"
-        android:layout_below="@+id/mainAutoButton"
-        android:text="Settings/Checklist" />
+        android:text="Settings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/settingsCheckListButton"
-        android:layout_below="@+id/settingsCheckListButton"
-        android:text="Test" />
+        android:text="Test"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/chooseActiveSysButton"
+        android:layout_toEndOf="@+id/chooseActiveSysButton"
+        android:visibility="invisible"/>
 
     <Button
         android:id="@+id/test2Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/testButton"
-        android:layout_below="@+id/testButton"
-        android:text="Test 2" />
+        android:text="Test 2"
+        android:layout_above="@+id/systemListButton"
+        android:layout_toRightOf="@+id/testButton"
+        android:layout_toEndOf="@+id/testButton"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/chooseActiveSysButton"
@@ -46,22 +44,49 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Choose Active System" />
+        android:text="Choose Active Sys" />
 
     <Button
-        android:id="@+id/mainManualButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Manual Mode"
-        android:layout_below="@+id/systemListButton"
-        android:layout_alignParentLeft="true" />
-
-    <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SystemList"
         android:id="@+id/systemListButton"
         android:layout_below="@+id/chooseActiveSysButton"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/systemListButton">
+
+        <Button
+            android:id="@+id/mainAutoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Auto Mode"
+            android:layout_below="@id/systemListButton"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="bottom"/>
+
+        <Button
+            android:id="@+id/mainManualButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Manual Mode"
+            android:layout_below="@id/systemListButton"
+            android:layout_weight="1"
+            android:layout_toLeftOf="@id/mainAutoButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom" />
+
+        </LinearLayout>
 
 </RelativeLayout>
