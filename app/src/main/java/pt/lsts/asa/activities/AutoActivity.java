@@ -1,6 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
+import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
@@ -15,7 +16,7 @@ public class AutoActivity extends FragmentActivity {
 	private GmapFragment gmapFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
     private ChangeActivityButtonFragment manualButtonFragment = null;
-
+    private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class AutoActivity extends FragmentActivity {
 
             manualButtonFragment = new ChangeActivityButtonFragment(this,ManualActivity.class,R.layout.fragment_manual_button,R.id.manualButton);
             AndroidUtil.loadFragment(this, manualButtonFragment,R.id.fragment_container_auto);
+
+            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
+            AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_auto);
 
 		}
 	}

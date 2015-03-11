@@ -2,6 +2,7 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.feedback.CallOutService;
+import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.ManualIndicatorsFragment;
 import pt.lsts.asa.fragments.SoundControlFragment;
@@ -24,6 +25,7 @@ public class ManualActivity extends FragmentActivity {
     private ChangeActivityButtonFragment settingsButtonFragment = null;
     private ChangeActivityButtonFragment autoButtonFragment=null;
     private ManualIndicatorsFragment manualIndicatorsFragment = null;
+    private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
     private CallOut callOut;
     private CallOutService callOutService;
 
@@ -91,6 +93,8 @@ public class ManualActivity extends FragmentActivity {
             autoButtonFragment = new ChangeActivityButtonFragment(this,AutoActivity.class,R.layout.fragment_auto_button,R.id.autoButton);
             AndroidUtil.loadFragment(this, autoButtonFragment,R.id.fragment_container_manual_stabilized);
 
+            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
+            AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_manual_stabilized);
         }
     }
 
