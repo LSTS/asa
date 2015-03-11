@@ -27,8 +27,8 @@ public class MainActivity extends FragmentActivity {
 	
 	Button chooseActiveSystemButton;
     Button systemListButton;
-	Button manualButton;
-	Button autoButton;
+	Button mainManualButton;
+	Button mainAutoButton;
 	Button settingsCheckListButton;
 	Button testButton;
 	Button test2Button;
@@ -42,10 +42,10 @@ public class MainActivity extends FragmentActivity {
 		setChooseActiveSystemButton(this);
         systemListButton = (Button) findViewById(R.id.systemListButton);
         setSystemListButton();
-		manualButton = (Button) findViewById(R.id.manualButton);
+		mainManualButton = (Button) findViewById(R.id.mainManualButton);
 		setManualButton();
-		autoButton = (Button) findViewById(R.id.autoButton);
-		setAutoButton();
+		mainAutoButton = (Button) findViewById(R.id.mainAutoButton);
+		setMainAutoButton();
 		settingsCheckListButton = (Button) findViewById(R.id.settingsCheckListButton);
 		setSettingsCheckListButton();
 		testButton = (Button) findViewById(R.id.testButton);
@@ -158,7 +158,7 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	public void setManualButton() {
-		manualButton.setOnClickListener(new View.OnClickListener() {
+		mainManualButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
@@ -168,8 +168,8 @@ public class MainActivity extends FragmentActivity {
         });
 	}
 
-	public void setAutoButton() {
-		autoButton.setOnClickListener(new View.OnClickListener() {
+	public void setMainAutoButton() {
+		mainAutoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),

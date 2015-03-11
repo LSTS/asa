@@ -9,19 +9,19 @@
     tools:context="pt.lsts.asa.activities.MainActivity" >
 
     <Button
-        android:id="@+id/autoButton"
+        android:id="@+id/mainAutoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Auto Mode"
-        android:layout_below="@+id/manualButton"
-        android:layout_alignLeft="@+id/manualButton" />
+        android:layout_below="@+id/mainManualButton"
+        android:layout_alignLeft="@+id/mainManualButton" />
 
     <Button
         android:id="@+id/settingsCheckListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/autoButton"
-        android:layout_below="@+id/autoButton"
+        android:layout_alignLeft="@+id/mainAutoButton"
+        android:layout_below="@+id/mainAutoButton"
         android:text="Settings/Checklist" />
 
     <Button
@@ -49,7 +49,7 @@
         android:text="Choose Active System" />
 
     <Button
-        android:id="@+id/manualButton"
+        android:id="@+id/mainManualButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Manual Mode"
