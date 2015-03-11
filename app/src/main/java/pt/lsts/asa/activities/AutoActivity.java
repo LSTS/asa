@@ -14,8 +14,9 @@ public class AutoActivity extends FragmentActivity {
 
 	private GmapFragment gmapFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
+    private ChangeActivityButtonFragment manualButtonFragment = null;
 
-    
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,6 +50,9 @@ public class AutoActivity extends FragmentActivity {
 
             settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
             AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_auto);
+
+            manualButtonFragment = new ChangeActivityButtonFragment(this,ManualActivity.class,R.layout.fragment_manual_button,R.id.manualButton);
+            AndroidUtil.loadFragment(this, manualButtonFragment,R.id.fragment_container_auto);
 
 		}
 	}

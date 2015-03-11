@@ -22,6 +22,7 @@ public class ManualActivity extends FragmentActivity {
     private SoundControlFragment soundControlFragment = null;
     private VideoViewFragment videoViewFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
+    private ChangeActivityButtonFragment autoButtonFragment=null;
     private ManualIndicatorsFragment manualIndicatorsFragment = null;
     private CallOut callOut;
     private CallOutService callOutService;
@@ -86,6 +87,9 @@ public class ManualActivity extends FragmentActivity {
 
             manualIndicatorsFragment = new ManualIndicatorsFragment(this);
             AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual_stabilized);
+
+            autoButtonFragment = new ChangeActivityButtonFragment(this,AutoActivity.class,R.layout.fragment_auto_button,R.id.autoButton);
+            AndroidUtil.loadFragment(this, autoButtonFragment,R.id.fragment_container_manual_stabilized);
 
         }
     }
