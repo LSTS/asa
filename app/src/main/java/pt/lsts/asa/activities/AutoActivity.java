@@ -7,13 +7,16 @@ import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 
 public class AutoActivity extends FragmentActivity {
 
-	private GmapFragment gmapFragment = null;
+    public static final String TAG = "AutoActivity";
+    private GmapFragment gmapFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
     private ChangeActivityButtonFragment manualButtonFragment = null;
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
@@ -29,8 +32,10 @@ public class AutoActivity extends FragmentActivity {
 
     @Override
     protected void onPause(){
+        Log.i(TAG, "AutoActivity.onPause() called");
         AndroidUtil.removeAllFragments(this);
         super.onPause();
+        finish();
     }
 
     @Override
@@ -60,5 +65,18 @@ public class AutoActivity extends FragmentActivity {
 
 		}
 	}
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        startMainActivity();
+    }
+
+    public void startMainActivity(){
+        Intent i = new Intent(getApplicationContext(),
+                MainActivity.class);
+        startActivity(i);
+    }
+
 
 }

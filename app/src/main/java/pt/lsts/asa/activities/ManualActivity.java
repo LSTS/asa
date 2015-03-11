@@ -70,6 +70,7 @@ public class ManualActivity extends FragmentActivity {
         callOutService.onUnbind(intent);
         stopService(intent);
         callOutService.onDestroy();
+        finish();
     }
 
     public void loadFragments(Bundle savedInstanceState) {
@@ -110,7 +111,14 @@ public class ManualActivity extends FragmentActivity {
         if (soundControlFragment != null)
             soundControlFragment.shutdown();
         //callOut.shutdown();
+        startMainActivity();
 
+    }
+
+    public void startMainActivity(){
+        Intent i = new Intent(getApplicationContext(),
+                MainActivity.class);
+        startActivity(i);
     }
 
 }

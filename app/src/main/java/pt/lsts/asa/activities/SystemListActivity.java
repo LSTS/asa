@@ -6,8 +6,10 @@ import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.SystemListFragment;
 import pt.lsts.asa.util.AndroidUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
  */
 public class SystemListActivity extends FragmentActivity {
 
+    public static final String TAG="SystemListActivity";
     private SystemListFragment systemListFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
 
@@ -76,9 +79,25 @@ public class SystemListActivity extends FragmentActivity {
     }
 
     @Override
+    protected void onPause(){
+        Log.i(TAG, "SettingsActivity.onPause() called");
+        //AndroidUtil.removeAllFragments(this);
+        super.onPause();
+        finish();
+    }
+
+    @Override
     public void onBackPressed(){
         super.onBackPressed();
         if (systemListFragment!=null)
             systemListFragment.shutdown();
+        startMainActivity();
     }
+
+    public void startMainActivity(){
+        Intent i = new Intent(getApplicationContext(),
+                MainActivity.class);
+        startActivity(i);
+    }
+
 }
