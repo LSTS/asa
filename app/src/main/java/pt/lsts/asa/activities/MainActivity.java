@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		chooseActiveSystemButton = (Button) findViewById(R.id.chooseActiveSysButton);
+		chooseActiveSystemButton = (Button) findViewById(R.id.mainChooseActiveSysButton);
 		setChooseActiveSystemButton(this);
         systemListButton = (Button) findViewById(R.id.systemListButton);
         setSystemListButton();

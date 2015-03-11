@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Test"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/chooseActiveSysButton"
-        android:layout_toEndOf="@+id/chooseActiveSysButton"
+        android:layout_toRightOf="@+id/mainChooseActiveSysButton"
+        android:layout_toEndOf="@+id/mainChooseActiveSysButton"
         android:visibility="invisible"/>
 
     <Button
@@ -39,7 +39,7 @@
         android:visibility="invisible" />
 
     <Button
-        android:id="@+id/chooseActiveSysButton"
+        android:id="@+id/mainChooseActiveSysButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="SystemList"
         android:id="@+id/systemListButton"
-        android:layout_below="@+id/chooseActiveSysButton"
+        android:layout_below="@+id/mainChooseActiveSysButton"
         android:layout_alignParentLeft="true"/>
 
     <LinearLayout
