@@ -1,6 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
+import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
 import pt.lsts.asa.util.AndroidUtil;
@@ -11,8 +12,10 @@ import android.support.v4.app.FragmentActivity;
 
 public class AutoActivity extends FragmentActivity {
 
-	GmapFragment gmapFragment = null;
+	private GmapFragment gmapFragment = null;
+    private ChangeActivityButtonFragment settingsButtonFragment = null;
 
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,6 +46,9 @@ public class AutoActivity extends FragmentActivity {
 
             gmapFragment = new GmapFragment(this);
             AndroidUtil.loadFragment(this, gmapFragment, R.id.fragment_container_auto);
+
+            settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
+            AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_auto);
 
 		}
 	}

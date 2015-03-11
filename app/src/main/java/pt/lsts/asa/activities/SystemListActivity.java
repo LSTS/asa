@@ -2,7 +2,7 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
-import pt.lsts.asa.fragments.SettingsButtonFragment;
+import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.SystemListFragment;
 import pt.lsts.asa.util.AndroidUtil;
 
@@ -18,7 +18,7 @@ import android.view.MenuItem;
 public class SystemListActivity extends FragmentActivity {
 
     private SystemListFragment systemListFragment = null;
-    private SettingsButtonFragment settingsButtonFragment = null;
+    private ChangeActivityButtonFragment settingsButtonFragment = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,8 +64,8 @@ public class SystemListActivity extends FragmentActivity {
             systemListFragment = new SystemListFragment(this);
             AndroidUtil.loadFragment(this, systemListFragment, R.id.fragment_container_system_list);
 
-            settingsButtonFragment = new SettingsButtonFragment(this);
-            AndroidUtil.loadFragment(this,settingsButtonFragment,R.id.fragment_container_system_list);
+            settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
+            AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_system_list);
         }
     }
 

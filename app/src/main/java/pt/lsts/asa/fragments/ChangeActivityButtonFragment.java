@@ -1,7 +1,6 @@
 package pt.lsts.asa.fragments;
 
 import pt.lsts.asa.R;
-import pt.lsts.asa.activities.SettingsActivity;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -15,34 +14,40 @@ import android.widget.Button;
 /**
  * Created by jloureiro on 1/6/15.
  */
-public class SettingsButtonFragment extends Fragment {
+public class ChangeActivityButtonFragment extends Fragment {
 
     private FragmentActivity fragmentActivity = null;
-    private Button settingsButton = null;
+    private Class destinyClass=null;
+    private int layoutID=-1;
+    private int buttonID=-1;
+    private Button changeActivityettingsButton = null;
 
-    public SettingsButtonFragment() {
+    public ChangeActivityButtonFragment() {
         // Required empty public constructor
     }
 
-    public SettingsButtonFragment(FragmentActivity fragmentActivity){
-        this.fragmentActivity=fragmentActivity;
+    public ChangeActivityButtonFragment(FragmentActivity fragmentActivityOrigin, Class destinyClass, int layoutID, int buttonID){
+        this.fragmentActivity=fragmentActivityOrigin;
+        this.destinyClass=destinyClass;
+        this.layoutID = layoutID;
+        this.buttonID=buttonID;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_settings_button, container, false);
-        settingsButton = (Button) v.findViewById(R.id.settingsButton);
+        View v = inflater.inflate(layoutID, container, false);
+        changeActivityettingsButton = (Button) v.findViewById(buttonID);
         return v;
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        settingsButton.setOnClickListener(new View.OnClickListener() {
+        changeActivityettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(fragmentActivity.getApplicationContext(),
-                        SettingsActivity.class);
+                        destinyClass);
                 startActivity(i);
             }
         });
