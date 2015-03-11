@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/select_as_active_system_system_list_menu"
-        android:title="@string/select_as_active_system"/>
-    <item android:id="@+id/more_info_system_list_menu"
-        android:title="@string/more_info" />
-    <item android:id="@+id/refresh_system_list_menu"
-        android:title="@string/refresh" />
-</menu>
