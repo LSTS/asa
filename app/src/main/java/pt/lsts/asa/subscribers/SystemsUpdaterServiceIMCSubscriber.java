@@ -1,24 +1,16 @@
 package pt.lsts.asa.subscribers;
 
-import android.app.Service;
-import android.content.Intent;
-import android.os.IBinder;
-import android.util.Log;
-import android.util.Pair;
-
-import com.google.android.gms.maps.model.LatLng;
-
-import java.util.List;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
-import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.GmapsUtil;
 import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.Announce;
 import pt.lsts.imc.AutopilotMode;
+import pt.lsts.imc.Current;
+import pt.lsts.imc.EntityList;
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.imc.FuelLevel;
 import pt.lsts.imc.Heartbeat;
@@ -28,8 +20,16 @@ import pt.lsts.imc.IndicatedSpeed;
 import pt.lsts.imc.PlanControlState;
 import pt.lsts.imc.PlanDB;
 import pt.lsts.imc.PlanSpecification;
-import pt.lsts.imc.VehicleState;
-import pt.lsts.util.PlanUtilities;
+import pt.lsts.imc.Voltage;
+
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.util.Log;
+import android.util.Pair;
+
+import com.google.android.gms.maps.model.LatLng;
+
 
 /**
  * Created by jloureiro on 2/10/15.
@@ -59,6 +59,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             return;
         }
         //system already exists
+        if (ID_MSG==EntityList.ID_STATIC){
+            Log.v(TAG, "EntityList:\n"+msg.toString());
+            processEntityList(msg,sys);
+        }
         switch (mode){
             case CHECKLIST:
                 //only parse messages from active Sys
@@ -82,6 +86,14 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     case FuelLevel.ID_STATIC:
                         Log.v(TAG, "FuelLevel:\n"+msg.toString());
                         processFuelLevel(msg,sys);
+                        break;
+                    case Current.ID_STATIC:
+                        Log.v(TAG, "Current:\n"+msg.toString());
+                        processCurrent(msg,sys);
+                        break;
+                    case Voltage.ID_STATIC:
+                        Log.v(TAG, "Voltage:\n"+msg.toString());
+                        processVoltage(msg,sys);
                         break;
                 }
                 break;
@@ -111,6 +123,14 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         Log.v(TAG, "FuelLevel:\n"+msg.toString());
                         processFuelLevel(msg,sys);
                         break;
+                    case Current.ID_STATIC:
+                        Log.v(TAG, "Current:\n"+msg.toString());
+                        processCurrent(msg,sys);
+                        break;
+                    case Voltage.ID_STATIC:
+                        Log.v(TAG, "Voltage:\n"+msg.toString());
+                        processVoltage(msg,sys);
+                        break;
                 }
                 break;
             case SYSTEMLIST:
@@ -124,7 +144,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                 break;
         }
         //Log.v(TAG,"MsgType:"+msg.getAbbrev());
-        //Log.v(TAG,"Msg:\n"+msg.toString());
+        //Log.v(TAG,msg.getAbbrev()+":\n"+msg.toString());
         if (sys!=null)
             sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
 
@@ -133,7 +153,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
     public void processAnnounce(IMCMessage msg, SystemList systemList){
         Announce m = (Announce) msg;
 
-        Log.v(TAG, "announce from: "+m.getSysName());
+        Log.v(TAG, "announce from: " + m.getSysName());
 
         // If System already exists in host list
         if (systemList.containsSysName(m.getSysName())) {
@@ -186,6 +206,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                 (Integer) msg.getHeaderValue("src"),
                 m.getSysType().name(), true, false);
         sys.lastMessageReceived=System.currentTimeMillis();
+        sendEntityListQuery(sys);//query sys for EntityList
         Log.i("New System Added: ", sys.getName());
         systemList.getList().add(sys);
 
@@ -204,6 +225,13 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     .sendMessage(sys.getAddress(), sys.getPort(), mm);
         } catch (Exception e1) {
             e1.printStackTrace();
+        }
+    }
+
+    public void processEntityList(IMCMessage msg, Sys sys){
+        EntityList entityList = (EntityList) msg;
+        if (entityList.getOp().equals(EntityList.OP.REPORT)){
+            sys.setEntityList(entityList.getList());
         }
     }
 
@@ -312,6 +340,20 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         }
     }
 
+    public void processCurrent(IMCMessage msg,Sys sys){
+        if (!sys.equals(ASA.getInstance().getActiveSys()))
+            return;
+        if (sys.getEntityList().isEmpty())//EntityList is empty, requery
+            sendEntityListQuery(sys);//query sys for EntityList
+    }
+
+    public void processVoltage(IMCMessage msg,Sys sys){
+        if (!sys.equals(ASA.getInstance().getActiveSys()))
+            return;
+        if (sys.getEntityList().isEmpty())//EntityList is empty, requery
+            sendEntityListQuery(sys);//query sys for EntityList
+    }
+
     public static void sendPlanDBrequestPlanID(String planID){
         Log.i(TAG,"sendPlanDBrequestPlanID");
         PlanDB planDB = new PlanDB();
@@ -319,6 +361,13 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         planDB.setOp(PlanDB.OP.GET);
         planDB.setPlanId(planID);
         ASA.getInstance().getIMCManager().sendToActiveSys(planDB);
+    }
+
+    public static void sendEntityListQuery(Sys sys){
+        EntityList entityList = new EntityList();
+        entityList.setOp(EntityList.OP.QUERY);
+        ASA.getInstance().getIMCManager().sendToSys(sys,entityList);
+        Log.i(TAG,"sent EntityList QUERY to "+sys.getName());
     }
 
     public void processPlanDB(IMCMessage msg, Sys sys){

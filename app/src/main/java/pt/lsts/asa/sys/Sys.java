@@ -1,13 +1,20 @@
 package pt.lsts.asa.sys;
 
+
+import pt.lsts.imc.AutopilotMode;
+
+import java.util.LinkedHashMap;
+
+import android.util.Log;
+
 import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
-import pt.lsts.imc.AutopilotMode;
 
 public class Sys {
 
+    public static final String TAG = "Sys";
 	private String mAddress;
 	private int mPort;
 	private String mName;
@@ -31,6 +38,8 @@ public class Sys {
     // each sys in system list and serve as the actual state
     boolean mConnected;
     boolean mError;
+
+    private LinkedHashMap<String,String> entityList = new LinkedHashMap<String,String>();//EntityList, used for Voltage/Current
 
     private AutopilotMode.AUTONOMY autonomy = null;//UAV mode: ASSISTED, AUTO, MANUAL
     private double fuelLevelValue = 100.0;
@@ -235,13 +244,30 @@ public class Sys {
         this.autonomy = autonomy;
     }
 
-
     public double getFuelLevelValue() {
         return fuelLevelValue;
     }
 
     public void setFuelLevelValue(double fuelLevelValue) {
         this.fuelLevelValue = fuelLevelValue;
+    }
+
+    public LinkedHashMap<String, String> getEntityList() {
+        return entityList;
+    }
+
+    public void setEntityList(LinkedHashMap<String, String> entityList) {
+        this.entityList = entityList;
+        Log.v(TAG, "Sys: "+getName()+"\nsetEntityList:\n" + entityList.toString());
+    }
+
+    public String resolveEntity(String id){
+        //Log.v(TAG,"resolveEntity - "+getName()+". EntityList:\n"+entityList.toString());
+        if (entityList.containsKey(id)) {
+            //Log.v(TAG,"resolveEntity returning: "+entityList.get(id));
+            return entityList.get(id);
+        }
+        return null;
     }
 
     public void resetVisualizations(){
