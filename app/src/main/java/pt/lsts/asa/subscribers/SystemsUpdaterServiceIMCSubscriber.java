@@ -5,6 +5,7 @@ import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
+import pt.lsts.asa.util.BatteryIndicatorPairUtil;
 import pt.lsts.asa.util.GmapsUtil;
 import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.Announce;
@@ -88,11 +89,11 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         processFuelLevel(msg,sys);
                         break;
                     case Current.ID_STATIC:
-                        Log.v(TAG, "Current:\n"+msg.toString());
+                        Log.v(TAG, "Current:\n" + msg.toString());
                         processCurrent(msg,sys);
                         break;
                     case Voltage.ID_STATIC:
-                        Log.v(TAG, "Voltage:\n"+msg.toString());
+                        Log.v(TAG, "Voltage:\n" + msg.toString());
                         processVoltage(msg,sys);
                         break;
                 }
@@ -314,6 +315,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         FuelLevel fuelLevel = (FuelLevel) msg;
         double fuelLevelValue = fuelLevel.getValue();
         Log.i(TAG,"fuelLevel.getValue(): "+fuelLevelValue);
+        ASA.getInstance().getBus().post(new BatteryIndicatorPairUtil("level",fuelLevelValue));
         if (fuelLevelValue<20 && sys.getFuelLevelValue()>=20)
             ASA.getInstance().getBus().post("LOW FUEL on: "+sys.getName());
         sys.setFuelLevelValue(fuelLevelValue);
@@ -345,6 +347,16 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             return;
         if (sys.getEntityList().isEmpty())//EntityList is empty, requery
             sendEntityListQuery(sys);//query sys for EntityList
+
+        String entityName = "Batteries";
+        String src_ent = ""+msg.getSrcEnt();
+
+        if(src_ent.equalsIgnoreCase(sys.resolveEntity(entityName))){
+            Current current = (Current) msg;
+            double val = current.getValue();
+            Log.d(TAG,"Current update: "+val);
+            ASA.getInstance().getBus().post(new BatteryIndicatorPairUtil("current",val));
+        }
     }
 
     public void processVoltage(IMCMessage msg,Sys sys){
@@ -352,6 +364,16 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             return;
         if (sys.getEntityList().isEmpty())//EntityList is empty, requery
             sendEntityListQuery(sys);//query sys for EntityList
+
+        String entityName = "Batteries";
+        String src_ent = ""+msg.getSrcEnt();
+
+        if(src_ent.equalsIgnoreCase(sys.resolveEntity(entityName))){
+            Voltage voltage = (Voltage) msg;
+            double val = voltage.getValue();
+            Log.d(TAG,"Voltage update: "+val);
+            ASA.getInstance().getBus().post(new BatteryIndicatorPairUtil("voltage",val));
+        }
     }
 
     public static void sendPlanDBrequestPlanID(String planID){
