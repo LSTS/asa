@@ -2,6 +2,7 @@ package pt.lsts.asa.activities;
 
 import pt.lsts.asa.feedback.CallOut;
 import pt.lsts.asa.feedback.CallOutService;
+import pt.lsts.asa.fragments.BatteryIndicatorFragment;
 import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.ManualIndicatorsFragment;
@@ -26,6 +27,8 @@ public class ManualActivity extends FragmentActivity {
     private ChangeActivityButtonFragment autoButtonFragment=null;
     private ManualIndicatorsFragment manualIndicatorsFragment = null;
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
+    private BatteryIndicatorFragment batteryIndicatorFragment=null;
+
     private CallOut callOut;
     private CallOutService callOutService;
 
@@ -36,7 +39,7 @@ public class ManualActivity extends FragmentActivity {
         StrictMode.setThreadPolicy(policy);
         */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_container_manual_stabilized);
+        setContentView(R.layout.fragment_container_manual);
 
         //callOut = new CallOut(ASA.getContext());
         //callOut.initCallOuts();
@@ -74,28 +77,32 @@ public class ManualActivity extends FragmentActivity {
     }
 
     public void loadFragments(Bundle savedInstanceState) {
-        if (findViewById(R.id.fragment_container_manual_stabilized) != null) {
+        if (findViewById(R.id.fragment_container_manual) != null) {
             if (savedInstanceState != null) {
                 return;// restoring state
             }
 
             videoViewFragment = new VideoViewFragment(this);
-            AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual);
 
             soundControlFragment = new SoundControlFragment(this);
-            AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual);
 
             settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
-            AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_manual);
 
             manualIndicatorsFragment = new ManualIndicatorsFragment(this);
-            AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual);
 
             autoButtonFragment = new ChangeActivityButtonFragment(this,AutoActivity.class,R.layout.fragment_auto_button,R.id.autoButton);
-            AndroidUtil.loadFragment(this, autoButtonFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this, autoButtonFragment,R.id.fragment_container_manual);
 
             changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
-            AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_manual_stabilized);
+            AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_manual);
+
+            batteryIndicatorFragment = new BatteryIndicatorFragment(this);
+            AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_manual);
+
         }
     }
 

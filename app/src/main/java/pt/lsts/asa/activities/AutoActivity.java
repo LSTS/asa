@@ -1,6 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
+import pt.lsts.asa.fragments.BatteryIndicatorFragment;
 import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.GmapFragment;
@@ -20,6 +21,7 @@ public class AutoActivity extends FragmentActivity {
     private ChangeActivityButtonFragment settingsButtonFragment = null;
     private ChangeActivityButtonFragment manualButtonFragment = null;
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
+    private BatteryIndicatorFragment batteryIndicatorFragment=null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,9 @@ public class AutoActivity extends FragmentActivity {
             changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
             AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_auto);
 
+
+            batteryIndicatorFragment = new BatteryIndicatorFragment(this);
+            AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_auto);
 		}
 	}
 
