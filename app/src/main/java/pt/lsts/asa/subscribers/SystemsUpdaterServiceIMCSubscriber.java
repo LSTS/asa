@@ -348,7 +348,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         if (sys.getEntityList().isEmpty())//EntityList is empty, requery
             sendEntityListQuery(sys);//query sys for EntityList
 
-        String entityName = "Batteries";
+        String entityName = "Autopilot";
         String src_ent = ""+msg.getSrcEnt();
 
         if(src_ent.equalsIgnoreCase(sys.resolveEntity(entityName))){
@@ -365,7 +365,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         if (sys.getEntityList().isEmpty())//EntityList is empty, requery
             sendEntityListQuery(sys);//query sys for EntityList
 
-        String entityName = "Batteries";
+        String entityName = "Autopilot";
         String src_ent = ""+msg.getSrcEnt();
 
         if(src_ent.equalsIgnoreCase(sys.resolveEntity(entityName))){
