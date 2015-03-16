@@ -6,9 +6,17 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/altitudeBarImageView"
+        android:layout_height="wrap_content"
+        android:id="@+id/altitudeBarMarksImageView"
         android:layout_gravity="right|center_vertical"
-        android:src="@drawable/altitude_bar_marks_25_50_100" />
+        android:src="@drawable/alt_bar_marks_1000m_80pxbot" />
+
+    <ImageView
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:id="@+id/altitudeBarDroneIconimageView"
+        android:layout_marginRight="75px"
+        android:layout_gravity="right|bottom"
+        android:src="@drawable/uav_icon" />
 
 </FrameLayout>
