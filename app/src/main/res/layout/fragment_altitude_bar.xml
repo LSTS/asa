@@ -19,4 +19,24 @@
         android:layout_gravity="right|bottom"
         android:src="@drawable/uav_icon" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="---"
+        android:layout_marginRight="75px"
+        android:textColor="#00D407"
+        android:id="@+id/altitudeFromVehicleTextView"
+        android:layout_gravity="right|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="---"
+        android:layout_marginRight="75px"
+        android:textColor="#FFFF00"
+        android:id="@+id/altitudeFromPlanTextView"
+        android:layout_gravity="right|bottom" />
+
 </FrameLayout>
