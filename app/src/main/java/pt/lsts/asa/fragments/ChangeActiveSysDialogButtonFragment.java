@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.AndroidUtil;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,6 +71,7 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
                                 .setItems(array, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         ASA.getInstance().setActiveSys(arrayListSys.get(which));
+                                        AndroidUtil.showToastShort(fragmentActivity,"Active Sys: "+ASA.getInstance().getActiveSys().getName());
                                     }
                                 }).create().show();
                     }
