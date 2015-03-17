@@ -1,17 +1,22 @@
 package pt.lsts.asa.fragments;
 
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
+import pt.lsts.asa.listenners.sysUpdates.AltitudeBarSysUpdaterListenner;
 
 
 /**
@@ -21,6 +26,8 @@ public class AltitudeBarFragment extends Fragment {
 
     public static final String TAG = "AltitudeBarFragment";
     private FragmentActivity fragmentActivity=null;
+    private AltitudeBarSysUpdaterListenner altitudeBarSysUpdaterListenner=null;
+
     private TextView altitudeFromVehicleTextView=null;
     private TextView altitudeFromPlanTextView=null;
 
@@ -46,8 +53,21 @@ public class AltitudeBarFragment extends Fragment {
     @Override
     public void onResume(){
         super.onResume();
-        setVehicleAlt(700);//testing
-        setPlanAlt(250);//testing
+        init();
+    }
+
+    public void init(){
+        //setVehicleAlt(700);//testing
+        //setPlanAlt(450);//testing
+        altitudeBarSysUpdaterListenner = new AltitudeBarSysUpdaterListenner(this);
+        ASA.getInstance().getBus().register(altitudeBarSysUpdaterListenner);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        if (altitudeBarSysUpdaterListenner!=null)
+            ASA.getInstance().getBus().unregister(altitudeBarSysUpdaterListenner);
     }
 
     /**
@@ -55,12 +75,11 @@ public class AltitudeBarFragment extends Fragment {
      * @param alt may be bettween 0 and 1000, available range.
      */
     public void setVehicleAlt(int alt){
-        //FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeBarDroneIconimageView.getLayoutParams();
-        //frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(35)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
-
         altitudeFromVehicleTextView.setText(""+alt);
-        FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeFromVehicleTextView.getLayoutParams();
-        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(25)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
+        FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(altitudeFromVehicleTextView.getLayoutParams());
+        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,75,(80-(25)) + alt);//80 bottom margin; 25 is the adjustment value for icon positioning
+        frameLayoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+        altitudeFromVehicleTextView.setLayoutParams(frameLayoutParams);
     }
 
     /**
@@ -68,9 +87,11 @@ public class AltitudeBarFragment extends Fragment {
      * @param alt may be bettween 0 and 1000, available range.
      */
     public void setPlanAlt(int alt){
-        altitudeFromPlanTextView.setText(""+alt);
-        FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeFromPlanTextView.getLayoutParams();
-        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(25)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
+        //altitudeFromPlanTextView.setText(""+alt);
+        FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(altitudeFromPlanTextView.getLayoutParams());
+        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,0,(80-(25)) + alt);//80 bottom margin; 25 is the adjustment value for icon positioning
+        frameLayoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+        altitudeFromPlanTextView.setLayoutParams(frameLayoutParams);
     }
 
 
