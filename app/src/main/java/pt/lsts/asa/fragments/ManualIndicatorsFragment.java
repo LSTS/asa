@@ -1,6 +1,5 @@
 package pt.lsts.asa.fragments;
 
-import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,18 +12,12 @@ import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.sharedPreferences.ManualIndicatorsPreferencesListenner;
-import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
 import pt.lsts.asa.listenners.sysUpdates.ManualIndicatorsSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
-import pt.lsts.asa.subscribers.ManualIndicatorsFragmentIMCSubscriber;
 
 /**
  * Created by jloureiro on 1/14/15.
@@ -53,7 +46,7 @@ public class ManualIndicatorsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.manual_indicators_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_manual_indicators, container, false);
 
         findViews(v);
         setTextViewsColors();
