@@ -7,6 +7,6 @@
         android:text="Batteries: -%, -V, -A"
         android:layout_gravity="right|bottom"
         android:id="@+id/batteriesTextView"
-        android:layout_marginRight="100dp" />
+        android:layout_marginRight="300px" />
 
 </FrameLayout>

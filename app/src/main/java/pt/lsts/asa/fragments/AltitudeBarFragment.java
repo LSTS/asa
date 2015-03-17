@@ -30,6 +30,7 @@ public class AltitudeBarFragment extends Fragment {
 
     private TextView altitudeFromVehicleTextView=null;
     private TextView altitudeFromPlanTextView=null;
+    private ImageView altitudeFromPlanImageView=null;
 
     public AltitudeBarFragment() {
         // Required empty public constructor
@@ -46,6 +47,7 @@ public class AltitudeBarFragment extends Fragment {
 
         altitudeFromVehicleTextView = (TextView) v.findViewById(R.id.altitudeFromVehicleTextView);
         altitudeFromPlanTextView = (TextView) v.findViewById(R.id.altitudeFromPlanTextView);
+        altitudeFromPlanImageView = (ImageView) v.findViewById(R.id.altitudeFromPlanImageView);
 
         return v;
     }
@@ -87,11 +89,14 @@ public class AltitudeBarFragment extends Fragment {
      * @param alt may be bettween 0 and 1000, available range.
      */
     public void setPlanAlt(int alt){
-        //altitudeFromPlanTextView.setText(""+alt);
-        FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(altitudeFromPlanTextView.getLayoutParams());
+        altitudeFromPlanTextView.setText(""+alt);
+
+        FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(altitudeFromPlanImageView.getLayoutParams());
         frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,0,(80-(25)) + alt);//80 bottom margin; 25 is the adjustment value for icon positioning
         frameLayoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
-        altitudeFromPlanTextView.setLayoutParams(frameLayoutParams);
+        altitudeFromPlanImageView.setLayoutParams(frameLayoutParams);
+
+
     }
 
 

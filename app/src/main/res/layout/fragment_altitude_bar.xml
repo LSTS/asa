@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/altitudeBarMarksImageView"
         android:layout_gravity="right|center_vertical"
+        android:background="@color/grey_light_overlay"
         android:src="@drawable/alt_bar_marks_1000m_80pxbot" />
 
     <TextView
@@ -23,16 +24,22 @@
         android:id="@+id/altitudeFromVehicleTextView"
         android:layout_gravity="right|bottom" />
 
+
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/altitudeFromPlanTextView"
+        android:background="@color/grey_light_overlay"
+        android:layout_gravity="right|top" />
+
+    <ImageView
         android:layout_width="50px"
         android:layout_height="50px"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:text=""
         android:layout_marginRight="0px"
-        android:textColor="#FFFF00"
         android:background="@drawable/arrow_left_yellow"
-        android:id="@+id/altitudeFromPlanTextView"
-        android:layout_gravity="right|bottom" />
+        android:id="@+id/altitudeFromPlanImageView"
+        android:layout_gravity="right|bottom"  />
 
 </FrameLayout>
