@@ -20,6 +20,7 @@ import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
 import pt.lsts.imc.PlanControlState;
 import pt.lsts.imc.PlanDB;
+import pt.lsts.imc.PlanManeuver;
 import pt.lsts.imc.PlanSpecification;
 import pt.lsts.imc.Voltage;
 
@@ -248,6 +249,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
 
     public void processEstimatedState(IMCMessage msg, Sys sys){
         Float alt = ((Float) msg.getValue("height")) - ((Float) msg.getValue("z"));
+        sys.setHeight((Float)msg.getValue("height"));
         sys.setAlt(alt);
         int altInt = Math.round(alt);
         Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
@@ -338,6 +340,17 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     sendPlanDBrequestPlanID(planID);
                     this.lastMsgSentTimeMills=System.currentTimeMillis();
                 }
+                boolean maneuverChanged =sys.setManeuverID(planControlState.getManId());//Maneuver ID
+                if (maneuverChanged==true){
+                    for (PlanManeuver planManeuver : sys.getPlanSpecification().getManeuvers()) {
+                        if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
+                            Float altPlanned = (sys.getHeight()) + ((Float) planManeuver.getData().getValue("z"));
+                            int altPlannedInt = Math.round(altPlanned);
+                            Log.d(TAG, "planManeuver:\n" + planManeuver.getData().toString() + "\n-------------------------------\n" + altPlanned);
+                            ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
+                        }
+                    }
+                }
             }
         }
     }
@@ -406,7 +419,9 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             Log.i(TAG,"PlanDB:\n"+"plan switched in sys:"+sys.getName()+" to plan:"+planID);
             sys.setPlanID(planID);
             PlanSpecification planSpecification = (PlanSpecification) planDB.getArg();
+            sys.setPlanSpecification(planSpecification);
             ASA.getInstance().getBus().post(planSpecification);
+
         }
     }
 

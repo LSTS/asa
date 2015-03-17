@@ -2,6 +2,7 @@ package pt.lsts.asa.sys;
 
 
 import pt.lsts.imc.AutopilotMode;
+import pt.lsts.imc.PlanSpecification;
 
 import java.util.LinkedHashMap;
 
@@ -44,6 +45,8 @@ public class Sys {
     private AutopilotMode.AUTONOMY autonomy = null;//UAV mode: ASSISTED, AUTO, MANUAL
     private double fuelLevelValue = 100.0;
 
+    private float height=0;//fixed variable representing ground, altitude is height-z; only z varies
+
     //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
@@ -51,6 +54,8 @@ public class Sys {
     private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
     private String planID = "";//plan executing
     private String paintedPlanID = "";//painted plan in GoogleMaps
+    private String maneuverID = "";//current maneuverID executing
+    private PlanSpecification planSpecification=null;//current PlanSpecification
 
 
     //variables for manual mode
@@ -250,6 +255,33 @@ public class Sys {
 
     public void setFuelLevelValue(double fuelLevelValue) {
         this.fuelLevelValue = fuelLevelValue;
+    }
+
+    public String getManeuverID() {
+        return maneuverID;
+    }
+
+    public boolean setManeuverID(String maneuverID) {
+        if (maneuverID.equals(this.maneuverID))
+            return false;
+        this.maneuverID = maneuverID;
+        return true;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public PlanSpecification getPlanSpecification() {
+        return planSpecification;
+    }
+
+    public void setPlanSpecification(PlanSpecification planSpecification) {
+        this.planSpecification = planSpecification;
     }
 
     public LinkedHashMap<String, String> getEntityList() {
