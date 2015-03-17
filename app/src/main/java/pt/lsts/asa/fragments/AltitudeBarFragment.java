@@ -21,7 +21,6 @@ public class AltitudeBarFragment extends Fragment {
 
     public static final String TAG = "AltitudeBarFragment";
     private FragmentActivity fragmentActivity=null;
-    private ImageView altitudeBarDroneIconimageView = null;
     private TextView altitudeFromVehicleTextView=null;
     private TextView altitudeFromPlanTextView=null;
 
@@ -38,7 +37,6 @@ public class AltitudeBarFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_altitude_bar, container, false);
 
-        altitudeBarDroneIconimageView = (ImageView) v.findViewById(R.id.altitudeBarDroneIconimageView);
         altitudeFromVehicleTextView = (TextView) v.findViewById(R.id.altitudeFromVehicleTextView);
         altitudeFromPlanTextView = (TextView) v.findViewById(R.id.altitudeFromPlanTextView);
 
@@ -57,11 +55,11 @@ public class AltitudeBarFragment extends Fragment {
      * @param alt may be bettween 0 and 1000, available range.
      */
     public void setVehicleAlt(int alt){
-        FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeBarDroneIconimageView.getLayoutParams();
-        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(35)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
+        //FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeBarDroneIconimageView.getLayoutParams();
+        //frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(35)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
 
         altitudeFromVehicleTextView.setText(""+alt);
-        frameLayoutParams = (FrameLayout.LayoutParams) altitudeFromVehicleTextView.getLayoutParams();
+        FrameLayout.LayoutParams frameLayoutParams = (FrameLayout.LayoutParams) altitudeFromVehicleTextView.getLayoutParams();
         frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,frameLayoutParams.rightMargin,(80-(25)) + alt);//80 bottom margin; 35 is the adjustment value for icon positioning
     }
 
