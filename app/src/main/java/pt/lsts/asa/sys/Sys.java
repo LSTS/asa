@@ -1,12 +1,15 @@
 package pt.lsts.asa.sys;
 
 
+import pt.lsts.asa.ASA;
 import pt.lsts.imc.AutopilotMode;
+import pt.lsts.imc.PlanManeuver;
 import pt.lsts.imc.PlanSpecification;
 
 import java.util.LinkedHashMap;
 
 import android.util.Log;
+import android.util.Pair;
 
 import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
@@ -300,6 +303,16 @@ public class Sys {
             return entityList.get(id);
         }
         return null;
+    }
+
+    public int getPlannedAlt(){
+        for (PlanManeuver planManeuver : getPlanSpecification().getManeuvers()) {
+            if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
+                Float altPlanned = (getHeight()) + ((Float) planManeuver.getData().getValue("z"));
+                return Math.round(altPlanned);
+            }
+        }
+        return -1;
     }
 
     public void resetVisualizations(){

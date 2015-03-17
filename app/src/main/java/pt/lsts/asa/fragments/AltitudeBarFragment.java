@@ -63,6 +63,11 @@ public class AltitudeBarFragment extends Fragment {
         //setPlanAlt(450);//testing
         altitudeBarSysUpdaterListenner = new AltitudeBarSysUpdaterListenner(this);
         ASA.getInstance().getBus().register(altitudeBarSysUpdaterListenner);
+        if (ASA.getInstance().getActiveSys()!=null){
+            setVehicleAlt(ASA.getInstance().getActiveSys().getAltInt());
+            setPlanAlt(ASA.getInstance().getActiveSys().getPlannedAlt());
+        }
+
     }
 
     @Override
