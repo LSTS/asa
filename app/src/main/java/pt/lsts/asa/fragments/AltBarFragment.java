@@ -1,7 +1,6 @@
 package pt.lsts.asa.fragments;
 
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,32 +10,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
-import pt.lsts.asa.listenners.sysUpdates.AltitudeBarSysUpdaterListenner;
+import pt.lsts.asa.listenners.sysUpdates.AltBarSysUpdaterListenner;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AltitudeBarFragment extends Fragment {
+public class AltBarFragment extends Fragment {
 
-    public static final String TAG = "AltitudeBarFragment";
+    public static final String TAG = "AltBarFragment";
     private FragmentActivity fragmentActivity=null;
-    private AltitudeBarSysUpdaterListenner altitudeBarSysUpdaterListenner=null;
+    private AltBarSysUpdaterListenner altBarSysUpdaterListenner =null;
 
     private TextView altitudeFromVehicleTextView=null;
     private TextView altitudeFromPlanTextView=null;
     private ImageView altitudeFromPlanImageView=null;
 
-    public AltitudeBarFragment() {
+    public AltBarFragment() {
         // Required empty public constructor
     }
 
-    public AltitudeBarFragment(FragmentActivity fragmentActivity){
+    public AltBarFragment(FragmentActivity fragmentActivity){
         this.fragmentActivity=fragmentActivity;
     }
 
@@ -61,8 +59,8 @@ public class AltitudeBarFragment extends Fragment {
     public void init(){
         //setVehicleAlt(700);//testing
         //setPlanAlt(450);//testing
-        altitudeBarSysUpdaterListenner = new AltitudeBarSysUpdaterListenner(this);
-        ASA.getInstance().getBus().register(altitudeBarSysUpdaterListenner);
+        altBarSysUpdaterListenner = new AltBarSysUpdaterListenner(this);
+        ASA.getInstance().getBus().register(altBarSysUpdaterListenner);
         if (ASA.getInstance().getActiveSys()!=null){
             setVehicleAlt(ASA.getInstance().getActiveSys().getAltInt());
             setPlanAlt(ASA.getInstance().getActiveSys().getPlannedAlt());
@@ -73,8 +71,8 @@ public class AltitudeBarFragment extends Fragment {
     @Override
     public void onPause(){
         super.onPause();
-        if (altitudeBarSysUpdaterListenner!=null)
-            ASA.getInstance().getBus().unregister(altitudeBarSysUpdaterListenner);
+        if (altBarSysUpdaterListenner !=null)
+            ASA.getInstance().getBus().unregister(altBarSysUpdaterListenner);
     }
 
     /**

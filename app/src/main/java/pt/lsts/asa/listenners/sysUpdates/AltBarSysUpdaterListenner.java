@@ -7,23 +7,21 @@ import com.squareup.otto.Subscribe;
 
 import java.util.Locale;
 
-import pt.lsts.asa.fragments.AltitudeBarFragment;
-import pt.lsts.asa.fragments.BatteryIndicatorFragment;
-import pt.lsts.asa.util.BatteryIndicatorPairUtil;
+import pt.lsts.asa.fragments.AltBarFragment;
 
 /**
  * Created by jloureiro on 3/17/15.
  */
-public class AltitudeBarSysUpdaterListenner {
+public class AltBarSysUpdaterListenner {
 
-    private final String TAG = "AltBarSysUpdaterList";
+    private final String TAG = "AltBarSysUpdaterListnr";
     public static final boolean DEBUG = false;
 
-    private AltitudeBarFragment altitudeBarFragment=null;
+    private AltBarFragment altBarFragment =null;
 
 
-    public AltitudeBarSysUpdaterListenner(AltitudeBarFragment altitudeBarFragment){
-        this.altitudeBarFragment = altitudeBarFragment;
+    public AltBarSysUpdaterListenner(AltBarFragment altBarFragment){
+        this.altBarFragment = altBarFragment;
     }
 
     @Subscribe
@@ -35,11 +33,11 @@ public class AltitudeBarSysUpdaterListenner {
         switch(valChangedLowerCase){
             case "alt":
                 Log.d(TAG,"received alt event");
-                altitudeBarFragment.setVehicleAlt(newVal);
+                altBarFragment.setVehicleAlt(newVal);
                 break;
             case "altplanned":
                 Log.d(TAG,"received altPlanned event");
-                altitudeBarFragment.setPlanAlt(newVal);
+                altBarFragment.setPlanAlt(newVal);
                 break;
             default:
                 if (DEBUG)

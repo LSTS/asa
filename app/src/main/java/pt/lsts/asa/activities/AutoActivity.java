@@ -1,7 +1,7 @@
 package pt.lsts.asa.activities;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.fragments.AltitudeBarFragment;
+import pt.lsts.asa.fragments.AltBarFragment;
 import pt.lsts.asa.fragments.BatteryIndicatorFragment;
 import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
@@ -23,7 +23,7 @@ public class AutoActivity extends FragmentActivity {
     private ChangeActivityButtonFragment manualButtonFragment = null;
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
     private BatteryIndicatorFragment batteryIndicatorFragment=null;
-    private AltitudeBarFragment altitudeBarFragment=null;
+    private AltBarFragment altBarFragment =null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +70,8 @@ public class AutoActivity extends FragmentActivity {
             batteryIndicatorFragment = new BatteryIndicatorFragment(this);
             AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_auto);
 
-            altitudeBarFragment = new AltitudeBarFragment(this);
-            AndroidUtil.loadFragment(this, altitudeBarFragment,R.id.fragment_container_auto);
+            altBarFragment = new AltBarFragment(this);
+            AndroidUtil.loadFragment(this, altBarFragment,R.id.fragment_container_auto);
 
 		}
 	}
