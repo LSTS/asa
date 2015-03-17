@@ -253,7 +253,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
         if (altInt!=sys.getAltInt()){
             sys.setAltInt(altInt);
-            if (ASA.getInstance().getActiveSys().equals(sys)){
+            if (sys.equals(ASA.getInstance().getActiveSys())){
                 Log.i(TAG,"alt: getActiveSys().equals(sys)");
                 ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
             }
@@ -289,7 +289,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         Log.i(TAG,"iasDouble= "+ias+" | iasInt="+iasInt+" | sys.getIasInt()="+sys.getIasInt());
         if (iasInt!=sys.getIasInt()){
             sys.setIasInt(iasInt);
-            if (ASA.getInstance().getActiveSys().equals(sys)){
+            if (sys.equals(ASA.getInstance().getActiveSys())){
                 Log.i(TAG,"getActiveSys().equals(sys)");
                 ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
             }
