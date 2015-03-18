@@ -68,6 +68,7 @@ public class CallOutService extends Service implements
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
+        initValues();
         initTts();
         initPreferences();
         if (globalMuteBool==true) {
@@ -79,6 +80,14 @@ public class CallOutService extends Service implements
 
         startTimers();
         return START_NOT_STICKY;//does not resuscitate
+    }
+
+    public void initValues(){
+        if (ASA.getInstance().getActiveSys()!=null){
+            iasInt=ASA.getInstance().getActiveSys().getIasInt();
+            altInt=ASA.getInstance().getActiveSys().getAltInt();
+        }
+
     }
 
     public void startTimers(){
