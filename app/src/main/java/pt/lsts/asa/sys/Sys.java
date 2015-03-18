@@ -306,10 +306,12 @@ public class Sys {
     }
 
     public int getPlannedAlt(){
-        for (PlanManeuver planManeuver : getPlanSpecification().getManeuvers()) {
-            if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
-                Float altPlanned = (getHeight()) + ((Float) planManeuver.getData().getValue("z"));
-                return Math.round(altPlanned);
+        if (getPlanSpecification()!=null) {
+            for (PlanManeuver planManeuver : getPlanSpecification().getManeuvers()) {
+                if (planManeuver.getManeuverId().equalsIgnoreCase(getManeuverID())) {
+                    Float altPlanned = (getHeight()) + ((Float) planManeuver.getData().getValue("z"));
+                    return Math.round(altPlanned);
+                }
             }
         }
         return -1;
