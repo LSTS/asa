@@ -82,7 +82,7 @@ public class AltBarFragment extends Fragment {
     public void setVehicleAlt(int alt){
         altitudeFromVehicleTextView.setText(""+alt);
         FrameLayout.LayoutParams frameLayoutParams = new FrameLayout.LayoutParams(altitudeFromVehicleTextView.getLayoutParams());
-        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,75,(80-(25)) + alt);//80 bottom margin; 25 is the adjustment value for icon positioning
+        frameLayoutParams.setMargins(frameLayoutParams.leftMargin,frameLayoutParams.topMargin,50,(80-(25)) + alt);//80 bottom margin; 25 is the adjustment value for icon positioning
         frameLayoutParams.gravity = Gravity.BOTTOM | Gravity.RIGHT;
         altitudeFromVehicleTextView.setLayoutParams(frameLayoutParams);
     }
