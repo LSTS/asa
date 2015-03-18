@@ -41,11 +41,11 @@ public class AltBarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_altitude_bar, container, false);
+        View v = inflater.inflate(R.layout.fragment_alt_bar, container, false);
 
-        altitudeFromVehicleTextView = (TextView) v.findViewById(R.id.altitudeFromVehicleTextView);
-        altitudeFromPlanTextView = (TextView) v.findViewById(R.id.altitudeFromPlanTextView);
-        altitudeFromPlanImageView = (ImageView) v.findViewById(R.id.altitudeFromPlanImageView);
+        altitudeFromVehicleTextView = (TextView) v.findViewById(R.id.altFromVehicleTextView);
+        altitudeFromPlanTextView = (TextView) v.findViewById(R.id.altFromPlanTextView);
+        altitudeFromPlanImageView = (ImageView) v.findViewById(R.id.altFromPlanImageView);
 
         return v;
     }

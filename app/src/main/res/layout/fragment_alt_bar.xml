@@ -1,13 +1,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="pt.lsts.asa.fragments.AltBarFragment"
-    android:id="@+id/fragment_altitude_bar">
+    android:id="@+id/fragment_alt_bar">
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/altitudeBarMarksImageView"
+        android:id="@+id/altBarMarksImageView"
         android:layout_gravity="right|center_vertical"
         android:background="@color/grey_light_overlay"
         android:src="@drawable/alt_bar_marks_1000m_80pxbot" />
@@ -21,7 +21,7 @@
         android:layout_marginRight="50px"
         android:textColor="#DF01D7"
         android:background="@drawable/label_right_green"
-        android:id="@+id/altitudeFromVehicleTextView"
+        android:id="@+id/altFromVehicleTextView"
         android:layout_gravity="right|bottom" />
 
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text=""
-        android:id="@+id/altitudeFromPlanTextView"
+        android:id="@+id/altFromPlanTextView"
         android:layout_marginRight="30px"
         android:background="@color/grey_light_overlay"
         android:layout_gravity="right|top" />
@@ -40,7 +40,7 @@
         android:layout_height="50px"
         android:layout_marginRight="0px"
         android:background="@drawable/arrow_left_yellow"
-        android:id="@+id/altitudeFromPlanImageView"
+        android:id="@+id/altFromPlanImageView"
         android:layout_gravity="right|bottom"  />
 
 </FrameLayout>
