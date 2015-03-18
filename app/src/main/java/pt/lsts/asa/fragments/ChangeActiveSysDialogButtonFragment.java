@@ -3,6 +3,7 @@ package pt.lsts.asa.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -70,8 +71,14 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
                         new AlertDialog.Builder(fragmentActivity).setTitle("Choose a System:")
                                 .setItems(array, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
+                                        Sys sys = ASA.getInstance().getActiveSys();
                                         ASA.getInstance().setActiveSys(arrayListSys.get(which));
                                         AndroidUtil.showToastShort(fragmentActivity,"Active Sys: "+ASA.getInstance().getActiveSys().getName());
+                                        if (!ASA.getInstance().getActiveSys().equals(sys)){
+                                            Intent intent = fragmentActivity.getIntent();
+                                            fragmentActivity.finish();
+                                            startActivity(intent);
+                                        }
                                     }
                                 }).create().show();
                     }
