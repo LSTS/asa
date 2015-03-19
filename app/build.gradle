@@ -8,8 +8,8 @@ android {
         applicationId "pt.lsts.asa"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 4
-        versionName "0.2.1-16-gcee65ab-dirty (master)"
+        versionCode 6
+        versionName "0.3-dirty (master)"
     }
     buildTypes {
         release {
@@ -38,4 +38,4 @@ task versioning(type: Exec) {
     args "../versioning.sh"
 }
 assembleRelease.dependsOn versioning
-assembleDebug.dependsOn versioning
+//assembleDebug.dependsOn versioning

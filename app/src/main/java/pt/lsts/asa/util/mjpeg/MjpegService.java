@@ -57,8 +57,8 @@ public class MjpegService extends Service {
             task.cancel(true);
             task = null;
         }
-        String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
-        //String camUrl = StringUtils.getCamUrl();
+        //String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
+        String camUrl = StringUtils.getCamUrl();
         task = new getMjpegInputStreamAsyncTask().execute(camUrl);
     }
 
