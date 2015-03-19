@@ -212,7 +212,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
                                     .bearing(bearing)
                                     .image(groundOverlayBitmapDescriptor)
-                                    .position(latLng, 20, 20)
+                                    .position(latLng, 25, 25)
                                     .anchor(0.5f, 0.5f)
                                     .transparency(0.25f)
                     );
@@ -315,9 +315,14 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             lat = location.getLatitude();
             lon = location.getLongitude();
         }
-        if (initZoom==false && googleMap!=null){//center camera initialy on my position
+        if (initZoom==false && googleMap!=null && ASA.getInstance().getActiveSys()!=null && !ASA.getInstance().getActiveSys().getLatLng().equals(new LatLng(0,0))){
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(ASA.getInstance().getActiveSys().getLatLng(),17f,1.0f,1.0f)));
+            initZoom=true;
+        }
+
+        if (initZoom==false && googleMap!=null && !(lat==0 && lon==0)){//center camera initialy on my position
             //lat = 41.2907;lon= -8.569;//lipa
-            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat,lon),18f,1.0f,1.0f)));
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(new LatLng(lat, lon), 17f, 1.0f, 1.0f)));
             initZoom=true;
         }
         this.myLatLng = new LatLng(lat, lon);
