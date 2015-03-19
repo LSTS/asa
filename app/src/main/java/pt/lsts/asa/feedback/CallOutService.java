@@ -12,7 +12,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.listenners.sharedPreferences.CallOutPreferencesListenner;
 import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.util.TextToSpeechUtilService;
@@ -26,7 +25,6 @@ public class CallOutService extends Service implements
 
     public static final String TAG = "CallOutService";
 
-    private CallOutPreferencesListenner callOutPreferencesListenner;
     private CallOutSysUpdaterListenner callOutSysUpdaterListenner;
     private Context context;
     private TextToSpeech tts;

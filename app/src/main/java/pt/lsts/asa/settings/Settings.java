@@ -7,8 +7,6 @@ import java.util.Map;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.squareup.otto.Bus;
-
 public class Settings {
 
     private final static String TAG = "Settings";
@@ -31,8 +29,6 @@ public class Settings {
 
     public static boolean putFullString(String key, String value) {
         boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, value).commit();
-        //ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
         return result;
     }
 
@@ -47,8 +43,6 @@ public class Settings {
         finalValueString += ",";
         finalValueString += value;
         boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
-        ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
 		return result;
 	}
 
@@ -63,8 +57,6 @@ public class Settings {
         finalValueString += ",";
         finalValueString += value;
         boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
-        ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
         return result;
 	}
 
@@ -79,8 +71,6 @@ public class Settings {
         finalValueString += ",";
         finalValueString += value;
         boolean result = ASA.getInstance().sharedPreferences.edit().putString(key, finalValueString).commit();
-        ASA.getInstance().getBus().post(key);
-        Log.v(TAG, "ASA.getInstance().getBus().post("+key+");");
         return result;
 	}
 

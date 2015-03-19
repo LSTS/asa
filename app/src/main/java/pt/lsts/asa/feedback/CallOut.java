@@ -1,7 +1,6 @@
 package pt.lsts.asa.feedback;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.listenners.sharedPreferences.CallOutPreferencesListenner;
 import pt.lsts.asa.managers.SoundManager;
 import pt.lsts.asa.settings.Settings;
 import pt.lsts.asa.subscribers.CallOutIMCSubscriber;
@@ -53,8 +52,6 @@ public class CallOut {
 		this.context = context;
 		SoundManager.getInstance();
         ASA.getInstance().setCallOut(this);
-        CallOutPreferencesListenner callOutPreferencesListenner = new CallOutPreferencesListenner(this);
-        ASA.getInstance().getBus().register(callOutPreferencesListenner);
         Log.i(TAG, "ASA.getInstance().getBus().register(callOutPreferencesListenner);");
 	}
 

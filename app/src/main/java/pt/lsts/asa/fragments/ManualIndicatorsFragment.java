@@ -15,7 +15,6 @@ import java.util.TimerTask;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
-import pt.lsts.asa.listenners.sharedPreferences.ManualIndicatorsPreferencesListenner;
 import pt.lsts.asa.listenners.sysUpdates.ManualIndicatorsSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
 
@@ -63,11 +62,6 @@ public class ManualIndicatorsFragment extends Fragment {
             setLeftTextView(ASA.getInstance().getActiveSys().getIasInt());
             setRightTextView(ASA.getInstance().getActiveSys().getAltInt());
         }
-    }
-
-    public void initPreferencesListenner(){
-        ManualIndicatorsPreferencesListenner manualIndicatorsPreferencesListenner = new ManualIndicatorsPreferencesListenner(this);
-        ASA.getInstance().getBus().register(manualIndicatorsPreferencesListenner);
     }
 
     public void findViews(View v){

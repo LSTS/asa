@@ -22,25 +22,23 @@ public class SettingsActivity extends PreferenceActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		preferenceScreen = getPreferenceManager().createPreferenceScreen(this);
-
-		Vector<PreferenceCategory> preferenceCategories = SettingsFactory
-				.fetchCategories(this);
-
-		for (PreferenceCategory preferenceCategory : preferenceCategories)
-			preferenceScreen.addPreference(preferenceCategory);
-
-		populateCategories(preferenceCategories);
-
-		setPreferenceScreen(preferenceScreen);
-
 	}
 
     @Override
     protected void onResume(){
         super.onResume();
         ASA.getInstance().setMode(ASA.MODE.SETTINGS);
+        preferenceScreen = getPreferenceManager().createPreferenceScreen(this);
+
+        Vector<PreferenceCategory> preferenceCategories = SettingsFactory
+                .fetchCategories(this);
+
+        for (PreferenceCategory preferenceCategory : preferenceCategories)
+            preferenceScreen.addPreference(preferenceCategory);
+
+        populateCategories(preferenceCategories);
+
+        setPreferenceScreen(preferenceScreen);
     }
 
 	public void populateCategories(
@@ -67,6 +65,8 @@ public class SettingsActivity extends PreferenceActivity {
         Log.i(TAG, "SettingsActivity.onPause() called");
         //AndroidUtil.removeAllFragments(this);
         super.onPause();
+        preferenceScreen.removeAll();
+        preferenceScreen=null;
         finish();
     }
 
