@@ -340,7 +340,7 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     sendPlanDBrequestPlanID(planID);
                     this.lastMsgSentTimeMills=System.currentTimeMillis();
                 }
-                boolean maneuverChanged =sys.setManeuverID(planControlState.getManId());//Maneuver ID
+                boolean maneuverChanged = sys.setManeuverID(planControlState.getManId());//Maneuver ID
                 if (maneuverChanged==true){
                     for (PlanManeuver planManeuver : sys.getPlanSpecification().getManeuvers()) {
                         if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
@@ -421,6 +421,14 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             PlanSpecification planSpecification = (PlanSpecification) planDB.getArg();
             sys.setPlanSpecification(planSpecification);
             ASA.getInstance().getBus().post(planSpecification);
+            for (PlanManeuver planManeuver : sys.getPlanSpecification().getManeuvers()) {
+                if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
+                    Float altPlanned = (sys.getHeight()) + ((Float) planManeuver.getData().getValue("z"));
+                    int altPlannedInt = Math.round(altPlanned);
+                    Log.d(TAG, "planManeuver:\n" + planManeuver.getData().toString() + "\n-------------------------------\n" + altPlanned);
+                    ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
+                }
+            }
 
         }
     }
