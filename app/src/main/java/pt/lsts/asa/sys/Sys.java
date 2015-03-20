@@ -50,7 +50,7 @@ public class Sys {
     //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
-    private Marker maker=null;//googleMap marker
+    private Marker marker =null;//googleMap marker
     private String planID = "";//plan executing
     private String paintedPlanID = "";//painted plan in GoogleMaps
     private String maneuverID = "";//current maneuverID executing
@@ -224,12 +224,12 @@ public class Sys {
         this.psi = psi;
     }
 
-    public Marker getMaker() {
-        return maker;
+    public Marker getMarker() {
+        return marker;
     }
 
-    public void setMaker(Marker maker) {
-        this.maker = maker;
+    public void setMarker(Marker marker) {
+        this.marker = marker;
     }
 
     public AutopilotMode.AUTONOMY getAutonomy() {
@@ -306,13 +306,13 @@ public class Sys {
     }
 
     public void resetVisualizations(){
-        setMaker(null);
+        setMarker(null);
         setPlanID("");
         setPaintedPlanID("");
     }
 
     public boolean isOnMap(){
-        if (getMaker()==null)
+        if (getMarker()==null)
             return false;
         return true;
     }
