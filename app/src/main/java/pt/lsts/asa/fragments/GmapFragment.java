@@ -1,5 +1,6 @@
 package pt.lsts.asa.fragments;
 
+
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.R;
 import pt.lsts.asa.listenners.MyLocationListener;
@@ -8,6 +9,9 @@ import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.util.PlanUtilities;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -24,21 +28,16 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
@@ -173,7 +172,6 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     /**
      * Generic marker for sys
-     * @param sys system with information to choose icon for groundoverlay, position and orientation
      */
     public void addMarkerToPos(final Sys sys){//add marker for sys
         final String type = sys.getType();
@@ -209,30 +207,19 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     /**
      *
      * @param sys System with latlng and orientation info
-     * @param iconRid icon location for this sys groundoverlay
+     * @param iconRid icon location for this sys
      */
     public void addMarkerToPos(final Sys sys, final int iconRid){//marker for sys with iconRid
-        Log.d(TAG,"addMarkerToPos, sys= "+sys.getName()+" | marker="+(sys.getMaker()==null)+" | overlay="+(sys.getGroundOverlay()==null)+" | isOnMap="+sys.isOnMap());
+        Log.d(TAG,"addMarkerToPos, sys= "+sys.getName()+" | marker="+(sys.getMaker()==null)+" | isOnMap="+sys.isOnMap());
         if (googleMap!=null) {
             final String sysName = sys.getName();
             final LatLng latLng = sys.getLatLng();
             final float bearing = sys.getPsi();
 
-            final BitmapDescriptor groundOverlayBitmapDescriptor = BitmapDescriptorFactory.fromResource(iconRid);// BitmapDescriptorFactory.fromResource(R.drawable.transparent);
-
             fragmentActivity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     ASA.getInstance().UIThread=true;
-
-                    GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
-                                    .bearing(bearing)
-                                    .image(BitmapDescriptorFactory.fromResource(R.drawable.transparent))//.image(groundOverlayBitmapDescriptor)
-                                    .position(latLng, 25, 25)
-                                    .anchor(0.5f, 0.5f)
-                                    .transparency(0.25f)
-                    );
-
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(sysName)
@@ -242,7 +229,6 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     );
 
                     sys.setMaker(marker);
-                    sys.setGroundOverlay(groundOverlay);
                 }
             });
         }
@@ -300,7 +286,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
         if (googleMap==null || sys==null)
             return;
-        Log.d(TAG,"updateSysMarker, "+sys.getName()+" | isOnMap="+sys.isOnMap()+" | m="+(sys.getMaker()==null)+" | groundOverlay="+(sys.getGroundOverlay()==null));
+        Log.d(TAG,"updateSysMarker, "+sys.getName()+" | isOnMap="+sys.isOnMap()+" | m="+(sys.getMaker()==null));
         if (sys.isOnMap()==false){
             addMarkerToPos(sys);
         }
@@ -310,13 +296,9 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 Marker marker = sys.getMaker();
                 LatLng latLng = sys.getLatLng();
                 float psi = sys.getPsi();
-                GroundOverlay groundOverlay = sys.getGroundOverlay();
 
                 Log.d(TAG, sys.getName()+", marker==null: "+(marker==null));
-                Log.d(TAG, sys.getName()+", groundOverlay==null: "+(groundOverlay==null));
                 marker.setPosition(latLng);
-                groundOverlay.setPosition(latLng);
-                groundOverlay.setBearing(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing,psi));
                 marker.setRotation(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing,psi));
                 if (sys==ASA.getInstance().getActiveSys())
                     marker.showInfoWindow();//show info

@@ -1,7 +1,6 @@
 package pt.lsts.asa.sys;
 
 
-import pt.lsts.asa.ASA;
 import pt.lsts.imc.AutopilotMode;
 import pt.lsts.imc.PlanManeuver;
 import pt.lsts.imc.PlanSpecification;
@@ -9,9 +8,7 @@ import pt.lsts.imc.PlanSpecification;
 import java.util.LinkedHashMap;
 
 import android.util.Log;
-import android.util.Pair;
 
-import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
@@ -48,13 +45,12 @@ public class Sys {
     private AutopilotMode.AUTONOMY autonomy = null;//UAV mode: ASSISTED, AUTO, MANUAL
     private double fuelLevelValue = 100.0;
 
-    private float height=0;//fixed variable representing ground, altitude is height-z; only z varies
+    private float height=0;//fixed variable representing ground level, altitude is height-z; only z varies
 
     //variables for auto mode
     private LatLng latLng = new LatLng(0,0);//Last known lat and lon including meters offset
     private float psi = 0.0f;//last known orientation from EstimatedState.psi
     private Marker maker=null;//googleMap marker
-    private GroundOverlay groundOverlay = null;//googleMap GroundOverlay
     private String planID = "";//plan executing
     private String paintedPlanID = "";//painted plan in GoogleMaps
     private String maneuverID = "";//current maneuverID executing
@@ -236,14 +232,6 @@ public class Sys {
         this.maker = maker;
     }
 
-    public GroundOverlay getGroundOverlay() {
-        return groundOverlay;
-    }
-
-    public void setGroundOverlay(GroundOverlay groundOverlay) {
-        this.groundOverlay = groundOverlay;
-    }
-
     public AutopilotMode.AUTONOMY getAutonomy() {
         return autonomy;
     }
@@ -319,13 +307,12 @@ public class Sys {
 
     public void resetVisualizations(){
         setMaker(null);
-        setGroundOverlay(null);
         setPlanID("");
         setPaintedPlanID("");
     }
 
     public boolean isOnMap(){
-        if (getMaker()==null || getGroundOverlay()==null)
+        if (getMaker()==null)
             return false;
         return true;
     }
