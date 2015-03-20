@@ -144,6 +144,18 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         ASA.getInstance().getBus().register(gmapSysUpdaterListenner);
     }
 
+    public void initGmapCameraChangedListenner(){
+        googleMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
+            @Override
+            public void onCameraChange(CameraPosition cameraPosition) {
+                Log.i(TAG, "cameraPosition.bearing= "+cameraPosition.bearing);
+                for (Sys sys : ASA.getInstance().getSystemList().getList()){
+                    updateSysMarker(sys);
+                }
+            }
+        });
+    }
+
     @Override
     public void onMapReady(GoogleMap map) {
         Log.i("onMapReady", "onMapReady");
@@ -154,6 +166,9 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             updateSysMarker(sys);
         }
         initGmapSysUpdaterListenner();
+        initGmapCameraChangedListenner();
+        googleMap.getUiSettings().setIndoorLevelPickerEnabled(false);
+        googleMap.getUiSettings().setTiltGesturesEnabled(false);
     }
 
     /**
@@ -182,7 +197,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             case "UUV":
             case "UGV":
                 Log.i(TAG, sys.getName()+", vehicle orange_arrow_icon");
-                addMarkerToPos(sys, R.drawable.orange_arrow_icon);
+                addMarkerToPos(sys, R.drawable.orange_arrow_with_background_icon);
                 break;
             default:
                 Log.e(TAG, "default: return null");
@@ -209,9 +224,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 @Override
                 public void run() {
                     ASA.getInstance().UIThread=true;
+
                     GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
                                     .bearing(bearing)
-                                    .image(groundOverlayBitmapDescriptor)
+                                    .image(BitmapDescriptorFactory.fromResource(R.drawable.transparent))//.image(groundOverlayBitmapDescriptor)
                                     .position(latLng, 25, 25)
                                     .anchor(0.5f, 0.5f)
                                     .transparency(0.25f)
@@ -220,7 +236,9 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(sysName)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.transparent))
+                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.orange_arrow_with_background_icon))
+                                    .draggable(false)
+                                    .rotation(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing, bearing))
                     );
 
                     sys.setMaker(marker);
@@ -298,7 +316,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 Log.d(TAG, sys.getName()+", groundOverlay==null: "+(groundOverlay==null));
                 marker.setPosition(latLng);
                 groundOverlay.setPosition(latLng);
-                groundOverlay.setBearing(psi);
+                groundOverlay.setBearing(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing,psi));
+                marker.setRotation(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing,psi));
                 if (sys==ASA.getInstance().getActiveSys())
                     marker.showInfoWindow();//show info
 

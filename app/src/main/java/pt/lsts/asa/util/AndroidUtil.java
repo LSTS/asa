@@ -4,6 +4,7 @@ import pt.lsts.asa.ASA;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -11,6 +12,7 @@ import android.widget.Toast;
  */
 public class AndroidUtil {
 
+    public static final String TAG = "AndroidUtil";
 
     public static void showToastShort(FragmentActivity fragmentActivity, final String msg){
         fragmentActivity.runOnUiThread(new Runnable() {
@@ -46,6 +48,10 @@ public class AndroidUtil {
         for ( Fragment fragment : fragmentActivity.getSupportFragmentManager().getFragments()){
             removeFragment(fragmentActivity, fragment);
         }
+    }
+
+    public static float calcRotation(float cameraBearing, float vehicleBearing){
+        return (-((cameraBearing + vehicleBearing)%(360)));
     }
 
 }
