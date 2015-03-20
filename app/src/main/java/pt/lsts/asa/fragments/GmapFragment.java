@@ -147,9 +147,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         googleMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
             @Override
             public void onCameraChange(CameraPosition cameraPosition) {
-                Log.i(TAG, "cameraPosition.bearing= "+cameraPosition.bearing);
+                Log.i(TAG, "cameraPosition.bearing= "+(360-cameraPosition.bearing));
                 for (Sys sys : ASA.getInstance().getSystemList().getList()){
-                    updateSysMarker(sys);
+                    if(sys.getMarker()!=null)
+                        sys.getMarker().setRotation(AndroidUtil.calcRotation((360-cameraPosition.bearing), sys.getPsi()));
                 }
             }
         });
@@ -210,7 +211,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
      * @param iconRid icon location for this sys
      */
     public void addMarkerToPos(final Sys sys, final int iconRid){//marker for sys with iconRid
-        Log.d(TAG,"addMarkerToPos, sys= "+sys.getName()+" | marker="+(sys.getMaker()==null)+" | isOnMap="+sys.isOnMap());
+        Log.d(TAG,"addMarkerToPos, sys= "+sys.getName()+" | marker="+(sys.getMarker()==null)+" | isOnMap="+sys.isOnMap());
         if (googleMap!=null) {
             final String sysName = sys.getName();
             final LatLng latLng = sys.getLatLng();
@@ -225,10 +226,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                                     .title(sysName)
                                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.orange_arrow_with_background_icon))
                                     .draggable(false)
-                                    .rotation(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing, bearing))
+                                    .rotation(AndroidUtil.calcRotation((360-googleMap.getCameraPosition().bearing), bearing))
                     );
 
-                    sys.setMaker(marker);
+                    sys.setMarker(marker);
                 }
             });
         }
@@ -286,20 +287,20 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
         if (googleMap==null || sys==null)
             return;
-        Log.d(TAG,"updateSysMarker, "+sys.getName()+" | isOnMap="+sys.isOnMap()+" | m="+(sys.getMaker()==null));
+        Log.d(TAG,"updateSysMarker, "+sys.getName()+" | isOnMap="+sys.isOnMap()+" | m="+(sys.getMarker()==null));
         if (sys.isOnMap()==false){
             addMarkerToPos(sys);
         }
         fragmentActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Marker marker = sys.getMaker();
+                Marker marker = sys.getMarker();
                 LatLng latLng = sys.getLatLng();
                 float psi = sys.getPsi();
 
                 Log.d(TAG, sys.getName()+", marker==null: "+(marker==null));
                 marker.setPosition(latLng);
-                marker.setRotation(AndroidUtil.calcRotation(googleMap.getCameraPosition().bearing,psi));
+                marker.setRotation(AndroidUtil.calcRotation((360-googleMap.getCameraPosition().bearing), psi));
                 if (sys==ASA.getInstance().getActiveSys())
                     marker.showInfoWindow();//show info
 

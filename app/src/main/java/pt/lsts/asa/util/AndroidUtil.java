@@ -51,7 +51,7 @@ public class AndroidUtil {
     }
 
     public static float calcRotation(float cameraBearing, float vehicleBearing){
-        return (-((cameraBearing + vehicleBearing)%(360)));
+        return (((cameraBearing + vehicleBearing)%(360)));
     }
 
 }
