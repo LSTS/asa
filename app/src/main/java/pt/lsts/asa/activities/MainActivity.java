@@ -69,7 +69,6 @@ public class MainActivity extends FragmentActivity {
     }
 
 	public void test() {
-		// showToast(sharedPreferences.getString("username", "NA"));
 		Map<String, ?> keys = Settings.getAll();
 		for (Map.Entry<String, ?> entry : keys.entrySet()) {
 			String type = Settings.getType(entry.getKey(),"null");
@@ -83,16 +82,16 @@ public class MainActivity extends FragmentActivity {
                 val = String.valueOf(Settings.getInt(key,-1));
             if (type.equalsIgnoreCase("java.lang.Boolean"))
                 val = String.valueOf(Settings.getBoolean(key,false));
-            AndroidUtil.showToastLong(this, type + "," + cat +"," + key + "," + description + "," + val);
+            AndroidUtil.showToastLong(type + "," + cat +"," + key + "," + description + "," + val);
 		}
 		
 	}
 
 	public void test2() {
 		if (ASA.getInstance().getActiveSys() != null)
-			AndroidUtil.showToastLong(this, ASA.getInstance().getActiveSys().getName());
+			AndroidUtil.showToastLong(ASA.getInstance().getActiveSys().getName());
 		else
-			AndroidUtil.showToastLong(this,"Null");
+			AndroidUtil.showToastLong("Null");
 
 	}
 	

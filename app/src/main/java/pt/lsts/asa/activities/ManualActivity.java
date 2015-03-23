@@ -59,7 +59,7 @@ public class ManualActivity extends FragmentActivity {
         callOutService.onStartCommand(intent,1,0);
         callOutService.onBind(intent);
 
-        //AndroidUtil.showToastShort(this, "onResume()");
+        //AndroidUtil.showToastShort("onResume()");
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ManualActivity extends FragmentActivity {
         AndroidUtil.removeAllFragments(this);
         super.onPause();
         //AndroidUtil.removeAllFragments(this);
-        //AndroidUtil.showToastShort(this, "onPause()");
+        //AndroidUtil.showToastShort("onPause()");
         Intent intent = new Intent(this,CallOutService.class);
         callOutService.onUnbind(intent);
         stopService(intent);

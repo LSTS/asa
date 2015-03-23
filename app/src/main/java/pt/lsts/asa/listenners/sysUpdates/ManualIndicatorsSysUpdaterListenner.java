@@ -51,12 +51,12 @@ public class ManualIndicatorsSysUpdaterListenner {
 
     @Subscribe
     public void onModeChanged(AutopilotMode.AUTONOMY autonomy){
-        AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
+        AndroidUtil.showToastLong(ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
     @Subscribe
     public void onLowFuelLevel(String s){
-        AndroidUtil.showToastLong(manualIndicatorsFragment.getFragmentActivity(), s);
+        AndroidUtil.showToastLong(s);
         manualIndicatorsFragment.setCenterTextView(s);
     }
 

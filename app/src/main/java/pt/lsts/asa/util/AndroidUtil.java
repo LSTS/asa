@@ -14,22 +14,15 @@ public class AndroidUtil {
 
     public static final String TAG = "AndroidUtil";
 
-    public static void showToastShort(FragmentActivity fragmentActivity, final String msg){
-        fragmentActivity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(ASA.getContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-        });
+    public static void showToastShort(String msg){
+        Toast toast = Toast.makeText(ASA.getContext(), msg, Toast.LENGTH_SHORT);
+        ASA.getInstance().getBus().post(toast);
     }
 
-    public static void showToastLong(FragmentActivity fragmentActivity, final String msg){
-        fragmentActivity.runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(ASA.getContext(), msg, Toast.LENGTH_LONG).show();
-            }
-        });
+    public static void showToastLong(String msg){
+        Toast toast = Toast.makeText(ASA.getContext(), msg, Toast.LENGTH_LONG);
+        ASA.getInstance().getBus().post(toast);
     }
-
     public static void loadFragment(FragmentActivity fragmentActivity, Fragment fragment, int fragmentContainerID){
         fragmentActivity.getSupportFragmentManager()
                         .beginTransaction()

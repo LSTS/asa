@@ -50,17 +50,17 @@ public class GmapSysUpdaterListenner {
                     +"\n"+"Radius: "+waypoint.getRadius());
         }
         gmapFragment.updateCurrentPlanMarkers(waypointList);
-        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), "Plan changed to: "+planSpecification.getPlanId());
+        AndroidUtil.showToastLong("Plan changed to: "+planSpecification.getPlanId());
     }
 
     @Subscribe
     public void onModeChanged(AutopilotMode.AUTONOMY autonomy){
-        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
+        AndroidUtil.showToastLong(ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
     }
 
     @Subscribe
     public void onLowFuelLevel(String s){
-        AndroidUtil.showToastLong(gmapFragment.getFragmentActivity(), s);
+        AndroidUtil.showToastLong(s);
     }
 
 }

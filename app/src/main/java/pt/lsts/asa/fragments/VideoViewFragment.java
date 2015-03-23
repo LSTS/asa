@@ -81,7 +81,7 @@ public class VideoViewFragment extends Fragment {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 String url = StringUtils.getCamUrl();
-                AndroidUtil.showToastShort(fragmentActivity, "restarting connection to Cam: " + url);
+                AndroidUtil.showToastShort("restarting connection to Cam:\n" + url);
                 reset();
                 return false;
             }

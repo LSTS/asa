@@ -120,7 +120,7 @@ public class SystemListFragment extends Fragment {
         String sysName = StringUtils.removeSysExtraInfo(systemListView.getAdapter().getItem(selectedInt).toString());
         Sys sys = ASA.getInstance().getSystemList().findSysByName(sysName);
         if (sys==null){
-            AndroidUtil.showToastLong(fragmentActivity,"sys==null");
+            AndroidUtil.showToastLong("sys==null");
             return "";
         }
 
@@ -213,17 +213,17 @@ public class SystemListFragment extends Fragment {
 
     public void selectActiveSystem(){
         if (selectedInt<0 || selectedInt>=systemListView.getAdapter().getCount()) {
-            AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
+            AndroidUtil.showToastLong("ERROR no system selected");
             return;
         }
         String sysName = systemListView.getAdapter().getItem(selectedInt).toString();
         sysName = StringUtils.removeSysExtraInfo(sysName);
         ASA.getInstance().setActiveSys(ASA.getInstance().getSystemList().findSysByName(sysName));
         if (ASA.getInstance().getActiveSys()==null){
-            AndroidUtil.showToastLong(fragmentActivity,"ERROR no system selected");
+            AndroidUtil.showToastLong("ERROR no system selected");
             return;
         }
-        AndroidUtil.showToastLong(fragmentActivity,"Active System: "+ASA.getInstance().getActiveSys().getName());
+        AndroidUtil.showToastLong("Active System: "+ASA.getInstance().getActiveSys().getName());
         selectedInt = -1;
         selectActiveSystemButton.setVisibility(View.INVISIBLE);
     }
