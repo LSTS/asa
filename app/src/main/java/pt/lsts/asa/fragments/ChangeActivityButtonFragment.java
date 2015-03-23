@@ -16,7 +16,6 @@ import android.widget.Button;
  */
 public class ChangeActivityButtonFragment extends Fragment {
 
-    private FragmentActivity fragmentActivity = null;
     private Class destinyClass=null;
     private int layoutID=-1;
     private int buttonID=-1;
@@ -25,16 +24,19 @@ public class ChangeActivityButtonFragment extends Fragment {
     public ChangeActivityButtonFragment() {
         // Required empty public constructor
     }
-
+/*
     public ChangeActivityButtonFragment(FragmentActivity fragmentActivityOrigin, Class destinyClass, int layoutID, int buttonID){
         this.fragmentActivity=fragmentActivityOrigin;
         this.destinyClass=destinyClass;
         this.layoutID = layoutID;
         this.buttonID=buttonID;
     }
-
+*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        this.layoutID = getArguments().getInt("layout");
+        this.buttonID=getArguments().getInt("id");
+        this.destinyClass = (Class) getArguments().getSerializable("class");
         View v = inflater.inflate(layoutID, container, false);
         changeActivityettingsButton = (Button) v.findViewById(buttonID);
         return v;
@@ -46,7 +48,7 @@ public class ChangeActivityButtonFragment extends Fragment {
         changeActivityettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(fragmentActivity.getApplicationContext(),
+                Intent i = new Intent(getActivity().getApplicationContext(),
                         destinyClass);
                 startActivity(i);
             }

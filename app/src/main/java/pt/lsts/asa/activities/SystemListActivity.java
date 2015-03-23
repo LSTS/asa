@@ -68,7 +68,12 @@ public class SystemListActivity extends FragmentActivity {
             systemListFragment = new SystemListFragment(this);
             AndroidUtil.loadFragment(this, systemListFragment, R.id.fragment_container_system_list);
 
-            settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
+            settingsButtonFragment = new ChangeActivityButtonFragment();
+            Bundle args = new Bundle();
+            args.putInt("layout",R.layout.fragment_settings_button);
+            args.putInt("id",R.id.settingsButton);
+            args.putSerializable("class",SettingsActivity.class);
+            settingsButtonFragment.setArguments(args);
             AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_system_list);
         }
     }

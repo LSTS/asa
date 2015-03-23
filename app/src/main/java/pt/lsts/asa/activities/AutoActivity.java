@@ -63,10 +63,21 @@ public class AutoActivity extends FragmentActivity {
             gmapFragment = new GmapFragment();
             AndroidUtil.loadFragment(this, gmapFragment, R.id.fragment_container_auto);
 
-            settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button_with_margin,R.id.settingsButtonWithMargin);
+            settingsButtonFragment = new ChangeActivityButtonFragment();
+            Bundle args = new Bundle();
+            args.putInt("layout",R.layout.fragment_settings_button_with_margin);
+            args.putInt("id",R.id.settingsButtonWithMargin);
+            args.putSerializable("class",SettingsActivity.class);
+            settingsButtonFragment.setArguments(args);
             AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_auto);
 
-            manualButtonFragment = new ChangeActivityButtonFragment(this,ManualActivity.class,R.layout.fragment_manual_button,R.id.manualButton);
+            manualButtonFragment = new ChangeActivityButtonFragment();
+            args=null;
+            args = new Bundle();
+            args.putInt("layout",R.layout.fragment_manual_button);
+            args.putInt("id",R.id.manualButton);
+            args.putSerializable("class",ManualActivity.class);
+            manualButtonFragment.setArguments(args);
             AndroidUtil.loadFragment(this, manualButtonFragment,R.id.fragment_container_auto);
 
             changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment();
