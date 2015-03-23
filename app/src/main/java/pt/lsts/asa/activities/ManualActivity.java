@@ -16,6 +16,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.squareup.otto.Subscribe;
 
 public class ManualActivity extends FragmentActivity {
 
@@ -60,6 +63,7 @@ public class ManualActivity extends FragmentActivity {
         callOutService.onBind(intent);
 
         //AndroidUtil.showToastShort("onResume()");
+        ASA.getInstance().getBus().register(this);
     }
 
     @Override
@@ -67,6 +71,7 @@ public class ManualActivity extends FragmentActivity {
         Log.i(TAG, "ManualActivity.onPause() called");
         AndroidUtil.removeAllFragments(this);
         super.onPause();
+        ASA.getInstance().getBus().unregister(this);
         //AndroidUtil.removeAllFragments(this);
         //AndroidUtil.showToastShort("onPause()");
         Intent intent = new Intent(this,CallOutService.class);
@@ -126,6 +131,16 @@ public class ManualActivity extends FragmentActivity {
         Intent i = new Intent(getApplicationContext(),
                 MainActivity.class);
         startActivity(i);
+    }
+
+    @Subscribe
+    public void showToast(final Toast toast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                toast.show();
+            }
+        });
     }
 
 }

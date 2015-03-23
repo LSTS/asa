@@ -13,6 +13,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.squareup.otto.Subscribe;
 
 
 public class AutoActivity extends FragmentActivity {
@@ -39,6 +42,7 @@ public class AutoActivity extends FragmentActivity {
         Log.i(TAG, "AutoActivity.onPause() called");
         AndroidUtil.removeAllFragments(this);
         super.onPause();
+        ASA.getInstance().getBus().unregister(this);
         finish();
     }
 
@@ -47,6 +51,7 @@ public class AutoActivity extends FragmentActivity {
         super.onResume();
         ASA.getInstance().setMode(ASA.MODE.AUTO);
         loadFragments(null);//always load fragments from null
+        ASA.getInstance().getBus().register(this);
     }
 
 	public void loadFragments(Bundle savedInstanceState) {
@@ -88,5 +93,14 @@ public class AutoActivity extends FragmentActivity {
         startActivity(i);
     }
 
+    @Subscribe
+    public void showToast(final Toast toast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                toast.show();
+            }
+        });
+    }
 
 }

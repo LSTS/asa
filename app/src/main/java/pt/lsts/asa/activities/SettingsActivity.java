@@ -13,6 +13,9 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.squareup.otto.Subscribe;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -39,6 +42,8 @@ public class SettingsActivity extends PreferenceActivity {
         populateCategories(preferenceCategories);
 
         setPreferenceScreen(preferenceScreen);
+
+        ASA.getInstance().getBus().register(this);
     }
 
 	public void populateCategories(
@@ -65,9 +70,11 @@ public class SettingsActivity extends PreferenceActivity {
         Log.i(TAG, "SettingsActivity.onPause() called");
         //AndroidUtil.removeAllFragments(this);
         super.onPause();
+        ASA.getInstance().getBus().unregister(this);
         preferenceScreen.removeAll();
         preferenceScreen=null;
         finish();
+
     }
 
     @Override
@@ -82,5 +89,14 @@ public class SettingsActivity extends PreferenceActivity {
         startActivity(i);
     }
 
+    @Subscribe
+    public void showToast(final Toast toast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                toast.show();
+            }
+        });
+    }
 
 }

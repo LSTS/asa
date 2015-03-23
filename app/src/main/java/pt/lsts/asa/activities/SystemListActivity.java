@@ -13,6 +13,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.squareup.otto.Subscribe;
 
 /**
  * Created by jloureiro on 1/5/15.
@@ -27,8 +30,6 @@ public class SystemListActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container_system_list);
-
-        loadFragments(savedInstanceState);
     }
 
     @Override
@@ -76,6 +77,8 @@ public class SystemListActivity extends FragmentActivity {
     protected void onResume(){
         super.onResume();
         ASA.getInstance().setMode(ASA.MODE.SYSTEMLIST);
+        loadFragments(null);
+        ASA.getInstance().getBus().register(this);
     }
 
     @Override
@@ -83,6 +86,7 @@ public class SystemListActivity extends FragmentActivity {
         Log.i(TAG, "SettingsActivity.onPause() called");
         //AndroidUtil.removeAllFragments(this);
         super.onPause();
+        ASA.getInstance().getBus().unregister(this);
         finish();
     }
 
@@ -98,6 +102,16 @@ public class SystemListActivity extends FragmentActivity {
         Intent i = new Intent(getApplicationContext(),
                 MainActivity.class);
         startActivity(i);
+    }
+
+    @Subscribe
+    public void showToast(final Toast toast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                toast.show();
+            }
+        });
     }
 
 }

@@ -20,6 +20,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.squareup.otto.Subscribe;
 
 public class MainActivity extends FragmentActivity {
 
@@ -200,6 +203,7 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onPause() {
 		super.onPause(); // Always call the superclass method first
+        ASA.getInstance().getBus().unregister(this);
 	}
 
 	@Override
@@ -207,6 +211,7 @@ public class MainActivity extends FragmentActivity {
 		super.onResume(); // Always call the superclass method first
         ASA.getInstance().setMode(ASA.MODE.NONE);
         resumeASA();
+        ASA.getInstance().getBus().register(this);
 	}
 
 	@Override
@@ -239,5 +244,15 @@ public class MainActivity extends FragmentActivity {
 			if (!ASA.getInstance().started)
 				ASA.getInstance().start();
 	}
+
+    @Subscribe
+    public void showToast(final Toast toast){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                toast.show();
+            }
+        });
+    }
 
 }
