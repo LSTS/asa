@@ -23,7 +23,8 @@ import pt.lsts.asa.settings.Settings;
  */
 public class ManualIndicatorsFragment extends Fragment {
 
-    private FragmentActivity fragmentActivity = null;
+    public static final String TAG = "ManualIndicatorsFrag";
+
     private TextView leftTextView = null;
     private TextView rightTextView = null;
     private TextView centerTextView = null;
@@ -37,10 +38,6 @@ public class ManualIndicatorsFragment extends Fragment {
 
     public ManualIndicatorsFragment() {
         // Required empty public constructor
-    }
-
-    public ManualIndicatorsFragment(FragmentActivity fragmentActivity){
-        this.fragmentActivity=fragmentActivity;
     }
 
     @Override
@@ -100,7 +97,7 @@ public class ManualIndicatorsFragment extends Fragment {
     }
 
     public void setLeftTextView(final int val){
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 leftTextView.setText(" " + "IAS:" + " " + val + " ");
@@ -109,7 +106,7 @@ public class ManualIndicatorsFragment extends Fragment {
     }
 
     public void setCenterTextView(final String s){
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 centerTextView.setTextSize(35f);
@@ -120,7 +117,7 @@ public class ManualIndicatorsFragment extends Fragment {
     }
 
     public void setRightTextView(final int val){
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 rightTextView.setText(" " + "Alt:" + " " + val + " ");
@@ -130,7 +127,8 @@ public class ManualIndicatorsFragment extends Fragment {
 
 
     public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
-        fragmentActivity.runOnUiThread(new Runnable() {
+        Log.e(TAG,"getActivity()==null : "+(getActivity()==null));
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (visibility==true){
@@ -182,12 +180,5 @@ public class ManualIndicatorsFragment extends Fragment {
         setCenterTextViewVisibility(false);
     }
 
-    public FragmentActivity getFragmentActivity() {
-        return fragmentActivity;
-    }
-
-    public void setFragmentActivity(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
-    }
 
 }

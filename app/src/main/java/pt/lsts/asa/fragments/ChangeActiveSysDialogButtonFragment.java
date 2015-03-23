@@ -25,17 +25,11 @@ import pt.lsts.asa.util.AndroidUtil;
 public class ChangeActiveSysDialogButtonFragment extends Fragment {
 
     public static final String TAG = "ChooseActiveSysDialogButtonFragment";
-    private FragmentActivity fragmentActivity=null;
     private Button changeActiveSysButton = null;
 
     public ChangeActiveSysDialogButtonFragment() {
         // Required empty public constructor
     }
-
-    public ChangeActiveSysDialogButtonFragment(FragmentActivity fragmentActivity){
-        this.fragmentActivity=fragmentActivity;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -64,19 +58,19 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
             array[i]=arrayListName.get(i);
         }
 
-        fragmentActivity.runOnUiThread(
+        getActivity().runOnUiThread(
                 new Runnable() {
                     @Override
                     public void run() {
-                        new AlertDialog.Builder(fragmentActivity).setTitle("Choose a System:")
+                        new AlertDialog.Builder(getActivity()).setTitle("Choose a System:")
                                 .setItems(array, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         Sys sys = ASA.getInstance().getActiveSys();
                                         ASA.getInstance().setActiveSys(arrayListSys.get(which));
                                         AndroidUtil.showToastShort("Active Sys: "+ASA.getInstance().getActiveSys().getName());
                                         if (!ASA.getInstance().getActiveSys().equals(sys)){
-                                            Intent intent = fragmentActivity.getIntent();
-                                            fragmentActivity.finish();
+                                            Intent intent = getActivity().getIntent();
+                                            getActivity().finish();
                                             startActivity(intent);
                                         }
                                     }

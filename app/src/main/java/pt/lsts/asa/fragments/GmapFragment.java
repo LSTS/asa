@@ -42,7 +42,6 @@ import com.google.android.gms.maps.model.PolylineOptions;
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     public static final String TAG = "GmapFragment";
-    private FragmentActivity fragmentActivity=null;
 
     private GoogleMap googleMap = null;
     private MapFragment mapFragment = null;
@@ -63,16 +62,6 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         // Required empty public constructor
     }
 
-    public GmapFragment(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
-        myLocationListener = new MyLocationListener(this);
-        myLocationListener.initLocationListener();
-    }
-
-    public FragmentActivity getFragmentActivity() {
-        return fragmentActivity;
-    }
-
     public GoogleMap getGoogleMap() {
         return googleMap;
     }
@@ -91,7 +80,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_gmaps, container, false);
-        mapFragment = (MapFragment) fragmentActivity.getFragmentManager().findFragmentById(R.id.googleMap);
+        mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.googleMap);
         mapFragment.getMapAsync(this);
         return v;
     }
@@ -110,8 +99,16 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     public void onResume(){
         //initIMCSubscriber();
         initGmapSysUpdaterListenner();
+        initMyLocationListener();
         Log.i(TAG,"onAttach");
         super.onResume();
+
+    }
+
+
+    public void initMyLocationListener(){
+        myLocationListener = new MyLocationListener(this);
+        myLocationListener.initLocationListener();
     }
 
     @Override
@@ -217,7 +214,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             final LatLng latLng = sys.getLatLng();
             final float bearing = sys.getPsi();
 
-            fragmentActivity.runOnUiThread(new Runnable() {
+            getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     ASA.getInstance().UIThread=true;
@@ -246,7 +243,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
      */
 
     public void addMarkerToPos(final int id, final LatLng latLng, final float radius, final float colorCode){//generic marker for waypoints
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Marker marker = googleMap.addMarker(new MarkerOptions()
@@ -268,7 +265,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void paintLine(final LatLng latLng1, final LatLng latLng2){
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 PolylineOptions polylineOptions=
@@ -291,7 +288,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         if (sys.isOnMap()==false){
             addMarkerToPos(sys);
         }
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Marker marker = sys.getMarker();
@@ -357,7 +354,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     public void clearCurrentPlanMarkerList(){
         Log.v(TAG,"clearCurrentPlanMarkerList");
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 for (Marker marker : markersArrayList){

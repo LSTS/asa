@@ -18,7 +18,6 @@ import android.support.v4.app.Fragment;
 
 public class SoundControlFragment extends Fragment {
 
-	FragmentActivity fragmentActivity = null;
 	AudioManager audioManager;
 	ImageButton muteImageButton;
 	SoundManager soundManager = SoundManager.getInstance();
@@ -26,10 +25,6 @@ public class SoundControlFragment extends Fragment {
 
 	public SoundControlFragment() {
 		// Required empty public constructor
-	}
-
-	public SoundControlFragment(FragmentActivity fragmentActivity) {
-		this.fragmentActivity = fragmentActivity;
 	}
 
 	@Override

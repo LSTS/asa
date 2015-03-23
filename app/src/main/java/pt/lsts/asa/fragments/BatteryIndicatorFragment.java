@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ import android.widget.TextView;
  */
 public class BatteryIndicatorFragment extends Fragment {
 
-    private FragmentActivity fragmentActivity = null;
+    public static final String TAG = "BatteryIndicatorFrag";
     private TextView batteriesTextView = null;
 
     private String lost_comms="Batteries: -%, -V, -A";
@@ -42,17 +43,12 @@ public class BatteryIndicatorFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public BatteryIndicatorFragment(FragmentActivity fragmentActivity){
-        this.fragmentActivity=fragmentActivity;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_battery_indicator, container, false);
 
         findViews(v);
         setTextViewsColors();
-        init();
 
         return v;
     }
@@ -83,6 +79,7 @@ public class BatteryIndicatorFragment extends Fragment {
 
     @Override
     public void onResume(){
+        init();
         startTimeoutTimer();
         super.onResume();
     }
@@ -94,7 +91,7 @@ public class BatteryIndicatorFragment extends Fragment {
     }
 
     public void setBatteriesTextView(final String text){
-        fragmentActivity.runOnUiThread(new Runnable() {
+        getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 batteriesTextView.setText(text);
@@ -159,14 +156,6 @@ public class BatteryIndicatorFragment extends Fragment {
 
     public void setLastMsgReceived(long lastMsgReceived) {
         this.lastMsgReceived = lastMsgReceived;
-    }
-
-    public FragmentActivity getFragmentActivity() {
-        return fragmentActivity;
-    }
-
-    public void setFragmentActivity(FragmentActivity fragmentActivity) {
-        this.fragmentActivity = fragmentActivity;
     }
 
 }

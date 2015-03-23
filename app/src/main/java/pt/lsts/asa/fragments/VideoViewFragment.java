@@ -23,17 +23,12 @@ import android.support.v4.app.Fragment;
 public class VideoViewFragment extends Fragment {
 
 	private final String TAG = "VideoView";
-	private FragmentActivity fragmentActivity;
     private MjpegView mjpegView;
     private MjpegService mjpegService=null;
     private View view;
 
 	public VideoViewFragment() {
 		// Required empty public constructor
-	}
-
-	public VideoViewFragment(FragmentActivity fragmentActivity) {
-		this.fragmentActivity = fragmentActivity;
 	}
 
 	@Override
@@ -63,12 +58,12 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		initMjpegView();
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
+        initMjpegView();
         startVideo();
 	}
 
@@ -105,7 +100,7 @@ public class VideoViewFragment extends Fragment {
         }else{
             mjpegService = new MjpegService(mjpegView);
 
-            Intent intent = new Intent(fragmentActivity,MjpegService.class);
+            Intent intent = new Intent(getActivity(),MjpegService.class);
             mjpegService.onStartCommand(intent,1,0);
             mjpegService.onBind(intent);
         }

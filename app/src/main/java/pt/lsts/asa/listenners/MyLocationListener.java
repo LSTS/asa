@@ -23,7 +23,7 @@ public class MyLocationListener{
         this.gmapFragment=gmapFragment;
 
         // Acquire a reference to the system Location Manager
-        this.locationManager = (LocationManager) gmapFragment.getFragmentActivity().getSystemService(Context.LOCATION_SERVICE);
+        this.locationManager = (LocationManager) gmapFragment.getActivity().getSystemService(Context.LOCATION_SERVICE);
     }
 
     public void initLocationListener(){

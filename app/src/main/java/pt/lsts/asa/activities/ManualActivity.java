@@ -87,25 +87,25 @@ public class ManualActivity extends FragmentActivity {
                 return;// restoring state
             }
 
-            videoViewFragment = new VideoViewFragment(this);
+            videoViewFragment = new VideoViewFragment();
             AndroidUtil.loadFragment(this,videoViewFragment,R.id.fragment_container_manual);
 
-            soundControlFragment = new SoundControlFragment(this);
+            soundControlFragment = new SoundControlFragment();
             AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual);
 
             settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button,R.id.settingsButton);
             AndroidUtil.loadFragment(this, settingsButtonFragment,R.id.fragment_container_manual);
 
-            manualIndicatorsFragment = new ManualIndicatorsFragment(this);
+            manualIndicatorsFragment = new ManualIndicatorsFragment();
             AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual);
 
             autoButtonFragment = new ChangeActivityButtonFragment(this,AutoActivity.class,R.layout.fragment_auto_button,R.id.autoButton);
             AndroidUtil.loadFragment(this, autoButtonFragment,R.id.fragment_container_manual);
 
-            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
+            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment();
             AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_manual);
 
-            batteryIndicatorFragment = new BatteryIndicatorFragment(this);
+            batteryIndicatorFragment = new BatteryIndicatorFragment();
             AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_manual);
 
         }

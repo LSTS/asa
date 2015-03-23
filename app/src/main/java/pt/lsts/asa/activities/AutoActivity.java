@@ -60,7 +60,7 @@ public class AutoActivity extends FragmentActivity {
 				return;// restoring state
 			}
 
-            gmapFragment = new GmapFragment(this);
+            gmapFragment = new GmapFragment();
             AndroidUtil.loadFragment(this, gmapFragment, R.id.fragment_container_auto);
 
             settingsButtonFragment = new ChangeActivityButtonFragment(this,SettingsActivity.class,R.layout.fragment_settings_button_with_margin,R.id.settingsButtonWithMargin);
@@ -69,13 +69,13 @@ public class AutoActivity extends FragmentActivity {
             manualButtonFragment = new ChangeActivityButtonFragment(this,ManualActivity.class,R.layout.fragment_manual_button,R.id.manualButton);
             AndroidUtil.loadFragment(this, manualButtonFragment,R.id.fragment_container_auto);
 
-            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment(this);
+            changeActiveSysDialogButtonFragment = new ChangeActiveSysDialogButtonFragment();
             AndroidUtil.loadFragment(this, changeActiveSysDialogButtonFragment,R.id.fragment_container_auto);
 
-            batteryIndicatorFragment = new BatteryIndicatorFragment(this);
+            batteryIndicatorFragment = new BatteryIndicatorFragment();
             AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_auto);
 
-            altBarFragment = new AltBarFragment(this);
+            altBarFragment = new AltBarFragment();
             AndroidUtil.loadFragment(this, altBarFragment,R.id.fragment_container_auto);
 
 		}
