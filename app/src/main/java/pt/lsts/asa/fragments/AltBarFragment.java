@@ -59,9 +59,7 @@ public class AltBarFragment extends Fragment {
         ASA.getInstance().getBus().register(altBarSysUpdaterListenner);
         if (ASA.getInstance().getActiveSys()!=null){
             setVehicleAlt(ASA.getInstance().getActiveSys().getAltInt());
-            setPlanAlt(ASA.getInstance().getActiveSys().getPlannedAlt());
         }
-
     }
 
     @Override

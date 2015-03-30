@@ -293,18 +293,6 @@ public class Sys {
         return null;
     }
 
-    public int getPlannedAlt(){
-        if (getPlanSpecification()!=null) {
-            for (PlanManeuver planManeuver : getPlanSpecification().getManeuvers()) {
-                if (planManeuver.getManeuverId().equalsIgnoreCase(getManeuverID())) {
-                    Float altPlanned = (getHeight()) + ((Float) planManeuver.getData().getValue("z"));
-                    return Math.round(altPlanned);
-                }
-            }
-        }
-        return -1;
-    }
-
     public void resetVisualizations(){
         setMarker(null);
         setPlanID("");

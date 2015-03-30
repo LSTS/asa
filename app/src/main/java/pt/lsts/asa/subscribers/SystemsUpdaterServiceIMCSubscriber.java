@@ -3,6 +3,7 @@ package pt.lsts.asa.subscribers;
 
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.comms.IMCSubscriber;
+import pt.lsts.asa.managers.IMCManager;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.sys.SystemList;
 import pt.lsts.asa.util.BatteryIndicatorPairUtil;
@@ -18,6 +19,7 @@ import pt.lsts.imc.Heartbeat;
 import pt.lsts.imc.IMCDefinition;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
+import pt.lsts.imc.PathControlState;
 import pt.lsts.imc.PlanControlState;
 import pt.lsts.imc.PlanDB;
 import pt.lsts.imc.PlanManeuver;
@@ -121,6 +123,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                         Log.v(TAG, "AutoPilotMode:\n"+msg.toString());
                         processAutoPilotMode(msg, sys);
                         break;
+                    case PathControlState.ID_STATIC:
+                        Log.v("PathControlState", "PathControlState:\n"+msg.toString());
+                        processPathControlState(msg, sys);
+                        break;
                     case FuelLevel.ID_STATIC:
                         Log.v(TAG, "FuelLevel:\n"+msg.toString());
                         processFuelLevel(msg,sys);
@@ -150,6 +156,23 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         if (sys!=null)
             sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
 
+    }
+
+    public void processPathControlState(IMCMessage msg, Sys sys){
+        if (!sys.equals(ASA.getInstance().getActiveSys()))
+            return;
+        PathControlState pathControlState = (PathControlState) msg;
+        if (pathControlState.getEndZUnits().equals(PathControlState.END_Z_UNITS.HEIGHT)){
+            double endZ = pathControlState.getEndZ();
+            float altPlanned = (float) (endZ);
+            int altPlannedInt = Math.round(altPlanned);
+            ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
+        }else if (pathControlState.getEndZUnits().equals(PathControlState.END_Z_UNITS.ALTITUDE)){
+            double endZ = pathControlState.getEndZ();
+            float altPlanned = (float) (endZ + ASA.getInstance().getActiveSys().getHeight());
+            int altPlannedInt = Math.round(altPlanned);
+            ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
+        }
     }
 
     public void processAnnounce(IMCMessage msg, SystemList systemList){
@@ -340,17 +363,6 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                     sendPlanDBrequestPlanID(planID);
                     this.lastMsgSentTimeMills=System.currentTimeMillis();
                 }
-                boolean maneuverChanged = sys.setManeuverID(planControlState.getManId());//Maneuver ID
-                if (maneuverChanged==true){
-                    for (PlanManeuver planManeuver : sys.getPlanSpecification().getManeuvers()) {
-                        if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
-                            Float altPlanned = (sys.getHeight()) + ((Float) planManeuver.getData().getValue("z"));
-                            int altPlannedInt = Math.round(altPlanned);
-                            Log.d(TAG, "planManeuver:\n" + planManeuver.getData().toString() + "\n-------------------------------\n" + altPlanned);
-                            ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
-                        }
-                    }
-                }
             }
         }
     }
@@ -421,15 +433,6 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             PlanSpecification planSpecification = (PlanSpecification) planDB.getArg();
             sys.setPlanSpecification(planSpecification);
             ASA.getInstance().getBus().post(planSpecification);
-            for (PlanManeuver planManeuver : sys.getPlanSpecification().getManeuvers()) {
-                if (planManeuver.getManeuverId().equalsIgnoreCase(ASA.getInstance().getActiveSys().getManeuverID())) {
-                    Float altPlanned = (sys.getHeight()) + ((Float) planManeuver.getData().getValue("z"));
-                    int altPlannedInt = Math.round(altPlanned);
-                    Log.d(TAG, "planManeuver:\n" + planManeuver.getData().toString() + "\n-------------------------------\n" + altPlanned);
-                    ASA.getInstance().getBus().post(new Pair<String, Integer>("altPlanned", altPlannedInt));
-                }
-            }
-
         }
     }
 
