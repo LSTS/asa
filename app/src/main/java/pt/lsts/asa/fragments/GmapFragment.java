@@ -221,7 +221,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     Marker marker = googleMap.addMarker(new MarkerOptions()
                                     .position(latLng)
                                     .title(sysName)
-                                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.orange_arrow_with_background_icon))
+                                    .icon(BitmapDescriptorFactory.fromResource(iconRid))
                                     .draggable(false)
                                     .rotation(AndroidUtil.calcRotation((360-googleMap.getCameraPosition().bearing), bearing))
                     );
