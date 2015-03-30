@@ -1,8 +1,9 @@
 <resources>
 
-    <color name="black_overlay">#66000000</color>
-    <color name="white_overlay">#FFFFFF</color>
-    <color name="grey_light_overlay">#BDBDBD</color>
-    <color name="yellow_overlay">#FFFF00</color>
+    <color name="black">#66000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey_light">#BDBDBD</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="orange_bright">#FF4000</color>
 
 </resources>

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/altBarMarksImageView"
         android:layout_gravity="right|center_vertical"
-        android:background="@color/grey_light_overlay"
+        android:background="@color/grey_light"
         android:src="@drawable/alt_bar_marks_1000m_80pxbot" />
 
     <TextView
@@ -29,10 +29,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
+        android:text="256"
         android:id="@+id/altFromPlanTextView"
         android:layout_marginRight="30px"
-        android:background="@color/grey_light_overlay"
+        android:background="@color/grey_light"
+        android:textColor="@color/orange_bright"
         android:layout_gravity="right|top" />
 
     <ImageView
