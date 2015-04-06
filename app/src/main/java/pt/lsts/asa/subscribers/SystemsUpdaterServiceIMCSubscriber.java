@@ -276,13 +276,15 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         sys.setAlt(alt);
         int altInt = Math.round(alt);
         Log.i(TAG,"altDouble= "+alt+" | altInt="+altInt+" | sys.getAltInt()="+sys.getAltInt());
-        if (altInt!=sys.getAltInt()){
+        if (altInt!=sys.getAltInt()) {
             sys.setAltInt(altInt);
-            if (sys.equals(ASA.getInstance().getActiveSys())){
-                Log.i(TAG,"alt: getActiveSys().equals(sys)");
-                ASA.getInstance().getBus().post(new Pair<String,Integer>("alt",altInt));
+            if (sys.equals(ASA.getInstance().getActiveSys())) {
+                Log.i(TAG, "alt: getActiveSys().equals(sys)");
+                ASA.getInstance().getBus().post(new Pair<String, Integer>("alt", altInt));
             }
-
+        }if (sys.equals(ASA.getInstance().getActiveSys())){
+            Log.i(TAG,"post int= "+EstimatedState.ID_STATIC);
+            ASA.getInstance().getBus().post(EstimatedState.ID_STATIC);
         }
         Double latRad = msg.getDouble("lat");
         Double lonRad = msg.getDouble("lon");
@@ -318,6 +320,9 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
                 Log.i(TAG,"getActiveSys().equals(sys)");
                 ASA.getInstance().getBus().post(new Pair<String,Integer>("ias",iasInt));
             }
+        }if (sys.equals(ASA.getInstance().getActiveSys())){
+            Log.i(TAG,"post int= "+IndicatedSpeed.ID_STATIC);
+            ASA.getInstance().getBus().post(IndicatedSpeed.ID_STATIC);
         }
         //call OTTO
     }

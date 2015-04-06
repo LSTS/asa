@@ -52,6 +52,8 @@ public class CallOutService extends Service implements
     private boolean globalMuteBool=false;
 
     private long lastMsgReceived=-1;
+    private long lastIndicatedSpeedMsgReceived=-1;
+    private long lastEstimatedStateMsgReceived=-1;
 
     public CallOutService(Context context){
         this.context=context;
@@ -134,9 +136,13 @@ public class CallOutService extends Service implements
         iasTimerTask = new TimerTask() {
             @Override
             public void run() {
-                Log.i(TAG,"ias= "+iasInt+ " -- "+System.currentTimeMillis());
                 if (tts==null)
                     initTts();
+                if (ASA.getInstance().getActiveSys()!=null
+                        && System.currentTimeMillis() > getLastIndicatedSpeedMsgReceived()+iasInterval)
+                    return;
+
+                Log.i(TAG, "ias= " + iasInt + " -- " + System.currentTimeMillis());
                 tts.speak(""+iasInt,TextToSpeech.QUEUE_FLUSH, null);
             }
         };
@@ -146,9 +152,13 @@ public class CallOutService extends Service implements
         altTimerTask = new TimerTask() {
             @Override
             public void run() {
-                Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
                 if (tts==null)
                     initTts();
+                if (ASA.getInstance().getActiveSys()!=null
+                        && System.currentTimeMillis() > getLastEstimatedStateMsgReceived()+altInterval)
+                    return;
+
+                Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
                 tts.speak(""+altInt,TextToSpeech.QUEUE_FLUSH, null);
             }
         };
@@ -332,7 +342,7 @@ public class CallOutService extends Service implements
 
     public void setAltInt(int altInt) {
         this.altInt = altInt;
-        setLastMsgReceived(System.currentTimeMillis());
+        setLastEstimatedStateMsgReceived();
     }
 
     public int getIasInt() {
@@ -341,7 +351,7 @@ public class CallOutService extends Service implements
 
     public void setIasInt(int iasInt) {
         this.iasInt = iasInt;
-        setLastMsgReceived(System.currentTimeMillis());
+        setLastIndicatedSpeedMsgReceived();
     }
 
     public int getIasInterval() {
@@ -404,8 +414,8 @@ public class CallOutService extends Service implements
         return lastMsgReceived;
     }
 
-    public void setLastMsgReceived(long lastMsgReceived) {
-        this.lastMsgReceived = lastMsgReceived;
+    public void setLastMsgReceived() {
+        this.lastMsgReceived = System.currentTimeMillis();
         if (isAltTimerTaskRunning()==false
                 && altMuteBool==false) {
             startAltTimer();
@@ -431,5 +441,24 @@ public class CallOutService extends Service implements
     public void setAltTimerTaskRunning(boolean altTimerTaskRunning) {
         this.altTimerTaskRunning = altTimerTaskRunning;
     }
+
+    public long getLastIndicatedSpeedMsgReceived() {
+        return lastIndicatedSpeedMsgReceived;
+    }
+
+    public void setLastIndicatedSpeedMsgReceived() {
+        this.lastIndicatedSpeedMsgReceived = System.currentTimeMillis();
+        setLastMsgReceived();
+    }
+
+    public long getLastEstimatedStateMsgReceived() {
+        return lastEstimatedStateMsgReceived;
+    }
+
+    public void setLastEstimatedStateMsgReceived() {
+        this.lastEstimatedStateMsgReceived = System.currentTimeMillis();
+        setLastMsgReceived();
+    }
+
 
 }
