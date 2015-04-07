@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:id="@+id/settingsButtonWithMargin"
-        android:layout_marginRight="150px"
+        android:layout_marginRight="135px"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>
 </RelativeLayout>

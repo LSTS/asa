@@ -179,7 +179,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         switch (typeUpperCase){
             case "CCU":
                 Log.i(TAG, sys.getName()+", ccu pc_icon");
-                addMarkerToPos(sys, R.drawable.pc_icon);
+                addMarkerToPos(sys, R.drawable.green_pc_icon);
                 break;
             case "HUMANSENSOR":
             case "MOBILESENSOR":
@@ -189,12 +189,16 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 addMarkerToPos(sys, R.drawable.anchor_icon);
                 break;
             case "UAV":
+                Log.i(TAG, sys.getName()+", uav vehicle orange_arrow_icon");
+                addMarkerToPos(sys, R.drawable.orange_arrow_with_background_icon);
+                break;
             case "USV":
             case "UUV":
             case "UGV":
-                Log.i(TAG, sys.getName()+", vehicle orange_arrow_icon");
-                addMarkerToPos(sys, R.drawable.orange_arrow_with_background_icon);
+                Log.i(TAG, sys.getName()+", other vehicle orange_arrow_icon");
+                addMarkerToPos(sys, R.drawable.blue_arrow_with_background_icon);
                 break;
+
             default:
                 Log.e(TAG, "default: return null");
                 Log.e(TAG, "type= "+type+" | typeUpperCase= "+typeUpperCase);
