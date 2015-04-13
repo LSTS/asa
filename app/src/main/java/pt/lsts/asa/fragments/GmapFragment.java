@@ -8,6 +8,7 @@ import pt.lsts.asa.listenners.sysUpdates.GmapSysUpdaterListenner;
 import pt.lsts.asa.subscribers.GmapIMCSubscriber;
 import pt.lsts.asa.sys.Sys;
 import pt.lsts.asa.util.AndroidUtil;
+import pt.lsts.asa.util.GmapsUtil;
 import pt.lsts.util.PlanUtilities;
 
 import java.util.ArrayList;
@@ -18,7 +19,6 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +32,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -53,10 +55,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     private MyLocationListener myLocationListener = null;
     private Boolean initZoom = false;
 
-    private ArrayList<Marker> markersArrayList = new ArrayList<Marker>();//markers of vehicles positions
-    private ArrayList<Marker> currentPlanMarkersList = new ArrayList<Marker>();//markers for current Plan
+    private ArrayList<Marker> markersList = new ArrayList<Marker>();//markers of vehicles positions, waypoints
+    private ArrayList<GroundOverlay> groundOverlaysList = new ArrayList<GroundOverlay>();
     private ArrayList<Circle> loiterCircleList = new ArrayList<Circle>();//list of loiters circles
-    private ArrayList<Polyline> linesPolylineList = new ArrayList<Polyline>();
+    private ArrayList<Polyline> linesPolylineList = new ArrayList<Polyline>();// lines between waypoints
 
     public GmapFragment() {
         // Required empty public constructor
@@ -237,6 +239,31 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
+    /**
+     * addGroundOverlay for arrows
+     * @param latLng
+     * @param bearing
+     * @param iconRid
+     */
+    public void addGroundOverlayToPos(final LatLng latLng, final float bearing, final int iconRid){//marker for sys with iconRid
+        Log.d(TAG,"addMarkerToPos, arrow in pos:"+latLng.latitude+"N, "+latLng.longitude+"W");
+        if (googleMap!=null) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ASA.getInstance().UIThread=true;
+                    GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
+                                    .position(latLng, 70, 70)
+                                    .image(BitmapDescriptorFactory.fromResource(iconRid))
+                                    .bearing(AndroidUtil.calcRotation((360 - googleMap.getCameraPosition().bearing), bearing))
+                    );
+                    groundOverlaysList.add(groundOverlay);
+                }
+            });
+        }
+
+    }
+
 
     /**
      * Marker for waypoints of plans
@@ -263,7 +290,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                     Circle circle = googleMap.addCircle(circleOptions); // In meters
                     loiterCircleList.add(circle);
                 }
-                markersArrayList.add(marker);
+                markersList.add(marker);
             }
         });
     }
@@ -272,8 +299,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                PolylineOptions polylineOptions=
-                        new PolylineOptions().add(latLng1,latLng2)
+                PolylineOptions polylineOptions =
+                        new PolylineOptions().add(latLng1, latLng2)
                                 .width(5)
                                 .color(Color.BLACK);
 
@@ -282,6 +309,18 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
             }
         });
+        paintArrow(latLng1, latLng2);
+    }
+
+    public void paintArrow(final LatLng latLng1, final LatLng latLng2){
+        final float bearing = GmapsUtil.GetBearingFromLine(latLng1, latLng2);
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                addGroundOverlayToPos(latLng2, bearing, R.drawable.arrow_black_north_descentered);
+            }
+        });
+
     }
 
     public void updateSysMarker(final Sys sys){
@@ -338,7 +377,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         for (PlanUtilities.Waypoint waypoint : waypointList){
             LatLng latLng = new LatLng(waypoint.getLatitude(),waypoint.getLongitude());
             float radius = waypoint.getRadius();
-            float colorCode = BitmapDescriptorFactory.HUE_BLUE;
+            float colorCode = BitmapDescriptorFactory.HUE_GREEN;
             addMarkerToPos(id,latLng,radius,colorCode);
             id++;
         }
@@ -361,7 +400,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                for (Marker marker : markersArrayList){
+                for (Marker marker : markersList){
                     marker.remove();
                 }
                 for (Polyline polyline : linesPolylineList){
@@ -370,18 +409,22 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 for (Circle circle : loiterCircleList){
                     circle.remove();
                 }
+                for (GroundOverlay groundOverlay : groundOverlaysList){
+                    groundOverlay.remove();
+                }
             }
         });
 
-        markersArrayList.clear();
+        markersList.clear();
         linesPolylineList.clear();
         loiterCircleList.clear();
+        groundOverlaysList.clear();
     }
 
     public void removeMarker(String title){
-        for (Marker marker : markersArrayList){
+        for (Marker marker : markersList){
             if (marker.getTitle().equalsIgnoreCase(title)) {
-                markersArrayList.remove(marker);
+                markersList.remove(marker);
                 marker.remove();
                 return;
             }

@@ -3,17 +3,15 @@ package pt.lsts.asa.util;
 import android.util.Log;
 
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 
-import pt.lsts.asa.ASA;
-import pt.lsts.asa.sys.Sys;
 
 /**
  * Created by jloureiro on 1/27/15.
  */
 public class GmapsUtil {
+
+    public static final String TAG = "GmapsUtil";
 
     /**
      *
@@ -66,6 +64,24 @@ public class GmapsUtil {
         double lonO = lon + dLon * 180/Math.PI;
 
         return new LatLng(latO, lonO);
+    }
+
+    public static float GetBearingFromLine(LatLng from, LatLng to){
+        double lat1 = from.latitude * Math.PI / 180.0;
+        double lon1 = from.longitude * Math.PI / 180.0;
+        double lat2 = to.latitude * Math.PI / 180.0;
+        double lon2 = to.longitude * Math.PI / 180.0;
+
+        // Compute the angle.
+        double angle = - Math.atan2( Math.sin( lon1 - lon2 ) * Math.cos( lat2 ), Math.cos( lat1 ) * Math.sin( lat2 ) - Math.sin( lat1 ) * Math.cos( lat2 ) * Math.cos( lon1 - lon2 ) );
+
+        if (angle < 0.0)
+            angle += Math.PI * 2.0;
+
+        // And convert result to degrees.
+        angle = Math.toDegrees(angle);
+        Log.i(TAG,"angle= "+angle);
+        return (float) angle;
     }
 
 }
