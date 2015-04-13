@@ -282,17 +282,42 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                                 .title("" + id)
                                 .icon(BitmapDescriptorFactory.defaultMarker(colorCode))
                 );
-                if (radius>0){
-                    CircleOptions circleOptions = new CircleOptions()
-                            .center(latLng)
-                            .radius(radius)
-                            .strokeWidth(5);
-                    Circle circle = googleMap.addCircle(circleOptions); // In meters
-                    loiterCircleList.add(circle);
-                }
                 markersList.add(marker);
             }
         });
+    }
+
+    public void paintLoiter(final LatLng latLng, final float radius, PlanUtilities.Waypoint.TYPE loiterDirection){
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                CircleOptions circleOptions = new CircleOptions()
+                        .center(latLng)
+                        .radius(radius)
+                        .strokeWidth(5);
+                Circle circle = googleMap.addCircle(circleOptions); // In meters
+                loiterCircleList.add(circle);
+            }});
+        paintLoiterDirectionArrow(latLng, radius, loiterDirection);
+    }
+
+    public void paintLoiterDirectionArrow(final LatLng latLng, final float radius, final PlanUtilities.Waypoint.TYPE loiterDirection){
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (loiterDirection.equals(PlanUtilities.Waypoint.TYPE.LOITER_CW)){
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, 0, radius),180,R.drawable.arrow_black_north_descentered);//E
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, 0, -radius),0,R.drawable.arrow_black_north_descentered);//W
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, radius, 0),90,R.drawable.arrow_black_north_descentered);//N
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, -radius, 0),270,R.drawable.arrow_black_north_descentered);//S
+                }
+                if (loiterDirection.equals(PlanUtilities.Waypoint.TYPE.LOITER_CCW)){
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, 0, radius),0,R.drawable.arrow_black_north_descentered);//E
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, 0, -radius),180,R.drawable.arrow_black_north_descentered);//W
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, radius, 0),270,R.drawable.arrow_black_north_descentered);//N
+                    addGroundOverlayToPos(GmapsUtil.translateCoordinates(latLng, -radius, 0),90,R.drawable.arrow_black_north_descentered);//S
+                }
+            }});
     }
 
     public void paintLine(final LatLng latLng1, final LatLng latLng2){
@@ -309,10 +334,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
             }
         });
-        paintArrow(latLng1, latLng2);
+        paintLineArrow(latLng1, latLng2);
     }
 
-    public void paintArrow(final LatLng latLng1, final LatLng latLng2){
+    public void paintLineArrow(final LatLng latLng1, final LatLng latLng2){
         final float bearing = GmapsUtil.GetBearingFromLine(latLng1, latLng2);
         getActivity().runOnUiThread(new Runnable() {
             @Override
@@ -379,6 +404,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             float radius = waypoint.getRadius();
             float colorCode = BitmapDescriptorFactory.HUE_GREEN;
             addMarkerToPos(id,latLng,radius,colorCode);
+            if (radius>0)
+                paintLoiter(latLng,radius, waypoint.getType());
             id++;
         }
         paintLinesBettweenWaypoints(waypointList);
