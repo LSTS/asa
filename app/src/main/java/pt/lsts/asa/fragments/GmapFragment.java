@@ -168,6 +168,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         initGmapCameraChangedListenner();
         googleMap.getUiSettings().setIndoorLevelPickerEnabled(false);
         googleMap.getUiSettings().setTiltGesturesEnabled(false);
+
+        if (ASA.getInstance().getActiveSys()!=null){
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(ASA.getInstance().getActiveSys().getLatLng(), 17f, 1.0f, 1.0f)));
+            initZoom=true;
+        }
     }
 
     /**
