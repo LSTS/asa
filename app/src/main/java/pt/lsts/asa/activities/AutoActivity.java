@@ -7,6 +7,7 @@ import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
 import pt.lsts.asa.fragments.GmapFragment;
 import pt.lsts.asa.R;
+import pt.lsts.asa.fragments.CentralTextViewFragment;
 import pt.lsts.asa.util.AndroidUtil;
 
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class AutoActivity extends FragmentActivity {
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
     private BatteryIndicatorFragment batteryIndicatorFragment=null;
     private AltBarFragment altBarFragment =null;
+    private CentralTextViewFragment centralTextViewFragment =null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,9 @@ public class AutoActivity extends FragmentActivity {
 
             altBarFragment = new AltBarFragment();
             AndroidUtil.loadFragment(this, altBarFragment,R.id.fragment_container_auto);
+
+            centralTextViewFragment = new CentralTextViewFragment();
+            AndroidUtil.loadFragment(this, centralTextViewFragment,R.id.fragment_container_auto);
 
 		}
 	}

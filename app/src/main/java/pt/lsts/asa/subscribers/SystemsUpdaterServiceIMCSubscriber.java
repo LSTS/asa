@@ -155,6 +155,8 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         //Log.v(TAG,msg.getAbbrev()+":\n"+msg.toString());
         if (sys!=null)
             sys.lastMessageReceived = System.currentTimeMillis();//always update lastMessageReceived
+        if (sys.equals(ASA.getInstance().getActiveSys()))
+            ASA.getInstance().getBus().post(msg);
 
     }
 

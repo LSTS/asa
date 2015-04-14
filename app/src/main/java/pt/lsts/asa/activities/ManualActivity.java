@@ -5,7 +5,8 @@ import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.fragments.BatteryIndicatorFragment;
 import pt.lsts.asa.fragments.ChangeActiveSysDialogButtonFragment;
 import pt.lsts.asa.fragments.ChangeActivityButtonFragment;
-import pt.lsts.asa.fragments.ManualIndicatorsFragment;
+import pt.lsts.asa.fragments.CentralTextViewFragment;
+import pt.lsts.asa.fragments.LeftRightTopTextViewsFragment;
 import pt.lsts.asa.fragments.SoundControlFragment;
 import pt.lsts.asa.fragments.VideoViewFragment;
 import pt.lsts.asa.ASA;
@@ -28,9 +29,11 @@ public class ManualActivity extends FragmentActivity {
     private VideoViewFragment videoViewFragment = null;
     private ChangeActivityButtonFragment settingsButtonFragment = null;
     private ChangeActivityButtonFragment autoButtonFragment=null;
-    private ManualIndicatorsFragment manualIndicatorsFragment = null;
+    private LeftRightTopTextViewsFragment leftRightTopTextViewsFragment = null;
     private ChangeActiveSysDialogButtonFragment changeActiveSysDialogButtonFragment=null;
     private BatteryIndicatorFragment batteryIndicatorFragment=null;
+    private CentralTextViewFragment centralTextViewFragment =null;
+
 
     private CallOut callOut;
     private CallOutService callOutService;
@@ -93,8 +96,8 @@ public class ManualActivity extends FragmentActivity {
             soundControlFragment = new SoundControlFragment();
             AndroidUtil.loadFragment(this,soundControlFragment,R.id.fragment_container_manual);
 
-            manualIndicatorsFragment = new ManualIndicatorsFragment();
-            AndroidUtil.loadFragment(this,manualIndicatorsFragment,R.id.fragment_container_manual);
+            leftRightTopTextViewsFragment = new LeftRightTopTextViewsFragment();
+            AndroidUtil.loadFragment(this, leftRightTopTextViewsFragment,R.id.fragment_container_manual);
 
             settingsButtonFragment = new ChangeActivityButtonFragment();
             Bundle args = new Bundle();
@@ -118,6 +121,9 @@ public class ManualActivity extends FragmentActivity {
 
             batteryIndicatorFragment = new BatteryIndicatorFragment();
             AndroidUtil.loadFragment(this, batteryIndicatorFragment,R.id.fragment_container_manual);
+
+            centralTextViewFragment = new CentralTextViewFragment();
+            AndroidUtil.loadFragment(this, centralTextViewFragment,R.id.fragment_container_manual);
 
         }
     }
