@@ -1,17 +1,11 @@
 package pt.lsts.asa.subscribers;
 
-import android.util.Log;
-
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import pt.lsts.asa.comms.IMCSubscriber;
-import pt.lsts.asa.feedback.CallOut;
-import pt.lsts.asa.fragments.ManualIndicatorsFragment;
-import pt.lsts.asa.util.IMCUtils;
-import pt.lsts.imc.EstimatedState;
+import pt.lsts.asa.fragments.LeftRightTopTextViewsFragment;
 import pt.lsts.imc.IMCMessage;
-import pt.lsts.imc.IndicatedSpeed;
 
 /**
  * Created by jloureiro on 1/21/15.
@@ -19,12 +13,12 @@ import pt.lsts.imc.IndicatedSpeed;
 public class ManualIndicatorsFragmentIMCSubscriber implements IMCSubscriber{
 
     private final String TAG = "ManualIndicatorsFragmentIMCSubscriber";
-    private ManualIndicatorsFragment manualIndicatorsfragment = null;
+    private LeftRightTopTextViewsFragment manualIndicatorsfragment = null;
     private Thread thread;
 
     private NumberFormat formatter = new DecimalFormat("#0");
 
-    public ManualIndicatorsFragmentIMCSubscriber(ManualIndicatorsFragment manualIndicatorsfragment){
+    public ManualIndicatorsFragmentIMCSubscriber(LeftRightTopTextViewsFragment manualIndicatorsfragment){
         this.manualIndicatorsfragment=manualIndicatorsfragment;
     }
     

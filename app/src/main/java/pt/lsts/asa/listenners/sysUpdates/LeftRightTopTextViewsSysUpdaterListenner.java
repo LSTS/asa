@@ -8,23 +8,22 @@ import com.squareup.otto.Subscribe;
 import java.util.Locale;
 
 import pt.lsts.asa.ASA;
-import pt.lsts.asa.feedback.CallOutService;
-import pt.lsts.asa.fragments.ManualIndicatorsFragment;
+import pt.lsts.asa.fragments.LeftRightTopTextViewsFragment;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.imc.AutopilotMode;
 
 /**
  * Created by jloureiro on 2/19/15.
  */
-public class ManualIndicatorsSysUpdaterListenner {
+public class LeftRightTopTextViewsSysUpdaterListenner {
 
-    private final String TAG = "CallOutPreferencesListenner";
+    private final String TAG = "LeftRightTopTextViewsSysUpdaterListenner";
     public static final boolean DEBUG = false;
 
-    private ManualIndicatorsFragment manualIndicatorsFragment = null;
+    private LeftRightTopTextViewsFragment leftRightTopTextViewsFragment = null;
 
-    public ManualIndicatorsSysUpdaterListenner(ManualIndicatorsFragment manualIndicatorsFragment){
-        this.manualIndicatorsFragment = manualIndicatorsFragment;
+    public LeftRightTopTextViewsSysUpdaterListenner(LeftRightTopTextViewsFragment leftRightTopTextViewsFragment){
+        this.leftRightTopTextViewsFragment = leftRightTopTextViewsFragment;
     }
 
     @Subscribe
@@ -32,15 +31,15 @@ public class ManualIndicatorsSysUpdaterListenner {
         String valChanged = pair.first;
         Integer newVal = pair.second;
 
-        manualIndicatorsFragment.setLastMsgReceived(System.currentTimeMillis());
+        leftRightTopTextViewsFragment.setLastMsgReceived(System.currentTimeMillis());
 
         String valChangedLowerCase = valChanged.toLowerCase(Locale.getDefault());
         switch(valChangedLowerCase){
             case "ias":
-                manualIndicatorsFragment.setLeftTextView(newVal);
+                leftRightTopTextViewsFragment.setLeftTextView(newVal);
                 break;
             case "alt":
-                manualIndicatorsFragment.setRightTextView(newVal);
+                leftRightTopTextViewsFragment.setRightTextView(newVal);
                 break;
             default:
                 if (DEBUG)
@@ -52,12 +51,6 @@ public class ManualIndicatorsSysUpdaterListenner {
     @Subscribe
     public void onModeChanged(AutopilotMode.AUTONOMY autonomy){
         AndroidUtil.showToastLong(ASA.getInstance().getActiveSys().getName()+"'s in "+autonomy.toString()+" Mode");
-    }
-
-    @Subscribe
-    public void onLowFuelLevel(String s){
-        AndroidUtil.showToastLong(s);
-        manualIndicatorsFragment.setCenterTextView(s);
     }
 
 }

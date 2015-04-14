@@ -2,17 +2,12 @@ package pt.lsts.asa.subscribers;
 
 import pt.lsts.asa.comms.IMCSubscriber;
 import pt.lsts.asa.feedback.CallOut;
-import pt.lsts.asa.fragments.ManualIndicatorsFragment;
 import pt.lsts.asa.util.IMCUtils;
 import pt.lsts.imc.EstimatedState;
 import pt.lsts.imc.IMCMessage;
 import pt.lsts.imc.IndicatedSpeed;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 import android.util.Log;
-import android.view.View;
 
 
 public class CallOutIMCSubscriber implements IMCSubscriber{
