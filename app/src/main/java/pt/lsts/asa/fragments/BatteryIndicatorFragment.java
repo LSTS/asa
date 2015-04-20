@@ -91,6 +91,8 @@ public class BatteryIndicatorFragment extends Fragment {
     }
 
     public void setBatteriesTextView(final String text){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

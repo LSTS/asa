@@ -48,6 +48,8 @@ public class ChangeActivityButtonFragment extends Fragment {
         changeActivityettingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (getActivity()==null)
+                    return;
                 Intent i = new Intent(getActivity().getApplicationContext(),
                         destinyClass);
                 startActivity(i);

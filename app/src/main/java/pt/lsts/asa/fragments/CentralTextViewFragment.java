@@ -85,6 +85,8 @@ public class CentralTextViewFragment extends Fragment {
     }
 
     public void setCenterTextView(final String s){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -98,6 +100,8 @@ public class CentralTextViewFragment extends Fragment {
 
     public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
         Log.e(TAG, "getActivity()==null : " + (getActivity() == null));
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

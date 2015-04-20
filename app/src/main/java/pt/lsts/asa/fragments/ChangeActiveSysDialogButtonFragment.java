@@ -57,7 +57,8 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
         for (int i=0;i<array.length;i++){
             array[i]=arrayListName.get(i);
         }
-
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(
                 new Runnable() {
                     @Override
@@ -67,8 +68,9 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
                                     public void onClick(DialogInterface dialog, int which) {
                                         Sys sys = ASA.getInstance().getActiveSys();
                                         ASA.getInstance().setActiveSys(arrayListSys.get(which));
-                                        AndroidUtil.showToastShort("Active Sys: "+ASA.getInstance().getActiveSys().getName());
-                                        if (!ASA.getInstance().getActiveSys().equals(sys)){
+                                        if (ASA.getInstance().getActiveSys()!=null)
+                                            AndroidUtil.showToastShort("Active Sys: "+ASA.getInstance().getActiveSys().getName());
+                                        if (sys!=null && !sys.equals(ASA.getInstance().getActiveSys())){
                                             Intent intent = getActivity().getIntent();
                                             getActivity().finish();
                                             startActivity(intent);

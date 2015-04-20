@@ -3,6 +3,7 @@ package pt.lsts.asa.fragments;
 import android.support.v4.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,6 +88,8 @@ public class LeftRightTopTextViewsFragment extends Fragment {
     }
 
     public void setLeftTextView(final int val){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -96,6 +99,8 @@ public class LeftRightTopTextViewsFragment extends Fragment {
     }
 
     public void setRightTextView(final int val){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

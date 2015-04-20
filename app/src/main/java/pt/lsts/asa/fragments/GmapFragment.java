@@ -82,6 +82,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_gmaps, container, false);
+        if (getActivity()==null)
+            return v;
         mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.googleMap);
         mapFragment.getMapAsync(this);
         return v;
@@ -224,7 +226,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             final String sysName = sys.getName();
             final LatLng latLng = sys.getLatLng();
             final float bearing = sys.getPsi();
-
+            if (getActivity()==null)
+                return;
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -253,6 +256,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     public void addGroundOverlayToPos(final LatLng latLng, final float bearing, final int iconRid){//marker for sys with iconRid
         Log.d(TAG,"addMarkerToPos, arrow in pos:"+latLng.latitude+"N, "+latLng.longitude+"W");
         if (googleMap!=null) {
+            if (getActivity()==null)
+                return;
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -279,6 +284,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
      */
 
     public void addMarkerToPos(final int id, final LatLng latLng, final float radius, final float colorCode){//generic marker for waypoints
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -293,6 +300,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void paintLoiter(final LatLng latLng, final float radius, PlanUtilities.Waypoint.TYPE loiterDirection){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -307,6 +316,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void paintLoiterDirectionArrow(final LatLng latLng, final float radius, final PlanUtilities.Waypoint.TYPE loiterDirection){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -326,6 +337,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     public void paintLine(final LatLng latLng1, final LatLng latLng2){
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -344,6 +357,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     public void paintLineArrow(final LatLng latLng1, final LatLng latLng2){
         final float bearing = GmapsUtil.GetBearingFromLine(latLng1, latLng2);
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -361,6 +376,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         if (sys.isOnMap()==false){
             addMarkerToPos(sys);
         }
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -429,6 +446,8 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
     public void clearCurrentPlanMarkerList(){
         Log.v(TAG,"clearCurrentPlanMarkerList");
+        if (getActivity()==null)
+            return;
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
