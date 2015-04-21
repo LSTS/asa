@@ -19,6 +19,7 @@ import java.net.URI;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.fragments.VideoViewFragment;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
@@ -60,6 +61,7 @@ public class MjpegService extends Service {
         String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
         //String camUrl = StringUtils.getCamUrl();
         task = new getMjpegInputStreamAsyncTask().execute(camUrl);
+        this.stopSelf();
     }
 
     public void reconnect(){
@@ -97,6 +99,7 @@ public class MjpegService extends Service {
             mjpegView.setDisplayMode(MjpegView.SIZE_FULLSCREEN);
             mjpegView.showFps(true);
             mjpegView.startPlayback();
+            Log.d(TAG,"startPlayBack()");
         }
     }
 
@@ -107,7 +110,9 @@ public class MjpegService extends Service {
 
     @Override
     public void onDestroy() {
-        Log.v(TAG,"onDestroy()");
+        task.cancel(true);
+        this.stopSelf();
+        Log.d(TAG,"onDestroy() with task.cancel & this.stopSelf()");
 
         super.onDestroy();
     }

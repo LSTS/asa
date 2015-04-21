@@ -2,6 +2,7 @@ package pt.lsts.asa.fragments;
 
 
 import pt.lsts.asa.R;
+import pt.lsts.asa.feedback.CallOutService;
 import pt.lsts.asa.util.AndroidUtil;
 import pt.lsts.asa.util.StringUtils;
 import pt.lsts.asa.util.mjpeg.MjpegService;
@@ -53,6 +54,8 @@ public class VideoViewFragment extends Fragment {
 	@Override
 	public void onDetach() {
 		super.onDetach();
+        Log.d("MjpegService","videoViewFragment.onDetach()");
+        mjpegService.onDestroy();
 	}
 
 	@Override
@@ -100,11 +103,12 @@ public class VideoViewFragment extends Fragment {
         }else{
             mjpegService = new MjpegService(mjpegView);
 
+            if (getActivity()==null)
+                return;
             Intent intent = new Intent(getActivity(),MjpegService.class);
             mjpegService.onStartCommand(intent,1,0);
             mjpegService.onBind(intent);
         }
     }
-
 
 }

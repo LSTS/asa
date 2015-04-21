@@ -99,9 +99,9 @@ public class CentralTextViewFragment extends Fragment {
 
 
     public void setCenterTextViewVisibility(final boolean visibility){//View.INVISIBLE View.VISIBLE
-        Log.e(TAG, "getActivity()==null : " + (getActivity() == null));
         if (getActivity()==null)
             return;
+        Log.e(TAG, "getActivity()==null : " + (getActivity() == null));
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {

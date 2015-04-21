@@ -72,6 +72,8 @@ public class MjpegInputStream extends DataInputStream {
         mark(FRAME_MAX_LENGTH);
         int headerLen = getStartOfSequence(this, SOI_MARKER);
         reset();
+        if (headerLen<0)
+            return null;
         byte[] header = new byte[headerLen];
         readFully(header);
         try {
