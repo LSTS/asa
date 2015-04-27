@@ -177,42 +177,34 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         }
     }
 
-    public void processAnnounce(IMCMessage msg, SystemList systemList){
+    public void processAnnounce(IMCMessage msg, SystemList sysList){
         Announce m = (Announce) msg;
-
-        Log.v(TAG, "announce from: " + m.getSysName());
-
+        int sysId = msg.getSrc();
+        Log.v(TAG, "announce from: " + m.getSysName()+ " with id: "+m.getSrc());
         // If System already exists in host list
-        if (systemList.containsSysName(m.getSysName())) {
-            Log.i(TAG,"alreadyOnList");
-            Sys s = systemList.findSysByName(m.getSysName());
+        if (sysList.containsSysId(sysId)) {
+            Sys sys = sysList.findSysById(sysId);
+            Log.i(TAG, "alreadyOnList: " + sys.getName());
 
-            if (DEBUG)
-                Log.i("Log",
-                        "Repeated announce from: "
-                                + m.getSysName());
-
-            if (!s.isConnected()) {
-                systemList.findSysByName(m.getSysName()).lastMessageReceived = System
-                        .currentTimeMillis();
-                systemList.findSysByName(m.getSysName()).setConnected(true);
-                systemList.changeList(systemList.getList());
+            if (!sys.isConnected()) {
+                sys.lastMessageReceived = System.currentTimeMillis();
+                sys.setConnected(true);
+                sysList.changeList(sysList.getList());
                 // Send an Heartbeat to resume communications in case of
                 // system prior crash
                 try {
-                    ASA.getInstance()
-                            .getIMCManager()
-                            .send(s.getAddress(),
-                                    s.getPort(),
-                                    IMCDefinition.getInstance().create(
-                                            "Heartbeat"));
+                    Heartbeat heartbeat = new Heartbeat();
+                    ASA.getInstance().getIMCManager().sendToSys(sys,heartbeat);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
             }
             return;
         }
-        Log.i(TAG,"notOnList");
+        Log.i(TAG,"notOnList: "+sysId);
+
+        /*
+        //ignore this verification, if msg is received, assume sys is reachable, unecessary verification
         // If Service IMC+UDP doesnt exist or isnt reachable, return...
         if (IMCUtils.getAnnounceService(msg, "imc+udp") == null) {
             Log.e(TAG, m.getSysName()
@@ -220,8 +212,10 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
             Log.e(TAG, msg.toString());
             return;
         }
-        Log.i(TAG,"addrAndPort: "+IMCUtils.getAnnounceIMCAddressPort(msg));
+        */
+
         String[] addrAndPort = IMCUtils.getAnnounceIMCAddressPort(msg);
+        Log.i(TAG,"addrAndPort: "+addrAndPort.toString());
         if (addrAndPort == null) {
             Log.e(TAG, "No Announce Services: " + m.getSysName());
             return;
@@ -230,16 +224,16 @@ public class SystemsUpdaterServiceIMCSubscriber extends Service implements IMCSu
         // If Not include it
         Sys sys = new Sys(addrAndPort[0], Integer.parseInt(addrAndPort[1]),
                 m.getSysName(),
-                (Integer) msg.getHeaderValue("src"),
+                sysId,
                 m.getSysType().name(), true, false);
         sys.lastMessageReceived=System.currentTimeMillis();
         sendEntityListQuery(sys);//query sys for EntityList
         Log.i("New System Added: ", sys.getName());
-        systemList.getList().add(sys);
+        sysList.getList().add(sys);
 
         // Update the list of available Vehicles
-        systemList.changeList(systemList.getList());
-        ASA.getInstance().sysList = systemList;
+        sysList.changeList(sysList.getList());
+        ASA.getInstance().sysList = sysList;
 
         // Send an Heartbeat to register as a node in the vehicle (maybe
         // EntityList?)

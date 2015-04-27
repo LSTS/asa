@@ -55,13 +55,15 @@ public class IMCUtils {
                 res[0] = foo[0];
                 res[1] = foo[1].substring(0, foo[1].length() - 1);
                 res[1] = res[1].split("/")[0];//remove services after port
+                /*
 				try {
-                    if (InetAddress.getByName(s.split(":")[0]).isReachable(50)) {
+                    if (InetAddress.getByName(s.split(":")[0]).isReachable(50)) {//android.os.NetworkOnMainThreadException
                         return res;//return first reachable
                     }
                 }catch(Exception e){
-                    Log.e(TAG,"erro:"+e.getMessage());
+                    Log.e(TAG,"erro:"+e.toString());
                 }
+                */
 
 		}
 		return res;//none reachable, return last one
