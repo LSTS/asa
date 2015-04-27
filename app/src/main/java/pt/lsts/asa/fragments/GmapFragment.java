@@ -263,7 +263,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
                 public void run() {
                     ASA.getInstance().UIThread=true;
                     GroundOverlay groundOverlay = googleMap.addGroundOverlay(new GroundOverlayOptions()
-                                    .position(latLng, 70, 70)
+                                    .position(latLng, 100, 100)
                                     .image(BitmapDescriptorFactory.fromResource(iconRid))
                                     .bearing(AndroidUtil.calcRotation((360 - googleMap.getCameraPosition().bearing), bearing))
                     );
