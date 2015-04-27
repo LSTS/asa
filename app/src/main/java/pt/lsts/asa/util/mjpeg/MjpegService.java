@@ -13,8 +13,13 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 
 import java.io.IOException;
+import java.net.ConnectException;
+import java.net.InetAddress;
 import java.net.URI;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -58,8 +63,10 @@ public class MjpegService extends Service {
             task.cancel(true);
             task = null;
         }
-        String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
+        //String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
+        String camUrl = "http://10.0.2.153:8080/";
         //String camUrl = StringUtils.getCamUrl();
+
         task = new getMjpegInputStreamAsyncTask().execute(camUrl);
         this.stopSelf();
     }
@@ -71,9 +78,14 @@ public class MjpegService extends Service {
     public class getMjpegInputStreamAsyncTask extends AsyncTask<String, Void, MjpegInputStream> {
         protected MjpegInputStream doInBackground(String... url) {
             HttpResponse res = null;
-            DefaultHttpClient httpclient = new DefaultHttpClient();
-            Log.d(TAG, "1. Sending http request");
+            HttpParams httpParameters = new BasicHttpParams();
+            int timeoutConnection = 500;
+            HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+            int timeoutSocket = 5000;
+            HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
+            DefaultHttpClient httpclient = new DefaultHttpClient(httpParameters);
             try {
+                Log.d(TAG, "1. Sending http request");
                 res = httpclient.execute(new HttpGet(URI.create(url[0])));
                 Log.d(TAG, "2. Request finished, status = " + res.getStatusLine().getStatusCode());
                 if(res.getStatusLine().getStatusCode()==401){
@@ -86,6 +98,8 @@ public class MjpegService extends Service {
                 e.printStackTrace();
                 Log.d(TAG, "Request failed-ClientProtocolException", e);
                 //Error connecting to camera
+            } catch (ConnectException e){
+                Log.d(TAG, "ConnectException: "+e,e);
             } catch (IOException e) {
                 e.printStackTrace();
                 Log.d(TAG, "Request failed-IOException", e);
@@ -95,6 +109,8 @@ public class MjpegService extends Service {
         }
 
         protected void onPostExecute(MjpegInputStream result) {
+            if (result==null)
+                onDestroy();
             mjpegView.setSource(result);
             mjpegView.setDisplayMode(MjpegView.SIZE_FULLSCREEN);
             mjpegView.showFps(true);
