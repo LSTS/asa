@@ -64,8 +64,8 @@ public class MjpegService extends Service {
             task = null;
         }
         //String camUrl = "http://trackfield.webcam.oregonstate.edu/axis-cgi/mjpg/video.cgi?resolution=800x600&amp%3bdummy=1333689998337";//test public ip cam
-        String camUrl = "http://10.0.2.153:8080/";
-        //String camUrl = StringUtils.getCamUrl();
+        //String camUrl = "http://10.0.2.153:8080/";
+        String camUrl = StringUtils.getCamUrl();
 
         task = new getMjpegInputStreamAsyncTask().execute(camUrl);
         this.stopSelf();
@@ -81,7 +81,7 @@ public class MjpegService extends Service {
             HttpParams httpParameters = new BasicHttpParams();
             int timeoutConnection = 500;
             HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
-            int timeoutSocket = 5000;
+            int timeoutSocket = 20000;
             HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
             DefaultHttpClient httpclient = new DefaultHttpClient(httpParameters);
             try {
