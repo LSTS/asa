@@ -1,7 +1,11 @@
 package pt.lsts.asa.settings;
 
+import pt.lsts.asa.ASA;
 import pt.lsts.asa.activities.SettingsActivity;
+import pt.lsts.asa.sys.Sys;
+import pt.lsts.asa.util.AndroidUtil;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -20,10 +24,13 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.text.Editable;
 import android.text.InputType;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class SettingsFactory {
+
+    public static final String TAG = "SettingsFactory";
 
 	public static void populate(PreferenceCategory category, Context context) {
 		createHideEntry(category, context);
@@ -57,6 +64,9 @@ public class SettingsFactory {
                 continue;
             }
 		}
+        if (category.getTitle().equals("relative landing")) {
+            category.addPreference(createRelativeLandingButton(context));
+        }
 	}
 
 	public static void createHideEntry(final PreferenceCategory category,
@@ -84,23 +94,23 @@ public class SettingsFactory {
 		checkBoxPref.setChecked(true);
 		checkBoxPref
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-					@Override
-					public boolean onPreferenceChange(Preference preference,
-							Object newValue) {
-						category.removeAll();
-						populate(category, context);
+                    @Override
+                    public boolean onPreferenceChange(Preference preference,
+                                                      Object newValue) {
+                        category.removeAll();
+                        populate(category, context);
 
-						return true;
-					}
-				});
+                        return true;
+                    }
+                });
 		category.addPreference(checkBoxPref);
 	}
 
 	public static EditTextPreference createEntry(PreferenceCategory category,
 			String key, String valString, Context context) {
 		EditTextPreference editTextPreference = new EditTextPreference(context);
-		editTextPreference.setTitle(Settings.getKey(key, "ERROR")+": "+valString);
-		editTextPreference.setSummary(Settings.getDescription(key,"null"));
+		editTextPreference.setTitle(Settings.getKey(key, "ERROR") + ": " + valString);
+		editTextPreference.setSummary(Settings.getDescription(key, "null"));
 		editTextPreference.setDefaultValue(valString);
 		setOnChangeListener(editTextPreference, key);
 		category.addPreference(editTextPreference);
@@ -111,11 +121,11 @@ public class SettingsFactory {
 			String key, Integer valInteger, Context context) {
 
         EditTextPreference editTextPreference = new EditTextPreference(context);
-        editTextPreference.setTitle(Settings.getKey(key, "ERROR")+": "+valInteger);
-        editTextPreference.setSummary(Settings.getDescription(key,"null"));
+        editTextPreference.setTitle(Settings.getKey(key, "ERROR") + ": " + valInteger);
+        editTextPreference.setSummary(Settings.getDescription(key, "null"));
         editTextPreference.getEditText().setInputType(
                 InputType.TYPE_CLASS_NUMBER);
-        editTextPreference.setDefaultValue(""+valInteger);
+        editTextPreference.setDefaultValue("" + valInteger);
         setOnChangeListener(editTextPreference, key);
         category.addPreference(editTextPreference);
         return editTextPreference;
@@ -124,11 +134,11 @@ public class SettingsFactory {
     public static ListPreference createEntry(PreferenceCategory category, String key, String defValue, String[] list, Context context){
         ListPreference listPreference = new ListPreference(context);
         listPreference.setTitle(Settings.getKey(key,"ERROR")+": "+defValue);
-        listPreference.setSummary(Settings.getDescription(key,"null"));
+        listPreference.setSummary(Settings.getDescription(key, "null"));
         listPreference.setDefaultValue(defValue);
         listPreference.setEntries(list);
         listPreference.setEntryValues(list);
-        setOnChangeListenerList(listPreference,key);
+        setOnChangeListenerList(listPreference, key);
         category.addPreference(listPreference);
         return listPreference;
     }
@@ -138,9 +148,9 @@ public class SettingsFactory {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 boolean result = changeValue(key, newValue);
-                preference.setTitle(key+": "+newValue);
+                preference.setTitle(key + ": " + newValue);
                 preference.setDefaultValue(newValue);
-                preference.setSummary(Settings.getDescription(key,"null"));
+                preference.setSummary(Settings.getDescription(key, "null"));
 
                 return result;
             }
@@ -151,17 +161,17 @@ public class SettingsFactory {
 			final EditTextPreference editTextPreference, final String key) {
 		editTextPreference
 				.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-					@Override
-					public boolean onPreferenceChange(Preference preference,
-							Object newValue) {
-						boolean result = changeValue(key, newValue);
+                    @Override
+                    public boolean onPreferenceChange(Preference preference,
+                                                      Object newValue) {
+                        boolean result = changeValue(key, newValue);
                         preference.setTitle(key + ": " + newValue);
-						preference.setDefaultValue(newValue);
-						preference.setSummary(Settings.getDescription(key,"null"));
+                        preference.setDefaultValue(newValue);
+                        preference.setSummary(Settings.getDescription(key, "null"));
 
-						return result;
-					}
-				});
+                        return result;
+                    }
+                });
 	}
 
 	public static void createEntry(PreferenceCategory category,
@@ -207,15 +217,15 @@ public class SettingsFactory {
 		final PreferenceCategory category = new PreferenceCategory(context);
 		category.setTitle(name);
 		category.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				if (category.getPreferenceCount() > 0)
-					category.removeAll();
-				else
-					populate(category, context);
-				return false;
-			}
-		});
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                if (category.getPreferenceCount() > 0)
+                    category.removeAll();
+                else
+                    populate(category, context);
+                return false;
+            }
+        });
 		return category;
 	}
 
@@ -234,6 +244,7 @@ public class SettingsFactory {
 		for (String entry : categoriesStrings)
 			preferenceCategories.add(createCategory(entry, context));
 		preferenceCategories.add(createCategory("Profiles", context));
+
 		return preferenceCategories;
 	}
 
@@ -252,12 +263,12 @@ public class SettingsFactory {
 		preference.setTitle("Save Profile");
 		preference
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-					@Override
-					public boolean onPreferenceClick(Preference preference) {
-						save(context);
-						return false;
-					}
-				});
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        save(context);
+                        return false;
+                    }
+                });
 		return preference;
 	}
 
@@ -280,14 +291,34 @@ public class SettingsFactory {
 		preference.setTitle("RESTORE DEFAULTS");
 		preference
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-					@Override
-					public boolean onPreferenceClick(Preference preference) {
-						restoreDefaults(context);
-						return false;
-					}
-				});
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        restoreDefaults(context);
+                        return false;
+                    }
+                });
 		return preference;
 	}
+
+    /**
+     * Create a button to choose a Sys to serve as the landing point of reference, usually a comms gateway
+     * @param context
+     * @return The Preference Button
+     */
+    public static Preference createRelativeLandingButton(final Context context) {
+        Log.i(TAG, "createRelativeLandingButton");
+        Preference preference = new Preference(context);
+        preference.setTitle("Choose Target Lading Sys");
+        preference
+                .setOnPreferenceClickListener(new OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        showChangeTargetLandingSysDialog(context);
+                        return false;
+                    }
+                });
+        return preference;
+    }
 
 	public static void restoreDefaults(final Context context) {
 		new AlertDialog.Builder(context)
@@ -295,33 +326,33 @@ public class SettingsFactory {
 				.setMessage(
 						"Are you sure you want to restore settings default?\nWARNING: this action is permenant")
 				.setPositiveButton("YES",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								String result = Profile.restoreDefaults();
-								Toast.makeText(context, result,
-										Toast.LENGTH_SHORT).show();
-								regenerateActivity(context);
-							}
-						})
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                String result = Profile.restoreDefaults();
+                                Toast.makeText(context, result,
+                                        Toast.LENGTH_SHORT).show();
+                                regenerateActivity(context);
+                            }
+                        })
 				.setNegativeButton("CANCEL",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
 
-							}
-						}).create().show();
+                            }
+                        }).create().show();
 	}
 
 	public static void load(final Context context) {
 		final String[] array = Profile.getProfilesAvailable();
 		new AlertDialog.Builder(context).setTitle("Choose a Profile:")
 				.setItems(array, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						String result = Profile.load(array[which]);
-						Toast.makeText(context, result, Toast.LENGTH_SHORT)
-								.show();
-						regenerateActivity(context);
-					}
-				}).create().show();
+                    public void onClick(DialogInterface dialog, int which) {
+                        String result = Profile.load(array[which]);
+                        Toast.makeText(context, result, Toast.LENGTH_SHORT)
+                                .show();
+                        regenerateActivity(context);
+                    }
+                }).create().show();
 	}
 
 	public static void save(final Context context) {
@@ -331,25 +362,47 @@ public class SettingsFactory {
 				.setMessage("Select a name for Profile:")
 				.setView(input)
 				.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int whichButton) {
-						Editable value = input.getText();
-						String result = Profile.save(value.toString());
-						Toast.makeText(context, result, Toast.LENGTH_SHORT)
-								.show();
-					}
-				})
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        Editable value = input.getText();
+                        String result = Profile.save(value.toString());
+                        Toast.makeText(context, result, Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                })
 				.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int whichButton) {
-								// canceled
-							}
-						}).create().show();
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int whichButton) {
+                                // canceled
+                            }
+                        }).create().show();
 	}
 
 	public static void regenerateActivity(Context context) {
 		Intent i = new Intent(context, SettingsActivity.class);
 		context.startActivity(i);
 	}
+
+    public static void showChangeTargetLandingSysDialog(final Context context){
+
+        final ArrayList<Sys> arrayListSys = ASA.getInstance().getSystemList().getList();
+        final ArrayList<String> arrayListName = ASA.getInstance().getSystemList().getNameList();
+        final String[] array = new String[arrayListName.size()];
+        for (int i=0;i<array.length;i++){
+            array[i]=arrayListName.get(i);
+        }
+        if (context==null)
+            return;
+
+        new AlertDialog.Builder(context).setTitle("Choose a Target Landing System:")
+            .setItems(array, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    ASA.getInstance().setTargetLandingSys(arrayListSys.get(which));
+                    if (ASA.getInstance().getTargetLandingSys() != null)
+                        AndroidUtil.showToastShort("Target Landing Sys: " + ASA.getInstance().getTargetLandingSys().getName());
+                }
+            }).create().show();
+    }
+
 
 }
