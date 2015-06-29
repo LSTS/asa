@@ -29,7 +29,7 @@ public class CallOutService extends Service implements
     private CallOutSysUpdaterListenner callOutSysUpdaterListenner;
     private Context context;
     private TextToSpeech tts;
-    private boolean relativeLanding=false;
+    private boolean relativeLandingBool =false;
 
     private int iasInt=0;
     private int altInt=0;
@@ -118,7 +118,7 @@ public class CallOutService extends Service implements
         int timeoutInterval = Settings.getInt("timeout_interval_in_seconds", 60) * 1000;
         setTimeoutInterval(timeoutInterval);
 
-
+        relativeLandingBool = Settings.getBoolean("relative landing",false);
 
     }
 
@@ -159,11 +159,19 @@ public class CallOutService extends Service implements
                 if (ASA.getInstance().getActiveSys()!=null
                         && System.currentTimeMillis() > getLastEstimatedStateMsgReceived()+altInterval)
                     return;
-                if (relativeLanding==true){
-                    altInt = DistancesUtil.calcRelativeLandingValue(ASA.getInstance().getActiveSys(), ASA.getInstance().getTargetLandingSys(),Settings.getInt("relative landing angle",20));
+                if (relativeLandingBool ==true && ASA.getInstance().getTargetLandingSys()!=null && ASA.getInstance().getActiveSys()!=null){
+                    altInt = DistancesUtil.calcRelativeLandingValue(ASA.getInstance().getActiveSys(), ASA.getInstance().getTargetLandingSys(), Settings.getInt("relative landing angle", 20));
+                    Log.i(TAG, "relative alt= " + altInt + " -- " + System.currentTimeMillis());
+                    if (altInt>0)
+                        tts.speak(Math.abs(altInt)+" UP",TextToSpeech.QUEUE_FLUSH, null);
+                    if (altInt<0)
+                        tts.speak(Math.abs(altInt)+" DOWN",TextToSpeech.QUEUE_FLUSH, null);
+                    if (altInt==0)
+                        tts.speak(altInt+"",TextToSpeech.QUEUE_FLUSH, null);
+                }else{
+                    Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
+                    tts.speak(""+altInt,TextToSpeech.QUEUE_FLUSH, null);
                 }
-                Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
-                tts.speak(""+altInt,TextToSpeech.QUEUE_FLUSH, null);
             }
         };
     }

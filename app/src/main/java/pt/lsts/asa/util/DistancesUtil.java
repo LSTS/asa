@@ -40,8 +40,11 @@ public class DistancesUtil {
      * @return the value to be used by TextToSpeech (integer)
      */
     public static int calcRelativeLandingValue(Sys activeSys, Sys targetLandingSys, double angle){
+        if (activeSys==null || targetLandingSys==null){
+            return -9999;//sys==null return -9999
+        }
         double distance = distanceBetweenTwoPoints(activeSys.getLatLng(), targetLandingSys.getLatLng());
-        double result = activeSys.getAlt() - distance*Math.tan(angle);
+        double result = (activeSys.getAlt()-targetLandingSys.getAlt()) - (distance*Math.tan(angle));
         int resultInt = ((int) result);
         return resultInt;
     }
