@@ -14,6 +14,7 @@ import java.util.TimerTask;
 import pt.lsts.asa.ASA;
 import pt.lsts.asa.listenners.sysUpdates.CallOutSysUpdaterListenner;
 import pt.lsts.asa.settings.Settings;
+import pt.lsts.asa.util.DistancesUtil;
 import pt.lsts.asa.util.TextToSpeechUtilService;
 
 
@@ -28,6 +29,7 @@ public class CallOutService extends Service implements
     private CallOutSysUpdaterListenner callOutSysUpdaterListenner;
     private Context context;
     private TextToSpeech tts;
+    private boolean relativeLanding=false;
 
     private int iasInt=0;
     private int altInt=0;
@@ -157,7 +159,9 @@ public class CallOutService extends Service implements
                 if (ASA.getInstance().getActiveSys()!=null
                         && System.currentTimeMillis() > getLastEstimatedStateMsgReceived()+altInterval)
                     return;
-
+                if (relativeLanding==true){
+                    altInt = DistancesUtil.calcRelativeLandingValue(ASA.getInstance().getActiveSys(), ASA.getInstance().getTargetLandingSys(),Settings.getInt("relative landing angle",20));
+                }
                 Log.i(TAG,"alt= "+altInt+ " -- "+System.currentTimeMillis());
                 tts.speak(""+altInt,TextToSpeech.QUEUE_FLUSH, null);
             }
