@@ -49,6 +49,7 @@ public class ASA {
 	private static Context context;
 	private static ASA instance;
 	private static Sys activeSys;
+	private static Sys targetLandingSys=null;
 
 	private static IMCManager imcManager;
 	public SystemList sysList;
@@ -232,6 +233,16 @@ public class ASA {
 		Log.v(TAG, ASA.class.getSimpleName() + ": setActiveSys");
 		activeSys = activeS;
 		notifyMainSysChange();
+	}
+
+	public static Sys getTargetLandingSys() {
+		Log.v(TAG, ASA.class.getSimpleName() + ": getTargetLandingSys");
+		return targetLandingSys;
+	}
+
+	public static void setTargetLandingSys(Sys targetLandingSys) {
+		Log.v(TAG, ASA.class.getSimpleName() + ": setTargetLandingSys("+ targetLandingSys.getName()+")");
+		ASA.targetLandingSys = targetLandingSys;
 	}
 
 	public IMCManager getIMCManager() {

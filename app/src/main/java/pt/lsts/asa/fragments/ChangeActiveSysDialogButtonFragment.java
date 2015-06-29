@@ -63,7 +63,7 @@ public class ChangeActiveSysDialogButtonFragment extends Fragment {
                 new Runnable() {
                     @Override
                     public void run() {
-                        new AlertDialog.Builder(getActivity()).setTitle("Choose a System:")
+                        new AlertDialog.Builder(getActivity()).setTitle("Choose a Main System:")
                                 .setItems(array, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         Sys sys = ASA.getInstance().getActiveSys();

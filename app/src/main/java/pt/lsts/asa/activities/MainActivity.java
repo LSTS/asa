@@ -121,7 +121,7 @@ public class MainActivity extends FragmentActivity {
 	
 	public void createChooseActiveSystemDialog(Context context, String[] array, final ArrayList<Sys> arrayListSys){
 		
-		new AlertDialog.Builder(context).setTitle("Choose a System:")
+		new AlertDialog.Builder(context).setTitle("Choose a Main System:")
 		.setItems(array, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				ASA.getInstance().setActiveSys(arrayListSys.get(which));

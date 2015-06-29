@@ -14,3 +14,5 @@ java.lang.String,cam,resolution_options,available resolution for requesting came
 java.lang.Integer,audio,speech_rate,set TextToSpeech speech rate in percentage,100
 java.lang.Boolean,comms,timeout_audio,mute Lost Comms callout,false
 java.lang.Integer,comms,timeout_interval_in_seconds,set time to consider Lost Comms,20
+java.lang.Boolean,relative landing,relative landing,ativate relative landing,false
+java.lang.Integer,relative landing,relative landing angle,choose the angle in degrees of inclination of ideal landing line,20
