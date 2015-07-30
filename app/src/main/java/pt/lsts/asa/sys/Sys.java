@@ -58,7 +58,7 @@ public class Sys {
 
 
     //variables for manual mode
-    private float alt;
+    private float alt;// EstimatedState height - Z
     private double ias;
     private int iasInt, altInt;
 

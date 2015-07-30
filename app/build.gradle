@@ -8,8 +8,8 @@ android {
         applicationId "pt.lsts.asa"
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 6
-        versionName "0.3-dirty (master)"
+        versionCode 8
+        versionName "0.3.3 (master)"
     }
     buildTypes {
         release {
